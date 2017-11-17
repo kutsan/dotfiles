@@ -1,0 +1,295 @@
+{
+  "BTTPresetName" : "Default",
+  "BTTPresetUUID" : "3248841E-964C-4430-B7AD-343DB33F1F4D",
+  "BTTPresetContent" : [
+    {
+      "BTTAppBundleIdentifier" : "BT.G",
+      "BTTAppName" : "Global",
+      "BTTAppSpecificSettings" : {
+
+      },
+      "BTTTriggers" : [
+        {
+          "BTTTriggerType" : 998,
+          "BTTTriggerTypeDescription" : "Scroll Left",
+          "BTTTriggerClass" : "BTTTriggerTypeNormalMouse",
+          "BTTPredefinedActionType" : 24,
+          "BTTPredefinedActionName" : "Volume Up",
+          "BTTEnabled" : 1,
+          "BTTOrder" : 1,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerType" : 624,
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 21,
+          "BTTPredefinedActionName" : "Maximize Window",
+          "BTTTriggerOnDown" : 0,
+          "BTTEnabled" : 1,
+          "BTTShortcutKeyCode" : -1,
+          "BTTShortcutModifierKeys" : -1,
+          "BTTOrder" : 1,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : "",
+          "BTTKeySequence" : {
+            "BTTPauseBetween" : 0.3,
+            "BTTKeyCount" : 4,
+            "BTTKeySequenceDownKeys" : [
+              {
+                "BTTKEYCode" : 63,
+                "BTTKEYDown" : 1,
+                "BTTKEYOrderRelevant" : 1,
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 5.165551e+08
+              },
+              {
+                "BTTKEYCode" : 63,
+                "BTTKEYDown" : 1,
+                "BTTKEYOrderRelevant" : 1,
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 5.165551e+08
+              }
+            ],
+            "BTTKeySequenceMixedKeys" : [
+              {
+                "BTTKEYCode" : 63,
+                "BTTKEYDown" : 1,
+                "BTTKEYOrderRelevant" : 1,
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 5.165551e+08
+              },
+              {
+                "BTTKEYCode" : 63,
+                "BTTKEYTime" : 5.165551e+08
+              },
+              {
+                "BTTKEYCode" : 63,
+                "BTTKEYDown" : 1,
+                "BTTKEYOrderRelevant" : 1,
+                "BTTKEYRequired" : 1,
+                "BTTKEYTime" : 5.165551e+08
+              },
+              {
+                "BTTKEYCode" : 63,
+                "BTTKEYTime" : 5.165551e+08
+              }
+            ],
+            "BTTKeySequenceUpKeys" : [
+              {
+                "BTTKEYCode" : 63,
+                "BTTKEYTime" : 5.165551e+08
+              },
+              {
+                "BTTKEYCode" : 63,
+                "BTTKEYTime" : 5.165551e+08
+              }
+            ]
+          }
+        },
+        {
+          "BTTTriggerType" : 999,
+          "BTTTriggerTypeDescription" : "Scroll Right",
+          "BTTTriggerClass" : "BTTTriggerTypeNormalMouse",
+          "BTTPredefinedActionType" : 25,
+          "BTTPredefinedActionName" : "Volume Down",
+          "BTTEnabled" : 1,
+          "BTTOrder" : 0,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerType" : 112,
+          "BTTTriggerTypeDescription" : "3 Finger Click",
+          "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+          "BTTPredefinedActionType" : 1,
+          "BTTPredefinedActionName" : "Middle Click",
+          "BTTTriggerOnDown" : 0,
+          "BTTEnabled" : 1,
+          "BTTOrder" : 0,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerType" : -1,
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 158,
+          "BTTPredefinedActionName" : "Lock Screen",
+          "BTTEnabled" : 1,
+          "BTTShortcutKeyCode" : 51,
+          "BTTShortcutModifierKeys" : 1835008,
+          "BTTOrder" : 0,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerType" : 197,
+          "BTTTriggerTypeDescription" : "Pinch With Thumb And 2 Fingers",
+          "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+          "BTTPredefinedActionType" : 102,
+          "BTTPredefinedActionName" : "Close Window Below Cursor (Works in Mission Control)",
+          "BTTEnabled" : 1,
+          "BTTOrder" : 1,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        }
+      ]
+    },
+    {
+      "BTTAppBundleIdentifier" : "com.google.Chrome",
+      "BTTAppName" : "Google Chrome",
+      "BTTAppSpecificSettings" : {
+
+      },
+      "BTTTriggers" : [
+        {
+          "BTTTriggerType" : 114,
+          "BTTTriggerTypeDescription" : "TipTap Right (1 Finger Fix)",
+          "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+          "BTTPredefinedActionType" : -1,
+          "BTTPredefinedActionName" : "No Action",
+          "BTTShortcutToSend" : "59,48",
+          "BTTEnabled" : 1,
+          "BTTOrder" : 1,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerType" : 103,
+          "BTTTriggerTypeDescription" : "3 Finger Swipe Down",
+          "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+          "BTTPredefinedActionType" : -1,
+          "BTTPredefinedActionName" : "No Action",
+          "BTTShortcutToSend" : "55,13",
+          "BTTEnabled" : 1,
+          "BTTOrder" : 2,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerType" : 113,
+          "BTTTriggerTypeDescription" : "TipTap Left (1 Finger Fix)",
+          "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+          "BTTPredefinedActionType" : -1,
+          "BTTPredefinedActionName" : "No Action",
+          "BTTShortcutToSend" : "59,56,48",
+          "BTTEnabled" : 1,
+          "BTTOrder" : 0,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerType" : 1004,
+          "BTTTriggerTypeDescription" : "Button 4",
+          "BTTTriggerClass" : "BTTTriggerTypeNormalMouse",
+          "BTTPredefinedActionType" : -1,
+          "BTTPredefinedActionName" : "No Action",
+          "BTTShortcutToSend" : "59,48",
+          "BTTEnabled" : 1,
+          "BTTOrder" : 0,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        },
+        {
+          "BTTTriggerType" : 1003,
+          "BTTTriggerTypeDescription" : "Button 3",
+          "BTTTriggerClass" : "BTTTriggerTypeNormalMouse",
+          "BTTPredefinedActionType" : -1,
+          "BTTPredefinedActionName" : "No Action",
+          "BTTShortcutToSend" : "59,56,48",
+          "BTTEnabled" : 1,
+          "BTTOrder" : 1,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : ""
+        }
+      ]
+    },
+    {
+      "BTTAppBundleIdentifier" : "alacritty",
+      "BTTAppName" : "Alacritty",
+      "BTTAppProcessMatchMode" : 2,
+      "BTTAppProcessName" : "Alacritty",
+      "BTTTriggers" : [
+        {
+          "BTTTriggerType" : 1004,
+          "BTTTriggerTypeDescription" : "Button 4",
+          "BTTTriggerClass" : "BTTTriggerTypeNormalMouse",
+          "BTTPredefinedActionType" : -1,
+          "BTTPredefinedActionName" : "No Action",
+          "BTTShortcutToSend" : "58,45",
+          "BTTEnabled" : 1,
+          "BTTOrder" : 13,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : "",
+          "BTTKeySequence" : {
+
+          },
+          "BTTTriggerConfig" : {
+            "BTTTouchBarItemIconHeight" : 0,
+            "BTTTouchBarItemIconWidth" : 0
+          }
+        },
+        {
+          "BTTTriggerType" : 113,
+          "BTTTriggerTypeDescription" : "TipTap Left (1 Finger Fix)",
+          "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+          "BTTPredefinedActionType" : -1,
+          "BTTPredefinedActionName" : "No Action",
+          "BTTShortcutToSend" : "58,35",
+          "BTTEnabled" : 1,
+          "BTTOrder" : 6,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : "",
+          "BTTKeySequence" : {
+
+          },
+          "BTTTriggerConfig" : {
+            "BTTTouchBarItemIconHeight" : 0,
+            "BTTTouchBarItemIconWidth" : 0
+          }
+        },
+        {
+          "BTTTriggerType" : 114,
+          "BTTTriggerTypeDescription" : "TipTap Right (1 Finger Fix)",
+          "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+          "BTTPredefinedActionType" : -1,
+          "BTTPredefinedActionName" : "No Action",
+          "BTTShortcutToSend" : "58,45",
+          "BTTEnabled" : 1,
+          "BTTOrder" : 7,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : "",
+          "BTTKeySequence" : {
+
+          },
+          "BTTTriggerConfig" : {
+            "BTTTouchBarItemIconHeight" : 0,
+            "BTTTouchBarItemIconWidth" : 0
+          }
+        },
+        {
+          "BTTTriggerType" : 1003,
+          "BTTTriggerTypeDescription" : "Button 3",
+          "BTTTriggerClass" : "BTTTriggerTypeNormalMouse",
+          "BTTPredefinedActionType" : -1,
+          "BTTPredefinedActionName" : "No Action",
+          "BTTShortcutToSend" : "58,35",
+          "BTTEnabled" : 1,
+          "BTTOrder" : 14,
+          "BTTIconData" : "",
+          "BTTAlternateIconData" : "",
+          "BTTKeySequence" : {
+
+          },
+          "BTTTriggerConfig" : {
+            "BTTTouchBarItemIconHeight" : 0,
+            "BTTTouchBarItemIconWidth" : 0
+          }
+        }
+      ]
+    }
+  ],
+  "BTTPresetSnapAreas" : [
+
+  ]
+}
