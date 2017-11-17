@@ -1,0 +1,142 @@
+# kutsan's dotfiles
+
+![Screenshot](https://i.imgur.com/Gjegs41.png)
+
+## Overview
+
+- General
+	- CLI
+		- [zsh](http://www.zsh.org) - Highly customizable interactive login shell and command interpreter for shell scripting
+			- [pure](https://github.com/sindresorhus/pure) - Minimal and fast Zsh prompt with asynchronous git fetch
+			- [z](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/z) - Track your most used directories, based on frequency for quick access later
+			- [zsh-autopair](https://github.com/hlissner/zsh-autopair) - Auto-close and delete matching delimiters
+			- [zsh-system-clipboard](https://github.com/kutsan/zsh-system-clipboard) - Synchronize ZLE clipboard buffer with system clipboard
+			- [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) - Fish-like syntax highlighting support for interactive terminal
+			- [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) - Fish-like auto-suggestions for interactive terminal based on command history
+		- [neovim](https://github.com/neovim/neovim) - The fork of ubiquitous text editor focused on extensibility and usability
+			- [deep-space](https://github.com/tyrannicaltoucan/vim-deep-space) - An intergalactically friendly color scheme based off of Hybrid
+			- [vim-plug](https://github.com/junegunn/vim-plug) - Vim plugin manager with features such as parallel installation and post-update hooks
+				- [w0rp/ale](https://github.com/w0rp/ale) - Asynchronous lint engine for Neovim and Vim 8+
+				- [jiangmiao/auto-pairs](https://github.com/jiangmiao/auto-pairs) - Insert or delete brackets, parens, quotes in pair
+				- [907th/vim-auto-save](https://github.com/907th/vim-auto-save) - Automatically save changes to disk without having to use `:write`
+				- [chrisbra/Colorizer](https://github.com/chrisbra/Colorizer) - Highlight HEX and RGB color codes and names in their background
+				- [tpope/vim-commentary](https://github.com/tpope/vim-commentary) - Comment and uncomment with predefined key bindings
+				- [Shougo/deoplete.nvim](https://github.com/Shougo/deoplete.nvim) - Asynchronous auto-completion framework for Neovim
+				- [carlitux/deoplete-ternjs](https://github.com/carlitux/deoplete-ternjs) - TernJS auto-completion integration for deoplete
+				- [editorconfig/editorconfig-vim](https://github.com/editorconfig/editorconfig-vim) - EditorConfig integration
+				- [mattn/emmet-vim](https://github.com/mattn/emmet-vim) - Emmet integration
+				- [tweekmonster/exception.vim](https://github.com/tweekmonster/exception.vim) - Tracing exceptions thrown by Vim scripts
+				- [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive) - Git client
+				- [junegunn/fzf.vim](https://github.com/junegunn/fzf.vim) - Fuzzy finder fzf as Vim plugin
+				- [airblade/vim-gitgutter](https://github.com/airblade/vim-gitgutter) - Show Git diff in the sign column
+				- [suan/vim-instant-markdown](https://github.com/suan/vim-instant-markdown) - Live markdown preview in browser
+				- [junegunn/vim-peekaboo](https://github.com/junegunn/vim-peekaboo) - Extends register and macro keys in normal mode
+				- [sheerun/vim-polyglot](https://github.com/sheerun/vim-polyglot) - Big collection of language packs as scripts are loaded only on demand
+				- [prettier/vim-prettier](https://github.com/prettier/vim-prettier) - Code formatter prettier integration
+				- [moorereason/quick-scope](https://github.com/moorereason/quick-scope) - Highlight which characters to target for `f`, `F` and family
+				- [tpope/vim-repeat](https://github.com/tpope/vim-repeat) - Repeat command support for various plugins
+				- [airblade/vim-rooter](https://github.com/airblade/vim-rooter) - Change the current working directory to the Git project root when you open a file or directory
+				- [mhinz/vim-sayonara](https://github.com/mhinz/vim-sayonara) - Sane buffer and window deletion
+				- [justinmk/vim-sneak](https://github.com/justinmk/vim-sneak) - Jump to any location specified by two characters
+				- [tpope/vim-surround](https://github.com/tpope/vim-surround) - Surround commands for parentheses, brackets, quotes, XML tags
+				- [wellle/targets.vim](https://github.com/wellle/targets.vim) - Add additional text objects and targets
+				- [mbbill/undotree](https://github.com/mbbill/undotree) - Visualize undo tree
+				- [tpope/vim-unimpaired](https://github.com/tpope/vim-unimpaired) - Adds several pairs of bracket maps
+				- [Shougo/unite.vim](https://github.com/Shougo/unite.vim) - Create user interfaces
+				- [Shougo/vimfiler.vim](https://github.com/Shougo/vimfiler.vim) - File explorer
+				- [ryanoasis/vim-devicons](https://github.com/ryanoasis/vim-devicons) - Adds additional file type glyphs to popular plugins
+		- [emacs](https://www.gnu.org/software/emacs) - The operation-system-like text editor
+			- [use-package](https://github.com/jwiegley/use-package) - Package declaration manager
+				- [emacs-evil/evil](https://github.com/emacs-evil/evil) - Extendable Vi layer and emulation
+				- [cofi/evil-leader](https://github.com/cofi/evil-leader) - Vim's \<leader\> key for Evil mode
+				- [timcharper/evil-surround](https://github.com/timcharper/evil-surround) - vim-surround for Evil mode
+				- [emacs-helm/helm](https://github.com/emacs-helm/helm) - Incremental and narrowing completion framework
+				- [defunkt/markdown-mode](https://github.com/defunkt/markdown-mode) - Markdown syntax support and tools
+				- [Fanael/rainbow-delimiters](https://github.com/Fanael/rainbow-delimiters) - Extra rainbow colors for parentheses, brackets or braces
+		- [git](https://git-scm.com) - Version control system for tracking changes in files and coordinating the work
+		- [tmux](https://github.com/tmux/tmux) - Terminal multiplexer enables working with split panes, tabs and detachable sessions
+		- [nodejs](https://nodejs.org) - JavaScript runtime environment for developing a diverse variety of applications
+			- [npm](https://www.npmjs.com) - Node Package Manager mainly for the JavaScript programming language
+				- [eslint](https://github.com/eslint/eslint) - AST-based JavaScript linter for identifying and reporting on patterns
+				- [ngrok](https://github.com/bubenshchykov/ngrok) - Expose local ports via HTTP[S] or TCP secure tunnels to the web
+				- [browser-sync](https://github.com/BrowserSync/browser-sync) - Improve web workflow with auto-reload, interaction sync and more
+				- [stylelint](https://github.com/stylelint/stylelint) - CSS syntax analysis tool, fixer and linter powered by PostCSS
+		- [python](https://www.python.org) - High-level programming language for general-purpose programming
+			- [pip](https://pip.pypa.io) - Python package manager to install and manage packages written in Python
+				- [ranger](https://github.com/ranger/ranger) - Text-based file system manager for the console with Vim-like key bindings
+					- [highlight](https://github.com/andre-simon/highlight) - Converts source code to formatted text with colored syntax highlighting
+					- [exiftool](http://www.sno.phy.queensu.ca/~phil/exiftool) - Read, write and edit meta information in a wide variety of media files
+					- [atool](http://www.nongnu.org/atool) - Manage, list, create, diff and extract file archives of various types
+				- [youtube-dl](https://github.com/rg3/youtube-dl) - Download videos, extract meta informations from YouTube and other video sites
+				- [trash-cli](https://github.com/andreafrancia/trash-cli) - Trash manager that moves, lists, restores files and folders to the trash
+				- [asciinema](https://github.com/asciinema/asciinema) - Record and share terminal sessions as text-based colored format
+				- [vim-vint](https://github.com/Kuniwak/vint) - Extensible, high performance Vimscript linter and analysis tool
+				- [neovim](https://github.com/neovim/python-client) - Neovim Python support for plugins and library scripting
+		- [coreutils](https://www.gnu.org/software/coreutils/coreutils.html) - GNU core utilities for basic file, shell and text manipulation
+		- [findutils](https://www.gnu.org/software/findutils) - GNU basic directory searching utilities that provides find, locate and xargs
+		- [moreutils](https://joeyh.name/code/moreutils) - Collection of the useful Unix tools
+		- [curl](https://github.com/curl/curl) - Command-line tool and library for transferring data with URL syntax
+		- [wget](https://www.gnu.org/software/wget) - Command-line tool for retrieving files using the most widely-used Internet protocols
+		- [gnupg](https://www.gnupg.org) - Hybrid-encryption software suit, free implementation of the OpenPGP standard
+		- [nmap](https://github.com/nmap/nmap) - Network security scanner and mapper for exploration and security auditing
+		- [openssl](https://github.com/openssl/openssl) - Toolkit for the Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols
+		- [openssh](https://www.openssh.com) - Connectivity tool for remote login with the SSH protocol
+		- [openvpn](https://github.com/OpenVPN/openvpn) - Virtual private networks for creating OpenSSL powered secure connections
+		- [rsync](https://rsync.samba.org) - Utility that provides fast incremental file transfer
+		- [docker](https://github.com/docker/docker) - Container engine that provides abstraction and automation of virtualization
+		- [fzf](https://github.com/junegunn/fzf) - General-purpose command-line fuzzy finder that can be used among other Unix tools
+		- [htop](https://github.com/hishamhm/htop) - Interactive text-based system monitor, process viewer and process manager
+		- [weechat](https://github.com/weechat/weechat) - Text-based, extensible Internet Relay Chat client with plugin support
+		- [neomutt](https://github.com/neomutt/neomutt) - Fork of the mail user agent mutt with new features and patches
+			- [msmtp](http://msmtp.sourceforge.net) - SMTP agent for sending e-mails through mail user agents or terminal
+		- [taskwarrior](https://github.com/taskwarrior/task) - Text-based time, task and project management tool
+		- [ncdu](https://dev.yorhel.nl/ncdu) - Disk usage analyzer for quickly finding big files with ncurses interface
+		- [sshfs](https://github.com/libfuse/sshfs) - Mount directories located on a remote server over a normal SSH connection
+		- [ripgrep](https://github.com/BurntSushi/ripgrep) - Line oriented search tool similar to grep that combines the usability of ag
+		- [ffmpeg](https://github.com/FFmpeg/FFmpeg) - Cross-platform solution to handle, record, convert and stream audio and video
+		- [pandoc](https://github.com/jgm/pandoc) - Universal markup converter that supports almost any format
+		- [w3m](http://w3m.sourceforge.net) - Text-based web browser and pager with Vim-like key bindings
+		- [transmission-cli](https://github.com/transmission/transmission) - BitTorrent client and daemon with web UI for remote controlling
+		- [dfc](https://github.com/Rolinh/dfc) - Report file system space usage information with colored graphs
+		- [lasspass-cli](https://github.com/lastpass/lastpass-cli) - LastPass command-line interface for managing vault online
+		- [exa](https://github.com/ogham/exa) - Replacement for ls with colors and more features such as grid support
+		- [hub](https://github.com/github/hub) - Extra features for Git that makes working with GitHub easier
+		- [syncthing](https://github.com/syncthing/syncthing) - Continuous file synchronization utility
+		- [tidy-html5](https://github.com/htacg/tidy-html5) - HTML linter with support for modern web standards
+		- [par](https://github.com/sergi/par) - Paragraph reformatter and aligner for e-mails and plain text
+		- [jq](https://github.com/stedolan/jq) - JSON processor for destructuring stdin with configurable filters
+		- [imagemagick](https://github.com/ImageMagick/ImageMagick) - Software suite to create, edit, compose, or convert bitmap images.
+		- [pv](https://github.com/icetee/pv) - Tool for monitoring the progress of data through a pipeline
+		- [bind](https://source.isc.org/cgi-bin/gitweb.cgi) - Domain Name System tools
+		- [gist](https://github.com/defunkt/gist) - GitHub Gists client for creating, updating and managing gists
+	- GUI
+		- [Emacs](https://www.gnu.org/software/emacs) - GUI version of Emacs the operation-system-like text editor
+		- [GVim](https://github.com/macvim-dev/macvim) - GUI version of Vim the ubiquitous text editor
+		- [mpv](https://github.com/mpv-player/mpv) - Minimalist video player based on MPlayer
+		- [GIMP](https://www.gimp.org) - GNU Image Manipulation Program for drawing and editing graphic files
+		- [Alacritty](https://github.com/jwilm/alacritty) - Cross-platform, GPU-accelerated terminal emulator
+			- [FiraCode](https://github.com/ryanoasis/nerd-fonts) - Font with 16px size
+			- [Nord](https://github.com/kutsan/dotfiles/blob/master/.config/iterm/Nord.itermcolors) - Color scheme
+		- [Visual Studio Code](https://github.com/Microsoft/vscode) - Text editor by Microsoft
+		- [Telegram](https://telegram.org) - Cloud-based instant messaging service
+			- [Arc-2](https://github.com/kutsan/dotfiles/tree/master/.config/telegram) - Desktop theme
+		- [Figma](https://www.figma.com) - User interface design tool with real-time collaboration
+		- [Insomnia](https://github.com/getinsomnia/insomnia) - Cross-platform REST and GraphQL API client
+
+- Arch Linux
+	- [i3](https://github.com/i3/i3) - Better tiling and dynamic window manager
+	- [urxvt](http://software.schmorp.de/pkg/rxvt-unicode.html) - Terminal emulator
+
+- macOS
+	- [Tunnelblick](https://github.com/Tunnelblick/Tunnelblick) - OpenVPN client
+	- [BetterTouchTool](https://www.boastr.net) - Configurable touchpad gestures
+	- [Karabiner](https://github.com/tekezo/Karabiner-Elements) - Keyboard customizer
+
+- Android
+	- [Termux](https://github.com/termux/termux-app) - Terminal emulator for Android
+		- [Styling](https://github.com/termux/termux-styling) - Color schemes and powerline-ready font support
+			- [Nord](https://github.com/kutsan/dotfiles/blob/master/.termux/colors.properties) - Color scheme
+			- FiraCode - Font
+	- [Mycelium](https://play.google.com/store/apps/details?id=com.mycelium.wallet) - Bitcoin wallet
+	- [Telegram](https://play.google.com/store/apps/details?id=org.telegram.messenger) - Cloud-based instant messaging service
+		- [Arc](https://github.com/kutsan/dotfiles/tree/master/.android/telegram) - Android theme
