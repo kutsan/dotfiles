@@ -1,0 +1,15 @@
+[submodule ".zsh/plugins/zsh-autopair"]
+	path = .zsh/plugins/zsh-autopair
+	url = https://github.com/hlissner/zsh-autopair
+
+[submodule ".zsh/plugins/zsh-system-clipboard"]
+	path = .zsh/plugins/zsh-system-clipboard
+	url = https://github.com/kutsan/zsh-system-clipboard
+
+[submodule ".zsh/plugins/zsh-autosuggestions"]
+	path = .zsh/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
+
+[submodule ".zsh/plugins/zsh-syntax-highlighting"]
+	path = .zsh/plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting
