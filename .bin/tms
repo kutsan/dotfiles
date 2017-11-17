@@ -1,0 +1,103 @@
+#!/usr/bin/env zsh
+
+##
+# tms - User-friendly wrapper for transmission-cli
+#
+# USAGE
+#   Run this program without arguments to see list of options.
+#
+# @author Kutsan Kaplan <me@kutsankaplan.com>
+# @license GPLv3
+# @version v0.1.0
+##
+
+setopt ERR_EXIT NO_UNSET PIPE_FAIL WARN_CREATE_GLOBAL WARN_NESTED_VAR
+
+typeset -g VERSION='v0.1.0'
+
+##
+# Show program usage informations and exit.
+##
+function show_help() {
+cat << EOF
+
+  ${bold_color}tms${reset_color} - Tranmission CLI Wrapper
+
+  ${bold_color}SYNOPSIS${reset_color}
+    $ ${fg[green]}tms${reset_color} <create|daemon|edit|remote|show> <subcommand args>
+
+  ${bold_color}AUTHOR${reset_color}
+    Kutsan Kaplan <me@kutsankaplan.com>
+
+  ${bold_color}LICENSE${reset_color}
+    GPLv3
+
+  ${bold_color}VERSION${reset_color}
+    $VERSION
+
+EOF
+
+	exit 0
+}
+
+##
+# Launch transmission-daemon if it's not running.
+#
+# @returns {boolean} true it's running and not failed when launching, false otherwise.
+##
+function launch_daemon() {
+	if (! (command ps axc | command grep --extended-regexp '\btransmission-daemon\b' &>/dev/null)) {
+		transmission-daemon && { sleep 1; return 0 } || return 1
+	} else {
+		return true
+	}
+}
+
+##
+# @param $1 {string} Subcommand.
+# @param $2 {string} Subcommand arguments.
+##
+function main() {
+	source ~/.bin/utils/console.zsh 2>/dev/null || {
+		echo
+		echo -e '  \033[41m ERROR \033[0m This script requires \033[01mconsole.zsh\033[0m component to provide sane error output.'
+		echo '          There was nothing found at \033[01m~/.bin/utils/console.zsh\033[0m.'
+		echo
+
+		exit 1
+	}
+
+	if (! (hash transmission-remote && hash transmission-daemon) 2>/dev/null) {
+		echo; console.error "${bold_color}transmission-cli is not installed.${reset_color}"; echo
+
+		exit 1
+	}
+
+	local subcommand=${1:-''}
+
+	case "$subcommand" {
+		'' | '-h' | '--help' | 'help')
+			show_help
+			;;
+
+		'--version' | 'version')
+			echo; console.info "tms $VERSION"; echo
+			;;
+
+		'create' | 'daemon' | 'edit' | 'remote' | 'show')
+			shift
+			launch_daemon && transmission-${subcommand} "$@"
+			;;
+
+		*)
+			echo
+			console.error \
+				"${bold_color}$subcommand${reset_color} is not a known subcommand." \
+				"Run ${bold_color}tms --help${reset_color} for a list of known subcommands."
+			echo
+
+			exit 1
+			;;
+	}
+}
+main "$@"
