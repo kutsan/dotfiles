@@ -1,0 +1,134 @@
+#!/usr/bin/env zsh
+
+##
+# update - Update all software packages
+#
+# @author Kutsan Kaplan <me@kutsankaplan.com>
+# @license GPLv3
+# @version v0.1.0
+##
+
+setopt ERR_EXIT NO_UNSET PIPE_FAIL WARN_CREATE_GLOBAL WARN_NESTED_VAR
+
+typeset -g VERSION='v0.1.0'
+
+##
+# Show program usage informations and exit.
+##
+function show_help() {
+cat << EOF
+
+  ${bold_color}tms${reset_color} - Tranmission CLI Wrapper
+
+  ${bold_color}SYNOPSIS${reset_color}
+    $ ${fg[green]}update${reset_color} <help|--help|version|--version>
+
+  ${bold_color}USAGE${reset_color}
+    Run this program without arguments to update all packages.
+
+  ${bold_color}AUTHOR${reset_color}
+    Kutsan Kaplan <me@kutsankaplan.com>
+
+  ${bold_color}LICENSE${reset_color}
+    GPLv3
+
+  ${bold_color}VERSION${reset_color}
+    $VERSION
+
+EOF
+
+	exit 0
+}
+
+function update_system_packages() {
+	if ([[ $(uname) = 'Darwin' ]] 2>/dev/null) {
+		echo; console.info "${fg[green]}brew${reset_color} update${fg[cyan]};${reset_color} ${fg[green]}brew${reset_color} upgrade${fg[cyan]};${reset_color} ${fg[green]}brew${reset_color} cleanup${fg[cyan]};${reset_color} ${fg[green]}brew${reset_color} cask cleanup"; echo
+
+		brew update
+		brew upgrade
+		brew cleanup
+
+	} elif ([[ $(uname -o) = 'Android' ]] 2>/dev/null) {
+		echo; console.info "${fg[green]}apt${reset_color} update${fg[cyan]};${reset_color} ${fg[green]}apt${reset_color} full-upgrade${fg[cyan]};${reset_color} ${fg[green]}apt${reset_color} autoremove${fg[cyan]};${reset_color} ${fg[green]}apt${reset_color} autoclean"; echo
+
+		apt update
+		apt full-upgrade
+		apt autoremove
+		apt autoclean
+
+	} elif ([[ $(uname) = 'Linux' ]] 2>/dev/null) {
+		echo; console.info "\033[${color[underline]}m${fg[green]}sudo${reset_color} ${fg[green]}apt${reset_color} update${fg[cyan]};${reset_color} \033[${color[underline]}m${fg[green]}sudo${reset_color} ${fg[green]}apt${reset_color} full-upgrade${fg[cyan]};${reset_color} \033[${color[underline]}m${fg[green]}sudo${reset_color} ${fg[green]}apt${reset_color} autoremove${fg[cyan]};${reset_color} \033[${color[underline]}m${fg[green]}sudo${reset_color} ${fg[green]}apt${reset_color} autoclean"; echo
+
+		sudo apt full-upgrade
+		sudo apt autoremove
+		sudo apt autoclean
+	}
+}
+
+function update_npm_packages() {
+	echo; console.info "${fg[green]}npm${reset_color} update --global${fg[cyan]};${reset_color} ${fg[green]}npm${reset_color} install npm --global"; echo
+
+	npm update --global
+	npm install npm --global
+}
+
+function update_vim_plugins() {
+	echo; console.info "${fg[green]}nvim${reset_color} +PlugUpdate +PlugUpgrade +qa"; echo
+
+	nvim +PlugUpdate +PlugUpgrade +qa
+}
+
+function update_git_submodules() {
+	echo; console.info "${fg[green]}git${reset_color} submodule update --remote --init"; echo
+	git submodule update --remote --init
+}
+
+##
+# @param $1 {string} Subcommand.
+# @param $2 {string} Subcommand arguments.
+##
+function main() {
+	source ~/.bin/utils/console.zsh 2>/dev/null || {
+		echo
+		echo -e '  \033[41m ERROR \033[0m This script requires \033[01mconsole.zsh\033[0m component to provide sane error output.'
+		echo '          There was nothing found at \033[01m~/.bin/utils/console.zsh\033[0m.'
+		echo
+
+		exit 1
+	}
+
+	local subcommand=${1:-''}
+
+	case "$subcommand" {
+		'-h' | '--help' | 'help')
+			show_help
+			;;
+
+		'--version' | 'version')
+			echo; console.info "update $VERSION"; echo
+			exit 0
+			;;
+
+		'')
+			update_system_packages && \
+			update_npm_packages && \
+			update_vim_plugins && \
+			update_git_submodules && exit 0 || exit 1
+			;;
+
+		*)
+			echo
+			console.error \
+				"${bold_color}$subcommand${reset_color} is not a known subcommand." \
+				"Run ${bold_color}update --help${reset_color} for a list of known subcommands."
+			echo
+
+			exit 1
+	}
+}
+main "$@"
+
+on_error() {
+	echo; console.error 'Something went wrong. Check the output above to find out.'; echo
+}
+trap on_error EXIT
