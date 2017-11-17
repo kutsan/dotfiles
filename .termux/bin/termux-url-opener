@@ -1,0 +1,74 @@
+#!/usr/bin/env zsh
+
+setopt ERR_EXIT PIPE_FAIL WARN_CREATE_GLOBAL WARN_NESTED_VAR
+
+##
+# Download given video URL.
+#
+# @param $1 {string} URL of the video.
+##
+function url_youtube-dl() {
+	if (! hash youtube-dl 2>/dev/null) {
+		echo; console.error 'youtube-dl is not installed.'; echo
+		return false
+	}
+
+	local file_path=$(youtube-dl "$1" --get-filename --restrict-filenames --output '~/Downloads/%(title)s.%(ext)s')
+	local file_name=$(basename "$file_path")
+
+	youtube-dl "$1" --output "$file_path" && show_notification $file_name $file_path
+}
+
+##
+# Show complete notification on download.
+#
+# @param $1 {string} Name of the file.
+# @param $2 {string} Path of the file.
+##
+function show_notification() {
+	if (! hash termux-notification 2>/dev/null) {
+		echo; console.error "Termux:API is not installed. Can't access termux-notification API to create notification."
+		return false
+	}
+
+	termux-notification \
+		--title 'Termux download process completed.' \
+		--content "\"$1\" downloaded." \
+		--action "xdg-open $2"
+}
+
+##
+# @param $1 {string} URL, that will be handled by this program.
+##
+function main() {
+	source ~/.bin/utils/console.zsh || exit 1
+
+	if (( ${#@} == 0 )) {
+		echo; console.warn 'No argument was provided.'; echo
+		exit 0
+	}
+
+	local DOWNLOAD_METHODS=(youtube-dl)
+	local command=''
+
+	if (( ${#DOWNLOAD_METHODS[@]} == 1 )) {
+		command="$DOWNLOAD_METHODS[1]"
+	} else {
+		if (hash fzf) {
+			command=$(echo $DOWNLOAD_METHODS | tr ' ' '\n' | fzf)
+		} else {
+			# Prepare select.
+			PS3='> '
+			local func=''
+			local REPLY=''
+
+			select func ($DOWNLOAD_METHODS) {
+				command="$func"
+				break
+			}
+		}
+	}
+
+	url_$command "$1"
+}
+main "$@"
