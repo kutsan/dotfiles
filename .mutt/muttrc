@@ -1,0 +1,93 @@
+# -- Setup {{{1
+# --------------------------------------------------------------------------------------------------
+
+set editor = "$EDITOR"
+
+# Default account.
+source ~/.mutt/accounts/com.kutsankaplan/config.mutt
+
+# -- Options {{{1
+# --------------------------------------------------------------------------------------------------
+
+# Character set.
+set charset = 'utf-8'
+
+# Don't save outgoing messages into ~/sent file.
+unset record
+
+# Convert the given MIME types to text/plain when displaying messages.
+auto_view text/html
+
+# The maximum amount of time in seconds that will wait before polling
+# open IMAP connections.
+set imap_keepalive = 300
+
+# Open new IMAP connection automatically.
+unset imap_passive
+
+# How often should look for new mails (time in seconds).
+set mail_check = 30
+
+# Fetch the set of subscribed folders from server on connection, and
+# add them to the set of mailboxes it polls for new mail just as if had
+# issued individual "mailboxes" commands.
+set imap_check_subscribed
+
+# Show other folders in sidebar
+set sidebar_visible = yes
+
+# -- Mappings {{{1
+# --------------------------------------------------------------------------------------------------
+
+# Navigation
+bind pager k previous-line
+bind pager j next-line
+
+# Sidebar
+bind index,pager \Ck sidebar-prev
+bind index,pager \Cj sidebar-next
+bind index,pager \Cl sidebar-open
+
+# -- Style {{{1
+# --------------------------------------------------------------------------------------------------
+
+# Specifies how to sort messages in the "index" menu.
+set sort = 'threads'
+set sort_aux = 'reverse-last-date-received'
+
+# Colors
+color normal	 color253    color234
+color indicator  color230    color238
+color status     color101    color16
+color tree       color208    color234
+color signature  color102    color234
+color message    color253    color234
+color attachment color117    color234
+color error      color30     color234
+color tilde      color130    color235
+color search     color100    default
+color markers    color138    default
+color quoted     color107    color234
+color quoted1    color66     color234
+color quoted2    color32     color234
+color quoted3    color30     color234
+color quoted4    color99     color234
+color quoted5    color36     color234
+color quoted6    color114    color234
+color quoted7    color109    color234
+color quoted8    color41     color234
+color quoted9    color138    color234
+color index      color202    color234  ~F
+color index      color39     color234  ~N
+color index      color39     color234  ~O
+color index      color229    color22   ~T
+color index      color240    color234  ~D
+color hdrdefault color30     color233
+color header	 color132    color233  '^date:'
+color header	 color153    color233  '^(to|cc|bcc):'
+color header	 color120    color233  '^from:'
+color header	 color178    color233  '^subject:'
+color header     color31     color233  '^user-agent:'
+color header	 color29     color233  '^reply-to:'
+
+# }}} vim: foldmethod=marker foldlevel=0

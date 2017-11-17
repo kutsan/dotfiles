@@ -1,0 +1,32 @@
+# The email and its password for IMAP and SMTP.
+set my_email = 'me@kutsankaplan.com'
+set my_password = `gpg --no-tty --quiet --decrypt ~/.mutt/accounts/com.kutsankaplan/secret.gpg`
+
+# Real or personal name.
+set realname = 'Kutsan Kaplan'
+
+# Default 'from' adress.
+set from = $my_email
+
+# Receive email via IMAP.
+set imap_user = $my_email
+set imap_pass = $my_password
+set folder = 'imaps://imappro.zoho.com:993'
+
+# The spool mailbox location.
+set spoolfile = '+INBOX'
+
+# The draft file where postponed emails saved.
+set postponed = '+Drafts'
+
+# Send email via SMTP with msmtp.
+set sendmail = "msmtp --file=$HOME/.mutt/msmtprc --account=com.kutsankaplan"
+
+# Cache databases. Store messages locally to speed things up.
+set header_cache = '~/.mutt/accounts/com.kutsankaplan/cache/headers/'
+set message_cachedir = '~/.mutt/accounts/com.kutsankaplan/cache/bodies/'
+
+# The file where the trusted certificates are saved instead of ~/.mutt_certificates.
+set certificate_file = '~/.mutt/accounts/com.kutsankaplan/certificates'
+
+# vim: filetype=muttrc
