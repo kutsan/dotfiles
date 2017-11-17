@@ -1,0 +1,179 @@
+#!/usr/bin/env zsh
+
+##
+# clipboard - Cross-platform Clipboard Wrapper
+#
+# USAGE
+#   Run this program without arguments to see list of options.
+#
+# TODO
+#   - Support shell redirection operators for piping.
+#   - Fix xsel bugs
+#
+# @author Kutsan Kaplan <me@kutsankaplan.com>
+# @license GPLv3
+# @version v0.1.0
+##
+
+setopt ERR_EXIT PIPE_FAIL WARN_CREATE_GLOBAL WARN_NESTED_VAR
+
+typeset -g VERSION='v0.1.0'
+
+##
+# Show program usage informations and exit.
+##
+function show_help() {
+cat << EOF
+
+  ${bold_color}clipboard${reset_color} - Cross-platform Clipboard Wrapper
+
+  Provides sane clipboard API across supported systems.
+
+  ${bold_color}SYNOPSIS${reset_color}
+    $ ${fg[green]}clipboard${reset_color} <set|get|help|--help|version|--version> [<args>]
+
+  ${bold_color}EXAMPLES${reset_color}
+    $ ${fg[green]}clipboard${reset_color} set ${fg[yellow]}'Example text.'${reset_color}
+    $ ${fg[green]}clipboard${reset_color} get ${fg[black]}# Prints 'Example text.'.${reset_color}
+    $ ${fg[green]}echo${reset_color} ${fg[yellow]}'Example text.'${reset_color} | ${fg[green]}clipboard${reset_color} set
+
+  ${bold_color}AUTHOR${reset_color}
+    Kutsan Kaplan <me@kutsankaplan.com>
+
+  ${bold_color}LICENSE${reset_color}
+    GPLv3
+
+  ${bold_color}VERSION${reset_color}
+    $VERSION
+
+EOF
+
+	exit 0
+}
+
+##
+# Set CLIPBOARD variable to correct value for that platform.
+##
+function determinate_clipboard_manager() {
+	function _console.error_and_suggest_to_install() {
+		echo; console.error "Could not find any available clipboard manager. Make sure you have ${bold_color}${@}${reset_color} installed."; echo
+
+		exit 1
+	}
+
+	typeset -g -A CLIPBOARD
+
+	case "$OSTYPE" {
+		darwin*)
+			if ((hash pbcopy && hash pbpaste) 2>/dev/null) {
+				CLIPBOARD[set]='pbcopy'
+				CLIPBOARD[get]='pbpaste'
+			} else {
+				_console.error_and_suggest_to_install 'pbcopy, pbpaste'
+			}
+			;;
+
+		linux-android*)
+			if ((hash termux-clipboard-set && hash termux-clipboard-get) 2>/dev/null) {
+				CLIPBOARD[set]='termux-clipboard-set'
+				CLIPBOARD[get]='termux-clipboard-get'
+			} else {
+				_console.error_and_suggest_to_install 'Termux:API (from Play Store), termux-api (from apt package)'
+			}
+			;;
+
+		linux*)
+			if (hash xclip 2>/dev/null) {
+				CLIPBOARD[set]='xclip -in'
+				CLIPBOARD[get]='xclip -out'
+			} else {
+				_console.error_and_suggest_to_install 'xclip'
+			}
+			;;
+
+		*)
+			console.error 'Unsupported system.'
+			;;
+	}
+}
+
+##
+# Set clipboard content with giving parameters.
+#
+# @param $1 {string} Text for clipboard content.
+##
+function sub_set() {
+	# Set also tmux clipboard buffer if tmux available.
+	if (hash tmux &>/dev/null && [[ "$TMUX" != '' ]]) {
+		tmux set-buffer -- "$@"
+	}
+
+	printf "$@" | ${CLIPBOARD[set]}
+}
+
+##
+# Print current clipboard content to stdout.
+#
+# @returns {string} Clipboard data.
+##
+function sub_get() {
+	echo $(${CLIPBOARD[get]})
+}
+
+##
+# @param $1 {string} Subcommand.
+# @param $2 {string} Subcommand arguments.
+##
+function main() {
+	source ~/.bin/utils/console.zsh 2>/dev/null || {
+		echo
+		echo -e '  \033[41m ERROR \033[0m This script requires \033[01mconsole.zsh\033[0m component to provide sane error output.'
+		echo '          There was nothing found at \033[01m~/.bin/utils/console.zsh\033[0m.'
+		echo
+
+		exit 1
+	}
+
+	local subcommand=${1:-''}
+
+	case "$subcommand" {
+		'' | '-h' | '--help' | 'help')
+			show_help
+			;;
+
+		'--version' | 'version')
+			echo; console.info "clipboard $VERSION"; echo
+			;;
+
+		'set' | 'get')
+			determinate_clipboard_manager
+
+			# Exit if there is no available clipboard manager.
+			if [[ $CLIPBOARD == '' ]] {
+				echo; console.error 'There is no available clipboard manager this program can use.'; echo
+				exit 1
+			}
+
+			# If running through a pipe.
+			if ([[ "$subcommand" == 'set' ]] && [[ -p /dev/stdin ]]) {
+				sub_${subcommand} "$(cat </dev/stdin)"
+				exit 0
+			}
+
+			shift
+			sub_${subcommand} "$*"
+
+			exit 0
+			;;
+
+		*)
+			echo
+			console.error \
+				"${bold_color}$subcommand${reset_color} is not a known subcommand." \
+				"Run ${bold_color}clipboard --help${reset_color} for a list of known subcommands."
+			echo
+
+			exit 1
+	}
+}
+main "$@"
