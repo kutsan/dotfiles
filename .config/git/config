@@ -1,0 +1,45 @@
+[user]
+	name = Kutsan Kaplan
+	email = me@kutsankaplan.com
+	signingkey = 439AC30C
+
+[core]
+	editor = $EDITOR
+	excludesfile = ~/.config/git/gitignoreglobal
+	whitespace = warn
+
+[alias]
+	today = log --since=midnight --oneline --graph --decorate
+	yesterday = log --after=yesterday.midnight --before 0am --oneline --graph --decorate
+	count = !sh -c 'git log --oneline | wc -l'
+
+[pull]
+	rebase = true
+
+[diff]
+	tool = vimdiff
+
+[merge]
+	tool = vimdiff
+
+[commit]
+	gpgsign = true
+
+[color]
+	ui = true
+
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+
+[color "status"]
+	added = yellow
+	changed = blue
+	untracked = red
