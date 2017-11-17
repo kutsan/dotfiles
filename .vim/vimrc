@@ -1,0 +1,850 @@
+" -- Setup {{{1
+" --------------------------------------------------------------------------------------------------
+
+" Default encoding.
+set encoding=UTF-8
+scriptencoding UTF-8
+
+" Turns on filetype detection.
+filetype plugin indent on
+
+" Enable syntax highlighting.
+if !exists('g:syntax_on') | syntax enable | endif
+
+" Enable True Color support for Neovim.
+if has('nvim') | let $NVIM_TUI_ENABLE_TRUE_COLOR = 1 | endif
+
+" Color options and scheme.
+set background=dark " Choose dark colors if available.
+set termguicolors " Enable True Color support.
+colorscheme deep-space " Color scheme.
+
+" viminfo/shada file location and options for neovim and vim.
+if has('nvim') | set shada+=n~/.vim/nviminfo | else | set viminfo+=!,n~/.vim/viminfo | endif
+
+" Leader keys.
+let g:mapleader=' ' " Space key.
+let g:maplocalleader='\'
+
+" Ensure the cursor is its box form in vanilla Vim.
+if !has('nvim') && !has('gui')
+	augroup EnsureCursorBox
+		autocmd VimEnter * silent execute "!printf '[0 q'" | redraw!
+	augroup END
+endif
+
+" Disable unused built-in plugins.
+let g:loaded_gzip = 1
+let g:loaded_rrhelper = 1
+let g:loaded_tarPlugin = 1
+let g:loaded_zipPlugin = 1
+let g:loaded_netrwFileHandlers = 1
+let g:loaded_netrwSettings = 1
+let g:loaded_2html_plugin = 1
+let g:loaded_vimballPlugin = 1
+let g:loaded_getscriptPlugin = 1
+let g:loaded_logipat = 1
+let g:loaded_man = 1
+let g:loaded_tutor_mode_plugin = 1
+let g:loaded_matchit = 1
+let g:loaded_matchparen = 1
+
+" -- Plugins {{{1
+" --------------------------------------------------------------------------------------------------
+
+" -- Setup {{{2
+" ------------------------------------------------
+
+let g:plug_shallow = 0 " Disable shallow cloning.
+
+" Automatically install the plugin manager itself if it's not installed.
+if empty(glob('~/.vim/autoload/plug.vim'))
+	silent !curl
+				\ --fail
+				\ --location
+				\ --create-dirs
+				\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+				\ --output
+				\ ~/.vim/autoload/plug.vim
+
+	augroup VimPlugAutomaticSelfInstallation
+		autocmd!
+		autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+	augroup END
+endif
+
+" Automatically install missing plugins.
+augroup VimPlugAutomaticPluginInstallation
+	autocmd!
+	autocmd VimEnter *
+				\ if len(filter(values(g:plugs), '!isdirectory(v:val.dir)')) |
+				\	PlugInstall --sync | q |
+				\ endif
+augroup END
+
+" Disable line numbers completely in plugin manager.
+augroup VimPlugDisableLineNumbers
+	autocmd!
+	autocmd FileType vim-plug setlocal nonumber norelativenumber
+augroup END
+
+" }}}
+
+" VimPlug
+call plug#begin('~/.vim/plugged')
+
+" -- ale {{{2
+" ------------------------------------------------
+
+Plug 'w0rp/ale' " Asynchronous lint engine for Neovim and Vim 8+
+	let g:ale_sign_column_always = 1 " Always keep sign column open even there is no error remain.
+	let g:ale_completion_delay = 2000 " The number of milliseconds before start linting.
+	let g:ale_sign_error = '•' " The sign for errors in the sign gutter.
+	let g:ale_sign_warning = '•' " The sign for warnings in the sign gutter.
+	let g:ale_echo_msg_error_str = 'E' " The string used for error severity in the echoed message.
+	let g:ale_echo_msg_warning_str = 'W' " The string used for warning severity in the echoed message.
+	let g:ale_echo_msg_format = '[%linter%][%severity%] %s' " Define the form of the echoed message.
+	let g:ale_fixers = {
+			\ 'javascript': ['eslint'],
+			\ 'javascript.jsx': ['eslint'],
+		\ }
+
+" -- auto-pairs {{{2
+" ------------------------------------------------
+
+Plug 'jiangmiao/auto-pairs' " Insert or delete brackets, parens, quotes in pair
+	autocmd VimEnter,BufEnter,BufWinEnter * silent! iunmap <buffer> <M-">
+
+" -- auto-save {{{2
+" ------------------------------------------------
+
+Plug '907th/vim-auto-save', { 'on': 'AutoSaveToggle' } " Automatically save changes to disk without having to use `:write`
+	let g:auto_save_silent = 1 " Disable the auto-save notification.
+
+" -- colorizer {{{2
+" ------------------------------------------------
+
+Plug 'chrisbra/Colorizer', { 'on': 'ColorToggle' } " Highlight HEX and RGB color codes and names in their background
+	let g:colorizer_auto_filetype='html,css,styl,sass,javascript.jsx' " Automatically enable highlighting in certain file types.
+
+" -- commentary {{{2
+" ------------------------------------------------
+
+Plug 'tpope/vim-commentary' " Comment and uncomment with predefined key bindings
+
+" -- deoplete {{{2
+" ------------------------------------------------
+
+if has('nvim') && has('python3')
+	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'  } " Asynchronous auto-completion framework for Neovim
+		let g:deoplete#enable_at_startup = 1 " Enable at start.
+
+		" Go next and previous completion with <Tab> and <S-Tab> when completion available.
+		inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+		inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+		" <C-h> and Backspace close pop-up and delete backward char.
+		inoremap <expr> <C-h> deoplete#smart_close_popup()."\<C-h>"
+		inoremap <expr> <BS> deoplete#smart_close_popup()."\<C-h>"
+endif
+
+" -- editorconfig {{{2
+" ------------------------------------------------
+
+Plug 'editorconfig/editorconfig-vim' " EditorConfig integration
+
+" -- emmet {{{2
+" ------------------------------------------------
+
+Plug 'mattn/emmet-vim', { 'on': 'EmmetInstall' } " Emmet integration
+	let g:user_emmet_complete_tag = 0 " Disable using default omni complete function.
+	let g:user_emmet_install_global = 0 " Disable creating global mappings.
+
+	" Automatically activate Emmet in following file types.
+	augroup EmmetInstall
+		autocmd!
+		autocmd FileType html,css,styl,javascript.jsx EmmetInstall
+	augroup END
+
+	" Expand pattern with <Tab> character.
+	augroup EmmetExpandTab
+		autocmd!
+		autocmd FileType html,css,styl,sass,javascript.jsx imap <silent><buffer><expr> <Tab> <SID>EmmetExpandTab()
+	augroup END
+
+	" Expand pattern with <Tab> character.
+	function! s:EmmetExpandTab()
+		let l:line = getline('.')
+
+		if col('.') < len(l:line)
+			let l:line = matchstr(l:line, '[">][^<"]*\%'.col('.').'c[^>"]*[<"]')
+
+			if len(l:line) >= 2
+				return "\<C-n>"
+			endif
+		endif
+
+		if emmet#isExpandable()
+			return emmet#expandAbbrIntelligent("\<Tab>")
+		endif
+
+		return "\<Tab>"
+	endfunction
+
+" -- exception {{{2
+" ------------------------------------------------
+
+Plug 'tweekmonster/exception.vim' " Tracing exceptions thrown by Vim scripts
+	nnoremap <silent> <Leader>it :call exception#trace()<CR>
+
+" -- fugitive {{{2
+" ------------------------------------------------
+
+Plug 'tpope/vim-fugitive' " Git client
+
+" -- fzf {{{2
+" ------------------------------------------------
+
+Plug $FZF_HOME | Plug 'junegunn/fzf.vim' " Fuzzy finder fzf as Vim plugin
+	let g:fzf_command_prefix = 'Fzf' " Add prefix 'Fzf' commands for grouping.
+
+	" Customize `fzf` colors to match current color scheme.
+	let g:fzf_colors = {
+		\ 'fg': ['fg', 'Normal'],
+		\ 'bg': ['bg', 'Normal'],
+		\ 'hl': ['fg', 'Comment'],
+		\ 'fg+': ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+		\ 'bg+': ['bg', 'CursorLine', 'CursorColumn'],
+		\ 'hl+': ['fg', 'Statement'],
+		\ 'info': ['fg', 'PreProc'],
+		\ 'border': ['fg', 'Ignore'],
+		\ 'prompt': ['fg', 'Conditional'],
+		\ 'pointer': ['fg', 'Exception'],
+		\ 'marker': ['fg', 'Keyword'],
+		\ 'spinner': ['fg', 'Label'],
+		\ 'header': ['fg', 'Comment']
+	\ }
+
+	nnoremap <silent> <C-p> :FzfGFiles<CR>
+	nnoremap <silent> <Leader>x :FzfCommands<CR>
+	nnoremap <silent> <Leader>b :FzfBuffers<CR>
+	nnoremap <silent> <Leader>h :FzfHelptags<CR>
+	nnoremap <silent> <Leader>; :FzfHistory:<CR>
+	nnoremap <silent> <Leader>/ :FzfHistory/<CR>
+
+	function! s:FzfStatusLine()
+		highlight FzfReset guifg=bg
+		setlocal statusline=%#FzfReset#\  " Disable status line.
+	endfunction
+
+	augroup FzfOptions
+		autocmd!
+		autocmd! User FzfStatusLine call <SID>FzfStatusLine() " Disable status line.
+	augroup END
+
+" -- gitgutter {{{2
+" ------------------------------------------------
+
+Plug 'airblade/vim-gitgutter' " Show Git diff in the sign column
+	let g:gitgutter_map_keys = 0 " Disable all key mappings.
+	let g:gitgutter_sign_added = '│' " U+2502
+	let g:gitgutter_sign_modified = '│' " U+2502
+	let g:gitgutter_sign_removed = '│' " U+2502
+	let g:gitgutter_sign_modified_removed = '│' " U+2502
+	let g:gitgutter_max_signs = 10000 " Increase the maximum number of signs.
+
+" -- instant-markdown {{{2
+" ------------------------------------------------
+
+Plug 'suan/vim-instant-markdown', { 'on': 'InstantMarkdownPreview' } " Live markdown preview in browser
+	let g:instant_markdown_autostart = 0 " Don't start the daemon automatically.
+
+" -- languageclient-neovim {{{2
+" ------------------------------------------------
+
+" if has('nvim') && has('python3')
+" 	Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
+" 		let g:LanguageClient_autoStart = 1 " Automatically start language server client.
+" 		let g:LanguageClient_diagnosticsEnable = 0 " Disable diagnostics.
+" 		let g:LanguageClient_diagnosticsList = 'location' " Use location list for diagnostics.
+
+" 		let g:LanguageClient_serverCommands = {}
+
+" 		if executable('javascript-typescript-stdio') | let g:LanguageClient_serverCommands.javascript = ['javascript-typescript-stdio'] | endif
+
+" 		augroup LanguageClientConfig
+" 			" Use as omnifunc by default.
+" 			autocmd FileType html,css,javascript,python,json setlocal omnifunc=LanguageClient#complete
+
+" 			" Mappings.
+" 			autocmd FileType html,css,javascript,python,json nnoremap <buffer>
+" 				\ <Leader>ld :call LanguageClient_textDocument_definition()<CR>
+" 			autocmd FileType html,css,javascript,python,json nnoremap <buffer>
+" 				\ <Leader>lh :call LanguageClient_textDocument_hover()<CR>
+" 			autocmd FileType html,css,javascript,python,json nnoremap <buffer>
+" 				\ <Leader>lr :call LanguageClient_textDocument_rename()<CR>
+" 			autocmd FileType html,css,javascript,python,json nnoremap <buffer>
+" 				\ <Leader>lf :call LanguageClient_textDocument_documentSymbol()<CR>
+" 		augroup END
+" endif
+
+" -- nvim-completion-manager {{{2
+" ------------------------------------------------
+
+" if has('nvim') && has('python3')
+" 	Plug 'roxma/nvim-completion-manager'
+" 		" Go next and previous completion with <Tab> and <S-Tab> when completion available.
+" 		inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+" 		inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" 		let g:cm_matcher = { 'case': 'smartcase', 'module': 'cm_matchers.fuzzy_matcher' } " Use fuzzy matcher.
+" endif
+
+" -- peekaboo {{{2
+" ------------------------------------------------
+
+Plug 'junegunn/vim-peekaboo' " Extends register and macro keys in normal mode
+
+" -- polyglot {{{2
+" ------------------------------------------------
+
+Plug 'sheerun/vim-polyglot' " Big collection of language packs as scripts are loaded only on demand
+	" vim-jsx
+	let g:jsx_ext_required = 1 " Enabled only for files with the `.jsx` extension.
+
+	" vim-javascript
+	let g:javascript_plugin_jsdoc = 1 " Enables syntax highlighting for JSDocs.
+	let g:javascript_plugin_flow = 1 " Enables Flow syntax support.
+
+" -- prettier {{{2
+" ------------------------------------------------
+
+Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['javascript', 'javascript.jsx', 'css', 'stylus', 'sass', 'html', 'json', 'graphql'] } " Code formatter prettier integration
+	let g:prettier#exec_cmd_async = 1 " Use prettier in asynchronous mode.
+
+" -- quick-scope {{{2
+" ------------------------------------------------
+
+Plug 'moorereason/quick-scope', { 'branch': 'protect-higroup' } " Highlight which characters to target for `f`, `F` and family
+
+" -- repeat {{{2
+" ------------------------------------------------
+
+Plug 'tpope/vim-repeat' " Repeat command support for various plugins
+
+" -- rooter {{{2
+" ------------------------------------------------
+
+Plug 'airblade/vim-rooter' " Change the current working directory to the Git project root when you open a file or directory
+	let g:rooter_silent_chdir = 1 " Disable echoing the project directory everytime CWD changes.
+
+" -- sayonara {{{2
+" ------------------------------------------------
+
+Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' } " Sane buffer and window deletion
+	nnoremap <silent> <Leader>q :Sayonara<CR>
+	nnoremap <silent> <Leader>Q :Sayonara!<CR>
+
+" -- sneak {{{2
+" ------------------------------------------------
+
+Plug 'justinmk/vim-sneak' " Jump to any location specified by two characters
+	let g:sneak#use_ic_scs = 1 " Case sensitivity is determined by 'ignorecase' and 'smartcase'.
+	let g:sneak#label = 1 " Highlight jump locations like EasyMotion-like jump
+
+" -- surround {{{2
+" ------------------------------------------------
+
+Plug 'tpope/vim-surround' " Surround commands for parentheses, brackets, quotes, XML tags
+
+" -- targets {{{2
+" ------------------------------------------------
+
+Plug 'wellle/targets.vim' " Add additional text objects and targets
+
+" -- undotree {{{2
+" ------------------------------------------------
+
+Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' } " Visualize undo tree
+	let g:undotree_WindowLayout = 4 " Open tree on the right side and open diff below the buffer.
+	let g:undotree_SetFocusWhenToggle = 1 " Move focus after being opened.
+	let g:undotree_RelativeTimestamp = 0 " Use exact time instead of relative.
+	let g:undotree_HelpLine = 0 " Disable 'Press ? for help' text.
+	let g:undotree_ShortIndicators = 1 " Use short timestamps.
+
+	nnoremap <Leader>u :UndotreeToggle<CR>
+
+" -- unimpaired {{{2
+" ------------------------------------------------
+
+Plug 'tpope/vim-unimpaired' " Adds several pairs of bracket maps
+
+" -- unite {{{2
+" ------------------------------------------------
+
+Plug 'Shougo/unite.vim' " Create user interfaces
+
+" -- vimfiler {{{2
+" ------------------------------------------------
+
+Plug 'Shougo/vimfiler.vim', { 'on': [] } | call plug#load('vimfiler.vim') " File explorer
+	let g:vimfiler_as_default_explorer = 1 " Take the place of default file manager 'netrw'.
+	let g:vimfiler_tree_indentation = 2 " Indentation length of tree.
+	let g:vimfiler_ignore_pattern = ['^\.git$', '^\.DS_Store$'] " Disable showing certain files and folders.
+	let g:vimfiler_tree_leaf_icon = '' " Disable leaf icon for more simplicity.
+	let g:vimfiler_tree_opened_icon = '' " Use Unicode (from PUA) symbol for open tree.
+	let g:vimfiler_tree_closed_icon = '' " Use Unicode (from PUA) symbol for closed tree.
+	let g:vimfiler_readonly_file_icon = '' " Use Unicode (from PUA) symbol for read-only files.
+
+	" Custom options.
+	call vimfiler#custom#profile(
+		\ 'default',
+		\ 'context',
+		\ {
+		\	'explorer': 1,
+		\	'find': 0,
+		\	'safe': 0,
+		\	'split': 0,
+		\	'status': 0,
+		\	'toggle': 1,
+		\	'winwidth': 35
+		\ }
+	\ )
+
+	" Open explorer buffer silently and find the currently open file.
+	nnoremap <silent> <Leader>f :VimFiler -explorer -no-focus<CR>
+	nnoremap <silent> <Leader>n :VimFiler -explorer -find<CR>
+
+	" Specific options to use when vimfiler buffer opened.
+	augroup VimFilerLaunchOptions
+		autocmd!
+
+		" Autostart on launch without focus if it's not Android.
+		autocmd VimEnter * if $OSTYPE !=# 'linux-android' | VimFiler -explorer -no-focus -find | endif
+
+		" Disable line numbers completely.
+		autocmd FileType vimfiler setlocal nonumber norelativenumber
+
+		" Disable tilde characters.
+		autocmd FileType vimfiler highlight EndOfBuffer guifg=bg
+
+		" Unbind <C-l> for the sake of other key bindings.
+		autocmd FileType vimfiler nunmap <buffer> <C-l>
+	augroup END
+
+	" Automatically quit Vim if vimfiller is last and only buffer.
+	augroup VimFilerCloseIfLastOne
+		autocmd!
+		autocmd BufEnter *
+			\ if (!has('vim_starting') && winnr("$") == 1 && &filetype ==# 'vimfiler') |
+			\	quit |
+			\ endif
+	augroup END
+
+" -- devicons {{{2
+" ------------------------------------------------
+
+Plug 'ryanoasis/vim-devicons' " Adds additional file type glyphs to popular plugins
+	let g:DevIconsEnableFoldersOpenClose = 1 " Enable open and close folder glyph flags.
+	let g:WebDevIconsUnicodeDecorateFolderNodes = 1 " Enable folder glyph flag.
+	let g:webdevicons_enable_vimfiler = 1 " Enable vimfiler support.
+
+	" Custom icons.
+	let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {} " Initialize the custom icons object.
+	let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = '' " Disable folder icons.
+	let g:WebDevIconsUnicodeDecorateFileNodesDefaultSymbol = '' " Default icon in case there no match found.
+	let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['html'] = '' " Default HTML icon.
+	let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['css'] = '' " Default CSS icon.
+	let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['md'] = '' " Default Markdown icon.
+
+" }}}
+
+call plug#end()
+
+" -- Options {{{1
+" --------------------------------------------------------------------------------------------------
+
+" Editor
+set backspace=indent,eol,start " Allow backspacing over everything in insert mode.
+set belloff=all " Turn off the bell upon all events.
+set breakindent " Wrapped lines will be indented with same amount of space.
+set clipboard=unnamed,unnamedplus " Use system clipboard.
+set complete-=i " Disable scanning current and included files.
+set completeopt=longest,menuone " Options for insert mode completion.
+set cursorline " Highlight the line background of the cursor.
+set updatetime=2000 " If that milliseconds nothing is typed the swap file will be written.
+set display=lastline " As much as possible of the last line in a window will be displayed.
+set fillchars= " Characters to fill the status lines and vertical separators.
+set formatoptions=jcql " General text formatting options used by many mechanics.
+set formatprg=par\ -w80 " External formatter program that will be used with `gq` operator.
+set keywordprg=:help " Default command to be used when looking definition.
+set langnoremap " Setting 'langmap' does not apply to characters resulting from a mapping.
+set listchars=tab:.\ ,trail:•,nbsp:␣ " Strings to use when 'list' option set.
+set modelines=1 " Maximum number of lines that is checked for set commands.
+set mouse=a " Enable mouse use in all modes.
+set nojoinspaces " Disable inserting two spaces after `.`, `?`, `!` with join command.
+set nolangremap " Setting 'langmap' does not apply to characters resulting from a mapping.
+set noruler " Disable showing line numbers in command line.
+set noshowmatch " When a bracket is inserted, do not jump to the matching one.
+set nostartofline " Prevent the cursor from changing the current column when jumping.
+set nowrap " Prevent wrapping for long lines.
+set nrformats-=octal " Don't consider numbers that start with a zero as octal.
+set number " Show line numbers alongside relative numbers.
+set pastetoggle=<F2> " Toggle paste mode with given key.
+set pumheight=10 " Maximum number of items to show in the pop-up menu for completion.
+set relativenumber " Show relative line numbers alongside numbers.
+set report=0 " Threshold for reporting number of lines changed.
+set scrolloff=8 " Minimum number of screen lines to keep above and below the cursor.
+set sessionoptions-=options " Options for `mksession` command.
+set shortmess=filmnrwxoOstTIc " Use abbreviations and short messages in command menu line.
+set showmatch " Show matching parentheses under cursor.
+set sidescroll=20 " Columns to scroll horizontally when cursor is moved off the screen.
+set signcolumn=yes " Always draw the sign column even there is no sign in it.
+set synmaxcol=200 " Maximum column in which to search for syntax items.
+set textwidth=0 " Prevent auto wrapping when using affecting keys.
+set timeoutlen=500 " Mapping delays in milliseconds.
+set title " Show title as in 'titlestring' in title bar of window.
+set titlestring=%f " Format of the title used by 'title'.
+set ttimeoutlen=10 " Key code delays in milliseconds.
+set ttyfast " More characters will be sent to the screen for redrawing in terminal.
+set visualbell " Instead of beeping, shows a visual bell on errors.
+if has('nvim') | set inccommand=nosplit | endif " Show live substitution results as you type.
+if has('nvim') | set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor | endif " Change cursor shape among modes.
+
+" Indentation
+set nosmarttab " Tab key always inserts blanks according to 'tabstop'.
+set shiftround " Round indent to multiple of 'shiftwidth'. Applies to > and < commands.
+set shiftwidth=4 " Affects what happens when you press `>>`, `<<` or `==`.
+set smartindent " Automatically inserts one extra level of indentation in some cases.
+set tabstop=4 " TAB character length.
+
+" Search
+set ignorecase " Make default search is not case sensitive.
+set incsearch " Instantly show results when you start searching.
+set nohlsearch " Disable highlight the matched search results by default.
+set smartcase " If a uppercase character is entered, the search will be case sensitive.
+
+" Backup
+set backupdir=~/.vim/temp/backup// " The directory for backup files.
+set backupskip= " Disable skipping backup file creation in some conditions.
+set directory=~/.vim/temp/swap// " The directory for swap files.
+set undodir=~/.vim/temp/undo// " The directory for undo files.
+set undofile " Undo tree to be saved to a file when exiting a buffer.
+set undolevels=100000 " Maximum undo limit.
+set viewdir=~/.vim/temp/view/ " Name of the directory where to store files for :mkview.
+set viewoptions=cursor,folds,unix,slash " Options used by `mkview` and `loadview` command.
+set updatecount=100 " Typing this many characters will create the swap file.
+
+" Buffers, Windows, Tabs
+set autoread " Read the file again if have been changed outside of Vim.
+set hidden " Allows you to hide buffers with unsaved changes without being prompted.
+set splitbelow " Splitting a window will put the new window below of the current one.
+set splitright " Splitting a window will put the new window right of the current one.
+set switchbuf=useopen " Jump to the first open window that contains the specified buffer.
+set tabpagemax=50 " Maximum number of tab pages to be opened by the `tab all` command.
+
+" Command Mode
+set cmdwinheight=18 " Height of the command window size for commands like `q:` and `q/`.
+set history=10000 " Define maximum command history size.
+set noshowcmd " Disable displaying key presses at the right bottom.
+set noshowmode " Disable native mode indicator.
+set path+=** " Clever completion with the :find command.
+set wildignorecase " Ignore case when completing in command menu.
+set wildmenu " Command-line completion operates in an enhanced mode.
+set wildmode=full " Wildmenu options.
+
+" Status Line
+set laststatus=2 " Always show the status line.
+set statusline= " Initialize the status line variable.
+set statusline+=%{repeat('\ ',4)} " Generate space characters given number of times.
+set statusline+=%{StatusLineLinterStatus()} " Linter status with Unicode (from PUA) symbols.
+set statusline+=%{repeat('\ ',4)} " Generate space characters given number of times.
+set statusline+=%.30F " Path of the open file.
+set statusline+=%{repeat('\ ',1)} " Generate space characters given number of times.
+set statusline+=%{exists('*WebDevIconsGetFileTypeSymbol')?WebDevIconsGetFileTypeSymbol():''} " FileType Unicode (from PUA) symbol.
+set statusline+=%{repeat('\ ',4)} " Generate space characters given number of times.
+set statusline+=%03l/%03L:%02c " Line numbers and column numbers in <Line>:<Column> format.
+set statusline+=%= " Align right all items from this point on.
+set statusline+=%{&spell?'\ \ ':''} " Show an icon if spell checking enabled.
+" set statusline+=%{g:auto_save?'\ \ ':''} " Show an icon if auto saving enabled.
+set statusline+=%{exists('*fugitive#head')?fugitive#head():''} " Git HEAD status.
+set statusline+=%{exists('*fugitive#head')?repeat('\ ',1):''} " Git HEAD status spaces.
+set statusline+=%y " File type.
+set statusline+=%{repeat('\ ',1)} " Generate space characters given number of times.
+
+function! StatusLineLinterStatus() abort
+	let l:counts = ale#statusline#Count(bufnr(''))
+
+	let l:all_errors = l:counts.error + l:counts.style_error
+	let l:all_warnings = l:counts.total - l:all_errors
+
+	return printf(' %d  %d', l:all_errors, l:all_warnings)
+endfunction
+
+" Fold Text
+set foldtext=FoldText() " Use custom fold text function for folds.
+
+function! FoldText() abort
+	let l:fs = v:foldstart
+
+	while getline(l:fs) !~# '\w'
+		let l:fs = nextnonblank(l:fs + 1)
+	endwhile
+
+	if l:fs > v:foldend
+		let l:line = getline(v:foldstart)
+	else
+		let l:line = substitute(getline(l:fs), '\t', repeat(' ', &tabstop), 'g')
+	endif
+
+	return
+		\ repeat(repeat(' ', 4), v:foldlevel - 1)
+		\ . '> '
+		\ . matchstr(l:line, '\v\w.+\s\ze\{')
+endfunction
+
+" GUI
+if has('gui_running')
+	set browsedir=buffer " Use the same directory as current buffer's path when browsing files.
+	set mousehide " The mouse pointer is hidden when characters are typed.
+	set guifont=FuraCode_Nerd_Font:h16 " Font and font size.
+	set guicursor+=a:blinkon0 " Disable cursor blinking for all modes.
+	set guioptions+=c " Disable native dialogues, use text prompts for simple choices.
+	set guioptions-=L " Hide left-hand scrollbar when there is a vertically split window.
+	set guioptions-=R " Hide right-hand scrollbar when there is a vertically split window.
+	set guioptions-=e " Disable native GUI tabs.
+	set guioptions-=l " Hide left-hand scrollbar.
+	set guioptions-=m " Disable menu bar.
+	set guioptions-=r " Hide right-hand scrollbar.
+endif
+
+" Colors
+highlight EndOfBuffer guifg=bg | " Hide tilde symbols for all buffers.
+let g:terminal_color_0	= '#3b4252' " Black
+let g:terminal_color_1	= '#bf616a' " Red
+let g:terminal_color_2	= '#a3be8c' " Green
+let g:terminal_color_3	= '#ebcb8b' " Yellow
+let g:terminal_color_4	= '#81a1c1' " Blue
+let g:terminal_color_5	= '#b48ead' " Magenta
+let g:terminal_color_6	= '#88c0d0' " Cyan
+let g:terminal_color_7	= '#e5e9f0' " White
+let g:terminal_color_8	= '#4c566a' " Bold Black
+let g:terminal_color_9	= '#bf616a' " Bold Red
+let g:terminal_color_10 = '#a3be8c' " Bold Green
+let g:terminal_color_11 = '#ebcb8b' " Bold Yellow
+let g:terminal_color_12 = '#81a1c1' " Bold Blue
+let g:terminal_color_13 = '#b48ead' " Bold Magenta
+let g:terminal_color_14 = '#8fbcbb' " Bold Cyan
+let g:terminal_color_15 = '#eceff4' " Bold White
+
+" -- Mappings {{{1
+" --------------------------------------------------------------------------------------------------
+
+" -- Insert Mode {{{2
+" ------------------------------------------------
+
+" Insert current time in various amount of formats with completion menu.
+
+" -- Normal Mode {{{2
+" ------------------------------------------------
+
+" Pane nagivation.
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
+" Toggle fold at current position.
+nnoremap <Tab> za
+
+" Always search with 'very magic' mode.
+nnoremap / /\v
+
+" Get rid off the search highlighting.
+nnoremap <silent> <BS> :nohlsearch<CR>
+
+" Store relative line number jumps in the jumplist if they exceed a threshold.
+nnoremap <expr> k (v:count > 5 ? "m'" . v:count : '') . 'k'
+nnoremap <expr> j (v:count > 5 ? "m'" . v:count : '') . 'j'
+
+" Forward and backward jump.
+noremap J 5j
+noremap K 5k
+
+" Avoid collision between <Tab> and <C-i> with mapping <C-i> to <F6> system-wide.
+nnoremap <F6> <C-i>
+
+" Visual select a single line in character-wise without new-line character.
+nnoremap vv _vg_
+
+" Toggle fullscreen for GUI.
+nnoremap gz :set fullscreen!<CR>
+
+" Override Ex mode with run @q.
+nnoremap Q @q
+
+" Go back to last buffer shortcut.
+nmap <C-b> <C-^>
+
+" Select last yanked or pasted text.
+nnoremap <expr> gb '`[' . getregtype()[0] . '`]'
+
+" Alternative beginning and end of line shortcuts.
+nnoremap H ^
+nnoremap L $
+
+" Send contents of a `x` command to the black hole register.
+nnoremap x "_x
+
+" Quick save only when the buffer has been modified.
+nnoremap <silent> <Leader>w :update<CR>
+
+" Clear highlighting.
+nnoremap <Leader>c :let @/ = ''<CR>
+
+" Quickly refactor variables.
+nnoremap <Leader>* *``cgn
+nnoremap <Leader># #``cgN
+
+" Toggle spell checking.
+nnoremap <silent> <Leader>s :set spell!<CR>
+
+" Lookup definition under cursor.
+nnoremap <Leader>K K
+
+" Join lines with a minimum of two lines.
+nnoremap <Leader>J J
+
+" Toggle search highlighting.
+nnoremap <Leader>? :set hlsearch!<CR>
+
+" Open `vimrc` file in vertical split.
+nnoremap <Leader>ev :vsplit $MYVIMRC<CR>
+
+" Reveal the syntax highlighting group under the cursor.
+nnoremap <Leader>is :echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')<CR>
+
+" Open `:terminal` in vertical split with current directory.
+nnoremap <silent> <Leader>t :50vsplit +enew\ <Bar>\ call\ termopen('cd\ $PWD\ &&\ $SHELL')<CR>
+
+" -- Command Mode {{{2
+" ------------------------------------------------
+
+" Write with sudo.
+cnoremap w!! w !sudo tee % >/dev/null
+
+" Jump to the beginning and end of line.
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
+
+" Jump previous and next commands from history.
+cnoremap <C-j> <Down>
+cnoremap <C-k> <Up>
+
+" Navigate left and right characters.
+cnoremap <C-h> <Left>
+cnoremap <C-l> <Right>
+
+" Substitute with 'very magic' mode.
+cnoremap s/ s/\v//gc<Left><Left><Left><Left>
+
+" -- Visual Mode {{{2
+" ------------------------------------------------
+
+" Stay in visual mode when indenting.
+xnoremap < <gv
+xnoremap > >gv
+
+" Bubble the lines to up (xkP`[V`]) or down (xp`[V`]).
+xmap J ]egv
+xmap K [egv
+
+" Select [a]n [e]ntire buffer.
+xnoremap ae GoggV
+
+" Alternative end and beginning of line shortcuts.
+xnoremap H ^
+xnoremap L $
+
+" Quickly refactor variables.
+xnoremap <expr> cn "y/\\V\<C-r>=escape(@\", '/')\<CR>\<CR>" . "``cgn"
+xnoremap <expr> cN "y/\\V\<C-r>=escape(@\", '/')\<CR>\<CR>" . "``cgN"
+
+" -- Operator Mode {{{2
+" ------------------------------------------------
+
+" [a]n [e]ntire buffer.
+onoremap ae :<c-u>normal! vgoggv<cr>
+
+" Last selected area.
+onoremap gv :<C-u>normal! gv<CR>
+
+" End and beginning of line.
+onoremap H ^
+onoremap L $
+
+" -- Terminal Mode {{{2
+" ------------------------------------------------
+
+" Escape from terminal mode and go back previous window.
+tnoremap <M-b> <C-\><C-n><C-w>p
+
+" Escape from terminal and persist current location.
+tnoremap <M-q> <C-\><C-n>
+
+" -- Hooks {{{1
+" --------------------------------------------------------------------------------------------------
+
+""
+" Toggle relative numbers in Insert/Normal mode.
+""
+augroup ToggleRelativeLineNumbers
+	autocmd!
+	autocmd InsertEnter * set norelativenumber " Disable relative line numbers in Insert mode.
+	autocmd InsertLeave * set relativenumber " Enable relative line numbers in Normal mode.
+augroup END
+
+""
+" Automatically remove trailing whitespace characters.
+""
+augroup StripTrailingWhitespaceCharacters
+	autocmd!
+	autocmd BufWritePre <buffer> :%s/\s\+$//e
+augroup END
+
+""
+" Remember cursor position and center buffer around cursor.
+""
+augroup RememberCursorPosition
+	autocmd!
+	autocmd BufReadPost *
+		\ if line("'\"") > 0 && line("'\"") <= line("$") |
+		\	execute "normal! g`\"" |
+		\ endif
+	autocmd BufRead * normal! zz
+augroup END
+
+" -- Local {{{1
+" --------------------------------------------------------------------------------------------------
+
+augroup Vim
+	autocmd!
+	autocmd FileType vim setlocal iskeyword-=# " Remove '#' from 'iskeyword' list.
+	autocmd BufWritePost ~/.vim/vimrc source $MYVIMRC " Auto-source `vimrc` when is written.
+augroup END
+
+augroup Markdown
+	autocmd!
+	autocmd FileType markdown setlocal spell " Always enable spell checking.
+augroup END
+
+augroup Terminal
+	autocmd!
+
+	if has('nvim')
+		autocmd TermOpen * setlocal nonumber norelativenumber " Disable line numbers.
+		autocmd TermOpen * startinsert " Automatically activate insert mode.
+	endif
+augroup END
+
+" }}} vim: foldmethod=marker foldlevel=0
