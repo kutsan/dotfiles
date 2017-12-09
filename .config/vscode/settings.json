@@ -1,0 +1,103 @@
+{
+	// -- Core Options ---------------------------
+
+	"editor.fontFamily": "FuraCode Nerd Font",
+	"editor.fontSize": 16,
+	"editor.lineHeight": 20,
+	"editor.insertSpaces": false,
+	"editor.lineNumbers": "relative",
+	"editor.wordWrapColumn": 100,
+	"editor.cursorBlinking": "solid",
+	"editor.snippetSuggestions": "top",
+	"editor.occurrencesHighlight": false,
+	"editor.minimap.enabled": false,
+	"editor.dragAndDrop": false,
+	"editor.fontLigatures": true,
+	"editor.formatOnSave": true,
+	"editor.colorDecorators": false,
+
+	"terminal.integrated.fontFamily": "FuraCode Nerd Font",
+	"terminal.integrated.fontSize": 16,
+	"terminal.external.osxExec": "Alacritty.app",
+
+	"telemetry.enableTelemetry": false,
+	"telemetry.enableCrashReporter": false,
+
+	"window.title": " ",
+	"explorer.openEditors.visible": 0,
+	"markdown.preview.fontFamily": "Roboto', sans-serif",
+	"git.path": "/usr/local/bin/git",
+	"files.autoSave": "afterDelay",
+	"files.autoSaveDelay": 500,
+	"debug.inlineValues": true,
+	"extensions.autoUpdate": true,
+	"extensions.ignoreRecommendations": true,
+	"javascript.validate.enable": false,
+
+	"launch": {
+		"configurations": [
+			{
+				"type": "node",
+				"protocol": "auto",
+				"request": "launch",
+				"name": "Launch Program",
+				"program": "${file}",
+				"cwd": "${workspaceRoot}"
+			}
+		]
+	},
+
+	"workbench.colorTheme": "Material Theme",
+	"workbench.iconTheme": "material-icon-theme",
+	"workbench.fontAliasing": "antialiased",
+	"workbench.panel.location": "bottom",
+	"workbench.startupEditor": "newUntitledFile",
+	"workbench.editor.tabCloseButton": "off",
+	"workbench.activityBar.visible": false,
+	"workbench.colorCustomizations": {
+		"terminal.ansiBlack": "#3b4252",
+		"terminal.ansiRed": "#bf616a",
+		"terminal.ansiGreen": "#a3be8c",
+		"terminal.ansiYellow": "#ebcb8b",
+		"terminal.ansiBlue": "#81a1c1",
+		"terminal.ansiMagenta": "#b48ead",
+		"terminal.ansiCyan": "#88c0d0",
+		"terminal.ansiWhite": "#e5e9f0",
+		"terminal.ansiBrightBlack": "#4c566a",
+		"terminal.ansiBrightRed": "#bf616a",
+		"terminal.ansiBrightGreen": "#a3be8c",
+		"terminal.ansiBrightYellow": "#ebcb8b",
+		"terminal.ansiBrightBlue": "#81a1c1",
+		"terminal.ansiBrightMagenta": "#b48ead",
+		"terminal.ansiBrightCyan": "#8fbcbb",
+		"terminal.ansiBrightWhite": "#eceff4"
+	},
+
+	// -- Plugin Options ---------------------------
+
+	"vim.useSystemClipboard": true,
+	"vim.overrideCopy": true,
+
+	"languageStylus.useSeparator": false,
+
+	"gitProjectManager.baseProjectsFolders": [
+		"/Users/Kutsan/Documents/",
+		"/Users/Kutsan/Projects/",
+		"/home/kutsan/Documents",
+		"/home/kutsan/Projects"
+	],
+	"gitProjectManager.ignoredFolders": ["node_modules"],
+
+	"flow.runOnEdit": false,
+
+	"material-icon-theme.showUpdateMessage": false,
+
+	"materialTheme.cache.workbench.settings": {
+		"themeColours": "Palenight High Contrast",
+		"accent": "Indigo"
+	},
+
+	"grunt.autoDetect": "off",
+
+	"jake.autoDetect": "off"
+}

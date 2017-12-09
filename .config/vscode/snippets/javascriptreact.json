@@ -1,0 +1,141 @@
+{
+	"Log to console": {
+		"prefix": "log",
+		"body": ["console.log($1)$2"]
+	},
+
+	"Block comment": {
+		"prefix": "cb",
+		"body": ["/*", "\t$1", "*/$0"]
+	},
+
+	"Enable Flow comment": {
+		"prefix": "flow",
+		"body": ["/* @flow */", ""]
+	},
+
+	"React block comment": {
+		"prefix": "rcb",
+		"body": ["{/*", "\t$1", "*/}$0"]
+	},
+
+	"React log to console": {
+		"prefix": "rlog",
+		"body": ["{console.log($1)}$2"]
+	},
+
+	"React create class": {
+		"prefix": "rcc",
+		"body": [
+			"class ${1:componentName} extends React.Component {",
+			"\trender() {",
+			"\t\treturn (",
+			"\t\t\t<div>",
+			"\t\t\t\t${0:placeHolder}",
+			"\t\t\t</div>",
+			"\t\t)",
+			"\t}",
+			"}"
+		]
+	},
+
+	"React create class and export as default": {
+		"prefix": "rccd",
+		"body": [
+			"import React from 'react'",
+			"",
+			"export default class extends React.Component {",
+			"\trender() {",
+			"\t\treturn (",
+			"\t\t\t<div>",
+			"\t\t\t\t${0:placeHolder}",
+			"\t\t\t</div>",
+			"\t\t)",
+			"\t}",
+			"}"
+		]
+	},
+
+	"React create stateless component": {
+		"prefix": "rcsc",
+		"body": [
+			"const $1 = () => {",
+			"\treturn (",
+			"\t\t<div>",
+			"\t\t\t${0:placeHolder}",
+			"\t\t</div>",
+			"\t)",
+			"}"
+		]
+	},
+
+	"React contructor": {
+		"prefix": "rc",
+		"body": ["contructor(props) {", "\tsuper(props)", "", "\t$0", "}", ""]
+	},
+
+	"React static propsTypes": {
+		"prefix": "rp",
+		"body": ["static propTypes = {", "\t$0", "}", ""]
+	},
+
+	"React componentWillMount": {
+		"prefix": "rcwm",
+		"body": ["componentWillMount() {", "\t$0", "}"]
+	},
+
+	"React componentDidMount": {
+		"prefix": "rcdm",
+		"body": ["componentDidMount() {", "\t$0", "}"]
+	},
+
+	"React componentWillReceiveProps": {
+		"prefix": "rcwrp",
+		"body": ["componentWillReceiveProps(nextProps) {", "\t$0", "}"]
+	},
+
+	"React shouldComponentUpdate": {
+		"prefix": "rscup",
+		"body": ["shouldComponentUpdate(nextProps, nextState) {", "\t$0", "}"]
+	},
+
+	"React componentWillUpdate": {
+		"prefix": "rcwup",
+		"body": ["componentWillUpdate(nextProps, nextState) {", "\t$0", "}"]
+	},
+
+	"React componentDidUpdate": {
+		"prefix": "rcdup",
+		"body": ["componentDidUpdate(prevProps, prevState) {", "\t$0", "}"]
+	},
+
+	"React componentWillUnmount": {
+		"prefix": "rcwun",
+		"body": ["componentWillUnmount() {", "\t$0", "}"]
+	},
+
+	"React render() method": {
+		"prefix": "render",
+		"body": ["render() {", "\treturn (", "\t\t<div>", "\t\t\t$0", "\t\t</div>", "\t)", "}"]
+	},
+
+	"React setState()": {
+		"prefix": "rss",
+		"body": ["this.setState($0)"]
+	},
+
+	"React setState() with function": {
+		"prefix": "rssf",
+		"body": ["this.setState((state, props) => { return { $0 }})"]
+	},
+
+	"React component props": {
+		"prefix": "props",
+		"body": "this.props.$0"
+	},
+
+	"React component state": {
+		"prefix": "state",
+		"body": "this.state.$0"
+	}
+}
