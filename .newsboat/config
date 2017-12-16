@@ -18,22 +18,69 @@ text-width 80
 # -- Mappins {{{1
 # --------------------------------------------------------------------------------------------------
 
-bind-key j down
-bind-key k up
-bind-key m toggle-show-read-feeds
-bind-key ^D pagedown
-bind-key ^U pageup
-bind-key / open-search tagselection
-bind-key i sort
-bind-key I rev-sort
-bind-key g home all
-bind-key G end all
-unbind-key l
-bind-key l open
-bind-key h quit
-bind-key ESC hard-quit
-unbind-key O
-bind-key O open-all-unread-in-browser-and-mark-read
+# Remove unused keys.
+unbind-key $     # purge-deleted
+unbind-key A     # mark-feed-read
+unbind-key C     # mark-all-feeds-read
+unbind-key D     # delete-article
+unbind-key E     # edit-urls
+unbind-key J     # next
+unbind-key K     # prev
+unbind-key N     # toggle-article-read
+unbind-key NPAGE # pagedown
+unbind-key PPAGE # pageup
+unbind-key Q     # hard-quit
+unbind-key \#    # goto-url
+unbind-key ^B    # bookmark
+unbind-key ^E    # edit-flags
+unbind-key ^G    # prev-dialog
+unbind-key ^K    # random-unread
+unbind-key ^N    # next-unread-feed
+unbind-key ^P    # prev-unread-feed
+unbind-key ^T    # clear-tag
+unbind-key ^V    # next-dialog
+unbind-key ^X    # close-dialog
+
+bind-key   m     toggle-article-read articlelist
+
+bind-key   m     mark-feed-read feedlist
+
+bind-key   M     mark-all-feeds-read
+
+unbind-key j   # next-feed
+bind-key   j     down
+
+unbind-key k   # prev-feed
+bind-key   k     up
+
+unbind-key O   # open-in-browser-and-mark-read
+bind-key   O     open-all-unread-in-browser-and-mark-read
+
+unbind-key q   # quit
+bind-key   q     hard-quit
+
+unbind-key l   # toggle-show-read-feeds
+bind-key   l     open
+
+bind-key   h     quit
+
+bind-key   ^D    pagedown
+
+unbind-key ^U  # toggle-source-view
+bind-key   ^U    pageup
+
+unbind-key g   # sort
+bind-key   g     home
+
+unbind-key G   # revsort
+bind-key   G     end
+
+bind-key   T     clear-tag
+
+unbind-key e   # enqueue
+bind-key   e     edit-urls
+
+bind-key   b     bookmark
 
 # -- Style {{{1
 # --------------------------------------------------------------------------------------------------
