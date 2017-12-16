@@ -1,0 +1,54 @@
+# -- Options {{{1
+# --------------------------------------------------------------------------------------------------
+
+articlelist-format "%4f %?T?%-17T?%t %> %-20a %-10L %D    "
+auto-reload yes
+browser xdg-open
+confirm-exit yes
+datetime-format "%Y-%m-%d"
+feedlist-format "%4n %t %> %l    "
+html-renderer "w3m -dump -T text/html"
+refresh-on-startup yes
+reload-only-visible-feeds yes
+save-path ~/Downloads/
+show-keymap-hint no
+suppress-first-reload yes
+text-width 80
+
+# -- Mappins {{{1
+# --------------------------------------------------------------------------------------------------
+
+bind-key j down
+bind-key k up
+bind-key m toggle-show-read-feeds
+bind-key ^D pagedown
+bind-key ^U pageup
+bind-key / open-search tagselection
+bind-key i sort
+bind-key I rev-sort
+bind-key g home all
+bind-key G end all
+unbind-key l
+bind-key l open
+bind-key h quit
+bind-key ESC hard-quit
+unbind-key O
+bind-key O open-all-unread-in-browser-and-mark-read
+
+# -- Style {{{1
+# --------------------------------------------------------------------------------------------------
+
+#     <element>          <fg>      <bg>      <at>
+color background         default   default
+color listnormal         default   default
+color listnormal_unread  yellow    default   bold
+color listfocus          default   black
+color listfocus_unread   yellow    black     bold
+color info               cyan      black
+color article            default   default
+
+highlight article "^(Feed|Title|Author|Link|Date):" blue default
+highlight article "https?://[^ ]+" cyan default
+highlight article "\\[image\\ [0-9]+\\]" green default
+
+# }}} vim: foldmethod=marker foldlevel=0
