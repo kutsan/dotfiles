@@ -98,4 +98,4 @@ highlight article "^(Feed|Title|Author|Link|Date):" blue default
 highlight article "https?://[^ ]+" cyan default
 highlight article "\\[image\\ [0-9]+\\]" green default
 
-# }}} vim: foldmethod=marker foldlevel=0
+# }}} vim: foldmethod=marker foldlevel=0 iskeyword+=-
