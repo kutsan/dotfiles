@@ -15,7 +15,7 @@ show-keymap-hint no
 suppress-first-reload yes
 text-width 80
 
-# -- Mappins {{{1
+# -- Mappings {{{1
 # --------------------------------------------------------------------------------------------------
 
 # Remove unused keys.
