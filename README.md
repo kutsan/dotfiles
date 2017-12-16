@@ -86,6 +86,7 @@
 		- [docker](https://github.com/docker/docker) - Container engine that provides abstraction and automation of virtualization
 		- [fzf](https://github.com/junegunn/fzf) - General-purpose command-line fuzzy finder that can be used among other Unix tools
 		- [htop](https://github.com/hishamhm/htop) - Interactive text-based system monitor, process viewer and process manager
+		- [newsboat](https://github.com/newsboat/newsboat) - RSS/Atom feed reader
 		- [weechat](https://github.com/weechat/weechat) - Text-based, extensible Internet Relay Chat client with plugin support
 		- [neomutt](https://github.com/neomutt/neomutt) - Fork of the mail user agent mutt with new features and patches
 			- [msmtp](http://msmtp.sourceforge.net) - SMTP agent for sending e-mails through mail user agents or terminal
