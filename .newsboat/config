@@ -1,12 +1,12 @@
 # -- Options {{{1
 # --------------------------------------------------------------------------------------------------
 
-articlelist-format "%4f %?T?%-17T?%t %> %-20a %-10L %D    "
+articlelist-format "    %?T?%-17T?%t %> %-20a %-10L %D    "
 auto-reload yes
 browser xdg-open
 confirm-exit yes
 datetime-format "%Y-%m-%d"
-feedlist-format "%4n %t %> %l    "
+feedlist-format "    %t %> %l    "
 html-renderer "w3m -dump -T text/html"
 refresh-on-startup yes
 reload-only-visible-feeds yes
