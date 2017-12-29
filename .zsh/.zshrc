@@ -376,30 +376,31 @@ alias path="echo $PATH | cut --delimiter=':' --fields=1- --output-delimiter=$'\n
 
 # Custom Shortcuts
 alias r='ranger'
-alias we='weechat'
+	if ([[ $(uname -o) == 'Android' ]] 2>/dev/null) { alias r="ranger --cmd='set viewmode multipane'" }
 alias t='task'
 alias tmux='tmux -f "$HOME/.tmux/tmux.conf"'
 alias dfc='dfc -dmT' # -d: Show used size. -m: Base 10 output. -T: Show file system types.
 alias cdu='cdu --intelligent --log --reverse --sort --du h'
 alias syncthing='syncthing -home=$HOME/.config/syncthing'
 alias exa='exa --color=always --all --classify --group-directories-first --long --git --group'
-alias serve='browser-sync start --config ~/.config/browser-sync/config.js'
+alias serve='browser-sync start --config ~/.config/browsersync/config.js'
 alias jq='jq --tab --indent 4'
+alias news='newsboat --quiet'
 
 # Global Aliases
-alias -g ND='*(/om[1])' # Newest directory
-alias -g NF='*(.om[1])' # Newest file
+alias -g ND='*(/om[1])' # Newest directory.
+alias -g NF='*(.om[1])' # Newest file.
 alias -g L='| less'
 alias -g H='--help | less'
-alias -g V='| vim -R -' # Read-only Vim as pager
+alias -g V='| vim -R -' # Read-only Vim as pager.
 alias -g G='| grep'
 alias -g WC='| wc'
 alias -g HE='| head'
 alias -g TA='| tail'
-alias -g NE='2>/dev/null' # No sterr
-alias -g NO='&>/dev/null' # No stout and sterr (shorthand for 1>/dev/null 2>&1)
-alias -g AWK="| awk '{	}'"
-alias -g SED="| sed ''"
+alias -g NE='2>/dev/null' # No sterr.
+alias -g NO='&>/dev/null' # No stout and sterr (shorthand for 1>/dev/null 2>&1).
+alias -g AWK="| awk '{}'"
+alias -g SED="| sed"
 alias -g R='| rg'
 alias -g F='| fzf'
 
@@ -419,13 +420,14 @@ alias c-gitmodules="$EDITOR ~/.gitmodules"
 alias c-tmux="$EDITOR ~/.tmux/tmux.conf"
 alias c-tmuxfunctions="$EDITOR ~/.tmux/functions/"
 alias c-eslint="$EDITOR ~/.eslintrc"
+alias c-browsersync="$EDITOR ~/.config/browsersync/config.js"
 alias c-editorconfig="$EDITOR ~/.editorconfig"
 alias c-wget="$EDITOR ~/.config/wget/wgetrc"
 alias c-gpg="$EDITOR ~/.gnupg/gpg.conf"
 alias c-htop="$EDITOR ~/.config/htop/htoprc"
+alias c-newsboat="$EDITOR ~/.newsboat/"
 alias c-ranger="$EDITOR ~/.config/ranger/"
 alias c-youtube-dl="$EDITOR ~/.config/youtube-dl/config"
-alias c-weechat="$EDITOR ~/.weechat/"
 alias c-mutt="$EDITOR ~/.mutt/muttrc"
 alias c-msmtp="$EDITOR ~/.mutt/msmtprc"
 alias c-mailcap="$EDITOR ~/.mutt/mailcap"
