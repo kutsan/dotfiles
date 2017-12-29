@@ -418,6 +418,12 @@ Plug 'Shougo/vimfiler.vim', { 'on': [] } | call plug#load('vimfiler.vim') " File
 
 		" Unbind <C-l> for the sake of other key bindings.
 		autocmd FileType vimfiler nunmap <buffer> <C-l>
+
+		" Unbind <S-k>.
+		autocmd FileType vimfiler nunmap <buffer> K
+
+		" Change the default refresh binding.
+		autocmd FileType vimfiler nmap <buffer> <C-r> <Plug>(vimfiler_redraw_screen)
 	augroup END
 
 	" Automatically quit Vim if vimfiller is last and only buffer.
