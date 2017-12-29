@@ -644,6 +644,23 @@ let g:terminal_color_15 = '#eceff4' " Bold White
 " ------------------------------------------------
 
 " Insert current time in various amount of formats with completion menu.
+inoremap <silent> <C-g><C-t>
+	\ <C-r>=
+	\ repeat(
+		\ complete(
+			\ col('.'),
+			\ map(
+				\ [
+					\ "%Y-%m-%d %H:%M:%S",
+					\ "%a, %d %b %Y %H:%M:%S %z",
+					\ "%Y %b %d",
+					\ "%d-%b-%y",
+					\ "%a %b %d %T %Z %Y"
+				\ ],
+				\ 'strftime(v:val)'
+			\ ) + [localtime()]
+		\ ),
+	\ 0)<CR>
 
 " -- Normal Mode {{{2
 " ------------------------------------------------
