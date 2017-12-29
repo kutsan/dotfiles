@@ -278,7 +278,9 @@ Plug 'sheerun/vim-polyglot' " Big collection of language packs as scripts are lo
 " -- prettier {{{2
 " ------------------------------------------------
 
-Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['javascript', 'javascript.jsx', 'css', 'stylus', 'sass', 'html', 'json', 'graphql'] } " Code formatter prettier integration
+Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['html', 'css', 'sass', 'javascript', 'javascript.jsx', 'json', 'graphql'] } " Code formatter prettier integration
+	let g:prettier#quickfix_enabled = 0 " Disable quickfix window for errors.
+	let g:prettier#autoformat = 0 " Disable auto formatting of files that have @format tag
 	let g:prettier#exec_cmd_async = 1 " Use prettier in asynchronous mode.
 
 " -- quick-scope {{{2
