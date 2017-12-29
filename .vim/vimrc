@@ -286,6 +286,13 @@ Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['javascript', 'java
 
 Plug 'moorereason/quick-scope', { 'branch': 'protect-higroup' } " Highlight which characters to target for `f`, `F` and family
 
+" -- ranger {{{2
+" ------------------------------------------------
+
+Plug 'francoiscabrol/ranger.vim', { 'on': 'Ranger' }
+	let g:ranger_map_keys = 0 " Disable default key mappings.
+	nnoremap <silent> <Leader>F :Ranger<CR>
+
 " -- repeat {{{2
 " ------------------------------------------------
 
