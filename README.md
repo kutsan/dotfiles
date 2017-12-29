@@ -87,7 +87,6 @@
 		- [fzf](https://github.com/junegunn/fzf) - General-purpose command-line fuzzy finder that can be used among other Unix tools
 		- [htop](https://github.com/hishamhm/htop) - Interactive text-based system monitor, process viewer and process manager
 		- [newsboat](https://github.com/newsboat/newsboat) - RSS/Atom feed reader
-		- [weechat](https://github.com/weechat/weechat) - Text-based, extensible Internet Relay Chat client with plugin support
 		- [neomutt](https://github.com/neomutt/neomutt) - Fork of the mail user agent mutt with new features and patches
 			- [msmtp](http://msmtp.sourceforge.net) - SMTP agent for sending e-mails through mail user agents or terminal
 		- [taskwarrior](https://github.com/taskwarrior/task) - Text-based time, task and project management tool
@@ -112,7 +111,6 @@
 		- [gist](https://github.com/defunkt/gist) - GitHub Gists client for creating, updating and managing gists
 	- GUI
 		- [Emacs](https://www.gnu.org/software/emacs) - GUI version of Emacs the operation-system-like text editor
-		- [GVim](https://github.com/macvim-dev/macvim) - GUI version of Vim the ubiquitous text editor
 		- [mpv](https://github.com/mpv-player/mpv) - Minimalist video player based on MPlayer
 		- [GIMP](https://www.gimp.org) - GNU Image Manipulation Program for drawing and editing graphic files
 		- [Alacritty](https://github.com/jwilm/alacritty) - Cross-platform, GPU-accelerated terminal emulator
