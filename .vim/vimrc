@@ -114,7 +114,10 @@ Plug 'w0rp/ale' " Asynchronous lint engine for Neovim and Vim 8+
 " ------------------------------------------------
 
 Plug 'jiangmiao/auto-pairs' " Insert or delete brackets, parens, quotes in pair
-	autocmd VimEnter,BufEnter,BufWinEnter * silent! iunmap <buffer> <M-">
+	augroup AutoPairsFixKnownBug
+		autocmd!
+		autocmd VimEnter,BufEnter,BufWinEnter * silent! iunmap <buffer> <M-">
+	augroup END
 
 " -- auto-save {{{2
 " ------------------------------------------------
