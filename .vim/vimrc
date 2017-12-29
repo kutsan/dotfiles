@@ -311,7 +311,7 @@ Plug 'moorereason/quick-scope', { 'branch': 'protect-higroup' } " Highlight whic
 " -- ranger {{{2
 " ------------------------------------------------
 
-Plug 'francoiscabrol/ranger.vim', { 'on': 'Ranger' }
+Plug 'francoiscabrol/ranger.vim', { 'on': 'Ranger' } " Ranger integration for vim
 	let g:ranger_map_keys = 0 " Disable default key mappings.
 	nnoremap <silent> <Leader>F :Ranger<CR>
 
