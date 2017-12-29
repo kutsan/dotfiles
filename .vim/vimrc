@@ -179,13 +179,13 @@ Plug 'mattn/emmet-vim', { 'on': 'EmmetInstall' } " Emmet integration
 	" Automatically activate Emmet in following file types.
 	augroup EmmetInstall
 		autocmd!
-		autocmd FileType html,css,styl,javascript.jsx EmmetInstall
+		autocmd FileType html,css,sass,javascript.jsx EmmetInstall
 	augroup END
 
 	" Expand pattern with <Tab> character.
 	augroup EmmetExpandTab
 		autocmd!
-		autocmd FileType html,css,styl,sass,javascript.jsx imap <silent><buffer><expr> <Tab> <SID>EmmetExpandTab()
+		autocmd FileType html,css,sass,javascript.jsx imap <silent><buffer><expr> <Tab> <SID>EmmetExpandTab()
 	augroup END
 
 	" Expand pattern with <Tab> character.
