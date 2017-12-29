@@ -76,7 +76,7 @@ function main() {
 	local subcommand=${1:-''}
 
 	case "$subcommand" {
-		'' | '-h' | '--help' | 'help')
+		'-h' | '--help' | 'help')
 			show_help
 			;;
 
@@ -90,13 +90,7 @@ function main() {
 			;;
 
 		*)
-			echo
-			console.error \
-				"${bold_color}$subcommand${reset_color} is not a known subcommand." \
-				"Run ${bold_color}tms --help${reset_color} for a list of known subcommands."
-			echo
-
-			exit 1
+			launch_daemon && transmission-remote "$@"
 			;;
 	}
 }
