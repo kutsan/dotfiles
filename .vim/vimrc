@@ -148,6 +148,22 @@ if has('nvim') && has('python3')
 		inoremap <expr> <BS> deoplete#smart_close_popup()."\<C-h>"
 endif
 
+" -- devicons {{{2
+" ------------------------------------------------
+
+Plug 'ryanoasis/vim-devicons' " Adds additional file type glyphs to popular plugins
+	let g:DevIconsEnableFoldersOpenClose = 1 " Enable open and close folder glyph flags.
+	let g:WebDevIconsUnicodeDecorateFolderNodes = 1 " Enable folder glyph flag.
+	let g:webdevicons_enable_vimfiler = 1 " Enable vimfiler support.
+
+	" Custom icons.
+	let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {} " Initialize the custom icons object.
+	let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = '' " Disable folder icons.
+	let g:WebDevIconsUnicodeDecorateFileNodesDefaultSymbol = '' " Default icon in case there no match found.
+	let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['html'] = '' " Default HTML icon.
+	let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['css'] = '' " Default CSS icon.
+	let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['md'] = '' " Default Markdown icon.
+
 " -- editorconfig {{{2
 " ------------------------------------------------
 
@@ -408,22 +424,6 @@ Plug 'Shougo/vimfiler.vim', { 'on': [] } | call plug#load('vimfiler.vim') " File
 			\	quit |
 			\ endif
 	augroup END
-
-" -- devicons {{{2
-" ------------------------------------------------
-
-Plug 'ryanoasis/vim-devicons' " Adds additional file type glyphs to popular plugins
-	let g:DevIconsEnableFoldersOpenClose = 1 " Enable open and close folder glyph flags.
-	let g:WebDevIconsUnicodeDecorateFolderNodes = 1 " Enable folder glyph flag.
-	let g:webdevicons_enable_vimfiler = 1 " Enable vimfiler support.
-
-	" Custom icons.
-	let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {} " Initialize the custom icons object.
-	let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = '' " Disable folder icons.
-	let g:WebDevIconsUnicodeDecorateFileNodesDefaultSymbol = '' " Default icon in case there no match found.
-	let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['html'] = '' " Default HTML icon.
-	let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['css'] = '' " Default CSS icon.
-	let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['md'] = '' " Default Markdown icon.
 
 " }}}
 
