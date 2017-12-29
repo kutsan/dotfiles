@@ -259,47 +259,6 @@ Plug 'airblade/vim-gitgutter' " Show Git diff in the sign column
 Plug 'suan/vim-instant-markdown', { 'on': 'InstantMarkdownPreview' } " Live markdown preview in browser
 	let g:instant_markdown_autostart = 0 " Don't start the daemon automatically.
 
-" -- languageclient-neovim {{{2
-" ------------------------------------------------
-
-" if has('nvim') && has('python3')
-" 	Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
-" 		let g:LanguageClient_autoStart = 1 " Automatically start language server client.
-" 		let g:LanguageClient_diagnosticsEnable = 0 " Disable diagnostics.
-" 		let g:LanguageClient_diagnosticsList = 'location' " Use location list for diagnostics.
-
-" 		let g:LanguageClient_serverCommands = {}
-
-" 		if executable('javascript-typescript-stdio') | let g:LanguageClient_serverCommands.javascript = ['javascript-typescript-stdio'] | endif
-
-" 		augroup LanguageClientConfig
-" 			" Use as omnifunc by default.
-" 			autocmd FileType html,css,javascript,python,json setlocal omnifunc=LanguageClient#complete
-
-" 			" Mappings.
-" 			autocmd FileType html,css,javascript,python,json nnoremap <buffer>
-" 				\ <Leader>ld :call LanguageClient_textDocument_definition()<CR>
-" 			autocmd FileType html,css,javascript,python,json nnoremap <buffer>
-" 				\ <Leader>lh :call LanguageClient_textDocument_hover()<CR>
-" 			autocmd FileType html,css,javascript,python,json nnoremap <buffer>
-" 				\ <Leader>lr :call LanguageClient_textDocument_rename()<CR>
-" 			autocmd FileType html,css,javascript,python,json nnoremap <buffer>
-" 				\ <Leader>lf :call LanguageClient_textDocument_documentSymbol()<CR>
-" 		augroup END
-" endif
-
-" -- nvim-completion-manager {{{2
-" ------------------------------------------------
-
-" if has('nvim') && has('python3')
-" 	Plug 'roxma/nvim-completion-manager'
-" 		" Go next and previous completion with <Tab> and <S-Tab> when completion available.
-" 		inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-" 		inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-" 		let g:cm_matcher = { 'case': 'smartcase', 'module': 'cm_matchers.fuzzy_matcher' } " Use fuzzy matcher.
-" endif
-
 " -- peekaboo {{{2
 " ------------------------------------------------
 
