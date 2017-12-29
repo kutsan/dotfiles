@@ -540,6 +540,7 @@ function fgl() {
 		| fzf \
 			--height='100%' \
 			--ansi \
+			--exact \
 			--no-sort \
 			--reverse \
 			--tiebreak='index' \
