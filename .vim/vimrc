@@ -103,7 +103,8 @@ Plug 'w0rp/ale' " Asynchronous lint engine for Neovim and Vim 8+
 	let g:ale_sign_warning = '•' " The sign for warnings in the sign gutter.
 	let g:ale_echo_msg_error_str = 'E' " The string used for error severity in the echoed message.
 	let g:ale_echo_msg_warning_str = 'W' " The string used for warning severity in the echoed message.
-	let g:ale_echo_msg_format = '[%linter%][%severity%] %s' " Define the form of the echoed message.
+	let g:ale_echo_msg_format = ' %linter%: %s (%severity%)' " Define the form of the echoed message.
+	let g:ale_set_highlights = 0 " Disable highlighting underline on errors and warnings.
 	let g:ale_fixers = {
 			\ 'javascript': ['eslint'],
 			\ 'javascript.jsx': ['eslint'],
