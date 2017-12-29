@@ -655,10 +655,12 @@ function = {
 function j() {
 	# Bookmarks
 	local -A bookmarks=(
-		'pro' ~/Projects/
-		'doc' ~/Documents/
 		'des' ~/Desktop/
+		'doc' ~/Documents/
 		'dow' ~/Downloads/
+		'pic' ~/Pictures/
+		'pro' ~/Projects/
+		'vid' ~/Videos/
 	)
 
 	local selected_bookmark
@@ -674,11 +676,15 @@ function j() {
 		}
 
 		if (! hash fzf &>/dev/null) {
-			echo; console.error "${bold_color}fzf${reset_color} is not installed."; echo
+			echo; console.error "${bold_color}fzf${reset_color} is required for selection menu."; echo
 
 			return 1
 		} else {
-			selected_bookmark=$(printf "$bookmarks_table" | fzf | cut --delimiter=' ' --fields=2)
+			selected_bookmark=$(
+				printf "$bookmarks_table" \
+					| fzf --height='20%' \
+					| cut --delimiter=' ' --fields=2
+			)
 		}
 	}
 
