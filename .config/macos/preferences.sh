@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
-# Enable debugging mode to see what commands executed in runtime.
+# Enable debugging mode to see what commands executed on execution.
 set -x
 
 # -- Global {{{1
 # --------------------------------------------------------------------------------------------------
 
-# Show all files everywhere. Even in open dialog.
+# Show all files everywhere, even in open dialog.
 defaults write -g AppleShowAllFiles -bool true
 
 # Don't write `.DS_Store` files to portable devices.
