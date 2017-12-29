@@ -128,8 +128,8 @@ Plug '907th/vim-auto-save', { 'on': 'AutoSaveToggle' } " Automatically save chan
 " -- colorizer {{{2
 " ------------------------------------------------
 
-Plug 'chrisbra/Colorizer', { 'on': 'ColorToggle' } " Highlight HEX and RGB color codes and names in their background
-	let g:colorizer_auto_filetype='html,css,styl,sass,javascript.jsx' " Automatically enable highlighting in certain file types.
+Plug 'chrisbra/Colorizer' " Highlight HEX and RGB color codes and names in their background
+	let g:colorizer_auto_filetype = 'html,css,sass,javascript,javascript.jsx' " Automatically enable highlighting in certain file types.
 
 " -- commentary {{{2
 " ------------------------------------------------
