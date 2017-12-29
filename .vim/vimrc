@@ -773,8 +773,8 @@ xnoremap < <gv
 xnoremap > >gv
 
 " Bubble the lines to up (xkP`[V`]) or down (xp`[V`]).
-xmap J ]egv
-xmap K [egv
+xmap J ]egv=gv
+xmap K [egv=gv
 
 " Select [a]n [e]ntire buffer.
 xnoremap ae GoggV
@@ -791,7 +791,7 @@ xnoremap <expr> cN "y/\\V\<C-r>=escape(@\", '/')\<CR>\<CR>" . "``cgN"
 " ------------------------------------------------
 
 " [a]n [e]ntire buffer.
-onoremap ae :<c-u>normal! vgoggv<cr>
+onoremap ae :<C-u>normal! VGogg<CR>
 
 " Last selected area.
 onoremap gv :<C-u>normal! gv<CR>
@@ -807,7 +807,8 @@ onoremap L $
 tnoremap <M-b> <C-\><C-n><C-w>p
 
 " Escape from terminal and persist current location.
-tnoremap <M-q> <C-\><C-n>
+tnoremap <silent> <M-q> <C-\><C-n>:Sayonara<CR>
+tnoremap <silent> <M-d> <C-\><C-n>:Sayonara!<CR>
 
 " -- Hooks {{{1
 " --------------------------------------------------------------------------------------------------
