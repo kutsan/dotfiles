@@ -10,7 +10,15 @@
 # -- Feeds {{{1
 # --------------------------------------------------------------------------------------------------
 
-http://facebook.github.io/react/feed.xml "~React" "Communities"
+https://feeds.feedburner.com/2ality "~Axel Rauschmayer" "Blog"
+http://javascriptweekly.com/rss "~JavaScript Weekly" "Blog"
+https://dmitripavlutin.com/rss "~Dmitri Pavlutin" "Blog"
+https://blog.risingstack.com/rss "~RisingStack" "Blog"
+https://jakearchibald.com/posts.rss "~Jake Archibald" "Blog"
+https://ponyfoo.com/articles/feed "~Pony Foo" "Blog"
+http://vimcasts.org/feeds/quicktime.rss "~Vimcasts" "Blog"
+
+https://reactjs.org/feed.xml "~React" "Communities"
 https://github.com/blog/ship.atom "~GitHub" "Communities"
 
 https://github.com/tmux/tmux/releases.atom "~tmux/tmux" "Software"
@@ -19,13 +27,5 @@ https://github.com/facebook/react/releases.atom "~facebook/react" "Software"
 https://github.com/sindresorhus/pure/releases.atom "~sindresorhus/pure" "Software"
 https://github.com/eslint/eslint/releases.atom "~eslint/eslint" "Software"
 https://github.com/zsh-users/zsh/releases.atom "~zsh-users/zsh" "Software"
-
-http://feeds.feedburner.com/2ality "~Axel Rauschmayer" "Blog"
-http://javascriptweekly.com/rss "~JavaScript Weekly" "Blog"
-http://dmitripavlutin.com/rss "~Dmitri Pavlutin" "Blog"
-http://blog.risingstack.com/rss "~RisingStack" "Blog"
-http://jakearchibald.com/posts.rss "~Jake Archibald" "Blog"
-http://blog.ponyfoo.com/rss/latest.xml "~Pony Foo" "Blog"
-http://vimcasts.org/feeds/quicktime.rss "~Vimcasts" "Blog"
 
 # }}} vim: foldmethod=marker foldlevel=1
