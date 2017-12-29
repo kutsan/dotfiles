@@ -22,7 +22,7 @@
 				- [chrisbra/Colorizer](https://github.com/chrisbra/Colorizer) - Highlight HEX and RGB color codes and names in their background
 				- [tpope/vim-commentary](https://github.com/tpope/vim-commentary) - Comment and uncomment with predefined key bindings
 				- [Shougo/deoplete.nvim](https://github.com/Shougo/deoplete.nvim) - Asynchronous auto-completion framework for Neovim
-				- [carlitux/deoplete-ternjs](https://github.com/carlitux/deoplete-ternjs) - TernJS auto-completion integration for deoplete
+				- [ryanoasis/vim-devicons](https://github.com/ryanoasis/vim-devicons) - Adds additional file type glyphs to popular plugins
 				- [editorconfig/editorconfig-vim](https://github.com/editorconfig/editorconfig-vim) - EditorConfig integration
 				- [mattn/emmet-vim](https://github.com/mattn/emmet-vim) - Emmet integration
 				- [tweekmonster/exception.vim](https://github.com/tweekmonster/exception.vim) - Tracing exceptions thrown by Vim scripts
@@ -34,6 +34,7 @@
 				- [sheerun/vim-polyglot](https://github.com/sheerun/vim-polyglot) - Big collection of language packs as scripts are loaded only on demand
 				- [prettier/vim-prettier](https://github.com/prettier/vim-prettier) - Code formatter prettier integration
 				- [moorereason/quick-scope](https://github.com/moorereason/quick-scope) - Highlight which characters to target for `f`, `F` and family
+				- [francoiscabrol/ranger.vim](https://github.com/francoiscabrol/ranger.vim) - Ranger integration for vim
 				- [tpope/vim-repeat](https://github.com/tpope/vim-repeat) - Repeat command support for various plugins
 				- [airblade/vim-rooter](https://github.com/airblade/vim-rooter) - Change the current working directory to the Git project root when you open a file or directory
 				- [mhinz/vim-sayonara](https://github.com/mhinz/vim-sayonara) - Sane buffer and window deletion
@@ -44,7 +45,6 @@
 				- [tpope/vim-unimpaired](https://github.com/tpope/vim-unimpaired) - Adds several pairs of bracket maps
 				- [Shougo/unite.vim](https://github.com/Shougo/unite.vim) - Create user interfaces
 				- [Shougo/vimfiler.vim](https://github.com/Shougo/vimfiler.vim) - File explorer
-				- [ryanoasis/vim-devicons](https://github.com/ryanoasis/vim-devicons) - Adds additional file type glyphs to popular plugins
 		- [emacs](https://www.gnu.org/software/emacs) - The operation-system-like text editor
 			- [use-package](https://github.com/jwiegley/use-package) - Package declaration manager
 				- [emacs-evil/evil](https://github.com/emacs-evil/evil) - Extendable Vi layer and emulation
