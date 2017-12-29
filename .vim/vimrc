@@ -824,4 +824,9 @@ augroup Terminal
 	endif
 augroup END
 
+augroup GitCommit
+	autocmd!
+	autocmd FileType gitcommit setlocal spell " Always enable spell checking.
+augroup END
+
 " }}} vim: foldmethod=marker foldlevel=0
