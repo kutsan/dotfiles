@@ -431,7 +431,6 @@ set clipboard=unnamed,unnamedplus " Use system clipboard.
 set complete-=i " Disable scanning current and included files.
 set completeopt=longest,menuone " Options for insert mode completion.
 set cursorline " Highlight the line background of the cursor.
-set updatetime=2000 " If that milliseconds nothing is typed the swap file will be written.
 set display=lastline " As much as possible of the last line in a window will be displayed.
 set fillchars= " Characters to fill the status lines and vertical separators.
 set formatoptions=jcql " General text formatting options used by many mechanics.
@@ -456,7 +455,6 @@ set report=0 " Threshold for reporting number of lines changed.
 set scrolloff=8 " Minimum number of screen lines to keep above and below the cursor.
 set sessionoptions-=options " Options for `mksession` command.
 set shortmess=filmnrwxoOstTIc " Use abbreviations and short messages in command menu line.
-set showmatch " Show matching parentheses under cursor.
 set sidescroll=20 " Columns to scroll horizontally when cursor is moved off the screen.
 set signcolumn=yes " Always draw the sign column even there is no sign in it.
 set synmaxcol=200 " Maximum column in which to search for syntax items.
@@ -466,6 +464,7 @@ set title " Show title as in 'titlestring' in title bar of window.
 set titlestring=%f " Format of the title used by 'title'.
 set ttimeoutlen=10 " Key code delays in milliseconds.
 set ttyfast " More characters will be sent to the screen for redrawing in terminal.
+set updatetime=2000 " If that milliseconds nothing is typed the swap file will be written.
 set visualbell " Instead of beeping, shows a visual bell on errors.
 if has('nvim') | set inccommand=nosplit | endif " Show live substitution results as you type.
 if has('nvim') | set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor | endif " Change cursor shape among modes.
