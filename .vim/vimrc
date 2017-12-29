@@ -259,7 +259,7 @@ Plug $FZF_HOME | Plug 'junegunn/fzf.vim' " Fuzzy finder fzf as Vim plugin
 
 	augroup FzfOptions
 		autocmd!
-		autocmd! User FzfStatusLine call <SID>FzfStatusLine() " Disable status line.
+		autocmd User FzfStatusLine call <SID>FzfStatusLine() " Disable status line.
 	augroup END
 
 " -- gitgutter {{{2
