@@ -5,8 +5,8 @@ env:
   TERM: xterm-256color
 
 dimensions:
-  columns: 146
-  lines: 45
+  columns: 120
+  lines: 40
 
 padding:
   x: 2
@@ -14,7 +14,7 @@ padding:
 
 tabspaces: 4
 
-draw_bold_text_with_bright_colors: false
+draw_bold_text_with_bright_colors: true
 
 render_timer: false
 
@@ -34,9 +34,11 @@ live_config_reload: true
 font:
   normal:
     family: FuraCode Nerd Font
+    style: Regular
 
   bold:
     family: FuraCode Nerd Font
+    style: Medium
 
   italic:
     family: FuraCode Nerd Font
