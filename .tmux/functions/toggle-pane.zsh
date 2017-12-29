@@ -1,10 +1,10 @@
 #!/usr/bin/env zsh
 
 ##
-# Toggle two pane between them.
+# Toggle two panes between them.
 #
 # USAGE
-#   bind -n <key> run-shell "~/.tmux/functions/toggle-pane.tmux"
+#   bind -n <key> run-shell "~/.tmux/functions/toggle-pane.zsh"
 ##
 
 if (( $(tmux display-message -p '#{window_panes}') > 1 )) {
@@ -19,5 +19,5 @@ if (( $(tmux display-message -p '#{window_panes}') > 1 )) {
 	}
 
 } else {
-	tmux split-window -h -l 60 -c "#{pane_current_path}"
+	tmux split-window -v -l 32 -c "#{pane_current_path}"
 }
