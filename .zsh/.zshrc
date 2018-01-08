@@ -273,6 +273,9 @@ export TRANSMISSION_HOME="$HOME/.config/transmission/"
 # highlight
 export HIGHLIGHT_OPTIONS='--out-format="xterm256" --style="pablo"'
 
+# sdcv
+export SDCV_PAGER='fold -s -w 100 | less +k'
+
 # -- Options {{{1
 # --------------------------------------------------------------------------------------------------
 
@@ -386,6 +389,7 @@ alias exa='exa --color=always --all --classify --group-directories-first --long 
 alias serve='browser-sync start --config ~/.config/browsersync/config.js'
 alias jq='jq --tab --indent 4'
 alias news='newsboat --quiet'
+alias def='sdcv --color --exact-search'
 
 # Global Aliases
 alias -g ND='*(/om[1])' # Newest directory.
