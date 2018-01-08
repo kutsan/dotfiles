@@ -95,10 +95,8 @@
 		- [ripgrep](https://github.com/BurntSushi/ripgrep) - Line oriented search tool similar to grep that combines the usability of ag
 		- [ffmpeg](https://github.com/FFmpeg/FFmpeg) - Cross-platform solution to handle, record, convert and stream audio and video
 		- [pandoc](https://github.com/jgm/pandoc) - Universal markup converter that supports almost any format
-		- [w3m](http://w3m.sourceforge.net) - Text-based web browser and pager with Vim-like key bindings
 		- [transmission-cli](https://github.com/transmission/transmission) - BitTorrent client and daemon with web UI for remote controlling
 		- [dfc](https://github.com/Rolinh/dfc) - Report file system space usage information with colored graphs
-		- [lasspass-cli](https://github.com/lastpass/lastpass-cli) - LastPass command-line interface for managing vault online
 		- [exa](https://github.com/ogham/exa) - Replacement for ls with colors and more features such as grid support
 		- [hub](https://github.com/github/hub) - Extra features for Git that makes working with GitHub easier
 		- [syncthing](https://github.com/syncthing/syncthing) - Continuous file synchronization utility
@@ -137,6 +135,9 @@
 		- [Styling](https://github.com/termux/termux-styling) - Color schemes and powerline-ready font support
 			- [Nord](https://github.com/kutsan/dotfiles/blob/master/.termux/colors.properties) - Color scheme
 			- FiraCode - Font
-	- [Mycelium](https://play.google.com/store/apps/details?id=com.mycelium.wallet) - Bitcoin wallet
 	- [Telegram](https://play.google.com/store/apps/details?id=org.telegram.messenger) - Cloud-based instant messaging service
 		- [Arc](https://github.com/kutsan/dotfiles/tree/master/.android/telegram) - Android theme
+
+## License
+
+GPLv3
