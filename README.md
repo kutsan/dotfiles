@@ -109,6 +109,7 @@
 		- [pv](https://github.com/icetee/pv) - Tool for monitoring the progress of data through a pipeline
 		- [bind](https://source.isc.org/cgi-bin/gitweb.cgi) - Domain Name System tools
 		- [gist](https://github.com/defunkt/gist) - GitHub Gists client for creating, updating and managing gists
+		- [sdcv](https://github.com/Dushistov/sdcv) - StarDict command-line version, offline directories
 	- GUI
 		- [Emacs](https://www.gnu.org/software/emacs) - GUI version of Emacs the operation-system-like text editor
 		- [mpv](https://github.com/mpv-player/mpv) - Minimalist video player based on MPlayer
