@@ -404,6 +404,12 @@ alias serve='browser-sync start --config ~/.config/browsersync/config.js'
 alias jq='jq --tab --indent 4'
 alias news='newsboat --quiet'
 alias def='sdcv --color'
+alias cal='gcal \
+	--highlighting="$bg[red]:$reset_color:$fg[yellow]:$reset_color" \
+	--pager \
+	--starting-day=1 \
+	--cc-holidays=TR \
+	$(date +'%Y')'
 
 # Global Aliases
 alias -g ND='*(/om[1])' # Newest directory.
