@@ -255,6 +255,10 @@ export GPG_TTY=$(tty)
 # wget
 export WGETRC="$HOME/.config/wget/wgetrc"
 
+# ranger
+export RANGER_LOAD_DEFAULT_RC='false'
+export RANGER_LAST_DIRECTORY_BUFFER="$HOME/.config/ranger/.last"
+
 # taskwarrior
 export TASKRC="$HOME/.task/taskrc"
 

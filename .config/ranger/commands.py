@@ -2,71 +2,54 @@ import os
 from ranger.api.commands import Command
 from ranger.core.loader import CommandLoader
 
-class fzf_select(Command):
+class select(Command):
 	"""
-	:fzf_select
+	:select
 
-	Find a file using `fzf` with a prefix argument select only directories.
-	"""
-
-	def execute(self):
-		import subprocess
-
-		if self.quantifier:
-			# Match only directories
-			command="find -L . .* \( -path '*/\.*' -o -fstype 'dev' -o -fstype 'proc' \) -prune \
-				-o -type d -print 2>/dev/null | sed 1d | cut -b3- | fzf +m"
-		else:
-			# Match files and directories
-			command="find -L . .* \( -path '*/\.*' -o -fstype 'dev' -o -fstype 'proc' \) -prune \
-				-o -print 2>/dev/null | sed 1d | cut -b3- | fzf +m"
-
-			fzf = self.fm.execute_command(command, stdout=subprocess.PIPE)
-			stdout, stderr = fzf.communicate()
-
-			if fzf.returncode == 0:
-				fzf_file = os.path.abspath(stdout.decode('utf-8').rstrip('\n'))
-
-				if os.path.isdir(fzf_file):
-					self.fm.cd(fzf_file)
-				else:
-					self.fm.select_file(fzf_file)
-
-class fzf_locate(Command):
-	"""
-	:fzf_locate
-
-	Find a file using `fzf` with mlocate.
+	Find a file or a directory by using `fzf`.
 	"""
 
 	def execute(self):
 		import subprocess
 
-		if self.quantifier:
-			command="locate home media | fzf --exact -i"
-		else:
-			command="locate / | fzf --exact -i"
+		command="find -L . \( -fstype 'dev' -or -fstype 'proc' \) -prune -or -print 2>/dev/null \
+			| sed 1d \
+			| cut --bytes=3- \
+			| fzf --no-multi --exact --height='100%'"
 
 		fzf = self.fm.execute_command(command, stdout=subprocess.PIPE)
 		stdout, stderr = fzf.communicate()
 
 		if fzf.returncode == 0:
-			fzf_file = os.path.abspath(stdout.decode('utf-8').rstrip('\n'))
+			fzf_file = os.path.abspath(stdout.decode('UTF-8').rstrip('\n'))
 
 			if os.path.isdir(fzf_file):
 				self.fm.cd(fzf_file)
 			else:
 				self.fm.select_file(fzf_file)
 
-class reveal(Command):
+class locate(Command):
 	"""
-	:reveal
+	:locate
 
-	Present selected files in file explorer.
+	Find a file by using `fzf` with mlocate.
 	"""
 
 	def execute(self):
-		self.fm.run('xdg-open .')
+		import subprocess
+
+		command="locate / | fzf --no-multi --exact --height='100%'"
+
+		fzf = self.fm.execute_command(command, stdout=subprocess.PIPE)
+		stdout, stderr = fzf.communicate()
+
+		if fzf.returncode == 0:
+			fzf_file = os.path.abspath(stdout.decode('UTF-8').rstrip('\n'))
+
+			if os.path.isdir(fzf_file):
+				self.fm.cd(fzf_file)
+			else:
+				self.fm.select_file(fzf_file)
 
 class compress(Command):
 	"""
