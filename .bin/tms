@@ -54,8 +54,8 @@ function launch_daemon() {
 }
 
 ##
-# @param $1 {string} Subcommand.
-# @param $2 {string} Subcommand arguments.
+# @param {string} $1 Subcommand.
+# @param {string} $2 Subcommand arguments.
 ##
 function main() {
 	source ~/.bin/utils/console.zsh 2>/dev/null || {
