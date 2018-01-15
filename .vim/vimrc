@@ -11,7 +11,7 @@ filetype plugin indent on
 " Enable syntax highlighting.
 if !exists('g:syntax_on') | syntax enable | endif
 
-" Enable True Color support for Neovim.
+" Enable legacy Neovim True Color support for old plugins.
 if has('nvim') | let $NVIM_TUI_ENABLE_TRUE_COLOR = 1 | endif
 
 " Color options and scheme.
@@ -29,6 +29,7 @@ let g:maplocalleader='\'
 " Ensure the cursor is its box form in vanilla Vim.
 if !has('nvim') && !has('gui')
 	augroup EnsureCursorBox
+		autocmd!
 		autocmd VimEnter * silent execute "!printf '[0 q'" | redraw!
 	augroup END
 endif
@@ -662,8 +663,8 @@ nnoremap <expr> k (v:count > 5 ? "m'" . v:count : '') . 'k'
 nnoremap <expr> j (v:count > 5 ? "m'" . v:count : '') . 'j'
 
 " Forward and backward jump.
-noremap J 5j
-noremap K 5k
+nnoremap J 5j
+nnoremap K 5k
 
 " Avoid collision between <Tab> and <C-i> with mapping <C-i> to <F6> system-wide.
 nnoremap <F6> <C-i>
@@ -678,7 +679,7 @@ nnoremap gz :set fullscreen!<CR>
 nnoremap Q @q
 
 " Go back to last buffer shortcut.
-nmap <C-b> <C-^>
+nnoremap <C-b> <C-^>
 
 " Select last yanked or pasted text.
 nnoremap <expr> gb '`[' . getregtype()[0] . '`]'
