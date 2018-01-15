@@ -108,16 +108,16 @@ function sub_set() {
 		tmux set-buffer -- "$@"
 	}
 
-	printf "$@" | ${CLIPBOARD[set]}
+	${CLIPBOARD[set]} <<< "$@"
 }
 
 ##
 # Print current clipboard content to stdout.
 #
-# @returns {string} Clipboard data.
+# @return {string} Clipboard data.
 ##
 function sub_get() {
-	echo $(${CLIPBOARD[get]})
+	echo -E $(${CLIPBOARD[get]})
 }
 
 ##
@@ -154,9 +154,9 @@ function main() {
 				exit 1
 			}
 
-			# If running through a pipe.
-			if ([[ "$subcommand" == 'set' ]] && [[ -p /dev/stdin ]]) {
-				sub_${subcommand} "$(cat </dev/stdin)"
+			# Prepare for standard input if "set -" is given.
+			if [[ "$1 $2" == 'set -' ]] {
+				sub_set "$(cat)"
 				exit 0
 			}
 
