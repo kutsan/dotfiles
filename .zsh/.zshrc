@@ -383,7 +383,6 @@ alias path="echo $PATH | cut --delimiter=':' --fields=1- --output-delimiter=$'\n
 
 # Custom Shortcuts
 alias r='ranger'
-	if ([[ $(uname -o) == 'Android' ]] 2>/dev/null) { alias r="ranger --cmd='set viewmode multipane'" }
 alias t='task'
 alias tmux='tmux -f "$HOME/.tmux/tmux.conf"'
 alias dfc='dfc -dmT' # -d: Show used size. -m: Base 10 output. -T: Show file system types.
