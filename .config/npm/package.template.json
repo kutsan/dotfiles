@@ -1,0 +1,24 @@
+{
+	"name": "",
+	"version": "0.1.0",
+	"private": true,
+	"homepage": "",
+	"description": "",
+	"keywords": [],
+	"license": "GPLv3",
+	"author": "Kutsan Kaplan <me@kutsankaplan.com> (https://kutsankaplan.com)",
+	"contributors": [],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/"
+	},
+	"main": "",
+	"bin": "",
+	"man": "",
+	"scripts": {
+		"start": "",
+		"test": ""
+	},
+	"dependencies": {},
+	"devDependencies": {}
+}
