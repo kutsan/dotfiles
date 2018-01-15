@@ -232,6 +232,9 @@ LESS_OPTIONS=(
 	--shift=5 # Specifies the default number of positions to scroll horizontally.
 )
 export LESS=$(echo "${LESS_OPTIONS[@]}") && unset LESS_OPTIONS
+export LESSKEY="$HOME/.config/less/lesskey.lwc"
+export LESSKEY_RAW="$HOME/.config/less/lesskey"
+	if ([[ ! -f $LESSKEY ]] || [[ $LESSKEY_RAW -nt $LESSKEY ]]) { lesskey -o $LESSKEY $LESSKEY_RAW }
 export LESSHISTFILE="$HOME/.config/less/lesshistory" # Command and search history file.
 export LESS_TERMCAP_md=$(tput bold; tput setaf 4) # Turn on bold mode.
 export LESS_TERMCAP_me=$(tput sgr0) # Turn off all attributes.
@@ -445,6 +448,7 @@ alias c-tmuxfunctions="$EDITOR ~/.tmux/functions/"
 alias c-eslint="$EDITOR ~/.eslintrc"
 alias c-browsersync="$EDITOR ~/.config/browsersync/config.js"
 alias c-editorconfig="$EDITOR ~/.editorconfig"
+alias c-less="$EDITOR $HOME/.config/less/lesskey"
 alias c-wget="$EDITOR ~/.config/wget/wgetrc"
 alias c-gpg="$EDITOR ~/.gnupg/gpg.conf"
 alias c-htop="$EDITOR ~/.config/htop/htoprc"
