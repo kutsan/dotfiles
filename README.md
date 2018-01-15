@@ -58,9 +58,8 @@
 		- [nodejs](https://nodejs.org) - JavaScript runtime environment for developing a diverse variety of applications
 			- [npm](https://www.npmjs.com) - Node Package Manager mainly for the JavaScript programming language
 				- [eslint](https://github.com/eslint/eslint) - AST-based JavaScript linter for identifying and reporting on patterns
-				- [ngrok](https://github.com/bubenshchykov/ngrok) - Expose local ports via HTTP[S] or TCP secure tunnels to the web
+				- [prettier](https://github.com/prettier/prettier) - Opinionated code formatter
 				- [browser-sync](https://github.com/BrowserSync/browser-sync) - Improve web workflow with auto-reload, interaction sync and more
-				- [stylelint](https://github.com/stylelint/stylelint) - CSS syntax analysis tool, fixer and linter powered by PostCSS
 		- [python](https://www.python.org) - High-level programming language for general-purpose programming
 			- [pip](https://pip.pypa.io) - Python package manager to install and manage packages written in Python
 				- [ranger](https://github.com/ranger/ranger) - Text-based file system manager for the console with Vim-like key bindings
@@ -72,9 +71,11 @@
 				- [asciinema](https://github.com/asciinema/asciinema) - Record and share terminal sessions as text-based colored format
 				- [vim-vint](https://github.com/Kuniwak/vint) - Extensible, high performance Vimscript linter and analysis tool
 				- [neovim](https://github.com/neovim/python-client) - Neovim Python support for plugins and library scripting
+				- [mal](https://github.com/ryukinix/mal) - MyAnimeList command-line interface
 		- [coreutils](https://www.gnu.org/software/coreutils/coreutils.html) - GNU core utilities for basic file, shell and text manipulation
 		- [findutils](https://www.gnu.org/software/findutils) - GNU basic directory searching utilities that provides find, locate and xargs
 		- [moreutils](https://joeyh.name/code/moreutils) - Collection of the useful Unix tools
+		- [less](http://www.greenwoodsoftware.com/less) - Standard file pager for Unix-like systems
 		- [curl](https://github.com/curl/curl) - Command-line tool and library for transferring data with URL syntax
 		- [wget](https://www.gnu.org/software/wget) - Command-line tool for retrieving files using the most widely-used Internet protocols
 		- [gnupg](https://www.gnupg.org) - Hybrid-encryption software suit, free implementation of the OpenPGP standard
@@ -108,6 +109,7 @@
 		- [bind](https://source.isc.org/cgi-bin/gitweb.cgi) - Domain Name System tools
 		- [gist](https://github.com/defunkt/gist) - GitHub Gists client for creating, updating and managing gists
 		- [sdcv](https://github.com/Dushistov/sdcv) - StarDict command-line version, offline directories
+		- [gcal](https://www.gnu.org/software/gcal) - Calculate and print calendars
 	- GUI
 		- [Emacs](https://www.gnu.org/software/emacs) - GUI version of Emacs the operation-system-like text editor
 		- [mpv](https://github.com/mpv-player/mpv) - Minimalist video player based on MPlayer
