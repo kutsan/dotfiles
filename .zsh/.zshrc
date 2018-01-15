@@ -290,7 +290,7 @@ export TRANSMISSION_HOME="$HOME/.config/transmission/"
 export HIGHLIGHT_OPTIONS='--out-format="xterm256" --style="pablo"'
 
 # sdcv
-export SDCV_PAGER='fold -s -w 100 | less +k'
+export SDCV_PAGER='fold -s -w 100 | less'
 
 # -- Options {{{1
 # --------------------------------------------------------------------------------------------------
@@ -403,7 +403,7 @@ alias exa='exa --color=always --all --classify --group-directories-first --long 
 alias serve='browser-sync start --config ~/.config/browsersync/config.js'
 alias jq='jq --tab --indent 4'
 alias news='newsboat --quiet'
-alias def='sdcv --color --exact-search'
+alias def='sdcv --color'
 
 # Global Aliases
 alias -g ND='*(/om[1])' # Newest directory.
@@ -520,13 +520,6 @@ function lsg() {
 		| command grep --ignore-case --extended-regexp "$1"
 }
 
-# Search through processes.
-function psg() {
-	ps aux \
-		| command grep --invert-match grep \
-		| command grep --ignore-case ${1:-'.'}
-}
-
 ##
 # Former ranger alias.
 # cd the last opened directory when ranger has been started, cd the directory
@@ -545,11 +538,6 @@ function r() {
 	}
 
 	cd "$(cat $RANGER_LAST_DIRECTORY_BUFFER)" 2>/dev/null
-}
-
-# Quick MD5 check.
-function md5check() {
-	md5sum "$1" | command grep --color=always "$2"
 }
 
 # `z` with `fzf`.
@@ -589,7 +577,7 @@ function fgl() {
 ##
 # Better `cd ../../..` with autocomplete
 #
-# @param $1 {(string|number)} Partial parent directory string or direct number.
+# @param {(string|number)} $1 Partial parent directory string or direct number.
 ##
 function ..() {
 	if (( ! $# )) {
