@@ -527,6 +527,26 @@ function psg() {
 		| command grep --ignore-case ${1:-'.'}
 }
 
+##
+# Former ranger alias.
+# cd the last opened directory when ranger has been started, cd the directory
+# opened in current column when it is exited while going back to the terminal
+# and provide $1 as valid directory to suppress going back to last directory.
+#
+# @param {string} [$1] Directory path which will cd into.
+##
+function r() {
+	# If given directory is valid.
+	if [[ -e "$1" ]] {
+		ranger "$1" --choosedir=$RANGER_LAST_DIRECTORY_BUFFER
+	} else {
+		cd "$(cat $RANGER_LAST_DIRECTORY_BUFFER 2>/dev/null)" 2>/dev/null
+		ranger --choosedir=$RANGER_LAST_DIRECTORY_BUFFER
+	}
+
+	cd "$(cat $RANGER_LAST_DIRECTORY_BUFFER)" 2>/dev/null
+}
+
 # Quick MD5 check.
 function md5check() {
 	md5sum "$1" | command grep --color=always "$2"
