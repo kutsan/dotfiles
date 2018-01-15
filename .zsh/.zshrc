@@ -218,12 +218,24 @@ export LANGUAGE='en_US.UTF-8'
 eval $(dircolors --sh "$ZDOTDIR/dircolors")
 
 # less
-export LESS='--ignore-case --tilde --chop-long-lines --status-column --LONG-PROMPT --jump-target=10 --RAW-CONTROL-CHARS'
+LESS_OPTIONS=(
+	--ignore-case # Make the search smart case sensitive.
+	--tilde # Disable EOF tilde (~) characters and use blank lines instead.
+	--chop-long-lines # Truncate long lines and do not wrap them.
+	--status-column # Display a status column at left edge of the screen.
+	--LONG-PROMPT # Make status column more verbose.
+	--jump-target=10 # Make target line the tenth line from top.
+	--RAW-CONTROL-CHARS # Output ANSI escape sequences in their raw form.
+	--clear-screen # First line of the text should be always on top.
+	--silent # Disable bell and use visual bell if available.
+	--tabs=4 # Set tab length.
+	--shift=5 # Specifies the default number of positions to scroll horizontally.
+)
+export LESS=$(echo "${LESS_OPTIONS[@]}") && unset LESS_OPTIONS
 export LESSHISTFILE="$HOME/.config/less/lesshistory" # Command and search history file.
-export LESSPROMPT='?f%f .?ltLine %lt:?pt%pt\%:?btByte %bt:-...' # Custom bottom prompt.
-export LESS_TERMCAP_md=$(tput bold; tput setaf 147) # Turn on bold mode.
+export LESS_TERMCAP_md=$(tput bold; tput setaf 4) # Turn on bold mode.
 export LESS_TERMCAP_me=$(tput sgr0) # Turn off all attributes.
-export LESS_TERMCAP_so=$(tput bold; tput setaf 214) # Begin standout mode.
+export LESS_TERMCAP_so=$(tput bold; tput setaf 3) # Begin standout mode.
 export LESS_TERMCAP_se=$(tput rmso; tput sgr0) # Exit standout mode.
 export LESS_TERMCAP_us=$(tput smul; tput bold; tput setaf 250) # Begin underline mode.
 export LESS_TERMCAP_ue=$(tput rmul; tput sgr0) # Exit underline mode.
@@ -369,7 +381,6 @@ alias cp='cp --interactive --verbose' # Prompt before overwriting anything and u
 alias ln='ln --interactive --verbose' # Prompt before overwriting anything and use extra verbosity.
 alias mkdir='mkdir --parents' # Make parent directories as needed.
 alias dirs='dirs -v -p' # Print directory stack with numbers and one directory per line.
-alias less='less --silent' # Disable bell and use visual bell if available.
 alias grep='grep --color=auto --exclude-dir .git' # Always use colors and ignore `.git/`.
 alias du='du --max-depth=1 --si' # Display size of files and folders under current directory.
 alias df='df --all --si --print-type' # Display all disk usage statistics with SI units, FS types.
