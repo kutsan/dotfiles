@@ -100,7 +100,7 @@ function determinate_clipboard_manager() {
 ##
 # Set clipboard content with giving parameters.
 #
-# @param $1 {string} Text for clipboard content.
+# @param {string} $1 Text for clipboard content.
 ##
 function sub_set() {
 	# Set also tmux clipboard buffer if tmux available.
@@ -121,8 +121,8 @@ function sub_get() {
 }
 
 ##
-# @param $1 {string} Subcommand.
-# @param $2 {string} Subcommand arguments.
+# @param {string} $1 Subcommand.
+# @param {string} $2 Subcommand arguments.
 ##
 function main() {
 	source ~/.bin/utils/console.zsh 2>/dev/null || {
