@@ -668,17 +668,17 @@ function = {
 ##
 # Bookmark manager.
 #
-# @param [$1] {string} Defined bookmark string.
+# @param {string} [$1] Defined bookmark string.
 ##
 function j() {
 	# Bookmarks
 	local -A bookmarks=(
-		'des' ~/Desktop/
-		'doc' ~/Documents/
-		'dow' ~/Downloads/
-		'pic' ~/Pictures/
-		'pro' ~/Projects/
-		'vid' ~/Videos/
+		'e' ~/Desktop/
+		'd' ~/Documents/
+		'w' ~/Downloads/
+		'i' ~/Pictures/
+		'p' ~/Projects/
+		'v' ~/Videos/
 	)
 
 	local selected_bookmark
@@ -688,9 +688,9 @@ function j() {
 	} else {
 		local bookmarks_table
 
-		local i
-		foreach i (${(k)bookmarks}) {
-			bookmarks_table+="$i ${bookmarks[$i]}\n"
+		local key
+		foreach key (${(k)bookmarks}) {
+			bookmarks_table+="$key ${bookmarks[$key]}\n"
 		}
 
 		if (! hash fzf &>/dev/null) {
@@ -709,7 +709,7 @@ function j() {
 	if [[ "$selected_bookmark" != '' ]] {
 		cd "$selected_bookmark"
 	} else {
-		echo; console.error 'There is no such bookmark to jump in.'; echo
+		echo; console.error 'Could not find any bookmark to jump in.'; echo
 
 		return 1
 	}
