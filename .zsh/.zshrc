@@ -393,7 +393,6 @@ alias f='xdg-open "$PWD"' # Open current directory onto GUI file browser.
 alias path="echo $PATH | cut --delimiter=':' --fields=1- --output-delimiter=$'\n'"
 
 # Custom Shortcuts
-alias r='ranger'
 alias t='task'
 alias tmux='tmux -f "$HOME/.tmux/tmux.conf"'
 alias dfc='dfc -dmT' # -d: Show used size. -m: Base 10 output. -T: Show file system types.
