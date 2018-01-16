@@ -217,38 +217,6 @@ export LANGUAGE='en_US.UTF-8'
 # `ls` Colors
 eval $(dircolors --sh "$ZDOTDIR/dircolors")
 
-# less
-LESS_OPTIONS=(
-	--ignore-case # Make the search smart case sensitive.
-	--tilde # Disable EOF tilde (~) characters and use blank lines instead.
-	--chop-long-lines # Truncate long lines and do not wrap them.
-	--status-column # Display a status column at left edge of the screen.
-	--LONG-PROMPT # Make status column more verbose.
-	--jump-target=10 # Make target line the tenth line from top.
-	--RAW-CONTROL-CHARS # Output ANSI escape sequences in their raw form.
-	--clear-screen # First line of the text should be always on top.
-	--silent # Disable bell and use visual bell if available.
-	--tabs=4 # Set tab length.
-	--shift=5 # Specifies the default number of positions to scroll horizontally.
-)
-export LESS=$(echo "${LESS_OPTIONS[@]}") && unset LESS_OPTIONS
-export LESSKEY="$HOME/.config/less/lesskey.lwc"
-export LESSKEY_RAW="$HOME/.config/less/lesskey"
-	if ([[ ! -f $LESSKEY ]] || [[ $LESSKEY_RAW -nt $LESSKEY ]]) { lesskey -o $LESSKEY $LESSKEY_RAW }
-export LESSHISTFILE="$HOME/.config/less/lesshistory" # Command and search history file.
-export LESS_TERMCAP_md=$(tput bold; tput setaf 4) # Turn on bold mode.
-export LESS_TERMCAP_me=$(tput sgr0) # Turn off all attributes.
-export LESS_TERMCAP_so=$(tput bold; tput setaf 3) # Begin standout mode.
-export LESS_TERMCAP_se=$(tput rmso; tput sgr0) # Exit standout mode.
-export LESS_TERMCAP_us=$(tput smul; tput bold; tput setaf 250) # Begin underline mode.
-export LESS_TERMCAP_ue=$(tput rmul; tput sgr0) # Exit underline mode.
-export LESS_TERMCAP_mr=$(tput rev) # Turn on reverse video mode.
-export LESS_TERMCAP_mh=$(tput dim) # Turn on half-bright mode.
-export LESS_TERMCAP_ZN=$(tput ssubm) # Enter subscript mode.
-export LESS_TERMCAP_ZV=$(tput rsubm) # End subscript mode.
-export LESS_TERMCAP_ZO=$(tput ssupm) # Enter superscript mode.
-export LESS_TERMCAP_ZW=$(tput rsupm) # End superscript mode.
-
 # man
 export MANWIDTH='100' # Fixed line width for man pages
 	if ([[ $(uname -o) == 'Android' ]] 2>/dev/null) { MANWIDTH='50' }
@@ -291,6 +259,13 @@ export TRANSMISSION_HOME="$HOME/.config/transmission/"
 
 # highlight
 export HIGHLIGHT_OPTIONS='--out-format="xterm256" --style="pablo"'
+
+# less
+source "$HOME/.config/less/lessrc" # Load core options.
+export LESSHISTFILE="$HOME/.config/less/lesshistory" # Command and search history file.
+export LESSKEYRC="$HOME/.config/less/lesskey" # Path of the uncompiled lesskey file.
+export LESSKEY="$LESSKEYRC.lwc" # Path of the compiled lesskey file.
+	if ([[ ! -f $LESSKEY ]] || [[ $LESSKEYRC -nt $LESSKEY ]]) { lesskey -o $LESSKEY $LESSKEYRC } # Compile lesskey file every time if compile is needed.
 
 # sdcv
 export SDCV_PAGER='fold -s -w 100 | less'
