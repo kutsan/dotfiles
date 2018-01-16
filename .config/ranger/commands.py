@@ -83,3 +83,25 @@ class compress(Command):
 	def tab(self):
 		extension = ['.zip', '.tar.gz', '.rar', '.7z']
 		return ['compress ' + os.path.basename(self.fm.thisdir.path) + ext for ext in extension]
+
+class jump(Command):
+	"""
+	:jump
+
+	Jump to a most used directory using `fasd` and `fzf`.
+	"""
+	def execute(self):
+		import subprocess
+
+		command="fasd -l -d | fzf --exact --tac --no-sort --prompt='jump ' --height='100%'"
+
+		fzf = self.fm.execute_command(command, stdout=subprocess.PIPE)
+		stdout, stderr = fzf.communicate()
+
+		if fzf.returncode == 0:
+			fzf_file = os.path.abspath(stdout.decode('UTF-8').rstrip('\n'))
+
+			if os.path.isdir(fzf_file):
+				self.fm.cd(fzf_file)
+			else:
+				self.fm.select_file(fzf_file)
