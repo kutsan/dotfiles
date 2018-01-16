@@ -621,25 +621,6 @@ let g:terminal_color_15 = '#eceff4' " Bold White
 " -- Insert Mode {{{2
 " ------------------------------------------------
 
-" Insert current time in various amount of formats with completion menu.
-inoremap <silent> <C-g><C-t>
-	\ <C-r>=
-	\ repeat(
-		\ complete(
-			\ col('.'),
-			\ map(
-				\ [
-					\ "%Y-%m-%d %H:%M:%S",
-					\ "%a, %d %b %Y %H:%M:%S %z",
-					\ "%Y %b %d",
-					\ "%d-%b-%y",
-					\ "%a %b %d %T %Z %Y"
-				\ ],
-				\ 'strftime(v:val)'
-			\ ) + [localtime()]
-		\ ),
-	\ 0)<CR>
-
 " -- Normal Mode {{{2
 " ------------------------------------------------
 
@@ -764,10 +745,6 @@ xnoremap ae GoggV
 " Alternative end and beginning of line shortcuts.
 xnoremap H ^
 xnoremap L $
-
-" Quickly refactor variables.
-xnoremap <expr> cn "y/\\V\<C-r>=escape(@\", '/')\<CR>\<CR>" . "``cgn"
-xnoremap <expr> cN "y/\\V\<C-r>=escape(@\", '/')\<CR>\<CR>" . "``cgN"
 
 " -- Operator Mode {{{2
 " ------------------------------------------------
