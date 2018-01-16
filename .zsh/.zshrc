@@ -29,6 +29,9 @@ autoload -U edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd 'gv' edit-command-line
 
+# Load hook API.
+autoload -U add-zsh-hook
+
 # Load color variables.
 autoload -U colors && colors
 
@@ -62,6 +65,12 @@ unset char
 
 # Load extra features for completion.
 zmodload zsh/complist
+
+# Load fasd to track most used files and directories.
+_fasd_preexec() {
+	fasd --proc $(fasd --sanitize "$1") &>/dev/null
+}
+add-zsh-hook preexec _fasd_preexec
 
 # -- Prompt {{{2
 # ------------------------------------------------
@@ -524,10 +533,10 @@ function r() {
 	cd "$(cat $RANGER_LAST_DIRECTORY_BUFFER)" 2>/dev/null
 }
 
-# `z` with `fzf`.
+# `fasd` with `fzf`.
 function fz() {
 	if [[ "$@" == '' ]] {
-		cd "$(_z -l 2>&1 | fzf --exact --prompt='z ' | sed 's/^[0-9,.]* *//')"
+		cd "$(fasd -l -d | fzf --tac --no-sort --exact --prompt='cd ')"
 	} else {
 		typeset -g _last_z_args="$@"
 		_z "$@"
@@ -955,9 +964,6 @@ case "$OSTYPE" {
 		PATH="$PATH:$HOME/.fzf/bin/"
 		;;
 }
-
-# z: Tracks your most used directories.
-source "$ZDOTDIR/plugins/z/z.sh"
 
 # zsh-autopair: Insert or delete brackets, parens, quotes in pair.
 source "$ZDOTDIR/plugins/zsh-autopair/autopair.zsh"
