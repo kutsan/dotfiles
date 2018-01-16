@@ -40,7 +40,7 @@ LESS_OPTIONS=(
 export LESS=$(echo "${LESS_OPTIONS[@]}") && unset LESS_OPTIONS
 
 # Use `highlight` program to try to highlight opened file according to its extension.
-eval "export LESSOPEN='| highlight $HIGHLIGHT_OPTIONS -- %s 2>/dev/null'"
+export LESSOPEN="| highlight $HIGHLIGHT_OPTIONS -- %s 2>/dev/null"
 
 # -- Colors {{{1
 # --------------------------------------------------------------------------------------------------
