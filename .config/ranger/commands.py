@@ -15,7 +15,7 @@ class select(Command):
 		command="find -L . \( -fstype 'dev' -or -fstype 'proc' \) -prune -or -print 2>/dev/null \
 			| sed 1d \
 			| cut --bytes=3- \
-			| fzf --no-multi --exact --height='100%'"
+			| fzf --no-multi --exact --prompt='select ' --height='100%'"
 
 		fzf = self.fm.execute_command(command, stdout=subprocess.PIPE)
 		stdout, stderr = fzf.communicate()
@@ -38,7 +38,7 @@ class locate(Command):
 	def execute(self):
 		import subprocess
 
-		command="locate / | fzf --no-multi --exact --height='100%'"
+		command="locate / | fzf --no-multi --exact --prompt='locate ' --height='100%'"
 
 		fzf = self.fm.execute_command(command, stdout=subprocess.PIPE)
 		stdout, stderr = fzf.communicate()
