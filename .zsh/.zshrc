@@ -223,7 +223,7 @@ export LANG='en_US.UTF-8'
 export LC_ALL='en_US.UTF-8'
 export LANGUAGE='en_US.UTF-8'
 
-# `ls` Colors
+# dircolors
 eval $(dircolors --sh "$ZDOTDIR/dircolors")
 
 # man
@@ -256,12 +256,10 @@ export TASKRC="$HOME/.task/taskrc"
 
 # fzf
 export FZF_DEFAULT_COMMAND='rg --files --no-messages --no-ignore --hidden --follow --glob "!.git/*" --glob "!node_modules/*"'
-export FZF_DEFAULT_OPTS='--no-multi --no-bold --height="40%" --jump-labels="bmvenritusldkfjgh" --bind="ctrl-f:jump-accept" --color=dark,fg:7,fg+:7,bg:0,bg+:8,hl:4,hl+:4,info:8,border:8,prompt:4,pointer:3,marker:3,spinner:8,header:6'
+export FZF_DEFAULT_COLORS='--color=dark,fg:7,fg+:7,bg:0,bg+:8,hl:4,hl+:4,info:8,border:8,prompt:4,pointer:3,marker:3,spinner:8,header:6'
+export FZF_DEFAULT_OPTS="$FZF_DEFAULT_COLORS --no-multi --no-bold --height='40%' --jump-labels='bmvenritusldkfjgh' --bind='ctrl-f:jump-accept'"
 export FZF_COMPLETION_TRIGGER='?'
 export FZF_COMPLETION_OPTS='--preview="highlight --out-format="xterm256" --style="pablo" {} 2>/dev/null || cat {}"'
-
-# lpass
-export LPASS_AGENT_TIMEOUT='60' # Automatically close the agent after 1 minute.
 
 # transmission
 export TRANSMISSION_HOME="$HOME/.config/transmission/"
@@ -432,7 +430,7 @@ alias c-tmuxfunctions="$EDITOR ~/.tmux/functions/"
 alias c-eslint="$EDITOR ~/.eslintrc"
 alias c-browsersync="$EDITOR ~/.config/browsersync/config.js"
 alias c-editorconfig="$EDITOR ~/.editorconfig"
-alias c-less="$EDITOR $HOME/.config/less/lesskey"
+alias c-less="$EDITOR $HOME/.config/less/"
 alias c-wget="$EDITOR ~/.config/wget/wgetrc"
 alias c-gpg="$EDITOR ~/.gnupg/gpg.conf"
 alias c-htop="$EDITOR ~/.config/htop/htoprc"
@@ -541,16 +539,6 @@ function fz() {
 		typeset -g _last_z_args="$@"
 		_z "$@"
 	}
-}
-
-# `cd` to selected directory with `fzf`.
-function fcd() {
-	local directory=$(
-		command find ${1:-.} -type d 2>/dev/null \
-			| fzf \
-				--exact \
-				--prompt='cd '
-	) && cd "$directory"
 }
 
 # Better `git log` with `fzf`.
@@ -975,7 +963,7 @@ source "$ZDOTDIR/plugins/zsh-system-clipboard/zsh-system-clipboard.zsh"
 # zsh-autosuggestions: Fish-like auto-suggestions.
 source "$ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
-# zsh-syntax-highlighting: Syntax highlighting support>
+# zsh-syntax-highlighting: Syntax highlighting support.
 source "$ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 	ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 	typeset -A ZSH_HIGHLIGHT_STYLES
