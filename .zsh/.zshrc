@@ -241,9 +241,10 @@ export GITHUB_USERNAME='kutsan'
 export NPM_CONFIG_INIT_AUTHOR_NAME='Kutsan Kaplan'
 export NPM_CONFIG_INIT_AUTHOR_EMAIL='me@kutsankaplan.com'
 export NPM_CONFIG_INIT_AUTHOR_URL='https://kutsankaplan.com'
-export NPM_CONFIG_INIT_LICENSE='MIT'
+export NPM_CONFIG_INIT_LICENSE='GPLv3'
 export NPM_CONFIG_INIT_VERSION='0.1.0'
 export NPM_CONFIG_SAVE_PREFIX='~'
+export NPM_CONFIG_SIGN_GIT_TAG='true'
 
 # GnuPG
 export GPG_TTY=$(tty)
