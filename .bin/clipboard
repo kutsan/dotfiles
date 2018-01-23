@@ -6,10 +6,6 @@
 # USAGE
 #   Run this program without arguments to see list of options.
 #
-# TODO
-#   - Support shell redirection operators for piping.
-#   - Fix xsel bugs
-#
 # @author Kutsan Kaplan <me@kutsankaplan.com>
 # @license GPLv3
 # @version v0.1.0
@@ -30,12 +26,12 @@ cat << EOF
   Provides sane clipboard API across supported systems.
 
   ${bold_color}SYNOPSIS${reset_color}
-    $ ${fg[green]}clipboard${reset_color} <set|get|help|--help|version|--version> [<args>]
+    $ ${fg[green]}clipboard${reset_color} ${fg[cyan]}<${reset_color}set${fg[cyan]}|${reset_color}set -${fg[cyan]}|${reset_color}get${fg[cyan]}|${reset_color}help${fg[cyan]}|${reset_color}--help${fg[cyan]}|${reset_color}version${fg[cyan]}|${reset_color}--version${fg[cyan]}>${reset_color} [${fg[cyan]}<${reset_color}args${fg[cyan]}>${reset_color}]
 
   ${bold_color}EXAMPLES${reset_color}
     $ ${fg[green]}clipboard${reset_color} set ${fg[yellow]}'Example text.'${reset_color}
     $ ${fg[green]}clipboard${reset_color} get ${fg[black]}# Prints 'Example text.'.${reset_color}
-    $ ${fg[green]}echo${reset_color} ${fg[yellow]}'Example text.'${reset_color} | ${fg[green]}clipboard${reset_color} set
+    $ ${fg[green]}echo${reset_color} ${fg[yellow]}'Example text.'${reset_color} ${fg[cyan]}|${reset_color} ${fg[green]}clipboard${reset_color} set -
 
   ${bold_color}AUTHOR${reset_color}
     Kutsan Kaplan <me@kutsankaplan.com>
