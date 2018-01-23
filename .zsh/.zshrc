@@ -477,20 +477,30 @@ function ga() { git add "$@" && git status -sb }
 # -- Functions {{{1
 # --------------------------------------------------------------------------------------------------
 
-# General error and warning notification utility functions.
+# Import general error and warning notification utility functions.
 source ~/.bin/utils/console.zsh
 
+##
 # Returns the bare IP address.
+##
 function myip() {
-	command curl --silent https://httpbin.org/ip | command grep --only-matching --extended-regexp '[0-9\.]*'
+	command curl --silent 'https://httpbin.org/ip' | command grep --only-matching --extended-regexp '[0-9\.]*'
 }
 
+##
 # Makes directory and `cd`s into it.
+#
+# @param {string} $1 Directory name that will be created.
+##
 function take() {
 	command mkdir --parents --verbose "$1" && cd "$1"
 }
 
+##
 # List and grep with file permissions.
+#
+# @param {string} $1 File or directory name in current working directory.
+##
 function lsg() {
 	command ls -l --almost-all --si \
 		| command awk \
@@ -512,25 +522,17 @@ function lsg() {
 
 ##
 # Former ranger alias.
-# cd the last opened directory when ranger has been started, cd the directory
-# opened in current column when it is exited while going back to the terminal
-# and provide $1 as valid directory to suppress going back to last directory.
 #
 # @param {string} [$1] Directory path which will cd into.
 ##
 function r() {
-	# If given directory is valid.
-	if [[ -e "$1" ]] {
-		ranger "$1" --choosedir=$RANGER_LAST_DIRECTORY_BUFFER
-	} else {
-		cd "$(cat $RANGER_LAST_DIRECTORY_BUFFER 2>/dev/null)" 2>/dev/null
-		ranger --choosedir=$RANGER_LAST_DIRECTORY_BUFFER
-	}
-
-	cd "$(cat $RANGER_LAST_DIRECTORY_BUFFER)" 2>/dev/null
+	ranger "$1" --choosedir=$RANGER_LAST_DIRECTORY_BUFFER \
+		&& cd "$(cat $RANGER_LAST_DIRECTORY_BUFFER)" 2>/dev/null
 }
 
+##
 # `fasd` with `fzf`.
+##
 function fz() {
 	if [[ "$@" == '' ]] {
 		cd "$(fasd -l -d | fzf --tac --no-sort --exact --prompt='cd ')"
@@ -540,7 +542,9 @@ function fz() {
 	}
 }
 
+##
 # Better `git log` with `fzf`.
+##
 function fgl() {
 	git log --graph --color=always --format='%C(auto)%h%d %s %C(black)%C(bold)%cr' "$@" \
 		| fzf \
@@ -613,8 +617,13 @@ function ..() {
 	}
 }
 
+##
+# Manual Page Explorer.
 # Browse through man pages with fzf.
-function man-page-explorer() {
+#
+# @param {string} [$1] Query string to search manual pages.
+##
+function mane() {
 	# Responsive window options.
 	local preview_window_options=(
 		$(
@@ -633,7 +642,7 @@ function man-page-explorer() {
 			--reverse \
 			--height='100%' \
 			--no-hscroll \
-			--query="$(echo ${BUFFER%% *})" \
+			--query="$1" \
 			--prompt='$ man ' \
 			--color='hl:3,hl+:3' \
 			--bind="enter:execute(echo {1} | sed -E 's/\s.*|\(.*//' | xargs man)" \
@@ -648,7 +657,11 @@ function man-page-explorer() {
 			--bind='ctrl-alt-d:half-page-down'
 }
 
+##
 # Quick calculator.
+#
+# @param {string} $1 Math expression.
+##
 function = {
 	python3 -c "from math import *; print($*)"
 }
