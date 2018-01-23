@@ -450,6 +450,7 @@ set breakindent " Wrapped lines will be indented with same amount of space.
 set clipboard=unnamed,unnamedplus " Use system clipboard.
 set complete-=i " Disable scanning current and included files.
 set completeopt=longest,menuone " Options for insert mode completion.
+set confirm " Seek for confirmation for certain commands instead of giving errors.
 set cursorline " Highlight the line background of the cursor.
 set display=lastline " As much as possible of the last line in a window will be displayed.
 set fillchars= " Characters to fill the status lines and vertical separators.
