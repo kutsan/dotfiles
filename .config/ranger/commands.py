@@ -106,3 +106,24 @@ class jump(Command):
 				self.fm.cd(fzf_file)
 			else:
 				self.fm.select_file(fzf_file)
+
+class toggle_alternate_view(Command):
+	"""
+	:toggle_alternate_view
+
+	Enable and disable alternative column ratios.
+	"""
+
+	def execute(self):
+		MAIN_RATIOUS = '2,2,3,3'
+		ALTERNATE_RATIOUS = '2,3'
+
+		def get_current_column_ratios():
+			return ','.join(str(e) for e in self.fm.settings['column_ratios'])
+
+		if (self.fm.settings['viewmode'] == 'miller'):
+			if (get_current_column_ratios() == MAIN_RATIOUS):
+				self.fm.set_option_from_string('column_ratios', ALTERNATE_RATIOUS)
+
+			elif (get_current_column_ratios() == ALTERNATE_RATIOUS):
+				self.fm.set_option_from_string('column_ratios', MAIN_RATIOUS)
