@@ -74,15 +74,6 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 	augroup END
 endif
 
-" Automatically install missing plugins.
-augroup VimPlugAutomaticPluginInstallation
-	autocmd!
-	autocmd VimEnter *
-				\ if len(filter(values(g:plugs), '!isdirectory(v:val.dir)')) |
-				\	PlugInstall --sync | q |
-				\ endif
-augroup END
-
 " Disable line numbers completely in plugin manager.
 augroup VimPlugDisableLineNumbers
 	autocmd!
