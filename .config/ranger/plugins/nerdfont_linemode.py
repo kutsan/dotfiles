@@ -191,6 +191,6 @@ class NerdFontLinemodeFilename(LinemodeBase):
     name = 'filename'
 
     def filetitle(self, fobj, metadata):
-        return get_icon(fobj) + ' ' + fobj.relative_path
+        return f' {get_icon(fobj)} {fobj.relative_path}'
 
 # vim: expandtab
