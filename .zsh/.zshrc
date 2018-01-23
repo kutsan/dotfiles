@@ -183,6 +183,10 @@ if [[ $(uname) == 'Darwin' ]] {
 	path=($CURL_HOME $path)
 	manpath=($CURL_MAN_HOME $manpath)
 
+	# ncurses
+	export NCURSES_HOME='/usr/local/opt/ncurses/bin'
+	path=($NCURSES_HOME $path)
+
 	# Android SDK
 	export ANDROID_HOME="$HOME/Library/Android/sdk"
 	path=($path $ANDROID_HOME/{tools,platform-tools})
