@@ -42,10 +42,11 @@ EOF
 
 function update_system_packages() {
 	if ([[ $(uname) = 'Darwin' ]] 2>/dev/null) {
-		echo; console.info "${fg[green]}brew${reset_color} update${fg[cyan]};${reset_color} ${fg[green]}brew${reset_color} upgrade${fg[cyan]};${reset_color} ${fg[green]}brew${reset_color} cleanup${fg[cyan]};${reset_color} ${fg[green]}brew${reset_color} cask cleanup"; echo
+		echo; console.info "${fg[green]}brew${reset_color} update${fg[cyan]};${reset_color} ${fg[green]}brew${reset_color} upgrade${fg[cyan]};${reset_color} ${fg[green]}brew${reset_color} prune${fg[cyan]};${reset_color} ${fg[green]}brew${reset_color} cleanup${fg[cyan]};${reset_color}"; echo
 
 		brew update
 		brew upgrade
+		brew prune
 		brew cleanup
 
 	} elif ([[ $(uname -o) = 'Android' ]] 2>/dev/null) {
