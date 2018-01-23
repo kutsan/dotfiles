@@ -672,6 +672,23 @@ nnoremap L $
 " Send contents of a `x` command to the black hole register.
 nnoremap x "_x
 
+" Go back or launch the terminal buffer.
+function! ToggleTerminal() abort
+	try
+		exec 'buffer ' . g:terminal_buffer
+        startinsert!
+
+	catch
+		enew
+		call termopen('cd $PWD && $SHELL', { 'detach': 0 })
+
+		let g:terminal_buffer = bufnr('')
+	endtry
+endfunction
+
+let g:terminal_buffer = 0
+nnoremap <silent> <C-z> :call ToggleTerminal()<CR>
+
 " Quick save only when the buffer has been modified.
 nnoremap <silent> <Leader>w :update<CR>
 
@@ -762,8 +779,8 @@ onoremap L $
 " -- Terminal Mode {{{2
 " ------------------------------------------------
 
-" Escape from terminal mode and go back previous window.
-tnoremap <M-b> <C-\><C-n><C-w>p
+" Escape from terminal mode and go back previous buffer.
+tnoremap <C-z> <C-\><C-n><C-^>
 
 " Escape from terminal and persist current location.
 tnoremap <silent> <M-q> <C-\><C-n>:Sayonara<CR>
