@@ -750,18 +750,6 @@ function custom-insert-last-typed-word() {
 	zle insert-last-word -- 0 -1
 }
 
-# Sends the process to background otherwise foregrounds it.
-function custom-ctrl-z-toggle() {
-	if (( $#BUFFER == 0 )) {
-		BUFFER='fg'
-		zle accept-line
-
-	} else {
-		zle push-input
-		zle clear-screen
-	}
-}
-
 # Show split pane man page for written command.
 function custom-tmux-show-man-current-command() {
 	if (! hash tmux &>/dev/null || [[ "$TMUX" == '' ]] || [[ "$BUFFER" == '' ]]) {
@@ -871,7 +859,6 @@ foreach widget (
 	custom-add-noglob-before-the-command
 	custom-add-sudo-before-the-command
 	custom-insert-last-typed-word
-	custom-ctrl-z-toggle
 	custom-tmux-show-man-current-command
 	custom-tmux-scroll-up
 	custom-tmux-jump-back-prompt
@@ -897,7 +884,6 @@ bindkey -M viins ' ' custom-expand-global-alias # Space key to expand global ali
 bindkey -M viins '^X^G' custom-add-noglob-before-the-command # Insert noglob before the command.
 bindkey -M viins '^X^M' custom-add-sudo-before-the-command # Insert sudo before the command.
 bindkey -M viins '^Y' custom-insert-last-typed-word # Insert last typed word for quick copy-paste.
-bindkey -M viins '^Z' custom-ctrl-z-toggle # Sends the process to background otherwise foregrounds it.
 bindkey -M viins '^R' custom-fzf-launch-from-history # Select command from history into the command line.
 
 # Normal Mode
