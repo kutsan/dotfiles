@@ -719,11 +719,7 @@ nnoremap <Leader>? :set hlsearch!<CR>
 " Open `vimrc` file in vertical split.
 nnoremap <Leader>ev :vsplit $MYVIMRC<CR>
 
-" Reveal the syntax highlighting group under the cursor.
-nnoremap <Leader>is :echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')<CR>
 
-" Open `:terminal` in vertical split with current directory.
-nnoremap <silent> <Leader>t :50vsplit +enew\ <Bar>\ call\ termopen('cd\ $PWD\ &&\ $SHELL')<CR>
 
 " -- Command Mode {{{2
 " ------------------------------------------------
@@ -782,10 +778,6 @@ onoremap L $
 
 " Escape from terminal mode and go back previous buffer.
 tnoremap <C-z> <C-\><C-n><C-^>
-
-" Escape from terminal and persist current location.
-tnoremap <silent> <M-q> <C-\><C-n>:Sayonara<CR>
-tnoremap <silent> <M-d> <C-\><C-n>:Sayonara!<CR>
 
 " -- Hooks {{{1
 " --------------------------------------------------------------------------------------------------
