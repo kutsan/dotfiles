@@ -71,6 +71,7 @@
 				- [vim-vint](https://github.com/Kuniwak/vint) - Extensible, high performance Vimscript linter and analysis tool
 				- [neovim](https://github.com/neovim/python-client) - Neovim Python support for plugins and library scripting
 				- [mal](https://github.com/ryukinix/mal) - MyAnimeList command-line interface
+				- [stig](https://github.com/rndusr/stig) - TUI and CLI interface for transmission-daemon
 		- [coreutils](https://www.gnu.org/software/coreutils/coreutils.html) - GNU core utilities for basic file, shell and text manipulation
 		- [findutils](https://www.gnu.org/software/findutils) - GNU basic directory searching utilities that provides find, locate and xargs
 		- [moreutils](https://joeyh.name/code/moreutils) - Collection of the useful Unix tools
