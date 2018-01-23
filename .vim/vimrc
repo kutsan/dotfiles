@@ -716,10 +716,11 @@ nnoremap <Leader>P P=`]
 " Toggle search highlighting.
 nnoremap <Leader>? :set hlsearch!<CR>
 
-" Open `vimrc` file in vertical split.
-nnoremap <Leader>ev :vsplit $MYVIMRC<CR>
+" Open `vimrc` file in new buffer.
+nnoremap <Leader>ee :edit $MYVIMRC<CR>
 
-
+" Reload `vimrc` file.
+nnoremap <Leader>er :source $MYVIMRC<CR>
 
 " -- Command Mode {{{2
 " ------------------------------------------------
