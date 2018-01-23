@@ -90,10 +90,11 @@ class jump(Command):
 
 	Jump to a most used directory using `fasd` and `fzf`.
 	"""
+
 	def execute(self):
 		import subprocess
 
-		command="fasd -l -d | fzf --exact --tac --no-sort --prompt='jump ' --height='100%'"
+		command="fasd -l | fzf --exact --tac --no-sort --prompt='jump ' --height='100%'"
 
 		fzf = self.fm.execute_command(command, stdout=subprocess.PIPE)
 		stdout, stderr = fzf.communicate()
