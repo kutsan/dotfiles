@@ -18,12 +18,8 @@
 								"from": {
 									"key_code": "h",
 									"modifiers": {
-										"mandatory": [
-											"fn"
-										],
-										"optional": [
-											"any"
-										]
+										"mandatory": ["fn"],
+										"optional": ["any"]
 									}
 								},
 								"to": [
@@ -37,12 +33,8 @@
 								"from": {
 									"key_code": "j",
 									"modifiers": {
-										"mandatory": [
-											"fn"
-										],
-										"optional": [
-											"any"
-										]
+										"mandatory": ["fn"],
+										"optional": ["any"]
 									}
 								},
 								"to": [
@@ -56,12 +48,8 @@
 								"from": {
 									"key_code": "k",
 									"modifiers": {
-										"mandatory": [
-											"fn"
-										],
-										"optional": [
-											"any"
-										]
+										"mandatory": ["fn"],
+										"optional": ["any"]
 									}
 								},
 								"to": [
@@ -75,12 +63,8 @@
 								"from": {
 									"key_code": "l",
 									"modifiers": {
-										"mandatory": [
-											"fn"
-										],
-										"optional": [
-											"any"
-										]
+										"mandatory": ["fn"],
+										"optional": ["any"]
 									}
 								},
 								"to": [
@@ -104,26 +88,20 @@
 											"alacritty",
 											"^org\\.vim\\.MacVim\\.plist$"
 										],
-											"type": "frontmost_application_if"
+										"type": "frontmost_application_if"
 									}
 								],
 								"from": {
 									"key_code": "i",
 									"modifiers": {
-										"mandatory": [
-											"control"
-										],
-										"optional": [
-											"any"
-										]
+										"mandatory": ["control"],
+										"optional": ["any"]
 									}
 								},
 								"to": [
 									{
 										"key_code": "f6",
-										"modifiers": [
-											"fn"
-										]
+										"modifiers": ["fn"]
 									}
 								],
 								"type": "basic"
