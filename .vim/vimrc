@@ -752,6 +752,9 @@ xnoremap ae GoggV
 xnoremap H ^
 xnoremap L $
 
+" Always search with 'very magic' mode.
+xnoremap / /\v
+
 " -- Operator Mode {{{2
 " ------------------------------------------------
 
