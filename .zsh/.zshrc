@@ -876,8 +876,6 @@ function custom-fzf-execute-widget() {
 		zle $selected
 	}
 
-	zle reset-prompt
-
 	return $stat
 }
 
