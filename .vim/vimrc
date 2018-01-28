@@ -400,7 +400,10 @@ Plug 'Shougo/vimfiler.vim', { 'on': [] } | call plug#load('vimfiler.vim') " File
 		autocmd!
 
 		" Autostart on launch without focus if it's not Android.
-		autocmd VimEnter * if $OSTYPE !=# 'linux-android' | VimFiler -explorer -no-focus -find | endif
+		autocmd VimEnter *
+			\ if (system('uname --operating-system') !~# 'Android' && &l:filetype !=# 'gitcommit') |
+				\ VimFiler -explorer -no-focus -find |
+			\ endif
 
 		" Disable line numbers completely.
 		autocmd FileType vimfiler setlocal nonumber norelativenumber
