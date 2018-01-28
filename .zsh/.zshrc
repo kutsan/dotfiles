@@ -686,12 +686,12 @@ function = {
 function j() {
 	# Bookmarks
 	local -A bookmarks=(
-		'e' ~/Desktop/
-		'd' ~/Documents/
-		'w' ~/Downloads/
-		'i' ~/Pictures/
-		'p' ~/Projects/
-		'v' ~/Videos/
+		'e' "~/Desktop/"
+		'd' "~/Documents/"
+		'w' "~/Downloads/"
+		'i' "~/Pictures/"
+		'p' "~/Projects/"
+		'v' "~/Videos/"
 	)
 
 	local selected_bookmark
@@ -713,14 +713,18 @@ function j() {
 		} else {
 			selected_bookmark=$(
 				printf "$bookmarks_table" \
-					| fzf --height='20%' \
+					| fzf \
+						--exact \
+						--height='20%' \
+						--preview='eval ls --almost-all --classify --color=always --group-directories-first --literal $(echo {} | cut --delimiter=" " --fields=2 -) 2>/dev/null' \
+						--preview-window='right:80%' \
 					| cut --delimiter=' ' --fields=2
 			)
 		}
 	}
 
 	if [[ "$selected_bookmark" != '' ]] {
-		cd "$selected_bookmark"
+		eval cd "$selected_bookmark"
 	} else {
 		echo; console.error 'Could not find any bookmark to jump in.'; echo
 
