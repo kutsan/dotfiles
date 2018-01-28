@@ -371,7 +371,7 @@ alias cp='cp --interactive --verbose' # Prompt before overwriting anything and u
 alias ln='ln --interactive --verbose' # Prompt before overwriting anything and use extra verbosity.
 alias mkdir='mkdir --parents' # Make parent directories as needed.
 alias dirs='dirs -v -p' # Print directory stack with numbers and one directory per line.
-alias grep='grep --color=auto --exclude-dir .git' # Always use colors and ignore `.git/`.
+alias grep='grep --color=auto --exclude-dir=".git" --exclude-dir="node_modules"' # Always use colors and ignore some directories.
 alias du='du --max-depth=1 --si' # Display size of files and folders under current directory.
 alias df='df --all --si --print-type' # Display all disk usage statistics with SI units, FS types.
 alias h='fc -l -f -i' # Show history with ISO 8601 compatible history time stamp format.
