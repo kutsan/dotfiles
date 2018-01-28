@@ -665,7 +665,7 @@ nnoremap L $
 nnoremap x "_x
 
 " Go back or launch the terminal buffer.
-function! ToggleTerminal() abort
+function! s:ToggleTerminal() abort
 	try
 		exec 'buffer ' . g:terminal_buffer
         startinsert!
@@ -679,7 +679,7 @@ function! ToggleTerminal() abort
 endfunction
 
 let g:terminal_buffer = 0
-nnoremap <silent> <C-z> :call ToggleTerminal()<CR>
+nnoremap <silent> <C-z> :call <SID>ToggleTerminal()<CR>
 
 " Quick save only when the buffer has been modified.
 nnoremap <silent> <Leader>w :update<CR>
