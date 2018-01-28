@@ -536,7 +536,18 @@ function r() {
 ##
 function fz() {
 	if [[ "$@" == '' ]] {
-		cd "$(fasd -l -d | fzf --tac --no-sort --exact --prompt='cd ')"
+		local selected_path=$(
+			fasd -l -d \
+				| fzf \
+					--tac \
+					--no-sort \
+					--exact \
+					--prompt='cd ' \
+					--preview-window='right:60%' \
+					--preview='ls --almost-all --classify --color=always --group-directories-first --literal {} 2>/dev/null'
+		)
+
+		cd "$selected_path"
 	} else {
 		typeset -g _last_z_args="$@"
 		_z "$@"
