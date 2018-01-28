@@ -784,8 +784,8 @@ function custom-tmux-show-man-current-command() {
 		return 1
 	}
 
-	tmux split-window -h -l 95
-	tmux send-keys " man ${${BUFFER//(sudo |noglob |command |builtin |nocorrect |exec )/}%% *} && exit || exit" "Enter"
+	tmux new-window
+	tmux send-keys "man ${${BUFFER//(sudo |noglob |command |builtin |nocorrect |exec )/}%% *}" "Enter"
 }
 
 # Activate tmux copy-mode and scroll up depending on key stroke.
