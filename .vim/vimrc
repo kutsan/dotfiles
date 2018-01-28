@@ -238,7 +238,7 @@ Plug $FZF_HOME | Plug 'junegunn/fzf.vim' " Fuzzy finder fzf as Vim plugin
 	\ }
 
 	nnoremap <silent> <C-p> :FzfGFiles<CR>
-	nnoremap <silent> <Leader>x :FzfCommands<CR>
+	nnoremap <silent> <M-x> :FzfCommands<CR>
 	nnoremap <silent> <Leader>b :FzfBuffers<CR>
 	nnoremap <silent> <Leader>h :FzfHelptags<CR>
 	nnoremap <silent> <Leader>; :FzfHistory:<CR>
