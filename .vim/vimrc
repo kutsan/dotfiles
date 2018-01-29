@@ -668,8 +668,8 @@ nnoremap <Tab> za
 " Always search with 'very magic' mode.
 nnoremap / /\v
 
-" Get rid off the search highlighting.
-nnoremap <silent> <BS> :nohlsearch<CR>
+" Clear search register and thus highlighting.
+nnoremap <silent> <BS> :let @/ = ''<CR>
 
 " Store relative line number jumps in the jumplist if they exceed a threshold.
 nnoremap <expr> k (v:count > 5 ? "m'" . v:count : '') . 'k'
@@ -723,9 +723,6 @@ nnoremap <silent> <C-z> :call <SID>ToggleTerminal()<CR>
 
 " Quick save only when the buffer has been modified.
 nnoremap <silent> <Leader>w :update<CR>
-
-" Clear highlighting.
-nnoremap <Leader>c :let @/ = ''<CR>
 
 " Quickly refactor variables.
 nnoremap <Leader>* *``cgn
