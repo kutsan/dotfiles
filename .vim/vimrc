@@ -18,6 +18,7 @@ if has('nvim') | let $NVIM_TUI_ENABLE_TRUE_COLOR = 1 | endif
 set background=dark " Choose dark colors if available.
 set termguicolors " Enable True Color support.
 colorscheme deep-space " Color scheme.
+	highlight link QuickFixLine CursorLine
 
 " viminfo/shada file location and options for neovim and vim.
 if has('nvim') | set shada+=n~/.vim/nviminfo | else | set viminfo+=!,n~/.vim/viminfo | endif
