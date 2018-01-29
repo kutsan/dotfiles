@@ -25,6 +25,10 @@
 [commit]
 	gpgsign = true
 
+[grep]
+	lineNumber = true
+	patternType = perl
+
 [color]
 	ui = true
 
