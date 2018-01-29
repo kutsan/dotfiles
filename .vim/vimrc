@@ -335,6 +335,7 @@ Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['html', 'css', 'sas
 " ------------------------------------------------
 
 Plug 'moorereason/quick-scope', { 'branch': 'protect-higroup' } " Highlight which characters to target for `f`, `F` and family
+	let g:qs_highlight_on_keys = ['f', 'F', 't', 'T'] " Trigger a highlight only when pressing these keys.
 
 " -- ranger {{{2
 " ------------------------------------------------
