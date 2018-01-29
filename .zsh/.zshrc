@@ -399,6 +399,17 @@ alias cal='gcal \
 	--starting-day=1 \
 	--cc-holidays=TR \
 	$(date +'%Y')'
+alias search="rg \
+	--color='always' \
+	--heading \
+	--line-number \
+	--no-messages \
+	--no-ignore \
+	--hidden \
+	--follow \
+	--smart-case \
+	--glob '!{.git/*,node_modules/*,$(basename $HISTFILE)}' \
+	--regexp"
 
 # Global Aliases
 alias -g ND='*(/om[1])' # Newest directory.
