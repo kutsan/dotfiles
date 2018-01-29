@@ -27,6 +27,7 @@
 				- [tweekmonster/exception.vim](https://github.com/tweekmonster/exception.vim) - Tracing exceptions thrown by Vim scripts
 				- [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive) - Git client
 				- [junegunn/fzf.vim](https://github.com/junegunn/fzf.vim) - Fuzzy finder fzf as Vim plugin
+				- [mhinz/vim-grepper](https://github.com/mhinz/vim-grepper) - Search by using popular search tools repository-wise
 				- [airblade/vim-gitgutter](https://github.com/airblade/vim-gitgutter) - Show Git diff in the sign column
 				- [suan/vim-instant-markdown](https://github.com/suan/vim-instant-markdown) - Live markdown preview in browser
 				- [junegunn/vim-peekaboo](https://github.com/junegunn/vim-peekaboo) - Extends register and macro keys in normal mode
