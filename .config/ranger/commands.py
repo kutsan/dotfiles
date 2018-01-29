@@ -32,13 +32,14 @@ class locate(Command):
 	"""
 	:locate
 
-	Find a file by using `fzf` with mlocate.
+	Find a file by using `fzf` with `ripgrep`.
 	"""
 
 	def execute(self):
 		import subprocess
 
-		command="locate / | fzf --no-multi --exact --prompt='locate ' --height='100%'"
+		command="rg --files --no-messages --no-ignore --hidden --follow --smart-case --glob '!{.git,node_modules}/*' / \
+			| fzf --no-multi --exact --prompt='locate ' --height='100%'"
 
 		fzf = self.fm.execute_command(command, stdout=subprocess.PIPE)
 		stdout, stderr = fzf.communicate()
