@@ -902,6 +902,18 @@ function custom-fzf-execute-widget() {
 	return $stat
 }
 
+# Search a file with fzf and edit inside $EDITOR.
+function custom-fzf-edit-file() {
+	local file=$(eval "$FZF_DEFAULT_COMMAND" | fzf --prompt="$EDITOR ")
+
+	if [[ "$file" != '' ]] {
+		BUFFER="$EDITOR "$file""
+		zle accept-line
+	}
+
+	zle redisplay
+}
+
 # Register functions as widgets.
 foreach widget (
 	custom-expand-global-alias
@@ -913,6 +925,7 @@ foreach widget (
 	custom-tmux-jump-back-prompt
 	custom-fzf-launch-from-history
 	custom-fzf-execute-widget
+	custom-fzf-edit-file
 ) {
 	zle -N $widget
 }
@@ -923,8 +936,6 @@ foreach widget (
 # Insert Mode
 bindkey -M viins '^K' up-history # ^K to previous command.
 bindkey -M viins '^J' down-history # ^J to next command.
-bindkey -M viins '^P' history-beginning-search-backward # ^P to previous relative command.
-bindkey -M viins '^N' history-beginning-search-forward # ^N to next relative command.
 bindkey -M viins '^F' vi-forward-char # Go forward char or complete current completion.
 bindkey -M viins '^?' backward-delete-char # Delete left char with backspace key.
 bindkey -M viins '^B' backward-kill-word # Delete a WORD backward.
@@ -934,6 +945,7 @@ bindkey -M viins '^X^G' custom-add-noglob-before-the-command # Insert noglob bef
 bindkey -M viins '^X^M' custom-add-sudo-before-the-command # Insert sudo before the command.
 bindkey -M viins '^Y' custom-insert-last-typed-word # Insert last typed word for quick copy-paste.
 bindkey -M viins '^R' custom-fzf-launch-from-history # Select command from history into the command line.
+bindkey -M viins '^P' custom-fzf-edit-file # Search a file with fzf and edit inside $EDITOR.
 
 # Normal Mode
 bindkey -M vicmd 'j' down-line # Override down-line-or-history.
