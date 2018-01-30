@@ -68,7 +68,9 @@ zmodload zsh/complist
 
 # Load fasd to track most used files and directories.
 _fasd_preexec() {
-	fasd --proc $(fasd --sanitize "$1") &>/dev/null
+	if (hash fasd &>/dev/null) {
+		fasd --proc $(fasd --sanitize "$1") &>/dev/null
+	}
 }
 add-zsh-hook preexec _fasd_preexec
 
