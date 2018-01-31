@@ -218,6 +218,7 @@ export PAGER='less'
 export BROWSER=$(_find_alt google-chrome xdg-open open)
 
 # Default Config and Cache Home
+export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 
