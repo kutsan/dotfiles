@@ -709,7 +709,7 @@ function = {
 #
 # @param {string} [$1] Defined bookmark string.
 ##
-function j() {
+function b() {
 	# Bookmarks
 	local -A bookmarks=(
 		'e' "~/Desktop/"
