@@ -60,45 +60,45 @@ font:
 
 custom_cursor_colors: true
 
-# Nord
+# Iceberg
 colors:
   primary:
-    background: '0x292d3e'
-    foreground: '0xd8dee9'
+    background: '#161821'
+    foreground: '#c6c8d1'
 
   cursor:
-    text:       '0x3b4252'
-    cursor:     '0xd8dee9'
+    text:       '#3b4252'
+    cursor:     '#d8dee9'
 
   normal:
-    black:      '0x3b4252'
-    red:        '0xbf616a'
-    green:      '0xa3be8c'
-    yellow:     '0xebcb8b'
-    blue:       '0x81a1c1'
-    magenta:    '0xb48ead'
-    cyan:       '0x88c0d0'
-    white:      '0xe5e9f0'
+    black:      '#1D2030'
+    red:        '#e27878'
+    green:      '#b4be82'
+    yellow:     '#e2a478'
+    blue:       '#84a0c6'
+    magenta:    '#a093c7'
+    cyan:       '#89b8c2'
+    white:      '#c6c8d1'
 
   bright:
-    black:      '0x4c566a'
-    red:        '0xbf616a'
-    green:      '0xa3be8c'
-    yellow:     '0xebcb8b'
-    blue:       '0x81a1c1'
-    magenta:    '0xb48ead'
-    cyan:       '0x8fbcbb'
-    white:      '0xeceff4'
+    black:      '#3e445e'
+    red:        '#e98989'
+    green:      '#c0ca8e'
+    yellow:     '#e9b189'
+    blue:       '#91acd1'
+    magenta:    '#ada0d3'
+    cyan:       '#95c4ce'
+    white:      '#d2d4de'
 
   dim:
-    black:      '0x333333'
-    red:        '0xf2777a'
-    green:      '0x99cc99'
-    yellow:     '0xffcc66'
-    blue:       '0x6699cc'
-    magenta:    '0xcc99cc'
-    cyan:       '0x66cccc'
-    white:      '0xdddddd'
+    black:      '#333333'
+    red:        '#f2777a'
+    green:      '#99cc99'
+    yellow:     '#ffcc66'
+    blue:       '#6699cc'
+    magenta:    '#cc99cc'
+    cyan:       '#66cccc'
+    white:      '#dddddd'
 
 # -- Mappings {{{1
 # --------------------------------------------------------------------------------------------------
