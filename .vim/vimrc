@@ -300,7 +300,10 @@ Plug 'airblade/vim-gitgutter' " Show Git diff in the sign column
 	let g:gitgutter_sign_modified_removed = '│' " U+2502
 	let g:gitgutter_max_signs = 10000 " Increase the maximum number of signs.
 
+" -- iceberg {{{2
+" ------------------------------------------------
 
+Plug 'cocopon/iceberg.vim'
 
 
 
