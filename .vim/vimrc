@@ -106,11 +106,6 @@ Plug 'jiangmiao/auto-pairs' " Insert or delete brackets, parens, quotes in pair
 		autocmd VimEnter,BufEnter,BufWinEnter * silent! iunmap <buffer> <M-">
 	augroup END
 
-" -- auto-save {{{2
-" ------------------------------------------------
-
-Plug '907th/vim-auto-save', { 'on': 'AutoSaveToggle' } " Automatically save changes to disk without having to use `:write`
-	let g:auto_save_silent = 1 " Disable the auto-save notification.
 
 " -- colorizer {{{2
 " ------------------------------------------------
@@ -197,12 +192,6 @@ Plug 'mattn/emmet-vim', { 'on': 'EmmetInstall' } " Emmet integration
 
 		return "\<Tab>"
 	endfunction
-
-" -- exception {{{2
-" ------------------------------------------------
-
-Plug 'tweekmonster/exception.vim' " Tracing exceptions thrown by Vim scripts
-	nnoremap <silent> <Leader>it :call exception#trace()<CR>
 
 " -- fugitive {{{2
 " ------------------------------------------------
@@ -295,16 +284,9 @@ Plug 'airblade/vim-gitgutter' " Show Git diff in the sign column
 	let g:gitgutter_sign_modified_removed = '│' " U+2502
 	let g:gitgutter_max_signs = 10000 " Increase the maximum number of signs.
 
-" -- instant-markdown {{{2
-" ------------------------------------------------
 
-Plug 'suan/vim-instant-markdown', { 'on': 'InstantMarkdownPreview' } " Live markdown preview in browser
-	let g:instant_markdown_autostart = 0 " Don't start the daemon automatically.
 
-" -- peekaboo {{{2
-" ------------------------------------------------
 
-Plug 'junegunn/vim-peekaboo' " Extends register and macro keys in normal mode
 
 " -- polyglot {{{2
 " ------------------------------------------------
@@ -331,23 +313,10 @@ Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['html', 'css', 'sas
 Plug 'moorereason/quick-scope', { 'branch': 'protect-higroup' } " Highlight which characters to target for `f`, `F` and family
 	let g:qs_highlight_on_keys = ['f', 'F', 't', 'T'] " Trigger a highlight only when pressing these keys.
 
-" -- ranger {{{2
-" ------------------------------------------------
-
-Plug 'francoiscabrol/ranger.vim', { 'on': 'Ranger' } " Ranger integration for vim
-	let g:ranger_map_keys = 0 " Disable default key mappings.
-	nnoremap <silent> <Leader>F :Ranger<CR>
-
 " -- repeat {{{2
 " ------------------------------------------------
 
 Plug 'tpope/vim-repeat' " Repeat command support for various plugins
-
-" -- rooter {{{2
-" ------------------------------------------------
-
-Plug 'airblade/vim-rooter' " Change the current working directory to the Git project root when you open a file or directory
-	let g:rooter_silent_chdir = 1 " Disable echoing the project directory everytime CWD changes.
 
 " -- sayonara {{{2
 " ------------------------------------------------
@@ -368,11 +337,6 @@ Plug 'justinmk/vim-sneak' " Jump to any location specified by two characters
 
 Plug 'tpope/vim-surround' " Surround commands for parentheses, brackets, quotes, XML tags
 
-" -- targets {{{2
-" ------------------------------------------------
-
-Plug 'wellle/targets.vim' " Add additional text objects and targets
-
 " -- undotree {{{2
 " ------------------------------------------------
 
@@ -384,11 +348,6 @@ Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' } " Visualize undo tree
 	let g:undotree_ShortIndicators = 1 " Use short timestamps.
 
 	nnoremap <Leader>u :UndotreeToggle<CR>
-
-" -- unimpaired {{{2
-" ------------------------------------------------
-
-Plug 'tpope/vim-unimpaired' " Adds several pairs of bracket maps
 
 " -- unite {{{2
 " ------------------------------------------------
