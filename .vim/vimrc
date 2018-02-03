@@ -148,8 +148,8 @@ if has('nvim') && has('python3')
 		inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 		" <C-h> and Backspace close pop-up and delete backward char.
-		inoremap <expr> <C-h> deoplete#smart_close_popup()."\<C-h>"
-		inoremap <expr> <BS> deoplete#smart_close_popup()."\<C-h>"
+		inoremap <expr> <C-h> deoplete#smart_close_popup() . "\<C-h>"
+		inoremap <expr> <BS> deoplete#smart_close_popup() . "\<C-h>"
 endif
 
 " -- devicons {{{2
@@ -303,8 +303,8 @@ Plug 'sheerun/vim-polyglot' " Big collection of language packs as scripts are lo
 " ------------------------------------------------
 
 Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['html', 'css', 'sass', 'javascript', 'javascript.jsx', 'json', 'graphql'] } " Code formatter prettier integration
-	let g:prettier#quickfix_enabled = 0 " Disable quickfix window for errors.
-	let g:prettier#autoformat = 0 " Disable auto formatting of files that have @format tag
+	let g:prettier#quickfix_enabled = 0 " Disable errors to being show in quickfix window.
+	let g:prettier#autoformat = 0 " Disable autoformatting upon saving.
 	let g:prettier#exec_cmd_async = 1 " Use prettier in asynchronous mode.
 
 " -- quick-scope {{{2
@@ -558,13 +558,16 @@ set statusline+=%{repeat('\ ',4)} " Generate space characters given number of ti
 set statusline+=%03l/%03L:%02c " Line numbers and column numbers in <Line>:<Column> format.
 set statusline+=%= " Align right all items from this point on.
 set statusline+=%{&spell?'\ \ ':''} " Show an icon if spell checking enabled.
-" set statusline+=%{g:auto_save?'\ \ ':''} " Show an icon if auto saving enabled.
 set statusline+=%{exists('*fugitive#head')?fugitive#head():''} " Git HEAD status.
 set statusline+=%{exists('*fugitive#head')?repeat('\ ',1):''} " Git HEAD status spaces.
 set statusline+=%y " File type.
 set statusline+=%{repeat('\ ',1)} " Generate space characters given number of times.
 
 function! StatusLineLinterStatus() abort
+	if !exists('g:loaded_ale')
+		return ''
+	endif
+
 	let l:counts = ale#statusline#Count(bufnr(''))
 
 	let l:all_errors = l:counts.error + l:counts.style_error
@@ -689,7 +692,7 @@ nnoremap x "_x
 " Go back or launch the terminal buffer.
 function! s:ToggleTerminal() abort
 	try
-		exec 'buffer ' . g:terminal_buffer
+		execute 'buffer ' . g:terminal_buffer
         startinsert!
 
 	catch
@@ -701,10 +704,10 @@ function! s:ToggleTerminal() abort
 endfunction
 
 let g:terminal_buffer = 0
-nnoremap <silent> <C-z> :call <SID>ToggleTerminal()<CR>
 
 " Quick save only when the buffer has been modified.
 nnoremap <silent> <Leader>w :update<CR>
+nnoremap <silent> <C-z> :call <SID>ToggleTerminal()<Enter>
 
 " Quickly refactor variables.
 nnoremap <Leader>* *``cgn
