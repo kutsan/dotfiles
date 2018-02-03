@@ -850,7 +850,6 @@ augroup END
 augroup Vim
 	autocmd!
 	autocmd FileType vim setlocal iskeyword-=# " Remove '#' from 'iskeyword' list.
-	autocmd BufWritePost ~/.vim/vimrc source $MYVIMRC " Auto-source `vimrc` when is written.
 augroup END
 
 augroup Markdown
