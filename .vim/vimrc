@@ -373,6 +373,7 @@ Plug 'Shougo/unite.vim' " Create user interfaces
 " -- vimfiler {{{2
 " ------------------------------------------------
 
+Plug 'Shougo/unite.vim' " Create user interfaces
 Plug 'Shougo/vimfiler.vim', { 'on': [] } | call plug#load('vimfiler.vim') " File explorer
 	let g:vimfiler_as_default_explorer = 1 " Take the place of default file manager 'netrw'.
 	let g:vimfiler_tree_indentation = 2 " Indentation length of tree.
@@ -381,6 +382,7 @@ Plug 'Shougo/vimfiler.vim', { 'on': [] } | call plug#load('vimfiler.vim') " File
 	let g:vimfiler_tree_opened_icon = '' " Use Unicode (from PUA) symbol for open tree.
 	let g:vimfiler_tree_closed_icon = '' " Use Unicode (from PUA) symbol for closed tree.
 	let g:vimfiler_readonly_file_icon = '' " Use Unicode (from PUA) symbol for read-only files.
+	let g:vimfiler_no_default_key_mappings = 1 " Disable all default key mappings.
 
 	" Custom options.
 	call vimfiler#custom#profile(
@@ -397,9 +399,38 @@ Plug 'Shougo/vimfiler.vim', { 'on': [] } | call plug#load('vimfiler.vim') " File
 		\ }
 	\ )
 
-	" Open explorer buffer silently and find the currently open file.
-	nnoremap <silent> <Leader>f :VimFiler -explorer -no-focus<CR>
-	nnoremap <silent> <Leader>n :VimFiler -explorer -find<CR>
+	" Open explorer buffer silently.
+	nnoremap <silent> <Leader>f :VimFiler -explorer -no-focus<Enter>
+
+	" vimfiler buffer mappings.
+	augroup VimFilerKeyMappings
+		function! s:VimFilerMap(key, value) abort
+			execute
+				\ 'autocmd FileType vimfiler nmap <buffer><silent><nowait>' .
+				\ ' ' .
+				\ a:key .
+				\ ' ' .
+				\ a:value
+		endfunction
+
+		call <SID>VimFilerMap('j', '<Plug>(vimfiler_loop_cursor_down)')
+		call <SID>VimFilerMap('k', '<Plug>(vimfiler_loop_cursor_up)')
+		call <SID>VimFilerMap('gg', '<Plug>(vimfiler_cursor_top)')
+		call <SID>VimFilerMap('<Space>', '<Plug>(vimfiler_toggle_mark_current_line)')
+		call <SID>VimFilerMap('v', '<Plug>(vimfiler_toggle_mark_all_lines)')
+		call <SID>VimFilerMap('zl', '<Plug>(vimfiler_redraw_screen)')
+		call <SID>VimFilerMap('l', '<Plug>(vimfiler_smart_l)')
+		call <SID>VimFilerMap('h', '<Plug>(vimfiler_smart_h)')
+		call <SID>VimFilerMap('gr', '<Plug>(vimfiler_switch_to_project_directory)')
+		call <SID>VimFilerMap('gR', '<Plug>(vimfiler_cd_file)')
+		call <SID>VimFilerMap('cf', '<Plug>(vimfiler_new_file)')
+		call <SID>VimFilerMap('cd', '<Plug>(vimfiler_make_directory)')
+		call <SID>VimFilerMap('r', '<Plug>(vimfiler_rename_file)')
+		call <SID>VimFilerMap('dD', '<Plug>(vimfiler_mark_current_line)<Plug>(vimfiler_delete_file)')
+		call <SID>VimFilerMap('dd', '<Plug>(vimfiler_mark_current_line)<Plug>(vimfiler_clipboard_move_file)')
+		call <SID>VimFilerMap('yy', '<Plug>(vimfiler_mark_current_line)<Plug>(vimfiler_clipboard_copy_file)')
+		call <SID>VimFilerMap('p', '<Plug>(vimfiler_clipboard_paste)')
+	augroup END
 
 	" Specific options to use when vimfiler buffer opened.
 	augroup VimFilerLaunchOptions
@@ -416,24 +447,6 @@ Plug 'Shougo/vimfiler.vim', { 'on': [] } | call plug#load('vimfiler.vim') " File
 
 		" Disable tilde characters.
 		autocmd FileType vimfiler highlight EndOfBuffer guifg=bg
-
-		" Unbind <C-l> for the sake of other key bindings.
-		autocmd FileType vimfiler nunmap <buffer> <C-l>
-
-		" Unbind <S-k>.
-		autocmd FileType vimfiler nunmap <buffer> K
-
-		" Change the default refresh binding.
-		autocmd FileType vimfiler nmap <buffer> <C-r> <Plug>(vimfiler_redraw_screen)
-	augroup END
-
-	" Automatically quit Vim if vimfiller is last and only buffer.
-	augroup VimFilerCloseIfLastOne
-		autocmd!
-		autocmd BufEnter *
-			\ if (!has('vim_starting') && winnr("$") == 1 && &filetype ==# 'vimfiler') |
-			\	quit |
-			\ endif
 	augroup END
 
 " }}}
