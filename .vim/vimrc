@@ -286,8 +286,6 @@ Plug 'airblade/vim-gitgutter' " Show Git diff in the sign column
 
 Plug 'cocopon/iceberg.vim'
 
-
-
 " -- polyglot {{{2
 " ------------------------------------------------
 
@@ -343,16 +341,11 @@ Plug 'tpope/vim-surround' " Surround commands for parentheses, brackets, quotes,
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' } " Visualize undo tree
 	let g:undotree_WindowLayout = 4 " Open tree on the right side and open diff below the buffer.
 	let g:undotree_SetFocusWhenToggle = 1 " Move focus after being opened.
-	let g:undotree_RelativeTimestamp = 0 " Use exact time instead of relative.
 	let g:undotree_HelpLine = 0 " Disable 'Press ? for help' text.
 	let g:undotree_ShortIndicators = 1 " Use short timestamps.
+	let g:undotree_SplitWidth = 30 " Set the undotree window width.
 
-	nnoremap <Leader>u :UndotreeToggle<CR>
-
-" -- unite {{{2
-" ------------------------------------------------
-
-Plug 'Shougo/unite.vim' " Create user interfaces
+	nnoremap <Leader>u :UndotreeToggle<Enter>
 
 " -- vimfiler {{{2
 " ------------------------------------------------
