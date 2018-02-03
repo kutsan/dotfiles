@@ -854,6 +854,14 @@ augroup RememberCursorPosition
 augroup END
 
 """
+" Automatically save the current buffer.
+"""
+augroup SaveBuffer
+	autocmd!
+	autocmd InsertLeave,TextChanged * silent! update
+augroup END
+
+"""
 " Automatically set current working directory project root.
 """
 function! s:SetProjectRoot()
