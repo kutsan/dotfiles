@@ -106,6 +106,22 @@ Plug 'jiangmiao/auto-pairs' " Insert or delete brackets, parens, quotes in pair
 		autocmd VimEnter,BufEnter,BufWinEnter * silent! iunmap <buffer> <M-">
 	augroup END
 
+	" Disable default key mappings.
+	let g:AutoPairsShortcutToggle = 0
+	let g:AutoPairsShortcutJump = 0
+	let g:AutoPairsShortcutFastWrap = 0
+	let g:AutoPairsShortcutBackInerts = 0
+
+	" Specifies which symbols should be automatically paired.
+	let g:AutoPairs = {
+		\ '(': ')',
+		\ '[': ']',
+		\ '{': '}',
+		\ "'": "'",
+		\ '"': '"',
+		\ '`': '`',
+		\ '<': '>'
+	\ }
 
 " -- colorizer {{{2
 " ------------------------------------------------
