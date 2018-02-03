@@ -128,6 +128,8 @@ Plug 'jiangmiao/auto-pairs' " Insert or delete brackets, parens, quotes in pair
 
 Plug 'chrisbra/Colorizer' " Highlight HEX and RGB color codes and names in their background
 	let g:colorizer_auto_filetype = 'html,css,sass,javascript,javascript.jsx' " Automatically enable highlighting in certain file types.
+	let g:colorizer_skip_comments = 1 " Skip comments from being colored.
+	let g:colorizer_colornames = 0 " Disable highlighting color names.
 
 " -- commentary {{{2
 " ------------------------------------------------
