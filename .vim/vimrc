@@ -200,6 +200,8 @@ Plug 'tpope/vim-fugitive' " Git client
 
 Plug $FZF_HOME | Plug 'junegunn/fzf.vim' " Fuzzy finder fzf as Vim plugin
 	let g:fzf_command_prefix = 'Fzf' " Add prefix 'Fzf' commands for grouping.
+	let g:fzf_buffers_jump = 1 " Jump to the existing window if possible.
+	let g:fzf_history_dir = $XDG_DATA_HOME . '/fzf/' " History directory.
 
 	" Customize `fzf` colors to match current color scheme.
 	let g:fzf_colors = {
@@ -218,21 +220,20 @@ Plug $FZF_HOME | Plug 'junegunn/fzf.vim' " Fuzzy finder fzf as Vim plugin
 		\ 'header': ['fg', 'Comment']
 	\ }
 
-	nnoremap <silent> <C-p> :FzfGFiles<CR>
-	nnoremap <silent> <M-x> :FzfCommands<CR>
-	nnoremap <silent> <Leader>b :FzfBuffers<CR>
-	nnoremap <silent> <Leader>h :FzfHelptags<CR>
-	nnoremap <silent> <Leader>; :FzfHistory:<CR>
-	nnoremap <silent> <Leader>/ :FzfHistory/<CR>
+	nnoremap <silent> <C-p> :FzfGFiles<Enter>
+	nnoremap <silent> <M-x> :FzfCommands<Enter>
+	nnoremap <silent> <M-b> :FzfBuffers<Enter>
+	nnoremap <silent> <Leader>h :FzfHelptags<Enter>
+	nnoremap <silent> <Leader>; :FzfHistory:<Enter>
+	nnoremap <silent> <Leader>/ :FzfHistory/<Enter>
+	nnoremap <silent> <Leader>m :FzfMarks<Enter>
 
-	function! s:FzfStatusLine()
-		highlight FzfReset guifg=bg
-		setlocal statusline=%#FzfReset#\  " Disable status line.
-	endfunction
-
-	augroup FzfOptions
+	augroup FzfDisableStatusLine
 		autocmd!
-		autocmd User FzfStatusLine call <SID>FzfStatusLine() " Disable status line.
+
+		autocmd User FzfStatusLine
+			\ highlight FzfReset guifg=bg |
+			\ setlocal statusline=%#FzfReset#\  |
 	augroup END
 
 " -- grepper {{{2
