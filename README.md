@@ -98,6 +98,7 @@
 		- [ffmpeg](https://github.com/FFmpeg/FFmpeg) - Cross-platform solution to handle, record, convert and stream audio and video
 		- [pandoc](https://github.com/jgm/pandoc) - Universal markup converter that supports almost any format
 		- [transmission-cli](https://github.com/transmission/transmission) - BitTorrent client and daemon with web UI for remote controlling
+		- [editorconfig](https://github.com/editorconfig/editorconfig-core-c) - Define and maintain consistent coding styles between different editors
 		- [dfc](https://github.com/Rolinh/dfc) - Report file system space usage information with colored graphs
 		- [exa](https://github.com/ogham/exa) - Replacement for ls with colors and more features such as grid support
 		- [hub](https://github.com/github/hub) - Extra features for Git that makes working with GitHub easier
