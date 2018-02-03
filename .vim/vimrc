@@ -18,8 +18,8 @@ if has('nvim') | let $NVIM_TUI_ENABLE_TRUE_COLOR = 1 | endif
 if has('nvim') | set shada+=n~/.vim/nviminfo | else | set viminfo+=!,n~/.vim/viminfo | endif
 
 " Leader keys.
-let g:mapleader=' ' " Space key.
-let g:maplocalleader='\'
+let g:mapleader = ' ' " Space key.
+let g:maplocalleader = '\'
 
 " Ensure the cursor is its box form in vanilla Vim.
 if !has('nvim') && !has('gui')
@@ -93,9 +93,9 @@ Plug 'w0rp/ale' " Asynchronous lint engine for Neovim and Vim 8+
 	let g:ale_echo_msg_format = ' %linter%: %s (%severity%)' " Define the form of the echoed message.
 	let g:ale_set_highlights = 0 " Disable highlighting underline on errors and warnings.
 	let g:ale_fixers = {
-			\ 'javascript': ['eslint'],
-			\ 'javascript.jsx': ['eslint'],
-		\ }
+		\ 'javascript': ['eslint'],
+		\ 'javascript.jsx': ['eslint'],
+	\ }
 
 " -- auto-pairs {{{2
 " ------------------------------------------------
@@ -279,8 +279,8 @@ Plug 'mhinz/vim-grepper'
 	let g:grepper.append = 0 " Don't append matches to the current quickfix or location list.
 	let g:grepper.prompt_quote = 2 " Quote the query automatically.
 
-	nnoremap <Leader>g :Grepper -tool rg<CR>
-	nnoremap <Leader>G :Grepper -tool git<CR>
+	nnoremap <Leader>g :Grepper -tool rg<Enter>
+	nnoremap <Leader>G :Grepper -tool git<Enter>
 	nmap gs <Plug>(GrepperOperator)
 	xmap gs <Plug>(GrepperOperator)
 
@@ -353,8 +353,8 @@ Plug 'airblade/vim-rooter' " Change the current working directory to the Git pro
 " ------------------------------------------------
 
 Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' } " Sane buffer and window deletion
-	nnoremap <silent> <Leader>q :Sayonara<CR>
-	nnoremap <silent> <Leader>Q :Sayonara!<CR>
+	nnoremap <silent> <Leader>q :Sayonara<Enter>
+	nnoremap <silent> <Leader>Q :Sayonara!<Enter>
 
 " -- sneak {{{2
 " ------------------------------------------------
@@ -679,7 +679,7 @@ nnoremap <Tab> za
 nnoremap / /\v
 
 " Clear search register and thus highlighting.
-nnoremap <silent> <BS> :let @/ = ''<CR>
+nnoremap <silent> <BS> :let @/ = ''<Enter>
 
 " Store relative line number jumps in the jumplist if they exceed a threshold.
 nnoremap <expr> k (v:count > 5 ? "m'" . v:count : '') . 'k'
@@ -696,7 +696,7 @@ nnoremap <F6> <C-i>
 nnoremap vv _vg_
 
 " Toggle fullscreen for GUI.
-nnoremap gz :set fullscreen!<CR>
+nnoremap gz :set fullscreen!<Enter>
 
 " Override Ex mode with run @q.
 nnoremap Q @q
@@ -739,7 +739,7 @@ nnoremap <Leader>* *``cgn
 nnoremap <Leader># #``cgN
 
 " Toggle spell checking.
-nnoremap <silent> <Leader>s :set spell!<CR>
+nnoremap <silent> <Leader>s :set spell!<Enter>
 
 " Lookup definition under cursor.
 nnoremap <Leader>K K
@@ -752,13 +752,13 @@ nnoremap <Leader>p p=`]
 nnoremap <Leader>P P=`]
 
 " Toggle search highlighting.
-nnoremap <Leader>? :set hlsearch!<CR>
+nnoremap <Leader>? :set hlsearch!<Enter>
 
 " Open `vimrc` file in new buffer.
-nnoremap <Leader>ee :edit $MYVIMRC<CR>
+nnoremap <Leader>ee :edit $MYVIMRC<Enter>
 
 " Reload `vimrc` file.
-nnoremap <Leader>er :source $MYVIMRC<CR>
+nnoremap <Leader>er :source $MYVIMRC<Enter>
 
 " -- Command Mode {{{2
 " ------------------------------------------------
@@ -806,10 +806,10 @@ xnoremap / /\v
 " ------------------------------------------------
 
 " [a]n [e]ntire buffer.
-onoremap ae :<C-u>normal! VGogg<CR>
+onoremap ae :<C-u>normal! VGogg<Enter>
 
 " Last selected area.
-onoremap gv :<C-u>normal! gv<CR>
+onoremap gv :<C-u>normal! gv<Enter>
 
 " End and beginning of line.
 onoremap H ^
