@@ -853,6 +853,30 @@ augroup RememberCursorPosition
 	autocmd BufRead * normal! zz
 augroup END
 
+"""
+" Automatically set current working directory project root.
+"""
+function! s:SetProjectRoot()
+	let l:root = substitute(system('git rev-parse --show-toplevel'), '\n\+$', '', '')
+
+	if l:root ==# $HOME
+		let l:root = substitute($PWD, $HOME . '\v/.{-}\zs/.*\ze', '', '')
+	endif
+
+	if l:root ==# $PWD
+		let l:root = substitute(expand('%:p'), $HOME . '\v/.{-}\zs/.*\ze', '', '')
+	endif
+
+	if isdirectory(l:root) && l:root !=# $HOME
+		execute 'cd ' . l:root
+	endif
+endfunction
+
+augroup SetProjectRoot
+	autocmd!
+	autocmd VimEnter,BufEnter * :call <SID>SetProjectRoot()
+augroup END
+
 " -- Local {{{1
 " --------------------------------------------------------------------------------------------------
 
