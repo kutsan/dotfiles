@@ -504,6 +504,7 @@ if has('nvim') | set inccommand=nosplit | endif " Show live substitution results
 if has('nvim') | set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor | endif " Change cursor shape among modes.
 
 " Indentation
+set autoindent " Copy indent from current line when starting a new line.
 set nosmarttab " Tab key always inserts blanks according to 'tabstop'.
 set shiftround " Round indent to multiple of 'shiftwidth'. Applies to > and < commands.
 set shiftwidth=4 " Affects what happens when you press `>>`, `<<` or `==`.
