@@ -704,9 +704,6 @@ function! s:ToggleTerminal() abort
 endfunction
 
 let g:terminal_buffer = 0
-
-" Quick save only when the buffer has been modified.
-nnoremap <silent> <Leader>w :update<CR>
 nnoremap <silent> <C-z> :call <SID>ToggleTerminal()<Enter>
 
 " Quickly refactor variables.
@@ -754,7 +751,7 @@ cnoremap <C-h> <Left>
 cnoremap <C-l> <Right>
 
 " Substitute with 'very magic' mode.
-cnoremap s/ s/\v//gc<Left><Left><Left><Left>
+cnoremap <C-s>/ s/\v//gc<Left><Left><Left><Left>
 
 " -- Visual Mode {{{2
 " ------------------------------------------------
