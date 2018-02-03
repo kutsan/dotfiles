@@ -747,9 +747,9 @@ cnoremap s/ s/\v//gc<Left><Left><Left><Left>
 xnoremap < <gv
 xnoremap > >gv
 
-" Bubble the lines to up (xkP`[V`]) or down (xp`[V`]).
-xmap J ]egv=gv
-xmap K [egv=gv
+" Bubble the lines to up or down.
+xnoremap J :move '>+1<Enter>gv=gv
+xnoremap K :move '<-2<Enter>gv=gv
 
 " Select [a]n [e]ntire buffer.
 xnoremap ae GoggV
