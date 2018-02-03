@@ -179,37 +179,16 @@ Plug 'editorconfig/editorconfig-vim' " EditorConfig integration
 Plug 'mattn/emmet-vim', { 'on': 'EmmetInstall' } " Emmet integration
 	let g:user_emmet_complete_tag = 0 " Disable using default omni complete function.
 	let g:user_emmet_install_global = 0 " Disable creating global mappings.
+	let g:user_emmet_settings = {
+		\ 'javascript.jsx' : { 'extends': 'jsx' }
+	\ }
 
 	" Automatically activate Emmet in following file types.
-	augroup EmmetInstall
+	augroup EmmetSetup
 		autocmd!
 		autocmd FileType html,css,sass,javascript.jsx EmmetInstall
+		autocmd FileType html,css,sass,javascript.jsx imap <expr> <Tab> emmet#expandAbbrIntelligent("\<Tab>")
 	augroup END
-
-	" Expand pattern with <Tab> character.
-	augroup EmmetExpandTab
-		autocmd!
-		autocmd FileType html,css,sass,javascript.jsx imap <silent><buffer><expr> <Tab> <SID>EmmetExpandTab()
-	augroup END
-
-	" Expand pattern with <Tab> character.
-	function! s:EmmetExpandTab()
-		let l:line = getline('.')
-
-		if col('.') < len(l:line)
-			let l:line = matchstr(l:line, '[">][^<"]*\%'.col('.').'c[^>"]*[<"]')
-
-			if len(l:line) >= 2
-				return "\<C-n>"
-			endif
-		endif
-
-		if emmet#isExpandable()
-			return emmet#expandAbbrIntelligent("\<Tab>")
-		endif
-
-		return "\<Tab>"
-	endfunction
 
 " -- fugitive {{{2
 " ------------------------------------------------
