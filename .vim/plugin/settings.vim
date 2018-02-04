@@ -18,9 +18,9 @@ colorscheme iceberg " Color scheme and its overrides.
 
 " Shared data location.
 if has('nvim')
-	set shada+=n~/.vim/temp/share/nviminfo
+	execute 'set shada+=n' . g:VIM_HOME . '/cache/share/nviminfo'
 else
-	set viminfo+=!,n~/.vim/temp/share/viminfo
+	execute 'set viminfo+=!,n' . g:VIM_HOME . '/cache/share/viminfo'
 endif
 
 " Editor
@@ -87,12 +87,12 @@ set nohlsearch " Disable highlight the matched search results by default.
 set smartcase " If a uppercase character is entered, the search will be case sensitive.
 
 " Backup
-let &backupdir = fnamemodify($MYVIMRC, ':p:h') . '/temp/backup//' " The directory for backup files.
-let &directory = fnamemodify($MYVIMRC, ':p:h') . '/temp/swap//' " The directory for swap files.
-let &undodir = fnamemodify($MYVIMRC, ':p:h') . '/temp/undo//' " The directory for undo files.
+let &backupdir = g:VIM_HOME . '/cache/backup//' " The directory for backup files.
+let &directory = g:VIM_HOME . '/cache/swap//' " The directory for swap files.
+let &undodir = g:VIM_HOME . '/cache/undo//' " The directory for undo files.
+let &viewdir = g:VIM_HOME . '/cache/view//' " Name of the directory where to store files for :mkview.
 set undofile " Undo tree to be saved to a file when exiting a buffer.
 set undolevels=100000 " Maximum undo limit.
-set viewdir=~/.vim/temp/view/ " Name of the directory where to store files for :mkview.
 set viewoptions=cursor,folds,unix,slash " Options used by `mkview` and `loadview` command.
 set updatecount=100 " Typing this many characters will create the swap file.
 
