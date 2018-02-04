@@ -13,38 +13,27 @@
 			- [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) - Fish-like syntax highlighting support for interactive terminal
 			- [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) - Fish-like auto-suggestions for interactive terminal based on command history
 		- [neovim](https://github.com/neovim/neovim) - The fork of ubiquitous text editor focused on extensibility and usability
-			- [deep-space](https://github.com/tyrannicaltoucan/vim-deep-space) - An intergalactically friendly color scheme based off of Hybrid
 			- [vim-plug](https://github.com/junegunn/vim-plug) - Vim plugin manager with features such as parallel installation and post-update hooks
-				- [w0rp/ale](https://github.com/w0rp/ale) - Asynchronous lint engine for Neovim and Vim 8+
-				- [jiangmiao/auto-pairs](https://github.com/jiangmiao/auto-pairs) - Insert or delete brackets, parens, quotes in pair
-				- [907th/vim-auto-save](https://github.com/907th/vim-auto-save) - Automatically save changes to disk without having to use `:write`
-				- [chrisbra/Colorizer](https://github.com/chrisbra/Colorizer) - Highlight HEX and RGB color codes and names in their background
-				- [tpope/vim-commentary](https://github.com/tpope/vim-commentary) - Comment and uncomment with predefined key bindings
-				- [Shougo/deoplete.nvim](https://github.com/Shougo/deoplete.nvim) - Asynchronous auto-completion framework for Neovim
-				- [ryanoasis/vim-devicons](https://github.com/ryanoasis/vim-devicons) - Adds additional file type glyphs to popular plugins
-				- [editorconfig/editorconfig-vim](https://github.com/editorconfig/editorconfig-vim) - EditorConfig integration
-				- [mattn/emmet-vim](https://github.com/mattn/emmet-vim) - Emmet integration
-				- [tweekmonster/exception.vim](https://github.com/tweekmonster/exception.vim) - Tracing exceptions thrown by Vim scripts
-				- [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive) - Git client
-				- [junegunn/fzf.vim](https://github.com/junegunn/fzf.vim) - Fuzzy finder fzf as Vim plugin
-				- [mhinz/vim-grepper](https://github.com/mhinz/vim-grepper) - Search by using popular search tools repository-wise
-				- [airblade/vim-gitgutter](https://github.com/airblade/vim-gitgutter) - Show Git diff in the sign column
-				- [suan/vim-instant-markdown](https://github.com/suan/vim-instant-markdown) - Live markdown preview in browser
-				- [junegunn/vim-peekaboo](https://github.com/junegunn/vim-peekaboo) - Extends register and macro keys in normal mode
-				- [sheerun/vim-polyglot](https://github.com/sheerun/vim-polyglot) - Big collection of language packs as scripts are loaded only on demand
-				- [prettier/vim-prettier](https://github.com/prettier/vim-prettier) - Code formatter prettier integration
-				- [moorereason/quick-scope](https://github.com/moorereason/quick-scope) - Highlight which characters to target for `f`, `F` and family
-				- [francoiscabrol/ranger.vim](https://github.com/francoiscabrol/ranger.vim) - Ranger integration for vim
-				- [tpope/vim-repeat](https://github.com/tpope/vim-repeat) - Repeat command support for various plugins
-				- [airblade/vim-rooter](https://github.com/airblade/vim-rooter) - Change the current working directory to the Git project root when you open a file or directory
-				- [mhinz/vim-sayonara](https://github.com/mhinz/vim-sayonara) - Sane buffer and window deletion
-				- [justinmk/vim-sneak](https://github.com/justinmk/vim-sneak) - Jump to any location specified by two characters
-				- [tpope/vim-surround](https://github.com/tpope/vim-surround) - Surround commands for parentheses, brackets, quotes, XML tags
-				- [wellle/targets.vim](https://github.com/wellle/targets.vim) - Add additional text objects and targets
-				- [mbbill/undotree](https://github.com/mbbill/undotree) - Visualize undo tree
-				- [tpope/vim-unimpaired](https://github.com/tpope/vim-unimpaired) - Adds several pairs of bracket maps
-				- [Shougo/unite.vim](https://github.com/Shougo/unite.vim) - Create user interfaces
-				- [Shougo/vimfiler.vim](https://github.com/Shougo/vimfiler.vim) - File explorer
+			- [w0rp/ale](https://github.com/w0rp/ale) - Asynchronous lint engine for Neovim and Vim 8+
+			- [jiangmiao/auto-pairs](https://github.com/jiangmiao/auto-pairs) - Insert or delete brackets, parens, quotes in pair
+			- [chrisbra/Colorizer](https://github.com/chrisbra/Colorizer) - Highlight HEX and RGB color codes and names in their background
+			- [tpope/vim-commentary](https://github.com/tpope/vim-commentary) - Comment and uncomment with predefined key bindings
+			- [Shougo/deoplete.nvim](https://github.com/Shougo/deoplete.nvim) - Asynchronous auto-completion framework for Neovim
+			- [ryanoasis/vim-devicons](https://github.com/ryanoasis/vim-devicons) - Adds additional file type glyphs to popular plugins
+			- [editorconfig/editorconfig-vim](https://github.com/editorconfig/editorconfig-vim) - EditorConfig integration
+			- [mattn/emmet-vim](https://github.com/mattn/emmet-vim) - Emmet integration
+			- [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive) - Git client
+			- [junegunn/fzf.vim](https://github.com/junegunn/fzf.vim) - Fuzzy finder fzf as plugin
+			- [mhinz/vim-grepper](https://github.com/mhinz/vim-grepper) - Search by using popular search tools repository-wise
+			- [airblade/vim-gitgutter](https://github.com/airblade/vim-gitgutter) - Show Git diff in the sign column
+			- [cocopon/iceberg.vim](https://github.com/cocopon/iceberg.vim) - Dark blue color scheme
+			- [sheerun/vim-polyglot](https://github.com/sheerun/vim-polyglot) - Big collection of language packs as scripts are loaded only on demand
+			- [prettier/vim-prettier](https://github.com/prettier/vim-prettier) - Code formatter prettier integration
+			- [tpope/vim-repeat](https://github.com/tpope/vim-repeat) - Repeat command support for various plugins
+			- [justinmk/vim-sneak](https://github.com/justinmk/vim-sneak) - Jump to any location specified by two characters
+			- [tpope/vim-surround](https://github.com/tpope/vim-surround) - Surround commands for parentheses, brackets, quotes, XML tags
+			- [mbbill/undotree](https://github.com/mbbill/undotree) - Visualize undo tree
+			- [Shougo/vimfiler.vim](https://github.com/Shougo/vimfiler.vim) - File explorer
 		- [emacs](https://www.gnu.org/software/emacs) - The operation-system-like text editor
 			- [use-package](https://github.com/jwiegley/use-package) - Package declaration manager
 				- [emacs-evil/evil](https://github.com/emacs-evil/evil) - Extendable Vi layer and emulation
