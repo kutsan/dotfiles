@@ -208,7 +208,8 @@ export TERM='xterm-256color'
 
 # Default Editors
 export EDITOR=$(_find_alt nvim vim vi)
-	if ! [[ -L ~/.config/nvim ]] { ln -s ~/.vim ~/.config/nvim && ln -s ~/.vim/vimrc ~/.config/nvim/init.vim }
+	if ! [[ -L ~/.vim/vimrc ]] { ln -s ~/.vim/init.vim ~/.vim/vimrc }
+	if ! [[ -L ~/.config/nvim ]] { ln -s ~/.vim ~/.config/nvim }
 export GUI_EDITOR=$(_find_alt gemacs gvim)
 
 # Default Pager
@@ -467,7 +468,7 @@ alias c-task="$EDITOR ~/.taskrc"
 alias c-termux="$EDITOR ~/.termux/"
 alias c-tmux="$EDITOR ~/.tmux/"
 alias c-transmission="$EDITOR ~/.config/transmission/"
-alias c-vim="$EDITOR ~/.vim/vimrc"
+alias c-vim="$EDITOR ~/.vim/init.vim"
 alias c-wget="$EDITOR ~/.config/wget/wgetrc"
 alias c-youtube-dl="$EDITOR ~/.config/youtube-dl/config"
 alias c-zsh="$EDITOR $ZDOTDIR/.zshrc" r-zsh="source $ZDOTDIR/.zshrc"
