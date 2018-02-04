@@ -14,6 +14,9 @@ endif
 let g:mapleader = ' ' " Space key.
 let g:maplocalleader = '\'
 
+" Define VIM_HOME as global variable.
+let g:VIM_HOME = fnamemodify($MYVIMRC, ':p:h')
+
 " Disable unused built-in plugins.
 let g:loaded_gzip = 1
 let g:loaded_rrhelper = 1
