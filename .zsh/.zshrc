@@ -9,6 +9,10 @@ if ([[ ! -f $ZDOTDIR/.zshrc.zwc ]] || [[ $ZDOTDIR/.zshrc -nt $ZDOTDIR/.zshrc.zwc
 	zcompile $ZDOTDIR/.zshrc
 }
 
+# Soft link prompt theme if it's not already linked.
+if ! [[ -L ~/.zsh/autoload/prompt_pure_setup ]] { ln -s ~/.zsh/plugins/pure/pure.zsh ~/.zsh/autoload/prompt_pure_setup }
+if ! [[ -L ~/.zsh/autoload/async ]] { ln -s ~/.zsh/plugins/pure/async.zsh ~/.zsh/autoload/async }
+
 # Make special variables duplicate-free.
 typeset -g -U path fpath cdpath
 
