@@ -1,3 +1,7 @@
+[submodule ".zsh/plugins/pure"]
+	path = .zsh/plugins/pure
+	url = https://github.com/sindresorhus/pure
+
 [submodule ".zsh/plugins/zsh-autopair"]
 	path = .zsh/plugins/zsh-autopair
 	url = https://github.com/hlissner/zsh-autopair
