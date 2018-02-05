@@ -19,6 +19,10 @@ bindkey -M vicmd '^K' up-history # ^K to previous command.
 bindkey -M vicmd '^J' down-history # ^J to next command.
 bindkey -M vicmd 'H' vi-beginning-of-line # Go beginning of line.
 bindkey -M vicmd 'L' vi-end-of-line # Go end of line.
+bindkey -M vicmd 'gv' edit-command-line # Edit current command in $EDITOR.
+bindkey -M vicmd 'cs' change-surround # Change surround operator.
+bindkey -M vicmd 'ds' delete-surround # Delete surround operator.
+bindkey -M vicmd 'ys' add-surround # Add surround operator.
 bindkey -M vicmd 'gm' custom-tmux-show-man-current-command # Go man page of the current command.
 bindkey -M vicmd '^Y' custom-tmux-scroll-up # Activate tmux copy-mode and scroll up depending on key stroke.
 bindkey -M vicmd '^U' custom-tmux-scroll-up # Activate tmux copy-mode and scroll up depending on key stroke.
@@ -28,10 +32,15 @@ bindkey -M vicmd ':' custom-fzf-execute-widget # Execute Zsh Line Editor widgets
 # Visual Mode
 bindkey -M visual 'H' vi-beginning-of-line # Go beginning of line.
 bindkey -M visual 'L' vi-end-of-line # Go end of line.
+bindkey -M visual 'S' add-surround # Add surround.
+foreach char ({a,i}{\',\",\`}) { bindkey -M visual $char select-quoted } && unset char # Text objects for delimiters.
+foreach char ({a,i}${(s..)^:-'()[]{}<>bB'}) { bindkey -M visual $char select-bracketed } && unset char # Text objects for pairs of brackets.
 
 # Operator Mode
 bindkey -M viopp 'H' vi-beginning-of-line # Go beginning of line.
 bindkey -M viopp 'L' vi-end-of-line # Go end of line.
+foreach char ({a,i}{\',\",\`}) { bindkey -M viopp $char select-quoted } && unset char # Text objects for delimiters.
+foreach char ({a,i}${(s..)^:-'()[]{}<>bB'}) { bindkey -M viopp $char select-bracketed } && unset char # Text objects for pairs of brackets.
 
 # Completion Mode
 bindkey -M menuselect '^?' undo # Backspace for deleting suggesting completion as a whole.
