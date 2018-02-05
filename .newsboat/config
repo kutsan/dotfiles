@@ -3,17 +3,19 @@
 
 articlelist-format "    %?T?%-17T?%t %> %-20a %-10L %D    "
 auto-reload yes
-browser xdg-open
+browser "xdg-open"
 confirm-exit yes
 datetime-format "%Y-%m-%d"
 feedlist-format "    %t %> %l    "
 html-renderer "w3m -dump -T text/html"
 refresh-on-startup yes
 reload-only-visible-feeds yes
-save-path ~/Downloads/
+save-path "~/Downloads/"
 show-keymap-hint no
 suppress-first-reload yes
 text-width 80
+notify-format "%d new unread in %D different feeds"
+notify-program "~/.newsboat/notify.zsh"
 
 # -- Mappings {{{1
 # --------------------------------------------------------------------------------------------------
