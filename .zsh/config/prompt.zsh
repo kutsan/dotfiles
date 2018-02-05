@@ -1,7 +1,5 @@
-# Recompile prompt files if it's needed.
-zrecompile -p \
-	-M $ZDOTDIR/autoload/async -- \
-	-M $ZDOTDIR/autoload/prompt_pure_setup
+# Initialize prompt system.
+promptinit
 
 # Prompt theme
 prompt pure
@@ -18,13 +16,6 @@ PROMPT='%(?.%F{$PROMPT_NORMAL_STATUS_COLOR}.%F{$PROMPT_ERROR_STATUS_COLOR})${PRO
 
 # Spelling Correction Prompt
 SPROMPT="zsh: correct %F{red}'%R'%f to %F{red}'%r'%f [%B%Uy%u%bes, %B%Un%u%bo, %B%Ue%u%bdit, %B%Ua%u%bbort]? "
-
-# Transform the cursor to box form on ssh command.
-function preexec() {
-	if [[ "$2" =~ '^ssh' ]] {
-		printf '\033[0 q'
-	}
-}
 
 # ZLE hooks for prompt's Vim mode status
 function zle-line-init zle-keymap-select {

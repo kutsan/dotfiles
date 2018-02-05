@@ -10,6 +10,16 @@ function find_alternative() {
 	}
 }
 
+# Initialize $PATH with system binaries.
+path=(
+	/usr/local/bin
+	/usr/local/sbin
+	/usr/bin
+	/bin
+	/usr/sbin
+	/sbin
+)
+
 # Platform specific variables.
 if [[ $(uname) == 'Darwin' ]] {
 	# coreutils
@@ -45,16 +55,14 @@ if [[ $(uname) == 'Darwin' ]] {
 	path=($HOME/.termux/bin $path)
 }
 
-# Primary Path
-path=($path $HOME/.bin{,/external}) # Local scripts.
+# Set path for local scripts.
+path=($path $HOME/.bin{,/external})
 
 # Term
 export TERM='xterm-256color'
 
 # Default Editors
 export EDITOR=$(find_alternative nvim vim vi)
-	if ! [[ -L ~/.vim/vimrc ]] { ln -s ~/.vim/init.vim ~/.vim/vimrc }
-	if ! [[ -L ~/.config/nvim ]] { ln -s ~/.vim ~/.config/nvim }
 export GUI_EDITOR=$(find_alternative gemacs gvim)
 
 # Default Pager
@@ -138,7 +146,6 @@ source "$HOME/.config/less/lessrc" # Load core options.
 export LESSHISTFILE="$HOME/.config/less/lesshistory" # Command and search history file.
 export LESSKEYRC="$HOME/.config/less/lesskey" # Path of the uncompiled lesskey file.
 export LESSKEY="$LESSKEYRC.lwc" # Path of the compiled lesskey file.
-	if ([[ ! -f $LESSKEY ]] || [[ $LESSKEYRC -nt $LESSKEY ]]) { lesskey -o $LESSKEY $LESSKEYRC } # Compile lesskey file every time if compile is needed.
 
 # sdcv
 export SDCV_PAGER='fold -s -w 100 | less'

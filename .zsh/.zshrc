@@ -1,9 +1,10 @@
 foreach piece (
 	load.zsh
-	multiplexer.zsh
-	prompt.zsh
 	exports.zsh
+	hooks.zsh
+	prompt.zsh
 	options.zsh
+	multiplexer.zsh
 	functions.zsh
 	aliases.zsh
 	widgets.zsh

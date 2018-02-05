@@ -1,3 +1,19 @@
+# Register functions as widgets.
+foreach widget (
+	custom-expand-global-alias
+	custom-add-noglob-before-the-command
+	custom-add-sudo-before-the-command
+	custom-insert-last-typed-word
+	custom-tmux-show-man-current-command
+	custom-tmux-scroll-up
+	custom-tmux-jump-back-prompt
+	custom-fzf-launch-from-history
+	custom-fzf-execute-widget
+	custom-fzf-edit-file
+) {
+	zle -N $widget
+}
+
 # Expand global alias to its full form.
 function custom-expand-global-alias() {
 	if [[ "$LBUFFER" =~ ' [A-Z0-9]+$' ]] {
@@ -143,20 +159,4 @@ function custom-fzf-edit-file() {
 	}
 
 	zle redisplay
-}
-
-# Register functions as widgets.
-foreach widget (
-	custom-expand-global-alias
-	custom-add-noglob-before-the-command
-	custom-add-sudo-before-the-command
-	custom-insert-last-typed-word
-	custom-tmux-show-man-current-command
-	custom-tmux-scroll-up
-	custom-tmux-jump-back-prompt
-	custom-fzf-launch-from-history
-	custom-fzf-execute-widget
-	custom-fzf-edit-file
-) {
-	zle -N $widget
 }

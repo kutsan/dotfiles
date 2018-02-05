@@ -16,20 +16,6 @@ zstyle ':completion:*' menu select # Use completion menu for completion when ava
 zstyle ':completion:*' rehash true # When new programs is installed, auto update without reloading.
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} # Match dircolors with completion schema.
-# zstyle -e ':completion:*:approximate:*' max-errors '(( reply=($#PREFIX+$#SUFFIX)/3 ))'
-# zstyle ':completion:*:kill:*' command 'ps f -u $USER -wo pid,ppid,state,%cpu,%mem,tty,cmd'
-# zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
-# zstyle ':completion:*' matcher-list 'm:ss=Ã m:ue=Ã¼ m:ue=Ã m:oe=Ã¶ m:oe=Ã m:ae=Ã¤ m:ae=Ã m:{a-z}={A-Z} r:|[-_.+,]=** r:|=*'
-# zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS} 'ma=01;38;05;255;48;05;161'
-# # zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS} 'ma=(01);(38;05;255);(48;05;24)'
-# zstyle ':completion::complete:*' use-cache  true
-# zstyle ':completion:*' cache-path ~/.zsh/cache
-# zstyle ':completion:*' verbose true
-# zstyle ':completion:*' menu select=2
-# zstyle ':completion:*' special-dirs true
-# zstyle ':completion:*' group-name ''
-# zstyle ':completion:*:descriptions' format $'%{[(00);(38;05;167)m%}=> %d%{[0m%}'
-# # zstyle ':completion:*:descriptions' format $'%{\e[0;31m%}completing %B%d%b%{\e[0m%}'
 setopt COMPLETE_ALIASES # Prevent aliases from being substituted before completion is attempted.
 setopt COMPLETE_IN_WORD # Attempt to start completion from both ends of a word.
 setopt GLOB_COMPLETE # Don't insert anything resulting from a glob pattern, show completion menu.
