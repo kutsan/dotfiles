@@ -28,7 +28,7 @@ const fs = require('fs')
 const os = require('os')
 const https = require('https')
 
-const showError = (message) => console.error(`\n  \x1b[41;37m ERROR \x1b[0m ${message}\n`)
+const showError = (message) => console.error(`\n  \x1b[41;37m error \x1b[0m ${message}\n`)
 
 let PUSHBULLET_API_KEY
 
