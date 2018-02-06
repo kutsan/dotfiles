@@ -41,15 +41,20 @@ EOF
 }
 
 ##
-# Launch transmission-daemon if it's not running.
+# Launch transmission-daemon if it's not already running.
 #
-# @returns {boolean} true it's running and not failed when launching, false otherwise.
+# @returns {boolean} true if it's successfully started, otherwise false.
 ##
 function launch_daemon() {
 	if (! (command ps axc | command grep --extended-regexp '\btransmission-daemon\b' &>/dev/null)) {
-		transmission-daemon && { sleep 1; return 0 } || return 1
+		eval "transmission-daemon $TRANSMISSION_OPTIONS" && {
+			sleep 1
+			return 0
+		}
+
+		return 1 # Failed to launch.
 	} else {
-		return true
+		return 0
 	}
 }
 
