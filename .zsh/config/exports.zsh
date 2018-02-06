@@ -84,9 +84,6 @@ export LANG='en_US.UTF-8'
 export LC_ALL='en_US.UTF-8'
 export LANGUAGE='en_US.UTF-8'
 
-# dircolors
-eval $(dircolors --sh "$HOME/.dircolors")
-
 # man
 export MANWIDTH='100' # Fixed line width for man pages
 	if ([[ $(uname -o) == 'Android' ]] 2>/dev/null) { MANWIDTH='50' }
