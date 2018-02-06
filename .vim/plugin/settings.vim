@@ -95,6 +95,7 @@ set undofile " Undo tree to be saved to a file when exiting a buffer.
 set undolevels=100000 " Maximum undo limit.
 set viewoptions=cursor,folds,unix,slash " Options used by `mkview` and `loadview` command.
 set updatecount=100 " Typing this many characters will create the swap file.
+if exists('$SUDO_USER') | set noswapfile | endif " Prevent creating root-owned swap files.
 
 " Buffers, Windows, Tabs
 set autoread " Read the file again if have been changed outside of Vim.
