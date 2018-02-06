@@ -1,7 +1,4 @@
-# -- Options {{{1
-# --------------------------------------------------------------------------------------------------
-
-LESS_OPTIONS=(
+typeset -a LESS_OPTIONS=(
 	# Make the search smart case sensitive.
 	--ignore-case
 
@@ -37,13 +34,10 @@ LESS_OPTIONS=(
 )
 
 # Set options as string and remove temporary array.
-export LESS=$(echo "${LESS_OPTIONS[@]}") && unset LESS_OPTIONS
+export LESS="${LESS_OPTIONS[@]}" && unset LESS_OPTIONS
 
 # Use `highlight` program to try to highlight opened file according to its extension.
 export LESSOPEN="| highlight $HIGHLIGHT_OPTIONS -- %s 2>/dev/null"
-
-# -- Colors {{{1
-# --------------------------------------------------------------------------------------------------
 
 export LESS_TERMCAP_md=$(tput bold; tput setaf 4) # Turn on bold mode.
 export LESS_TERMCAP_me=$(tput sgr0) # Turn off all attributes.
@@ -58,4 +52,4 @@ export LESS_TERMCAP_ZV=$(tput rsubm) # End subscript mode.
 export LESS_TERMCAP_ZO=$(tput ssupm) # Enter superscript mode.
 export LESS_TERMCAP_ZW=$(tput rsupm) # End superscript mode.
 
-# }}} vim: foldmethod=marker foldlevel=0 filetype=zsh
+# }}} vim: filetype=zsh
