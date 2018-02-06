@@ -109,9 +109,6 @@ export GPG_TTY=$(tty)
 # wget
 export WGETRC="$HOME/.config/wget/wgetrc"
 
-# crontab
-export CRONTAB_HOME="$HOME/.cron"
-
 # ranger
 export RANGER_LOAD_DEFAULT_RC='false'
 export RANGER_LAST_DIRECTORY_BUFFER="$HOME/.config/ranger/.last"
