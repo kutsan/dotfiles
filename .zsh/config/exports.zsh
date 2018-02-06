@@ -140,6 +140,7 @@ export FZF_COMPLETION_OPTS='--preview="highlight --out-format=xterm256 --style=p
 
 # transmission
 export TRANSMISSION_HOME="$HOME/.config/transmission"
+source $TRANSMISSION_HOME/options.zsh # Build $TRANSMISSION_OPTIONS variable.
 
 # highlight
 export HIGHLIGHT_OPTIONS='--out-format="xterm256" --style="pablo"'
