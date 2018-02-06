@@ -7,7 +7,7 @@ source ~/.zsh/config/exports.zsh
 source ~/.zsh/lib/console.zsh
 
 # Redirect all output to log file.
-exec &>> $CRONTAB_HOME/logs/$(basename $0).log
+exec &>> ~/.cron/logs/$(basename $0).log
 
 # Log with date to indicate it's running in success.
 console.info --with-date "Running."

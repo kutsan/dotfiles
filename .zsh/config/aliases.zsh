@@ -71,6 +71,7 @@ alias -g F='| fzf'
 # Configs
 alias c-alacritty="$EDITOR ~/.config/alacritty/alacritty.yml"
 alias c-browsersync="$EDITOR ~/.config/browsersync/config.js"
+alias c-crontab="$EDITOR ~/.cron/crontab"
 alias c-editorconfig="$EDITOR ~/.editorconfig"
 alias c-emacs="$EDITOR ~/.emacs.d/init.el"
 alias c-git="$EDITOR ~/.config/git/"
