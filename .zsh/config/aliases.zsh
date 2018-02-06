@@ -97,7 +97,7 @@ alias c-wget="$EDITOR ~/.config/wget/wgetrc"
 alias c-youtube-dl="$EDITOR ~/.config/youtube-dl/config"
 alias c-zsh="$EDITOR $ZDOTDIR/.zshrc" r-zsh="source $ZDOTDIR/.zshrc"
 alias c-zshenv="$EDITOR ~/.zshenv"
-alias c-zshhistory="$EDITOR $ZDOTDIR/.zshhistory"
+alias c-zshhistory="$EDITOR $HISTFILE"
 
 # Git
 alias g='git'
