@@ -109,6 +109,9 @@ export GPG_TTY=$(tty)
 # wget
 export WGETRC="$HOME/.config/wget/wgetrc"
 
+# crontab
+export CRONTAB_HOME="$HOME/.cron"
+
 # ranger
 export RANGER_LOAD_DEFAULT_RC='false'
 export RANGER_LAST_DIRECTORY_BUFFER="$HOME/.config/ranger/.last"
@@ -136,7 +139,7 @@ export FZF_COMPLETION_TRIGGER='?'
 export FZF_COMPLETION_OPTS='--preview="highlight --out-format=xterm256 --style=pablo {} 2>/dev/null || cat {}"'
 
 # transmission
-export TRANSMISSION_HOME="$HOME/.config/transmission/"
+export TRANSMISSION_HOME="$HOME/.config/transmission"
 
 # highlight
 export HIGHLIGHT_OPTIONS='--out-format="xterm256" --style="pablo"'
