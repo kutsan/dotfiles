@@ -58,10 +58,10 @@ function launch_daemon() {
 # @param {string} $2 Subcommand arguments.
 ##
 function main() {
-	source ~/.bin/utils/console.zsh 2>/dev/null || {
+	source $ZDOTDIR/lib/console.zsh 2>/dev/null || {
 		echo
-		echo -e '  \033[41m ERROR \033[0m This script requires \033[01mconsole.zsh\033[0m component to provide sane error output.'
-		echo '          There was nothing found at \033[01m~/.bin/utils/console.zsh\033[0m.'
+		echo -e '  \033[41m error \033[0m This script requires \033[01mconsole.zsh\033[0m component to provide sane error output.'
+		echo "          There was nothing found at \033[01m$ZDOTDIR/lib/console.zsh\033[0m."
 		echo
 
 		exit 1

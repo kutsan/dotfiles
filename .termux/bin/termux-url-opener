@@ -41,7 +41,7 @@ function show_notification() {
 # @param $1 {string} URL, that will be handled by this program.
 ##
 function main() {
-	source ~/.bin/utils/console.zsh || exit 1
+	source $ZDOTDIR/lib/console.zsh || exit 1
 
 	if (( ${#@} == 0 )) {
 		echo; console.warn 'No argument was provided.'; echo

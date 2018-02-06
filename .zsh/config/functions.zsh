@@ -1,5 +1,5 @@
 # Import general error and warning notification utility functions.
-source ~/.bin/utils/console.zsh
+source $ZDOTDIR/lib/console.zsh
 
 ##
 # Returns the bare IP address.
