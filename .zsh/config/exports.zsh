@@ -18,6 +18,7 @@ path=(
 	/bin
 	/usr/sbin
 	/sbin
+	$path
 )
 
 # Platform specific variables.
