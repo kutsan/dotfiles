@@ -1,11 +1,10 @@
 # -- Queries {{{1
 # --------------------------------------------------------------------------------------------------
 
-# Feed for all unread articles.
-"query:⊙ Unread Feeds:unread = \"yes\""
 "query:▵ Blog:tags # \"Blog\""
 "query:▵ Communities:tags # \"Communities\""
 "query:▵ Software:tags # \"Software\""
+"query:▵ Entertainment:tags # \"Entertainment\""
 
 # -- Feeds {{{1
 # --------------------------------------------------------------------------------------------------
