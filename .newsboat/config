@@ -159,7 +159,6 @@ bind-key m toggle-article-read articlelist
 bind-key O open-all-unread-in-browser-and-mark-read
 bind-key o open-in-browser
 bind-key q hard-quit
-bind-key q quit
 bind-key r reload
 bind-key R reload-all
 bind-key s save
