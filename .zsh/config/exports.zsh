@@ -125,7 +125,7 @@ export FZF_DEFAULT_COMMAND="rg \
 	--glob '!{.git,node_modules}/*'"
 export FZF_DEFAULT_COLORS='--color=dark,fg:7,fg+:7,bg:0,bg+:8,hl:4,hl+:4,info:8,border:8,prompt:4,pointer:3,marker:3,spinner:8,header:6'
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_COLORS \
-	--no-multi \
+	--exact \
 	--no-bold \
 	--height='40%' \
 	--jump-labels='bmvenritusldkfjgh' \
