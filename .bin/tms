@@ -41,24 +41,6 @@ EOF
 }
 
 ##
-# Launch transmission-daemon if it's not already running.
-#
-# @returns {boolean} true if it's successfully started, otherwise false.
-##
-function launch_daemon() {
-	if (! (command ps axc | command grep --extended-regexp '\btransmission-daemon\b' &>/dev/null)) {
-		eval "transmission-daemon $TRANSMISSION_OPTIONS" && {
-			sleep 1
-			return 0
-		}
-
-		return 1 # Failed to launch.
-	} else {
-		return 0
-	}
-}
-
-##
 # @param {string} $1 Subcommand.
 # @param {string} $2 Subcommand arguments.
 ##
@@ -89,13 +71,32 @@ function main() {
 			echo; console.info "tms $VERSION"; echo
 			;;
 
-		'create' | 'daemon' | 'edit' | 'remote' | 'show')
+		'daemon')
 			shift
-			launch_daemon && transmission-${subcommand} "$@"
+
+			if [[ "$@" == '' ]] {
+				if ! (pgrep -x 'transmission-daemon' &>/dev/null) {
+					eval transmission-daemon $TRANSMISSION_DAEMON_OPTIONS
+				} else {
+					echo; console.warn 'transmission-daemon is already running.'; echo
+				}
+			} else {
+				transmission-daemon "$@"
+			}
+			;;
+
+		'remote')
+			shift
+			eval transmission-remote $TRANSMISSION_REMOTE_OPTIONS "$@"
+			;;
+
+		'create' | 'edit' | 'show')
+			shift
+			transmission-${subcommand} "$@"
 			;;
 
 		*)
-			launch_daemon && transmission-remote "$@"
+			transmission-remote "$@"
 			;;
 	}
 }
