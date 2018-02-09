@@ -57,7 +57,7 @@ augroup vimfilerkeymappings
 	call <SID>VimFilerMap('j', '<Plug>(vimfiler_loop_cursor_down)')
 	call <SID>VimFilerMap('k', '<Plug>(vimfiler_loop_cursor_up)')
 	call <SID>VimFilerMap('gg', '<Plug>(vimfiler_cursor_top)')
-	call <SID>VimFilerMap('<Space>', '<Plug>(vimfiler_toggle_mark_current_line)')
+	call <SID>VimFilerMap('a', '<Plug>(vimfiler_toggle_mark_current_line)')
 	call <SID>VimFilerMap('v', '<Plug>(vimfiler_toggle_mark_all_lines)')
 	call <SID>VimFilerMap('zl', '<Plug>(vimfiler_redraw_screen)')
 	call <SID>VimFilerMap('l', '<Plug>(vimfiler_smart_l)')
