@@ -14,8 +14,8 @@ endif
 let g:mapleader = ' ' " Space key.
 let g:maplocalleader = '\'
 
-" Define VIM_HOME as global variable.
-let g:VIM_HOME = fnamemodify($MYVIMRC, ':p:h')
+" Define VIM_HOME as environment variable.
+let $VIM_HOME = fnamemodify($MYVIMRC, ':p:h')
 
 " Disable unused built-in plugins.
 let g:loaded_gzip = 1
@@ -36,7 +36,7 @@ let g:loaded_matchparen = 1
 " Initialize plugin manager and load plugins.
 call plug#begin('~/.vim/bundle')
 	" Source all files under package directory.
-	for s:package in split(glob(fnamemodify($MYVIMRC, ':p:h') . '/package/*.vim'), '\n')
+	for s:package in split(glob($VIM_HOME . '/package/*.vim'), '\n')
 		if filereadable(s:package)
 			execute 'source' s:package
 		endif
