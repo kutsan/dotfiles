@@ -1,6 +1,6 @@
 # kutsan's dotfiles
 
-![Screenshot](https://i.imgur.com/Gjegs41.png)
+![Screenshot](https://i.imgur.com/3RRNCoG.png)
 
 ## Overview
 
