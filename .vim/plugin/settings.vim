@@ -35,8 +35,7 @@ set cursorline " Highlight the line background of the cursor.
 set display=lastline " As much as possible of the last line in a window will be displayed.
 set fillchars= " Characters to fill the status lines and vertical separators.
 set foldlevelstart=99 " Start editing with all folds open.
-set foldmethod=syntax " Use syntax model for folding mechanism.
-set foldnestmax=3 " Set the maximum nesting of folds for the indent and syntax model.
+set foldmethod=indent " Use indent model for folding mechanism.
 set foldtext=kutsan#settings#foldtext() " Use custom fold text function for folds.
 set formatoptions=jcql " General text formatting options used by many mechanics.
 set formatprg=par\ -w80 " External formatter program that will be used with `gq` operator.
