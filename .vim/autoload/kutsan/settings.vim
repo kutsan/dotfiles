@@ -1,20 +1,9 @@
+scriptencoding UTF-8
+
 function! kutsan#settings#foldtext() abort
-	let l:fs = v:foldstart
+	let l:lines = v:foldend - v:foldstart + 1
+	let l:first = substitute(getline(v:foldstart), '\v *', '', '')
+	let l:dashes = substitute(v:folddashes, '-', '', 'g')
 
-	while getline(l:fs) !~# '\w'
-		let l:fs = nextnonblank(l:fs + 1)
-	endwhile
-
-	if l:fs > v:foldend
-		let l:line = getline(v:foldstart)
-	else
-		let l:line = substitute(getline(l:fs), '\t', repeat(' ', &tabstop), 'g')
-	endif
-
-	return
-		\ repeat(repeat(' ', 4), v:foldlevel - 1)
-		\ . '> '
-		\ . matchstr(l:line, '\v\w.+\s\ze\{')
+	return ' ▵' . ' [' . l:lines . '] ' . l:first
 endfunction
-
-
