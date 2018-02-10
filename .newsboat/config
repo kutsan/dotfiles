@@ -34,8 +34,8 @@ confirm-exit yes
 # Use custom renderer for displaying HTML files.
 html-renderer "w3m -dump -T text/html"
 
-# Enable reloading all feeds at start up.
-refresh-on-startup yes
+# Disable reloading all feeds at start up.
+refresh-on-startup no
 
 # Reload all visible and non-visible feeds.
 reload-only-visible-feeds no
