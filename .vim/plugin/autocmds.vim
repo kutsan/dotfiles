@@ -25,8 +25,10 @@ augroup end
 augroup remembercursorposition
 	autocmd!
 	autocmd BufReadPost *
-		\ if line("'\"") > 0 && line("'\"") <= line("$") |
-		\	execute "normal! g`\"" |
+		\ if &filetype !=? 'gitcommit' |
+		\	if line("'\"") > 0 && line("'\"") <= line("$") |
+		\		execute "normal! g`\"" |
+		\	endif |
 		\ endif
 	autocmd BufRead * normal! zz
 augroup end
