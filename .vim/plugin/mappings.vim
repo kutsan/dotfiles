@@ -101,6 +101,10 @@ cnoremap <C-l> <Right>
 " Substitute with 'very magic' mode.
 cnoremap <C-s>/ s/\v//gc<Left><Left><Left><Left>
 
+" Move between matches without leaving incremental search.
+cnoremap <expr> <Tab> getcmdtype() ==# '/' \|\| getcmdtype() ==# '?' ? '<CR>/<C-r>/' : '<C-z>'
+cnoremap <expr> <S-Tab> getcmdtype() ==# '/' \|\| getcmdtype() ==# '?' ? '<CR>?<C-r>/' : '<S-Tab>'
+
 " -- Visual Mode
 " ------------------------------------------------
 
