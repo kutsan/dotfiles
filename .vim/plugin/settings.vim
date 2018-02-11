@@ -113,6 +113,7 @@ set history=10000 " Define maximum command history size.
 set noshowcmd " Disable displaying key presses at the right bottom.
 set noshowmode " Disable native mode indicator.
 set path+=** " Clever completion with the :find command.
+set wildcharm=<C-z> " The key to start wildcard expansion inside macro.
 set wildignorecase " Ignore case when completing in command menu.
 set wildmenu " Command-line completion operates in an enhanced mode.
 set wildmode=full " Wildmenu options.
