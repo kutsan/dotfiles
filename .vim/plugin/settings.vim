@@ -69,7 +69,7 @@ set title " Show title as in 'titlestring' in title bar of window.
 set titlestring=%f " Format of the title used by 'title'.
 set ttimeoutlen=10 " Key code delays in milliseconds.
 set ttyfast " More characters will be sent to the screen for redrawing in terminal.
-set updatetime=2000 " If that milliseconds nothing is typed the swap file will be written.
+set updatetime=2000 " If that milliseconds nothing is typed CursorHold event will trigger.
 set visualbell " Instead of beeping, shows a visual bell on errors.
 if has('nvim') | set inccommand=nosplit | endif " Show live substitution results as you type.
 if has('nvim') | set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor | endif " Change cursor shape among modes.
