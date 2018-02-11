@@ -3,7 +3,7 @@ function! kutsan#mappings#toggleterminal() abort
 
 	try
 		execute 'buffer' g:terminal_buffer
-        startinsert!
+		startinsert!
 	catch
 		enew
 		call termopen('cd $PWD && $SHELL', { 'detach': 0 })
