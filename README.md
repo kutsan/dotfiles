@@ -129,8 +129,6 @@
 		- [Styling](https://github.com/termux/termux-styling) - Color schemes and powerline-ready font support
 			- [Nord](https://github.com/kutsan/dotfiles/blob/master/.termux/colors.properties) - Color scheme
 			- FiraCode - Font
-	- [Telegram](https://play.google.com/store/apps/details?id=org.telegram.messenger) - Cloud-based instant messaging service
-		- [Arc](https://github.com/kutsan/dotfiles/tree/master/.android/telegram) - Android theme
 
 ## License
 
