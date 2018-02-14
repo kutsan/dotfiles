@@ -1,4 +1,4 @@
-if !has('nvim') && !has('python3')
+if !has('nvim') || !has('python3')
 	finish
 endif
 
