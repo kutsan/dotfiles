@@ -42,7 +42,7 @@ function main() {
 	wget "$link" \
 		--timestamping \
 		--no-show-progress \
-		--output-document="$download_directory/$filename" \
+		--output-document="$download_directory/$filename"
 
 	# Perform operations based on media type.
 	handle_mime "$(file --dereference --brief --mime-type -- "$download_directory/$filename")"
