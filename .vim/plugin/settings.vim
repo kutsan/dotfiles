@@ -1,9 +1,19 @@
-scriptencoding UTF-8
+" Encoding
+set encoding=UTF-8 " Default encoding. (vim-only)
+scriptencoding UTF-8 " Default encoding for current script.
 
-" Color options and scheme.
+" Shared Data
+if has('nvim')
+	set shada+=n~/.vim/cache/share/nviminfo
+else
+	set viminfo+=!,n~/.vim/cache/share/viminfo
+endif
+
+" Colors
 set background=dark " Choose dark colors if available.
 set termguicolors " Enable True Color support.
 colorscheme iceberg " Color scheme and its overrides.
+	highlight! EndOfBuffer ctermbg=bg guifg=bg | " Hide tilde symbols for all buffers.
 	highlight! link QuickFixLine CursorLine
 	highlight! StatusLine cterm=reverse ctermbg=234 ctermfg=245 gui=reverse guibg=#818596 guifg=#1e2132 term=reverse
 	highlight! StatusLineNC cterm=reverse ctermbg=238 ctermfg=233 gui=reverse guibg=#3e445e guifg=#1e2132
@@ -16,13 +26,6 @@ colorscheme iceberg " Color scheme and its overrides.
 	highlight! GitGutterDelete ctermbg=235 ctermfg=203 guibg=#161821 guifg=#e27878
 	highlight! VertSplit cterm=NONE ctermbg=233 ctermfg=233 gui=NONE guibg=#161821 guifg=#0f1117
 
-" Shared data location.
-if has('nvim')
-	execute 'set shada+=n' . $VIM_HOME . '/cache/share/nviminfo'
-else
-	execute 'set viminfo+=!,n' . $VIM_HOME . '/cache/share/viminfo'
-endif
-
 " Editor
 set backspace=indent,eol,start " Allow backspacing over everything in insert mode.
 set belloff=all " Turn off the bell upon all events.
@@ -34,9 +37,6 @@ set confirm " Seek for confirmation for certain commands instead of giving error
 set cursorline " Highlight the line background of the cursor.
 set display=lastline " As much as possible of the last line in a window will be displayed.
 set fillchars= " Characters to fill the status lines and vertical separators.
-set foldlevelstart=99 " Start editing with all folds open.
-set foldmethod=indent " Use indent model for folding mechanism.
-set foldtext=kutsan#settings#foldtext() " Use custom fold text function for folds.
 set formatoptions=jcql " General text formatting options used by many mechanics.
 set formatprg=par\ -w80 " External formatter program that will be used with `gq` operator.
 set keywordprg=:help " Default command to be used when looking definition.
@@ -52,7 +52,6 @@ set nostartofline " Prevent the cursor from changing the current column when jum
 set nowrap " Prevent wrapping for long lines.
 set nrformats-=octal " Don't consider numbers that start with a zero as octal.
 set number " Show line numbers alongside relative numbers.
-set pastetoggle=<F2> " Toggle paste mode with given key.
 set pumheight=10 " Maximum number of items to show in the pop-up menu for completion.
 set relativenumber " Show relative line numbers alongside numbers.
 set report=0 " Threshold for reporting number of lines changed.
@@ -68,7 +67,7 @@ set timeoutlen=500 " Mapping delays in milliseconds.
 set title " Show title as in 'titlestring' in title bar of window.
 set titlestring=%f " Format of the title used by 'title'.
 set ttimeoutlen=10 " Key code delays in milliseconds.
-set ttyfast " More characters will be sent to the screen for redrawing in terminal.
+set ttyfast " More characters will be sent to the screen for redrawing in terminal. (vim-only)
 set updatetime=2000 " If that milliseconds nothing is typed CursorHold event will trigger.
 set visualbell " Instead of beeping, shows a visual bell on errors.
 if has('nvim') | set inccommand=nosplit | endif " Show live substitution results as you type.
@@ -82,6 +81,11 @@ set shiftwidth=4 " Affects what happens when you press `>>`, `<<` or `==`.
 set smartindent " Automatically inserts one extra level of indentation in some cases.
 set tabstop=4 " TAB character length.
 
+" Folding
+set foldlevelstart=99 " Start editing with all folds open.
+set foldmethod=indent " Use indent model for folding mechanism.
+set foldtext=kutsan#settings#foldtext() " Use custom fold text function for folds.
+
 " Search
 set ignorecase " Make default search is not case sensitive.
 set incsearch " Instantly show results when you start searching.
@@ -89,10 +93,10 @@ set nohlsearch " Disable highlight the matched search results by default.
 set smartcase " If a uppercase character is entered, the search will be case sensitive.
 
 " Backup
-let &backupdir = $VIM_HOME . '/cache/backup//' " The directory for backup files.
-let &directory = $VIM_HOME . '/cache/swap//' " The directory for swap files.
-let &undodir = $VIM_HOME . '/cache/undo//' " The directory for undo files.
-let &viewdir = $VIM_HOME . '/cache/view//' " Name of the directory where to store files for :mkview.
+set backupdir=~/.vim/cache/backup// " The directory for backup files.
+set directory=~/.vim/cache/swap// " The directory for swap files.
+set undodir=~/.vim/cache/undo// " The directory for undo files.
+set viewdir=~/.vim/cache/view// " Name of the directory where to store files for :mkview.
 set undofile " Undo tree to be saved to a file when exiting a buffer.
 set undolevels=100000 " Maximum undo limit.
 set viewoptions=cursor,folds,unix,slash " Options used by `mkview` and `loadview` command.
@@ -138,7 +142,7 @@ set statusline+=%{repeat('\ ',1)} " Generate space characters given number of ti
 " GUI
 if has('gui_running')
 	set browsedir=buffer " Use the same directory as current buffer's path when browsing files.
-	set mousehide " The mouse pointer is hidden when characters are typed.
+	set mousehide " Mouse pointer is hidden when characters are typed.
 	set guifont=FuraCode_Nerd_Font:h16 " Font and font size.
 	set guicursor+=a:blinkon0 " Disable cursor blinking for all modes.
 	set guioptions+=c " Disable native dialogues, use text prompts for simple choices.
@@ -163,22 +167,3 @@ if exists('$SUDO_USER')
 		set viminfo=
 	endif
 endif
-
-" Colors
-highlight EndOfBuffer guifg=bg | " Hide tilde symbols for all buffers.
-let g:terminal_color_0 = '#3b4252' " Black
-let g:terminal_color_1 = '#bf616a' " Red
-let g:terminal_color_2 = '#a3be8c' " Green
-let g:terminal_color_3 = '#ebcb8b' " Yellow
-let g:terminal_color_4 = '#81a1c1' " Blue
-let g:terminal_color_5 = '#b48ead' " Magenta
-let g:terminal_color_6 = '#88c0d0' " Cyan
-let g:terminal_color_7 = '#e5e9f0' " White
-let g:terminal_color_8 = '#4c566a' " Bold Black
-let g:terminal_color_9 = '#bf616a' " Bold Red
-let g:terminal_color_10 = '#a3be8c' " Bold Green
-let g:terminal_color_11 = '#ebcb8b' " Bold Yellow
-let g:terminal_color_12 = '#81a1c1' " Bold Blue
-let g:terminal_color_13 = '#b48ead' " Bold Magenta
-let g:terminal_color_14 = '#8fbcbb' " Bold Cyan
-let g:terminal_color_15 = '#eceff4' " Bold White
