@@ -36,10 +36,10 @@ nnoremap <silent> <Leader>; :FzfHistory:<Enter>
 nnoremap <silent> <Leader>/ :FzfHistory/<Enter>
 nnoremap <silent> <Leader>m :FzfMarks<Enter>
 
-" Empty status line for fzf buffers.
-augroup fzfdisablestatusline
-	autocmd!
-	autocmd User FzfStatusLine
-		\ highlight FzfReset guifg=bg |
-		\ setlocal statusline=%#FzfReset#\  |
-augroup end
+" Disable status line for fzf buffers.
+if has('nvim') || has('gui_running')
+	augroup fzfdisablestatusline
+		autocmd! FileType fzf
+		autocmd  FileType fzf set laststatus=0 | autocmd BufLeave <buffer> set laststatus=2
+	augroup end
+endif
