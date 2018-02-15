@@ -109,7 +109,7 @@ export WGETRC="$HOME/.config/wget/wgetrc"
 
 # ranger
 export RANGER_LOAD_DEFAULT_RC='false'
-export RANGER_LAST_DIRECTORY_BUFFER="$HOME/.config/ranger/.last"
+export RANGER_LAST_DIRECTORY_BUFFER="$XDG_DATA_HOME/ranger/last_directory"
 
 # taskwarrior
 export TASKRC="$HOME/.task/taskrc"
