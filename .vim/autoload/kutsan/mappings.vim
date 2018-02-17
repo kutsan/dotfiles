@@ -1,13 +1,13 @@
 function! kutsan#mappings#toggleterminal() abort
-	call kutsan#utils#set('g:terminal_buffer', 0)
+	call kutsan#utils#set('g:terminalbuffer', 0)
 
 	try
-		execute 'buffer' g:terminal_buffer
-		startinsert!
+		execute 'buffer' g:terminalbuffer
+		startinsert
 	catch
 		enew
-		call termopen('cd $PWD && $SHELL', { 'detach': 0 })
+		call termopen('cd "$PWD" && $SHELL', { 'detach': 0 })
 
-		let g:terminal_buffer = bufnr('')
+		let g:terminalbuffer = bufnr('')
 	endtry
 endfunction
