@@ -50,6 +50,9 @@ nnoremap x "_x
 " Go back or launch the terminal buffer.
 nnoremap <silent> <C-z> :call kutsan#mappings#toggleterminal()<Enter>
 
+" Construct range operator.
+nnoremap <silent> ! :<C-u>set operatorfunc=kutsan#mappings#exclamationoperator<CR>g@
+
 " Shortcuts for quiting.
 nnoremap <silent> <Leader>q :quit<Enter>
 nnoremap <silent> <Leader>Q :quitall<Enter>
