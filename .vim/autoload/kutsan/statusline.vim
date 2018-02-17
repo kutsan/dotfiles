@@ -1,5 +1,8 @@
 scriptencoding UTF-8
 
+""
+" Return the linter information to be used in status line.
+""
 function! kutsan#statusline#linter() abort
 	if !exists('g:loaded_ale')
 		return ''
