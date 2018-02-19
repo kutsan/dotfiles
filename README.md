@@ -14,34 +14,32 @@
 			- [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) - Fish-like auto-suggestions for interactive terminal based on command history
 		- [neovim](https://github.com/neovim/neovim) - The fork of ubiquitous text editor focused on extensibility and usability
 			- [vim-plug](https://github.com/junegunn/vim-plug) - Vim plugin manager with features such as parallel installation and post-update hooks
-			- [w0rp/ale](https://github.com/w0rp/ale) - Asynchronous lint engine for Neovim and Vim 8+
-			- [jiangmiao/auto-pairs](https://github.com/jiangmiao/auto-pairs) - Insert or delete brackets, parens, quotes in pair
-			- [chrisbra/Colorizer](https://github.com/chrisbra/Colorizer) - Highlight HEX and RGB color codes and names in their background
-			- [tpope/vim-commentary](https://github.com/tpope/vim-commentary) - Comment and uncomment with predefined key bindings
-			- [Shougo/deoplete.nvim](https://github.com/Shougo/deoplete.nvim) - Asynchronous auto-completion framework for Neovim
-			- [ryanoasis/vim-devicons](https://github.com/ryanoasis/vim-devicons) - Adds additional file type glyphs to popular plugins
-			- [editorconfig/editorconfig-vim](https://github.com/editorconfig/editorconfig-vim) - EditorConfig integration
-			- [mattn/emmet-vim](https://github.com/mattn/emmet-vim) - Emmet integration
-			- [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive) - Git client
-			- [junegunn/fzf.vim](https://github.com/junegunn/fzf.vim) - Fuzzy finder fzf as plugin
-			- [mhinz/vim-grepper](https://github.com/mhinz/vim-grepper) - Search by using popular search tools repository-wise
-			- [airblade/vim-gitgutter](https://github.com/airblade/vim-gitgutter) - Show Git diff in the sign column
-			- [cocopon/iceberg.vim](https://github.com/cocopon/iceberg.vim) - Dark blue color scheme
-			- [sheerun/vim-polyglot](https://github.com/sheerun/vim-polyglot) - Big collection of language packs as scripts are loaded only on demand
-			- [prettier/vim-prettier](https://github.com/prettier/vim-prettier) - Code formatter prettier integration
-			- [tpope/vim-repeat](https://github.com/tpope/vim-repeat) - Repeat command support for various plugins
-			- [justinmk/vim-sneak](https://github.com/justinmk/vim-sneak) - Jump to any location specified by two characters
-			- [tpope/vim-surround](https://github.com/tpope/vim-surround) - Surround commands for parentheses, brackets, quotes, XML tags
-			- [mbbill/undotree](https://github.com/mbbill/undotree) - Visualize undo tree
-			- [Shougo/vimfiler.vim](https://github.com/Shougo/vimfiler.vim) - File explorer
+			- [ale](https://github.com/w0rp/ale) - Asynchronous lint engine for Neovim and Vim 8+
+			- [auto-pairs](https://github.com/jiangmiao/auto-pairs) - Insert or delete brackets, parens, quotes in pair
+			- [colorizer](https://github.com/chrisbra/Colorizer) - Highlight HEX and RGB color codes and names in their background
+			- [commentary](https://github.com/tpope/vim-commentary) - Comment and uncomment with predefined key bindings
+			- [deoplete](https://github.com/Shougo/deoplete.nvim) - Asynchronous auto-completion framework for Neovim
+			- [devicons](https://github.com/ryanoasis/vim-devicons) - Adds additional file type glyphs to popular plugins
+			- [editorconfig](https://github.com/editorconfig/editorconfig-vim) - EditorConfig integration
+			- [emmet](https://github.com/mattn/emmet-vim) - Emmet integration
+			- [fugitive](https://github.com/tpope/vim-fugitive) - Git client
+			- [fzf](https://github.com/junegunn/fzf.vim) - Fuzzy finder fzf as plugin
+			- [grepper](https://github.com/mhinz/vim-grepper) - Search by using popular search tools repository-wise
+			- [iceberg](https://github.com/cocopon/iceberg.vim) - Dark blue color scheme
+			- [nerdtree](https://github.com/scrooloose/nerdtree) - File explorer
+			- [polyglot](https://github.com/sheerun/vim-polyglot) - Big collection of language packs as scripts are loaded only on demand
+			- [prettier](https://github.com/prettier/vim-prettier) - Code formatter prettier integration
+			- [repeat](https://github.com/tpope/vim-repeat) - Repeat command support for various plugins
+			- [signify](https://github.com/mhinz/vim-signify) - Show Git diff in the sign column
+			- [sneak](https://github.com/justinmk/vim-sneak) - Jump to any location specified by two characters
+			- [surround](https://github.com/tpope/vim-surround) - Surround commands for parentheses, brackets, quotes, XML tags
+			- [undotree](https://github.com/mbbill/undotree) - Visualize undo tree
 		- [emacs](https://www.gnu.org/software/emacs) - The operation-system-like text editor
 			- [use-package](https://github.com/jwiegley/use-package) - Package declaration manager
-				- [emacs-evil/evil](https://github.com/emacs-evil/evil) - Extendable Vi layer and emulation
-				- [cofi/evil-leader](https://github.com/cofi/evil-leader) - Vim's \<leader\> key for Evil mode
-				- [timcharper/evil-surround](https://github.com/timcharper/evil-surround) - vim-surround for Evil mode
-				- [emacs-helm/helm](https://github.com/emacs-helm/helm) - Incremental and narrowing completion framework
-				- [defunkt/markdown-mode](https://github.com/defunkt/markdown-mode) - Markdown syntax support and tools
-				- [Fanael/rainbow-delimiters](https://github.com/Fanael/rainbow-delimiters) - Extra rainbow colors for parentheses, brackets or braces
+			- [evil](https://github.com/emacs-evil/evil) - Extendable Vi layer and emulation
+			- [evil-leader](https://github.com/cofi/evil-leader) - Vim's \<leader\> key for Evil mode
+			- [helm](https://github.com/emacs-helm/helm) - Incremental and narrowing completion framework
+			- [rainbow-delimiters](https://github.com/Fanael/rainbow-delimiters) - Extra rainbow colors for parentheses, brackets or braces
 		- [git](https://git-scm.com) - Version control system for tracking changes in files and coordinating the work
 		- [tmux](https://github.com/tmux/tmux) - Terminal multiplexer enables working with split panes, tabs and detachable sessions
 		- [nodejs](https://nodejs.org) - JavaScript runtime environment for developing a diverse variety of applications
