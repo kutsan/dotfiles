@@ -124,7 +124,7 @@ xnoremap ae GoggV
 
 " Alternative end and beginning of line shortcuts.
 xnoremap H ^
-xnoremap L $
+xnoremap L g_
 
 " Always search with 'very magic' mode.
 xnoremap / /\v
