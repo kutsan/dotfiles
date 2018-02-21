@@ -63,6 +63,7 @@ if has('nvim') | set inccommand=nosplit | endif " Show live substitution results
 " Interface
 set cursorline " Highlight the line background of the cursor.
 set fillchars=vert:⏐ " Characters to fill the status lines and vertical separators.
+set laststatus=2 " Always show the status line.
 set listchars=tab:│\ ,nbsp:␣,extends:…,precedes:… " Strings to use when 'list' option set.
 set number " Show line numbers alongside relative numbers.
 set relativenumber " Show relative line numbers alongside numbers.
@@ -125,24 +126,6 @@ set wildcharm=<C-z> " The key to start wildcard expansion inside macro.
 set wildignorecase " Ignore case when completing in command menu.
 set wildmenu " Command-line completion operates in an enhanced mode.
 set wildmode=full " Wildmenu options.
-
-" Status Line
-set laststatus=2 " Always show the status line.
-set statusline= " Initialize the status line variable.
-set statusline+=%{repeat('\ ',4)} " Generate space characters given number of times.
-set statusline+=%{kutsan#statusline#linter()} " Linter status with Unicode (from PUA) symbols.
-set statusline+=%{repeat('\ ',4)} " Generate space characters given number of times.
-set statusline+=%.30F " Path of the open file.
-set statusline+=%{repeat('\ ',1)} " Generate space characters given number of times.
-set statusline+=%{exists('*WebDevIconsGetFileTypeSymbol')?WebDevIconsGetFileTypeSymbol():''} " FileType Unicode (from PUA) symbol.
-set statusline+=%{repeat('\ ',4)} " Generate space characters given number of times.
-set statusline+=%03l/%03L:%02c " Line numbers and column numbers in <Line>:<Column> format.
-set statusline+=%= " Align right all items from this point on.
-set statusline+=%{&spell?'\ \ ':''} " Show an icon if spell checking enabled.
-set statusline+=%{exists('*fugitive#head')?fugitive#head():''} " Git HEAD status.
-set statusline+=%{exists('*fugitive#head')?repeat('\ ',1):''} " Git HEAD status spaces.
-set statusline+=%y " File type.
-set statusline+=%{repeat('\ ',1)} " Generate space characters given number of times.
 
 " GUI
 if has('gui_running')
