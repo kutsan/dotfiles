@@ -3,6 +3,9 @@ scriptencoding UTF-8
 " File explorer.
 Plug 'scrooloose/nerdtree'
 
+" Extra syntax highlighting for devicons.
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
 " Display hidden files.
 let g:NERDTreeShowHidden = 1
 
@@ -11,9 +14,6 @@ let g:NERDTreeWinSize = 35
 
 " Keep the tree sync on file deletion or rename.
 let g:NERDTreeAutoDeleteBuffer = 1
-
-" Include bookmarks table.
-let g:NERDTreeShowBookmarks = 1
 
 " Custom file where bookmarks are saved.
 let g:NERDTreeBookmarksFile = expand('$HOME') . '/.vim/cache/share/nerdtreebookmarks'
@@ -30,6 +30,9 @@ let g:NERDTreeNaturalSort = 1
 " Change arrow icons for folders.
 let g:NERDTreeDirArrowExpandable = ' ' " U+200B
 let g:NERDTreeDirArrowCollapsible = ' ' " U+200B
+
+" Change default statusline.
+let g:NERDTreeStatusline = '%{kutsan#statusline#nerdtree()}'
 
 " Define mappings.
 let g:NERDTreeMapActivateNode = 'l'
@@ -69,15 +72,37 @@ let g:NERDTreeMapToggleFiles = ''
 let g:NERDTreeMapToggleFilters = ''
 let g:NERDTreeMapUpdir = ''
 
-" Open explorer buffer silently.
-nnoremap <silent> <Leader>f :NERDTreeToggle<Bar>wincmd p<Enter>
+" Find current file.
+nnoremap <silent> <Leader>f :NERDTreeFind<Enter>
+
+" Toggle explorer buffer silently.
+nnoremap <silent> <Leader>F :NERDTreeToggle<Bar>wincmd p<Enter>
 
 augroup nerdtreesettings
 	autocmd!
 
-	" Always disable 'list' option.
+	" Autostart on launch without focus if it's not Android and gitcommit file.
+	autocmd VimEnter *
+		\ if (system('uname --operating-system') !~# 'Android' && &l:filetype !=# 'gitcommit') |
+		\	NERDTreeToggle |
+		\	wincmd p |
+		\ endif
+
+	" Disable 'list' option.
 	autocmd FileType nerdtree setlocal nolist
 
-	" Autostart on launch without focus.
-	autocmd VimEnter * NERDTreeToggle | wincmd p
+	" Disable highlighting cursor line.
+	autocmd FileType nerdtree setlocal nocursorline
+
+	" Disable the sign column.
+	autocmd FileType nerdtree setlocal signcolumn=no
+
+	" Make concealed text is completely hidden.
+	autocmd FileType nerdtree setlocal conceallevel=3
+
+	" Hide current working directory line.
+	autocmd FileType nerdtree syntax match NERDTreeHideCWD #^[</].*$# conceal
+
+	" Hide slashes after each directory node.
+	autocmd FileType nerdtree syntax match NERDTreeDirSlash #/$# conceal containedin=NERDTreeDir contained
 augroup end
