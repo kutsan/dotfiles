@@ -18,7 +18,7 @@ augroup end
 " Automatically remove trailing whitespace characters.
 augroup striptrailing
 	autocmd!
-	autocmd BufWritePre <buffer> :1,$substitute/\v\C\s\+$//e
+	autocmd BufWritePre <buffer> 1,$substitute/\v\C\s\+$//e
 augroup end
 
 " Remember cursor position and center buffer around cursor.
@@ -42,7 +42,7 @@ augroup end
 " Automatically set current working directory project root.
 augroup setprojectroot
 	autocmd!
-	autocmd VimEnter,BufEnter * :call kutsan#autocmds#setprojectroot()
+	autocmd VimEnter,BufEnter * call kutsan#autocmds#setprojectroot()
 augroup end
 
 " Start insert mode and disable line numbers on terminal buffer.
