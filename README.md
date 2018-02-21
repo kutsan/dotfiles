@@ -47,6 +47,9 @@
 				- [eslint](https://github.com/eslint/eslint) - AST-based JavaScript linter for identifying and reporting on patterns
 				- [prettier](https://github.com/prettier/prettier) - Opinionated code formatter
 				- [browser-sync](https://github.com/BrowserSync/browser-sync) - Improve web workflow with auto-reload, interaction sync and more
+				- [neovim](https://github.com/neovim/node-client) - Neovim Node support for plugins
+				- [trash-cli](https://github.com/sindresorhus/trash-cli) - Move files and folders to the trash
+				- [node-notifier-cli](https://github.com/mikaelbr/node-notifier-cli) - Send cross-platform native notifications
 		- [python](https://www.python.org) - High-level programming language for general-purpose programming
 			- [pip](https://pip.pypa.io) - Python package manager to install and manage packages written in Python
 				- [ranger](https://github.com/ranger/ranger) - Text-based file system manager for the console with Vim-like key bindings
@@ -54,10 +57,9 @@
 					- [exiftool](http://www.sno.phy.queensu.ca/~phil/exiftool) - Read, write and edit meta information in a wide variety of media files
 					- [atool](http://www.nongnu.org/atool) - Manage, list, create, diff and extract file archives of various types
 				- [youtube-dl](https://github.com/rg3/youtube-dl) - Download videos, extract meta informations from YouTube and other video sites
-				- [trash-cli](https://github.com/andreafrancia/trash-cli) - Trash manager that moves, lists, restores files and folders to the trash
 				- [asciinema](https://github.com/asciinema/asciinema) - Record and share terminal sessions as text-based colored format
 				- [vim-vint](https://github.com/Kuniwak/vint) - Extensible, high performance Vimscript linter and analysis tool
-				- [neovim](https://github.com/neovim/python-client) - Neovim Python support for plugins and library scripting
+				- [neovim](https://github.com/neovim/python-client) - Neovim Python support for plugins
 				- [mal](https://github.com/ryukinix/mal) - MyAnimeList command-line interface
 				- [stig](https://github.com/rndusr/stig) - TUI and CLI interface for transmission-daemon
 		- [coreutils](https://www.gnu.org/software/coreutils/coreutils.html) - GNU core utilities for basic file, shell and text manipulation
