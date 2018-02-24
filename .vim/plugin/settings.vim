@@ -13,18 +13,25 @@ endif
 set background=dark " Choose dark colors if available.
 set termguicolors " Enable True Color support.
 colorscheme iceberg " Color scheme and its overrides.
-	highlight! EndOfBuffer ctermbg=bg guifg=bg | " Hide tilde symbols for all buffers.
-	highlight! link QuickFixLine CursorLine
-	highlight! StatusLine cterm=reverse ctermbg=234 ctermfg=245 gui=reverse guibg=#818596 guifg=#1e2132 term=reverse
-	highlight! StatusLineNC cterm=reverse ctermbg=238 ctermfg=233 gui=reverse guibg=#3e445e guifg=#1e2132
-	highlight! LineNr guibg=#161821 guifg=#444b71
-	highlight! CursorLineNr ctermbg=237 ctermfg=253 guibg=#1e2132 guifg=#cdd1e6
-	highlight! SignColumn ctermbg=235 ctermfg=239 guibg=#161821 guifg=#444b71
-	highlight! GitGutterAdd ctermbg=235 ctermfg=150 guibg=#161821 guifg=#b4be82
-	highlight! GitGutterChange ctermbg=235 ctermfg=109 guibg=#161821 guifg=#89b8c2
-	highlight! GitGutterChangeDelete ctermbg=235 ctermfg=109 guibg=#161821 guifg=#89b8c2
-	highlight! GitGutterDelete ctermbg=235 ctermfg=203 guibg=#161821 guifg=#e27878
-	highlight! VertSplit cterm=NONE ctermbg=233 ctermfg=233 gui=NONE guibg=#161821 guifg=#0f1117
+	highlight! EndOfBuffer ctermfg=bg guifg=bg | " Hide tilde symbols for all buffers.
+	highlight! link SignifySignAdd GitGutterAdd
+	highlight! link SignifySignChange GitGutterChange
+	highlight! link SignifySignDelete GitGutterDelete
+	highlight! link SignifySignChangeDelete GitGutterChangeDelete
+	highlight! link SignifySignDeleteFirstLine SignifySignDelete
+
+	if exists('g:colors_name') && g:colors_name ==# 'iceberg'
+		highlight! StatusLine ctermbg=243 ctermfg=238 guibg=#818596 guifg=#1e2132
+		highlight! StatusLineNC ctermbg=243 ctermfg=237 guibg=#3e445e guifg=#1e2132
+		execute 'highlight! CursorLineNr guibg=' . synIDattr(synIDtrans(hlID('CursorLine')), 'bg', 'gui') . ' ctermbg=' . synIDattr(synIDtrans(hlID('CursorLine')), 'bg', 'cterm')
+		execute 'highlight! SignColumn guibg=' . synIDattr(synIDtrans(hlID('Normal')), 'bg', 'gui') . ' ctermbg=' . synIDattr(synIDtrans(hlID('Normal')), 'bg', 'cterm')
+		execute 'highlight! VertSplit guibg=' . synIDattr(synIDtrans(hlID('Normal')), 'bg', 'gui') . ' ctermbg=' . synIDattr(synIDtrans(hlID('Normal')), 'bg', 'cterm')
+		execute 'highlight! LineNr guibg=' . synIDattr(synIDtrans(hlID('Normal')), 'bg', 'gui') . ' ctermbg=' . synIDattr(synIDtrans(hlID('Normal')), 'bg', 'cterm')
+		execute 'highlight! GitGutterAdd guibg=' . synIDattr(synIDtrans(hlID('Normal')), 'bg', 'gui') . ' ctermbg=' . synIDattr(synIDtrans(hlID('Normal')), 'bg', 'cterm')
+		execute 'highlight! GitGutterChange guibg=' . synIDattr(synIDtrans(hlID('Normal')), 'bg', 'gui') . ' ctermbg=' . synIDattr(synIDtrans(hlID('Normal')), 'bg', 'cterm')
+		execute 'highlight! GitGutterChangeDelete guibg=' . synIDattr(synIDtrans(hlID('Normal')), 'bg', 'gui') . ' ctermbg=' . synIDattr(synIDtrans(hlID('Normal')), 'bg', 'cterm')
+		execute 'highlight! GitGutterDelete guibg=' . synIDattr(synIDtrans(hlID('Normal')), 'bg', 'gui') . ' ctermbg=' . synIDattr(synIDtrans(hlID('Normal')), 'bg', 'cterm')
+	endif
 
 " Behaviour
 set backspace=indent,eol,start " Allow backspacing over everything in insert mode.
