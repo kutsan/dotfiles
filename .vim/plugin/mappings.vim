@@ -102,12 +102,6 @@ nnoremap <Leader>P P=`]
 " Toggle search highlighting.
 nnoremap <Leader>? :set hlsearch!<Enter>
 
-" Open `vimrc` file in new buffer.
-nnoremap <Leader>ee :edit $MYVIMRC<Enter>
-
-" Reload `vimrc` file.
-nnoremap <Leader>er :source $MYVIMRC<Enter>
-
 " -- Command Mode
 " ------------------------------------------------
 
