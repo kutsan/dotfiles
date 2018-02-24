@@ -53,3 +53,17 @@ augroup terminalsettings
 		autocmd TermOpen * startinsert " Automatically activate insert mode.
 	endif
 augroup end
+
+" Launch table of contents to the left as vertical pane for manual pages.
+augroup manlaunchtoc
+	autocmd!
+	if has('nvim')
+		autocmd FileType man
+			\ call man#show_toc() |
+			\ setlocal laststatus=0 nonumber norelativenumber |
+			\ nnoremap <buffer> l <Enter> |
+			\ wincmd H |
+			\ vert resize 35 |
+			\ wincmd p
+	endif
+augroup end
