@@ -15,8 +15,8 @@ let g:grepper = {
 	\ }
 \ }
 
-" Highlight found matches.
-let g:grepper.highlight = 1
+" Disable highlight found matches.
+let g:grepper.highlight = 0
 
 " Use the quickfix list for the matches.
 let g:grepper.quickfix = 1
@@ -37,7 +37,7 @@ let g:grepper.dir = 'cwd'
 let g:grepper.simple_prompt = 1
 
 " Define search tools and their orders.
-let g:grepper.tools = ['rg', 'git']
+let g:grepper.tools = ['git', 'rg']
 
 " The prompt uses these keys to switch to the next tool.
 let g:grepper.next_tool = '<Leader>g'
@@ -49,7 +49,6 @@ let g:grepper.append = 0
 let g:grepper.prompt_quote = 2
 
 " Define key mappings.
-nnoremap <Leader>g :Grepper -tool rg<Enter>
-nnoremap <Leader>G :Grepper -tool git<Enter>
+nnoremap <Leader>g :Grepper -tool git<Enter>
 nmap gs <Plug>(GrepperOperator)
 xmap gs <Plug>(GrepperOperator)
