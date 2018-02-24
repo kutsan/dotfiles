@@ -26,6 +26,7 @@
 			- [fzf](https://github.com/junegunn/fzf.vim) - Fuzzy finder fzf as plugin
 			- [grepper](https://github.com/mhinz/vim-grepper) - Search by using popular search tools repository-wise
 			- [iceberg](https://github.com/cocopon/iceberg.vim) - Dark blue color scheme
+			- [instant-markdown](https://github.com/suan/vim-instant-markdown) - Preview markdown files in browser
 			- [nerdtree](https://github.com/scrooloose/nerdtree) - File explorer
 			- [polyglot](https://github.com/sheerun/vim-polyglot) - Big collection of language packs as scripts are loaded only on demand
 			- [prettier](https://github.com/prettier/vim-prettier) - Code formatter prettier integration
