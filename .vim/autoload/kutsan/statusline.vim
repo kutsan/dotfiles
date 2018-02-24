@@ -44,11 +44,11 @@ function! kutsan#statusline#git() abort
 		return ''
 	endif
 
-	if !strlen(fugitive#head())
+	if !strlen(fugitive#head(7))
 		return ''
 	endif
 
-	return fugitive#head() . ' '
+	return fugitive#head(7) . ' '
 endfunction
 
 function! kutsan#statusline#nerdtree() abort
