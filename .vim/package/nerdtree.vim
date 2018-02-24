@@ -72,11 +72,11 @@ let g:NERDTreeMapToggleFiles = ''
 let g:NERDTreeMapToggleFilters = ''
 let g:NERDTreeMapUpdir = ''
 
-" Find current file.
-nnoremap <silent> <Leader>f :NERDTreeFind<Enter>
-
 " Toggle explorer buffer silently.
-nnoremap <silent> <Leader>F :NERDTreeToggle<Bar>wincmd p<Enter>
+nnoremap <silent> <Leader>f :NERDTreeToggle <Bar> wincmd p<Enter>
+
+" Find current file.
+nnoremap <silent> <Leader>F :NERDTreeFind<Enter>
 
 augroup nerdtreesettings
 	autocmd!
