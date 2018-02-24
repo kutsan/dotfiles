@@ -19,11 +19,11 @@ if ! [[ -L ~/.config/nvim ]] {
 }
 
 # Create symbolic link for prompt theme if it's not already linked.
-if ! [[ -L ~/.zsh/autoload/prompt_pure_setup ]] {
-	ln -s ~/.zsh/plugins/pure/pure.zsh ~/.zsh/autoload/prompt_pure_setup
+if ! [[ -L $ZDOTDIR/autoload/prompt_pure_setup ]] {
+	ln -s $ZDOTDIR/plugins/pure/pure.zsh $ZDOTDIR/autoload/prompt_pure_setup
 }
-if ! [[ -L ~/.zsh/autoload/async ]] {
-	ln -s ~/.zsh/plugins/pure/async.zsh ~/.zsh/autoload/async
+if ! [[ -L $ZDOTDIR/autoload/async ]] {
+	ln -s $ZDOTDIR/plugins/pure/async.zsh $ZDOTDIR/autoload/async
 }
 
 # Recompile prompt files if it's needed.
