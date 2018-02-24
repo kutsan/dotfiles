@@ -147,46 +147,6 @@ function ..() {
 }
 
 ##
-# Manual Page Explorer.
-# Browse through man pages with fzf.
-#
-# @param {string} [$1] Query string to search manual pages.
-##
-function mane() {
-	# Responsive window options.
-	local preview_window_options=(
-		$(
-			(( $(tput cols) <= 100 )) && echo 'down:80%' || echo 'left:61%'
-		)
-		$(
-			(( $(tput lines) <= 25 )) && (( $(tput cols) <= 100 )) && echo ':hidden'
-		)
-	)
-
-	man -k . \
-		| fzf \
-			--exact \
-			--preview='echo {1} | sed -E "s/\s.*|\(.*//" | xargs man' \
-			--preview-window="$preview_window_options" \
-			--reverse \
-			--height='100%' \
-			--no-hscroll \
-			--query="$1" \
-			--prompt='$ man ' \
-			--color='hl:3,hl+:3' \
-			--bind="enter:execute(echo {1} | sed -E 's/\s.*|\(.*//' | xargs man)" \
-			--bind='ctrl-p:toggle-preview' \
-			--bind='ctrl-y:preview-up' \
-			--bind='ctrl-e:preview-down' \
-			--bind='ctrl-u:preview-page-up' \
-			--bind='ctrl-d:preview-page-down' \
-			--bind='ctrl-alt-y:page-up' \
-			--bind='ctrl-alt-e:page-down' \
-			--bind='ctrl-alt-u:half-page-up' \
-			--bind='ctrl-alt-d:half-page-down'
-}
-
-##
 # Quick calculator.
 #
 # @param {string} $1 Math expression.
