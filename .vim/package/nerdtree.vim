@@ -1,10 +1,10 @@
 scriptencoding UTF-8
 
 " File explorer.
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 
 " Extra syntax highlighting for devicons.
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight', { 'on': 'NERDTreeToggle' }
 
 " Display hidden files.
 let g:NERDTreeShowHidden = 1
