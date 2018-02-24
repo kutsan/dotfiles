@@ -7,6 +7,9 @@ let g:fzf_command_prefix = 'Fzf'
 " Jump to the existing window if possible.
 let g:fzf_buffers_jump = 1
 
+" Directly execute the command without appending anything.
+let g:fzf_commands_expect = 'alt-enter'
+
 " History directory.
 let g:fzf_history_dir = $XDG_DATA_HOME . '/fzf/'
 
