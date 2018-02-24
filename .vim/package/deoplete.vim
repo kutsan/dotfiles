@@ -3,7 +3,7 @@ if !has('nvim') || !has('python3')
 endif
 
 " Asynchronous auto-completion framework for neovim.
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'  }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Enable at start.
 let g:deoplete#enable_at_startup = 1

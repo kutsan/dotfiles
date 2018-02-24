@@ -1,5 +1,5 @@
 " Search by using popular search tools repository-wise.
-Plug 'mhinz/vim-grepper'
+Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)'] }
 
 " Initialize global grepper options dictionary.
 let g:grepper = {}
