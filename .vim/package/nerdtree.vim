@@ -81,13 +81,6 @@ nnoremap <silent> <Leader>F :NERDTreeFind<Enter>
 augroup nerdtreesettings
 	autocmd!
 
-	" Autostart on launch without focus if it's not Android and gitcommit file.
-	autocmd VimEnter *
-		\ if (system('uname --operating-system') !~# 'Android' && &l:filetype !=# 'gitcommit') |
-		\	NERDTreeToggle |
-		\	wincmd p |
-		\ endif
-
 	" Disable 'list' option.
 	autocmd FileType nerdtree setlocal nolist
 
