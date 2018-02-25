@@ -88,6 +88,7 @@ export LANGUAGE='en_US.UTF-8'
 # man
 export MANWIDTH='100' # Fixed line width for man pages
 	if ([[ $(uname -o) == 'Android' ]] 2>/dev/null) { MANWIDTH='50' }
+export MANPAGER="nvim +set\ filetype=man -"
 
 # GitHub
 export GITHUB_USERNAME='kutsan'
