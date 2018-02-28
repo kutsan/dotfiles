@@ -153,7 +153,7 @@ xnoremap ? ?\v
 " ------------------------------------------------
 
 " [a]n [e]ntire buffer.
-onoremap ae :<C-u>normal! VGogg<Enter>
+onoremap <silent> ae :<C-u>normal! VGogg<Enter>
 
 " Last selected area.
 onoremap gv :<C-u>normal! gv<Enter>
