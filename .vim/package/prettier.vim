@@ -13,5 +13,5 @@ let g:prettier#exec_cmd_async = 1
 augroup prettier
 	autocmd!
 	autocmd FileType html,css,sass,javascript,javascript.jsx,json,graphql
-		\ nnoremap <buffer> <LocalLeader>f :Prettier<Enter>
+		\ nnoremap <buffer><silent> <LocalLeader>f :Prettier<Enter>
 augroup end

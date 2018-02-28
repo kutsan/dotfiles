@@ -5,5 +5,5 @@ let g:instant_markdown_autostart = 0
 
 augroup instantmarkdownpreview
 	autocmd!
-	autocmd FileType markdown nnoremap <buffer> <LocalLeader>r :InstantMarkdownPreview<Enter>
+	autocmd FileType markdown nnoremap <buffer><silent> <LocalLeader>r :InstantMarkdownPreview<Enter>
 augroup end
