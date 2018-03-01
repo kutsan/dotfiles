@@ -91,7 +91,7 @@ augroup nerdtreesettings
 	autocmd FileType nerdtree setlocal signcolumn=no
 
 	" Make concealed text is completely hidden.
-	autocmd FileType nerdtree setlocal conceallevel=3
+	autocmd FileType nerdtree setlocal conceallevel=3 concealcursor=nvic
 
 	" Hide current working directory line.
 	autocmd FileType nerdtree syntax match NERDTreeHideCWD #^[</].*$# conceal
