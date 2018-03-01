@@ -1,5 +1,14 @@
+if !exists('$FZF_HOME')
+	finish
+endif
+
+" Load core fzf functions from $FZF_HOME.
+if system('uname --operating-system') !~# 'Android'
+	Plug $FZF_HOME
+endif
+
 " Fuzzy finder fzf as Vim plugin.
-Plug $FZF_HOME | Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf.vim'
 
 " Add prefix 'Fzf' commands for grouping.
 let g:fzf_command_prefix = 'Fzf'
@@ -11,7 +20,10 @@ let g:fzf_buffers_jump = 1
 let g:fzf_commands_expect = 'alt-enter'
 
 " History directory.
-let g:fzf_history_dir = $XDG_DATA_HOME . '/fzf/'
+let g:fzf_history_dir =
+	\ exists('$XDG_DATA_HOME') && isdirectory($XDG_DATA_HOME)
+	\ 	? $XDG_DATA_HOME . '/fzf/'
+	\ 	: expand('$HOME') . '/.local/share/fzf/'
 
 " Customize `fzf` colors to match current color scheme.
 let g:fzf_colors = {
