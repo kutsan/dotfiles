@@ -1,30 +1,23 @@
-# -- Queries {{{1
-# --------------------------------------------------------------------------------------------------
-
-"query:▵ Blog:tags # \"Blog\""
-"query:▵ Communities:tags # \"Communities\""
-"query:▵ Software:tags # \"Software\""
-"query:▵ Entertainment:tags # \"Entertainment\""
-
-# -- Feeds {{{1
-# --------------------------------------------------------------------------------------------------
-
+# Blog
 https://feeds.feedburner.com/2ality "~Axel Rauschmayer" "Blog"
-http://javascriptweekly.com/rss "~JavaScript Weekly" "Blog"
 https://dmitripavlutin.com/rss "~Dmitri Pavlutin" "Blog"
-https://blog.risingstack.com/rss "~RisingStack" "Blog"
+https://github.com/blog/ship.atom "~GitHub" "Blog"
 https://jakearchibald.com/posts.rss "~Jake Archibald" "Blog"
+https://neovim.io/news.xml "~Neovim" "Blog"
 https://ponyfoo.com/articles/feed "~Pony Foo" "Blog"
+https://reactjs.org/feed.xml "~React" "Blog"
+https://blog.risingstack.com/rss "~RisingStack" "Blog"
 http://vimcasts.org/feeds/quicktime.rss "~Vimcasts" "Blog"
+--- "~ "
 
-https://reactjs.org/feed.xml "~React" "Communities"
-https://github.com/blog/ship.atom "~GitHub" "Communities"
+# Newsletter
+http://javascriptweekly.com/rss "~JavaScript Weekly" "Newsletter"
+http://reactjsnewsletter.com/issues.rss "~React Newsletter" "Newsletter"
+--- "~ "
 
-https://github.com/tmux/tmux/releases.atom "~tmux/tmux" "Software"
-https://github.com/prettier/prettier/releases.atom "~prettier/prettier" "Software"
-https://github.com/facebook/react/releases.atom "~facebook/react" "Software"
-https://github.com/sindresorhus/pure/releases.atom "~sindresorhus/pure" "Software"
-https://github.com/eslint/eslint/releases.atom "~eslint/eslint" "Software"
-https://github.com/zsh-users/zsh/releases.atom "~zsh-users/zsh" "Software"
-
-# }}} vim: foldmethod=marker foldlevel=1
+# Software
+https://github.com/tmux/tmux/releases.atom "~tmux" "Software"
+https://github.com/prettier/prettier/releases.atom "~prettier" "Software"
+https://github.com/facebook/react/releases.atom "~react" "Software"
+https://github.com/eslint/eslint/releases.atom "~eslint" "Software"
+https://github.com/zsh-users/zsh/releases.atom "~zsh" "Software"
