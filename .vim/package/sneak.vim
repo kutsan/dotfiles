@@ -7,7 +7,7 @@ let g:sneak#use_ic_scs = 1
 " Don't do any special handling of file manager buffers.
 let g:sneak#map_netrw = 0
 
-" Highlight jump locations like EasyMotion-like jump
+" Highlight jump locations like EasyMotion.
 let g:sneak#label = 1
 
 " Define 1-char enhanced sneak for find and till.
