@@ -27,6 +27,16 @@ let g:loaded_tutor_mode_plugin = 1
 let g:loaded_matchit = 1
 let g:loaded_matchparen = 1
 
+" Automatically install vim-plug itself if it's not installed.
+if empty(glob('~/.vim/autoload/plug.vim'))
+	silent !curl
+		\ --fail
+		\ --location
+		\ --create-dirs
+		\ 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+		\ --output ~/.vim/autoload/plug.vim
+endif
+
 " Initialize plugin manager and load plugins.
 call plug#begin('~/.vim/bundle')
 	" Source all files under package directory.
@@ -36,3 +46,12 @@ call plug#begin('~/.vim/bundle')
 		endif
 	endfor
 call plug#end()
+
+" Automatically install non-existing plugins.
+augroup vimplugplugininstallation
+	autocmd VimEnter *
+		\ if len(filter(values(g:plugs), '!isdirectory(v:val.dir)')) |
+		\	PlugInstall --sync |
+		\	quitall |
+		\ endif
+augroup END
