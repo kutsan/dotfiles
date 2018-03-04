@@ -8,3 +8,16 @@ function! kutsan#autocmds#setprojectroot()
 		execute 'cd' l:root
 	endif
 endfunction
+
+" Trim trailing whitespace characters from end of each line.
+function! kutsan#autocmds#trimtrailingspaces()
+	if &l:modifiable
+		let l:view = winsaveview()
+
+		try
+			silent! 1,$substitute/\s\+$//e
+		finally
+			call winrestview(l:view)
+		endtry
+	endif
+endfunction

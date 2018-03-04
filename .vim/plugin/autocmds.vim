@@ -16,9 +16,9 @@ augroup togglerelativelinenumbers
 augroup end
 
 " Automatically remove trailing whitespace characters.
-augroup striptrailing
+augroup trimtrailingspaces
 	autocmd!
-	autocmd BufWritePre <buffer> 1,$substitute/\v\C\s\+$//e
+	autocmd BufWritePre * call kutsan#autocmds#trimtrailingspaces()
 augroup end
 
 " Remember cursor position and center buffer around cursor.
