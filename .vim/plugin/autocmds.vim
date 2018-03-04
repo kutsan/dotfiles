@@ -58,12 +58,6 @@ augroup end
 augroup manlaunchtoc
 	autocmd!
 	if has('nvim')
-		autocmd FileType man
-			\ call man#show_toc() |
-			\ setlocal laststatus=0 nonumber norelativenumber |
-			\ nnoremap <buffer> l <Enter> |
-			\ wincmd H |
-			\ vert resize 35 |
-			\ wincmd p
+		autocmd FileType man call kutsan#autocmds#showtoc()
 	endif
 augroup end

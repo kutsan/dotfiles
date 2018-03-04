@@ -21,3 +21,21 @@ function! kutsan#autocmds#trimtrailingspaces()
 		endtry
 	endif
 endfunction
+
+" Launch table of contents to the left as vertical pane for manual pages.
+function! kutsan#autocmds#showtoc()
+	if !has('nvim')
+		return v:false
+	endif
+
+	call man#show_toc()
+
+	setlocal nonumber norelativenumber
+	setlocal laststatus=0
+
+	nnoremap <buffer> l <Enter>zt
+
+	wincmd H
+	vert resize 35
+	wincmd p
+endfunction
