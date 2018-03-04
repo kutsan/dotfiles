@@ -9,6 +9,15 @@ function! kutsan#autocmds#setprojectroot()
 	endif
 endfunction
 
+" Jump to last known position and center buffer around cursor.
+function! kutsan#autocmds#jumplastknownposition()
+	if &filetype !=? 'gitcommit'
+		if line("'\"") > 0 && line("'\"") <= line('$')
+			execute 'normal! g`"zz'
+		endif
+	endif
+endfunction
+
 " Trim trailing whitespace characters from end of each line.
 function! kutsan#autocmds#trimtrailingspaces()
 	if &l:modifiable

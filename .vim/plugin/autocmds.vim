@@ -24,13 +24,7 @@ augroup end
 " Remember cursor position and center buffer around cursor.
 augroup remembercursorposition
 	autocmd!
-	autocmd BufReadPost *
-		\ if &filetype !=? 'gitcommit' |
-		\	if line("'\"") > 0 && line("'\"") <= line("$") |
-		\		execute "normal! g`\"" |
-		\	endif |
-		\ endif
-	autocmd BufRead * normal! zz
+	autocmd BufReadPost * call kutsan#autocmds#jumplastknownposition()
 augroup end
 
 " Automatically save the current buffer.
