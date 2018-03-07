@@ -146,6 +146,10 @@ xnoremap L g_
 xnoremap / /\v
 xnoremap ? ?\v
 
+" Increment and decrement selected number(s).
+xnoremap + g<C-a>gv
+xnoremap - g<C-x>gv
+
 " -- Operator Mode
 " ------------------------------------------------
 
