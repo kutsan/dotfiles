@@ -18,16 +18,18 @@
 			- [auto-pairs](https://github.com/jiangmiao/auto-pairs) - Insert or delete brackets, parens, quotes in pair
 			- [colorizer](https://github.com/chrisbra/Colorizer) - Highlight HEX and RGB color codes and names in their background
 			- [commentary](https://github.com/tpope/vim-commentary) - Comment and uncomment with predefined key bindings
-			- [deoplete](https://github.com/Shougo/deoplete.nvim) - Asynchronous auto-completion framework for Neovim
 			- [devicons](https://github.com/ryanoasis/vim-devicons) - Adds additional file type glyphs to popular plugins
 			- [editorconfig](https://github.com/editorconfig/editorconfig-vim) - EditorConfig integration
 			- [emmet](https://github.com/mattn/emmet-vim) - Emmet integration
+			- [endwise](https://github.com/tpope/vim-endwise) - Add 'end' keyword in various languages
 			- [fugitive](https://github.com/tpope/vim-fugitive) - Git client
 			- [fzf](https://github.com/junegunn/fzf.vim) - Fuzzy finder fzf as plugin
 			- [grepper](https://github.com/mhinz/vim-grepper) - Search by using popular search tools repository-wise
 			- [iceberg](https://github.com/cocopon/iceberg.vim) - Dark blue color scheme
 			- [instant-markdown](https://github.com/suan/vim-instant-markdown) - Preview markdown files in browser
+			- [neosnippet](https://github.com/Shougo/neosnippet) - Snippet engine
 			- [nerdtree](https://github.com/scrooloose/nerdtree) - File explorer
+			- [nvim-completion-manager](https://github.com/roxma/nvim-completion-manager) - Asynchronous auto-completion framework for Neovim
 			- [polyglot](https://github.com/sheerun/vim-polyglot) - Big collection of language packs as scripts are loaded only on demand
 			- [prettier](https://github.com/prettier/vim-prettier) - Code formatter prettier integration
 			- [repeat](https://github.com/tpope/vim-repeat) - Repeat command support for various plugins
