@@ -47,6 +47,9 @@ nnoremap L $
 " Send contents of a `x` command to the black hole register.
 nnoremap x "_x
 
+" Make `Y` acting like `C`, `D`.
+nnoremap Y y$
+
 " Navigate over [l]ocation list.
 nnoremap <silent> [l :lopen<Enter>
 nnoremap <silent> [l :lprevious<Enter>
