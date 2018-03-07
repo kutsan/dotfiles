@@ -72,7 +72,7 @@ nnoremap <silent> ]a :next<Enter>
 nnoremap <silent> [A :first<Enter>
 nnoremap <silent> ]A :last<Enter>
 
-" Go back or launch the terminal buffer.
+" Toggle terminal buffer.
 nnoremap <silent> <C-z> :call kutsan#mappings#toggleterminal()<Enter>
 
 " Construct range operator.
@@ -165,5 +165,8 @@ onoremap L $
 " -- Terminal Mode
 " ------------------------------------------------
 
-" Escape from terminal mode and go back previous buffer.
-tnoremap <C-z> <C-\><C-n><C-^>
+" Escape from terminal mode and toggle terminal buffer.
+tnoremap <silent> <C-z> <C-\><C-n>:call kutsan#mappings#toggleterminal()<Enter>
+
+" Escape from terminal mode.
+tnoremap <C-s> <C-\><C-n>
