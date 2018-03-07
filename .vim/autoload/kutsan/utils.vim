@@ -2,29 +2,29 @@
 " Return true if current buffer has given regex.
 "
 " @param {string} regex Regular expression to be used in search.
-" @param {number} max Maximum line number to be searched from top, as max. 500.
+" @param {object} options Configuration object.
+" @param {object} options.maxline Maximum line number to be searched from top,
+" as 500 maximum.
 ""
-function! kutsan#utils#contains(regex, max) abort
-	let l:ncurrent = 1
+function! kutsan#utils#contains(regex, ...) abort
+	let l:options = get(a:, '1', {})
 
-	if exists(a:max)
-		let l:nend = a:max
-	else
-		let l:nend = line('$')
-	endif
+	let l:nend = get(l:options, 'maxline', line('$'))
 
 	if l:nend > 500
 		let l:nend = 500
 	endif
 
+	let l:ncurrent = 1
+
 	while l:ncurrent < l:nend
 		if getline(l:ncurrent) =~# a:regex
-			return 1
+			return v:true
 			break
 		endif
 
 		let l:ncurrent += 1
 	endwhile
 
-	return 0
+	return v:false
 endfunction
