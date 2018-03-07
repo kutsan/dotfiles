@@ -79,7 +79,7 @@ nnoremap <silent> ]A :last<Enter>
 nnoremap <silent> <C-z> :call kutsan#mappings#toggleterminal()<Enter>
 
 " Construct range operator.
-nnoremap <silent> ! :<C-u>set operatorfunc=kutsan#mappings#exclamationoperator<CR>g@
+nnoremap <silent> ! :<C-u>set operatorfunc=kutsan#mappings#exclamationoperator<Enter>g@
 
 " Shortcuts for quiting.
 nnoremap <silent> <Leader>q :quit<Enter>
@@ -124,8 +124,8 @@ cnoremap <C-l> <Right>
 cnoremap <C-s>/ s/\v//gc<Left><Left><Left><Left>
 
 " Move between matches without leaving incremental search.
-cnoremap <expr> <Tab> getcmdtype() ==# '/' \|\| getcmdtype() ==# '?' ? '<CR>/<C-r>/' : '<C-z>'
-cnoremap <expr> <S-Tab> getcmdtype() ==# '/' \|\| getcmdtype() ==# '?' ? '<CR>?<C-r>/' : '<S-Tab>'
+cnoremap <expr> <Tab> getcmdtype() ==# '/' \|\| getcmdtype() ==# '?' ? '<Enter>/<C-r>/' : '<C-z>'
+cnoremap <expr> <S-Tab> getcmdtype() ==# '/' \|\| getcmdtype() ==# '?' ? '<Enter>?<C-r>/' : '<S-Tab>'
 
 " -- Visual Mode
 " ------------------------------------------------
