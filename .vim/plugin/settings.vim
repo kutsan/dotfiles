@@ -71,6 +71,7 @@ if has('nvim') | set inccommand=nosplit | endif " Show live substitution results
 set cursorline " Highlight the line background of the cursor.
 set fillchars=vert:⏐ " Characters to fill the status lines and vertical separators.
 set laststatus=2 " Always show the status line.
+set linebreak " Wrap lines in 'breakat', rather than at the last character.
 set listchars=tab:│\ ,nbsp:␣,extends:…,precedes:… " Strings to use when 'list' option set.
 set number " Show line numbers alongside relative numbers.
 set relativenumber " Show relative line numbers alongside numbers.
