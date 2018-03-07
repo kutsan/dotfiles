@@ -88,17 +88,15 @@ export LANGUAGE='en_US.UTF-8'
 # man
 export MANWIDTH='100' # Fixed line width for man pages
 	if ([[ $(uname -o) == 'Android' ]] 2>/dev/null) { MANWIDTH='50' }
-export MANPAGER="nvim +set\ filetype=man -"
-
-# GitHub
-export GITHUB_USERNAME='kutsan'
+export MANPAGER="nvim +'set filetype=man' -"
+	if ([[ $(uname -o) == 'Android' ]] 2>/dev/null) { unset MANPAGER }
 
 # npm
 export NPM_CONFIG_INIT_AUTHOR_NAME='Kutsan Kaplan'
 export NPM_CONFIG_INIT_AUTHOR_EMAIL='me@kutsankaplan.com'
 export NPM_CONFIG_INIT_AUTHOR_URL='https://kutsankaplan.com'
-export NPM_CONFIG_INIT_LICENSE='GPLv3'
-export NPM_CONFIG_INIT_VERSION='0.1.0'
+export NPM_CONFIG_INIT_LICENSE='GPL-3.0'
+export NPM_CONFIG_INIT_VERSION='0.0.0'
 export NPM_CONFIG_SAVE_PREFIX='~'
 export NPM_CONFIG_SIGN_GIT_TAG='true'
 
@@ -111,9 +109,6 @@ export WGETRC="$HOME/.config/wget/wgetrc"
 # ranger
 export RANGER_LOAD_DEFAULT_RC='false'
 export RANGER_LAST_DIRECTORY_BUFFER="$XDG_DATA_HOME/ranger/last_directory"
-
-# taskwarrior
-export TASKRC="$HOME/.task/taskrc"
 
 # fzf
 export FZF_DEFAULT_COMMAND="rg \
