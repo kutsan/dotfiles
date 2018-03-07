@@ -105,9 +105,6 @@ nnoremap <Leader>? :set hlsearch!<Enter>
 " -- Command Mode
 " ------------------------------------------------
 
-" Write with sudo.
-cnoremap w!! w !sudo tee % >/dev/null
-
 " Jump to the beginning and end of line.
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
