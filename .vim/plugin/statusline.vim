@@ -1,12 +1,12 @@
 scriptencoding UTF-8
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"    [1]     [2]        [3]      [4]            [5]    [6]         [7]    "
-"   0  0  plugin/statusline.vim                 002/026:32  master   "
-"  -------  ------ -------------- -              -  ----------  --------  "
-"     |_      |__     |______     |__        ____|      |__        |_     "
-"       |        |           |__     |      |              |         |    "
-"       |       fileprefix()    |    |    spell()        %l/%L:%c    |    "
+"    [1]     [2]        [3]      [4]            [5]     [6]         [7]   "
+"   0  0  plugin/statusline.vim                   02/26:32  master   "
+"  -------  ------ -------------- -              -    --------  --------  "
+"     |_      |__     |______     |__        ____|       |__       |_     "
+"       |        |           |__     |      |               |        |    "
+"       |       fileprefix()    |    |    spell()         %l/%L:%c   |    "
 "      linter()                 %t  filetypesymbol()               git()  "
 "                                                                         "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -34,7 +34,7 @@ set statusline+=%{kutsan#statusline#spell()}
 set statusline+=%{repeat('\ ',2)}
 
 " [6] Line numbers and column numbers in <Line>:<Column> format.
-set statusline+=%03l/%03L:%02c
+set statusline+=%02l/%02L:%02c
 set statusline+=%{repeat('\ ',2)}
 
 " [7] Git HEAD status.
