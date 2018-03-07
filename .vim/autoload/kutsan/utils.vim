@@ -1,20 +1,4 @@
 ""
-" Set the variable to the default value, only if variable is not defined.
-"
-" @param {string} var Variable name with its scope.
-" @param {*} default Default value for variable.
-""
-function! kutsan#utils#set(var, default) abort
-	if !exists(a:var)
-		if type(a:default)
-			execute 'let' a:var '=' string(a:default)
-		else
-			execute 'let' a:var '=' a:default
-		endif
-	endif
-endfunction
-
-""
 " Return true if current buffer has given regex.
 "
 " @param {string} regex Regular expression to be used in search.
