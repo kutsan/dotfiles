@@ -53,7 +53,7 @@ endfunction
 
 function! kutsan#statusline#nerdtree() abort
 	if !exists('b:NERDTree')
-		return 0
+		return v:false
 	endif
 
 	return substitute(b:NERDTree.root.path.str() . '/', '\C^' . $HOME, '~', '')
