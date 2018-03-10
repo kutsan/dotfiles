@@ -11,13 +11,24 @@ endif
 Plug 'junegunn/fzf.vim'
 
 " Add prefix 'Fzf' commands for grouping.
-let g:fzf_command_prefix = 'Fzf'
+let g:fzf_command_prefix = 'F'
 
 " Jump to the existing window if possible.
 let g:fzf_buffers_jump = 1
 
 " Directly execute the command without appending anything.
 let g:fzf_commands_expect = 'alt-enter'
+
+" Set custom layout.
+let g:fzf_layout = {
+	\ 'window': 'silent 18split enew'
+\ }
+
+" Set actions manually.
+let g:fzf_action = {
+	\ 'ctrl-e': 'split',
+	\ 'ctrl-v': 'vsplit'
+\ }
 
 " History directory.
 let g:fzf_history_dir =
@@ -33,7 +44,7 @@ let g:fzf_colors = {
 	\ 'fg+': ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
 	\ 'bg+': ['bg', 'CursorLine', 'CursorColumn'],
 	\ 'hl+': ['fg', 'Statement'],
-	\ 'info': ['fg', 'PreProc'],
+	\ 'info': ['fg', 'Comment'],
 	\ 'border': ['fg', 'Ignore'],
 	\ 'prompt': ['fg', 'Conditional'],
 	\ 'pointer': ['fg', 'Exception'],
@@ -43,18 +54,18 @@ let g:fzf_colors = {
 \ }
 
 " Define key mappings.
-nnoremap <silent> <C-p> :FzfGFiles<Enter>
-nnoremap <silent> <M-x> :FzfCommands<Enter>
-nnoremap <silent> <M-b> :FzfBuffers<Enter>
-nnoremap <silent> <Leader>h :FzfHelptags<Enter>
-nnoremap <silent> <Leader>; :FzfHistory:<Enter>
-nnoremap <silent> <Leader>/ :FzfHistory/<Enter>
-nnoremap <silent> <Leader>m :FzfMarks<Enter>
+nnoremap <silent> <C-p> :FGFiles<Enter>
+nnoremap <silent> <M-x> :FCommands<Enter>
+nnoremap <silent> <M-b> :FBuffers<Enter>
+nnoremap <silent> <Leader>h :FHelptags<Enter>
+nnoremap <silent> <Leader>: :FHistory:<Enter>
+nnoremap <silent> <Leader>/ :FHistory/<Enter>
+nnoremap <silent> <Leader>m :FMarks<Enter>
 
 " Disable status line for fzf buffers.
 if has('nvim') || has('gui_running')
 	augroup fzfdisablestatusline
-		autocmd! FileType fzf
-		autocmd  FileType fzf set laststatus=0 | autocmd BufLeave <buffer> set laststatus=2
+		autocmd!
+		autocmd User FzfStatusLine setlocal statusline=\  |
 	augroup end
 endif
