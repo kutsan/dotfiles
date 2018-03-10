@@ -30,11 +30,8 @@ let g:loaded_matchparen = 1
 " Automatically install vim-plug itself if it's not installed.
 if empty(glob('~/.vim/autoload/plug.vim'))
 	silent !curl
-		\ --fail
-		\ --location
-		\ --create-dirs
+		\ --fail --location --create-dirs --output ~/.vim/autoload/plug.vim
 		\ 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-		\ --output ~/.vim/autoload/plug.vim
 endif
 
 " Initialize plugin manager and load plugins.

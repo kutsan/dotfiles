@@ -1,4 +1,8 @@
+""
 " Set current working directory to git root.
+"
+" autocmd VimEnter,BufEnter * call kutsan#autocmds#setprojectroot()
+""
 function! kutsan#autocmds#setprojectroot()
 	let l:root = substitute(system('git rev-parse --show-toplevel'), '\n\+$', '', '')
 
@@ -7,7 +11,11 @@ function! kutsan#autocmds#setprojectroot()
 	endif
 endfunction
 
+""
 " Jump to last known position and center buffer around cursor.
+"
+" autocmd BufReadPost * call kutsan#autocmds#jumplastknownposition()
+""
 function! kutsan#autocmds#jumplastknownposition()
 	if &filetype !=? 'gitcommit'
 		if line("'\"") > 0 && line("'\"") <= line('$')
@@ -16,7 +24,11 @@ function! kutsan#autocmds#jumplastknownposition()
 	endif
 endfunction
 
+""
 " Trim trailing whitespace characters from end of each line.
+"
+" autocmd BufWritePre * call kutsan#autocmds#trimtrailingspaces()
+""
 function! kutsan#autocmds#trimtrailingspaces()
 	if &l:modifiable
 		let l:view = winsaveview()
@@ -29,7 +41,11 @@ function! kutsan#autocmds#trimtrailingspaces()
 	endif
 endfunction
 
+""
 " Launch table of contents to the left as vertical pane for manual pages.
+"
+" autocmd FileType man call kutsan#autocmds#showtoc()
+""
 function! kutsan#autocmds#showtoc()
 	if !has('nvim')
 		return v:false
