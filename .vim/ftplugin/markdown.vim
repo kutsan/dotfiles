@@ -5,12 +5,6 @@ setlocal spell
 setlocal wrap
 
 " Navigate screen lines instead of actual lines.
-nnoremap <buffer> j gj
-onoremap <buffer> j gj
-vnoremap <buffer> j gj
-nnoremap <buffer> k gk
-onoremap <buffer> k gk
-vnoremap <buffer> k gk
 nnoremap <buffer> $ g$
 onoremap <buffer> $ g$
 vnoremap <buffer> $ g$

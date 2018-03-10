@@ -21,8 +21,8 @@ nnoremap ? ?\v
 nnoremap <silent> <BS> :let @/ = ''<Enter>
 
 " Store relative line number jumps in the jumplist if they exceed a threshold.
-nnoremap <expr> k (v:count > 5 ? "m'" . v:count : '') . 'k'
-nnoremap <expr> j (v:count > 5 ? "m'" . v:count : '') . 'j'
+nnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
+nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
 
 " Forward and backward jump.
 nnoremap J 5j
