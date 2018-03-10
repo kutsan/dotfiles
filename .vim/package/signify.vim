@@ -6,6 +6,9 @@ Plug 'mhinz/vim-signify'
 " Only support git version system.
 let g:signify_vcs_list = ['git']
 
+" Disable showing counts next to signs.
+let g:signify_sign_show_count = 0
+
 " Define symbols for signs.
 let g:signify_sign_add = '│' " U+2502
 let g:signify_sign_delete = '│' " U+2502
