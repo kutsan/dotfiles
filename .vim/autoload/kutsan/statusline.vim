@@ -31,6 +31,14 @@ function! kutsan#statusline#filetypesymbol() abort
 	return WebDevIconsGetFileTypeSymbol()
 endfunction
 
+function! kutsan#statusline#hlsearch() abort
+	if !&hlsearch
+		return ''
+	endif
+
+	return '' . ' '
+endfunction
+
 function! kutsan#statusline#spell() abort
 	if !&spell
 		return ''
