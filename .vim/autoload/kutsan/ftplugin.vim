@@ -7,10 +7,9 @@
 " nnoremap <buffer><silent> <C-w>gf :call kutsan#ftplugin#javascriptgotofile(expand('<cfile>'), bufname('%'), 'tab split')<Enter>
 "
 " @param {string} fname Path under the cursor for `gf`.
-" @param {string} from Relative buffer path to current working directory.
 " @param {string} [command="edit"] Command to be used when opening file.
 ""
-function! kutsan#ftplugin#javascriptgotofile(fname, from, ...) abort
+function! kutsan#ftplugin#javascriptgotofile(fname, ...) abort
 	if empty(a:fname)
 		return v:false
 	endif
@@ -20,10 +19,9 @@ function! kutsan#ftplugin#javascriptgotofile(fname, from, ...) abort
 	" like wrapper of 'includeexpr' option.
 	"
 	" @param {string} fname Same as outer function.
-	" @param {string} from Same as outer function.
 	" @return {string} Resolved path to go or URL if it's core Node module.
 	""
-	function! s:includeexpr(fname, from) abort
+	function! s:includeexpr(fname) abort
 		let l:NODE_CORE_MODULES = [
 		\ 	'assert', 'async_hooks', 'buffer', 'child_process', 'cluster', 'crypto',
 		\ 	'dgram', 'dns', 'domain', 'events', 'fs', 'http', 'http2', 'https', 'net',
@@ -33,7 +31,7 @@ function! kutsan#ftplugin#javascriptgotofile(fname, from, ...) abort
 
 		" If it's a core Node module, then return GitHub URL for module code.
 		if index(l:NODE_CORE_MODULES, a:fname) != -1
-			return 'https://github.com/nodejs/node/blob/master/lib/' . a:fname . '.js'
+			return 'https://raw.githubusercontent.com/nodejs/node/master/lib/' . a:fname . '.js'
 		endif
 
 		""
@@ -97,7 +95,7 @@ function! kutsan#ftplugin#javascriptgotofile(fname, from, ...) abort
 		" or not absolute path, relative path, bare filename or node module.
 		"
 		" @param {string} fname Same as outer function.
-		" @param {string} from Same as outer function.
+		" @param {string} from Relative buffer path to current working directory.
 		" @return {string} Path in various forms based on 'fname'.
 		""
 		function! s:resolveform(fname, from)
@@ -133,17 +131,10 @@ function! kutsan#ftplugin#javascriptgotofile(fname, from, ...) abort
 			endif
 		endfunction
 
-		return s:resolvepath(s:resolveform(a:fname, a:from))
+		return s:resolvepath(s:resolveform(a:fname, expand('%')))
 	endfunction
 
-	let l:path = s:includeexpr(a:fname, a:from)
-
-	" Open in browser if it's URL.
-	if l:path =~# '\v^https?://[^ ]+'
-		execute 'silent !xdg-open' shellescape(l:path)
-
-		return v:true
-	endif
+	let l:path = s:includeexpr(a:fname)
 
 	" Emulate built-in error if file is not found.
 	if empty(l:path)
@@ -152,6 +143,24 @@ function! kutsan#ftplugin#javascriptgotofile(fname, from, ...) abort
 		echohl NONE
 
 		return v:false
+	endif
+
+	" Download URL.
+	if l:path =~# '\v^https?://'
+		if !executable('curl')
+			return v:false
+		endif
+
+		let l:tempdir = fnamemodify(tempname(), ':h')
+		let l:filename = system(
+			\ 	printf(
+			\ 		'cd %s && curl --remote-name --silent --write-out "%%{filename_effective}" %s',
+			\ 		l:tempdir,
+			\ 		shellescape(l:path)
+			\ 	)
+			\ )
+
+		let l:path = l:tempdir . '/' . l:filename
 	endif
 
 	" Open path.
