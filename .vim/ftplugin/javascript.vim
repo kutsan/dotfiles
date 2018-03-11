@@ -1,3 +1,6 @@
+" Set current compiler.
+compiler npm
+
 " List of file extensions which are used with `gf` like commands.
 setlocal suffixesadd=.js,.jsx
 
