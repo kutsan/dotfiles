@@ -50,6 +50,22 @@ nnoremap x "_x
 " Make `Y` acting like `C`, `D`.
 nnoremap Y y$
 
+" Quickly refactor variables.
+nnoremap c* *``cgn
+nnoremap c# #``cgN
+
+" Toggle terminal buffer.
+nnoremap <silent> <C-z> :call kutsan#mappings#toggleterminal()<Enter>
+
+" Construct range operator.
+nnoremap <silent> ! :<C-u>set operatorfunc=kutsan#mappings#exclamationoperator<Enter>g@
+
+" Toggle common options.
+nnoremap <silent> =os :set spell!<Enter>
+nnoremap <silent> =ow :set wrap!<Enter>
+nnoremap <silent> =oh :set hlsearch!<Enter>
+nnoremap <silent> =ol :set list!<Enter>
+
 " Navigate over [l]ocation list.
 nnoremap <silent> [l :lopen<Enter>
 nnoremap <silent> [l :lprevious<Enter>
@@ -75,22 +91,9 @@ nnoremap <silent> ]a :next<Enter>
 nnoremap <silent> [A :first<Enter>
 nnoremap <silent> ]A :last<Enter>
 
-" Toggle terminal buffer.
-nnoremap <silent> <C-z> :call kutsan#mappings#toggleterminal()<Enter>
-
-" Construct range operator.
-nnoremap <silent> ! :<C-u>set operatorfunc=kutsan#mappings#exclamationoperator<Enter>g@
-
 " Shortcuts for quiting.
 nnoremap <silent> <Leader>q :quit<Enter>
 nnoremap <silent> <Leader>Q :quitall<Enter>
-
-" Quickly refactor variables.
-nnoremap <Leader>* *``cgn
-nnoremap <Leader># #``cgN
-
-" Toggle spell checking.
-nnoremap <silent> <Leader>s :set spell!<Enter>
 
 " Lookup definition under cursor.
 nnoremap <Leader>K K
@@ -101,9 +104,6 @@ nnoremap <Leader>J J
 " Correct bad indent while pasting.
 nnoremap <Leader>p p=`]
 nnoremap <Leader>P P=`]
-
-" Toggle search highlighting.
-nnoremap <Leader>? :set hlsearch!<Enter>
 
 " -- Command Mode
 " ------------------------------------------------
