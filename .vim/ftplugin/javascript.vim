@@ -8,10 +8,10 @@ setlocal suffixesadd=.js,.jsx
 let &l:include = '\<from\>\s["'']\zs[^"'']\+\ze["'']'
 
 " Always use wrapper 'includeexpr', not just as fallback.
-nnoremap <buffer><silent> gf :call kutsan#ftplugin#javascriptgotofile(expand('<cfile>'), bufname('%'))<Enter>
-nnoremap <buffer><silent> <C-w>f :call kutsan#ftplugin#javascriptgotofile(expand('<cfile>'), bufname('%'), 'split')<Enter>
-nnoremap <buffer><silent> <C-w><C-f> :call kutsan#ftplugin#javascriptgotofile(expand('<cfile>'), bufname('%'), 'split')<Enter>
-nnoremap <buffer><silent> <C-w>gf :call kutsan#ftplugin#javascriptgotofile(expand('<cfile>'), bufname('%'), 'tab split')<Enter>
+nnoremap <buffer><silent> gf :call kutsan#ftplugin#javascriptgotofile(expand('<cfile>'))<Enter>
+nnoremap <buffer><silent> <C-w>f :call kutsan#ftplugin#javascriptgotofile(expand('<cfile>'), 'split')<Enter>
+nnoremap <buffer><silent> <C-w><C-f> :call kutsan#ftplugin#javascriptgotofile(expand('<cfile>'), 'split')<Enter>
+nnoremap <buffer><silent> <C-w>gf :call kutsan#ftplugin#javascriptgotofile(expand('<cfile>'), 'tab split')<Enter>
 
 " Execute current file.
 nnoremap <buffer><silent> <LocalLeader>r :execute 'split \| terminal node' shellescape(@%, 1)<Enter>
