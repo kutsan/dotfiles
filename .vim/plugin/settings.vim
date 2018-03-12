@@ -15,12 +15,6 @@ set termguicolors " Enable True Color support.
 silent! colorscheme iceberg " Color scheme and its overrides.
 	if exists('g:colors_name') && g:colors_name ==# 'iceberg'
 		highlight! EndOfBuffer ctermfg=bg guifg=bg | " Hide tilde symbols for all buffers.
-		highlight! link SignifySignAdd GitGutterAdd
-		highlight! link SignifySignChange GitGutterChange
-		highlight! link SignifySignDelete GitGutterDelete
-		highlight! link SignifySignChangeDelete GitGutterChangeDelete
-		highlight! link SignifySignDeleteFirstLine SignifySignDelete
-
 		highlight! StatusLine ctermbg=243 ctermfg=238 guibg=#818596 guifg=#1e2132
 		highlight! StatusLineNC ctermbg=243 ctermfg=237 guibg=#3e445e guifg=#1e2132
 		execute 'highlight! CursorLineNr guibg=' . synIDattr(synIDtrans(hlID('CursorLine')), 'bg', 'gui') . ' ctermbg=' . synIDattr(synIDtrans(hlID('CursorLine')), 'bg', 'cterm')
