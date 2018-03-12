@@ -4,6 +4,9 @@ compiler npm
 " List of file extensions which are used with `gf` like commands.
 setlocal suffixesadd=.js,.jsx
 
+" Lookup documentations in browser.
+setlocal keywordprg=:Docs
+
 " Set include pattern for only ECMAScript modules.
 let &l:include = '\<from\>\s["'']\zs[^"'']\+\ze["'']'
 
