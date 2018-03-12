@@ -3,8 +3,10 @@
 "
 " nnoremap <silent> <C-z> :call kutsan#mappings#toggleterminal()<Enter>
 " tnoremap <silent> <C-z> <C-\><C-n>:call kutsan#mappings#toggleterminal()<Enter>
+"
+" @param {string} [command=&shell] Optional command to run.
 ""
-function! kutsan#mappings#toggleterminal() abort
+function! kutsan#mappings#toggleterminal(...) abort
 	if !has('nvim')
 		return v:false
 	endif
@@ -32,7 +34,7 @@ function! kutsan#mappings#toggleterminal() abort
 	if !g:terminal.loaded
 		let g:terminal.originbufferid = bufnr('')
 
-		enew | call termopen(&shell, g:terminal)
+		enew | call termopen((a:0 == 1 ? a:1 : &shell), g:terminal)
 		let g:terminal.loaded = v:true
 		let g:terminal.termbufferid = bufnr('')
 
