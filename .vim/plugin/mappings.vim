@@ -60,6 +60,10 @@ nnoremap <silent> <C-z> :call kutsan#mappings#toggleterminal()<Enter>
 " Construct range operator.
 nnoremap <silent> ! :<C-u>set operatorfunc=kutsan#mappings#exclamationoperator<Enter>g@
 
+" Add [count] blank lines above or below the cursor.
+nnoremap <silent> [<Space> :<C-u>put! =repeat(nr2char(10), v:count1) <Bar> ']+1<Enter>
+nnoremap <silent> ]<Space> :<C-u>put =repeat(nr2char(10), v:count1) <Bar> '[-1<Enter>
+
 " Toggle common options.
 nnoremap <silent> =os :set spell!<Enter>
 nnoremap <silent> =ow :set wrap!<Enter>
