@@ -157,6 +157,9 @@ xnoremap ? ?\v
 xnoremap + g<C-a>gv
 xnoremap - g<C-x>gv
 
+" Execute macro 'q' over visual line selections.
+xnoremap Q :'<,'>:normal! @q<CR>
+
 " Make current visual selection active search text.
 xnoremap * :<C-u>call kutsan#mappings#visualsetsearch('/')<Enter>/<C-r>=@/<Enter><Enter>
 xnoremap # :<C-u>call kutsan#mappings#visualsetsearch('?')<Enter>?<C-r>=@/<Enter><Enter>
