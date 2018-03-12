@@ -80,7 +80,7 @@ set formatprg=par\ -w80 " External formatter program that will be used with `gq`
 " Completion
 set complete-=i " Disable scanning current and included files.
 set completeopt=longest,menuone " Options for insert mode completion.
-set path=. " Only try to find files in current directory.
+set path+=** " Enable recursive file search.
 
 " Indentation
 set autoindent " Copy indent from current line when starting a new line.
