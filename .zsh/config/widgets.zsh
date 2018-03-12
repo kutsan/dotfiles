@@ -9,7 +9,6 @@ foreach widget (
 	custom-tmux-jump-back-prompt
 	custom-fzf-launch-from-history
 	custom-fzf-execute-widget
-	custom-fzf-edit-file
 ) {
 	zle -N $widget
 }
@@ -147,16 +146,4 @@ function custom-fzf-execute-widget() {
 	}
 
 	return $stat
-}
-
-# Search a file with fzf and edit inside $EDITOR.
-function custom-fzf-edit-file() {
-	local file=$(eval "$FZF_DEFAULT_COMMAND" | fzf --prompt="$EDITOR ")
-
-	if [[ "$file" != '' ]] {
-		BUFFER="$EDITOR "$file""
-		zle accept-line
-	}
-
-	zle redisplay
 }

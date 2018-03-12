@@ -10,7 +10,6 @@ bindkey -M viins '^X^G' custom-add-noglob-before-the-command # Insert noglob bef
 bindkey -M viins '^X^M' custom-add-sudo-before-the-command # Insert sudo before the command.
 bindkey -M viins '^Y' custom-insert-last-typed-word # Insert last typed word for quick copy-paste.
 bindkey -M viins '^R' custom-fzf-launch-from-history # Select command from history into the command line.
-bindkey -M viins '^P' custom-fzf-edit-file # Search a file with fzf and edit inside $EDITOR.
 
 # Normal Mode
 bindkey -M vicmd 'j' down-line # Override down-line-or-history.
