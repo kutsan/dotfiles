@@ -66,3 +66,16 @@ function! kutsan#mappings#exclamationoperator(type) abort
 
 	call feedkeys(':' . l:mstart . ',' . l:mend, 'in')
 endfunction
+
+""
+" Set search register to current visual selection.
+"
+" xnoremap * :<C-u>call kutsan#mappings#visualsetsearch('/')<Enter>/<C-r>=@/<Enter><Enter>
+" xnoremap # :<C-u>call kutsan#mappings#visualsetsearch('?')<Enter>?<C-r>=@/<Enter><Enter>
+""
+function! kutsan#mappings#visualsetsearch(searchtype)
+	let l:temp = @s
+	normal! gv"sy
+	let @/ = substitute(escape(@s, a:searchtype . '\'), '\n', '\\n', 'g')
+	let @s = l:temp
+endfunction
