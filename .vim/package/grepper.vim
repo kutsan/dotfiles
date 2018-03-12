@@ -9,7 +9,6 @@ let g:grepper = {
 	\ 'rg': {
 		\ 'grepprg': 'rg --with-filename --no-heading --vimgrep --smart-case --regexp'
 	\ },
-	\
 	\ 'git': {
 		\ 'grepprg': 'git grep --line-number -I --ignore-case --perl-regexp'
 	\ }
