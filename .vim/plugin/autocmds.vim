@@ -30,7 +30,8 @@ augroup end
 " Automatically save the current buffer.
 augroup autosavebuffer
 	autocmd!
-	autocmd InsertLeave,TextChanged * nested silent! update
+	autocmd InsertLeave,TextChanged,FocusLost * nested silent! update
+	autocmd CursorHold * silent! checktime
 augroup end
 
 " Automatically set current working directory project root.
