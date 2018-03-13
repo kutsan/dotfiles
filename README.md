@@ -6,7 +6,7 @@
 
 - General
 	- CLI
-		- [zsh](http://www.zsh.org) - Highly customizable interactive login shell and command interpreter for shell scripting
+		- [zsh](https://github.com/zsh-users/zsh) - Highly customizable interactive login shell and command interpreter for shell scripting
 			- [pure](https://github.com/sindresorhus/pure) - Minimal and fast Zsh prompt with asynchronous git fetch
 			- [zsh-autopair](https://github.com/hlissner/zsh-autopair) - Auto-close and delete matching delimiters
 			- [zsh-system-clipboard](https://github.com/kutsan/zsh-system-clipboard) - Synchronize ZLE clipboard buffer with system clipboard
