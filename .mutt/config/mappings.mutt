@@ -1,0 +1,8 @@
+# Navigation
+bind pager k previous-line
+bind pager j next-line
+
+# Sidebar
+bind index,pager \Ck sidebar-prev
+bind index,pager \Cj sidebar-next
+bind index,pager \Cl sidebar-open

@@ -28,5 +28,3 @@ set message_cachedir = '~/.mutt/accounts/com.kutsankaplan/cache/bodies/'
 
 # The file where the trusted certificates are saved instead of ~/.mutt_certificates.
 set certificate_file = '~/.mutt/accounts/com.kutsankaplan/certificates'
-
-# vim: filetype=muttrc
