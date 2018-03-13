@@ -3,7 +3,7 @@ foreach piece (
 	exports.zsh
 	hooks.zsh
 	prompt.zsh
-	options.zsh
+	settings.zsh
 	multiplexer.zsh
 	functions.zsh
 	aliases.zsh
