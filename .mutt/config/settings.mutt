@@ -1,0 +1,33 @@
+# Default editor.
+set editor = "$EDITOR"
+
+# Character set.
+set charset = 'utf-8'
+
+# Don't save outgoing messages into ~/sent file.
+unset record
+
+# Convert the given MIME types to text/plain when displaying messages.
+auto_view text/html
+
+# The maximum amount of time in seconds that will wait before polling
+# open IMAP connections.
+set imap_keepalive = 300
+
+# Open new IMAP connection automatically.
+unset imap_passive
+
+# How often should look for new mails (time in seconds).
+set mail_check = 30
+
+# Fetch the set of subscribed folders from server on connection, and
+# add them to the set of mailboxes it polls for new mail just as if had
+# issued individual "mailboxes" commands.
+set imap_check_subscribed
+
+# Show other folders in sidebar
+set sidebar_visible = yes
+
+# Specifies how to sort messages in the "index" menu.
+set sort = 'threads'
+set sort_aux = 'reverse-last-date-received'
