@@ -48,7 +48,7 @@ call plug#end()
 augroup vimplugplugininstallation
 	autocmd VimEnter *
 		\ if len(filter(values(g:plugs), '!isdirectory(v:val.dir)')) |
-		\	PlugInstall --sync |
-		\	quitall |
+			\ PlugInstall --sync |
+			\ quitall |
 		\ endif
 augroup END

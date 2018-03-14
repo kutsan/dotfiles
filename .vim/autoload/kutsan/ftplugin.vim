@@ -23,10 +23,10 @@ function! kutsan#ftplugin#javascriptgotofile(fname, ...) abort
 	""
 	function! s:includeexpr(fname) abort
 		let l:NODE_CORE_MODULES = [
-		\ 	'assert', 'async_hooks', 'buffer', 'child_process', 'cluster', 'crypto',
-		\ 	'dgram', 'dns', 'domain', 'events', 'fs', 'http', 'http2', 'https', 'net',
-		\ 	'os', 'path', 'perf_hooks', 'punycode', 'querystring', 'readline', 'repl',
-		\ 	'stream', 'string_decoder', 'tls', 'tty', 'url', 'util', 'v8', 'vm', 'zlib'
+			\ 'assert', 'async_hooks', 'buffer', 'child_process', 'cluster', 'crypto',
+			\ 'dgram', 'dns', 'domain', 'events', 'fs', 'http', 'http2', 'https', 'net',
+			\ 'os', 'path', 'perf_hooks', 'punycode', 'querystring', 'readline', 'repl',
+			\ 'stream', 'string_decoder', 'tls', 'tty', 'url', 'util', 'v8', 'vm', 'zlib'
 		\ ]
 
 		" If it's a core Node module, then return GitHub URL for module code.
@@ -153,11 +153,11 @@ function! kutsan#ftplugin#javascriptgotofile(fname, ...) abort
 
 		let l:tempdir = fnamemodify(tempname(), ':h')
 		let l:filename = system(
-			\ 	printf(
-			\ 		'cd %s && curl --remote-name --silent --write-out "%%{filename_effective}" %s',
-			\ 		l:tempdir,
-			\ 		shellescape(l:path)
-			\ 	)
+				\ printf(
+					\ 'cd %s && curl --remote-name --silent --write-out "%%{filename_effective}" %s',
+					\ l:tempdir,
+					\ shellescape(l:path)
+				\ )
 			\ )
 
 		let l:path = l:tempdir . '/' . l:filename
