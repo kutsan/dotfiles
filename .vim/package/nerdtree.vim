@@ -22,7 +22,10 @@ let g:NERDTreeBookmarksFile = expand('$HOME') . '/.vim/cache/share/nerdtreebookm
 let g:NERDTreeMinimalUI = 1
 
 " Hide some files and folders.
-let g:NERDTreeIgnore = ['\.DS_Store$', '\.git$']
+let g:NERDTreeIgnore = [
+	\ '^\.DS_Store$[[file]]',
+	\ '^\.git$[[dir]]'
+\ ]
 
 " Use natural sort order.
 let g:NERDTreeNaturalSort = 1

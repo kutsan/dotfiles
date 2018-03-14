@@ -5,10 +5,10 @@
 ""
 function! kutsan#commands#docs(query) abort
 	call system(
-		\ 	printf(
-		\ 		'%s "https://devdocs.io/?q=%s"',
-		\ 		executable('reopen') ? 'reopen' : 'xdg-open',
-		\ 		a:query
-		\ 	)
+		\ printf(
+			\ '%s "https://devdocs.io/?q=%s"',
+			\ executable('reopen') ? 'reopen' : 'xdg-open',
+			\ a:query
 		\ )
+	\ )
 endfunction
