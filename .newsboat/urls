@@ -1,23 +1,34 @@
 # Blog
-https://feeds.feedburner.com/2ality "~Axel Rauschmayer" "Blog"
-https://dmitripavlutin.com/rss "~Dmitri Pavlutin" "Blog"
-https://github.com/blog/ship.atom "~GitHub" "Blog"
-https://jakearchibald.com/posts.rss "~Jake Archibald" "Blog"
-https://neovim.io/news.xml "~Neovim" "Blog"
-https://ponyfoo.com/articles/feed "~Pony Foo" "Blog"
-https://reactjs.org/feed.xml "~React" "Blog"
-https://blog.risingstack.com/rss "~RisingStack" "Blog"
-http://vimcasts.org/feeds/quicktime.rss "~Vimcasts" "Blog"
---- "~ "
+	http://localhost:0001 "~▵ Blog"
+https://feeds.feedburner.com/2ality "~Axel Rauschmayer" blog
+https://dmitripavlutin.com/rss "~Dmitri Pavlutin" blog
+https://blog.github.com/blog.atom "~GitHub" blog
+https://jakearchibald.com/posts.rss "~Jake Archibald" blog
+https://hacks.mozilla.org/feed "~Mozilla Hacks" blog
+https://neovim.io/news.xml "~Neovim" blog
+https://ponyfoo.com/articles/feed "~Pony Foo" blog
+https://reactjs.org/feed.xml "~React" blog
+https://blog.risingstack.com/rss "~RisingStack" blog
+http://vimcasts.org/feeds/quicktime.rss "~Vimcasts" blog
+	http://localhost:0002 "~ "
 
 # Newsletter
-http://javascriptweekly.com/rss "~JavaScript Weekly" "Newsletter"
-http://reactjsnewsletter.com/issues.rss "~React Newsletter" "Newsletter"
---- "~ "
+	http://localhost:0003 "~▵ Newsletter"
+http://javascriptweekly.com/rss "~JavaScript Weekly" newsletter
+http://reactjsnewsletter.com/issues.rss "~React Newsletter" newsletter
+	http://localhost:0004 "~ "
 
 # Software
-https://github.com/tmux/tmux/releases.atom "~tmux" "Software"
-https://github.com/prettier/prettier/releases.atom "~prettier" "Software"
-https://github.com/facebook/react/releases.atom "~react" "Software"
-https://github.com/eslint/eslint/releases.atom "~eslint" "Software"
-https://github.com/zsh-users/zsh/releases.atom "~zsh" "Software"
+	http://localhost:0005 "~▵ Software"
+https://github.com/tmux/tmux/releases.atom "~tmux" software
+https://github.com/prettier/prettier/releases.atom "~prettier" software
+https://github.com/facebook/react/releases.atom "~react" software
+https://github.com/eslint/eslint/releases.atom "~eslint" software
+https://github.com/zsh-users/zsh/releases.atom "~zsh" software
+	http://localhost:0006 "~ "
+
+# Comics
+	http://localhost:0007 "~▵ Comics"
+http://www.commitstrip.com/en/feed "~CommitStrip" comics
+https://www.oglaf.com/feeds/rss "~Oglaf" comics
+https://xkcd.com/atom.xml "~xkcd" comics
