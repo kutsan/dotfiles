@@ -27,6 +27,10 @@ let g:NERDTreeIgnore = ['\.DS_Store$', '\.git$']
 " Use natural sort order.
 let g:NERDTreeNaturalSort = 1
 
+" Use `trash-cli` when deleting files and folders.
+let g:NERDTreeRemoveDirCmd = 'trash '
+let g:NERDTreeRemoveFileCmd = 'trash '
+
 " Change arrow icons for folders.
 let g:NERDTreeDirArrowExpandable = ' ' " U+200B
 let g:NERDTreeDirArrowCollapsible = ' ' " U+200B
