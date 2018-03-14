@@ -8,12 +8,9 @@ setopt ERR_EXIT PIPE_FAIL WARN_CREATE_GLOBAL WARN_NESTED_VAR
 # Import utility functions for logging.
 source ~/.zsh/lib/console.zsh
 
-if ! (hash notify &>/dev/null) {
+if (! hash notify &>/dev/null) {
 	console.error --with-date "${bold_color}notify${reset_color} is not installed yet."
 	exit 1
 }
 
-notify \
-	--title 'newsboat' \
-	--message "$@" \
-	--icon 'https://i.imgur.com/hDbLUpK.png'
+notify --title 'newsboat' --message "$@"
