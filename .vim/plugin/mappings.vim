@@ -1,8 +1,4 @@
-" -- Insert Mode
-" ------------------------------------------------
-
-" -- Normal Mode
-" ------------------------------------------------
+" -- Normal Mode ---------------------------------
 
 " Pane nagivation.
 nnoremap <C-j> <C-w>j
@@ -109,8 +105,7 @@ nnoremap <Leader>J J
 nnoremap <Leader>p p=`]
 nnoremap <Leader>P P=`]
 
-" -- Command Mode
-" ------------------------------------------------
+" -- Terminal ------------------------------------
 
 " Jump to the beginning and end of line.
 cnoremap <C-a> <Home>
@@ -131,8 +126,7 @@ cnoremap <C-s>/ s/\v//gc<Left><Left><Left><Left>
 cnoremap <expr> <Tab> getcmdtype() ==# '/' \|\| getcmdtype() ==# '?' ? '<Enter>/<C-r>/' : '<C-z>'
 cnoremap <expr> <S-Tab> getcmdtype() ==# '/' \|\| getcmdtype() ==# '?' ? '<Enter>?<C-r>/' : '<S-Tab>'
 
-" -- Visual Mode
-" ------------------------------------------------
+" -- Visual --------------------------------------
 
 " Stay in visual mode when indenting.
 xnoremap < <gv
@@ -164,8 +158,8 @@ xnoremap Q :'<,'>:normal! @q<CR>
 xnoremap * :<C-u>call kutsan#mappings#visualsetsearch('/')<Enter>/<C-r>=@/<Enter><Enter>
 xnoremap # :<C-u>call kutsan#mappings#visualsetsearch('?')<Enter>?<C-r>=@/<Enter><Enter>
 
-" -- Operator Mode
-" ------------------------------------------------
+
+" -- Operator ------------------------------------
 
 " [a]n [e]ntire buffer.
 onoremap <silent> ae :<C-u>normal! VGogg<Enter>
@@ -177,8 +171,7 @@ onoremap gv :<C-u>normal! gv<Enter>
 onoremap H ^
 onoremap L $
 
-" -- Terminal Mode
-" ------------------------------------------------
+" -- Terminal ------------------------------------
 
 " Escape from terminal mode and toggle terminal buffer.
 tnoremap <silent> <C-z> <C-\><C-n>:call kutsan#mappings#toggleterminal()<Enter>
