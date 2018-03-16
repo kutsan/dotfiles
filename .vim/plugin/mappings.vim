@@ -65,10 +65,10 @@ nnoremap <silent> [<Space> :<C-u>put! =repeat(nr2char(10), v:count1) <Bar> ']+1<
 nnoremap <silent> ]<Space> :<C-u>put =repeat(nr2char(10), v:count1) <Bar> '[-1<Enter>
 
 " Toggle common options.
-nnoremap <silent> =os :set spell!<Enter>
-nnoremap <silent> =ow :set wrap!<Enter>
-nnoremap <silent> =oh :set hlsearch!<Enter>
-nnoremap <silent> =ol :set list!<Enter>
+nnoremap <silent> gos :set spell!<Enter>
+nnoremap <silent> gow :set wrap!<Enter>
+nnoremap <silent> goh :set hlsearch!<Enter>
+nnoremap <silent> gol :set list!<Enter>
 
 " Navigate over [l]ocation list.
 nnoremap <silent> [l :lopen<Enter>
