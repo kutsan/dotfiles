@@ -175,6 +175,3 @@ onoremap L $
 
 " Escape from terminal mode and toggle terminal buffer.
 tnoremap <silent> <C-z> <C-\><C-n>:call kutsan#mappings#toggleterminal()<Enter>
-
-" Escape from terminal mode.
-tnoremap <C-s> <C-\><C-n>
