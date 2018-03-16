@@ -3,42 +3,15 @@
 "
 " nnoremap <silent> <C-z> :call kutsan#mappings#toggleterminal()<Enter>
 " tnoremap <silent> <C-z> <C-\><C-n>:call kutsan#mappings#toggleterminal()<Enter>
-"
-" @param {string} [command=&shell] Optional command to run.
 ""
-function! kutsan#mappings#toggleterminal(...) abort
+function! kutsan#mappings#toggleterminal() abort
 	if !has('nvim')
 		return v:false
 	endif
 
-	if !exists('g:terminal')
-		let g:terminal = {
-			\ 'loaded': v:null,
-			\ 'termbufferid': v:null,
-			\ 'originbufferid': v:null
-		\ }
-	endif
-
-	function! g:terminal.on_exit(jobid, data, event)
-		silent execute 'buffer' g:terminal.originbufferid
-		silent execute 'bdelete!' g:terminal.termbufferid
-
-		let g:terminal = {
-			\ 'loaded': v:null,
-			\ 'termbufferid': v:null,
-			\ 'originbufferid': v:null
-		\ }
-	endfunction
-
-	" Create terminal and finish.
-	if !g:terminal.loaded
-		let g:terminal.originbufferid = bufnr('')
-
-		enew | call termopen((a:0 == 1 ? a:1 : &shell), g:terminal)
-		let g:terminal.loaded = v:true
-		let g:terminal.termbufferid = bufnr('')
-
-		return v:true
+	" Create the terminal buffer.
+	if !exists('g:terminal') || !g:terminal.loaded
+		return kutsan#terminal#create()
 	endif
 
 	" Go back to origin buffer if current buffer is terminal.
