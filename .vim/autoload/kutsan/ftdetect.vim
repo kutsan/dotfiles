@@ -6,7 +6,7 @@
 " @param {object} options.maxline Maximum line number to be searched from top,
 " as 500 maximum.
 ""
-function! kutsan#utils#contains(regex, ...) abort
+function! kutsan#ftdetect#contains(regex, ...) abort
 	let l:options = get(a:, '1', {})
 
 	let l:nend = get(l:options, 'maxline', line('$'))
