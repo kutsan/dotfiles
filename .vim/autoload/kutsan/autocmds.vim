@@ -30,7 +30,7 @@ endfunction
 " autocmd BufWritePre * call kutsan#autocmds#trimtrailingspaces()
 ""
 function! kutsan#autocmds#trimtrailingspaces()
-	if &l:modifiable
+	if &l:modifiable && !&l:binary
 		let l:view = winsaveview()
 
 		try
