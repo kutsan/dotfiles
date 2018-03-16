@@ -1,10 +1,10 @@
 ""
 " JavaScript wrapper function for `gf`, `<C-w>f`, `<C-w><C-f>` and `<C-w>gf` keys.
 "
-" nnoremap <buffer><silent> gf :call kutsan#ftplugin#javascriptgotofile(expand('<cfile>'), bufname('%'))<Enter>
-" nnoremap <buffer><silent> <C-w>f :call kutsan#ftplugin#javascriptgotofile(expand('<cfile>'), bufname('%'), 'split')<Enter>
-" nnoremap <buffer><silent> <C-w><C-f> :call kutsan#ftplugin#javascriptgotofile(expand('<cfile>'), bufname('%'), 'split')<Enter>
-" nnoremap <buffer><silent> <C-w>gf :call kutsan#ftplugin#javascriptgotofile(expand('<cfile>'), bufname('%'), 'tab split')<Enter>
+" nnoremap <buffer><silent> gf :call kutsan#ftplugin#javascriptgotofile(expand('<cfile>'))<Enter>
+" nnoremap <buffer><silent> <C-w>f :call kutsan#ftplugin#javascriptgotofile(expand('<cfile>'), 'split')<Enter>
+" nnoremap <buffer><silent> <C-w><C-f> :call kutsan#ftplugin#javascriptgotofile(expand('<cfile>'), 'split')<Enter>
+" nnoremap <buffer><silent> <C-w>gf :call kutsan#ftplugin#javascriptgotofile(expand('<cfile>'), 'tab split')<Enter>
 "
 " @param {string} fname Path under the cursor for `gf`.
 " @param {string} [command="edit"] Command to be used when opening file.
