@@ -14,14 +14,23 @@ endfunction
 ""
 " Jump to last known position and center buffer around cursor.
 "
-" autocmd BufReadPost * call kutsan#autocmds#jumplastknownposition()
+" autocmd BufReadPost *? call kutsan#autocmds#jumplastknownposition()
 ""
-	if &filetype !=? 'gitcommit'
 function! kutsan#autocmds#jumplastknownposition() abort
+	if kutsan#autocmds#shouldrestore()
 		if line("'\"") > 0 && line("'\"") <= line('$')
 			execute 'normal! g`"zz'
 		endif
 	endif
+endfunction
+
+""
+" Whether or not `mkview`, `loadview` or `g`"` commands should used.
+"
+" @return {boolean} v:true if doable, otherwise v:false.
+""
+function! kutsan#autocmds#shouldrestore() abort
+	return &buftype ==# '' && index(['diff', 'gitcommit'], &filetype) == -1
 endfunction
 
 ""
