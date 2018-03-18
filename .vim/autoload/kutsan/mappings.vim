@@ -59,3 +59,59 @@ function! kutsan#mappings#visualsetsearch(searchtype)
 	let @/ = substitute(escape(@s, a:searchtype . '\'), '\n', '\\n', 'g')
 	let @s = l:temp
 endfunction
+
+""
+" Execute given motion or selection in appropriate REPL.
+"
+" nnoremap <silent> gx :<C-u>let b:executeoperatorview = winsaveview() <Bar> set operatorfunc=kutsan#mappings#executeoperator<Enter>g@
+" nnoremap <silent> gxl :<C-u>let b:executeoperatorview = winsaveview() <Bar> set operatorfunc=kutsan#mappings#executeoperator <Bar> execute 'normal!' v:count 'g@_'<Enter>
+" vnoremap <silent> gx :<C-u>call kutsan#mappings#executeoperator(visualmode(), 1)<Enter>
+"
+" @param {string} type Type of motion.
+" @param {boolean} [visualmode] Whether or not invoking from visual mode.
+""
+function! kutsan#mappings#executeoperator(type, ...) abort
+	let l:visualmode = a:0 == 1 ? a:1 : v:null
+
+	if l:visualmode
+		silent execute 'normal! gvy'
+	elseif a:type ==? 'line'
+		silent execute "normal! '[V']y"
+	else
+		silent execute 'normal! `[v`]y'
+	endif
+
+	let l:executecontent = @@
+	let l:executefunctions = {}
+
+	function! l:executefunctions.javascript() abort closure
+		let l:termopts = {}
+		let l:swap = v:null
+
+		function! l:termopts.on_stdout(jobid, data, event) abort closure
+			if !l:swap
+				" Fix weird behavior of Node REPL prompt.
+				call feedkeys("\<Space>\<BS>")
+				let l:swap = v:true
+			endif
+		endfunction
+
+		function! l:termopts.on_exit(jobid, data, event) abort
+			silent execute 'bdelete!' bufnr('')
+		endfunction
+
+		new
+		call termopen(printf('node --interactive --print "%s"', l:executecontent), l:termopts)
+	endfunction
+
+	function! l:executefunctions.vim() abort closure
+		execute(l:executecontent)
+	endfunction
+
+	call l:executefunctions[substitute(&filetype, '\v\c\..+', '', '')]()
+
+	if exists('b:executeoperatorview')
+		call winrestview(b:executeoperatorview)
+		unlet b:executeoperatorview
+	endif
+endfunction
