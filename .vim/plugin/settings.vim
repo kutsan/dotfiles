@@ -109,7 +109,7 @@ set undofile " Undo tree to be saved to a file when exiting a buffer.
 set undolevels=100000 " Maximum undo limit.
 set updatecount=100 " Typing this many characters will create the swap file.
 set viewdir=~/.vim/cache/view// " Name of the directory where to store files for :mkview.
-set viewoptions=cursor,folds,unix,slash " Options used by `mkview` and `loadview` command.
+set viewoptions=folds " Options used by `mkview` and `loadview` commands.
 
 " Buffers, Windows, Tabs
 set autoread " Read the file again if have been changed outside of Vim.
