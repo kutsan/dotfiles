@@ -147,15 +147,6 @@ function ..() {
 }
 
 ##
-# Quick calculator.
-#
-# @param {string} $1 Math expression.
-##
-function = {
-	python3 -c "from math import *; print($*)"
-}
-
-##
 # Bookmark manager.
 #
 # @param {string} [$1] Defined bookmark string.
