@@ -32,6 +32,8 @@ endfunction
 " without putting '!' symbol automatically in the command mode.
 "
 " nnoremap <silent> ! :<C-u>set operatorfunc=kutsan#mappings#exclamationoperator<CR>g@
+"
+" @param {string} [type] Type of motion.
 ""
 function! kutsan#mappings#exclamationoperator(type) abort
 	let [l:mstart, l:mend] = [line("'["), line("']")]
@@ -48,6 +50,8 @@ endfunction
 "
 " xnoremap * :<C-u>call kutsan#mappings#visualsetsearch('/')<Enter>/<C-r>=@/<Enter><Enter>
 " xnoremap # :<C-u>call kutsan#mappings#visualsetsearch('?')<Enter>?<C-r>=@/<Enter><Enter>
+"
+" @param {string} searchtype Direction for search command, either '/' or '?'.
 ""
 function! kutsan#mappings#visualsetsearch(searchtype)
 	let l:temp = @s
