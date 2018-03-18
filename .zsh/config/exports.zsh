@@ -91,6 +91,14 @@ export MANWIDTH='100' # Fixed line width for man pages
 export MANPAGER="nvim +'set filetype=man' -"
 	if ([[ $(uname -o) == 'Android' ]] 2>/dev/null) { unset MANPAGER }
 
+# nvim
+export NVIM_RPLUGIN_MANIFEST="$HOME/.vim/cache/share/rplugin.vim"
+# export NVIM_NODE_LOG_FILE="$HOME/.vim/cache/log/node.log"
+# export NVIM_NODE_LOG_LEVEL='4'
+
+# node
+export NODE_REPL_HISTORY="$HOME/.node/nodereplhistory"
+
 # npm
 export NPM_CONFIG_INIT_AUTHOR_NAME='Kutsan Kaplan'
 export NPM_CONFIG_INIT_AUTHOR_EMAIL='me@kutsankaplan.com'
