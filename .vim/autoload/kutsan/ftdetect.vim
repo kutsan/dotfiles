@@ -2,8 +2,8 @@
 " Return true if current buffer has given regex.
 "
 " @param {string} regex Regular expression to be used in search.
-" @param {object} options Configuration object.
-" @param {object} options.maxline Maximum line number to be searched from top,
+" @param {dictionary} options Configuration dictionary.
+" @param {dictionary} options.maxline Maximum line number to be searched from top,
 " as 500 maximum.
 ""
 function! kutsan#ftdetect#contains(regex, ...) abort
