@@ -53,7 +53,7 @@ endfunction
 "
 " @param {string} searchtype Direction for search command, either '/' or '?'.
 ""
-function! kutsan#mappings#visualsetsearch(searchtype)
+function! kutsan#mappings#visualsetsearch(searchtype) abort
 	let l:temp = @s
 	normal! gv"sy
 	let @/ = substitute(escape(@s, a:searchtype . '\'), '\n', '\\n', 'g')
