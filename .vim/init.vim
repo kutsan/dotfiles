@@ -25,7 +25,6 @@ let g:loaded_logipat = 1
 let g:loaded_man = 1
 let g:loaded_tutor_mode_plugin = 1
 let g:loaded_matchit = 1
-let g:loaded_matchparen = 1
 
 " Automatically install vim-plug itself if it's not installed.
 if empty(glob('~/.vim/autoload/plug.vim'))
