@@ -7,7 +7,8 @@
 " nnoremap <buffer><silent> <C-w>gf :call kutsan#ftplugin#javascriptgotofile(expand('<cfile>'), 'tab split')<Enter>
 "
 " @param {string} fname Path under the cursor for `gf`.
-" @param {string} [command="edit"] Command to be used when opening file.
+" @param {dictionary} [options] Configuration dictionary.
+" @param {dictionary} [options.command="edit"] Command to be used when opening file.
 ""
 function! kutsan#ftplugin#javascriptgotofile(fname, ...) abort
 	if empty(a:fname)
@@ -164,5 +165,6 @@ function! kutsan#ftplugin#javascriptgotofile(fname, ...) abort
 	endif
 
 	" Open path.
-	execute (a:0 == 1 ? a:1 : 'edit') fnameescape(l:path)
+	let l:command = get(get(a:, '1', {}), 'command', 'edit')
+	execute l:command fnameescape(l:path)
 endfunction
