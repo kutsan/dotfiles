@@ -8,32 +8,37 @@ function! kutsan#terminal#create() abort
 
 	if !exists('g:terminal')
 		let g:terminal = {
-			\ 'loaded': v:null,
-			\ 'termbufferid': v:null,
-			\ 'originbufferid': v:null
+			\ 'opts': {},
+			\ 'term': {
+				\ 'loaded': v:null,
+				\ 'bufferid': v:null
+			\ },
+			\ 'origin': {
+				\ 'bufferid': v:null
+			\ }
 		\ }
 
-		function! g:terminal.on_exit(jobid, data, event)
-			silent execute 'buffer' g:terminal.originbufferid
-			silent execute 'bdelete!' g:terminal.termbufferid
+		function! g:terminal.opts.on_exit(jobid, data, event)
+			silent execute 'buffer' g:terminal.origin.bufferid
+			silent execute 'bdelete!' g:terminal.term.bufferid
 
-			let g:terminal.loaded = v:null
-			let g:terminal.termbufferid = v:null
-			let g:terminal.originbufferid = v:null
+			let g:terminal.term.loaded = v:null
+			let g:terminal.term.bufferid = v:null
+			let g:terminal.origin.bufferid = v:null
 		endfunction
 	endif
 
-	if g:terminal.loaded
+	if g:terminal.term.loaded
 		return v:false
 	endif
 
-	let g:terminal.originbufferid = bufnr('')
+	let g:terminal.origin.bufferid = bufnr('')
 
 	enew
-	call termopen(&shell, g:terminal)
+	call termopen(&shell, g:terminal.opts)
 
-	let g:terminal.loaded = v:true
-	let g:terminal.termbufferid = bufnr('')
+	let g:terminal.term.loaded = v:true
+	let g:terminal.term.bufferid = bufnr('')
 endfunction
 
 ""
@@ -51,19 +56,17 @@ function! kutsan#terminal#execute(command) abort
 		return v:false
 	endif
 
-	if !exists('g:terminal') || !g:terminal.loaded
+	if !exists('g:terminal') || !g:terminal.term.loaded
 		call kutsan#terminal#create()
 
 		" Wait for tmux to get ready.
 		sleep 500m
 	endif
 
-	let l:tmuxsessionname = 'nvim'
-
-	call system(printf('tmux has-session -t %s', l:tmuxsessionname))
+	call system('tmux has-session -t nvim')
 	if v:shell_error == 0
-		call system(printf('tmux new-window -t "%s:" "%s"', l:tmuxsessionname, a:command))
-		silent execute 'buffer' g:terminal.termbufferid
+		call system(printf('tmux new-window -t "nvim:" %s', shellescape(a:command)))
+		silent execute 'buffer' g:terminal.term.bufferid
 		startinsert
 	endif
 endfunction

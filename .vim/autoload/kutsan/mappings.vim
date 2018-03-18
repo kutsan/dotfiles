@@ -10,18 +10,19 @@ function! kutsan#mappings#toggleterminal() abort
 	endif
 
 	" Create the terminal buffer.
-	if !exists('g:terminal') || !g:terminal.loaded
+	if !exists('g:terminal') || !g:terminal.term.loaded
 		return kutsan#terminal#create()
 	endif
 
 	" Go back to origin buffer if current buffer is terminal.
-	if g:terminal.termbufferid ==# bufnr('')
-		silent execute 'buffer' g:terminal.originbufferid
+	if g:terminal.term.bufferid ==# bufnr('')
+		silent execute 'buffer' g:terminal.origin.bufferid
 
 	" Launch terminal buffer and start insert mode.
 	else
-		let g:terminal.originbufferid = bufnr('')
-		silent execute 'buffer' g:terminal.termbufferid
+		let g:terminal.origin.bufferid = bufnr('')
+
+		silent execute 'buffer' g:terminal.term.bufferid
 		startinsert
 	endif
 endfunction
