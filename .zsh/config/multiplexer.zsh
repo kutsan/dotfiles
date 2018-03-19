@@ -21,18 +21,22 @@ function should_launch_multiplexer() {
 # Auto-attach tmux or start at launch with different sessions based on platforms.
 if (should_launch_multiplexer) {
 	typeset -g session='main'
-	typeset -g launch_options=''
+	typeset -g launch_options='\; '
 
 	if [[ $VSCODE_PID != '' ]] {
 		session='vscode'
 
 	} elif [[ $NVIM_LISTEN_ADDRESS != '' ]] {
 		session='nvim'
-		launch_options='\; set-option -w status off'
+		launch_options+='set-option -w status-position bottom \; '
+		launch_options+='set-option -w status-right "" \; '
+		launch_options+='set-option -w prefix C-s \; '
 	}
 
 	tmux attach-session -t "$session" 2>/dev/null \
-		|| eval tmux -f "$HOME/.tmux/tmux.conf" new-session -s "$session" $launch_options \
+		&& exit 0
+
+	eval tmux -f "$HOME/.tmux/tmux.conf" new-session -s "$session" $launch_options \
 		&& exit 0
 
 	unset session
