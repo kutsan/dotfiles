@@ -2,10 +2,10 @@
 Plug 'mattn/emmet-vim', { 'on': 'EmmetInstall' }
 
 " Disable using default omni complete function.
-let g:user_emmet_complete_tag = 0
+let g:user_emmet_complete_tag = v:false
 
 " Disable creating global mappings.
-let g:user_emmet_install_global = 0
+let g:user_emmet_install_global = v:false
 
 " Override default settings.
 let g:user_emmet_settings = {

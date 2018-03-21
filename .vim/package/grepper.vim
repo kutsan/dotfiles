@@ -15,25 +15,25 @@ let g:grepper = {
 \ }
 
 " Disable highlight found matches.
-let g:grepper.highlight = 0
+let g:grepper.highlight = v:false
 
 " Use the quickfix list for the matches.
-let g:grepper.quickfix = 1
+let g:grepper.quickfix = v:true
 
 " Open the quickfix window after the grep tool finished running.
-let g:grepper.open = 1
+let g:grepper.open = v:true
 
 " When the quickfix window opens, switch to it.
-let g:grepper.switch = 1
+let g:grepper.switch = v:true
 
 " Automatically jump to the first match.
-let g:grepper.jump = 1
+let g:grepper.jump = v:true
 
 " Use the current working directory as reported by `:pwd`.
 let g:grepper.dir = 'cwd'
 
 " Only show the tool name in the prompt.
-let g:grepper.simple_prompt = 1
+let g:grepper.simple_prompt = v:true
 
 " Define search tools and their orders.
 let g:grepper.tools = ['git', 'rg']
@@ -42,7 +42,7 @@ let g:grepper.tools = ['git', 'rg']
 let g:grepper.next_tool = '<Leader>g'
 
 " Don't append matches to the current quickfix or location list.
-let g:grepper.append = 0
+let g:grepper.append = v:false
 
 " Quote the query automatically.
 let g:grepper.prompt_quote = 2

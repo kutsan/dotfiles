@@ -2,10 +2,10 @@
 Plug 'jiangmiao/auto-pairs'
 
 " Disable default key mappings.
-let g:AutoPairsShortcutToggle = 0
-let g:AutoPairsShortcutJump = 0
-let g:AutoPairsShortcutFastWrap = 0
-let g:AutoPairsShortcutBackInerts = 0
+let g:AutoPairsShortcutToggle = ''
+let g:AutoPairsShortcutJump = ''
+let g:AutoPairsShortcutFastWrap = ''
+let g:AutoPairsShortcutBackInerts = ''
 
 " Specifies which symbols should be automatically paired.
 let g:AutoPairs = {

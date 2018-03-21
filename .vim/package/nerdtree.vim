@@ -7,19 +7,19 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight', { 'on': 'NERDTreeToggle' }
 
 " Display hidden files.
-let g:NERDTreeShowHidden = 1
+let g:NERDTreeShowHidden = v:true
 
 " Set buffer width.
 let g:NERDTreeWinSize = 35
 
 " Keep the tree sync on file deletion or rename.
-let g:NERDTreeAutoDeleteBuffer = 1
+let g:NERDTreeAutoDeleteBuffer = v:true
 
 " Custom file where bookmarks are saved.
 let g:NERDTreeBookmarksFile = expand('$HOME') . '/.vim/cache/share/nerdtreebookmarks'
 
 " Disable the help text.
-let g:NERDTreeMinimalUI = 1
+let g:NERDTreeMinimalUI = v:true
 
 " Hide some files and folders.
 let g:NERDTreeIgnore = [
@@ -28,7 +28,7 @@ let g:NERDTreeIgnore = [
 \ ]
 
 " Use natural sort order.
-let g:NERDTreeNaturalSort = 1
+let g:NERDTreeNaturalSort = v:true
 
 " Use `trash-cli` when deleting files and folders.
 let g:NERDTreeRemoveDirCmd = 'trash '

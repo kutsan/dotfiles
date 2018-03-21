@@ -4,10 +4,10 @@ scriptencoding UTF-8
 Plug 'ryanoasis/vim-devicons'
 
 " Enable open and close folder glyph flags.
-let g:DevIconsEnableFoldersOpenClose = 1
+let g:DevIconsEnableFoldersOpenClose = v:true
 
 " Enable folder glyph flag.
-let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:WebDevIconsUnicodeDecorateFolderNodes = v:true
 
 " Use one space after a glyph instead of two.
 let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '

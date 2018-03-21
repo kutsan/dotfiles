@@ -25,7 +25,7 @@ let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = ' %linter%: %s (%severity%)'
 
 " Disable highlighting underline on errors and warnings.
-let g:ale_set_highlights = 0
+let g:ale_set_highlights = v:false
 
 " Define fixers for 'ALEFix' command.
 let g:ale_fixers = {

@@ -2,8 +2,8 @@
 Plug 'sheerun/vim-polyglot'
 
 " Set vim-jsx options.
-let g:jsx_ext_required = 1 " Enabled only for files with the `.jsx` extension.
+let g:jsx_ext_required = v:true " Enabled only for files with the `.jsx` extension.
 
 " Set vim-javascript options.
-let g:javascript_plugin_jsdoc = 1 " Enables syntax highlighting for JSDocs.
-let g:javascript_plugin_flow = 1 " Enables Flow syntax support.
+let g:javascript_plugin_jsdoc = v:true " Enables syntax highlighting for JSDocs.
+let g:javascript_plugin_flow = v:true " Enables Flow syntax support.

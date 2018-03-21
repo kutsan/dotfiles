@@ -5,7 +5,7 @@ Plug 'chrisbra/Colorizer', { 'for': ['html', 'css', 'sass', 'javascript', 'javas
 let g:colorizer_auto_filetype = 'html,css,sass,javascript,javascript.jsx'
 
 " Skip comments from being colored.
-let g:colorizer_skip_comments = 1
+let g:colorizer_skip_comments = v:true
 
 " Disable highlighting color names.
-let g:colorizer_colornames = 0
+let g:colorizer_colornames = v:false
