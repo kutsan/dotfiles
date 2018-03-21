@@ -4,9 +4,9 @@
 " autocmd VimEnter,BufEnter * call kutsan#autocmds#setprojectroot()
 ""
 function! kutsan#autocmds#setprojectroot() abort
-	let l:root = substitute(system('git rev-parse --show-toplevel'), '\n\+$', '', '')
+	let l:root = systemlist('git rev-parse --show-toplevel')[0]
 
-	if isdirectory(l:root) && l:root !=# $HOME
+	if !v:shell_error && l:root !=# $HOME
 		execute 'cd' l:root
 	endif
 endfunction
