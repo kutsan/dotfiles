@@ -108,7 +108,11 @@ function! kutsan#mappings#executeoperator(type, ...) abort
 		execute(l:executecontent)
 	endfunction
 
-	call l:executefunctions[substitute(&filetype, '\v\c\..+', '', '')]()
+	let l:filetype = split(&filetype, '\v\c\.')[0]
+
+	if has_key(l:executefunctions, l:filetype)
+		call l:executefunctions[l:filetype]()
+	endif
 
 	if exists('b:executeoperatorview')
 		call winrestview(b:executeoperatorview)
