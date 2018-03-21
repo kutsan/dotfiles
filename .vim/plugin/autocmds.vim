@@ -21,21 +21,6 @@ augroup trimtrailingspaces
 	autocmd BufWritePre * call kutsan#autocmds#trimtrailingspaces()
 augroup end
 
-" Save folds and restore them.
-augroup restoresession
-	autocmd!
-
-	autocmd BufWritePost,BufLeave,WinLeave,VimLeavePre ?*
-		\ if kutsan#autocmds#shouldrestore() |
-			\ mkview |
-		\ endif
-
-	autocmd BufReadPost ?*
-		\ if kutsan#autocmds#shouldrestore() |
-			\ silent! loadview |
-		\ endif
-augroup end
-
 " Jump to last known position and center buffer around cursor.
 augroup jumplastknownposition
 	autocmd!
