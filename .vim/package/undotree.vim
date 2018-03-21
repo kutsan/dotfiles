@@ -5,13 +5,13 @@ Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 let g:undotree_WindowLayout = 4
 
 " Move focus after being opened.
-let g:undotree_SetFocusWhenToggle = 1
+let g:undotree_SetFocusWhenToggle = v:true
 
 " Disable 'Press ? for help' text.
-let g:undotree_HelpLine = 0
+let g:undotree_HelpLine = v:false
 
 " Use short timestamps.
-let g:undotree_ShortIndicators = 1
+let g:undotree_ShortIndicators = v:true
 
 " Set the undotree window width.
 let g:undotree_SplitWidth = 30

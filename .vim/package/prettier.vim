@@ -2,13 +2,13 @@
 Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['html', 'css', 'sass', 'javascript', 'javascript.jsx', 'json', 'graphql'] }
 
 " Disable errors to being show in quickfix window.
-let g:prettier#quickfix_enabled = 0
+let g:prettier#quickfix_enabled = v:false
 
 " Disable autoformatting upon saving.
-let g:prettier#autoformat = 0
+let g:prettier#autoformat = v:false
 
 " Use prettier in asynchronous mode.
-let g:prettier#exec_cmd_async = 1
+let g:prettier#exec_cmd_async = v:true
 
 augroup prettier
 	autocmd!

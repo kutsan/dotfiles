@@ -1,7 +1,7 @@
 Plug 'suan/vim-instant-markdown', { 'on': 'InstantMarkdownPreview' }
 
 " Don't start the daemon automatically.
-let g:instant_markdown_autostart = 0
+let g:instant_markdown_autostart = v:false
 
 augroup instantmarkdownpreview
 	autocmd!
