@@ -17,20 +17,11 @@ endfunction
 " autocmd BufReadPost *? call kutsan#autocmds#jumplastknownposition()
 ""
 function! kutsan#autocmds#jumplastknownposition() abort
-	if kutsan#autocmds#shouldrestore()
+	if &buftype ==# '' && index(['diff', 'gitcommit'], &filetype) == -1
 		if line("'\"") > 0 && line("'\"") <= line('$')
 			execute 'normal! g`"zz'
 		endif
 	endif
-endfunction
-
-""
-" Whether or not `mkview`, `loadview` or `g`"` commands should used.
-"
-" @return {boolean} v:true if doable, otherwise v:false.
-""
-function! kutsan#autocmds#shouldrestore() abort
-	return &buftype ==# '' && index(['diff', 'gitcommit'], &filetype) == -1
 endfunction
 
 ""
