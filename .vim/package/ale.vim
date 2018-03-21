@@ -6,8 +6,11 @@ Plug 'w0rp/ale'
 " Always keep sign column open even there is no error remain.
 let g:ale_sign_column_always = 1
 
-" The number of milliseconds before start linting.
+" Number of milliseconds before sending completion signal.
 let g:ale_completion_delay = 2000
+
+" Number of milliseconds before start linting.
+let g:ale_lint_delay = 1000
 
 " The sign for errors in the sign gutter.
 let g:ale_sign_error = '•'
