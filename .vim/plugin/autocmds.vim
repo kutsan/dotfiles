@@ -45,7 +45,10 @@ augroup end
 " Automatically save the current buffer.
 augroup autosavebuffer
 	autocmd!
-	autocmd InsertLeave,TextChanged * nested silent! update
+	autocmd InsertLeave,TextChanged * nested
+		\ if empty(&buftype) && !empty(bufname('')) |
+			\ silent! update |
+		\ endif
 	autocmd CursorHold * silent! checktime
 augroup end
 
