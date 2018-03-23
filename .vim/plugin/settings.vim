@@ -129,6 +129,17 @@ set wildignorecase " Ignore case when completing in command menu.
 set wildmenu " Command-line completion operates in an enhanced mode.
 set wildmode=full " Wildmenu options.
 
+" Terminal Vim
+if !has('nvim') && !has('gui')
+	" Ensure starting cursor in its box form.
+	silent execute "!printf '[0 q'"
+
+	" Change cursor shape in different modes.
+	let &t_SI = "\<Esc>[6 q"
+	let &t_SR = "\<Esc>[4 q"
+	let &t_EI = "\<Esc>[2 q"
+endif
+
 " GUI
 if has('gui_running')
 	set browsedir=buffer " Use the same directory as current buffer's path when browsing files.
