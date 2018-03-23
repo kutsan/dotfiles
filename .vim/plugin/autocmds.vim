@@ -1,13 +1,3 @@
-scriptencoding UTF-8
-
-" Ensure the cursor is its box form in vanilla Vim.
-augroup ensurecursorbox
-	autocmd!
-	if !has('nvim') && !has('gui')
-		autocmd VimEnter * silent execute "!printf '[0 q'" | redraw!
-	endif
-augroup end
-
 " Toggle relative numbers in Insert/Normal mode.
 augroup togglerelativelinenumbers
 	autocmd!
