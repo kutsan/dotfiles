@@ -105,9 +105,6 @@ nnoremap <Leader>K K
 " Join lines with a minimum of two lines.
 nnoremap <Leader>J J
 
-" Correct bad indent while pasting.
-nnoremap <Leader>p p=`]
-nnoremap <Leader>P P=`]
 
 " -- Terminal ------------------------------------
 
