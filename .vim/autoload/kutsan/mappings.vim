@@ -119,3 +119,25 @@ function! kutsan#mappings#executeoperator(type, ...) abort
 		unlet b:executeoperatorview
 	endif
 endfunction
+
+""
+" Toggle zoom current buffer in the new tab.
+"
+" nnoremap <silent> <Leader>z :call kutsan#mappings#togglezoom()<Enter>
+""
+function! kutsan#mappings#togglezoom() abort
+	if winnr('$') > 1
+		tab split
+	elseif
+		\ len(
+			\ filter(
+				\ map(
+					\ range(tabpagenr('$')),
+					\ 'tabpagebuflist(v:val + 1)'
+				\ ),
+				\ printf('index(v:val, %s) >= 0', bufnr(''))
+			\ )
+		\ ) > 1
+		tabclose
+	endif
+endfunction
