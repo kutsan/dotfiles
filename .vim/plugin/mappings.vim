@@ -105,6 +105,8 @@ nnoremap <Leader>K K
 " Join lines with a minimum of two lines.
 nnoremap <Leader>J J
 
+" Toggle zoom current buffer in the new tab.
+nnoremap <silent> <Leader>z :call kutsan#mappings#togglezoom()<Enter>
 
 " -- Terminal ------------------------------------
 
