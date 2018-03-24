@@ -1,8 +1,14 @@
 " Toggle relative numbers in Insert/Normal mode.
 augroup togglerelativelinenumbers
 	autocmd!
-	autocmd InsertEnter * set norelativenumber
-	autocmd InsertLeave * set relativenumber
+	autocmd InsertEnter,BufLeave,WinLeave,FocusLost *
+		\ if &l:number && empty(&buftype) |
+			\ setlocal norelativenumber |
+		\ endif
+	autocmd InsertLeave,BufEnter,WinEnter,FocusGained *
+		\ if &l:number && empty(&buftype) |
+			\ setlocal relativenumber |
+		\ endif
 augroup end
 
 " Automatically remove trailing whitespace characters.
