@@ -53,6 +53,7 @@
 				- [neovim](https://github.com/neovim/node-client) - Neovim Node support for plugins
 				- [trash-cli](https://github.com/sindresorhus/trash-cli) - Move files and folders to the trash
 				- [node-notifier-cli](https://github.com/mikaelbr/node-notifier-cli) - Send cross-platform native notifications
+				- [authcli](https://github.com/sam3d/auth) - Two-factor authentication token manager
 		- [python](https://www.python.org) - High-level programming language for general-purpose programming
 			- [pip](https://pip.pypa.io) - Python package manager to install and manage packages written in Python
 				- [ranger](https://github.com/ranger/ranger) - Text-based file system manager for the console with Vim-like key bindings
