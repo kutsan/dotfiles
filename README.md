@@ -64,15 +64,15 @@
 				- [asciinema](https://github.com/asciinema/asciinema) - Record and share terminal sessions as text-based colored format
 				- [vint](https://github.com/Kuniwak/vint) - Extensible, high performance Vimscript linter and analysis tool
 				- [neovim](https://github.com/neovim/python-client) - Neovim Python support for plugins
-				- [mal](https://github.com/ryukinix/mal) - MyAnimeList command-line interface
+				- [mal](https://github.com/ryukinix/mal) - MyAnimeList client
 				- [stig](https://github.com/rndusr/stig) - TUI and CLI interface for transmission-daemon
 				- [terminal-colors](https://github.com/eikenb/terminal-colors) - Test utility for color capabilities of terminal
 		- [coreutils](https://www.gnu.org/software/coreutils/coreutils.html) - GNU core utilities for basic file, shell and text manipulation
 		- [findutils](https://www.gnu.org/software/findutils) - GNU basic directory searching utilities that provides find, locate and xargs
 		- [moreutils](https://joeyh.name/code/moreutils) - Collection of the useful Unix tools
 		- [less](http://www.greenwoodsoftware.com/less) - Standard file pager for Unix-like systems
-		- [curl](https://github.com/curl/curl) - Command-line tool and library for transferring data with URL syntax
-		- [wget](https://www.gnu.org/software/wget) - Command-line tool for retrieving files using the most widely-used Internet protocols
+		- [curl](https://github.com/curl/curl) - Tool for transferring data using various protocols
+		- [wget](https://www.gnu.org/software/wget) - Tool for retrieving files using the most widely-used Internet protocols
 		- [gnupg](https://www.gnupg.org) - Hybrid-encryption software suit, free implementation of the OpenPGP standard
 		- [nmap](https://github.com/nmap/nmap) - Network security scanner and mapper for exploration and security auditing
 		- [openssl](https://github.com/openssl/openssl) - Toolkit for the Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols
@@ -80,7 +80,7 @@
 		- [openvpn](https://github.com/OpenVPN/openvpn) - Virtual private networks for creating OpenSSL powered secure connections
 		- [rsync](https://rsync.samba.org) - Utility that provides fast incremental file transfer
 		- [docker](https://github.com/docker/docker) - Container engine that provides abstraction and automation of virtualization
-		- [fzf](https://github.com/junegunn/fzf) - General-purpose command-line fuzzy finder that can be used among other Unix tools
+		- [fzf](https://github.com/junegunn/fzf) - General-purpose fuzzy finder that can be used among other Unix tools
 		- [htop](https://github.com/hishamhm/htop) - Interactive text-based system monitor, process viewer and process manager
 		- [newsboat](https://github.com/newsboat/newsboat) - RSS/Atom feed reader
 		- [neomutt](https://github.com/neomutt/neomutt) - Fork of the mail user agent mutt with new features and patches
