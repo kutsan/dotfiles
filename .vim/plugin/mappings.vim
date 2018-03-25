@@ -142,6 +142,9 @@ xnoremap K :move '<-2<Enter>gv=gv
 " Select [a]n [e]ntire buffer.
 xnoremap ae GoggV
 
+" Select [i]nner [l]ine.
+xnoremap il <Esc>^vg_
+
 " Alternative end and beginning of line shortcuts.
 xnoremap H ^
 xnoremap L g_
@@ -166,8 +169,8 @@ vnoremap <silent> gx :<C-u>call kutsan#mappings#executeoperator(visualmode(), 1)
 
 " -- Operator ------------------------------------
 
-" [a]n [e]ntire buffer.
-onoremap <silent> ae :<C-u>normal! VGogg<Enter>
+" Operate [a]n [e]ntire buffer.
+onoremap <silent> ae :<C-u>execute 'normal! m`' <Bar> keepjumps normal! ggVG<Enter>
 
 " Last selected area.
 onoremap gv :<C-u>normal! gv<Enter>
@@ -175,6 +178,9 @@ onoremap gv :<C-u>normal! gv<Enter>
 " End and beginning of line.
 onoremap H ^
 onoremap L $
+
+" Operate [i]nner [l]ine.
+onoremap <silent> il :<C-u>normal! ^vg_<Enter>
 
 " -- Terminal ------------------------------------
 
