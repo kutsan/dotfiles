@@ -73,6 +73,9 @@ set signcolumn=yes " Always draw the sign column even there is no sign in it.
 set title " Show title as in 'titlestring' in title bar of window.
 set titlestring=%f " Format of the title used by 'title'.
 
+" Diff
+set diffopt=filler,vertical,foldcolumn:0 " Option settings for diff mode.
+
 " Formatting
 set formatoptions=jcql " General text formatting options used by many mechanics.
 set formatprg=par\ -w80 " External formatter program that will be used with `gq` operator.
