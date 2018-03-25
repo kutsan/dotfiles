@@ -27,7 +27,7 @@ nnoremap K 5k
 " Avoid collision between <Tab> and <C-i> with mapping <C-i> to <F6> system-wide.
 nnoremap <F6> <C-i>
 
-" Visual select a single line in character-wise without new-line character.
+" Visual select a single line in character-wise without newline character.
 nnoremap vv _vg_
 
 " Override Ex mode with run @q.
