@@ -17,7 +17,7 @@ endfunction
 " autocmd BufReadPost *? call kutsan#autocmds#jumplastknownposition()
 ""
 function! kutsan#autocmds#jumplastknownposition() abort
-	if &buftype ==# '' && index(['diff', 'gitcommit'], &filetype) == -1
+	if empty(&buftype) && index(['diff', 'gitcommit'], &filetype) == -1
 		if line("'\"") > 0 && line("'\"") <= line('$')
 			execute 'normal! g`"zz'
 		endif

@@ -50,4 +50,4 @@ augroup vimplugplugininstallation
 			\ PlugInstall --sync |
 			\ quitall |
 		\ endif
-augroup END
+augroup end
