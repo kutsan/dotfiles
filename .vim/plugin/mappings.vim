@@ -13,9 +13,6 @@ nnoremap <Tab> za
 nnoremap / /\v
 nnoremap ? ?\v
 
-" Clear search register and thus highlighting.
-nnoremap <silent> <BS> :let @/ = ''<Enter>
-
 " Store relative line number jumps in the jumplist if they exceed a threshold.
 nnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
 nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
@@ -61,14 +58,20 @@ nnoremap <silent> gx :<C-u>let b:executeoperatorview = winsaveview() <Bar> set o
 nnoremap <silent> gxl :<C-u>let b:executeoperatorview = winsaveview() <Bar> set operatorfunc=kutsan#mappings#executeoperator <Bar> execute 'normal!' v:count 'g@_'<Enter>
 
 " Add [count] blank lines above or below the cursor.
-nnoremap <silent> [<Space> :<C-u>put! =repeat(nr2char(10), v:count1) <Bar> ']+1<Enter>
-nnoremap <silent> ]<Space> :<C-u>put =repeat(nr2char(10), v:count1) <Bar> '[-1<Enter>
+nnoremap [<Space> :<C-u>put! =repeat(nr2char(10), v:count1) <Bar> ']+1<Enter>
+nnoremap ]<Space> :<C-u>put =repeat(nr2char(10), v:count1) <Bar> '[-1<Enter>
 
 " Toggle common options.
-nnoremap <silent> gos :set spell!<Enter>
-nnoremap <silent> gow :set wrap!<Enter>
-nnoremap <silent> goh :set hlsearch!<Enter>
-nnoremap <silent> gol :set list!<Enter>
+nnoremap <silent> cos :set spell!<Enter>
+nnoremap <silent> cow :set wrap!<Enter>
+nnoremap <silent> coh :set hlsearch!<Enter>
+nnoremap <silent> coH :let @/ = ''<Enter>
+nnoremap <silent> col :set list!<Enter>
+nnoremap <silent> cop :set paste!<Enter>
+
+" Improve tag jump mappings.
+nnoremap <C-]> g<C-]>
+nnoremap <silent> g[ :pop<Enter>
 
 " Navigate over [l]ocation list.
 nnoremap <silent> [l :lopen<Enter>
@@ -94,6 +97,10 @@ nnoremap <silent> [a :previous<Enter>
 nnoremap <silent> ]a :next<Enter>
 nnoremap <silent> [A :first<Enter>
 nnoremap <silent> ]A :last<Enter>
+
+" Navigate over [t]abs.
+nnoremap <silent> [t :tabprevious<Enter>
+nnoremap <silent> ]t :tabnext<Enter>
 
 " Shortcuts for quiting.
 nnoremap <silent> <Leader>q :quit<Enter>
