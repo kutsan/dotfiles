@@ -1,3 +1,3 @@
 " Use more convenient tag jump mappings.
-nnoremap <Enter> g<C-]>
-nnoremap <BS> :pop<Enter>
+nnoremap <buffer> <Enter> g<C-]>
+nnoremap <buffer> <BS> :pop<Enter>
