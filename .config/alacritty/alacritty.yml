@@ -1,5 +1,4 @@
-# -- Options {{{1
-# --------------------------------------------------------------------------------------------------
+# -- Options -------------------------------------
 
 env:
   TERM: xterm-256color
@@ -55,8 +54,7 @@ font:
 
   use_thin_strokes: true
 
-# -- Colors {{{1
-# --------------------------------------------------------------------------------------------------
+# -- Colors --------------------------------------
 
 custom_cursor_colors: true
 
@@ -100,8 +98,7 @@ colors:
     cyan:       '#66cccc'
     white:      '#dddddd'
 
-# -- Mappings {{{1
-# --------------------------------------------------------------------------------------------------
+# -- Mappings ------------------------------------
 
 mouse_bindings:
   - { mouse: Middle, action: PasteSelection }
@@ -279,5 +276,3 @@ key_bindings:
   - { key: Period,   mods: Alt,       chars: "\x1b."                       } # Alt + .
   - { key: Key8,     mods: Alt|Shift, chars: "\x1b*"                       } # Alt + *
   - { key: Key3,     mods: Alt|Shift, chars: "\x1b#"                       } # Alt + #
-
-# }}} vim: foldmethod=marker foldlevel=0
