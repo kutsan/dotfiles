@@ -29,6 +29,5 @@ https://github.com/zsh-users/zsh/releases.atom "~zsh" software
 
 # Comics
 	http://localhost:0007 "~▵ Comics"
-http://www.commitstrip.com/en/feed "~CommitStrip" comics
 https://www.oglaf.com/feeds/rss "~Oglaf" comics
 https://xkcd.com/atom.xml "~xkcd" comics
