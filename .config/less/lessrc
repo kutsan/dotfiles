@@ -52,4 +52,4 @@ export LESS_TERMCAP_ZV=$(tput rsubm) # End subscript mode.
 export LESS_TERMCAP_ZO=$(tput ssupm) # Enter superscript mode.
 export LESS_TERMCAP_ZW=$(tput rsupm) # End superscript mode.
 
-# }}} vim: filetype=zsh
+# vim: filetype=zsh
