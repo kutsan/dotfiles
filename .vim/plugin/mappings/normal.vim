@@ -1,5 +1,3 @@
-" -- Normal Mode ---------------------------------
-
 " Pane nagivation.
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -47,15 +45,8 @@ nnoremap Y y$
 nnoremap c* *``cgn
 nnoremap c# #``cgN
 
-" Toggle terminal buffer.
-nnoremap <silent> <C-z> :call kutsan#mappings#toggleterminal()<Enter>
-
-" Construct range operator.
-nnoremap <silent> ! :<C-u>set operatorfunc=kutsan#mappings#exclamationoperator<Enter>g@
-
-" Send given motion to appropriate REPL.
-nnoremap <silent> gx :<C-u>let b:executeoperatorview = winsaveview() <Bar> set operatorfunc=kutsan#mappings#executeoperator<Enter>g@
-nnoremap <silent> gxl :<C-u>let b:executeoperatorview = winsaveview() <Bar> set operatorfunc=kutsan#mappings#executeoperator <Bar> execute 'normal!' v:count 'g@_'<Enter>
+" Use `s` for registers.
+nnoremap s "
 
 " Add [count] blank lines above or below the cursor.
 nnoremap [<Space> :<C-u>put! =repeat(nr2char(10), v:count1) <Bar> ']+1<Enter>
@@ -114,82 +105,3 @@ nnoremap <Leader>J J
 
 " Toggle zoom current buffer in the new tab.
 nnoremap <silent> <Leader>z :call kutsan#mappings#togglezoom()<Enter>
-
-" -- Terminal ------------------------------------
-
-" Jump to the beginning and end of line.
-cnoremap <C-a> <Home>
-cnoremap <C-e> <End>
-
-" Jump previous and next commands from history.
-cnoremap <C-j> <Down>
-cnoremap <C-k> <Up>
-
-" Navigate left and right characters.
-cnoremap <C-h> <Left>
-cnoremap <C-l> <Right>
-
-" Substitute with 'very magic' mode.
-cnoremap <C-s>/ s/\v//gc<Left><Left><Left><Left>
-
-" Move between matches without leaving incremental search.
-cnoremap <expr> <Tab> getcmdtype() ==# '/' \|\| getcmdtype() ==# '?' ? '<Enter>/<C-r>/' : '<C-z>'
-cnoremap <expr> <S-Tab> getcmdtype() ==# '/' \|\| getcmdtype() ==# '?' ? '<Enter>?<C-r>/' : '<S-Tab>'
-
-" -- Visual --------------------------------------
-
-" Stay in visual mode when indenting.
-xnoremap < <gv
-xnoremap > >gv
-
-" Bubble the lines to up or down.
-xnoremap J :move '>+1<Enter>gv=gv
-xnoremap K :move '<-2<Enter>gv=gv
-
-" Select [a]n [e]ntire buffer.
-xnoremap ae GoggV
-
-" Select [i]nner [l]ine.
-xnoremap il <Esc>^vg_
-
-" Alternative end and beginning of line shortcuts.
-xnoremap H ^
-xnoremap L g_
-
-" Always search with 'very magic' mode.
-xnoremap / /\v
-xnoremap ? ?\v
-
-" Increment and decrement selected number(s).
-xnoremap + g<C-a>gv
-xnoremap - g<C-x>gv
-
-" Execute macro 'q' over visual line selections.
-xnoremap Q :'<,'>:normal! @q<CR>
-
-" Make current visual selection active search text.
-xnoremap * :<C-u>call kutsan#mappings#visualsetsearch('/')<Enter>/<C-r>=@/<Enter><Enter>
-xnoremap # :<C-u>call kutsan#mappings#visualsetsearch('?')<Enter>?<C-r>=@/<Enter><Enter>
-
-" Send current selection to appropriate REPL.
-vnoremap <silent> gx :<C-u>call kutsan#mappings#executeoperator(visualmode(), 1)<Enter>
-
-" -- Operator ------------------------------------
-
-" Operate [a]n [e]ntire buffer.
-onoremap <silent> ae :<C-u>execute 'normal! m`' <Bar> keepjumps normal! ggVG<Enter>
-
-" Last selected area.
-onoremap gv :<C-u>normal! gv<Enter>
-
-" End and beginning of line.
-onoremap H ^
-onoremap L $
-
-" Operate [i]nner [l]ine.
-onoremap <silent> il :<C-u>normal! ^vg_<Enter>
-
-" -- Terminal ------------------------------------
-
-" Escape from terminal mode and toggle terminal buffer.
-tnoremap <silent> <C-z> <C-\><C-n>:call kutsan#mappings#toggleterminal()<Enter>
