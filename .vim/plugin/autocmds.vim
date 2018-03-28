@@ -39,6 +39,14 @@ augroup setprojectroot
 	autocmd VimEnter,BufEnter * call kutsan#autocmds#setprojectroot()
 augroup end
 
+" Local command-line window settings.
+augroup commandlinewindowsettings
+	autocmd!
+	autocmd CmdwinEnter *
+		\ setlocal signcolumn=no nonumber norelativenumber |
+		\ startinsert
+augroup end
+
 " Start insert mode and disable line numbers on terminal buffer.
 augroup terminalsettings
 	autocmd!
