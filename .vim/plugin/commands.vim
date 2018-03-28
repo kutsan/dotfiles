@@ -6,3 +6,6 @@ command! -nargs=* Docs call kutsan#commands#docs(<q-args>)
 
 " Start profiling until it's invoked with ! modifier once again.
 command! -bang Profile call kutsan#commands#profile(<bang>v:false)
+
+" Display the contents of all registers in vertical split like `:registers`.
+command! Registers call kutsan#commands#registers()
