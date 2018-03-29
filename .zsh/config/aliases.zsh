@@ -50,6 +50,7 @@ alias search="rg \
 	--smart-case \
 	--glob '!{.git/*,node_modules/*,$(basename $HISTFILE)}' \
 	--regexp"
+alias note="$EDITOR +'cd ~/.notes/' ~/.notes/index.md"
 
 # Global Aliases
 alias -g ND='*(/om[1])' # Newest directory.
@@ -84,7 +85,7 @@ alias c-mailcap="$EDITOR +'cd ~/.mutt/' ~/.mutt/mailcap"
 alias c-mpv="$EDITOR +'cd ~/.config/mpv/' ~/.config/mpv/"
 alias c-mutt="$EDITOR +'cd ~/.mutt/' ~/.mutt/muttrc"
 alias c-newsboat="$EDITOR +'cd ~/.newsboat/' ~/.newsboat/config"
-alias c-ranger="$EDITOR +'cd ~/.config/ranger/' ~/.config/ranger/"
+alias c-ranger="$EDITOR +'cd ~/.config/ranger/' ~/.config/ranger/rc.conf"
 alias c-readme="$EDITOR ~/README.md"
 alias c-ssh="$EDITOR +'cd ~/.ssh/' ~/.ssh/config"
 alias c-stig="$EDITOR +'cd ~/.config/stig/' ~/.config/stig/rc"
