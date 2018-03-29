@@ -18,3 +18,12 @@ vnoremap <buffer> 0 g0
 nnoremap <buffer> ^ g^
 onoremap <buffer> ^ g^
 vnoremap <buffer> ^ g^
+
+" Toggle statusline under Android.
+if system('uname --operating-system') =~# 'Android'
+	augroup markdowntogglestatusline
+		autocmd!
+		autocmd BufEnter <buffer> set laststatus=0
+		autocmd BufLeave <buffer> set laststatus=2
+	augroup end
+endif
