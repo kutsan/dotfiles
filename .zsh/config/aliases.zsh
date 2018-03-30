@@ -51,6 +51,7 @@ alias search="rg \
 	--glob '!{.git/*,node_modules/*,$(basename $HISTFILE)}' \
 	--regexp"
 alias note="$EDITOR +'cd ~/.notes/' ~/.notes/index.md"
+alias myip='curl http://checkip.amazonaws.com'
 
 # Global Aliases
 alias -g ND='*(/om[1])' # Newest directory.
