@@ -2,10 +2,6 @@
 xnoremap < <gv
 xnoremap > >gv
 
-" Bubble the lines to up or down.
-xnoremap J :move '>+1<Enter>gv=gv
-xnoremap K :move '<-2<Enter>gv=gv
-
 " Alternative end and beginning of line shortcuts.
 xnoremap H ^
 xnoremap L g_
@@ -14,8 +10,15 @@ xnoremap L g_
 xnoremap / /\v
 xnoremap ? ?\v
 
+" Use `s` for registers.
+xnoremap s "
+
 " Execute macro 'q' over visual line selections.
-xnoremap Q :'<,'>:normal! @q<Enter>
+xnoremap Q :'<,'>normal! @q<Enter>
+
+" Bubble lines in visual line mode, jump in character-wise visual mode.
+xnoremap <expr> J mode() ==# 'V' ? ":move '>+1<Enter>gv=gv" : '5j'
+xnoremap <expr> K mode() ==# 'V' ? ":move '<-2<Enter>gv=gv" : '5k'
 
 " Make current visual selection active search text.
 xnoremap * :<C-u>call kutsan#mappings#visualsetsearch('/')<Enter>/<C-r>=@/<Enter><Enter>
