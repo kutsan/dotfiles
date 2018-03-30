@@ -4,26 +4,13 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-" Toggle fold at current position.
-nnoremap <Tab> za
-
 " Always search with 'very magic' mode.
 nnoremap / /\v
 nnoremap ? ?\v
 
-" Store relative line number jumps in the jumplist if they exceed a threshold.
-nnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
-nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
-
 " Forward and backward jump.
 nnoremap J 5j
 nnoremap K 5k
-
-" Avoid collision between <Tab> and <C-i> with mapping <C-i> to <F6> system-wide.
-nnoremap <F6> <C-i>
-
-" Visual select a single line in character-wise without newline character.
-nnoremap vv _vg_
 
 " Override Ex mode with run @q.
 nnoremap Q @q
@@ -35,22 +22,28 @@ nnoremap <C-b> <C-^>
 nnoremap H ^
 nnoremap L $
 
-" Send contents of a `x` command to the black hole register.
+" Always send contents of a `x` command to the black hole register.
 nnoremap x "_x
 
 " Make `Y` acting like `C`, `D`.
 nnoremap Y y$
 
-" Quickly refactor variables.
+" Refactor word under cursor.
 nnoremap c* *``cgn
 nnoremap c# #``cgN
 
 " Use `s` for registers.
 nnoremap s "
 
-" Add [count] blank lines above or below the cursor.
-nnoremap [<Space> :<C-u>put! =repeat(nr2char(10), v:count1) <Bar> ']+1<Enter>
-nnoremap ]<Space> :<C-u>put =repeat(nr2char(10), v:count1) <Bar> '[-1<Enter>
+" Lookup definition under cursor.
+nnoremap gt K
+
+" Store relative line number jumps in the jumplist if they exceed a threshold.
+nnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
+nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
+
+" Toggle zoom current buffer in the new tab.
+nnoremap <silent> gz :call kutsan#mappings#togglezoom()<Enter>
 
 " Toggle common options.
 nnoremap <silent> cos :set spell!<Enter>
@@ -60,48 +53,49 @@ nnoremap <silent> coH :let @/ = ''<Enter>
 nnoremap <silent> col :set list!<Enter>
 nnoremap <silent> cop :set paste!<Enter>
 
-" Improve tag jump mappings.
-nnoremap <C-]> g<C-]>
-nnoremap <silent> g[ :pop<Enter>
+" Add [count] blank lines above or below the cursor.
+nnoremap [<Space> :<C-u>put! =repeat(nr2char(10), v:count1) <Bar> ']+1<Enter>
+nnoremap ]<Space> :<C-u>put =repeat(nr2char(10), v:count1) <Bar> '[-1<Enter>
 
-" Navigate over [l]ocation list.
-nnoremap <silent> [l :lopen<Enter>
+" Navigation mappings for [l]ocation list.
+nnoremap <silent> =ol :lopen<Enter>
 nnoremap <silent> [l :lprevious<Enter>
 nnoremap <silent> ]l :lnext<Enter>
-nnoremap <silent> [L :lfirst<Enter>
-nnoremap <silent> ]L :llast<Enter>
+nnoremap <silent> [L :lpfile<Enter>
+nnoremap <silent> ]L :lnfile<Enter>
+nnoremap <silent> [<C-l> :lfirst<Enter>
+nnoremap <silent> ]<C-l> :llast<Enter>
 
-" Navigate over [q]uickfix list.
+" Navigation mappings for [q]uickfix list.
+nnoremap <silent> =oq :copen<Enter>
 nnoremap <silent> [q :cprevious<Enter>
 nnoremap <silent> ]q :cnext<Enter>
-nnoremap <silent> [Q :cfirst<Enter>
-nnoremap <silent> ]Q :clast<Enter>
+nnoremap <silent> [Q :cpfile<Enter>
+nnoremap <silent> ]Q :cnfile<Enter>
+nnoremap <silent> [<C-q> :cfirst<Enter>
+nnoremap <silent> ]<C-q> :clast<Enter>
 
-" Navigate over [b]uffer list.
+" Navigation mappings for [b]uffer list.
+nnoremap <silent> =ob :buffers!<Enter>
 nnoremap <silent> [b :bprevious<Enter>
 nnoremap <silent> ]b :bnext<Enter>
 nnoremap <silent> [B :bfirst<Enter>
 nnoremap <silent> ]B :blast<Enter>
 
-" Navigate over [a]rgument list.
+" Navigation mappings for [a]rgument list.
+nnoremap <silent> =oa :args<Enter>
 nnoremap <silent> [a :previous<Enter>
 nnoremap <silent> ]a :next<Enter>
 nnoremap <silent> [A :first<Enter>
 nnoremap <silent> ]A :last<Enter>
 
-" Navigate over [t]abs.
+" Navigation mappings for [t]abs.
+nnoremap <silent> =ot :tabs<Enter>
 nnoremap <silent> [t :tabprevious<Enter>
 nnoremap <silent> ]t :tabnext<Enter>
 
-" Shortcuts for quiting.
-nnoremap <silent> <Leader>q :quit<Enter>
-nnoremap <silent> <Leader>Q :quitall<Enter>
-
-" Lookup definition under cursor.
-nnoremap <Leader>K K
-
-" Join lines with a minimum of two lines.
-nnoremap <Leader>J J
-
-" Toggle zoom current buffer in the new tab.
-nnoremap <silent> <Leader>z :call kutsan#mappings#togglezoom()<Enter>
+" Navigation mappings for ta[g]s.
+nnoremap <C-]> g<C-]>
+nnoremap <silent> =og :tags<Enter>
+nnoremap <silent> [g :pop<Enter>
+nnoremap <silent> ]g :tag<Enter>
