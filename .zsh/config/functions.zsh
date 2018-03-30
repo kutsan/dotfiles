@@ -2,13 +2,6 @@
 source $ZDOTDIR/lib/console.zsh
 
 ##
-# Returns the bare IP address.
-##
-function myip() {
-	command curl --silent 'https://httpbin.org/ip' | command grep --only-matching --extended-regexp '[0-9\.]*'
-}
-
-##
 # Makes directory and `cd`s into it.
 #
 # @param {string} $1 Directory name that will be created.
