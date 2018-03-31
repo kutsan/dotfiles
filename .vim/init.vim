@@ -27,7 +27,7 @@ let g:loaded_tutor_mode_plugin = 1
 let g:loaded_matchit = 1
 
 " Automatically install vim-plug itself if it's not installed.
-if empty(glob('~/.vim/autoload/plug.vim'))
+if !filereadable($HOME . '/.vim/autoload/plug.vim')
 	silent !curl
 		\ --fail --location --create-dirs --output ~/.vim/autoload/plug.vim
 		\ 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'

@@ -16,7 +16,7 @@ let g:NERDTreeWinSize = 35
 let g:NERDTreeAutoDeleteBuffer = v:true
 
 " Custom file where bookmarks are saved.
-let g:NERDTreeBookmarksFile = expand('$HOME') . '/.vim/cache/share/nerdtreebookmarks'
+let g:NERDTreeBookmarksFile = $HOME . '/.vim/cache/share/nerdtreebookmarks'
 
 " Disable the help text.
 let g:NERDTreeMinimalUI = v:true
