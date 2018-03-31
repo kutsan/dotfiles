@@ -48,6 +48,7 @@ set pumheight=10 " Maximum number of items to show in the pop-up menu for comple
 set report=0 " Threshold for reporting number of lines changed.
 set scrolloff=8 " Minimum number of screen lines to keep above and below the cursor.
 set sessionoptions-=options " Options for `mksession` command.
+set shellpipe=&> " Fix potentional screen flashing problems with not using `tee`.
 set shortmess=filmnrwxoOstTIc " Use abbreviations and short messages in command menu line.
 set sidescroll=20 " Columns to scroll horizontally when cursor is moved off the screen.
 set sidescrolloff=5 " Minimum number of screen columns to keep to cursor right.
@@ -99,6 +100,8 @@ set foldmethod=indent " Use indent model for folding mechanism.
 set foldtext=kutsan#settings#foldtext() " Use custom fold text function for folds.
 
 " Search
+let &grepprg = 'rg --vimgrep --no-messages --no-ignore --hidden --follow --smart-case --glob "!.git/" --glob "!node_modules/" --regexp' " Program to use for the :grep command.
+set grepformat=%f:%l:%c:%m,%f:%l:%m " Format to recognize for the :grep command output.
 set ignorecase " Make default search is not case sensitive.
 set incsearch " Instantly show results when you start searching.
 set nohlsearch " Disable highlight the matched search results by default.
