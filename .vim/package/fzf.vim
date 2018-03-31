@@ -34,7 +34,7 @@ let g:fzf_action = {
 let g:fzf_history_dir =
 	\ exists('$XDG_DATA_HOME') && isdirectory($XDG_DATA_HOME)
 		\ ? $XDG_DATA_HOME . '/fzf/'
-		\ : expand('$HOME') . '/.local/share/fzf/'
+		\ : $HOME . '/.local/share/fzf/'
 
 " Customize `fzf` colors to match current color scheme.
 let g:fzf_colors = {
