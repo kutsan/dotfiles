@@ -20,7 +20,7 @@ endfunction
 "
 " @param {boolean} bang Stop profiling and quit without triggering events.
 ""
-function! kutsan#commands#profile(bang)
+function! kutsan#commands#profile(bang) abort
 	if !a:bang
 		profile start ~/.vim/cache/log/profile.log
 		profile func *
