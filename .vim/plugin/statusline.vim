@@ -16,6 +16,9 @@ set statusline+=%{repeat('\ ',4)} " Generate space characters given number of ti
 set statusline+=%{kutsan#statusline#linter()}
 set statusline+=%{repeat('\ ',4)}
 
+" Truncate lines to left if they are too long.
+set statusline+=%<
+
 " [2] Relative path to file's directory with trailing '/'.
 set statusline+=%{kutsan#statusline#fileprefix()}
 
