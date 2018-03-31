@@ -57,6 +57,7 @@ function! kutsan#autocmds#showtoc() abort
 	setlocal laststatus=0
 
 	nnoremap <buffer> l <Enter>zt
+	nnoremap <buffer> q :quitall<Enter>
 
 	wincmd H
 	vert resize 35
