@@ -6,4 +6,4 @@ nnoremap <silent> gib :Gblame<Enter>
 nnoremap <silent> gid :Gdiff<Enter>
 nnoremap <silent> gil :Glog<Enter>
 nnoremap <silent> gis :Gstatus<Enter>
-nnoremap gig :Ggrep |
+nnoremap gig :silent Ggrep --perl-regexp ''<Left>
