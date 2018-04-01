@@ -145,7 +145,7 @@ source $TRANSMISSION_HOME/settings.zsh # Build $TRANSMISSION_OPTIONS variable.
 export HIGHLIGHT_OPTIONS='--out-format="xterm256" --style="pablo"'
 
 # less
-source "$HOME/.config/less/lessrc" # Load core options.
+source "$HOME/.config/less/lessrc.zsh" # Load core options.
 export LESSHISTFILE="$HOME/.config/less/lesshistory" # Command and search history file.
 export LESSKEYRC="$HOME/.config/less/lesskey" # Path of the uncompiled lesskey file.
 export LESSKEY="$LESSKEYRC.lwc" # Path of the compiled lesskey file.

@@ -1,4 +1,4 @@
-typeset -a LESS_OPTIONS=(
+typeset -g -a LESS_OPTIONS=(
 	# Make the search smart case sensitive.
 	--ignore-case
 
