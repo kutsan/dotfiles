@@ -14,6 +14,7 @@
 			- [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) - Fish-like auto-suggestions for interactive terminal based on command history
 		- [neovim](https://github.com/neovim/neovim) - The fork of ubiquitous text editor focused on extensibility and usability
 			- [vim-plug](https://github.com/junegunn/vim-plug) - Vim plugin manager with features such as parallel installation and post-update hooks
+			- [iceberg](https://github.com/cocopon/iceberg.vim) - Dark blue color scheme
 			- [ale](https://github.com/w0rp/ale) - Asynchronous lint engine for Neovim and Vim 8+
 			- [auto-pairs](https://github.com/jiangmiao/auto-pairs) - Insert or delete brackets, parens, quotes in pair
 			- [colorizer](https://github.com/chrisbra/Colorizer) - Highlight HEX and RGB color codes and names in their background
@@ -24,8 +25,7 @@
 			- [endwise](https://github.com/tpope/vim-endwise) - Add 'end' keyword in various languages
 			- [fugitive](https://github.com/tpope/vim-fugitive) - Git client
 			- [fzf](https://github.com/junegunn/fzf.vim) - Fuzzy finder fzf as plugin
-			- [grepper](https://github.com/mhinz/vim-grepper) - Search by using popular search tools repository-wise
-			- [iceberg](https://github.com/cocopon/iceberg.vim) - Dark blue color scheme
+			- [goyo](https://github.com/junegunn/goyo.vim) - Distraction-free writing, zen mode
 			- [instant-markdown](https://github.com/suan/vim-instant-markdown) - Preview markdown files in browser
 			- [neosnippet](https://github.com/Shougo/neosnippet) - Snippet engine
 			- [nerdtree](https://github.com/scrooloose/nerdtree) - File explorer
@@ -34,7 +34,6 @@
 			- [prettier](https://github.com/prettier/vim-prettier) - Code formatter prettier integration
 			- [repeat](https://github.com/tpope/vim-repeat) - Repeat command support for various plugins
 			- [signify](https://github.com/mhinz/vim-signify) - Show Git diff in the sign column
-			- [sneak](https://github.com/justinmk/vim-sneak) - Jump to any location specified by two characters
 			- [surround](https://github.com/tpope/vim-surround) - Surround commands for parentheses, brackets, quotes, XML tags
 			- [undotree](https://github.com/mbbill/undotree) - Visualize undo tree
 		- [emacs](https://www.gnu.org/software/emacs) - The operation-system-like text editor
@@ -54,6 +53,7 @@
 				- [trash-cli](https://github.com/sindresorhus/trash-cli) - Move files and folders to the trash
 				- [node-notifier-cli](https://github.com/mikaelbr/node-notifier-cli) - Send cross-platform native notifications
 				- [authcli](https://github.com/sam3d/auth) - Two-factor authentication token manager
+				- [clipboard-cli](https://github.com/sindresorhus/clipboard-cli) - Cross-platform clipboard wrapper
 		- [python](https://www.python.org) - High-level programming language for general-purpose programming
 			- [pip](https://pip.pypa.io) - Python package manager to install and manage packages written in Python
 				- [ranger](https://github.com/ranger/ranger) - Text-based file system manager for the console with Vim-like key bindings
@@ -130,10 +130,20 @@
 	- [Karabiner](https://github.com/tekezo/Karabiner-Elements) - Keyboard customizer
 
 - Android
-	- [Termux](https://github.com/termux/termux-app) - Terminal emulator for Android
+	- [F-Droid](https://github.com/f-droid/fdroidclient) - FOSS application store
+	- [Termux](https://github.com/termux/termux-app) - Terminal emulator
 		- [Styling](https://github.com/termux/termux-styling) - Color schemes and powerline-ready font support
 			- [Nord](https://github.com/kutsan/dotfiles/blob/master/.termux/colors.properties) - Color scheme
 			- FiraCode - Font
+	- [FastHub](https://github.com/k0shk0sh/FastHub) - GitHub client
+	- [android-mpv](https://github.com/mpv-android/mpv-android) - Video player for Android based on libmpv
+	- [Simple Gallery](https://github.com/SimpleMobileTools/Simple-Gallery) - Gallery for viewing photos and videos
+	- [OpenVPN](https://github.com/schwabe/ics-openvpn) - OpenVPN client
+	- [Amaze](https://github.com/TeamAmaze/AmazeFileManager) - File manager
+	- [Tachiyomi](https://github.com/inorichi/tachiyomi) - Manga reader
+	- [Slide for Reddit](https://github.com/ccrama/Slide) - Reddit client
+	- [Open Camera](https://sourceforge.net/projects/opencamera) - Open-source camera application
+	- [Red Moon](https://github.com/LibreShift/red-moon) - Blue light filter and screen dimmer
 
 ## License
 
