@@ -31,7 +31,6 @@
 			- [nerdtree](https://github.com/scrooloose/nerdtree) - File explorer
 			- [nvim-completion-manager](https://github.com/roxma/nvim-completion-manager) - Asynchronous auto-completion framework for Neovim
 			- [polyglot](https://github.com/sheerun/vim-polyglot) - Big collection of language packs as scripts are loaded only on demand
-			- [prettier](https://github.com/prettier/vim-prettier) - Code formatter prettier integration
 			- [repeat](https://github.com/tpope/vim-repeat) - Repeat command support for various plugins
 			- [signify](https://github.com/mhinz/vim-signify) - Show Git diff in the sign column
 			- [surround](https://github.com/tpope/vim-surround) - Surround commands for parentheses, brackets, quotes, XML tags

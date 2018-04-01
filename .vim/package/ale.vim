@@ -32,6 +32,15 @@ let g:ale_set_highlights = v:false
 
 " Define fixers for 'ALEFix' command.
 let g:ale_fixers = {
-	\ 'javascript': ['eslint'],
-	\ 'javascript.jsx': ['eslint'],
+	\ 'html': ['prettier'],
+	\ 'css': ['prettier'],
+	\ 'sass': ['prettier'],
+	\ 'javascript': ['eslint', 'prettier'],
+	\ 'javascript.jsx': ['eslint', 'prettier'],
+	\ 'json': ['prettier'],
+	\ 'graphql': ['prettier'],
+	\ 'markdown': ['prettier']
 \ }
+
+" Define mappings.
+nmap <LocalLeader>f <Plug>(ale_fix)
