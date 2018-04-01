@@ -22,7 +22,6 @@
 			- [devicons](https://github.com/ryanoasis/vim-devicons) - Adds additional file type glyphs to popular plugins
 			- [editorconfig](https://github.com/editorconfig/editorconfig-vim) - EditorConfig integration
 			- [emmet](https://github.com/mattn/emmet-vim) - Emmet integration
-			- [endwise](https://github.com/tpope/vim-endwise) - Add 'end' keyword in various languages
 			- [fugitive](https://github.com/tpope/vim-fugitive) - Git client
 			- [fzf](https://github.com/junegunn/fzf.vim) - Fuzzy finder fzf as plugin
 			- [goyo](https://github.com/junegunn/goyo.vim) - Distraction-free writing, zen mode
