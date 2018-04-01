@@ -1,9 +1,9 @@
-typeset -a TRANSMISSION_DAEMON_FLAGS=(
+typeset -g -a TRANSMISSION_DAEMON_FLAGS=(
 	--download-dir $HOME/Downloads
 	--watch-dir $HOME/Downloads
 )
 
-typeset -a TRANSMISSION_REMOTE_FLAGS=(
+typeset -g -a TRANSMISSION_REMOTE_FLAGS=(
 	--trash-torrent
 )
 
