@@ -125,7 +125,6 @@
 - macOS
 	- [Tunnelblick](https://github.com/Tunnelblick/Tunnelblick) - OpenVPN client
 	- [BetterTouchTool](https://www.boastr.net) - Configurable touchpad gestures
-	- [Karabiner](https://github.com/tekezo/Karabiner-Elements) - Keyboard customizer
 
 - Android
 	- [F-Droid](https://github.com/f-droid/fdroidclient) - FOSS application store
