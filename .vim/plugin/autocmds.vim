@@ -1,3 +1,12 @@
+" Automatically install non-existing plugins.
+augroup autoplugininstallation
+	autocmd VimEnter *
+		\ if exists('g:loaded_plug') && len(filter(values(g:plugs), '!isdirectory(v:val.dir)')) |
+			\ PlugInstall --sync |
+			\ quitall |
+		\ endif
+augroup end
+
 " Toggle relative numbers in Insert/Normal mode.
 augroup togglerelativelinenumbers
 	autocmd!

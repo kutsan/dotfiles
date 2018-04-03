@@ -42,12 +42,3 @@ call plug#begin('~/.vim/bundle')
 		endif
 	endfor
 call plug#end()
-
-" Automatically install non-existing plugins.
-augroup vimplugplugininstallation
-	autocmd VimEnter *
-		\ if len(filter(values(g:plugs), '!isdirectory(v:val.dir)')) |
-			\ PlugInstall --sync |
-			\ quitall |
-		\ endif
-augroup end
