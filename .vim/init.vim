@@ -11,20 +11,20 @@ let g:mapleader = "\<Space>"
 let g:maplocalleader = '\'
 
 " Disable unused built-in plugins.
-let g:loaded_gzip = 1
-let g:loaded_rrhelper = 1
-let g:loaded_tarPlugin = 1
-let g:loaded_zipPlugin = 1
-let g:loaded_netrwPlugin = 1
-let g:loaded_netrwFileHandlers = 1
-let g:loaded_netrwSettings = 1
-let g:loaded_2html_plugin = 1
-let g:loaded_vimballPlugin = 1
-let g:loaded_getscriptPlugin = 1
-let g:loaded_logipat = 1
-let g:loaded_man = 1
-let g:loaded_tutor_mode_plugin = 1
-let g:loaded_matchit = 1
+let g:loaded_gzip = v:true
+let g:loaded_rrhelper = v:true
+let g:loaded_tarPlugin = v:true
+let g:loaded_zipPlugin = v:true
+let g:loaded_netrwPlugin = v:true
+let g:loaded_netrwFileHandlers = v:true
+let g:loaded_netrwSettings = v:true
+let g:loaded_2html_plugin = v:true
+let g:loaded_vimballPlugin = v:true
+let g:loaded_getscriptPlugin = v:true
+let g:loaded_logipat = v:true
+let g:loaded_man = v:true
+let g:loaded_tutor_mode_plugin = v:true
+let g:loaded_matchit = v:true
 
 " Automatically install vim-plug itself if it's not installed.
 if !filereadable($HOME . '/.vim/autoload/plug.vim')
