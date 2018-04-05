@@ -73,3 +73,15 @@ augroup manshowtoc
 		autocmd FileType man call kutsan#autocmds#showtoc()
 	endif
 augroup end
+
+" Open file explorer if argument list contains at least one directory.
+augroup handledirectoryopen
+	autocmd!
+	autocmd VimEnter * call kutsan#autocmds#handledirectoryopen()
+augroup end
+
+" Create directory path if it's not exist.
+augroup handledirectorycreation
+	autocmd!
+	autocmd BufNewFile * call kutsan#autocmds#handledirectorycreation()
+augroup end
