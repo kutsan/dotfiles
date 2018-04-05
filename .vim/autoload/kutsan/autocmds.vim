@@ -42,6 +42,37 @@ function! kutsan#autocmds#trimtrailingspaces() abort
 endfunction
 
 ""
+" Open file explorer if argument list contains at least one directory.
+"
+" autocmd VimEnter * call kutsan#autocmds#handledirectoryopen()
+""
+function! kutsan#autocmds#handledirectoryopen() abort
+	let l:directory = expand('<amatch>')
+
+	if isdirectory(l:directory)
+		execute printf('cd %s', fnameescape(l:directory))
+
+		if exists(':NERDTree')
+			NERDTree
+			only
+		endif
+	endif
+endfunction
+
+""
+" Create directory path if it's not exist.
+"
+" autocmd BufNewFile * call kutsan#autocmds#handledirectorycreation()
+""
+function! kutsan#autocmds#handledirectorycreation() abort
+	let l:directory = expand('%:h')
+
+	if !isdirectory(l:directory)
+		call mkdir(l:directory, 'p')
+	endif
+endfunction
+
+""
 " Launch table of contents to the left as vertical pane for manual pages.
 "
 " autocmd FileType man call kutsan#autocmds#showtoc()
