@@ -52,6 +52,7 @@ alias search="rg \
 	--regexp"
 alias note="$EDITOR +'cd ~/.notes/' ~/.notes/index.md"
 alias myip='curl http://checkip.amazonaws.com'
+alias mutt='neomutt'
 
 # Global Aliases
 alias -g ND='*(/om[1])' # Newest directory.
