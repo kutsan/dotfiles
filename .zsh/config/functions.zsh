@@ -173,7 +173,7 @@ function b() {
 						--exact \
 						--height='20%' \
 						--preview='eval ls --almost-all --classify --color=always --group-directories-first --literal $(echo {} | cut --delimiter=" " --fields=2 -) 2>/dev/null' \
-						--preview-window='right:80%' \
+						--preview-window='right:65%' \
 					| cut --delimiter=' ' --fields=2
 			)
 		}
