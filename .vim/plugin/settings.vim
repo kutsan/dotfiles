@@ -1,18 +1,16 @@
 " Encoding
 set encoding=UTF-8 " Default encoding. (vim-only)
 scriptencoding UTF-8 " Default encoding for current script.
+set fileformats=unix " Only use Unix end-of-line format.
 
 " Shared Data
-if has('nvim')
-	set shada+=n~/.vim/cache/share/nviminfo
-else
-	set viminfo+=!,n~/.vim/cache/share/viminfo
-endif
+set viminfo=!,'100,<50,s10,h
+execute printf('set viminfo+=n~/.vim/cache/share/%s', has('nvim') ? 'nviminfo' : 'viminfo')
 
 " Colors
 set background=dark " Choose dark colors if available.
 set termguicolors " Enable True Color support.
-silent! colorscheme iceberg " Color scheme and its overrides.
+colorscheme iceberg " Color scheme.
 
 " Behaviour
 set backspace=indent,eol,start " Allow backspacing over everything in insert mode.
@@ -30,14 +28,14 @@ set noruler " Disable showing line numbers in command line.
 set noshowmatch " When a bracket is inserted, do not jump to the matching one.
 set nostartofline " Prevent the cursor from changing the current column when jumping.
 set nowrap " Prevent wrapping for long lines.
-set nrformats-=octal " Don't consider numbers that start with a zero as octal.
+set nrformats=bin,hex " Only accept binary and hexadecimal numbers.
 set pumheight=10 " Maximum number of items to show in the pop-up menu for completion.
 set report=0 " Threshold for reporting number of lines changed.
 set scrolloff=8 " Minimum number of screen lines to keep above and below the cursor.
-set sessionoptions-=options " Options for `mksession` command.
+set sessionoptions=blank,buffers,curdir,folds,help,localoptions,resize,tabpages,winsize " Options for `mksession` command.
 set shellpipe=&> " Fix potentional screen flashing problems with not using `tee`.
 set shortmess=filmnrwxoOstTIc " Use abbreviations and short messages in command menu line.
-set sidescroll=20 " Columns to scroll horizontally when cursor is moved off the screen.
+set sidescroll=5 " Columns to scroll horizontally when cursor is moved off the screen.
 set sidescrolloff=5 " Minimum number of screen columns to keep to cursor right.
 set synmaxcol=200 " Maximum column in which to search for syntax items.
 set textwidth=0 " Prevent auto wrapping when using affecting keys.
@@ -65,13 +63,13 @@ set titlestring=%f " Format of the title used by 'title'.
 set diffopt=filler,vertical,foldcolumn:0 " Option settings for diff mode.
 
 " Formatting
-set formatoptions=jcql " General text formatting options used by many mechanics.
+set formatoptions=croqnj " General text formatting options used by many mechanics.
 set formatprg=par\ -w80 " External formatter program that will be used with `gq` operator.
 
 " Completion
-set complete-=i " Disable scanning current and included files.
+set complete=.,w,b,k,t " Options for keyword completion.
 set completeopt=longest,menuone " Options for insert mode completion.
-set path+=** " Enable recursive file search.
+set path=.,** " Use recursive file search.
 
 " Indentation
 set autoindent " Copy indent from current line when starting a new line.
@@ -133,31 +131,11 @@ if !has('nvim') && !has('gui')
 	let &t_EI = "\<Esc>[2 q"
 endif
 
-" GUI
-if has('gui_running')
-	set browsedir=buffer " Use the same directory as current buffer's path when browsing files.
-	set mousehide " Mouse pointer is hidden when characters are typed.
-	set guifont=FuraCode_Nerd_Font:h16 " Font and font size.
-	set guicursor+=a:blinkon0 " Disable cursor blinking for all modes.
-	set guioptions+=c " Disable native dialogues, use text prompts for simple choices.
-	set guioptions-=L " Hide left-hand scrollbar when there is a vertically split window.
-	set guioptions-=R " Hide right-hand scrollbar when there is a vertically split window.
-	set guioptions-=e " Disable native GUI tabs.
-	set guioptions-=l " Hide left-hand scrollbar.
-	set guioptions-=m " Disable menu bar.
-	set guioptions-=r " Hide right-hand scrollbar.
-endif
-
 " Root
 if exists('$SUDO_USER')
 	set noswapfile
 	set nobackup
 	set nowritebackup
 	set noundofile
-
-	if has('nvim')
-		set shada=
-	else
-		set viminfo=
-	endif
+	set viminfo=
 endif
