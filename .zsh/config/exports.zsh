@@ -131,6 +131,7 @@ export FZF_DEFAULT_COLORS='--color=dark,fg:7,fg+:7,bg:0,bg+:8,hl:4,hl+:4,info:8,
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_COLORS \
 	--exact \
 	--no-bold \
+	--inline-info \
 	--height='40%' \
 	--jump-labels='bmvenritusldkfjgh' \
 	--bind='ctrl-f:jump-accept'"
