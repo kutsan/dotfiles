@@ -1,6 +1,3 @@
-# Import general error and warning notification utility functions.
-source $ZDOTDIR/lib/console.zsh
-
 ##
 # Makes directory and `cd`s into it.
 #
@@ -168,8 +165,6 @@ function b() {
 		}
 
 		if (! hash fzf &>/dev/null) {
-			echo; console.error "${bold_color}fzf${reset_color} is required for selection menu."; echo
-
 			return 1
 		} else {
 			selected_bookmark=$(
@@ -187,8 +182,6 @@ function b() {
 	if [[ "$selected_bookmark" != '' ]] {
 		eval cd "$selected_bookmark"
 	} else {
-		echo; console.error 'Could not find any bookmark to jump in.'; echo
-
 		return 1
 	}
 }
