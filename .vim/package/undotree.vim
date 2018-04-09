@@ -19,4 +19,5 @@ let g:undotree_SplitWidth = 30
 " Disable diff window by default.
 let g:undotree_DiffAutoOpen = v:false
 
+" Define mapping.
 nnoremap <Leader>u :UndotreeToggle<Enter>
