@@ -55,12 +55,13 @@ let g:fzf_colors = {
 
 " Define key mappings.
 nnoremap <silent> <C-p> :FGFiles<Enter>
+nnoremap <silent> <Leader><C-p> :FFiles<Enter>
 nnoremap <silent> <M-x> :FCommands<Enter>
-nnoremap <silent> <M-b> :FBuffers<Enter>
+nnoremap <silent> <Leader><Enter> :FBuffers<Enter>
 nnoremap <silent> <Leader>h :FHelptags<Enter>
 nnoremap <silent> <Leader>: :FHistory:<Enter>
 nnoremap <silent> <Leader>/ :FHistory/<Enter>
-nnoremap <silent> <Leader>m :FMarks<Enter>
+nnoremap <silent> <Leader>` :FMarks<Enter>
 
 " Disable status line for fzf buffers.
 if has('nvim') || has('gui_running')
