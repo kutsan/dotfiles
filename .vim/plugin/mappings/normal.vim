@@ -45,6 +45,9 @@ nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
 " Toggle zoom current buffer in the new tab.
 nnoremap <silent> gz :call kutsan#mappings#togglezoom()<Enter>
 
+" Open URL under cursor in browser or open path in GUI explorer.
+nnoremap <silent> gB :execute printf('silent !xdg-open "%s" 2>/dev/null', expand('<cfile>'))<Enter>
+
 " Toggle common options.
 nnoremap <silent> cos :set spell!<Enter>
 nnoremap <silent> cow :set wrap!<Enter>
