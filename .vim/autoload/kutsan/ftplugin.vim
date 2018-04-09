@@ -8,7 +8,7 @@
 "
 " @param {string} fname Path under the cursor for `gf`.
 " @param {dictionary} [options] Configuration dictionary.
-" @param {dictionary} [options.command="edit"] Command to be used when opening file.
+" @param {string} [options.command="edit"] Command to be used when opening file.
 ""
 function! kutsan#ftplugin#javascriptgotofile(fname, ...) abort
 	if empty(a:fname)
