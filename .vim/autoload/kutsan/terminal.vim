@@ -18,7 +18,7 @@ function! kutsan#terminal#create() abort
 			\ }
 		\ }
 
-		function! g:terminal.opts.on_exit(jobid, data, event)
+		function! g:terminal.opts.on_exit(jobid, data, event) abort
 			silent execute 'buffer' g:terminal.origin.bufferid
 			silent execute 'bdelete!' g:terminal.term.bufferid
 
