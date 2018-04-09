@@ -48,15 +48,11 @@ function! kutsan#statusline#spell() abort
 endfunction
 
 function! kutsan#statusline#git() abort
-	if !exists('*fugitive#head')
+	if !exists('g:loaded_gina')
 		return ''
 	endif
 
-	if !strlen(fugitive#head(7))
-		return ''
-	endif
-
-	return fugitive#head(7) . ' '
+	return gina#component#repo#branch() . ' '
 endfunction
 
 function! kutsan#statusline#markdownpreview() abort
