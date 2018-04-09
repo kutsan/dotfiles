@@ -59,6 +59,14 @@ function! kutsan#statusline#git() abort
 	return fugitive#head(7) . ' '
 endfunction
 
+function! kutsan#statusline#markdownpreview() abort
+	if !exists('b:markdownpreview')
+		return ''
+	endif
+
+	return '' . ' '
+endfunction
+
 function! kutsan#statusline#nerdtree() abort
 	if !exists('b:NERDTree')
 		return v:false

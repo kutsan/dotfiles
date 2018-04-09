@@ -19,6 +19,9 @@ nnoremap <buffer> ^ g^
 onoremap <buffer> ^ g^
 vnoremap <buffer> ^ g^
 
+" Toggle local preview server.
+nnoremap <buffer><silent> <LocalLeader>r :call kutsan#ftplugin#markdownpreview()<Enter>
+
 " Toggle statusline under Android.
 if system('uname --operating-system') =~# 'Android'
 	augroup markdowntogglestatusline
