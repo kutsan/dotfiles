@@ -28,21 +28,25 @@ function! kutsan#mappings#toggleterminal() abort
 endfunction
 
 ""
-" Construct the range with given motion. Emulates `!` (exclamation) operator
-" without putting '!' symbol automatically in the command mode.
+" Toggle zoom current buffer in the new tab.
 "
-" nnoremap <silent> ! :<C-u>set operatorfunc=kutsan#mappings#exclamationoperator<CR>g@
-"
-" @param {string} [type] Type of motion.
+" nnoremap <silent> <Leader>z :call kutsan#mappings#togglezoom()<Enter>
 ""
-function! kutsan#mappings#exclamationoperator(type) abort
-	let [l:mstart, l:mend] = [line("'["), line("']")]
-
-	if l:mstart == line('.')
-		let [l:mstart, l:mend] = ['.', '.+' . (l:mend - l:mstart)]
+function! kutsan#mappings#togglezoom() abort
+	if winnr('$') > 1
+		tab split
+	elseif
+		\ len(
+			\ filter(
+				\ map(
+					\ range(tabpagenr('$')),
+					\ 'tabpagebuflist(v:val + 1)'
+				\ ),
+				\ printf('index(v:val, %s) >= 0', bufnr(''))
+			\ )
+		\ ) > 1
+		tabclose
 	endif
-
-	call feedkeys(':' . l:mstart . ',' . l:mend, 'in')
 endfunction
 
 ""
@@ -58,6 +62,24 @@ function! kutsan#mappings#visualsetsearch(searchtype) abort
 	normal! gv"sy
 	let @/ = substitute(escape(@s, a:searchtype . '\'), '\n', '\\n', 'g')
 	let @s = l:temp
+endfunction
+
+""
+" Construct the range with given motion. Emulates `!` (exclamation) operator
+" without putting '!' symbol automatically in the command mode.
+"
+" nnoremap <silent> ! :<C-u>set operatorfunc=kutsan#mappings#exclamationoperator<CR>g@
+"
+" @param {string} [type] Type of motion.
+""
+function! kutsan#mappings#exclamationoperator(type) abort
+	let [l:mstart, l:mend] = [line("'["), line("']")]
+
+	if l:mstart == line('.')
+		let [l:mstart, l:mend] = ['.', '.+' . (l:mend - l:mstart)]
+	endif
+
+	call feedkeys(':' . l:mstart . ',' . l:mend, 'in')
 endfunction
 
 ""
@@ -117,27 +139,5 @@ function! kutsan#mappings#executeoperator(type, ...) abort
 	if exists('b:executeoperatorview')
 		call winrestview(b:executeoperatorview)
 		unlet b:executeoperatorview
-	endif
-endfunction
-
-""
-" Toggle zoom current buffer in the new tab.
-"
-" nnoremap <silent> <Leader>z :call kutsan#mappings#togglezoom()<Enter>
-""
-function! kutsan#mappings#togglezoom() abort
-	if winnr('$') > 1
-		tab split
-	elseif
-		\ len(
-			\ filter(
-				\ map(
-					\ range(tabpagenr('$')),
-					\ 'tabpagebuflist(v:val + 1)'
-				\ ),
-				\ printf('index(v:val, %s) >= 0', bufnr(''))
-			\ )
-		\ ) > 1
-		tabclose
 	endif
 endfunction
