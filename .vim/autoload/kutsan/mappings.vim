@@ -86,8 +86,8 @@ endfunction
 " Execute given motion or selection in appropriate REPL.
 "
 " nnoremap <silent> gx :<C-u>let b:executeoperatorview = winsaveview() <Bar> set operatorfunc=kutsan#mappings#executeoperator<Enter>g@
+" vnoremap <silent> gx :<C-u>call kutsan#mappings#executeoperator(visualmode(), v:true)<Enter>
 " nnoremap <silent> gxl :<C-u>let b:executeoperatorview = winsaveview() <Bar> set operatorfunc=kutsan#mappings#executeoperator <Bar> execute 'normal!' v:count 'g@_'<Enter>
-" vnoremap <silent> gx :<C-u>call kutsan#mappings#executeoperator(visualmode(), 1)<Enter>
 "
 " @param {string} type Type of motion.
 " @param {boolean} [visualmode] Whether or not invoking from visual mode.
