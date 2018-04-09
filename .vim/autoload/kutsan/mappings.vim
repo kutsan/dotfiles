@@ -30,7 +30,7 @@ endfunction
 ""
 " Toggle zoom current buffer in the new tab.
 "
-" nnoremap <silent> <Leader>z :call kutsan#mappings#togglezoom()<Enter>
+" nnoremap <silent> gz :call kutsan#mappings#togglezoom()<Enter>
 ""
 function! kutsan#mappings#togglezoom() abort
 	if winnr('$') > 1
