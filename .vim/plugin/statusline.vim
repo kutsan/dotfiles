@@ -33,6 +33,7 @@ set statusline+=%{kutsan#statusline#filetypesymbol()}
 set statusline+=%=
 
 " [5] Show an icon for common options if they are enabled.
+set statusline+=%{kutsan#statusline#markdownpreview()}
 set statusline+=%{kutsan#statusline#hlsearch()}
 set statusline+=%{kutsan#statusline#spell()}
 set statusline+=%{repeat('\ ',2)}
