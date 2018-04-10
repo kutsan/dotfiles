@@ -1,2 +1,2 @@
-" Fix commentstring.
+" Fix 'commentstring'.
 setlocal commentstring=#\ %s
