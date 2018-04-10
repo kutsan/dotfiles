@@ -29,13 +29,13 @@ augroup commandlinewindowsettings
 augroup end
 
 " Save the current buffer after any changes.
-augroup savebufferonchange
+augroup savebuffer
 	autocmd!
 	autocmd InsertLeave,TextChanged * nested
 		\ if empty(&buftype) && !empty(bufname('')) |
 			\ silent! update |
 		\ endif
-	autocmd CursorHold * silent! checktime
+	autocmd FocusGained,BufEnter,CursorHold * silent! checktime
 augroup end
 
 " Start insert mode and disable line numbers in terminal buffer.
