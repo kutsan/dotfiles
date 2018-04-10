@@ -62,14 +62,36 @@ endfunction
 ""
 " Create directory path if it's not exist.
 "
-" autocmd BufNewFile * call kutsan#autocmds#handledirectorycreation()
+" autocmd BufWritePre * call kutsan#autocmds#makemissingdirectory(expand('<afile>:p:h'))
+"
+" @param {string} directory Path of the missing directory to be created.
 ""
-function! kutsan#autocmds#handledirectorycreation() abort
-	let l:directory = expand('%:h')
-
-	if !isdirectory(l:directory)
-		call mkdir(l:directory, 'p')
+function! kutsan#autocmds#makemissingdirectory(directory) abort
+	if empty(a:directory) || isdirectory(a:directory)
+		return v:false
 	endif
+
+	echohl Question
+	call inputsave()
+
+	try
+		let l:answer = input(
+			\ printf(
+				\ '"%s" does not exist. Create? (y/N): ',
+				\ a:directory
+			\ ),
+			\ ''
+		\ )
+
+		if empty(l:answer)
+			return v:false
+		endif
+	finally
+		call inputrestore()
+		echohl None
+	endtry
+
+	return mkdir(a:directory, 'p')
 endfunction
 
 ""
