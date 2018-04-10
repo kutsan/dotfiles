@@ -21,6 +21,7 @@ alias lsd='ls --directory */ | command sed "s#//##"' # List only directories.
 alias lsf='ls --almost-all -1 | command grep --invert-match "/$"' # List only files.
 alias f='xdg-open "$PWD"' # Open current directory onto GUI file browser.
 alias path="echo $PATH | cut --delimiter=':' --fields=1- --output-delimiter=$'\n'"
+alias tmp="command mkdir --parents --verbose $TMPDIR/$(whoami) && cd $TMPDIR/$(whoami) && lsa" # Make temporary directory and cd into that.
 
 # Custom Shortcuts
 alias t='task'
