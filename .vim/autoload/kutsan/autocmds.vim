@@ -44,9 +44,9 @@ endfunction
 ""
 " Open file explorer if argument list contains at least one directory.
 "
-" autocmd VimEnter * call kutsan#autocmds#handledirectoryopen()
+" autocmd VimEnter * call kutsan#autocmds#openfileexplorer()
 ""
-function! kutsan#autocmds#handledirectoryopen() abort
+function! kutsan#autocmds#openfileexplorer() abort
 	let l:directory = expand('<amatch>')
 
 	if isdirectory(l:directory)

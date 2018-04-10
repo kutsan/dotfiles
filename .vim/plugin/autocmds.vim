@@ -66,9 +66,9 @@ augroup trimtrailingspaces
 augroup end
 
 " Open file explorer if argument list contains at least one directory.
-augroup handledirectoryopen
+augroup openfileexplorer
 	autocmd!
-	autocmd VimEnter * call kutsan#autocmds#handledirectoryopen()
+	autocmd VimEnter * call kutsan#autocmds#openfileexplorer()
 augroup end
 
 " Create directory path if it's not exist.
