@@ -31,3 +31,8 @@ https://github.com/zsh-users/zsh/releases.atom "~zsh" software
 	http://localhost:0007 "~▵ Comics"
 https://www.oglaf.com/feeds/rss "~Oglaf" comics
 https://xkcd.com/atom.xml "~xkcd" comics
+	http://localhost:0008 "~ "
+
+# Torrent
+	http://localhost:0009 "~▵ Torrent"
+https://nyaa.si/?page=rss&q=%5BHorribleSubs%5D+Steins+Gate+0+-+..+%5B1080p%5D.mkv "~Steins;Gate 0" torrent
