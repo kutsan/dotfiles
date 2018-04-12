@@ -64,9 +64,7 @@ nnoremap <silent> <Leader>/ :FHistory/<Enter>
 nnoremap <silent> <Leader>` :FMarks<Enter>
 
 " Disable status line for fzf buffers.
-if has('nvim') || has('gui_running')
-	augroup fzfdisablestatusline
-		autocmd!
-		autocmd User FzfStatusLine setlocal statusline=\  |
-	augroup end
-endif
+augroup fzfdisablestatusline
+	autocmd!
+	autocmd User FzfStatusLine setlocal statusline=\  |
+augroup end
