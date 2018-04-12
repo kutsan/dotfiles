@@ -74,7 +74,7 @@ augroup end
 " Create directory path if it's not exist.
 augroup makemissingdirectory
 	autocmd!
-	autocmd BufWritePre * call kutsan#autocmds#makemissingdirectory(expand('<afile>:p:h'))
+	autocmd BufWritePre * call kutsan#autocmds#makemissingdirectory(expand('<afile>:p:h'), v:cmdbang)
 augroup end
 
 " Launch table of contents to the left as vertical pane for manual pages.

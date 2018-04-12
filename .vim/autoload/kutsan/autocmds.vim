@@ -65,31 +65,34 @@ endfunction
 " autocmd BufWritePre * call kutsan#autocmds#makemissingdirectory(expand('<afile>:p:h'))
 "
 " @param {string} directory Path of the missing directory to be created.
+" @param {boolean} force Create missing directory without prompting anything.
 ""
-function! kutsan#autocmds#makemissingdirectory(directory) abort
-	if empty(a:directory) || isdirectory(a:directory)
+function! kutsan#autocmds#makemissingdirectory(directory, force) abort
+	if empty(a:directory) || a:directory =~# '\v\c^\w+://' || isdirectory(a:directory)
 		return v:false
 	endif
 
-	echohl Question
-	call inputsave()
+	if !a:force
+		echohl Question
+		call inputsave()
 
-	try
-		let l:answer = input(
-			\ printf(
-				\ '"%s" does not exist. Create? (y/N): ',
-				\ a:directory
-			\ ),
-			\ ''
-		\ )
+		try
+			let l:answer = input(
+				\ printf(
+					\ '"%s" does not exist. Create? (y/N): ',
+					\ a:directory
+				\ ),
+				\ ''
+			\ )
 
-		if empty(l:answer)
-			return v:false
-		endif
-	finally
-		call inputrestore()
-		echohl None
-	endtry
+			if empty(l:answer)
+				return v:false
+			endif
+		finally
+			call inputrestore()
+			echohl None
+		endtry
+	endif
 
 	return mkdir(a:directory, 'p')
 endfunction
