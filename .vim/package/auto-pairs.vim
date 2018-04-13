@@ -1,5 +1,5 @@
 " Insert or delete brackets, parens, quotes in pair.
-Plug 'jiangmiao/auto-pairs'
+Plug 'jeromedalbert/auto-pairs', { 'branch': 'better-auto-pairs' }
 
 " Disable default key mappings.
 let g:AutoPairsShortcutToggle = ''
