@@ -75,6 +75,10 @@ nnoremap <silent> [q :cprevious<Enter>
 nnoremap <silent> ]q :cnext<Enter>
 nnoremap <silent> [Q :cpfile<Enter>
 nnoremap <silent> ]Q :cnfile<Enter>
+nnoremap <silent> <Up> :cprevious<Enter>
+nnoremap <silent> <Down> :cnext<Enter>
+nnoremap <silent> <Left> :cpfile<Enter>
+nnoremap <silent> <Right> :cnfile<Enter>
 nnoremap <silent> [<C-q> :cfirst<Enter>
 nnoremap <silent> ]<C-q> :clast<Enter>
 
