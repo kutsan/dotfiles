@@ -86,16 +86,15 @@ endfunction
 " Execute given motion or selection in appropriate REPL.
 "
 " nnoremap <silent> gx :<C-u>let b:executeoperatorview = winsaveview() <Bar> set operatorfunc=kutsan#mappings#executeoperator<Enter>g@
-" vnoremap <silent> gx :<C-u>call kutsan#mappings#executeoperator(visualmode(), v:true)<Enter>
+" vnoremap <silent> gx :<C-u>call kutsan#mappings#executeoperator(visualmode())<Enter>
 " nnoremap <silent> gxl :<C-u>let b:executeoperatorview = winsaveview() <Bar> set operatorfunc=kutsan#mappings#executeoperator <Bar> execute 'normal!' v:count 'g@_'<Enter>
 "
 " @param {string} type Type of motion.
-" @param {boolean} [visualmode] Whether or not invoking from visual mode.
 ""
-function! kutsan#mappings#executeoperator(type, ...) abort
-	let l:visualmode = a:0 == 1 ? a:1 : v:null
+function! kutsan#mappings#executeoperator(type) abort
+	let l:saveregister = getreg('@')
 
-	if l:visualmode
+	if a:type =~? 'v'
 		silent execute 'normal! gvy'
 	elseif a:type ==? 'line'
 		silent execute "normal! '[V']y"
@@ -103,7 +102,11 @@ function! kutsan#mappings#executeoperator(type, ...) abort
 		silent execute 'normal! `[v`]y'
 	endif
 
-	let l:executecontent = @@
+	let l:executecontent = getreg('@')
+
+	call setreg('@', l:saveregister)
+	unlet l:saveregister
+
 	let l:executefunctions = {}
 
 	function! l:executefunctions.javascript() abort closure
