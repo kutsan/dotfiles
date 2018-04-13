@@ -59,7 +59,7 @@ function! kutsan#ftplugin#javascriptgotofile(fname, ...) abort
 			endfunction
 
 			" Try to match it as a file if the path does not end with a slash or dots.
-			if a:path !~# '\v/(\.\.?/?)?$'
+			if a:path !~# '\v\c/(\.\.?/?)?$'
 				" Try to find without 'suffixesadd'.
 				if filereadable(a:path)
 					return a:path
@@ -103,19 +103,19 @@ function! kutsan#ftplugin#javascriptgotofile(fname, ...) abort
 			let l:fromdirectory = isdirectory(a:from) ? a:from : fnamemodify(a:from, ':h')
 
 			" Absolute path, e.g. '/usr/local/lib/node_modules/example'.
-			if a:fname =~# '\v^/'
+			if a:fname =~# '\v\c^/'
 				" Return absolute path as is.
 				return a:fname
 
 			" Relative path, e.g. './example.js', '../example.js' or './example/'.
-			elseif a:fname =~# '\v^\.\.?(/|$)'
+			elseif a:fname =~# '\v\c^\.\.?(/|$)'
 
 				" e.g. 'app/./components/Header'.
 				return l:fromdirectory . '/' . a:fname
 
 			" Bare filename without leading dots and slashes but with file
 			" extension, e.g. 'example.js'.
-			elseif a:fname !~# '\v^(/|\./|\.\./)' && filereadable(l:fromdirectory . '/' . a:fname)
+			elseif a:fname !~# '\v\c^(/|\./|\.\./)' && filereadable(l:fromdirectory . '/' . a:fname)
 				" e.g. 'app/example.js'
 				return l:fromdirectory . '/' . a:fname
 
@@ -141,13 +141,13 @@ function! kutsan#ftplugin#javascriptgotofile(fname, ...) abort
 	if empty(l:path)
 		echohl ErrorMsg
 		echomsg "E447: Can't find file \"" . a:fname . "\" in path"
-		echohl NONE
+		echohl None
 
 		return v:false
 	endif
 
 	" Download URL.
-	if l:path =~# '\v^https?://'
+	if l:path =~# '\v\c^https?://'
 		if !executable('curl')
 			return v:false
 		endif
@@ -176,7 +176,7 @@ endfunction
 ""
 function! kutsan#ftplugin#qffoldtext() abort
 	let l:lines = v:foldend - v:foldstart + 1
-	let l:file = substitute(getline(v:foldstart), '\v\|.+', '', '')
+	let l:file = substitute(getline(v:foldstart), '\v\c\|.+', '', '')
 
 	return printf('%s [%s]', l:file, l:lines)
 endfunction
@@ -187,7 +187,7 @@ endfunction
 " setlocal foldtext=kutsan#ftplugin#qffoldtext(v:lnum)
 ""
 function! kutsan#ftplugin#qffoldexpr(lnum) abort
-	if matchstr(getline(a:lnum), '\v^[^|]+') ==# matchstr(getline(a:lnum + 1), '\v^[^|]+')
+	if matchstr(getline(a:lnum), '\v\c^[^|]+') ==# matchstr(getline(a:lnum + 1), '\v\c^[^|]+')
 		return 1
 	else
 		return '<1'
