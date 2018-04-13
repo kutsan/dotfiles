@@ -1,5 +1,5 @@
 " Distraction-free writing, zen mode.
-Plug 'junegunn/goyo.vim'
+Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 
 " Toggle Goyo.
 nnoremap <silent> gZ :Goyo<CR>
