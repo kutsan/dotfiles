@@ -38,6 +38,10 @@ nnoremap s "
 " Lookup definition under cursor.
 nnoremap gt K
 
+" Construct grep search.
+nnoremap gs :Search ''<Left>
+nnoremap gS :Search! ''<Left>
+
 " Store relative line number jumps in the jumplist if they exceed a threshold.
 nnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
 nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
