@@ -185,6 +185,8 @@ endfunction
 " QuickFix custom fold expression.
 "
 " setlocal foldtext=kutsan#ftplugin#qffoldtext(v:lnum)
+"
+" @param {number} lnum Line number for the 'foldexpr'.
 ""
 function! kutsan#ftplugin#qffoldexpr(lnum) abort
 	if matchstr(getline(a:lnum), '\v\c^[^|]+') ==# matchstr(getline(a:lnum + 1), '\v\c^[^|]+')

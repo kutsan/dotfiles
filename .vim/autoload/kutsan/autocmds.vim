@@ -65,7 +65,7 @@ endfunction
 " autocmd BufWritePre * call kutsan#autocmds#makemissingdirectory(expand('<afile>:p:h'))
 "
 " @param {string} directory Path of the missing directory to be created.
-" @param {boolean} force Create missing directory without prompting anything.
+" @param {boolean} [force=v:false] Create missing directory without prompting anything.
 ""
 function! kutsan#autocmds#makemissingdirectory(directory, force) abort
 	if empty(a:directory) || a:directory =~# '\v\c^\w+://' || isdirectory(a:directory)
