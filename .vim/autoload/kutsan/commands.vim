@@ -83,13 +83,13 @@ function! kutsan#commands#registers() abort
 
 	syntax clear
 
-	syntax match registersType /\v^[A-Za-z-]*/ contained
-	syntax match registersTypeColon /\v^[A-Za-z-]*:/ contains=registersType
+	syntax match registersType /\v\c^[A-Za-z-]*/ contained
+	syntax match registersTypeColon /\v\c^[A-Za-z-]*:/ contains=registersType
 	highlight default link registersType Title
 	highlight default link registersTypeColon NonText
 
-	syntax match registersToken /\v^\s./ contained
-	syntax match registersTokenColon /\v^\s.:/ contains=registersToken
+	syntax match registersToken /\v\c^\s./ contained
+	syntax match registersTokenColon /\v\c^\s.:/ contains=registersToken
 	highlight default link registersToken Label
 	highlight default link registersTokenColon NonText
 endfunction

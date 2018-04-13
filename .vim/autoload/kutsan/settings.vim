@@ -7,7 +7,7 @@ scriptencoding UTF-8
 ""
 function! kutsan#settings#foldtext() abort
 	let l:lines = v:foldend - v:foldstart + 1
-	let l:first = substitute(getline(v:foldstart), '\v *', '', '')
+	let l:first = substitute(getline(v:foldstart), '\v\c *', '', '')
 
 	return printf(' ▵ [%s] %s', l:lines, l:first)
 endfunction
