@@ -34,7 +34,7 @@ function! kutsan#autocmds#trimtrailingspaces() abort
 		let l:view = winsaveview()
 
 		try
-			silent! 1,$substitute/\s\+$//e
+			keeppatterns silent! 1,$substitute/\s\+$//e
 		finally
 			call winrestview(l:view)
 		endtry
