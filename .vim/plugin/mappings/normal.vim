@@ -46,8 +46,12 @@ nnoremap gS :Search! ''<Left>
 nnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
 nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
 
+" Toggle terminal buffer.
+tnoremap <silent> <C-z> <C-\><C-n>:call kutsan#mappings#normal#toggleterminal#main()<Enter>
+nnoremap <silent> <C-z> :call kutsan#mappings#normal#toggleterminal#main()<Enter>
+
 " Toggle zoom current buffer in the new tab.
-nnoremap <silent> gz :call kutsan#mappings#togglezoom()<Enter>
+nnoremap <silent> gz :call kutsan#mappings#normal#togglezoom#main()<Enter>
 
 " Open URL under cursor in browser or open path in GUI explorer.
 nnoremap <silent> gB :execute printf('silent !xdg-open "%s" 2>/dev/null', expand('<cfile>'))<Enter>

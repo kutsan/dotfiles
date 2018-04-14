@@ -11,10 +11,10 @@ setlocal number
 
 " Use custom fold expression.
 setlocal foldmethod=expr
-setlocal foldexpr=kutsan#ftplugin#qffoldexpr(v:lnum)
+setlocal foldexpr=kutsan#ftplugin#qf#foldexpr(v:lnum)
 
 " Use custom foldtext.
-setlocal foldtext=kutsan#ftplugin#qffoldtext()
+setlocal foldtext=kutsan#ftplugin#qf#foldtext()
 
 " Start with all folds open.
 setlocal foldlevel=99

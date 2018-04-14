@@ -1,5 +1,5 @@
 " Install non-existing plugins.
-augroup plugininstallation
+augroup pluginstall
 	autocmd VimEnter *
 		\ if exists('g:loaded_plug') && len(filter(values(g:plugs), '!isdirectory(v:val.dir)')) |
 			\ PlugInstall --sync |
@@ -8,7 +8,7 @@ augroup plugininstallation
 augroup end
 
 " Toggle relative numbers in Insert/Normal mode.
-augroup togglerelativelinenumbers
+augroup togglerelative
 	autocmd!
 	autocmd InsertEnter,BufLeave,WinLeave,FocusLost *
 		\ if &l:number && empty(&buftype) |
@@ -21,7 +21,7 @@ augroup togglerelativelinenumbers
 augroup end
 
 " Local command-line window settings.
-augroup commandlinewindowsettings
+augroup commandlinewindow
 	autocmd!
 	autocmd CmdwinEnter *
 		\ setlocal signcolumn=no nonumber norelativenumber |
@@ -48,39 +48,39 @@ augroup terminalsettings
 augroup end
 
 " Set current working directory project root.
-augroup setprojectroot
+augroup setroot
 	autocmd!
-	autocmd VimEnter,BufEnter * call kutsan#autocmds#setprojectroot()
+	autocmd VimEnter,BufEnter * call kutsan#autocmds#setroot#main()
 augroup end
 
 " Jump to last known position and center buffer around cursor.
-augroup jumplastknownposition
+augroup jumplast
 	autocmd!
-	autocmd BufWinEnter ?* call kutsan#autocmds#jumplastknownposition()
+	autocmd BufWinEnter ?* call kutsan#autocmds#jumplast#main()
 augroup end
 
 " Remove trailing whitespace characters.
-augroup trimtrailingspaces
+augroup trimtrailing
 	autocmd!
-	autocmd BufWritePre * call kutsan#autocmds#trimtrailingspaces()
+	autocmd BufWritePre * call kutsan#autocmds#trimtrailing#main()
 augroup end
 
 " Open file explorer if argument list contains at least one directory.
-augroup openfileexplorer
+augroup openexplorer
 	autocmd!
-	autocmd VimEnter * call kutsan#autocmds#openfileexplorer()
+	autocmd VimEnter * call kutsan#autocmds#openexplorer#main()
 augroup end
 
 " Create directory path if it's not exist.
-augroup makemissingdirectory
+augroup makemissing
 	autocmd!
-	autocmd BufWritePre * call kutsan#autocmds#makemissingdirectory(expand('<afile>:p:h'), v:cmdbang)
+	autocmd BufWritePre * call kutsan#autocmds#makemissing#main(expand('<afile>:p:h'), v:cmdbang)
 augroup end
 
 " Launch table of contents to the left as vertical pane for manual pages.
 augroup manshowtoc
 	autocmd!
 	if has('nvim')
-		autocmd FileType man call kutsan#autocmds#showtoc()
+		autocmd FileType man call kutsan#autocmds#manshowtoc#main()
 	endif
 augroup end

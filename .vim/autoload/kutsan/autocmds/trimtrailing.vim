@@ -1,0 +1,16 @@
+""
+" Trim trailing whitespace characters from end of each line.
+"
+" autocmd BufWritePre * call kutsan#autocmds#trimtrailing#main()
+""
+function! kutsan#autocmds#trimtrailing#main() abort
+	if &l:modifiable && !&l:binary
+		let l:view = winsaveview()
+
+		try
+			keeppatterns silent! 1,$substitute/\s\+$//e
+		finally
+			call winrestview(l:view)
+		endtry
+	endif
+endfunction
