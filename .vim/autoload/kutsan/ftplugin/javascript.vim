@@ -1,16 +1,16 @@
 ""
 " JavaScript wrapper function for `gf`, `<C-w>f`, `<C-w><C-f>` and `<C-w>gf` keys.
 "
-" nnoremap <buffer><silent> gf :call kutsan#ftplugin#javascriptgotofile(expand('<cfile>'))<Enter>
-" nnoremap <buffer><silent> <C-w>f :call kutsan#ftplugin#javascriptgotofile(expand('<cfile>'), 'split')<Enter>
-" nnoremap <buffer><silent> <C-w><C-f> :call kutsan#ftplugin#javascriptgotofile(expand('<cfile>'), 'split')<Enter>
-" nnoremap <buffer><silent> <C-w>gf :call kutsan#ftplugin#javascriptgotofile(expand('<cfile>'), 'tab split')<Enter>
+" nnoremap <buffer><silent> gf :call kutsan#ftplugin#javascript#gotofile(expand('<cfile>'))<Enter>
+" nnoremap <buffer><silent> <C-w>f :call kutsan#ftplugin#javascript#gotofile(expand('<cfile>'), 'split')<Enter>
+" nnoremap <buffer><silent> <C-w><C-f> :call kutsan#ftplugin#javascript#gotofile(expand('<cfile>'), 'split')<Enter>
+" nnoremap <buffer><silent> <C-w>gf :call kutsan#ftplugin#javascript#gotofile(expand('<cfile>'), 'tab split')<Enter>
 "
 " @param {string} fname Path under the cursor for `gf`.
 " @param {dictionary} [options] Configuration dictionary.
 " @param {string} [options.command="edit"] Command to be used when opening file.
 ""
-function! kutsan#ftplugin#javascriptgotofile(fname, ...) abort
+function! kutsan#ftplugin#javascript#gotofile(fname, ...) abort
 	if empty(a:fname)
 		return v:false
 	endif
@@ -167,73 +167,4 @@ function! kutsan#ftplugin#javascriptgotofile(fname, ...) abort
 	" Open path.
 	let l:command = get(get(a:, '1', {}), 'command', 'edit')
 	execute l:command fnameescape(l:path)
-endfunction
-
-""
-" QuickFix custom foldtext expression.
-"
-" setlocal foldexpr=kutsan#ftplugin#qffoldexpr()
-""
-function! kutsan#ftplugin#qffoldtext() abort
-	let l:lines = v:foldend - v:foldstart + 1
-	let l:file = substitute(getline(v:foldstart), '\v\c\|.+', '', '')
-
-	return printf('%s [%s]', l:file, l:lines)
-endfunction
-
-""
-" QuickFix custom fold expression.
-"
-" setlocal foldtext=kutsan#ftplugin#qffoldtext(v:lnum)
-"
-" @param {number} lnum Line number for the 'foldexpr'.
-""
-function! kutsan#ftplugin#qffoldexpr(lnum) abort
-	if matchstr(getline(a:lnum), '\v\c^[^|]+') ==# matchstr(getline(a:lnum + 1), '\v\c^[^|]+')
-		return 1
-	else
-		return '<1'
-	endif
-endfunction
-
-""
-" Toggle local Markdown preview server.
-"
-" See kutsan#statusline#markdownpreview() function for its indicator.
-"
-" nnoremap <buffer><silent> <LocalLeader>r :call kutsan#ftplugin#markdownpreview()<Enter>
-""
-function! kutsan#ftplugin#markdownpreview() abort
-	if !has('nvim')
-		return v:false
-	endif
-
-	" Initialize global dictionary.
-	if !exists('g:markdownpreview')
-		let g:markdownpreview = {
-			\ 'opts': {},
-			\ 'jobid': v:null
-		\ }
-
-		function! g:markdownpreview.opts.on_exit(jobid, data, event) abort
-			let g:markdownpreview.jobid = v:null
-			unlet b:markdownpreview
-		endfunction
-	endif
-
-	" Stop the server if it's already running.
-	if g:markdownpreview.jobid
-		call jobstop(g:markdownpreview.jobid)
-
-	" Try to start the server.
-	else
-		let g:markdownpreview.jobid = jobstart(
-			\ printf(
-				\ 'grip "%s" --browser --quiet',
-				\ expand('%:p')
-			\ ),
-			\ g:markdownpreview.opts
-		\ )
-		let b:markdownpreview = v:true " For statusline indicator.
-	endif
 endfunction

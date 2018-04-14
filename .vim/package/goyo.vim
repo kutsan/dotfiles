@@ -2,7 +2,7 @@
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 
 " Toggle Goyo.
-nnoremap <silent> gZ :Goyo<CR>
+nnoremap <silent> gZ :Goyo<Enter>
 
 " Handlers to use when entering and leaving Goyo.
 augroup goyohandlers
