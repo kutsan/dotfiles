@@ -38,6 +38,9 @@ nnoremap s "
 " Lookup definition under cursor.
 nnoremap gt K
 
+" Select last changed or yanked area.
+nnoremap <expr> gV '`[' . strpart(getregtype(), 0, 1) . '`]'
+
 " Construct grep search.
 nnoremap gs :Search ''<Left>
 nnoremap gS :Search! ''<Left>
