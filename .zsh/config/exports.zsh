@@ -53,6 +53,10 @@ if [[ $(uname) == 'Darwin' ]] {
 	export JAVA_HOME=$(/usr/libexec/java_home)
 
 } elif [[ $(uname -o) == 'Android' ]] 2>/dev/null {
+	# Shell variable
+	export SHELL=$(which zsh)
+
+	# Local scripts
 	path=($HOME/.termux/bin $path)
 }
 
