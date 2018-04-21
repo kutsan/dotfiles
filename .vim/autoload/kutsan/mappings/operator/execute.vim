@@ -2,7 +2,7 @@
 " Execute given motion or selection in appropriate REPL.
 "
 " nnoremap <silent> gx :<C-u>let b:executeoperatorview = winsaveview() <Bar> set operatorfunc=kutsan#mappings#operator#execute#main<Enter>g@
-" vnoremap <silent> gx :<C-u>call kutsan#mappings#operator#execute#main(visualmode())<Enter>
+" xnoremap <silent> gx :<C-u>call kutsan#mappings#operator#execute#main(visualmode())<Enter>
 " nnoremap <silent> gxl :<C-u>let b:executeoperatorview = winsaveview() <Bar> set operatorfunc=kutsan#mappings#operator#execute#main <Bar> execute 'normal!' v:count 'g@_'<Enter>
 "
 " @param {string} type Type of motion.
