@@ -36,10 +36,5 @@ endif
 " Initialize plugin manager and load plugins.
 set runtimepath+=~/.vim/bundle/plug.vim/
 call plug#begin('~/.vim/bundle')
-	" Source all files under package directory.
-	for s:package in split(glob('~/.vim/package/*.vim'), '\n')
-		if filereadable(s:package)
-			execute 'source' s:package
-		endif
-	endfor
+	runtime! package/*.vim
 call plug#end()
