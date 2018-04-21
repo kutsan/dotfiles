@@ -9,23 +9,24 @@
 " @param {boolean} [bang=v:false] Use 'grepprg' instead of `git grep`.
 ""
 function! kutsan#commands#search#main(query, bang) abort
+	" Keep cursor position before search command used under `S mark.
+	normal! mS
+
 	" Use `git grep` as default and 'grepprg' as alternate method with bang.
-	try
-		" Fallback to alternate method if `git` is not accessible.
-		if !a:bang && executable('git')
-			let l:savegrepprg = &grepprg
-			let &grepprg = 'git grep --line-number -I --ignore-case --perl-regexp'
-		endif
+	" Fallback to alternate method if `git` is not accessible.
+	if !a:bang && executable('git')
+		let l:savegrepprg = &grepprg
+		let &grepprg = 'git grep --line-number -I --ignore-case --perl-regexp'
+	endif
 
-		execute printf('silent grep "%s"', a:query)
-	finally
-		if exists('l:savegrepprg')
-			let &grepprg = l:savegrepprg
-			unlet l:savegrepprg
-		endif
-	endtry
+	execute printf('silent grep "%s"', a:query)
 
-	" Open quickfix buffer only if there are entries.
+	if exists('l:savegrepprg')
+		let &grepprg = l:savegrepprg
+		unlet l:savegrepprg
+	endif
+
+	" Open quickfix buffer only if there are entries in it.
 	cwindow
 
 	if !empty(getqflist())
@@ -40,8 +41,10 @@ function! kutsan#commands#search#main(query, bang) abort
 
 		" Revert highlighting to its previous value after exiting quickfix.
 		autocmd BufUnload <buffer>
-			\ silent let &hlsearch = b:savehlsearch |
-			\ unlet b:savehlsearch
+			\ if exists('b:savehlsearch') |
+				\ silent let &hlsearch = b:savehlsearch |
+				\ unlet b:savehlsearch |
+			\ endif
 
 		" Remove focus from quickfix buffer.
 		wincmd p
