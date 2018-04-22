@@ -1,12 +1,12 @@
 ""
 " Comment and uncomment block of texts.
 "
-" nnoremap <silent> gc :<C-u>set opfunc=kutsan#mappings#operator#comment#main<Enter>g@
-" xnoremap <silent> gc :<C-u>call kutsan#mappings#operator#comment#main(visualmode())<Enter>
+" nnoremap <silent> gc :<C-u>set opfunc=kutsan#mappings#operator#comment#<Enter>g@
+" xnoremap <silent> gc :<C-u>call kutsan#mappings#operator#comment#(visualmode())<Enter>
 "
 " @param {string} type Type of motion.
 ""
-function! kutsan#mappings#operator#comment#main(type) abort
+function! kutsan#mappings#operator#comment#(type) abort
 	if a:type =~? 'v'
 		let l:saveregister = getreg('@')
 

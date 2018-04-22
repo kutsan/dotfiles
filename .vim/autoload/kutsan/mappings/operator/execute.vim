@@ -1,13 +1,13 @@
 ""
 " Execute given motion or selection in appropriate REPL.
 "
-" nnoremap <silent> gx :<C-u>let b:executeoperatorview = winsaveview() <Bar> set operatorfunc=kutsan#mappings#operator#execute#main<Enter>g@
-" xnoremap <silent> gx :<C-u>call kutsan#mappings#operator#execute#main(visualmode())<Enter>
-" nnoremap <silent> gxl :<C-u>let b:executeoperatorview = winsaveview() <Bar> set operatorfunc=kutsan#mappings#operator#execute#main <Bar> execute 'normal!' v:count 'g@_'<Enter>
+" nnoremap <silent> gx :<C-u>let b:executeoperatorview = winsaveview() <Bar> set operatorfunc=kutsan#mappings#operator#execute#<Enter>g@
+" xnoremap <silent> gx :<C-u>call kutsan#mappings#operator#execute#(visualmode())<Enter>
+" nnoremap <silent> gxl :<C-u>let b:executeoperatorview = winsaveview() <Bar> set operatorfunc=kutsan#mappings#operator#execute#<Bar> execute 'normal!' v:count 'g@_'<Enter>
 "
 " @param {string} type Type of motion.
 ""
-function! kutsan#mappings#operator#execute#main(type) abort
+function! kutsan#mappings#operator#execute#(type) abort
 	let l:saveregister = getreg('@')
 
 	if a:type =~? 'v'
