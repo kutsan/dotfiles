@@ -1,9 +1,9 @@
 ""
 " Launch table of contents to the left as vertical pane for manual pages.
 "
-" autocmd FileType man call kutsan#autocmds#manshowtoc#main()
+" autocmd FileType man call kutsan#autocmds#manshowtoc#()
 ""
-function! kutsan#autocmds#manshowtoc#main() abort
+function! kutsan#autocmds#manshowtoc#() abort
 	if !has('nvim')
 		return v:false
 	endif

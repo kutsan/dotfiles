@@ -1,14 +1,14 @@
 ""
 " Search text in git repository or current working directory.
 "
-" command -nargs=1 -bang Search call kutsan#commands#search#main(<args>, <bang>v:false)
+" command -nargs=1 -bang Search call kutsan#commands#search#(<args>, <bang>v:false)
 " nnoremap gs :Search ''<Left>
 " nnoremap gS :Search! ''<Left>
 "
 " @param {string} query Search query.
 " @param {boolean} [bang=v:false] Use 'grepprg' instead of `git grep`.
 ""
-function! kutsan#commands#search#main(query, bang) abort
+function! kutsan#commands#search#(query, bang) abort
 	" Keep cursor position before search command used under `S mark.
 	normal! mS
 

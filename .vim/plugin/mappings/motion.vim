@@ -14,11 +14,11 @@ onoremap H ^
 onoremap L $
 
 " Execute a motion on the next or last text object.
-onoremap <silent> an :<C-u>call kutsan#mappings#motion#next#main({ 'motion': 'a', 'direction': 'f' })<Enter>
-xnoremap <silent> an :<C-u>call kutsan#mappings#motion#next#main({ 'motion': 'a', 'direction': 'f' })<Enter>
-onoremap <silent> in :<C-u>call kutsan#mappings#motion#next#main({ 'motion': 'i', 'direction': 'f' })<Enter>
-xnoremap <silent> in :<C-u>call kutsan#mappings#motion#next#main({ 'motion': 'i', 'direction': 'f' })<Enter>
-onoremap <silent> al :<C-u>call kutsan#mappings#motion#next#main({ 'motion': 'a', 'direction': 'F' })<Enter>
-xnoremap <silent> al :<C-u>call kutsan#mappings#motion#next#main({ 'motion': 'a', 'direction': 'F' })<Enter>
-onoremap <silent> il :<C-u>call kutsan#mappings#motion#next#main({ 'motion': 'i', 'direction': 'F' })<Enter>
-xnoremap <silent> il :<C-u>call kutsan#mappings#motion#next#main({ 'motion': 'i', 'direction': 'F' })<Enter>
+onoremap <silent> an :<C-u>call kutsan#mappings#motion#next#({ 'motion': 'a', 'direction': 'f' })<Enter>
+xnoremap <silent> an :<C-u>call kutsan#mappings#motion#next#({ 'motion': 'a', 'direction': 'f' })<Enter>
+onoremap <silent> in :<C-u>call kutsan#mappings#motion#next#({ 'motion': 'i', 'direction': 'f' })<Enter>
+xnoremap <silent> in :<C-u>call kutsan#mappings#motion#next#({ 'motion': 'i', 'direction': 'f' })<Enter>
+onoremap <silent> al :<C-u>call kutsan#mappings#motion#next#({ 'motion': 'a', 'direction': 'F' })<Enter>
+xnoremap <silent> al :<C-u>call kutsan#mappings#motion#next#({ 'motion': 'a', 'direction': 'F' })<Enter>
+onoremap <silent> il :<C-u>call kutsan#mappings#motion#next#({ 'motion': 'i', 'direction': 'F' })<Enter>
+xnoremap <silent> il :<C-u>call kutsan#mappings#motion#next#({ 'motion': 'i', 'direction': 'F' })<Enter>

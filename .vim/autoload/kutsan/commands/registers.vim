@@ -1,9 +1,9 @@
 ""
 " Display the contents of all registers in vertical split like `:registers`.
 "
-" command! Registers call kutsan#commands#registers#main()
+" command! Registers call kutsan#commands#registers#()
 ""
-function! kutsan#commands#registers#main() abort
+function! kutsan#commands#registers#() abort
 	let l:buffercurrent = @%
 	let l:bufferalternate = @#
 

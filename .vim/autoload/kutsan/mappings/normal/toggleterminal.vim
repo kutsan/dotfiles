@@ -1,10 +1,10 @@
 ""
 " Toggle terminal buffer or create new one if there is none.
 "
-" nnoremap <silent> <C-z> :call kutsan#mappings#normal#toggleterminal#main()<Enter>
-" tnoremap <silent> <C-z> <C-\><C-n>:call kutsan#mappings#normal#toggleterminal#main()<Enter>
+" nnoremap <silent> <C-z> :call kutsan#mappings#normal#toggleterminal#()<Enter>
+" tnoremap <silent> <C-z> <C-\><C-n>:call kutsan#mappings#normal#toggleterminal#()<Enter>
 ""
-function! kutsan#mappings#normal#toggleterminal#main() abort
+function! kutsan#mappings#normal#toggleterminal#() abort
 	if !has('nvim')
 		return v:false
 	endif

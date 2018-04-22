@@ -1,9 +1,9 @@
 ""
 " Trim trailing whitespace characters from end of each line.
 "
-" autocmd BufWritePre * call kutsan#autocmds#trimtrailing#main()
+" autocmd BufWritePre * call kutsan#autocmds#trimtrailing#()
 ""
-function! kutsan#autocmds#trimtrailing#main() abort
+function! kutsan#autocmds#trimtrailing#() abort
 	if &l:modifiable && !&l:binary
 		let l:view = winsaveview()
 

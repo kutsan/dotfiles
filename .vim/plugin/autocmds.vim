@@ -50,37 +50,37 @@ augroup end
 " Set current working directory project root.
 augroup setroot
 	autocmd!
-	autocmd VimEnter,BufEnter * call kutsan#autocmds#setroot#main()
+	autocmd VimEnter,BufEnter * call kutsan#autocmds#setroot#()
 augroup end
 
 " Jump to last known position and center buffer around cursor.
 augroup jumplast
 	autocmd!
-	autocmd BufWinEnter ?* call kutsan#autocmds#jumplast#main()
+	autocmd BufWinEnter ?* call kutsan#autocmds#jumplast#()
 augroup end
 
 " Remove trailing whitespace characters.
 augroup trimtrailing
 	autocmd!
-	autocmd BufWritePre * call kutsan#autocmds#trimtrailing#main()
+	autocmd BufWritePre * call kutsan#autocmds#trimtrailing#()
 augroup end
 
 " Open file explorer if argument list contains at least one directory.
 augroup openexplorer
 	autocmd!
-	autocmd VimEnter * call kutsan#autocmds#openexplorer#main()
+	autocmd VimEnter * call kutsan#autocmds#openexplorer#()
 augroup end
 
 " Create directory path if it's not exist.
 augroup makemissing
 	autocmd!
-	autocmd BufWritePre * call kutsan#autocmds#makemissing#main(expand('<afile>:p:h'), v:cmdbang)
+	autocmd BufWritePre * call kutsan#autocmds#makemissing#(expand('<afile>:p:h'), v:cmdbang)
 augroup end
 
 " Launch table of contents to the left as vertical pane for manual pages.
 augroup manshowtoc
 	autocmd!
 	if has('nvim')
-		autocmd FileType man call kutsan#autocmds#manshowtoc#main()
+		autocmd FileType man call kutsan#autocmds#manshowtoc#()
 	endif
 augroup end
