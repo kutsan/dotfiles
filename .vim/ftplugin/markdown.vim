@@ -21,12 +21,3 @@ vnoremap <buffer> ^ g^
 
 " Toggle local preview server.
 nnoremap <buffer><silent> <LocalLeader>r :call kutsan#ftplugin#markdown#preview()<Enter>
-
-" Toggle statusline under Android.
-if system('uname --operating-system') =~# 'Android'
-	augroup markdowntogglestatusline
-		autocmd!
-		autocmd BufEnter <buffer> set laststatus=0
-		autocmd BufLeave <buffer> set laststatus=2
-	augroup end
-endif
