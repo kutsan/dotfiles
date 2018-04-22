@@ -19,7 +19,7 @@ set breakindent " Wrapped lines will be indented with same amount of space.
 set clipboard= " Disable using system clipboard.
 set confirm " Seek for confirmation for certain commands instead of giving errors.
 set display=lastline " As much as possible of the last line in a window will be displayed.
-set keywordprg=:help " Default command to be used when looking definition.
+set keywordprg= " Disable definition search by default.
 set modelines=1 " Maximum number of lines that is checked for set commands.
 set mouse=nv " Enable mouse support only for normal and visual modes.
 set nojoinspaces " Disable inserting two spaces after `.`, `?`, `!` with join command.
