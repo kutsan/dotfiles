@@ -2,11 +2,11 @@
 " Construct the range with given motion. Emulates `!` (exclamation) operator
 " without putting '!' symbol automatically in the command mode.
 "
-" nnoremap <silent> ! :<C-u>set operatorfunc=kutsan#mappings#operator#exclamation#<Enter>g@
+" nnoremap <silent> ! :<C-u>set operatorfunc=kutsan#mappings#operator#construct#<Enter>g@
 "
 " @param {string} [type] Type of motion.
 ""
-function! kutsan#mappings#operator#exclamation#(type) abort
+function! kutsan#mappings#operator#construct#(type) abort
 	let [l:mstart, l:mend] = [line("'["), line("']")]
 
 	if l:mstart == line('.')
