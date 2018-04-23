@@ -1,12 +1,24 @@
 ""
-" Set current working directory to git root.
+" Asynchronously set current working directory to git root.
+"
+" TODO: Support vim's job_start() API.
 "
 " autocmd VimEnter,BufEnter * call kutsan#autocmds#setroot#()
 ""
 function! kutsan#autocmds#setroot#() abort
-	let l:root = systemlist('git rev-parse --show-toplevel')[0]
-
-	if !v:shell_error && l:root !=# $HOME
-		execute 'cd' l:root
+	if !executable('git') || !has('nvim')
+		return v:false
 	endif
+
+	let l:process = {}
+
+	function! l:process.on_stdout(jobid, data, event) abort
+		let l:root = a:data[0]
+
+		if l:root !=# $HOME
+			execute 'cd' l:root
+		endif
+	endfunction
+
+	call jobstart('git rev-parse --show-toplevel', l:process)
 endfunction
