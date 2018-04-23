@@ -1,7 +1,7 @@
 scriptencoding UTF-8
 
 " Don't let built-in ftplugin files override settings below except Man TOC.
-if !exists('w:quickfix_title') || (exists('w:quickfix_title') && w:quickfix_title !=# 'Man TOC')
+if !exists('w:quickfix_title') || w:quickfix_title !=# 'Man TOC'
 	let b:did_ftplugin = v:true
 endif
 
