@@ -1,5 +1,5 @@
 " Construct range operator.
-nnoremap <silent> ! :<C-u>set operatorfunc=kutsan#mappings#operator#exclamation#<Enter>g@
+nnoremap <silent> ! :<C-u>set operatorfunc=kutsan#mappings#operator#construct#<Enter>g@
 
 " Send given motion to appropriate REPL operator.
 nnoremap <silent> gx :<C-u>let b:executeoperatorview = winsaveview() <Bar> set operatorfunc=kutsan#mappings#operator#execute#<Enter>g@
