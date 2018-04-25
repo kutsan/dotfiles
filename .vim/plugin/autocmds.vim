@@ -7,35 +7,10 @@ augroup pluginstall
 		\ endif
 augroup end
 
-" Toggle relative numbers in Insert/Normal mode.
-augroup togglerelative
-	autocmd!
-	autocmd InsertEnter,BufLeave,WinLeave,FocusLost *
-		\ if &l:number && empty(&buftype) |
-			\ setlocal norelativenumber |
-		\ endif
-	autocmd InsertLeave,BufEnter,WinEnter,FocusGained *
-		\ if &l:number && empty(&buftype) |
-			\ setlocal relativenumber |
-		\ endif
-augroup end
-
 " Local command-line window settings.
 augroup commandlinewindow
 	autocmd!
-	autocmd CmdwinEnter *
-		\ setlocal signcolumn=no nonumber norelativenumber |
-		\ startinsert
-augroup end
-
-" Save the current buffer after any changes.
-augroup savebuffer
-	autocmd!
-	autocmd InsertLeave,TextChanged * nested
-		\ if empty(&buftype) && !empty(bufname('')) |
-			\ silent! update |
-		\ endif
-	autocmd FocusGained,BufEnter,CursorHold * silent! checktime
+	autocmd CmdwinEnter * setlocal signcolumn=no nonumber norelativenumber
 augroup end
 
 " Start insert mode and disable line numbers in terminal buffer.
@@ -45,6 +20,20 @@ augroup terminalsettings
 		autocmd TermOpen * setlocal nonumber norelativenumber
 		autocmd TermOpen * startinsert
 	endif
+augroup end
+
+" Toggle relative numbers in Insert/Normal mode.
+augroup togglenumbers
+	autocmd!
+	autocmd InsertEnter,BufLeave,WinLeave,FocusLost * call kutsan#autocmds#togglenumbers#('setlocal norelativenumber')
+	autocmd InsertLeave,BufEnter,WinEnter,FocusGained * call kutsan#autocmds#togglenumbers#('setlocal relativenumber')
+augroup end
+
+" Save the current buffer after any changes.
+augroup savebuffer
+	autocmd!
+	autocmd InsertLeave,TextChanged * nested call kutsan#autocmds#savebuffer#()
+	autocmd FocusGained,BufEnter,CursorHold * silent! checktime
 augroup end
 
 " Set current working directory project root.
