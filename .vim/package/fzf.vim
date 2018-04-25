@@ -3,7 +3,7 @@ if !exists('$FZF_HOME')
 endif
 
 " Load core fzf functions from $FZF_HOME.
-if system('uname --operating-system') !~# 'Android'
+if !exists($ANDROID_ROOT)
 	Plug $FZF_HOME
 endif
 
