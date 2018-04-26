@@ -9,10 +9,6 @@ xnoremap i_ <Esc>^vg_
 " Last selected area motion.
 onoremap gv :<C-u>normal! gv<Enter>
 
-" End and beginning of line motions.
-onoremap H ^
-onoremap L $
-
 " Execute a motion on the next or last text object.
 onoremap <silent> an :<C-u>call kutsan#mappings#motion#next#({ 'motion': 'a', 'direction': 'f' })<Enter>
 xnoremap <silent> an :<C-u>call kutsan#mappings#motion#next#({ 'motion': 'a', 'direction': 'f' })<Enter>

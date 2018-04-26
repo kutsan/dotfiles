@@ -18,9 +18,13 @@ nnoremap Q @q
 " Go back to last buffer shortcut.
 nnoremap <C-b> <C-^>
 
-" Alternative beginning and end of line shortcuts.
+" Alternative beginning and end of line mappings.
 nnoremap H ^
+xnoremap H ^
+onoremap H ^
 nnoremap L $
+xnoremap L g_
+onoremap L $
 
 " Always send contents of a `x` command to the black hole register.
 nnoremap x "_x
