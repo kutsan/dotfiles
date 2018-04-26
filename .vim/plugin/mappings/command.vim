@@ -10,8 +10,11 @@ cnoremap <C-k> <Up>
 cnoremap <C-h> <Left>
 cnoremap <C-l> <Right>
 
-" Construct substitute with 'very magic' mode.
-cnoremap <C-s>/ s/\v//gc<Left><Left><Left><Left>
+" Construct substitute command with 'very magic' mode.
+cnoremap :s substitute/\v//gc<Left><Left><Left><Left>
+
+" Construct global command with 'very magic' mode.
+cnoremap :g global/\v/<Left>
 
 " Move between matches without leaving incremental search.
 cnoremap <expr> <Tab> getcmdtype() ==# '/' \|\| getcmdtype() ==# '?' ? '<Enter>/<C-r>/' : '<C-z>'
