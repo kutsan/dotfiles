@@ -2,10 +2,6 @@
 xnoremap < <gv
 xnoremap > >gv
 
-" Alternative end and beginning of line shortcuts.
-xnoremap H ^
-xnoremap L g_
-
 " Always search with 'very magic' mode.
 xnoremap / /\v
 xnoremap ? ?\v
