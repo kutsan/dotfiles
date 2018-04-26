@@ -37,6 +37,12 @@ nnoremap s "
 
 " Lookup definition under cursor.
 nnoremap gt K
+xnoremap gt K
+
+" Alternative mappings for finding the next pair.
+nnoremap <C-n> %
+xnoremap <C-n> %
+onoremap <C-n> %
 
 " Select last changed or yanked area.
 nnoremap <expr> gV '`[' . strpart(getregtype(), 0, 1) . '`]'
