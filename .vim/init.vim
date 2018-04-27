@@ -1,30 +1,15 @@
-" Filetype Detection
+" Disable unused built-in functionality.
+runtime startup/disable.vim
+
+" Enable loading {ftdetect,ftplugin,indent}/*.vim files.
 filetype plugin indent on
 
-" Syntax Highlighting
-if !exists('g:syntax_on')
-	syntax enable
-endif
+" Enable loading syntax/*.vim files.
+syntax on
 
-" Leader Keys
+" Set leader keys.
 let g:mapleader = "\<Space>"
 let g:maplocalleader = '\'
-
-" Disable unused built-in plugins.
-let g:loaded_gzip = v:true
-let g:loaded_rrhelper = v:true
-let g:loaded_tarPlugin = v:true
-let g:loaded_zipPlugin = v:true
-let g:loaded_netrwPlugin = v:true
-let g:loaded_netrwFileHandlers = v:true
-let g:loaded_netrwSettings = v:true
-let g:loaded_2html_plugin = v:true
-let g:loaded_vimballPlugin = v:true
-let g:loaded_getscriptPlugin = v:true
-let g:loaded_logipat = v:true
-let g:loaded_man = v:true
-let g:loaded_tutor_mode_plugin = v:true
-let g:loaded_matchit = v:true
 
 " Automatically install vim-plug itself if it's not installed.
 if !filereadable($HOME . '/.vim/bundle/plug.vim/autoload/plug.vim')
