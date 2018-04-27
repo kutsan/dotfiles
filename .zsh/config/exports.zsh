@@ -139,7 +139,6 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_COLORS \
 	--height='40%' \
 	--jump-labels='bmvenritusldkfjgh' \
 	--bind='ctrl-f:jump-accept'"
-export FZF_COMPLETION_TRIGGER='?'
 export FZF_COMPLETION_OPTS='--preview="highlight --out-format=xterm256 --style=pablo {} 2>/dev/null || cat {}"'
 
 # transmission
