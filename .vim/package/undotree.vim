@@ -20,4 +20,4 @@ let g:undotree_SplitWidth = 30
 let g:undotree_DiffAutoOpen = v:false
 
 " Define mapping.
-nnoremap <Leader>u :UndotreeToggle<Enter>
+nnoremap <silent> <Leader>u :UndotreeToggle<Enter>
