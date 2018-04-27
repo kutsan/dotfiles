@@ -1,13 +1,5 @@
-if !exists('$FZF_HOME')
-	finish
-endif
-
-" Load core fzf functions from $FZF_HOME.
-if !exists($ANDROID_ROOT)
-	Plug $FZF_HOME
-endif
-
 " Fuzzy finder fzf as Vim plugin.
+Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
 " Add prefix 'Fzf' commands for grouping.

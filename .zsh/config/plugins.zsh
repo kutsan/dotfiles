@@ -1,22 +1,3 @@
-# fzf: Fuzzy finder
-case "$OSTYPE" {
-	darwin*)
-		export FZF_HOME='/usr/local/opt/fzf'
-		source "$FZF_HOME/shell/completion.zsh"
-		;;
-
-	linux-android*)
-		export FZF_HOME="$PREFIX/bin/fzf"
-		source "$PREFIX/share/fzf/completion.zsh"
-		;;
-
-	linux*)
-		export FZF_HOME="$HOME/.fzf"
-		source "$FZF_HOME/shell/completion.zsh"
-		path=($path "$HOME/.fzf/bin")
-		;;
-}
-
 # zsh-autopair: Insert or delete brackets, parens, quotes in pair.
 source "$ZDOTDIR/plugins/zsh-autopair/autopair.zsh"
 
