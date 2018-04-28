@@ -65,11 +65,3 @@ augroup makemissing
 	autocmd!
 	autocmd BufWritePre * call kutsan#autocmds#makemissing#(expand('<afile>:p:h'), v:cmdbang)
 augroup end
-
-" Launch table of contents to the left as vertical pane for manual pages.
-augroup manshowtoc
-	autocmd!
-	if has('nvim')
-		autocmd FileType man call kutsan#autocmds#manshowtoc#()
-	endif
-augroup end
