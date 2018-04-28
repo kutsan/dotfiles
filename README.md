@@ -110,11 +110,9 @@
 - [Alacritty](https://github.com/jwilm/alacritty) - Cross-platform, GPU-accelerated terminal emulator
 	- [FiraCode](https://github.com/ryanoasis/nerd-fonts) - Font with 16px size
 	- [Nord](https://github.com/kutsan/dotfiles/blob/master/.config/iterm/Nord.itermcolors) - Color scheme
-- [Visual Studio Code](https://github.com/Microsoft/vscode) - Text editor by Microsoft
 - [Telegram](https://telegram.org) - Cloud-based instant messaging service
 	- [Arc-2](https://github.com/kutsan/dotfiles/tree/master/.config/telegram) - Desktop theme
 - [Figma](https://www.figma.com) - User interface design tool with real-time collaboration
-	- [Insomnia](https://github.com/getinsomnia/insomnia) - Cross-platform REST and GraphQL API client
 
 ### Android
 
@@ -128,7 +126,6 @@
 - [Simple Gallery](https://github.com/SimpleMobileTools/Simple-Gallery) - Gallery for viewing photos and videos
 - [OpenVPN](https://github.com/schwabe/ics-openvpn) - OpenVPN client
 - [Amaze](https://github.com/TeamAmaze/AmazeFileManager) - File manager
-- [Tachiyomi](https://github.com/inorichi/tachiyomi) - Manga reader
 - [Slide for Reddit](https://github.com/ccrama/Slide) - Reddit client
 - [Open Camera](https://sourceforge.net/projects/opencamera) - Open-source camera application
 - [Red Moon](https://github.com/LibreShift/red-moon) - Blue light filter and screen dimmer
