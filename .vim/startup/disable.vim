@@ -10,6 +10,5 @@ let g:loaded_2html_plugin = v:true
 let g:loaded_vimballPlugin = v:true
 let g:loaded_getscriptPlugin = v:true
 let g:loaded_logipat = v:true
-let g:loaded_man = v:true
 let g:loaded_tutor_mode_plugin = v:true
 let g:loaded_matchit = v:true
