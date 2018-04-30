@@ -72,12 +72,14 @@ set completeopt=longest,menuone " Options for insert mode completion.
 set path=.,** " Use recursive file search.
 
 " Indentation
-set autoindent " Copy indent from current line when starting a new line.
+set tabstop=4 " Length of a <Tab> character.
+set shiftwidth=0 " Number of spaces to use for each step of auto indent operators.
+set softtabstop=-1 " Number of spaces that a <Tab> counts.
+set noexpandtab " Disable using spaces instead of tab characters.
 set nosmarttab " Tab key always inserts blanks according to 'tabstop'.
+set autoindent " Copy indent from current line when starting a new line.
 set shiftround " Round indent to multiple of 'shiftwidth'. Applies to > and < commands.
-set shiftwidth=4 " Affects what happens when you press `>>`, `<<` or `==`.
 set smartindent " Automatically inserts one extra level of indentation in some cases.
-set tabstop=4 " TAB character length.
 
 " Folding
 set foldlevelstart=99 " Start editing with all folds open.
