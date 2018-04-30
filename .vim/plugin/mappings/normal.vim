@@ -43,6 +43,14 @@ nnoremap s "
 nnoremap gt K
 xnoremap gt K
 
+" Correct bad indent while pasting.
+nnoremap [p P=`]
+nnoremap ]p p=`]
+
+" Scroll viewport faster.
+nnoremap <C-e> 2<C-e>
+nnoremap <C-y> 2<C-y>
+
 " Alternative mappings for finding the next pair.
 nnoremap <C-n> %
 xnoremap <C-n> %
