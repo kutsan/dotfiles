@@ -13,7 +13,6 @@
 	- [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) - Fish-like syntax highlighting support for interactive terminal
 	- [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) - Fish-like auto-suggestions for interactive terminal based on command history
 - [neovim](https://github.com/neovim/neovim) - The fork of ubiquitous text editor focused on extensibility and usability
-	- [vim-plug](https://github.com/junegunn/vim-plug) - Vim plugin manager with features such as parallel installation and post-update hooks
 	- [iceberg](https://github.com/cocopon/iceberg.vim) - Dark blue color scheme
 	- [ale](https://github.com/w0rp/ale) - Asynchronous lint engine for Neovim and Vim 8+
 	- [colorizer](https://github.com/chrisbra/Colorizer) - Highlight HEX and RGB color codes and names in their background
@@ -22,13 +21,11 @@
 	- [emmet](https://github.com/mattn/emmet-vim) - Emmet integration
 	- [gina](https://github.com/lambdalisue/gina.vim) - Asynchronously Git client
 	- [fzf](https://github.com/junegunn/fzf.vim) - Fuzzy finder fzf as plugin
-	- [goyo](https://github.com/junegunn/goyo.vim) - Distraction-free writing, zen mode
 	- [neosnippet](https://github.com/Shougo/neosnippet) - Snippet engine
 	- [nerdtree](https://github.com/scrooloose/nerdtree) - File explorer
 	- [nvim-completion-manager](https://github.com/roxma/nvim-completion-manager) - Asynchronous auto-completion framework for Neovim
 	- [polyglot](https://github.com/sheerun/vim-polyglot) - Big collection of language packs as scripts are loaded only on demand
 	- [signify](https://github.com/mhinz/vim-signify) - Show Git diff in the sign column
-	- [surround](https://github.com/tpope/vim-surround) - Surround commands for parentheses, brackets, quotes, XML tags
 	- [undotree](https://github.com/mbbill/undotree) - Visualize undo tree
 - [emacs](https://www.gnu.org/software/emacs) - The operation-system-like text editor
 	- [use-package](https://github.com/jwiegley/use-package) - Package declaration manager
@@ -127,6 +124,7 @@
 - [OpenVPN](https://github.com/schwabe/ics-openvpn) - OpenVPN client
 - [Amaze](https://github.com/TeamAmaze/AmazeFileManager) - File manager
 - [Slide for Reddit](https://github.com/ccrama/Slide) - Reddit client
+- [Twidere](https://github.com/TwidereProject/Twidere-Android) - Twitter client
 - [Open Camera](https://sourceforge.net/projects/opencamera) - Open-source camera application
 - [Red Moon](https://github.com/LibreShift/red-moon) - Blue light filter and screen dimmer
 
