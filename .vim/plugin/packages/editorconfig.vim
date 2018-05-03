@@ -1,0 +1,3 @@
+""
+" EditorConfig integration.
+""

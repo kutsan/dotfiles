@@ -1,7 +1,8 @@
-scriptencoding UTF-8
-
+""
 " Show Git diff in the sign column.
-Plug 'mhinz/vim-signify'
+""
+
+scriptencoding UTF-8
 
 " Only support git version system.
 let g:signify_vcs_list = ['git']

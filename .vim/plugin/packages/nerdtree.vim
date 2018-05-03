@@ -1,10 +1,8 @@
-scriptencoding UTF-8
-
+""
 " File explorer.
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+""
 
-" Extra syntax highlighting for devicons.
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight', { 'on': 'NERDTreeToggle' }
+scriptencoding UTF-8
 
 " Display hidden files.
 let g:NERDTreeShowHidden = v:true
@@ -79,26 +77,20 @@ let g:NERDTreeMapToggleFiles = ''
 let g:NERDTreeMapToggleFilters = ''
 let g:NERDTreeMapUpdir = ''
 
-" Toggle explorer buffer silently.
-nnoremap <silent> <Leader>f :NERDTreeToggle <Bar> wincmd p<Enter>
-
-" Find current file.
-nnoremap <silent> <Leader>F :NERDTreeFind<Enter>
+" Define mappings.
+nnoremap <silent> <Leader>f :packadd nerdtree <Bar> NERDTreeToggle <Bar> wincmd p<Enter>
+nnoremap <silent> <Leader>F :packadd nerdtree <Bar> NERDTreeFind<Enter>
 
 augroup nerdtreesettings
 	autocmd!
 
-	" Disable 'list' option.
-	autocmd FileType nerdtree setlocal nolist
-
-	" Disable highlighting cursor line.
-	autocmd FileType nerdtree setlocal nocursorline
-
-	" Disable the sign column.
-	autocmd FileType nerdtree setlocal signcolumn=no
-
-	" Make concealed text is completely hidden.
-	autocmd FileType nerdtree setlocal conceallevel=3 concealcursor=nvic
+	" Set common options.
+	autocmd FileType nerdtree
+		\ setlocal
+			\ nolist
+			\ nocursorline
+			\ signcolumn=no
+			\ conceallevel=3 concealcursor=nvic
 
 	" Hide current working directory line.
 	autocmd FileType nerdtree syntax match NERDTreeHideCWD #^[</].*$# conceal

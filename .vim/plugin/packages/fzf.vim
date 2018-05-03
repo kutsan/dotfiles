@@ -1,6 +1,6 @@
+""
 " Fuzzy finder fzf as Vim plugin.
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
+""
 
 " Add prefix 'Fzf' commands for grouping.
 let g:fzf_command_prefix = 'F'

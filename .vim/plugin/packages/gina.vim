@@ -1,5 +1,6 @@
+""
 " Asynchronously Git client.
-Plug 'lambdalisue/gina.vim'
+""
 
 " Length of the commit hash.
 let g:gina#component#repo#commit_length = 7

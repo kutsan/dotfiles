@@ -1,7 +1,8 @@
-scriptencoding UTF-8
-
+""
 " Asynchronous lint engine for Neovim and Vim 8+.
-Plug 'w0rp/ale'
+""
+
+scriptencoding UTF-8
 
 " Always keep sign column open even there is no error remain.
 let g:ale_sign_column_always = 1
