@@ -1,5 +1,6 @@
+""
 " Big collection of language packs as scripts are loaded only on demand.
-Plug 'sheerun/vim-polyglot'
+""
 
 " Set vim-jsx options.
 let g:jsx_ext_required = v:true " Enabled only for files with the `.jsx` extension.

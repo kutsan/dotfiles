@@ -1,7 +1,8 @@
-scriptencoding UTF-8
-
+""
 " Adds additional file type glyphs to popular plugins.
-Plug 'ryanoasis/vim-devicons'
+""
+
+scriptencoding UTF-8
 
 " Enable open and close folder glyph flags.
 let g:DevIconsEnableFoldersOpenClose = v:true

@@ -1,19 +1,59 @@
 [submodule ".zsh/plugins/pure"]
 	path = .zsh/plugins/pure
 	url = https://github.com/sindresorhus/pure
-
 [submodule ".zsh/plugins/zsh-autopair"]
 	path = .zsh/plugins/zsh-autopair
 	url = https://github.com/hlissner/zsh-autopair
-
 [submodule ".zsh/plugins/zsh-system-clipboard"]
 	path = .zsh/plugins/zsh-system-clipboard
 	url = https://github.com/kutsan/zsh-system-clipboard
-
 [submodule ".zsh/plugins/zsh-autosuggestions"]
 	path = .zsh/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
-
 [submodule ".zsh/plugins/zsh-syntax-highlighting"]
 	path = .zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
+
+[submodule ".vim/pack/bundle/opt/colorizer"]
+	path = .vim/pack/bundle/opt/colorizer
+	url = https://github.com/chrisbra/Colorizer
+[submodule ".vim/pack/bundle/opt/emmet"]
+	path = .vim/pack/bundle/opt/emmet
+	url = https://github.com/mattn/emmet-vim
+[submodule ".vim/pack/bundle/opt/ncm"]
+	path = .vim/pack/bundle/opt/ncm
+	url = https://github.com/roxma/nvim-completion-manager
+[submodule ".vim/pack/bundle/opt/neosnippet"]
+	path = .vim/pack/bundle/opt/neosnippet
+	url = https://github.com/Shougo/neosnippet.vim
+[submodule ".vim/pack/bundle/opt/nerdtree"]
+	path = .vim/pack/bundle/opt/nerdtree
+	url = https://github.com/scrooloose/nerdtree
+[submodule ".vim/pack/bundle/opt/undotree"]
+	path = .vim/pack/bundle/opt/undotree
+	url = https://github.com/mbbill/undotree
+[submodule ".vim/pack/bundle/start/ale"]
+	path = .vim/pack/bundle/start/ale
+	url = https://github.com/w0rp/ale
+[submodule ".vim/pack/bundle/start/devicons"]
+	path = .vim/pack/bundle/start/devicons
+	url = https://github.com/kutsan/vim-devicons
+	branch = nerdtree-syntax
+[submodule ".vim/pack/bundle/start/editorconfig"]
+	path = .vim/pack/bundle/start/editorconfig
+	url = https://github.com/editorconfig/editorconfig-vim
+[submodule ".vim/pack/bundle/start/fzf-core"]
+	path = .vim/pack/bundle/start/fzf-core
+	url = https://github.com/junegunn/fzf
+[submodule ".vim/pack/bundle/start/fzf-vim"]
+	path = .vim/pack/bundle/start/fzf-vim
+	url = https://github.com/junegunn/fzf.vim
+[submodule ".vim/pack/bundle/start/gina"]
+	path = .vim/pack/bundle/start/gina
+	url = https://github.com/lambdalisue/gina.vim
+[submodule ".vim/pack/bundle/start/polyglot"]
+	path = .vim/pack/bundle/start/polyglot
+	url = https://github.com/sheerun/vim-polyglot
+[submodule ".vim/pack/bundle/start/signify"]
+	path = .vim/pack/bundle/start/signify
+	url = https://github.com/mhinz/vim-signify

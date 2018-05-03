@@ -1,12 +1,3 @@
-" Install non-existing plugins.
-augroup pluginstall
-	autocmd VimEnter *
-		\ if exists('g:loaded_plug') && len(filter(values(g:plugs), '!isdirectory(v:val.dir)')) |
-			\ PlugInstall --sync |
-			\ quitall |
-		\ endif
-augroup end
-
 " Local command-line window settings.
 augroup commandlinewindow
 	autocmd!

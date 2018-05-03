@@ -1,5 +1,14 @@
+""
 " Emmet integration.
-Plug 'mattn/emmet-vim', { 'on': 'EmmetInstall' }
+""
+
+" Load optional plugin for appropriate file types.
+augroup loademmet
+	autocmd!
+	autocmd FileType html,css,sass,javascript
+		\ packadd emmet |
+		\ EmmetInstall
+augroup end
 
 " Change default leader key.
 let g:user_emmet_leader_key='<C-e>'
@@ -20,9 +29,3 @@ let g:user_emmet_install_global = v:false
 let g:user_emmet_settings = {
 	\ 'javascript.jsx': { 'extends': 'jsx' }
 \ }
-
-" Automatically activate Emmet for following filetypes.
-augroup emmetsetup
-	autocmd!
-	autocmd FileType html,css,sass,javascript.jsx EmmetInstall
-augroup end
