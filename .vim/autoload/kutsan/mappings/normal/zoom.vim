@@ -1,9 +1,9 @@
 ""
 " Toggle zoom current buffer in the new tab.
 "
-" nnoremap <silent> gz :call kutsan#mappings#normal#togglezoom#()<Enter>
+" nnoremap <silent> gz :call kutsan#mappings#normal#zoom#()<Enter>
 ""
-function! kutsan#mappings#normal#togglezoom#() abort
+function! kutsan#mappings#normal#zoom#() abort
 	if winnr('$') > 1
 		tab split
 	elseif
