@@ -9,9 +9,11 @@ function! kutsan#autocmds#openexplorer#() abort
 	if isdirectory(l:directory)
 		execute printf('cd %s', fnameescape(l:directory))
 
-		if exists(':NERDTree')
+		try
+			packadd nerdtree
 			NERDTree
 			only
-		endif
+		catch
+		endtry
 	endif
 endfunction
