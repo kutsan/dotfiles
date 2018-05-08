@@ -44,8 +44,6 @@ set ttimeoutlen=10 " Key code delays in milliseconds.
 set ttyfast " More characters will be sent to the screen for redrawing in terminal. (vim-only)
 set updatetime=2000 " If that milliseconds nothing is typed CursorHold event will trigger.
 set visualbell " Use visual bell instead of beeping on errors.
-if has('nvim') | set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor | endif " Change cursor shape among modes.
-if has('nvim') | set inccommand=nosplit | endif " Show live substitution results as you type.
 
 " Interface
 set cursorline " Highlight the line background of the cursor.
@@ -122,15 +120,21 @@ set wildignorecase " Ignore case when completing in command menu.
 set wildmenu " Command-line completion operates in an enhanced mode.
 set wildmode=full " Wildmenu options.
 
-" Terminal Vim
+" Vim
 if !has('nvim') && !has('gui')
-	" Ensure starting cursor in its box form.
-	silent execute "!printf '[0 q'"
+	" Configures the cursor style for each mode.
+	let &t_SI = "\<Esc>[6 q" " [S]tart [I]nsert
+	let &t_SR = "\<Esc>[4 q" " [S]tart [R]eplace
+	let &t_EI = "\<Esc>[2 q" " [E]nd [I]nsert
 
-	" Change cursor shape in different modes.
-	let &t_SI = "\<Esc>[6 q"
-	let &t_SR = "\<Esc>[4 q"
-	let &t_EI = "\<Esc>[2 q"
+	" Transform cursor to its box form when starting.
+	silent call feedkeys("i\<Esc>")
+endif
+
+" Neovim
+if has('nvim')
+	set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor " Configures the cursor style for each mode.
+	set inccommand=nosplit " Show live substitution results as you type.
 endif
 
 " Root
