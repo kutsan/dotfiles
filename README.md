@@ -69,7 +69,7 @@
 - [nmap](https://github.com/nmap/nmap) - Network security scanner and mapper for exploration and security auditing
 - [openssl](https://github.com/openssl/openssl) - Toolkit for the Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols
 - [openssh](https://www.openssh.com) - Connectivity tool for remote login with the SSH protocol
-- [openvpn](https://github.com/OpenVPN/openvpn) - Virtual private networks for creating OpenSSL powered secure connections
+- [openvpn](https://github.com/OpenVPN/openvpn3) - Virtual private networks for creating OpenSSL powered secure connections
 - [rsync](https://rsync.samba.org) - Utility that provides fast incremental file transfer
 - [docker](https://github.com/docker/docker) - Container engine that provides abstraction and automation of virtualization
 - [fzf](https://github.com/junegunn/fzf) - General-purpose fuzzy finder that can be used among other Unix tools
@@ -125,7 +125,6 @@
 - [Amaze](https://github.com/TeamAmaze/AmazeFileManager) - File manager
 - [Slide for Reddit](https://github.com/ccrama/Slide) - Reddit client
 - [Twidere](https://github.com/TwidereProject/Twidere-Android) - Twitter client
-- [Open Camera](https://sourceforge.net/projects/opencamera) - Open-source camera application
 - [Red Moon](https://github.com/LibreShift/red-moon) - Blue light filter and screen dimmer
 
 ## License
