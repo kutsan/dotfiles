@@ -98,6 +98,7 @@
 - [sdcv](https://github.com/Dushistov/sdcv) - StarDict command-line version, offline directories
 - [gcal](https://www.gnu.org/software/gcal) - Calculate and print calendars
 - [fasd](https://github.com/clvv/fasd) - Track your most used directories, based on frequency for quick access later
+- [bitwarden](https://github.com/bitwarden/cli) - Password manager
 
 ### GUI
 
