@@ -5,9 +5,6 @@ exec &>> ~/.newsboat/logs/$(basename $0).log
 
 setopt ERR_EXIT PIPE_FAIL WARN_CREATE_GLOBAL WARN_NESTED_VAR
 
-# Import utility functions for logging.
-source ~/.zsh/lib/console.zsh
-
 function handle_mime() {
 	local mimetype="$1"
 
@@ -32,7 +29,7 @@ function handle_mime() {
 }
 
 function main() {
-	console.info --with-date 'Running.'
+	echo "[$(date +'%Y-%m-%d %H:%M:%S')] Running."
 
 	typeset -g link="$1"
 	typeset -g filename="${2// /_}"
