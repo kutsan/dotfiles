@@ -8,14 +8,11 @@ setopt ERR_EXIT PIPE_FAIL WARN_CREATE_GLOBAL WARN_NESTED_VAR
 # Import environment variables.
 source ~/.zsh/config/exports.zsh
 
-# Import utility functions for logging.
-source ~/.zsh/lib/console.zsh
-
 # Log with date to indicate it's running in success.
-console.info --with-date 'Running.'
+echo "[$(date +'%Y-%m-%d %H:%M:%S')] Running."
 
 if (! hash newsboat &>/dev/null) {
-	console.error --with-date "Unable to find ${bold_color}newsboat${reset_color} on \$PATH or it is not installed yet."
+	echo "[$(date +'%Y-%m-%d %H:%M:%S')] Unable to find newsboat on \$PATH or it is not installed yet."
 	exit 1
 }
 
