@@ -26,10 +26,10 @@ function! kutsan#mappings#operator#execute#(type) abort
 	let l:executefunctions = {}
 
 	function! l:executefunctions.javascript() abort closure
-		let l:termopts = {}
+		let l:process = {}
 		let l:swap = v:null
 
-		function! l:termopts.on_stdout(jobid, data, event) abort closure
+		function! l:process.on_stdout(jobid, data, event) abort closure
 			if !l:swap
 				" Fix weird behavior of Node REPL prompt.
 				call feedkeys("\<Space>\<BS>")
@@ -37,12 +37,12 @@ function! kutsan#mappings#operator#execute#(type) abort
 			endif
 		endfunction
 
-		function! l:termopts.on_exit(jobid, data, event) abort
+		function! l:process.on_exit(jobid, data, event) abort
 			silent execute 'bdelete!' bufnr('')
 		endfunction
 
 		new
-		call termopen(printf('node --interactive --print "%s"', l:executecontent), l:termopts)
+		call termopen(printf('node --interactive --print "%s"', l:executecontent), l:process)
 	endfunction
 
 	function! l:executefunctions.vim() abort closure
