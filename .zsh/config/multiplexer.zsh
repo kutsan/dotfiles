@@ -23,10 +23,7 @@ if (should_launch_multiplexer) {
 	typeset -g session='main'
 	typeset -g launch_options='\; '
 
-	if [[ $VSCODE_PID != '' ]] {
-		session='vscode'
-
-	} elif [[ $NVIM_LISTEN_ADDRESS != '' ]] {
+	if [[ $NVIM_LISTEN_ADDRESS != '' ]] {
 		session='nvim'
 		launch_options+='set-option -w status-position bottom \; '
 		launch_options+='set-option -w status-right "" \; '
