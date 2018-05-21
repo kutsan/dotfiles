@@ -15,15 +15,17 @@ function! kutsan#commands#search#(bang, query) abort
 	" Use `git grep` as default and 'grepprg' as alternate method with bang.
 	" Fallback to alternate method if `git` is not accessible.
 	if !a:bang && executable('git')
-		let l:savegrepprg = &grepprg
+		let l:save = {
+			\ 'grepprg': &grepprg
+		\ }
 		let &grepprg = 'git grep --line-number -I --ignore-case --perl-regexp'
 	endif
 
 	execute printf('silent grep "%s"', a:query)
 
-	if exists('l:savegrepprg')
-		let &grepprg = l:savegrepprg
-		unlet l:savegrepprg
+	if exists('l:save') && has_key(l:save, 'grepprg')
+		let &grepprg = l:save.grepprg
+		unlet l:save
 	endif
 
 	" Open quickfix buffer only if there are entries in it.

@@ -8,12 +8,14 @@
 ""
 function! kutsan#mappings#operator#comment#(type) abort
 	if a:type =~? 'v'
-		let l:saveregister = getreg('@')
+		let l:save = {
+			\ 'register': getreg('@')
+		\ }
 
 		silent execute 'normal! gvy'
 
-		call setreg('@', l:saveregister)
-		unlet l:saveregister
+		call setreg('@', l:save.register)
+		unlet l:save
 	endif
 
 	let [l:mstart, l:mend] = [line("'["), line("']")]

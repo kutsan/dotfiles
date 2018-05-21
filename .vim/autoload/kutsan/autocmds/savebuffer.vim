@@ -6,14 +6,16 @@
 ""
 function! kutsan#autocmds#savebuffer#() abort
 	if empty(&buftype) && !empty(bufname(''))
-		let l:savemarks = {
-			\ "'[": getpos("'["),
-			\ "']": getpos("']")
+		let l:save = {
+			\ 'marks': {
+				\ "'[": getpos("'["),
+				\ "']": getpos("']")
+			\ }
 		\ }
 
 		silent! update
 
-		for [l:key, l:value] in items(l:savemarks)
+		for [l:key, l:value] in items(l:save.marks)
 			call setpos(l:key, l:value)
 		endfor
 	endif
