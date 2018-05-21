@@ -8,7 +8,9 @@
 " @param {string} type Type of motion.
 ""
 function! kutsan#mappings#operator#execute#(type) abort
-	let l:saveregister = getreg('@')
+	let l:save = {
+		\ 'register': getreg('@')
+	\ }
 
 	if a:type =~? 'v'
 		silent execute 'normal! gvy'
@@ -20,8 +22,8 @@ function! kutsan#mappings#operator#execute#(type) abort
 
 	let l:executecontent = getreg('@')
 
-	call setreg('@', l:saveregister)
-	unlet l:saveregister
+	call setreg('@', l:save.register)
+	unlet l:save
 
 	let l:executefunctions = {}
 
