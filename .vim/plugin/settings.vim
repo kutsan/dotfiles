@@ -62,8 +62,8 @@ set titlestring=%f " Format of the title used by 'title'.
 set diffopt=filler,vertical,foldcolumn:0 " Option settings for diff mode.
 
 " Formatting
+let &formatprg = 'par b1 e1 g1 q1 r3 w80 R1 T4 B=.,\?_A_a Q=_s\>' " External formatter program that will be used with `gq` operator.
 set formatoptions=croqnj " General text formatting options used by many mechanics.
-set formatprg=par\ -w80 " External formatter program that will be used with `gq` operator.
 
 " Completion
 set complete=.,w,b,k,t " Options for keyword completion.
