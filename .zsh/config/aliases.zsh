@@ -1,30 +1,29 @@
 # Core Shortcuts
-alias c='clear'
-alias ip='ip -color'
-alias rm='trash' # Use `trash` program instead of sending anything to black hole.
-alias mv='mv --interactive --verbose' # Prompt before overwriting anything and use extra verbosity.
-alias cp='cp --interactive --verbose' # Prompt before overwriting anything and use extra verbosity.
-alias ln='ln --interactive --verbose' # Prompt before overwriting anything and use extra verbosity.
-alias mkdir='mkdir --parents' # Make parent directories as needed.
+alias ip='ip -color' # Use `ip` utility always with colors.
+alias rm='trash' # Use `trash` program instead of built-in irrecoverable way to delete nodes.
+alias mv='mv --interactive --verbose' # Move nodes with interactive mode and extra verbosity.
+alias cp='cp --interactive --verbose' # Copy nodes with interactive mode and extra verbosity.
+alias ln='ln --interactive --verbose' # Link nodes with interactive mode and extra verbosity.
+alias mkdir='mkdir --parents' # Make missing parent directories when creating folders.
 alias dirs='dirs -v -p' # Print directory stack with numbers and one directory per line.
-alias grep='grep --color=auto --exclude-dir=".git" --exclude-dir="node_modules"' # Always use colors and ignore some directories.
+alias grep='grep --color=auto --exclude-dir=".git" --exclude-dir="node_modules"' # Grep with colors and ignore common directories.
 alias du='du --max-depth=1 --si' # Display size of files and folders under current directory.
-alias df='df --all --si --print-type' # Display all disk usage statistics with SI units, FS types.
-alias ls='ls --almost-all --classify --color=always --group-directories-first --literal'
-alias lsa='ls -l --almost-all --si' # List all files and folders.
+alias df='df --all --si --print-type' # Display all disk usage statistics with SI units and FS types.
+alias ls='ls --almost-all --classify --color=always --group-directories-first --literal' # List name of nodes.
+alias lsa='ls -l --almost-all --si' # List nodes with their details.
 alias lsd='ls --directory */ | command sed "s#//##"' # List only directories.
 alias lsf='ls --almost-all -1 | command grep --invert-match "/$"' # List only files.
-alias f='xdg-open "$PWD"' # Open current directory onto GUI file browser.
-alias path="echo $PATH | cut --delimiter=':' --fields=1- --output-delimiter=$'\n'"
+alias path="echo $PATH | cut --delimiter=':' --fields=1- --output-delimiter=$'\n'" # List entries in $PATH one path per line.
 alias tmp="command mkdir --parents --verbose $TMPDIR/$(whoami) && cd $TMPDIR/$(whoami) && lsa" # Make temporary directory and cd into that.
 
 # Custom Shortcuts
 alias v='nvim'
+alias g='git'
 alias t='task'
 alias mutt='neomutt'
 alias note="$EDITOR +'cd ~/.notes/' ~/.notes/index.md"
 alias tmux='tmux -f "$HOME/.tmux/tmux.conf"'
-alias dfc='dfc -dmT' # -d: Show used size. -m: Base 10 output. -T: Show file system types.
+alias dfc='dfc -dmT'
 alias syncthing='syncthing -home=$HOME/.config/syncthing'
 alias la='exa --color=always --all --classify --group-directories-first --long --git --group'
 alias serve='browser-sync start --config ~/.config/browsersync/config.js'
@@ -60,20 +59,16 @@ alias -g NO='&>/dev/null' # No stout and sterr (shorthand for 1>/dev/null 2>&1)
 alias c-alacritty="$EDITOR +'cd ~/.config/alacritty/' ~/.config/alacritty/alacritty.yml"
 alias c-browsersync="$EDITOR +'cd ~/.config/browsersync/' ~/.config/browsersync/config.js"
 alias c-crontab="$EDITOR +'cd ~/.cron/' ~/.cron/crontab"
-alias c-editorconfig="$EDITOR ~/.editorconfig"
+alias c-editorconfig="$EDITOR ~/.config/editorconfig/.editorconfig"
 alias c-emacs="$EDITOR +'cd ~/.emacs.d/' ~/.emacs.d/init.el"
 alias c-git="$EDITOR +'cd ~/.config/git/' ~/.config/git/"
 alias c-gpg="$EDITOR +'cd ~/.gnupg/' ~/.gnupg/gpg.conf"
-alias c-htop="$EDITOR +'cd ~/.config/htop/' ~/.config/htop/htoprc"
-alias c-karabiner="$EDITOR +'cd ~/.config/karabiner/' ~/.config/karabiner/karabiner.json"
 alias c-less="$EDITOR +'cd ~/.config/less/' $HOME/.config/less/"
-alias c-mac="$EDITOR +'cd ~/.config/macos/' ~/.config/macos/preferences.sh"
 alias c-mailcap="$EDITOR +'cd ~/.mutt/' ~/.mutt/mailcap"
 alias c-mpv="$EDITOR +'cd ~/.config/mpv/' ~/.config/mpv/"
 alias c-mutt="$EDITOR +'cd ~/.mutt/' ~/.mutt/muttrc"
 alias c-newsboat="$EDITOR +'cd ~/.newsboat/' ~/.newsboat/config"
 alias c-ranger="$EDITOR +'cd ~/.config/ranger/' ~/.config/ranger/rc.conf"
-alias c-readme="$EDITOR ~/README.md"
 alias c-ssh="$EDITOR +'cd ~/.ssh/' ~/.ssh/config"
 alias c-stig="$EDITOR +'cd ~/.config/stig/' ~/.config/stig/rc"
 alias c-task="$EDITOR ~/.taskrc"
@@ -84,5 +79,4 @@ alias c-vim="$EDITOR +'cd ~/.vim/' ~/.vim/init.vim"
 alias c-wget="$EDITOR +'cd ~/.config/wget/' ~/.config/wget/wgetrc"
 alias c-youtube-dl="$EDITOR +'cd ~/.config/youtube-dl/' ~/.config/youtube-dl/config"
 alias c-zsh="$EDITOR +'cd $ZDOTDIR' $ZDOTDIR/.zshrc" r-zsh="source $ZDOTDIR/.zshrc"
-alias c-zshenv="$EDITOR ~/.zshenv"
 alias c-zshhistory="$EDITOR +'cd $ZDOTDIR' $HISTFILE"
