@@ -6,16 +6,30 @@ class select(Command):
     """
     :select
 
-    Find a file or a directory by using `fzf`.
+    Select a file or a directory under current working directory with `find` and `fzf`.
     """
 
     def execute(self):
         import subprocess
 
-        command="find -L . \( -fstype 'dev' -or -fstype 'proc' \) -prune -or -print 2>/dev/null \
-                        | sed 1d \
-                        | cut --bytes=3- \
-                        | fzf --no-multi --exact --prompt='select ' --height='100%'"
+        command=" \
+            find -L . \( -fstype 'dev' -or -fstype 'proc' \) -prune -or -print 2>/dev/null \
+            | sed 1d \
+            | cut --bytes=3- \
+            | fzf \
+                --no-multi \
+                --exact \
+                --prompt='select ' \
+                --height='100%' \
+                --preview-window='right:60%' \
+                --preview=' \
+                    if [ -d {} ]; then; \
+                        ls -l --si --almost-all --classify --color=always --group-directories-first --literal {} 2>/dev/null; \
+                    else \
+                        highlight --out-format=xterm256 --style=pablo {} 2>/dev/null || cat {} 2>/dev/null; \
+                    fi \
+                ' \
+        " \
 
         fzf = self.fm.execute_command(command, stdout=subprocess.PIPE)
         stdout, stderr = fzf.communicate()
@@ -32,14 +46,74 @@ class locate(Command):
     """
     :locate
 
-    Find a file by using `fzf` with `ripgrep`.
+    Find a file system-wide with `ripgrep` and `fzf`.
     """
 
     def execute(self):
         import subprocess
 
-        command="rg --files --no-messages --no-ignore --hidden --follow --smart-case --glob '!{.git,node_modules}/*' / \
-            | fzf --no-multi --exact --prompt='locate ' --height='100%'"
+        command=" \
+            rg / \
+                --files \
+                --no-messages \
+                --no-ignore \
+                --hidden \
+                --follow \
+                --smart-case \
+                --glob '!{.git,node_modules}/*' \
+            | fzf \
+                --no-multi \
+                --exact \
+                --prompt='locate ' \
+                --height='100%' \
+                --preview-window='right:60%' \
+                --preview=' \
+                    if [ -d {} ]; then; \
+                        ls -l --si --almost-all --classify --color=always --group-directories-first --literal {} 2>/dev/null; \
+                    else \
+                        highlight --out-format=xterm256 --style=pablo {} 2>/dev/null || cat {} 2>/dev/null; \
+                    fi \
+                ' \
+        " \
+
+        fzf = self.fm.execute_command(command, stdout=subprocess.PIPE)
+        stdout, stderr = fzf.communicate()
+
+        if fzf.returncode == 0:
+            fzf_file = os.path.abspath(stdout.decode('UTF-8').rstrip('\n'))
+
+            if os.path.isdir(fzf_file):
+                self.fm.cd(fzf_file)
+            else:
+                self.fm.select_file(fzf_file)
+
+class jump(Command):
+    """
+    :jump
+
+    Jump to a most used directory with `fasd` and `fzf`.
+    """
+
+    def execute(self):
+        import subprocess
+
+        command=" \
+            fasd -l \
+            | fzf \
+                --exact \
+                --tac \
+                --no-sort \
+                --prompt='jump ' \
+                --height='100%' \
+                --preview-window='right:60%' \
+                --preview=' \
+                    if [ -d {} ]; then; \
+                        ls -l --si --almost-all --classify --color=always --group-directories-first --literal {} 2>/dev/null; \
+                    else \
+                        highlight --out-format=xterm256 --style=pablo {} 2>/dev/null || cat {} 2>/dev/null; \
+                    fi \
+                ' \
+        "
 
         fzf = self.fm.execute_command(command, stdout=subprocess.PIPE)
         stdout, stderr = fzf.communicate()
@@ -56,7 +130,7 @@ class compress(Command):
     """
     :compress
 
-    Compress marked files to current directory.
+    Compress marked files to current directory with `atool`.
     """
 
     def execute(self):
@@ -85,34 +159,11 @@ class compress(Command):
             extension = ['.zip', '.tar.gz', '.rar', '.7z']
             return ['compress ' + os.path.basename(self.fm.thisdir.path) + ext for ext in extension]
 
-class jump(Command):
-    """
-    :jump
-
-    Jump to a most used directory using `fasd` and `fzf`.
-    """
-
-    def execute(self):
-        import subprocess
-
-        command="fasd -l | fzf --exact --tac --no-sort --prompt='jump ' --height='100%'"
-
-        fzf = self.fm.execute_command(command, stdout=subprocess.PIPE)
-        stdout, stderr = fzf.communicate()
-
-        if fzf.returncode == 0:
-            fzf_file = os.path.abspath(stdout.decode('UTF-8').rstrip('\n'))
-
-            if os.path.isdir(fzf_file):
-                self.fm.cd(fzf_file)
-            else:
-                self.fm.select_file(fzf_file)
-
 class toggle_alternate_view(Command):
     """
     :toggle_alternate_view
 
-    Enable and disable alternative column ratios.
+    Toggle alternative column ratios.
     """
 
     def execute(self):
