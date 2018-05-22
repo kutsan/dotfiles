@@ -9,9 +9,45 @@
 	whitespace = warn
 
 [alias]
-	today = log --since=midnight --oneline --graph --decorate
-	yesterday = log --after=yesterday.midnight --before 0am --oneline --graph --decorate
-	count = !sh -c 'git log --oneline | wc -l'
+	a = add
+	ap = add --patch
+	b = branch
+	bl = !git --no-pager branch --verbose --all
+	c = commit
+	co = checkout
+	count = !git log --oneline | wc -l
+	d = diff
+	ds = diff --staged
+	dt = difftool
+	l = log \
+		--graph \
+		--abbrev-commit \
+		--decorate \
+		--all \
+		--date=format:'%Y-%m-%d %H:%M' \
+		--format=format:'%C(bold black)%ad%C(reset) %C(yellow)%h%C(reset) %C(white)%s%C(reset) %C(blue)<%an>%C(reset)%C(bold yellow)%d%C(reset) %C(black)%ar%C(reset)'
+	lp = log --patch
+	pr = "! \
+		function f() { \
+			git fetch --force --update-head-ok ${2:-origin} refs/pull/$1/head:pr/$1 && git checkout pr/$1; \
+		}; f"
+	pr-clean = "! \
+		git for-each-ref refs/heads/pr/* --format='%(refname)' \
+		| sed s#refs/heads/## \
+		| xargs -I '{}' git branch --delete --force {}"
+	s = status --short --branch
+	sm = submodule
+	today = log \
+		--since=midnight \
+		--oneline \
+		--graph \
+		--decorate
+	yesterday = log \
+		--after=yesterday.midnight \
+		--before 0am \
+		--oneline \
+		--graph \
+		--decorate
 
 [pull]
 	rebase = true
@@ -24,6 +60,7 @@
 
 [commit]
 	gpgsign = true
+	verbose = true
 
 [grep]
 	lineNumber = true

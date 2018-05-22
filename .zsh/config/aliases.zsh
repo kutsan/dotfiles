@@ -86,30 +86,3 @@ alias c-youtube-dl="$EDITOR +'cd ~/.config/youtube-dl/' ~/.config/youtube-dl/con
 alias c-zsh="$EDITOR +'cd $ZDOTDIR' $ZDOTDIR/.zshrc" r-zsh="source $ZDOTDIR/.zshrc"
 alias c-zshenv="$EDITOR ~/.zshenv"
 alias c-zshhistory="$EDITOR +'cd $ZDOTDIR' $HISTFILE"
-
-# Git
-alias g='git'
-alias gs='git status -sb'
-alias gf='git fetch'
-alias gc='git commit'
-alias gb='git branch'
-alias gbl='git branch -vv -a'
-alias gco='git checkout'
-alias gsm='git submodule'
-alias gd='git diff'
-alias gdt='git difftool'
-alias gds='git diff --staged'
-alias gl='git log \
-	--graph \
-	--abbrev-commit \
-	--decorate \
-	--format=format:"%C(yellow)%h%C(reset) %C(white)%s%C(reset) %C(blue)<%an>%C(reset)%C(bold yellow)%d%C(reset) %C(black)%ar%C(reset)" \
-	--all'
-alias glt='git log \
-	--graph \
-	--abbrev-commit \
-	--decorate \
-	--format=format:"%C(bold black)%ad%C(reset) %C(yellow)%h%C(reset) %C(white)%s%C(reset) %C(blue)<%an>%C(reset)%C(bold yellow)%d%C(reset) %C(black)%ar%C(reset)" \
-	--date=format:"%Y-%m-%d %H:%M" \
-	--all'
-function ga() { git add "$@" && git status -sb }
