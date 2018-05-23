@@ -55,7 +55,6 @@
 		- [asciinema](https://github.com/asciinema/asciinema) - Record and share terminal sessions as text-based colored format
 		- [vint](https://github.com/Kuniwak/vint) - Extensible, high performance Vimscript linter and analysis tool
 		- [neovim](https://github.com/neovim/python-client) - Neovim Python support for plugins
-		- [mal](https://github.com/ryukinix/mal) - MyAnimeList client
 		- [stig](https://github.com/rndusr/stig) - TUI and CLI interface for transmission-daemon
 		- [terminal-colors](https://github.com/eikenb/terminal-colors) - Test utility for color capabilities of terminal
 		- [grip](https://github.com/joeyespo/grip) - Preview Markdown files in local server
@@ -130,4 +129,4 @@
 
 ## License
 
-GPLv3
+GPL-3.0
