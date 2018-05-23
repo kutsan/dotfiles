@@ -1,4 +1,4 @@
-# Initialize prompt system.
+# Initialize the prompt system.
 promptinit
 
 # Prompt theme.
@@ -21,10 +21,13 @@ SPROMPT="zsh: correct %F{red}'%R'%f to %F{red}'%r'%f [%B%Uy%u%bes, %B%Un%u%bo, %
 function zle-line-init zle-keymap-select {
 	# Change the cursor style depending on keymap mode.
 	if [[ "$SSH_CONNECTION" == '' ]] {
-		if [[ "$KEYMAP" =~ 'main|viins' ]] {
-			printf '\033[6 q' # Vertical bar.
-		} else {
-			printf '\033[0 q' # Box.
+		case $KEYMAP {
+			vicmd)
+				printf '\e[0 q' # Box.
+				;;
+			viins|main)
+				printf '\e[6 q' # Vertical bar.
+				;;
 		}
 	}
 
@@ -33,6 +36,7 @@ function zle-line-init zle-keymap-select {
 
 	# Redraw if necessary.
 	zle reset-prompt
+	zle -R
 }
 zle -N zle-line-init
 zle -N zle-keymap-select
