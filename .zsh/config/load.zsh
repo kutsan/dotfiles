@@ -14,15 +14,12 @@ autoload -U promptinit
 autoload -U compinit
 compinit -d $ZDOTDIR/cache/.zcompdump # Completion cache file.
 
-# Load and register edit in $EDITOR function.
-autoload -U edit-command-line
-zle -N edit-command-line
-
 # Load custom hooks API.
 autoload -U add-zsh-hook
 
-# Load color variables.
-autoload -U colors && colors
+# Load and register edit in $EDITOR function.
+autoload -U edit-command-line
+zle -N edit-command-line
 
 # Load and register ZLE surround plugin.
 autoload -U surround
