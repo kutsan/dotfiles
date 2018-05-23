@@ -22,7 +22,7 @@ path=(
 )
 
 # Platform specific variables.
-if [[ $(uname) == 'Darwin' ]] {
+if [[ $OSTYPE =~ 'darwin*' ]] {
 	# coreutils
 	export GNU_COREUTILS_HOME='/usr/local/opt/coreutils/libexec/gnubin'
 	export GNU_COREUTILS_MAN_HOME='/usr/local/opt/coreutils/libexec/gnuman'
@@ -52,7 +52,7 @@ if [[ $(uname) == 'Darwin' ]] {
 	# Java Development Kit
 	export JAVA_HOME=$(/usr/libexec/java_home)
 
-} elif [[ $(uname -o) == 'Android' ]] 2>/dev/null {
+} elif [[ $OSTYPE =~ 'linux-android*' ]] 2>/dev/null {
 	# Shell variable
 	export SHELL=$(which zsh)
 
@@ -91,9 +91,9 @@ export LANGUAGE='en_US.UTF-8'
 
 # man
 export MANWIDTH='100' # Fixed line width for man pages
-	if ([[ $(uname -o) == 'Android' ]] 2>/dev/null) { MANWIDTH='50' }
+	if ([[ $OSTYPE =~ 'linux-android*' ]] 2>/dev/null) { MANWIDTH='50' }
 export MANPAGER="nvim +'set filetype=man' -"
-	if ([[ $(uname -o) == 'Android' ]] 2>/dev/null) { unset MANPAGER }
+	if ([[ $OSTYPE =~ 'linux-android*' ]] 2>/dev/null) { unset MANPAGER }
 
 # nvim
 export NVIM_RPLUGIN_MANIFEST="$HOME/.vim/cache/share/rplugin.vim"
@@ -139,7 +139,6 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_COLORS \
 	--height='40%' \
 	--jump-labels='bmvenritusldkfjgh' \
 	--bind='ctrl-f:jump-accept'"
-export FZF_COMPLETION_OPTS='--preview="highlight --out-format=xterm256 --style=pablo {} 2>/dev/null || cat {}"'
 
 # highlight
 export HIGHLIGHT_OPTIONS='--out-format="xterm256" --style="pablo"'
