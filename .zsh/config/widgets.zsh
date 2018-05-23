@@ -12,6 +12,7 @@ foreach widget (
 ) {
 	zle -N $widget
 }
+unset widget
 
 # Expand global alias to its full form.
 function custom-expand-global-alias() {
