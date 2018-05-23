@@ -141,10 +141,6 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_COLORS \
 	--bind='ctrl-f:jump-accept'"
 export FZF_COMPLETION_OPTS='--preview="highlight --out-format=xterm256 --style=pablo {} 2>/dev/null || cat {}"'
 
-# transmission
-export TRANSMISSION_HOME="$HOME/.config/transmission"
-source $TRANSMISSION_HOME/settings.zsh # Build $TRANSMISSION_OPTIONS variable.
-
 # highlight
 export HIGHLIGHT_OPTIONS='--out-format="xterm256" --style="pablo"'
 
