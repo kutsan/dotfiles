@@ -1,10 +1,3 @@
-# Transform the cursor to box form on ssh command.
-function preexec() {
-	if [[ "$2" =~ '^ssh ' ]] {
-		printf '\033[0 q'
-	}
-}
-
 # Compile lesskey file if compile is needed.
 if ([[ ! -f $LESSKEY ]] || [[ $LESSKEYRC -nt $LESSKEY ]]) {
 	lesskey -o $LESSKEY $LESSKEYRC
@@ -30,6 +23,14 @@ if ! [[ -L $ZDOTDIR/autoload/async ]] {
 zrecompile -p \
 	-M $ZDOTDIR/autoload/async -- \
 	-M $ZDOTDIR/autoload/prompt_pure_setup
+
+# Transform the cursor to box form on ssh command.
+function _ssh_preexec() {
+	if [[ "$2" =~ '^ssh[[:space:]]' ]] {
+		printf '\e[0 q'
+	}
+}
+add-zsh-hook preexec _ssh_preexec
 
 # Register fasd to track most used files and directories.
 function _fasd_preexec() {
