@@ -10,7 +10,7 @@ function should_launch_multiplexer() {
 		&& [[ $SUDO_USER == '' ]] \
 		&& [[ $EMACS == '' ]] \
 		&& [[ $SSH_CONNECTION == '' ]] \
-		&& [[ $(uname -o) != 'Android' ]] 2>/dev/null
+		&& [[ ! $OSTYPE =~ 'linux-android*' ]] 2>/dev/null
 	) {
 		return 0
 	}
