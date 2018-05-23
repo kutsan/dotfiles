@@ -11,9 +11,7 @@ alias du='du --max-depth=1 --si' # Display size of files and folders under curre
 alias df='df --all --si --print-type' # Display all disk usage statistics with SI units and FS types.
 alias ls='ls --almost-all --classify --color=always --group-directories-first --literal' # List name of nodes.
 alias lsa='ls -l --almost-all --si' # List nodes with their details.
-alias lsd='ls --directory */ | command sed "s#//##"' # List only directories.
-alias lsf='ls --almost-all -1 | command grep --invert-match "/$"' # List only files.
-alias path="echo $PATH | cut --delimiter=':' --fields=1- --output-delimiter=$'\n'" # List entries in $PATH one path per line.
+alias path='print -l ${(ps#:#)PATH}' # List entries in $PATH one path per line.
 alias tmp="command mkdir --parents --verbose $TMPDIR/$(whoami) && cd $TMPDIR/$(whoami) && lsa" # Make temporary directory and cd into that.
 
 # Custom Shortcuts
@@ -32,7 +30,7 @@ alias news='newsboat --quiet'
 alias def='sdcv --color'
 alias myip='curl http://checkip.amazonaws.com'
 alias cal='gcal \
-	--highlighting="$bg[red]:$reset_color:$fg[yellow]:$reset_color" \
+	--highlighting="\e[41m:\e[0m:\e[33m:\e[0m" \
 	--pager \
 	--starting-day=1 \
 	--cc-holidays=TR \
@@ -80,3 +78,9 @@ alias c-wget="$EDITOR +'cd ~/.config/wget/' ~/.config/wget/wgetrc"
 alias c-youtube-dl="$EDITOR +'cd ~/.config/youtube-dl/' ~/.config/youtube-dl/config"
 alias c-zsh="$EDITOR +'cd $ZDOTDIR' $ZDOTDIR/.zshrc" r-zsh="source $ZDOTDIR/.zshrc"
 alias c-zshhistory="$EDITOR +'cd $ZDOTDIR' $HISTFILE"
+
+# Git
+foreach aliaskey (a ap b bl c co d ds dt l lp s sm) {
+	alias g$aliaskey="git $aliaskey"
+}
+unset aliaskey
