@@ -149,10 +149,34 @@ source $TRANSMISSION_HOME/settings.zsh # Build $TRANSMISSION_OPTIONS variable.
 export HIGHLIGHT_OPTIONS='--out-format="xterm256" --style="pablo"'
 
 # less
-source "$HOME/.config/less/lessrc.zsh" # Load core options.
+export LESS=" \
+	--ignore-case \
+	--tilde \
+	--chop-long-lines \
+	--status-column \
+	--LONG-PROMPT \
+	--jump-target=10 \
+	--RAW-CONTROL-CHARS \
+	--clear-screen \
+	--silent \
+	--tabs=4 \
+	--shift=5"
+export LESSOPEN="| highlight $HIGHLIGHT_OPTIONS -- %s 2>/dev/null" # Use `highlight` program to try to highlight opened file according to its extension.
 export LESSHISTFILE="$HOME/.config/less/lesshistory" # Command and search history file.
 export LESSKEYRC="$HOME/.config/less/lesskey" # Path of the uncompiled lesskey file.
 export LESSKEY="$LESSKEYRC.lwc" # Path of the compiled lesskey file.
+export LESS_TERMCAP_md=$(tput bold; tput setaf 4) # Turn on bold mode.
+export LESS_TERMCAP_me=$(tput sgr0) # Turn off all attributes.
+export LESS_TERMCAP_so=$(tput bold; tput setaf 3) # Begin standout mode.
+export LESS_TERMCAP_se=$(tput rmso; tput sgr0) # Exit standout mode.
+export LESS_TERMCAP_us=$(tput smul; tput bold; tput setaf 250) # Begin underline mode.
+export LESS_TERMCAP_ue=$(tput rmul; tput sgr0) # Exit underline mode.
+export LESS_TERMCAP_mr=$(tput rev) # Turn on reverse video mode.
+export LESS_TERMCAP_mh=$(tput dim) # Turn on half-bright mode.
+export LESS_TERMCAP_ZN=$(tput ssubm) # Enter subscript mode.
+export LESS_TERMCAP_ZV=$(tput rsubm) # End subscript mode.
+export LESS_TERMCAP_ZO=$(tput ssupm) # Enter superscript mode.
+export LESS_TERMCAP_ZW=$(tput rsupm) # End superscript mode.
 
 # sdcv
 export SDCV_PAGER='fold -s -w 100 | less'
