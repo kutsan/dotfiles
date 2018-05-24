@@ -14,9 +14,6 @@ typeset -g PROMPT_ERROR_STATUS_COLOR='red'
 # Primary prompt.
 PROMPT='%(?.%F{$PROMPT_NORMAL_STATUS_COLOR}.%F{$PROMPT_ERROR_STATUS_COLOR})${PROMPT_CURRENT_SYMBOL}%f '
 
-# Spelling correction prompt.
-SPROMPT="zsh: correct %F{red}'%R'%f to %F{red}'%r'%f [%B%Uy%u%bes, %B%Un%u%bo, %B%Ue%u%bdit, %B%Ua%u%bbort]? "
-
 # ZLE hooks for prompt's Vim mode status
 function zle-line-init zle-keymap-select {
 	# Change the cursor style depending on keymap mode.
@@ -25,6 +22,7 @@ function zle-line-init zle-keymap-select {
 			vicmd)
 				printf '\e[0 q' # Box.
 				;;
+
 			viins|main)
 				printf '\e[6 q' # Vertical bar.
 				;;
