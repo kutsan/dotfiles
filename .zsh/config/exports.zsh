@@ -87,9 +87,6 @@ export NVIM_RPLUGIN_MANIFEST="$HOME/.vim/cache/share/rplugin.vim"
 # export NVIM_NODE_LOG_FILE="$HOME/.vim/cache/log/node.log"
 # export NVIM_NODE_LOG_LEVEL='4'
 
-# node
-export NODE_REPL_HISTORY="$HOME/.node/nodereplhistory"
-
 # npm
 export NPM_CONFIG_INIT_AUTHOR_NAME='Kutsan Kaplan'
 export NPM_CONFIG_INIT_AUTHOR_EMAIL='me@kutsankaplan.com'
@@ -130,6 +127,9 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_COLORS \
 # highlight
 export HIGHLIGHT_OPTIONS='--out-format="xterm256" --style="pablo"'
 
+# sdcv
+export SDCV_PAGER='fold -s -w 100 | less'
+
 # less
 export LESS=" \
 	--ignore-case \
@@ -159,6 +159,3 @@ export LESS_TERMCAP_ZN=$(tput ssubm) # Enter subscript mode.
 export LESS_TERMCAP_ZV=$(tput rsubm) # End subscript mode.
 export LESS_TERMCAP_ZO=$(tput ssupm) # Enter superscript mode.
 export LESS_TERMCAP_ZW=$(tput rsupm) # End superscript mode.
-
-# sdcv
-export SDCV_PAGER='fold -s -w 100 | less'
