@@ -1,15 +1,3 @@
-# Utility function to return the first installed binary for given executables.
-function find_alternative() {
-	local i=''
-
-	foreach i ($*) {
-		if (hash "$i" &>/dev/null) {
-			echo "$i"
-			return 0
-		}
-	}
-}
-
 # Initialize $PATH with system binaries.
 path=(
 	/usr/local/bin
@@ -66,15 +54,14 @@ path=($path $HOME/.bin{,/external})
 # Term
 export TERM='xterm-256color'
 
-# Default Editors
-export EDITOR=$(find_alternative nvim vim vi)
-export GUI_EDITOR=$(find_alternative gemacs gvim)
+# Default Editor
+export EDITOR='nvim'
 
 # Default Pager
 export PAGER='less'
 
 # Browser
-export BROWSER=$(find_alternative google-chrome xdg-open open)
+export BROWSER='xdg-open'
 
 # Default Config and Cache Home
 export XDG_DATA_HOME="$HOME/.local/share"
@@ -175,6 +162,3 @@ export LESS_TERMCAP_ZW=$(tput rsupm) # End superscript mode.
 
 # sdcv
 export SDCV_PAGER='fold -s -w 100 | less'
-
-# Clear utility function.
-unset -f find_alternative
