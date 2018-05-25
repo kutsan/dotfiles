@@ -57,7 +57,7 @@ alias c-browsersync='$EDITOR +"cd ~/.config/browsersync/" ~/.config/browsersync/
 alias c-crontab='$EDITOR +"cd ~/.cron/" ~/.cron/crontab'
 alias c-editorconfig='$EDITOR ~/.config/editorconfig/.editorconfig'
 alias c-emacs='$EDITOR +"cd ~/.emacs.d/" ~/.emacs.d/init.el'
-alias c-git='$EDITOR +"cd ~/.config/git/" ~/.config/git/'
+alias c-git='$EDITOR +"cd ~/.config/git/" ~/.config/git/config'
 alias c-gpg='$EDITOR +"cd ~/.gnupg/" ~/.gnupg/gpg.conf'
 alias c-less='$EDITOR +"cd ~/.config/less/" $HOME/.config/less/'
 alias c-mailcap='$EDITOR +"cd ~/.mutt/" ~/.mutt/mailcap'
@@ -78,7 +78,7 @@ alias c-zsh='$EDITOR +"cd $ZDOTDIR" $ZDOTDIR/.zshrc'
 alias c-zshhistory='$EDITOR +"cd $ZDOTDIR" $HISTFILE'
 
 # Git
-foreach aliaskey (a ap b bl c co d ds dt l lp s sm) {
+foreach aliaskey (a b bl c co d ds dt l s sm) {
 	alias g$aliaskey="git $aliaskey"
 }
 unset aliaskey
