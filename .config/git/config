@@ -10,7 +10,6 @@
 
 [alias]
 	a = add
-	ap = add --patch
 	b = branch
 	bl = !git --no-pager branch --verbose --all
 	c = commit
@@ -25,8 +24,7 @@
 		--decorate \
 		--all \
 		--date=format:'%Y-%m-%d %H:%M' \
-		--format=format:'%C(bold black)%ad%C(reset) %C(yellow)%h%C(reset) %C(white)%s%C(reset) %C(blue)<%an>%C(reset)%C(bold yellow)%d%C(reset) %C(black)%ar%C(reset)'
-	lp = log --patch
+		--format=format:'%C(yellow)%h%C(reset) %C(white)%s%C(reset) %C(blue)%an <%ae>%C(reset)%C(bold yellow)%d%C(reset) %C(bold black)%ad (%ar)%C(reset)'
 	pr = "! \
 		function f() { \
 			git fetch --force --update-head-ok ${2:-origin} refs/pull/$1/head:pr/$1 && git checkout pr/$1; \
@@ -63,8 +61,8 @@
 	verbose = true
 
 [grep]
-	lineNumber = true
-	patternType = perl
+	linenumber = true
+	patterntype = perl
 
 [color]
 	ui = true
