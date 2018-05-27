@@ -21,23 +21,19 @@ function r() {
 # `fasd` with `fzf`.
 ##
 function fz() {
-	if [[ "$@" == '' ]] {
-		local selected_path=$(
-			fasd -l -d \
-			| fzf \
-				--tac \
-				--no-sort \
-				--exact \
-				--prompt='cd ' \
-				--preview-window='right:60%' \
-				--preview='ls --almost-all --classify --color=always --group-directories-first --literal {} 2>/dev/null'
-		)
+	local selected_path=$(
+		fasd -l -d \
+		| sed "s#$HOME#~#" \
+		| fzf \
+			--tac \
+			--no-sort \
+			--exact \
+			--prompt='cd ' \
+			--preview-window='right:60%' \
+			--preview='eval ls --almost-all --classify --color=always --group-directories-first --literal {} 2>/dev/null'
+	)
 
-		cd "$selected_path"
-	} else {
-		typeset -g _last_z_args="$@"
-		_z "$@"
-	}
+	eval cd "$selected_path"
 }
 
 ##
