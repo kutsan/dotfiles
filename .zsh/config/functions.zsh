@@ -8,7 +8,7 @@ function take() {
 }
 
 ##
-# Former ranger alias.
+# `cd` into the last directory upon exit.
 #
 # @param {string} [$1] Directory path which will cd into.
 ##
@@ -30,7 +30,7 @@ function fz() {
 			--exact \
 			--prompt='cd ' \
 			--preview-window='right:60%' \
-			--preview='eval ls --almost-all --classify --color=always --group-directories-first --literal {} 2>/dev/null'
+			--preview='eval ls -l --si --almost-all --classify --color=always --group-directories-first --literal {} 2>/dev/null'
 	)
 
 	eval cd "$selected_path"
@@ -44,12 +44,12 @@ function fz() {
 function b() {
 	# Bookmarks
 	local -A bookmarks=(
-		'e' "~/Desktop/"
-		'd' "~/Documents/"
-		'w' "~/Downloads/"
-		'i' "~/Pictures/"
-		'p' "~/Projects/"
-		'v' "~/Videos/"
+		'e' '~/Desktop/'
+		'd' '~/Documents/'
+		'w' '~/Downloads/'
+		'i' '~/Pictures/'
+		'p' '~/Projects/'
+		'v' '~/Videos/'
 	)
 
 	local selected_bookmark
@@ -72,10 +72,11 @@ function b() {
 				| fzf \
 					--exact \
 					--height='30%' \
-					--preview='eval ls --almost-all --classify --color=always --group-directories-first --literal $(echo {} | cut --delimiter=" " --fields=2 -) 2>/dev/null' \
+					--preview='eval ls -l --si --almost-all --classify --color=always --group-directories-first --literal {2} 2>/dev/null' \
 					--preview-window='right:60%' \
-				| cut --delimiter=' ' --fields=2
 			)
+
+			selected_bookmark="${selected_bookmark[(ws: :)2]}"
 		}
 	}
 
