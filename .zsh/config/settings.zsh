@@ -1,9 +1,6 @@
 # Enable Vi emulation for ZLE.
 bindkey -v
 
-# Load dircolors.
-eval $(dircolors --sh "$HOME/.dircolors")
-
 # Zsh Line Editor
 typeset -g zle_highlight=(region:bg=black) # Highlight the background of the text when selecting.
 setopt NO_BEEP # Don't beep on errors.
