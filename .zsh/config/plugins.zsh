@@ -3,15 +3,49 @@ source "$ZDOTDIR/plugins/zsh-autopair/autopair.zsh"
 
 # zsh-system-clipboard: Synchronize system clipboard with ZLE registers.
 source "$ZDOTDIR/plugins/zsh-system-clipboard/zsh-system-clipboard.zsh"
-	ZSH_SYSTEM_CLIPBOARD_TMUX_SUPPORT='true'
+	typeset -g ZSH_SYSTEM_CLIPBOARD_TMUX_SUPPORT='true'
 
 # zsh-autosuggestions: Fish-like auto-suggestions.
 source "$ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
+	typeset -g ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
+	typeset -g ZSH_AUTOSUGGEST_ORIGINAL_WIDGET_PREFIX='autosuggest-orig-'
+	typeset -g ZSH_AUTOSUGGEST_STRATEGY='default'
+	typeset -g ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=''
+	typeset -g ZSH_AUTOSUGGEST_ASYNC_PTY_NAME='zsh_autosuggest_pty'
+	typeset -ga ZSH_AUTOSUGGEST_EXECUTE_WIDGETS=()
+	typeset -ga ZSH_AUTOSUGGEST_CLEAR_WIDGETS=(
+		history-search-forward
+		history-search-backward
+		history-beginning-search-forward
+		history-beginning-search-backward
+		history-substring-search-up
+		history-substring-search-down
+		up-line-or-beginning-search
+		down-line-or-beginning-search
+		up-line-or-history
+		down-line-or-history
+		accept-line
+	)
+	typeset -ga ZSH_AUTOSUGGEST_ACCEPT_WIDGETS=(
+		vi-forward-char
+	)
+	typeset -ga ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS=(
+		vi-forward-word
+	)
+	typeset -ga ZSH_AUTOSUGGEST_IGNORE_WIDGETS=(
+		orig-\*
+		beep
+		run-help
+		set-local-history
+		which-command
+		yank
+		yank-pop
+	)
 
 # zsh-syntax-highlighting: Syntax highlighting support.
 source "$ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-	ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
-	typeset -A ZSH_HIGHLIGHT_STYLES
+	typeset -ga ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
+	typeset -gA ZSH_HIGHLIGHT_STYLES
 
 	# main
 	ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=red'
@@ -24,8 +58,8 @@ source "$ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 	ZSH_HIGHLIGHT_STYLES[precommand]='fg=green,underline'
 	ZSH_HIGHLIGHT_STYLES[commandseparator]='fg=cyan'
 	ZSH_HIGHLIGHT_STYLES[hashed-command]='fg=green,italic'
-	ZSH_HIGHLIGHT_STYLES[path]='none,underline'
-	ZSH_HIGHLIGHT_STYLES[path_pathseparator]='fg=cyan,underline'
+	ZSH_HIGHLIGHT_STYLES[path]='fg=magenta'
+	ZSH_HIGHLIGHT_STYLES[path_pathseparator]='fg=magenta'
 	ZSH_HIGHLIGHT_STYLES[path_prefix]='none'
 	ZSH_HIGHLIGHT_STYLES[path_prefix_pathseparator]='none'
 	ZSH_HIGHLIGHT_STYLES[globbing]='bg=black'
