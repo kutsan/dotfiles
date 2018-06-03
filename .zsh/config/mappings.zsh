@@ -6,8 +6,6 @@ bindkey -M viins '^?' backward-delete-char # Delete left char with backspace key
 bindkey -M viins '^B' backward-kill-word # Delete a WORD backward.
 bindkey -M viins '^[[3~' delete-char # Ensure delete key always delete forward.
 bindkey -M viins ' ' custom-expand-global-alias # Space key to expand global aliases.
-bindkey -M viins '^X^G' custom-add-noglob-before-the-command # Insert noglob before the command.
-bindkey -M viins '^X^M' custom-add-sudo-before-the-command # Insert sudo before the command.
 bindkey -M viins '^Y' custom-insert-last-typed-word # Insert last typed word for quick copy-paste.
 bindkey -M viins '^R' custom-fzf-launch-from-history # Select command from history into the command line.
 
@@ -18,14 +16,11 @@ bindkey -M vicmd '^K' up-history # ^K to previous command.
 bindkey -M vicmd '^J' down-history # ^J to next command.
 bindkey -M vicmd 'H' vi-beginning-of-line # Go beginning of line.
 bindkey -M vicmd 'L' vi-end-of-line # Go end of line.
-bindkey -M vicmd 'gv' edit-command-line # Edit current command in $EDITOR.
 bindkey -M vicmd 'cs' change-surround # Change surround operator.
 bindkey -M vicmd 'ds' delete-surround # Delete surround operator.
 bindkey -M vicmd 'ys' add-surround # Add surround operator.
-bindkey -M vicmd 'gm' custom-tmux-show-man-current-command # Go man page of the current command.
 bindkey -M vicmd '^Y' custom-tmux-scroll-up # Activate tmux copy-mode and scroll up depending on key stroke.
 bindkey -M vicmd '^U' custom-tmux-scroll-up # Activate tmux copy-mode and scroll up depending on key stroke.
-bindkey -M vicmd 'gb' custom-tmux-jump-back-prompt # Search back prompt under tmux.
 bindkey -M vicmd ':' custom-fzf-execute-widget # Execute Zsh Line Editor widgets.
 
 # Visual Mode
