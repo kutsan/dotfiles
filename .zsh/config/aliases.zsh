@@ -42,7 +42,7 @@ alias search="rg \
 	--hidden \
 	--follow \
 	--smart-case \
-	--glob '!{.git/*,node_modules/*,\$(basename \$HISTFILE)}' \
+	--glob '!{.git/*,node_modules/*}' \
 	--regexp"
 
 # Global Aliases
