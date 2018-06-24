@@ -58,6 +58,7 @@
 		- [stig](https://github.com/rndusr/stig) - TUI and CLI interface for transmission-daemon
 		- [terminal-colors](https://github.com/eikenb/terminal-colors) - Test utility for color capabilities of terminal
 		- [grip](https://github.com/joeyespo/grip) - Preview Markdown files in local server
+		- [trackma](https://github.com/z411/trackma) - Multi-site anime, manga list manager
 - [coreutils](https://www.gnu.org/software/coreutils/coreutils.html) - GNU core utilities for basic file, shell and text manipulation
 - [findutils](https://www.gnu.org/software/findutils) - GNU basic directory searching utilities that provides find, locate and xargs
 - [moreutils](https://joeyh.name/code/moreutils) - Collection of the useful Unix tools
@@ -121,7 +122,7 @@
 - [FastHub](https://github.com/k0shk0sh/FastHub) - GitHub client
 - [android-mpv](https://github.com/mpv-android/mpv-android) - Video player for Android based on libmpv
 - [Simple Gallery](https://github.com/SimpleMobileTools/Simple-Gallery) - Gallery for viewing photos and videos
-- [OpenVPN](https://github.com/schwabe/ics-openvpn) - OpenVPN client
+- [WireGuard](https://github.com/WireGuard/wireguard-android) - WireGuard VPN client
 - [Amaze](https://github.com/TeamAmaze/AmazeFileManager) - File manager
 - [Slide for Reddit](https://github.com/ccrama/Slide) - Reddit client
 - [Twidere](https://github.com/TwidereProject/Twidere-Android) - Twitter client
