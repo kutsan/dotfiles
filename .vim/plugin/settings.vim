@@ -48,7 +48,7 @@ set visualbell " Use visual bell instead of beeping on errors.
 
 " Interface
 set cursorline " Highlight the line background of the cursor.
-set fillchars=vert:⏐ " Characters to fill the status lines and vertical separators.
+set fillchars=stl:\ ,stlnc:\ ,vert:│,fold:\ ,diff:\  " Characters to fill the status lines and vertical separators.
 set laststatus=2 " Always show the status line.
 set linebreak " Wrap lines in 'breakat', rather than at the last character.
 set listchars=tab:│\ ,nbsp:␣,extends:…,precedes:… " Strings to use when 'list' option set.
@@ -68,7 +68,7 @@ set formatoptions=croqnj " General text formatting options used by many mechanic
 " Completion
 set complete=.,w,b,k,t " Options for keyword completion.
 set completeopt=longest,menuone " Options for insert mode completion.
-set path=.,** " Use recursive file search.
+set path=.,** " List of directories which will be searched when using related features.
 
 " Indentation
 set tabstop=4 " Length of a <Tab> character.
