@@ -1,15 +1,16 @@
-# -- Options -------------------------------------
-
 env:
   TERM: xterm-256color
 
-dimensions:
-  columns: 120
-  lines: 40
+window:
+  dimensions:
+    columns: 80
+    lines: 24
 
-padding:
-  x: 2
-  y: 2
+  padding:
+    x: 2
+    y: 2
+
+  decorations: false
 
 tabspaces: 4
 
@@ -28,7 +29,11 @@ selection:
 
 hide_cursor_when_typing: true
 
+cursor_style: Block
+
 live_config_reload: true
+
+custom_cursor_colors: true
 
 font:
   normal:
@@ -41,6 +46,7 @@ font:
 
   italic:
     family: FuraCode Nerd Font
+    style: Light
 
   size: 16.0
 
@@ -52,11 +58,9 @@ font:
     x: 0.0
     y: 0.0
 
+  scale_with_dpi: true
+
   use_thin_strokes: true
-
-# -- Colors --------------------------------------
-
-custom_cursor_colors: true
 
 # Iceberg
 colors:
@@ -98,14 +102,10 @@ colors:
     cyan:       '#66cccc'
     white:      '#dddddd'
 
-# -- Mappings ------------------------------------
-
-mouse_bindings:
-  - { mouse: Middle, action: PasteSelection }
-
 mouse:
   double_click: { threshold: 300 }
   triple_click: { threshold: 300 }
+  faux_scrollback_lines: 1
 
 key_bindings:
   - { key: V,        mods: Command,   action: Paste                        }
