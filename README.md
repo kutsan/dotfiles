@@ -46,7 +46,7 @@
 		- [authcli](https://github.com/sam3d/auth) - Two-factor authentication token manager
 		- [clipboard-cli](https://github.com/sindresorhus/clipboard-cli) - Cross-platform clipboard wrapper
 - [python](https://www.python.org) - High-level programming language for general-purpose programming
-	- [pip](https://pip.pypa.io) - Python package manager to install and manage packages written in Python
+	- [pip](https://pypi.org) - Python package manager to install and manage packages written in Python
 		- [ranger](https://github.com/ranger/ranger) - Text-based file system manager for the console with Vim-like key bindings
 			- [highlight](https://github.com/andre-simon/highlight) - Converts source code to formatted text with colored syntax highlighting
 			- [exiftool](http://www.sno.phy.queensu.ca/~phil/exiftool) - Read, write and edit meta information in a wide variety of media files
@@ -98,7 +98,6 @@
 - [sdcv](https://github.com/Dushistov/sdcv) - StarDict command-line version, offline directories
 - [gcal](https://www.gnu.org/software/gcal) - Calculate and print calendars
 - [fasd](https://github.com/clvv/fasd) - Track your most used directories, based on frequency for quick access later
-- [bitwarden](https://github.com/bitwarden/cli) - Password manager
 
 ### GUI
 
@@ -125,7 +124,6 @@
 - [WireGuard](https://github.com/WireGuard/wireguard-android) - WireGuard VPN client
 - [Amaze](https://github.com/TeamAmaze/AmazeFileManager) - File manager
 - [Slide for Reddit](https://github.com/ccrama/Slide) - Reddit client
-- [Twidere](https://github.com/TwidereProject/Twidere-Android) - Twitter client
 - [Red Moon](https://github.com/LibreShift/red-moon) - Blue light filter and screen dimmer
 
 ## License
