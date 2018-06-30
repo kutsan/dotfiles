@@ -99,6 +99,7 @@ class jump(Command):
 
         command=" \
             fasd -l \
+            | sed s#$HOME#~# \
             | fzf \
                 --exact \
                 --tac \
@@ -119,7 +120,7 @@ class jump(Command):
         stdout, stderr = fzf.communicate()
 
         if fzf.returncode == 0:
-            fzf_file = os.path.abspath(stdout.decode('UTF-8').rstrip('\n'))
+            fzf_file = os.path.abspath(os.path.expanduser(stdout.decode('UTF-8').rstrip('\n')))
 
             if os.path.isdir(fzf_file):
                 self.fm.cd(fzf_file)
