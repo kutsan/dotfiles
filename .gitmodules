@@ -57,3 +57,7 @@
 [submodule ".vim/pack/bundle/start/signify"]
 	path = .vim/pack/bundle/start/signify
 	url = https://github.com/mhinz/vim-signify
+[submodule ".vim/pack/bundle/start/auto-pairs"]
+	path = .vim/pack/bundle/start/auto-pairs
+	url = https://github.com/jeromedalbert/auto-pairs
+	branch = better-auto-pairs
