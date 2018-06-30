@@ -10,46 +10,50 @@ path=(
 )
 
 # Platform specific variables.
-if [[ $OSTYPE =~ 'darwin*' ]] {
-	# coreutils
-	export GNU_COREUTILS_HOME='/usr/local/opt/coreutils/libexec/gnubin'
-	export GNU_COREUTILS_MAN_HOME='/usr/local/opt/coreutils/libexec/gnuman'
-	path=($GNU_COREUTILS_HOME $path)
-	manpath=($GNU_COREUTILS_MAN_HOME $manpath)
+case $OSTYPE {
+	darwin*)
+		export GNU_COREUTILS_HOME='/usr/local/opt/coreutils/libexec/gnubin'
+		export GNU_COREUTILS_MAN_HOME='/usr/local/opt/coreutils/libexec/gnuman'
+		export GNU_FINDUTILS_HOME='/usr/local/opt/findutils/libexec/gnubin'
+		export GNU_FINDUTILS_MAN_HOME='/usr/local/opt/findutils/libexec/gnuman'
+		export CURL_HOME='/usr/local/opt/curl/bin'
+		export CURL_MAN_HOME='/usr/local/opt/curl/share/man'
+		export NCURSES_HOME='/usr/local/opt/ncurses/bin'
+		export OPENSSL_HOME='/usr/local/opt/openssl/bin'
+		export OPENSSL_MAN_HOME='/usr/local/opt/openssl/man'
+		export PYTHON_SYMLINKS_HOME='/usr/local/opt/python/libexec/bin'
+		export ANDROID_HOME="$HOME/Library/Android/sdk"
+		export JAVA_HOME=$(/usr/libexec/java_home)
 
-	# findutils
-	export GNU_FINDUTILS_HOME='/usr/local/opt/findutils/libexec/gnubin'
-	export GNU_FINDUTILS_MAN_HOME='/usr/local/opt/findutils/libexec/gnuman'
-	path=($GNU_FINDUTILS_HOME $path)
-	manpath=($GNU_FINDUTILS_MAN_HOME $manpath)
+		path=(
+			$GNU_COREUTILS_HOME
+			$GNU_FINDUTILS_HOME
+			$CURL_HOME
+			$NCURSES_HOME
+			$OPENSSL_HOME
+			$PYTHON_SYMLINKS_HOME
+			$ANDROID_HOME/{tools,platform-tools}
+			$path
+		)
 
-	# curl
-	export CURL_HOME='/usr/local/opt/curl/bin'
-	export CURL_MAN_HOME='/usr/local/opt/curl/share/man'
-	path=($CURL_HOME $path)
-	manpath=($CURL_MAN_HOME $manpath)
+		manpath=(
+			$GNU_COREUTILS_MAN_HOME
+			$GNU_FINDUTILS_MAN_HOME
+			$CURL_MAN_HOME
+			$OPENSSL_MAN_HOME
+			$manpath
+		)
+		;;
 
-	# ncurses
-	export NCURSES_HOME='/usr/local/opt/ncurses/bin'
-	path=($NCURSES_HOME $path)
+	linux-android*)
+		export SHELL=$(which zsh)
 
-	# Android SDK
-	export ANDROID_HOME="$HOME/Library/Android/sdk"
-	path=($path $ANDROID_HOME/{tools,platform-tools})
-
-	# Java Development Kit
-	export JAVA_HOME=$(/usr/libexec/java_home)
-
-} elif [[ $OSTYPE =~ 'linux-android*' ]] 2>/dev/null {
-	# Shell variable
-	export SHELL=$(which zsh)
-
-	# Local scripts
-	path=($HOME/.termux/bin $path)
+		path=(
+			$HOME/.termux/bin
+			$path
+		)
+		;;
 }
-
-# Set path for local scripts.
-path=($path $HOME/.bin{,/external})
 
 # Term
 export TERM='xterm-256color'
