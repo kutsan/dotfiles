@@ -38,6 +38,9 @@
 [pull]
 	rebase = true
 
+[push]
+	followtags = true
+
 [diff]
 	tool = vimdiff
 
