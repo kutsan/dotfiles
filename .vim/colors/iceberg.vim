@@ -2,7 +2,7 @@
 " Iceberg, dark blue color scheme.
 "
 " @see github:cocopon/iceberg.vim
-" @version 51b5c80
+" @version 8d1f1f7
 ""
 
 if !has('gui_running') && &t_Co < 256
@@ -57,10 +57,10 @@ highlight! QuickFixLine ctermbg=236 ctermfg=252 guibg=#272c42 guifg=#c6c8d1
 highlight! Search ctermbg=216 ctermfg=234 guibg=#e4aa80 guifg=#392313
 highlight! SignColumn ctermbg=235 ctermfg=239 guibg=#1e2132 guifg=#444b71
 highlight! Special ctermfg=150 guifg=#b4be82
-highlight! SpellBad guisp=#e27878
-highlight! SpellCap guisp=#84a0c6
-highlight! SpellLocal guisp=#89b8c2
-highlight! SpellRare guisp=#a093c7
+highlight! SpellBad ctermbg=95 ctermfg=252 gui=undercurl guisp=#e27878
+highlight! SpellCap ctermbg=24 ctermfg=252 gui=undercurl guisp=#84a0c6
+highlight! SpellLocal ctermbg=23 ctermfg=252 gui=undercurl guisp=#89b8c2
+highlight! SpellRare ctermbg=97 ctermfg=252 gui=undercurl guisp=#a093c7
 highlight! Statement ctermfg=110 gui=NONE guifg=#84a0c6
 highlight! StatusLine cterm=reverse ctermbg=234 ctermfg=245 gui=reverse guibg=#17171b guifg=#818596 term=reverse
 highlight! StatusLineTerm cterm=reverse ctermbg=234 ctermfg=245 gui=reverse guibg=#17171b guifg=#818596 term=reverse
@@ -73,7 +73,7 @@ highlight! TabLine cterm=NONE ctermbg=245 ctermfg=234 gui=NONE guibg=#818596 gui
 highlight! TabLineFill cterm=reverse ctermbg=234 ctermfg=245 gui=reverse guibg=#17171b guifg=#818596
 highlight! TabLineSel cterm=NONE ctermbg=234 ctermfg=252 gui=NONE guibg=#161821 guifg=#9a9ca5
 highlight! Title ctermfg=216 gui=NONE guifg=#e2a478
-highlight! Todo ctermbg=234 ctermfg=150 guibg=#161821 guifg=#d8e599
+highlight! Todo ctermbg=234 ctermfg=150 guibg=#45493e guifg=#b4be82
 highlight! Type ctermfg=109 gui=NONE guifg=#89b8c2
 highlight! Underlined cterm=underline ctermfg=110 gui=underline guifg=#84a0c6 term=underline
 highlight! VertSplit cterm=NONE ctermbg=233 ctermfg=233 gui=NONE guibg=#0f1117 guifg=#0f1117
@@ -81,6 +81,8 @@ highlight! Visual ctermbg=236 guibg=#272c42
 highlight! WildMenu ctermbg=255 ctermfg=234 guibg=#d4d5db guifg=#17171b
 highlight! diffAdded ctermfg=150 guifg=#b4be82
 highlight! diffRemoved ctermfg=203 guifg=#e27878
+highlight! ALEErrorSign ctermbg=235 ctermfg=203 guibg=#1e2132 guifg=#e27878
+highlight! ALEWarningSign ctermbg=235 ctermfg=216 guibg=#1e2132 guifg=#e2a478
 highlight! CtrlPMode1 ctermbg=241 ctermfg=234 guibg=#5a5f72 guifg=#17171b
 highlight! EasyMotionShade ctermfg=239 guifg=#3d425b
 highlight! EasyMotionTarget ctermfg=150 guifg=#b4be82
@@ -160,6 +162,15 @@ highlight! link SignifySignChange GitGutterChange
 highlight! link SignifySignChangeDelete GitGutterChangeDelete
 highlight! link SignifySignDelete GitGutterDelete
 highlight! link SignifySignDeleteFirstLine SignifySignDelete
+highlight! link StartifyNumber Special
+highlight! link StartifyFile String
+highlight! link StartifyPath Comment
+highlight! link StartifySlash Comment
+highlight! link StartifyBracket Comment
+highlight! link StartifyHeader Constant
+highlight! link StartifyFooter Constant
+highlight! link StartifySpecial Normal
+highlight! link StartifySection Statement
 highlight! link svssBraces Delimiter
 highlight! link swiftIdentifier Normal
 highlight! link typescriptAjaxMethods Normal
@@ -189,12 +200,37 @@ if has('nvim')
 	let g:terminal_color_13 = '#ada0d3'
 	let g:terminal_color_14 = '#95c4ce'
 	let g:terminal_color_15 = '#d2d4de'
+else
+	let g:terminal_ansi_colors = [
+		\ '#1e2132',
+		\ '#e27878',
+		\ '#b4be82',
+		\ '#e2a478',
+		\ '#84a0c6',
+		\ '#a093c7',
+		\ '#89b8c2',
+		\ '#c6c8d1',
+		\ '#6b7089',
+		\ '#e98989',
+		\ '#c0ca8e',
+		\ '#e9b189',
+		\ '#91acd1',
+		\ '#ada0d3',
+		\ '#95c4ce',
+		\ '#d2d4de'
+	\ ]
 endif
 
 " Overrides.
 highlight! EndOfBuffer ctermfg=bg guifg=bg | " Hide tilde symbols for all buffers.
 highlight! StatusLine ctermbg=243 ctermfg=238 guibg=#818596 guifg=#1e2132
 highlight! StatusLineNC ctermbg=243 ctermfg=237 guibg=#3e445e guifg=#1e2132
+highlight! TabLine cterm=NONE ctermbg=245 ctermfg=234 gui=NONE guibg=#1e2132 guifg=#818596
+highlight! TabLineFill cterm=reverse ctermbg=234 ctermfg=245 gui=NONE guibg=#1e2132 guifg=#818596
+highlight! TabLineSel cterm=NONE ctermbg=234 ctermfg=252 gui=NONE guibg=#3e445e guifg=#9a9ca5
+highlight! Todo ctermbg=234 ctermfg=150 guibg=#161821 guifg=#d8e599
+highlight! ALEErrorSign ctermbg=235 ctermfg=203 guibg=#161821 guifg=#e27878
+highlight! ALEWarningSign ctermbg=235 ctermfg=216 guibg=#161821 guifg=#e2a478
 execute 'highlight! CursorLineNr guibg=' . synIDattr(synIDtrans(hlID('CursorLine')), 'bg', 'gui') . ' ctermbg=' . synIDattr(synIDtrans(hlID('CursorLine')), 'bg', 'cterm')
 execute 'highlight! SignColumn guibg=' . synIDattr(synIDtrans(hlID('Normal')), 'bg', 'gui') . ' ctermbg=' . synIDattr(synIDtrans(hlID('Normal')), 'bg', 'cterm')
 execute 'highlight! VertSplit guibg=' . synIDattr(synIDtrans(hlID('Normal')), 'bg', 'gui') . ' ctermbg=' . synIDattr(synIDtrans(hlID('Normal')), 'bg', 'cterm')
