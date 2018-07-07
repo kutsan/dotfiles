@@ -16,7 +16,7 @@ colorscheme iceberg " Color scheme.
 set backspace=indent,eol,start " Allow backspacing over everything in insert mode.
 set belloff=all " Turn off the bell upon all events.
 set breakindent " Wrapped lines will be indented with same amount of space.
-set clipboard= " Disable using system clipboard.
+set clipboard=unnamedplus " Sync unnamed register with system clipboard.
 set confirm " Seek for confirmation for certain commands instead of giving errors.
 set display=lastline " As much as possible of the last line in a window will be displayed.
 set keywordprg= " Disable definition search by default.
