@@ -2,7 +2,6 @@
 	http://localhost:0001 "~▵ Blog"
 https://feeds.feedburner.com/2ality "~Axel Rauschmayer" blog
 https://dmitripavlutin.com/rss "~Dmitri Pavlutin" blog
-https://f-droid.org/en/feed.xml "~F-Droid" blog
 https://blog.github.com/blog.atom "~GitHub" blog
 https://jakearchibald.com/posts.rss "~Jake Archibald" blog
 https://hacks.mozilla.org/feed "~Mozilla Hacks" blog
@@ -24,7 +23,6 @@ http://reactjsnewsletter.com/issues.rss "~React Newsletter" newsletter
 https://github.com/tmux/tmux/releases.atom "~tmux" software
 https://github.com/prettier/prettier/releases.atom "~prettier" software
 https://github.com/facebook/react/releases.atom "~react" software
-https://github.com/eslint/eslint/releases.atom "~eslint" software
 https://github.com/zsh-users/zsh/releases.atom "~zsh" software
 	http://localhost:0006 "~ "
 
