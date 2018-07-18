@@ -39,7 +39,7 @@
 		"item_neweps": ["yellow", "default"],
 		"item_notaired": ["dark cyan", "default"],
 		"item_playing": ["dark red", "default"],
-		"item_updated": ["white", "dark green"],
+		"item_updated": ["dark blue", "default"],
 		"status": ["dark cyan", "black"],
 		"window": ["black", "dark cyan"]
 	}
