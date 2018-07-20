@@ -20,9 +20,6 @@
 [submodule ".vim/pack/bundle/opt/emmet"]
 	path = .vim/pack/bundle/opt/emmet
 	url = https://github.com/mattn/emmet-vim
-[submodule ".vim/pack/bundle/opt/ncm"]
-	path = .vim/pack/bundle/opt/ncm
-	url = https://github.com/roxma/nvim-completion-manager
 [submodule ".vim/pack/bundle/opt/neosnippet"]
 	path = .vim/pack/bundle/opt/neosnippet
 	url = https://github.com/Shougo/neosnippet.vim
