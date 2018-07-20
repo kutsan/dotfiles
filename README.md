@@ -104,9 +104,6 @@
 - [Emacs](https://www.gnu.org/software/emacs) - GUI version of Emacs the operation-system-like text editor
 - [mpv](https://github.com/mpv-player/mpv) - Minimalist video player based on MPlayer
 - [GIMP](https://www.gimp.org) - GNU Image Manipulation Program for drawing and editing graphic files
-- [Alacritty](https://github.com/jwilm/alacritty) - Cross-platform, GPU-accelerated terminal emulator
-	- [FiraCode](https://github.com/ryanoasis/nerd-fonts) - Font with 16px size
-	- [Nord](https://github.com/kutsan/dotfiles/blob/master/.config/iterm/Nord.itermcolors) - Color scheme
 - [Telegram](https://telegram.org) - Cloud-based instant messaging service
 	- [Arc-2](https://github.com/kutsan/dotfiles/tree/master/.config/telegram) - Desktop theme
 - [Figma](https://www.figma.com) - User interface design tool with real-time collaboration
