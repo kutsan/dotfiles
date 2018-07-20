@@ -1,5 +1,5 @@
 # Make special variables duplicate-free.
-typeset -g -U path fpath cdpath
+typeset -gU path fpath cdpath
 
 # Set zsh custom autoload directory.
 fpath=($fpath "$ZDOTDIR/autoload")
