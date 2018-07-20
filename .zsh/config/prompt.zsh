@@ -6,7 +6,7 @@ prompt pure
 
 # Prompt options.
 typeset -g PROMPT_CURRENT_SYMBOL="$PROMPT_INSERT_MODE_SYMBOL"
-typeset -g PROMPT_INSERT_MODE_SYMBOL=''
+typeset -g PROMPT_INSERT_MODE_SYMBOL='❯'
 typeset -g PROMPT_NORMAL_MODE_SYMBOL='▢'
 typeset -g PROMPT_NORMAL_STATUS_COLOR='white'
 typeset -g PROMPT_ERROR_STATUS_COLOR='red'
