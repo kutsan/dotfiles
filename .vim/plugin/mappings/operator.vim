@@ -7,5 +7,5 @@ xnoremap <silent> gx :<C-u>call kutsan#mappings#operator#execute#(visualmode())<
 nnoremap <silent> gxl :<C-u>let b:executeoperatorview = winsaveview() <Bar> set operatorfunc=kutsan#mappings#operator#execute#<Bar> execute 'normal!' v:count 'g@_'<Enter>
 
 " Comment and uncomment operator.
-nnoremap <silent> gc :<C-u>set opfunc=kutsan#mappings#operator#comment#<Enter>g@
+nnoremap <silent> gc :<C-u>set operatorfunc=kutsan#mappings#operator#comment#<Enter>g@
 xnoremap <silent> gc :<C-u>call kutsan#mappings#operator#comment#(visualmode())<Enter>
