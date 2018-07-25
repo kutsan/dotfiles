@@ -34,7 +34,7 @@ let g:ale_set_highlights = v:false
 " Define fixers for 'ALEFix' command.
 let g:ale_fixers = {
 	\ 'html': ['prettier'],
-	\ 'css': ['prettier'],
+	\ 'css': ['prettier', 'stylelint'],
 	\ 'sass': ['prettier'],
 	\ 'javascript': ['eslint', 'prettier'],
 	\ 'javascript.jsx': ['eslint', 'prettier'],
