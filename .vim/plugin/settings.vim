@@ -67,8 +67,9 @@ set formatoptions=croqnj " General text formatting options used by many mechanic
 
 " Completion
 set complete=.,w,b,k,t " Options for keyword completion.
-set completeopt=longest,menuone " Options for insert mode completion.
+set completeopt=noinsert,menuone " Options for insert mode completion.
 set path=.,** " List of directories which will be searched when using related features.
+set pumheight=8 " Maximum height of the popup menu for insert mode completion.
 
 " Indentation
 set tabstop=4 " Length of a <Tab> character.
