@@ -22,7 +22,8 @@ let g:NERDTreeMinimalUI = v:true
 " Hide some files and folders.
 let g:NERDTreeIgnore = [
 	\ '^\.DS_Store$[[file]]',
-	\ '^\.git$[[dir]]'
+	\ '^\.git$[[dir]]',
+	\ '^node_modules$[[dir]]'
 \ ]
 
 " Use natural sort order.
