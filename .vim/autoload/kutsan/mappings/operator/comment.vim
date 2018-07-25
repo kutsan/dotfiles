@@ -1,7 +1,8 @@
 ""
 " Comment and uncomment block of texts.
+" Modified version of @tpope's commentary plugin.
 "
-" nnoremap <silent> gc :<C-u>set opfunc=kutsan#mappings#operator#comment#<Enter>g@
+" nnoremap <silent> gc :<C-u>set operatorfunc=kutsan#mappings#operator#comment#<Enter>g@
 " xnoremap <silent> gc :<C-u>call kutsan#mappings#operator#comment#(visualmode())<Enter>
 "
 " @param {string} type Type of motion.
