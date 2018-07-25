@@ -1,5 +1,8 @@
 ""
+" Show table of contents window.
 " Modified version of man#show_toc() and ftplugin/qf.vim's s:setup_toc().
+"
+" nnoremap <buffer><silent> gO :call kutsan#ftplugin#man#showtoc()<Enter>
 ""
 function! kutsan#ftplugin#man#showtoc() abort
 	if !has('nvim')
@@ -7,7 +10,7 @@ function! kutsan#ftplugin#man#showtoc() abort
 	endif
 
 	let l:bufname = bufname('%')
-	let l:info = getloclist(0, {'winid': 1})
+	let l:info = getloclist(0, { 'winid': 1 })
 
 	if !empty(l:info) && getwinvar(l:info.winid, 'qf_toc') ==# l:bufname
 		lopen
@@ -29,16 +32,19 @@ function! kutsan#ftplugin#man#showtoc() abort
 	endwhile
 
 	call setloclist(0, l:toc, ' ')
-	call setloclist(0, [], 'a', {'title': 'Man TOC'})
+	call setloclist(0, [], 'a', { 'title': 'Man TOC' })
 
+	" Prepare and set options for the window.
 	vertical leftabove lopen
 	vert resize 35
 	setlocal winfixwidth
 	setlocal nonumber norelativenumber
 
+	" Define mappings.
 	nnoremap <buffer><silent> l <Enter>zt
 	nnoremap <buffer><silent> <Enter> <Enter>zt
 
+	" Abort if there is nothing to show.
 	let l:list = getloclist(0)
 	if empty(l:list)
 		return v:false
@@ -53,9 +59,15 @@ function! kutsan#ftplugin#man#showtoc() abort
 
 	let w:qf_toc = l:bufname
 
+	" Move the window to the other side.
 	wincmd x
 endfunction
 
+""
+" Open man page under the cursor.
+"
+" nnoremap <buffer><silent> <C-]> :call kutsan#ftplugin#man#jumptag()<Enter>
+""
 function! kutsan#ftplugin#man#jumptag() abort
 	if !has('nvim')
 		return v:false
@@ -64,6 +76,11 @@ function! kutsan#ftplugin#man#jumptag() abort
 	call man#open_page(v:false, 1, '')
 endfunction
 
+""
+" Jump to the previous entry in tag stack.
+"
+" nnoremap <buffer><silent> [g :call kutsan#ftplugin#man#poptag()<Enter>
+""
 function! kutsan#ftplugin#man#poptag() abort
 	if !has('nvim')
 		return v:false
