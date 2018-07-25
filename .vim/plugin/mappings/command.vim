@@ -15,7 +15,3 @@ cnoremap :s substitute/\v//gc<Left><Left><Left><Left>
 
 " Construct global command with 'very magic' mode.
 cnoremap :g global/\v/<Left>
-
-" Move between matches without leaving incremental search.
-cnoremap <expr> <Tab> getcmdtype() ==# '/' \|\| getcmdtype() ==# '?' ? '<Enter>/<C-r>/' : '<C-z>'
-cnoremap <expr> <S-Tab> getcmdtype() ==# '/' \|\| getcmdtype() ==# '?' ? '<Enter>?<C-r>/' : '<S-Tab>'
