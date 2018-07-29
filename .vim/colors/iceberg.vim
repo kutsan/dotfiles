@@ -2,7 +2,7 @@
 " Iceberg, dark blue color scheme.
 "
 " @see github:cocopon/iceberg.vim
-" @version 8d1f1f7
+" @version a24c9b6
 ""
 
 if !has('gui_running') && &t_Co < 256
@@ -39,7 +39,7 @@ highlight! NonText ctermbg=234 ctermfg=236 guibg=#161821 guifg=#242940
 highlight! SpecialKey ctermbg=234 ctermfg=236 guibg=#161821 guifg=#242940
 highlight! Folded ctermbg=235 ctermfg=245 guibg=#1e2132 guifg=#686f9a
 highlight! FoldColumn ctermbg=235 ctermfg=239 guibg=#1e2132 guifg=#444b71
-highlight! Function ctermfg=216 guifg=#e2a478
+highlight! Function ctermfg=252 guifg=#c6c8d1
 highlight! Identifier cterm=NONE ctermfg=109 guifg=#89b8c2
 highlight! Include ctermfg=110 guifg=#84a0c6
 highlight! LineNr ctermbg=235 ctermfg=239 guibg=#1e2132 guifg=#444b71
@@ -68,13 +68,13 @@ highlight! StatusLineNC cterm=reverse ctermbg=238 ctermfg=233 gui=reverse guibg=
 highlight! StatusLineTermNC cterm=reverse ctermbg=238 ctermfg=233 gui=reverse guibg=#3e445e guifg=#0f1117
 highlight! StorageClass ctermfg=110 guifg=#84a0c6
 highlight! String ctermfg=109 guifg=#89b8c2
-highlight! Structure ctermfg=109 guifg=#89b8c2
+highlight! Structure ctermfg=110 guifg=#84a0c6
 highlight! TabLine cterm=NONE ctermbg=245 ctermfg=234 gui=NONE guibg=#818596 guifg=#17171b
 highlight! TabLineFill cterm=reverse ctermbg=234 ctermfg=245 gui=reverse guibg=#17171b guifg=#818596
 highlight! TabLineSel cterm=NONE ctermbg=234 ctermfg=252 gui=NONE guibg=#161821 guifg=#9a9ca5
 highlight! Title ctermfg=216 gui=NONE guifg=#e2a478
 highlight! Todo ctermbg=234 ctermfg=150 guibg=#45493e guifg=#b4be82
-highlight! Type ctermfg=109 gui=NONE guifg=#89b8c2
+highlight! Type ctermfg=110 gui=NONE guifg=#84a0c6
 highlight! Underlined cterm=underline ctermfg=110 gui=underline guifg=#84a0c6 term=underline
 highlight! VertSplit cterm=NONE ctermbg=233 ctermfg=233 gui=NONE guibg=#0f1117 guifg=#0f1117
 highlight! Visual ctermbg=236 guibg=#272c42
@@ -104,7 +104,7 @@ highlight! icebergALAccentRed ctermfg=203 guifg=#e27878
 highlight! link cssBraces Delimiter
 highlight! link cssClassName Special
 highlight! link cssClassNameDot Normal
-highlight! link cssPseudoClassId Function
+highlight! link cssPseudoClassId Special
 highlight! link cssTagName Statement
 highlight! link helpHyperTextJump Constant
 highlight! link htmlArg Constant
@@ -112,14 +112,26 @@ highlight! link htmlEndTag Statement
 highlight! link htmlTag Statement
 highlight! link jsonQuote Normal
 highlight! link phpVarSelector Identifier
+highlight! link pythonFunction Title
 highlight! link rubyDefine Statement
+highlight! link rubyFunction Title
 highlight! link rubyInterpolationDelimiter String
 highlight! link rubySharpBang Comment
 highlight! link rubyStringDelimiter String
 highlight! link sassClass Special
+highlight! link sassFunction Statement
 highlight! link shFunction Normal
 highlight! link vimContinue Comment
-highlight! link vimIsCommand Statement
+highlight! link vimFuncName Statement
+highlight! link vimFuncSID vimFunction
+highlight! link vimFuncVar Normal
+highlight! link vimFunction Title
+highlight! link vimGroup Statement
+highlight! link vimHiGroup Statement
+highlight! link vimHiTerm Identifier
+highlight! link vimMapModKey Special
+highlight! link vimOption Identifier
+highlight! link vimVar Normal
 highlight! link xmlAttrib Constant
 highlight! link xmlAttribPunct Statement
 highlight! link xmlEndTag Statement
@@ -131,51 +143,57 @@ highlight! link CtrlPPrtCursor Cursor
 highlight! link CtrlPMatch Title
 highlight! link CtrlPMode2 StatusLine
 highlight! link deniteMatched Normal
-highlight! link deniteMatchedChar Function
-highlight! link jsFlowType Statement
+highlight! link deniteMatchedChar Title
 highlight! link jsFlowMaybe Normal
 highlight! link jsFlowObject Normal
-highlight! link graphqlIdentifier Normal
+highlight! link jsFlowType PreProc
+highlight! link graphqlName Normal
 highlight! link graphqlOperator Normal
-highlight! link graphqlStructure Statement
 highlight! link jsArrowFunction Operator
-highlight! link jsClassMethodType Statement
+highlight! link jsClassDefinition Normal
+highlight! link jsClassFuncName Title
 highlight! link jsExport Statement
-highlight! link jsFuncName Normal
-highlight! link jsFunction Function
+highlight! link jsFuncName Title
+highlight! link jsFunction Statement
 highlight! link jsGlobalObjects Statement
 highlight! link jsModuleKeywords Statement
 highlight! link jsModuleOperators Statement
+highlight! link jsNull Constant
+highlight! link jsObjectFuncName Title
 highlight! link jsObjectKey Identifier
 highlight! link jsSuper Statement
+highlight! link jsTemplateBraces Special
+highlight! link jsUndefined Constant
 highlight! link markdownBold Special
 highlight! link markdownCode String
 highlight! link markdownCodeDelimiter String
 highlight! link markdownHeadingDelimiter Comment
 highlight! link markdownRule Comment
 highlight! link plug1 Normal
-highlight! link plug2 Structure
+highlight! link plug2 Identifier
 highlight! link plugDash Comment
 highlight! link plugMessage Special
+highlight! link processingFunction Statement
 highlight! link SignifySignAdd GitGutterAdd
 highlight! link SignifySignChange GitGutterChange
 highlight! link SignifySignChangeDelete GitGutterChangeDelete
 highlight! link SignifySignDelete GitGutterDelete
 highlight! link SignifySignDeleteFirstLine SignifySignDelete
-highlight! link StartifyNumber Special
-highlight! link StartifyFile String
-highlight! link StartifyPath Comment
-highlight! link StartifySlash Comment
 highlight! link StartifyBracket Comment
-highlight! link StartifyHeader Constant
+highlight! link StartifyFile Identifier
 highlight! link StartifyFooter Constant
-highlight! link StartifySpecial Normal
+highlight! link StartifyHeader Constant
+highlight! link StartifyNumber Special
+highlight! link StartifyPath Comment
 highlight! link StartifySection Statement
+highlight! link StartifySlash Comment
+highlight! link StartifySpecial Normal
 highlight! link svssBraces Delimiter
 highlight! link swiftIdentifier Normal
 highlight! link typescriptAjaxMethods Normal
 highlight! link typescriptBraces Normal
 highlight! link typescriptEndColons Normal
+highlight! link typescriptFuncKeyword Statement
 highlight! link typescriptGlobalObjects Statement
 highlight! link typescriptHtmlElemProperties Normal
 highlight! link typescriptIdentifier Statement
@@ -228,7 +246,6 @@ highlight! StatusLineNC ctermbg=243 ctermfg=237 guibg=#3e445e guifg=#1e2132
 highlight! TabLine cterm=NONE ctermbg=245 ctermfg=234 gui=NONE guibg=#1e2132 guifg=#818596
 highlight! TabLineFill cterm=reverse ctermbg=234 ctermfg=245 gui=NONE guibg=#1e2132 guifg=#818596
 highlight! TabLineSel cterm=NONE ctermbg=234 ctermfg=252 gui=NONE guibg=#3e445e guifg=#9a9ca5
-highlight! Todo ctermbg=234 ctermfg=150 guibg=#161821 guifg=#d8e599
 highlight! ALEErrorSign ctermbg=235 ctermfg=203 guibg=#161821 guifg=#e27878
 highlight! ALEWarningSign ctermbg=235 ctermfg=216 guibg=#161821 guifg=#e2a478
 execute 'highlight! CursorLineNr guibg=' . synIDattr(synIDtrans(hlID('CursorLine')), 'bg', 'gui') . ' ctermbg=' . synIDattr(synIDtrans(hlID('CursorLine')), 'bg', 'cterm')
