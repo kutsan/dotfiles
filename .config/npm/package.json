@@ -1,0 +1,28 @@
+{
+	"private": true,
+
+	"name": "",
+	"version": "0.0.0",
+	"description": "",
+	"preferGlobal": false,
+	"license": "GPL-3.0",
+	"repository": "github:kutsan/",
+	"homepage": "",
+	"keywords": [],
+
+	"author": "Kutsan Kaplan <me@kutsankaplan.com> (https://kutsankaplan.com)",
+	"contributors": [],
+
+	"engines": {},
+	"files": [],
+	"main": "",
+	"bin": "",
+	"man": "",
+
+	"scripts": {
+		"start": "",
+		"test": ""
+	},
+	"dependencies": {},
+	"devDependencies": {}
+}
