@@ -2,7 +2,6 @@
 	http://localhost:0001 "~# Blog"
 https://feeds.feedburner.com/2ality "~Axel Rauschmayer" blog
 https://dmitripavlutin.com/rss "~Dmitri Pavlutin" blog
-https://blog.github.com/blog.atom "~GitHub" blog
 https://jakearchibald.com/posts.rss "~Jake Archibald" blog
 https://hacks.mozilla.org/feed "~Mozilla Hacks" blog
 https://neovim.io/news.xml "~Neovim" blog
