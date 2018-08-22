@@ -1,2 +1,3 @@
-source ~/.config/stig/config/settings.conf
-source ~/.config/stig/config/mappings.conf
+source config/settings.conf
+source config/mappings.conf
+source config/flow.conf
