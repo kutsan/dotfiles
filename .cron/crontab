@@ -16,4 +16,5 @@ PATH='/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin'
 #=====================================================================#
    0       *        *        *         *        $HOME/.cron/tabs/newsboat.zsh
    */30    *        *        *         *        $HOME/.cron/tabs/flexget.zsh
+   @reboot                                      $HOME/.cron/tabs/transmission.zsh
 #=====================================================================#
