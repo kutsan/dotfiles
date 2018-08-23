@@ -131,6 +131,9 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_COLORS \
 	--jump-labels='bmvenritusldkfjgh' \
 	--bind='ctrl-f:jump-accept'"
 
+# transmission
+export TRANSMISSION_HOME="$HOME/.config/transmission"
+
 # highlight
 export HIGHLIGHT_OPTIONS='--out-format="xterm256" --style="pablo"'
 
