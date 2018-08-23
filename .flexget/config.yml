@@ -1,0 +1,33 @@
+templates:
+  torrent:
+    transmission:
+      host: localhost
+      port: 9091
+      username: kutsan
+      password: EkYBoNSd6oIUznucRTfQTFCcxC5WeeDaBImPt6I9CncuY9g8mH
+
+    exec:
+      allow_background: yes
+      auto_escape: yes
+      on_output:
+        for_accepted:
+          - notify
+            --title 'flexget'
+            --subtitle '{{series_name}}'
+            --message 'Captured entry ID {{series_id}} into transmission.'
+            &
+
+tasks:
+  'Steins;Gate 0':
+    template: torrent
+    rss: https://nyaa.si/?page=rss&q=%5BHorribleSubs%5D+Steins+Gate+0
+    series:
+      - Steins Gate 0:
+          quality: 1080p
+
+  'Overlord III':
+    template: torrent
+    rss: https://nyaa.si/?page=rss&q=%5BHorribleSubs%5D+Overlord+III
+    series:
+      - Overlord III:
+          quality: 1080p
