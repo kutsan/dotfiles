@@ -55,6 +55,7 @@ alias c-browsersync='$EDITOR +"cd ~/.config/browsersync/" ~/.config/browsersync/
 alias c-crontab='$EDITOR +"cd ~/.cron/" ~/.cron/crontab'
 alias c-editorconfig='$EDITOR ~/.config/editorconfig/.editorconfig'
 alias c-emacs='$EDITOR +"cd ~/.emacs.d/" ~/.emacs.d/init.el'
+alias c-flexget='$EDITOR +"cd ~/.flexget/" ~/.flexget/config.yml'
 alias c-git='$EDITOR +"cd ~/.config/git/" ~/.config/git/config'
 alias c-gpg='$EDITOR +"cd ~/.gnupg/" ~/.gnupg/gpg.conf'
 alias c-kitty='$EDITOR +"cd ~/.config/kitty/" ~/.config/kitty/kitty.conf'
