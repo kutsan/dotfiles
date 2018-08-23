@@ -24,8 +24,3 @@ https://github.com/prettier/prettier/releases.atom "~prettier" software
 https://github.com/facebook/react/releases.atom "~react" software
 https://github.com/zsh-users/zsh/releases.atom "~zsh" software
 	http://localhost:0006 "~ "
-
-# Torrent
-	http://localhost:0007 "~# Torrent"
-https://nyaa.si/?page=rss&q=%5BHorribleSubs%5D+Steins+Gate+0+-+..+%5B1080p%5D.mkv "~Steins;Gate 0" torrent
-https://nyaa.si/?page=rss&q=%5BHorribleSubs%5D+Overlord+III+-+..+%5B1080p%5D.mkv "~Overlord III" torrent

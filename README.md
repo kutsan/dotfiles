@@ -59,6 +59,8 @@
 		- [terminal-colors](https://github.com/eikenb/terminal-colors) - Test utility for color capabilities of terminal
 		- [grip](https://github.com/joeyespo/grip) - Preview Markdown files in local server
 		- [trackma](https://github.com/z411/trackma) - Multi-site anime, manga list manager
+		- [flexget](https://github.com/Flexget/Flexget) - Multipurpose automation tool for all of media.
+			- [transmissionrpc](https://pypi.org/project/transmissionrpc) - Python module implementing the json-rpc client protocol for transmission
 - [coreutils](https://www.gnu.org/software/coreutils/coreutils.html) - GNU core utilities for basic file, shell and text manipulation
 - [findutils](https://www.gnu.org/software/findutils) - GNU basic directory searching utilities that provides find, locate and xargs
 - [moreutils](https://joeyh.name/code/moreutils) - Collection of the useful Unix tools
