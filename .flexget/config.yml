@@ -6,9 +6,7 @@ tasks:
 
     discover:
       what:
-        - next_series_episodes:
-            backfill: yes
-            from_start: yes
+        - next_series_episodes: yes
       from:
         - nyaa:
             category: anime eng
