@@ -1,10 +1,37 @@
-templates:
-  torrent:
+variables: variables.yml
+
+tasks:
+  SEARCH:
+    priority: 1
+
+    discover:
+      what:
+        - next_series_episodes:
+            backfill: yes
+            from_start: yes
+      from:
+        - nyaa:
+            category: anime eng
+            filter: trusted only
+
+      release_estimations: ignore
+      interval: 25 minutes
+
+    series:
+      settings:
+        ENTRIES:
+          quality: 1080p
+          identified_by: sequence
+          from_group: HorribleSubs
+      ENTRIES:
+        - Steins Gate 0
+        - Overlord III
+
     transmission:
       host: localhost
       port: 9091
-      username: kutsan
-      password: EkYBoNSd6oIUznucRTfQTFCcxC5WeeDaBImPt6I9CncuY9g8mH
+      username: '{? transmission.username ?}'
+      password: '{? transmission.password ?}'
 
     exec:
       allow_background: yes
@@ -17,17 +44,13 @@ templates:
             --message 'Captured entry ID {{series_id}} into transmission.'
             &
 
-tasks:
-  'Steins;Gate 0':
-    template: torrent
-    rss: https://nyaa.si/?page=rss&q=%5BHorribleSubs%5D+Steins+Gate+0
-    series:
-      - Steins Gate 0:
-          quality: 1080p
+  CLEAN:
+    priority: 2
 
-  'Overlord III':
-    template: torrent
-    rss: https://nyaa.si/?page=rss&q=%5BHorribleSubs%5D+Overlord+III
-    series:
-      - Overlord III:
-          quality: 1080p
+    clean_transmission:
+      host: localhost
+      port: 9091
+      username: '{? transmission.username ?}'
+      password: '{? transmission.password ?}'
+
+    disable: details
