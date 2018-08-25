@@ -40,7 +40,7 @@
 		- [eslint](https://github.com/eslint/eslint) - AST-based JavaScript linter for identifying and reporting on patterns
 		- [prettier](https://github.com/prettier/prettier) - Opinionated code formatter
 		- [browser-sync](https://github.com/BrowserSync/browser-sync) - Improve web workflow with auto-reload, interaction sync and more
-		- [neovim](https://github.com/neovim/node-client) - Neovim Node support for plugins
+		- [neovim-node-client](https://github.com/neovim/node-client) - Neovim Node support for plugins
 		- [trash-cli](https://github.com/sindresorhus/trash-cli) - Move files and folders to the trash
 		- [node-notifier-cli](https://github.com/mikaelbr/node-notifier-cli) - Send cross-platform native notifications
 		- [authcli](https://github.com/sam3d/auth) - Two-factor authentication token manager
@@ -51,10 +51,9 @@
 			- [highlight](https://github.com/andre-simon/highlight) - Converts source code to formatted text with colored syntax highlighting
 			- [exiftool](http://www.sno.phy.queensu.ca/~phil/exiftool) - Read, write and edit meta information in a wide variety of media files
 			- [atool](http://www.nongnu.org/atool) - Manage, list, create, diff and extract file archives of various types
-		- [youtube-dl](https://github.com/rg3/youtube-dl) - Download videos, extract meta informations from YouTube and other video sites
 		- [asciinema](https://github.com/asciinema/asciinema) - Record and share terminal sessions as text-based colored format
 		- [vint](https://github.com/Kuniwak/vint) - Extensible, high performance Vimscript linter and analysis tool
-		- [neovim](https://github.com/neovim/python-client) - Neovim Python support for plugins
+		- [neovim-python-client](https://github.com/neovim/python-client) - Neovim Python support for plugins
 		- [stig](https://github.com/rndusr/stig) - TUI and CLI interface for transmission-daemon
 		- [terminal-colors](https://github.com/eikenb/terminal-colors) - Test utility for color capabilities of terminal
 		- [grip](https://github.com/joeyespo/grip) - Preview Markdown files in local server
@@ -63,7 +62,6 @@
 			- [transmissionrpc](https://pypi.org/project/transmissionrpc) - Python module implementing the json-rpc client protocol for transmission
 - [coreutils](https://www.gnu.org/software/coreutils/coreutils.html) - GNU core utilities for basic file, shell and text manipulation
 - [findutils](https://www.gnu.org/software/findutils) - GNU basic directory searching utilities that provides find, locate and xargs
-- [moreutils](https://joeyh.name/code/moreutils) - Collection of the useful Unix tools
 - [less](http://www.greenwoodsoftware.com/less) - Standard file pager for Unix-like systems
 - [curl](https://github.com/curl/curl) - Tool for transferring data using various protocols
 - [wget](https://www.gnu.org/software/wget) - Tool for retrieving files using the most widely-used Internet protocols
@@ -81,10 +79,8 @@
 	- [msmtp](http://msmtp.sourceforge.net) - SMTP agent for sending e-mails through mail user agents or terminal
 - [taskwarrior](https://github.com/taskwarrior/task) - Text-based time, task and project management tool
 - [ncdu](https://dev.yorhel.nl/ncdu) - Disk usage analyzer for quickly finding big files with ncurses interface
-- [sshfs](https://github.com/libfuse/sshfs) - Mount directories located on a remote server over a normal SSH connection
 - [ripgrep](https://github.com/BurntSushi/ripgrep) - Line oriented search tool similar to grep that combines the usability of ag
 - [ffmpeg](https://github.com/FFmpeg/FFmpeg) - Cross-platform solution to handle, record, convert and stream audio and video
-- [pandoc](https://github.com/jgm/pandoc) - Universal markup converter that supports almost any format
 - [transmission-cli](https://github.com/transmission/transmission) - BitTorrent client and daemon with web UI for remote controlling
 - [editorconfig](https://github.com/editorconfig/editorconfig-core-c) - Define and maintain consistent coding styles between different editors
 - [dfc](https://github.com/Rolinh/dfc) - Report file system space usage information with colored graphs
@@ -93,9 +89,6 @@
 - [syncthing](https://github.com/syncthing/syncthing) - Continuous file synchronization utility
 - [tidy-html5](https://github.com/htacg/tidy-html5) - HTML linter with support for modern web standards
 - [par](https://github.com/sergi/par) - Paragraph reformatter and aligner for e-mails and plain text
-- [jq](https://github.com/stedolan/jq) - JSON processor for destructuring stdin with configurable filters
-- [imagemagick](https://github.com/ImageMagick/ImageMagick) - Software suite to create, edit, compose, or convert bitmap images.
-- [pv](https://github.com/icetee/pv) - Tool for monitoring the progress of data through a pipeline
 - [bind](https://source.isc.org/cgi-bin/gitweb.cgi) - Domain Name System tools
 - [sdcv](https://github.com/Dushistov/sdcv) - StarDict command-line version, offline directories
 - [gcal](https://www.gnu.org/software/gcal) - Calculate and print calendars
@@ -103,14 +96,14 @@
 
 ### GUI
 
-- [Emacs](https://www.gnu.org/software/emacs) - GUI version of Emacs the operation-system-like text editor
-- [mpv](https://github.com/mpv-player/mpv) - Minimalist video player based on MPlayer
-- [GIMP](https://www.gimp.org) - GNU Image Manipulation Program for drawing and editing graphic files
 - [kitty](https://github.com/kovidgoyal/kitty) - Cross-platform, GPU-accelerated terminal emulator
 	- [FiraCode](https://github.com/ryanoasis/nerd-fonts) - Font
+- [Emacs](https://www.gnu.org/software/emacs) - GUI version of Emacs the operation-system-like text editor
+- [mpv](https://github.com/mpv-player/mpv) - Minimalist video player based on MPlayer
 - [Telegram](https://telegram.org) - Cloud-based instant messaging service
 	- [Arc-2](https://github.com/kutsan/dotfiles/tree/master/.config/telegram) - Desktop theme
-- [Figma](https://www.figma.com) - User interface design tool with real-time collaboration
+- [Adobe Photoshop](https://www.adobe.com/products/photoshop.html) - Graphic editor
+- [Adobe XD](https://www.adobe.com/products/xd.html) - User interface and user experience design editor
 
 ### Android
 
