@@ -50,5 +50,6 @@ tasks:
       port: 9091
       username: '{? transmission.username ?}'
       password: '{? transmission.password ?}'
+      tracker: nyaa
 
     disable: details
