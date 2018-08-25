@@ -85,13 +85,13 @@ bind-key / copy-mode \; send-keys '/'
 bind-key ? copy-mode \; send-keys '?'
 
 # Quickly navigate up and down in visual mode.
-bind -T copy-mode-vi K \
+bind-key -T copy-mode-vi K \
 	send-keys -X cursor-up \; \
 	send-keys -X cursor-up \; \
 	send-keys -X cursor-up \; \
 	send-keys -X cursor-up \; \
 	send-keys -X cursor-up \;
-bind -T copy-mode-vi J \
+bind-key -T copy-mode-vi J \
 	send-keys -X cursor-down \; \
 	send-keys -X cursor-down \; \
 	send-keys -X cursor-down \; \
