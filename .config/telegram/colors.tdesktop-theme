@@ -6,7 +6,7 @@
  *   $ make
  *
  * @author Kutsan Kaplan <me@kutsankaplan.com>
- * @license GPLv3
+ * @license GPL-3.0
  */
 
 windowBg: #383C4A;
