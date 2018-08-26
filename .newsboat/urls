@@ -23,4 +23,3 @@ https://github.com/tmux/tmux/releases.atom "~tmux" software
 https://github.com/prettier/prettier/releases.atom "~prettier" software
 https://github.com/facebook/react/releases.atom "~react" software
 https://github.com/zsh-users/zsh/releases.atom "~zsh" software
-	http://localhost:0006 "~ "
