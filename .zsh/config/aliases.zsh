@@ -10,7 +10,7 @@ alias grep='grep --color=auto --exclude-dir=".git" --exclude-dir="node_modules"'
 alias du='du --max-depth=1 --si' # Display size of files and folders under current directory.
 alias df='df --all --si --print-type' # Display all disk usage statistics with SI units and FS types.
 alias ls='ls --almost-all --classify --color=always --group-directories-first --literal' # List name of nodes.
-alias lsa='ls -l --almost-all --si' # List nodes with their details.
+alias la='ls -l --almost-all --si' # List nodes with their details.
 alias tmp='command mkdir --parents --verbose $TMPDIR/$(whoami) && cd $TMPDIR/$(whoami)' # Make temporary directory and cd into that.
 
 # Custom Shortcuts
@@ -22,7 +22,6 @@ alias note='$EDITOR +"cd ~/.notes/" ~/.notes/index.md'
 alias tmux='tmux -f "$HOME/.tmux/tmux.conf"'
 alias dfc='dfc -dmT'
 alias syncthing='syncthing -home=$HOME/.config/syncthing'
-alias la='exa --color=always --all --classify --group-directories-first --long --git --group'
 alias jq='jq --tab --indent 4'
 alias news='newsboat --quiet'
 alias def='sdcv --color'
