@@ -84,7 +84,6 @@
 - [transmission-cli](https://github.com/transmission/transmission) - BitTorrent client and daemon with web UI for remote controlling
 - [editorconfig](https://github.com/editorconfig/editorconfig-core-c) - Define and maintain consistent coding styles between different editors
 - [dfc](https://github.com/Rolinh/dfc) - Report file system space usage information with colored graphs
-- [exa](https://github.com/ogham/exa) - Replacement for ls with colors and more features such as grid support
 - [hub](https://github.com/github/hub) - Extra features for Git that makes working with GitHub easier
 - [syncthing](https://github.com/syncthing/syncthing) - Continuous file synchronization utility
 - [tidy-html5](https://github.com/htacg/tidy-html5) - HTML linter with support for modern web standards
