@@ -40,7 +40,8 @@ alias search="rg \
 	--hidden \
 	--follow \
 	--smart-case \
-	--glob '!{.git/*,node_modules/*}' \
+	--glob '!.git/' \
+	--glob '!node_modules/' \
 	--regexp"
 
 # Global Aliases
