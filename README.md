@@ -100,7 +100,6 @@
 - [Emacs](https://www.gnu.org/software/emacs) - GUI version of Emacs the operation-system-like text editor
 - [mpv](https://github.com/mpv-player/mpv) - Minimalist video player based on MPlayer
 - [Telegram](https://telegram.org) - Cloud-based instant messaging service
-	- [Arc-2](https://github.com/kutsan/dotfiles/tree/master/.config/telegram) - Desktop theme
 - [Adobe Photoshop](https://www.adobe.com/products/photoshop.html) - Graphic editor
 - [Adobe XD](https://www.adobe.com/products/xd.html) - User interface and user experience design editor
 
