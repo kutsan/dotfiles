@@ -18,6 +18,25 @@ function r() {
 }
 
 ##
+# Update global packages.
+##
+function update() {
+	setopt LOCAL_OPTIONS XTRACE
+
+	case $OSTYPE {
+		darwin*)
+			brew update
+			brew upgrade
+			brew prune
+			brew cleanup
+			;;
+	}
+
+	npm update --global
+	npm install npm --global
+}
+
+##
 # `fasd` with `fzf`.
 ##
 function fz() {
