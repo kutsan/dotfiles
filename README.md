@@ -102,6 +102,7 @@
 - [Telegram](https://telegram.org) - Cloud-based instant messaging service
 - [Adobe Photoshop](https://www.adobe.com/products/photoshop.html) - Graphic editor
 - [Adobe XD](https://www.adobe.com/products/xd.html) - User interface and user experience design editor
+- [Microsoft Excel](https://products.office.com/en/excel) - Spreadsheet editor
 
 ### Android
 
