@@ -2,7 +2,7 @@
 " Iceberg, dark blue color scheme.
 "
 " @see github:cocopon/iceberg.vim
-" @version a24c9b6
+" @version c4665cb
 ""
 
 if !has('gui_running') && &t_Co < 256
@@ -39,7 +39,7 @@ highlight! NonText ctermbg=234 ctermfg=236 guibg=#161821 guifg=#242940
 highlight! SpecialKey ctermbg=234 ctermfg=236 guibg=#161821 guifg=#242940
 highlight! Folded ctermbg=235 ctermfg=245 guibg=#1e2132 guifg=#686f9a
 highlight! FoldColumn ctermbg=235 ctermfg=239 guibg=#1e2132 guifg=#444b71
-highlight! Function ctermfg=252 guifg=#c6c8d1
+highlight! Function ctermfg=110 guifg=#84a0c6
 highlight! Identifier cterm=NONE ctermfg=109 guifg=#89b8c2
 highlight! Include ctermfg=110 guifg=#84a0c6
 highlight! LineNr ctermbg=235 ctermfg=239 guibg=#1e2132 guifg=#444b71
@@ -119,10 +119,8 @@ highlight! link rubyInterpolationDelimiter String
 highlight! link rubySharpBang Comment
 highlight! link rubyStringDelimiter String
 highlight! link sassClass Special
-highlight! link sassFunction Statement
 highlight! link shFunction Normal
 highlight! link vimContinue Comment
-highlight! link vimFuncName Statement
 highlight! link vimFuncSID vimFunction
 highlight! link vimFuncVar Normal
 highlight! link vimFunction Title
@@ -154,7 +152,7 @@ highlight! link jsClassDefinition Normal
 highlight! link jsClassFuncName Title
 highlight! link jsExport Statement
 highlight! link jsFuncName Title
-highlight! link jsFunction Statement
+highlight! link jsFuncCall Normal
 highlight! link jsGlobalObjects Statement
 highlight! link jsModuleKeywords Statement
 highlight! link jsModuleOperators Statement
@@ -169,11 +167,11 @@ highlight! link markdownCode String
 highlight! link markdownCodeDelimiter String
 highlight! link markdownHeadingDelimiter Comment
 highlight! link markdownRule Comment
+highlight! link ngxDirective Statement
 highlight! link plug1 Normal
 highlight! link plug2 Identifier
 highlight! link plugDash Comment
 highlight! link plugMessage Special
-highlight! link processingFunction Statement
 highlight! link SignifySignAdd GitGutterAdd
 highlight! link SignifySignChange GitGutterChange
 highlight! link SignifySignChangeDelete GitGutterChangeDelete
