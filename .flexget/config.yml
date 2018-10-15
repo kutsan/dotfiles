@@ -22,8 +22,7 @@ tasks:
           identified_by: sequence
           from_group: HorribleSubs
       ENTRIES:
-        - Steins Gate 0
-        - Overlord III
+        # - <anime-name-here>
 
     transmission:
       host: localhost
