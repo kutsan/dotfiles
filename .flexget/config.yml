@@ -38,7 +38,7 @@ tasks:
           - notify
             --title 'flexget'
             --subtitle '{{series_name}}'
-            --message 'Captured entry ID {{series_id}} into transmission.'
+            --message 'EP{{series_id}} has been captured into transmission.'
             &
 
   CLEAN:
