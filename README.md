@@ -45,6 +45,7 @@
 		- [node-notifier-cli](https://github.com/mikaelbr/node-notifier-cli) - Send cross-platform native notifications
 		- [authcli](https://github.com/sam3d/auth) - Two-factor authentication token manager
 		- [clipboard-cli](https://github.com/sindresorhus/clipboard-cli) - Cross-platform clipboard wrapper
+		- [fx](https://github.com/antonmedv/fx) - TUI JSON viewer
 - [python](https://www.python.org) - High-level programming language for general-purpose programming
 	- [pip](https://pypi.org) - Python package manager to install and manage packages written in Python
 		- [ranger](https://github.com/ranger/ranger) - Text-based file system manager for the console with Vim-like key bindings
