@@ -48,7 +48,6 @@
 - [python](https://www.python.org) - High-level programming language for general-purpose programming
 	- [pip](https://pypi.org) - Python package manager to install and manage packages written in Python
 		- [ranger](https://github.com/ranger/ranger) - Text-based file system manager for the console with Vim-like key bindings
-			- [highlight](https://github.com/andre-simon/highlight) - Converts source code to formatted text with colored syntax highlighting
 			- [exiftool](http://www.sno.phy.queensu.ca/~phil/exiftool) - Read, write and edit meta information in a wide variety of media files
 			- [atool](http://www.nongnu.org/atool) - Manage, list, create, diff and extract file archives of various types
 		- [asciinema](https://github.com/asciinema/asciinema) - Record and share terminal sessions as text-based colored format
@@ -92,6 +91,7 @@
 - [sdcv](https://github.com/Dushistov/sdcv) - StarDict command-line version, offline directories
 - [gcal](https://www.gnu.org/software/gcal) - Calculate and print calendars
 - [fasd](https://github.com/clvv/fasd) - Track your most used directories, based on frequency for quick access later
+- [bat](https://github.com/sharkdp/bat) - A cat clone with additional features like git integration and syntax highlighting
 
 ### GUI
 

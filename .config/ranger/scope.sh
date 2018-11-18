@@ -94,8 +94,7 @@ handle_mime() {
 			# Don't try to highlight big files.
 			(( "$(stat --printf='%s' -- "${FILE_PATH}")" > "262143" )) && exit 2
 
-			# Run with global options
-			eval "highlight $HIGHLIGHT_OPTIONS -- ${FILE_PATH}" && exit 5
+			bat "${FILE_PATH}" && exit 5
 
 			exit 2
 			;;

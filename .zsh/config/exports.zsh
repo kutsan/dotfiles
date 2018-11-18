@@ -134,11 +134,11 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_COLORS \
 # transmission
 export TRANSMISSION_HOME="$HOME/.config/transmission"
 
-# highlight
-export HIGHLIGHT_OPTIONS='--out-format="xterm256" --style="pablo"'
-
 # sdcv
 export SDCV_PAGER='fold -s -w 100 | less'
+
+# bat
+export BAT_CONFIG_PATH="$HOME/.config/bat/bat.conf"
 
 # less
 export LESS=" \
@@ -153,7 +153,7 @@ export LESS=" \
 	--silent \
 	--tabs=4 \
 	--shift=5"
-export LESSOPEN="| highlight $HIGHLIGHT_OPTIONS -- %s 2>/dev/null" # Use `highlight` program to try to highlight opened file according to its extension.
+export LESSOPEN="| bat %s 2>/dev/null" # Use `bat` program to syntax-wise highlight files.
 export LESSHISTFILE="$HOME/.config/less/lesshistory" # Command and search history file.
 export LESSKEYRC="$HOME/.config/less/lesskey" # Path of the uncompiled lesskey file.
 export LESSKEY="$LESSKEYRC.lwc" # Path of the compiled lesskey file.

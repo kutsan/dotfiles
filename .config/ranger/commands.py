@@ -26,7 +26,7 @@ class select(Command):
                     if [ -d {} ]; then; \
                         ls -l --si --almost-all --classify --color=always --group-directories-first --literal {} 2>/dev/null; \
                     else \
-                        highlight --out-format=xterm256 --style=pablo {} 2>/dev/null || cat {} 2>/dev/null; \
+                        bat {} || cat {} 2>/dev/null; \
                     fi \
                 ' \
         " \
@@ -67,13 +67,7 @@ class locate(Command):
                 --prompt='locate ' \
                 --height='100%' \
                 --preview-window='right:60%' \
-                --preview=' \
-                    if [ -d {} ]; then; \
-                        ls -l --si --almost-all --classify --color=always --group-directories-first --literal {} 2>/dev/null; \
-                    else \
-                        highlight --out-format=xterm256 --style=pablo {} 2>/dev/null || cat {} 2>/dev/null; \
-                    fi \
-                ' \
+                --preview='bat {} || cat {} 2>/dev/null' \
         " \
 
         fzf = self.fm.execute_command(command, stdout=subprocess.PIPE)
@@ -108,10 +102,11 @@ class jump(Command):
                 --height='100%' \
                 --preview-window='right:60%' \
                 --preview=' \
-                    if [ -d {} ]; then; \
-                        ls -l --si --almost-all --classify --color=always --group-directories-first --literal {} 2>/dev/null; \
+                    CURRENT_ITEM=$(echo {} | sed s#~#$HOME#) && \
+                    if [ -d $CURRENT_ITEM ]; then; \
+                        ls -l --si --almost-all --classify --color=always --group-directories-first --literal $CURRENT_ITEM; \
                     else \
-                        highlight --out-format=xterm256 --style=pablo {} 2>/dev/null || cat {} 2>/dev/null; \
+                        bat $CURRENT_ITEM || cat {} 2>/dev/null; \
                     fi \
                 ' \
         "
