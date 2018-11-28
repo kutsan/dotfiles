@@ -16,10 +16,3 @@ http://vimcasts.org/feeds/quicktime.rss "~Vimcasts" blog
 http://javascriptweekly.com/rss "~JavaScript Weekly" newsletter
 http://reactjsnewsletter.com/issues.rss "~React Newsletter" newsletter
 	http://localhost:0004 "~ "
-
-# Software
-	http://localhost:0005 "~# Software"
-https://github.com/tmux/tmux/releases.atom "~tmux" software
-https://github.com/prettier/prettier/releases.atom "~prettier" software
-https://github.com/facebook/react/releases.atom "~react" software
-https://github.com/zsh-users/zsh/releases.atom "~zsh" software
