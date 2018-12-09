@@ -46,10 +46,16 @@
 	followtags = true
 
 [diff]
-	tool = vimdiff
+	tool = nvimdiff
+[difftool "nvimdiff"]
+	cmd = nvim -d $LOCAL $REMOTE
+	trustexitcode = true
 
 [merge]
-	tool = vimdiff
+	tool = nvimmerge
+[mergetool "nvimmerge"]
+	cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+	trustexitcode = true
 
 [commit]
 	gpgsign = true
