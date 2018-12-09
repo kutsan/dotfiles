@@ -34,6 +34,10 @@
 		| xargs -I '{}' git branch --delete --force {}"
 	s = status
 	sm = submodule
+	ctags = !.git/hooks/ctags
+
+[init]
+	templatedir = ~/.config/git/templatedir
 
 [pull]
 	rebase = true
