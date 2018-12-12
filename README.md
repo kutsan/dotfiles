@@ -4,6 +4,9 @@
 
 ## Overview
 
+<details>
+	<summary>CLI</summary>
+
 ### CLI
 
 - [zsh](https://github.com/zsh-users/zsh) - Highly customizable interactive login shell and command interpreter for shell scripting
@@ -94,6 +97,11 @@
 - [fasd](https://github.com/clvv/fasd) - Track your most used directories, based on frequency for quick access later
 - [bat](https://github.com/sharkdp/bat) - A cat clone with additional features like git integration and syntax highlighting
 
+</details>
+
+<details>
+	<summary>GUI</summary>
+
 ### GUI
 
 - [kitty](https://github.com/kovidgoyal/kitty) - Cross-platform, GPU-accelerated terminal emulator
@@ -104,6 +112,11 @@
 - [Adobe Photoshop](https://www.adobe.com/products/photoshop.html) - Graphic editor
 - [Adobe XD](https://www.adobe.com/products/xd.html) - User interface and user experience design editor
 - [Microsoft Excel](https://products.office.com/en/excel) - Spreadsheet editor
+
+</details>
+
+<details>
+	<summary>Android</summary>
 
 ### Android
 
@@ -119,6 +132,8 @@
 - [Amaze](https://github.com/TeamAmaze/AmazeFileManager) - File manager
 - [Slide for Reddit](https://github.com/ccrama/Slide) - Reddit client
 - [Red Moon](https://github.com/LibreShift/red-moon) - Blue light filter and screen dimmer
+
+</details>
 
 ## License
 
