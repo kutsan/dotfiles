@@ -58,6 +58,9 @@ set signcolumn=yes " Always draw the sign column even there is no sign in it.
 set title " Show title as in 'titlestring' in title bar of window.
 set titlestring=%f " Format of the title used by 'title'.
 
+" Tags
+set tags=./.git/tags;,./tags;,tags " Look for `tags` file in .git/ directory.
+
 " Diff
 set diffopt=filler,vertical,foldcolumn:0 " Option settings for diff mode.
 
