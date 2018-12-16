@@ -44,8 +44,12 @@ nnoremap gt K
 xnoremap gt K
 
 " Correct bad indent while pasting.
-nnoremap [p P=`]
-nnoremap ]p p=`]
+nnoremap gp p=`]
+nnoremap gP P=`]
+
+" Correct previous and next spelling mistakes.
+nnoremap [gs [s1z=
+nnoremap ]gs ]s1z=
 
 " Scroll viewport faster.
 nnoremap <C-e> 2<C-e>
