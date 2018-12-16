@@ -60,7 +60,6 @@ nnoremap <C-h> <Nop>
 nnoremap <C-l> <Nop>
 nnoremap <BS> <Nop>
 nnoremap <Space> <Nop>
-nnoremap <Enter> <Nop>
 
 " Disable paste and adjust indent mappings.
 nnoremap ]p <Nop>
