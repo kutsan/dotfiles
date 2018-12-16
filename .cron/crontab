@@ -15,6 +15,6 @@ PATH='/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin'
 #  Min  |  Hour  |  Mday  |  Month  |  Wday  |  Command               #
 #=====================================================================#
    0       *        *        *         *        newsboat -x reload
-#  */30    *        *        *         *        flexget --cron execute
+   */30    *        *        *         *        flexget --cron execute
    @reboot                                      transmission-daemon
 #=====================================================================#
