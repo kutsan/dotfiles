@@ -6,6 +6,7 @@ let g:maplocalleader = '\'
 if has('mac') && executable('pbpaste')
 	let g:clipboard = {
 		\ 'name': 'pbcopy',
+		\ 'cache_enabled': v:false,
 		\ 'copy': {
 			\ '+': 'pbcopy',
 			\ '*': 'pbcopy'
@@ -18,6 +19,7 @@ if has('mac') && executable('pbpaste')
 elseif exists('$DISPLAY') && executable('xclip')
 	let g:clipboard = {
 		\ 'name': 'xclip',
+		\ 'cache_enabled': v:false,
 		\ 'copy': {
 			\ '+': 'xclip -quiet -i -selection clipboard',
 			\ '*': 'xclip -quiet -i -selection primary'
