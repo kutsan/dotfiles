@@ -1,21 +1,25 @@
 [alias]
 	a = add
 	b = branch
-	bl = !git --no-pager branch --verbose --all
 	c = commit
+	s = status
 	co = checkout
+	sm = submodule
+	dt = difftool
+	dts = difftool --staged
 	d = diff --stat=100,100 --patch
 	ds = diff --stat=100,100 --patch --staged
-	dt = difftool
+	bl = !git --no-pager branch --verbose --all
+	remotes = remote --verbose
+	contributors = shortlog --summary --numbered --email
+	ctags = !.git/hooks/ctags
 	l = log \
 		--graph \
 		--abbrev-commit \
 		--decorate \
 		--all \
 		--date=format:'%Y-%m-%d %H:%M' \
-		--format=format:'%C(bold black)%ad%C(reset) %C(yellow)%h%C(reset) %C(white)%s%C(reset) %C(blue)%an%C(reset)%C(bold yellow)%d%C(reset)'
-	s = status
-	sm = submodule
+		--format=format:'%C(blue)%ad%C(reset) %C(yellow)%h%C(reset) %C(white)%s%C(reset) %C(blue)%an%C(reset)%C(bold yellow)%d%C(reset)'
 	pr = "! \
 		function f() { \
 			git fetch --force --update-head-ok ${2:-origin} refs/pull/$1/head:pr/$1 && git checkout pr/$1; \
@@ -24,5 +28,3 @@
 		git for-each-ref refs/heads/pr/* --format='%(refname)' \
 		| sed s#refs/heads/## \
 		| xargs -I '{}' git branch --delete --force {}"
-	contributors = shortlog --summary --numbered --email
-	ctags = !.git/hooks/ctags
