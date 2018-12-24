@@ -14,15 +14,9 @@
 	path = .zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
 
-[submodule ".vim/pack/bundle/opt/colorizer"]
-	path = .vim/pack/bundle/opt/colorizer
-	url = https://github.com/chrisbra/Colorizer
 [submodule ".vim/pack/bundle/opt/emmet"]
 	path = .vim/pack/bundle/opt/emmet
 	url = https://github.com/mattn/emmet-vim
-[submodule ".vim/pack/bundle/opt/neosnippet"]
-	path = .vim/pack/bundle/opt/neosnippet
-	url = https://github.com/Shougo/neosnippet.vim
 [submodule ".vim/pack/bundle/opt/nerdtree"]
 	path = .vim/pack/bundle/opt/nerdtree
 	url = https://github.com/scrooloose/nerdtree
@@ -54,7 +48,3 @@
 [submodule ".vim/pack/bundle/start/signify"]
 	path = .vim/pack/bundle/start/signify
 	url = https://github.com/mhinz/vim-signify
-[submodule ".vim/pack/bundle/start/auto-pairs"]
-	path = .vim/pack/bundle/start/auto-pairs
-	url = https://github.com/jeromedalbert/auto-pairs
-	branch = better-auto-pairs
