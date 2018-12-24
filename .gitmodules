@@ -39,9 +39,6 @@
 [submodule ".vim/pack/bundle/start/fzf-vim"]
 	path = .vim/pack/bundle/start/fzf-vim
 	url = https://github.com/junegunn/fzf.vim
-[submodule ".vim/pack/bundle/start/gina"]
-	path = .vim/pack/bundle/start/gina
-	url = https://github.com/lambdalisue/gina.vim
 [submodule ".vim/pack/bundle/start/polyglot"]
 	path = .vim/pack/bundle/start/polyglot
 	url = https://github.com/sheerun/vim-polyglot
