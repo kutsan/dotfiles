@@ -1,5 +1,6 @@
 ""
-" Go next and previous completion when popup menu is visible.
+" Cycle trough completion when popup menu is visible, trigger
+" completion upon written words.
 "
 " inoremap <expr> <Tab> kutsan#mappings#insert#handle#tab({ 'key': "\<Tab>" })
 " inoremap <expr> <S-Tab> kutsan#mappings#insert#handle#tab({ 'key': "\<S-Tab>" })
@@ -9,7 +10,16 @@
 ""
 function! kutsan#mappings#insert#handle#tab(options) abort
 	if !pumvisible()
-		return a:options.key
+		" If there is nothing before cursor, perform their original action.
+		if !(col('.') - 1) || getline('.')[col('.') - 2] =~# '\s'
+			return a:options.key
+
+		" Trigger completion upon written words.
+		else
+			if exists('g:did_coc_loaded')
+				return coc#refresh()
+			endif
+		endif
 	endif
 
 	if a:options.key ==# "\<Tab>"
@@ -20,7 +30,7 @@ function! kutsan#mappings#insert#handle#tab(options) abort
 endfunction
 
 ""
-" Accept completion or expand snippet when popup menu is visible.
+" Accept current completion when popup menu is visible.
 "
 " inoremap <expr> <Enter> kutsan#mappings#insert#handle#enter()
 ""
@@ -29,9 +39,5 @@ function! kutsan#mappings#insert#handle#enter() abort
 		return "\<Enter>"
 	endif
 
-	if exists('g:loaded_neosnippet') && neosnippet#expandable()
-		return neosnippet#mappings#expand_impl()
-	else
-		return "\<C-y>"
-	endif
+	return "\<C-y>"
 endfunction

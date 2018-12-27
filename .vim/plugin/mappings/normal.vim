@@ -39,10 +39,6 @@ nnoremap c# #``cgN
 " Use `s` for registers.
 nnoremap s "
 
-" Lookup definition under cursor.
-nnoremap gt K
-xnoremap gt K
-
 " Correct bad indent while pasting.
 nnoremap gp p=`]
 nnoremap gP P=`]
@@ -70,6 +66,9 @@ nnoremap gS :Search! ''<Left>
 " Store relative line number jumps in the jumplist if they exceed a threshold.
 nnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
 nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
+
+" Lookup definition under cursor.
+nnoremap <silent> gt :call kutsan#mappings#normal#lookup#()<Enter>
 
 " Toggle terminal buffer.
 tnoremap <silent> <C-z> <C-\><C-n>:call kutsan#mappings#normal#terminal#()<Enter>
