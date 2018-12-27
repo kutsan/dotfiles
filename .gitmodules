@@ -45,3 +45,6 @@
 [submodule ".vim/pack/bundle/start/signify"]
 	path = .vim/pack/bundle/start/signify
 	url = https://github.com/mhinz/vim-signify
+[submodule ".vim/pack/bundle/start/coc"]
+	path = .vim/pack/bundle/start/coc
+	url = https://github.com/neoclide/coc.nvim
