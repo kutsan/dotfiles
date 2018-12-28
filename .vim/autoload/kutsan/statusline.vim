@@ -48,11 +48,13 @@ function! kutsan#statusline#spell() abort
 endfunction
 
 function! kutsan#statusline#git() abort
-	if !exists('g:loaded_gina')
-		return ''
+	let s:head = ''
+
+	if exists('g:loaded_fugitive')
+		let s:head = fugitive#head(7)
 	endif
 
-	return gina#component#repo#branch() . ' '
+	return printf('%s ', s:head)
 endfunction
 
 function! kutsan#statusline#markdownpreview() abort
