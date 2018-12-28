@@ -1,5 +1,5 @@
 ""
-" Cycle trough completion when popup menu is visible, trigger
+" Cycle through completion items when popup menu is visible, trigger
 " completion upon written words.
 "
 " inoremap <expr> <Tab> kutsan#mappings#insert#handle#tab({ 'key': "\<Tab>" })
