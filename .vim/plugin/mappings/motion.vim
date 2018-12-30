@@ -7,8 +7,8 @@ onoremap <silent> i_ :<C-u>normal! ^vg_<Enter>
 xnoremap <silent> i_ :<C-u>normal! ^vg_<Enter>
 
 " [a]round lin[e] motion.
-onoremap <silent> a_ :<C-u>normal! $v0<Enter>
-xnoremap <silent> a_ :<C-u>normal! $v0<Enter>
+onoremap <silent> a_ :<C-u>normal! 0v$<Enter>
+xnoremap <silent> a_ :<C-u>normal! 0v$<Enter>
 
 " Last selected area motion.
 onoremap gv :<C-u>normal! gv<Enter>
