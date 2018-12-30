@@ -9,6 +9,12 @@ xnoremap i_ <Esc>^vg_
 " Last selected area motion.
 onoremap gv :<C-u>normal! gv<Enter>
 
+" [i]n [i]ndent, [a]round [i]ndent motions.
+onoremap <silent> ii :<C-u>call kutsan#mappings#motion#indent#({ 'motion': 'i' })<Enter>
+xnoremap <silent> ii :<C-u>call kutsan#mappings#motion#indent#({ 'motion': 'i' })<Enter>
+onoremap <silent> ai :<C-u>call kutsan#mappings#motion#indent#({ 'motion': 'a' })<Enter>
+xnoremap <silent> ai :<C-u>call kutsan#mappings#motion#indent#({ 'motion': 'a' })<Enter>
+
 " Execute a motion on the next or last text object.
 onoremap <silent> an :<C-u>call kutsan#mappings#motion#next#({ 'motion': 'a', 'direction': 'f' })<Enter>
 xnoremap <silent> an :<C-u>call kutsan#mappings#motion#next#({ 'motion': 'a', 'direction': 'f' })<Enter>
