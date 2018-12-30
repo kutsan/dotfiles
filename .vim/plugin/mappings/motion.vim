@@ -1,10 +1,14 @@
 " [a]n [e]ntire buffer motion.
-onoremap <silent> ae :<C-u>execute 'normal! m`' <Bar> keepjumps normal! ggVG<Enter>
-xnoremap ae GoggV
+onoremap <silent> ae :<C-u>keepjumps normal! GVgg0<Enter>
+xnoremap <silent> ae :<C-u>keepjumps normal! GVgg0<Enter>
 
 " [i]nner lin[e] motion.
 onoremap <silent> i_ :<C-u>normal! ^vg_<Enter>
-xnoremap i_ <Esc>^vg_
+xnoremap <silent> i_ :<C-u>normal! ^vg_<Enter>
+
+" [a]round lin[e] motion.
+onoremap <silent> a_ :<C-u>normal! $v0<Enter>
+xnoremap <silent> a_ :<C-u>normal! $v0<Enter>
 
 " Last selected area motion.
 onoremap gv :<C-u>normal! gv<Enter>
