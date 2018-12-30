@@ -26,7 +26,6 @@ if (should_launch_multiplexer) {
 	if [[ $NVIM_LISTEN_ADDRESS != '' ]] {
 		session='nvim'
 		launch_options+='set-option -w status-position bottom \; '
-		launch_options+='set-option -w status-right "" \; '
 		launch_options+='set-option -w prefix C-s \; '
 	}
 
