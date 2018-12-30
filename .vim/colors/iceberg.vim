@@ -254,3 +254,10 @@ execute 'highlight! GitGutterAdd guibg=' . synIDattr(synIDtrans(hlID('Normal')),
 execute 'highlight! GitGutterChange guibg=' . synIDattr(synIDtrans(hlID('Normal')), 'bg', 'gui') . ' ctermbg=' . synIDattr(synIDtrans(hlID('Normal')), 'bg', 'cterm')
 execute 'highlight! GitGutterChangeDelete guibg=' . synIDattr(synIDtrans(hlID('Normal')), 'bg', 'gui') . ' ctermbg=' . synIDattr(synIDtrans(hlID('Normal')), 'bg', 'cterm')
 execute 'highlight! GitGutterDelete guibg=' . synIDattr(synIDtrans(hlID('Normal')), 'bg', 'gui') . ' ctermbg=' . synIDattr(synIDtrans(hlID('Normal')), 'bg', 'cterm')
+
+" ALE's virtual text.
+highlight! link ALEVirtualTextError ALEErrorSign
+highlight! link ALEVirtualTextWarning ALEWarningSign
+highlight! link ALEVirtualTextStyleError ALEVirtualTextError
+highlight! link ALEVirtualTextStyleWarning ALEVirtualTextWarning
+highlight! link ALEVirtualTextInfo ALEVirtualTextWarning
