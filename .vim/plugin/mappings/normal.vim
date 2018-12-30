@@ -63,6 +63,12 @@ nnoremap <expr> gV '`[' . strpart(getregtype(), 0, 1) . '`]'
 nnoremap gs :Search ''<Left>
 nnoremap gS :Search! ''<Left>
 
+" Resize current window sizes.
+nnoremap <S-Up> 2<C-w>+
+nnoremap <S-Down> 2<C-w>-
+nnoremap <S-Right> 2<C-w>>
+nnoremap <S-Left> 2<C-w><
+
 " Store relative line number jumps in the jumplist if they exceed a threshold.
 nnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
 nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
