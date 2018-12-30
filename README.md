@@ -4,9 +4,6 @@
 
 ## Overview
 
-<details>
-	<summary>CLI</summary>
-
 ### CLI
 
 - [zsh](https://github.com/zsh-users/zsh) - Highly customizable interactive login shell and command interpreter for shell scripting
@@ -89,11 +86,6 @@
 - [universal-ctags](https://github.com/universal-ctags/ctags) - A maintained ctags implementation
 - [wireguard](https://github.com/WireGuard/wireguard-go) - Virtual Private Network protocol to create secure point-to-point connections
 
-</details>
-
-<details>
-	<summary>GUI</summary>
-
 ### GUI
 
 - [kitty](https://github.com/kovidgoyal/kitty) - Cross-platform, GPU-accelerated terminal emulator
@@ -104,11 +96,6 @@
 - [Adobe Photoshop](https://www.adobe.com/products/photoshop.html) - Graphic editor
 - [Adobe XD](https://www.adobe.com/products/xd.html) - User interface and user experience design editor
 - [Microsoft Excel](https://products.office.com/en/excel) - Spreadsheet editor
-
-</details>
-
-<details>
-	<summary>Android</summary>
 
 ### Android
 
@@ -123,8 +110,6 @@
 - [WireGuard](https://github.com/WireGuard/wireguard-android) - WireGuard VPN client
 - [Amaze](https://github.com/TeamAmaze/AmazeFileManager) - File manager
 - [Slide for Reddit](https://github.com/ccrama/Slide) - Reddit client
-
-</details>
 
 ## License
 
