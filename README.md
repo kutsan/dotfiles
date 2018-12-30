@@ -29,11 +29,6 @@
 	- [signify](https://github.com/mhinz/vim-signify) - Show Git diff in the sign column
 	- [undotree](https://github.com/mbbill/undotree) - Visualize undo tree
 - [emacs](https://www.gnu.org/software/emacs) - The operation-system-like text editor
-	- [use-package](https://github.com/jwiegley/use-package) - Package declaration manager
-	- [evil](https://github.com/emacs-evil/evil) - Extendable Vi layer and emulation
-	- [evil-leader](https://github.com/cofi/evil-leader) - Vim's \<leader\> key for Evil mode
-	- [helm](https://github.com/emacs-helm/helm) - Incremental and narrowing completion framework
-	- [rainbow-delimiters](https://github.com/Fanael/rainbow-delimiters) - Extra rainbow colors for parentheses, brackets or braces
 - [git](https://git-scm.com) - Version control system for tracking changes in files and coordinating the work
 - [tmux](https://github.com/tmux/tmux) - Terminal multiplexer enables working with split panes, tabs and detachable sessions
 - [nodejs](https://nodejs.org) - JavaScript runtime environment for developing a diverse variety of applications
@@ -54,7 +49,6 @@
 			- [atool](http://www.nongnu.org/atool) - Manage, list, create, diff and extract file archives of various types
 		- [asciinema](https://github.com/asciinema/asciinema) - Record and share terminal sessions as text-based colored format
 		- [vint](https://github.com/Kuniwak/vint) - Extensible, high performance Vimscript linter and analysis tool
-		- [neovim-python-client](https://github.com/neovim/python-client) - Neovim Python support for plugins
 		- [stig](https://github.com/rndusr/stig) - TUI and CLI interface for transmission-daemon
 		- [terminal-colors](https://github.com/eikenb/terminal-colors) - Test utility for color capabilities of terminal
 		- [grip](https://github.com/joeyespo/grip) - Preview Markdown files in local server
@@ -70,14 +64,13 @@
 - [nmap](https://github.com/nmap/nmap) - Network security scanner and mapper for exploration and security auditing
 - [openssl](https://github.com/openssl/openssl) - Toolkit for the Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols
 - [openssh](https://www.openssh.com) - Connectivity tool for remote login with the SSH protocol
-- [openvpn](https://github.com/OpenVPN/openvpn3) - Virtual private networks for creating OpenSSL powered secure connections
 - [rsync](https://rsync.samba.org) - Utility that provides fast incremental file transfer
 - [docker](https://github.com/docker/docker) - Container engine that provides abstraction and automation of virtualization
 - [fzf](https://github.com/junegunn/fzf) - General-purpose fuzzy finder that can be used among other Unix tools
 - [htop](https://github.com/hishamhm/htop) - Interactive text-based system monitor, process viewer and process manager
 - [newsboat](https://github.com/newsboat/newsboat) - RSS/Atom feed reader
 - [neomutt](https://github.com/neomutt/neomutt) - Fork of the mail user agent mutt with new features and patches
-	- [msmtp](http://msmtp.sourceforge.net) - SMTP agent for sending e-mails through mail user agents or terminal
+- [msmtp](http://msmtp.sourceforge.net) - SMTP agent for sending e-mails through mail user agents or terminal
 - [taskwarrior](https://github.com/taskwarrior/task) - Text-based time, task and project management tool
 - [ncdu](https://dev.yorhel.nl/ncdu) - Disk usage analyzer for quickly finding big files with ncurses interface
 - [ripgrep](https://github.com/BurntSushi/ripgrep) - Line oriented search tool similar to grep that combines the usability of ag
@@ -85,7 +78,6 @@
 - [transmission-cli](https://github.com/transmission/transmission) - BitTorrent client and daemon with web UI for remote controlling
 - [editorconfig](https://github.com/editorconfig/editorconfig-core-c) - Define and maintain consistent coding styles between different editors
 - [dfc](https://github.com/Rolinh/dfc) - Report file system space usage information with colored graphs
-- [hub](https://github.com/github/hub) - Extra features for Git that makes working with GitHub easier
 - [syncthing](https://github.com/syncthing/syncthing) - Continuous file synchronization utility
 - [tidy-html5](https://github.com/htacg/tidy-html5) - HTML linter with support for modern web standards
 - [par](https://github.com/sergi/par) - Paragraph reformatter and aligner for e-mails and plain text
@@ -94,6 +86,8 @@
 - [gcal](https://www.gnu.org/software/gcal) - Calculate and print calendars
 - [fasd](https://github.com/clvv/fasd) - Track your most used directories, based on frequency for quick access later
 - [bat](https://github.com/sharkdp/bat) - A cat clone with additional features like git integration and syntax highlighting
+- [universal-ctags](https://github.com/universal-ctags/ctags) - A maintained ctags implementation
+- [wireguard](https://github.com/WireGuard/wireguard-go) - Virtual Private Network protocol to create secure point-to-point connections
 
 </details>
 
@@ -129,7 +123,6 @@
 - [WireGuard](https://github.com/WireGuard/wireguard-android) - WireGuard VPN client
 - [Amaze](https://github.com/TeamAmaze/AmazeFileManager) - File manager
 - [Slide for Reddit](https://github.com/ccrama/Slide) - Reddit client
-- [Red Moon](https://github.com/LibreShift/red-moon) - Blue light filter and screen dimmer
 
 </details>
 
