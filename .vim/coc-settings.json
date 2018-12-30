@@ -16,5 +16,6 @@
 	"coc.preferences.fixInsertedWord": true,
 	"coc.preferences.openResourceCommand": "split",
 	"coc.preferences.jumpCommand": "split",
-	"coc.preferences.codeLens.enable": false
+	"coc.preferences.codeLens.enable": false,
+	"snippets.ultisnips.directories": ["snippet"]
 }
