@@ -239,8 +239,8 @@ endif
 
 " Overrides.
 highlight! EndOfBuffer ctermfg=bg guifg=bg | " Hide tilde symbols for all buffers.
-highlight! StatusLine ctermbg=243 ctermfg=238 guibg=#818596 guifg=#1e2132
-highlight! StatusLineNC ctermbg=243 ctermfg=237 guibg=#3e445e guifg=#1e2132
+highlight! StatusLine ctermbg=243 ctermfg=238 guibg=#818596 guifg=#161821
+highlight! StatusLineNC ctermbg=243 ctermfg=237 guibg=#3e445e guifg=#161821
 highlight! TabLine cterm=NONE ctermbg=245 ctermfg=234 gui=NONE guibg=#1e2132 guifg=#818596
 highlight! TabLineFill cterm=reverse ctermbg=234 ctermfg=245 gui=NONE guibg=#1e2132 guifg=#818596
 highlight! TabLineSel cterm=NONE ctermbg=234 ctermfg=252 gui=NONE guibg=#3e445e guifg=#9a9ca5
