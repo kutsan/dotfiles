@@ -34,8 +34,8 @@ set-option -g visual-activity off
 # Enable supported focus events.
 set-option -g focus-events on
 
-# Switch off automatic window renaming.
-set-option -g automatic-rename off
+# Turn on automatic window renaming.
+set-option -g automatic-rename on
 
 # Terminal overrides.
 set-option -g -a terminal-overrides ',xterm-256color:Tc' # True color support.
