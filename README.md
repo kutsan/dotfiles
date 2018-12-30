@@ -16,17 +16,15 @@
 	- [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) - Fish-like syntax highlighting support for interactive terminal
 	- [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) - Fish-like auto-suggestions for interactive terminal based on command history
 - [neovim](https://github.com/neovim/neovim) - The fork of ubiquitous text editor focused on extensibility and usability
-	- [iceberg](https://github.com/cocopon/iceberg.vim) - Dark blue color scheme
+	- [iceberg](https://github.com/cocopon/iceberg.vim) - Color scheme
 	- [ale](https://github.com/w0rp/ale) - Asynchronous lint engine for Neovim and Vim 8+
-	- [colorizer](https://github.com/chrisbra/Colorizer) - Highlight HEX and RGB color codes and names in their background
-	- [devicons](https://github.com/ryanoasis/vim-devicons) - Adds additional file type glyphs to popular plugins
+	- [coc](https://github.com/neoclide/coc.nvim) - Context-aware completion engine
+	- [devicons](https://github.com/kutsan/vim-devicons) - Adds additional file type glyphs to popular plugins
 	- [editorconfig](https://github.com/editorconfig/editorconfig-vim) - EditorConfig integration
 	- [emmet](https://github.com/mattn/emmet-vim) - Emmet integration
-	- [gina](https://github.com/lambdalisue/gina.vim) - Asynchronously Git client
+	- [fugitive](https://github.com/tpope/vim-fugitive) - Git client
 	- [fzf](https://github.com/junegunn/fzf.vim) - Fuzzy finder fzf as plugin
-	- [neosnippet](https://github.com/Shougo/neosnippet) - Snippet engine
 	- [nerdtree](https://github.com/scrooloose/nerdtree) - File explorer
-	- [nvim-completion-manager](https://github.com/roxma/nvim-completion-manager) - Asynchronous auto-completion framework for Neovim
 	- [polyglot](https://github.com/sheerun/vim-polyglot) - Big collection of language packs as scripts are loaded only on demand
 	- [signify](https://github.com/mhinz/vim-signify) - Show Git diff in the sign column
 	- [undotree](https://github.com/mbbill/undotree) - Visualize undo tree
