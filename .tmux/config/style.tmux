@@ -14,17 +14,17 @@ set-option -g status-fg white
 
 # Left side of status bar
 set-option -g status-left-length 40
-set-option -g status-left '#[fg=brightwhite,bg=brightblack] #S #[fg=default,bg=default] '
+set-option -g status-left ' '
 
 # Window status
-set-option -g window-status-format '#[fg=white,bg=brightblack] #I #[fg=white,bg=black] #W '
-set-option -g window-status-current-format '#[fg=brightblack,bg=blue] #I #[fg=brightblack,bg=magenta] #W '
-set-option -g window-status-separator " "
+set-option -g window-status-format '#[fg=white,bg=black] #W '
+set-option -g window-status-current-format '#[fg=brightblack,bg=brightblue] #W '
+set-option -g window-status-separator ' '
 set-option -g status-justify left
 
 # Right side of status bar
 set-option -g status-right-length 40
-set-option -g status-right ' #[fg=white,bg=black] %Y-%m-%d %R #[fg=white,bg=brightblack] #(whoami)@#h '
+set-option -g status-right ''
 
 # Pane border
 set-option -g pane-border-bg default
@@ -41,5 +41,5 @@ set-option -g clock-mode-colour white
 set-option -g clock-mode-style 24
 
 # Message
-set-option -g message-bg default
-set-option -g message-fg default
+set-option -g message-bg yellow
+set-option -g message-fg black
