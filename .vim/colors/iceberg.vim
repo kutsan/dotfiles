@@ -241,14 +241,22 @@ else
 endif
 
 " Overrides.
+highlight! Cursor ctermbg=252 ctermfg=234 guibg=#c6c8d1 guifg=#131315
+highlight! EndOfBuffer ctermbg=234 ctermfg=236 guibg=#131315 guifg=#242940
 highlight! EndOfBuffer ctermfg=bg guifg=bg | " Hide tilde symbols for all buffers.
-highlight! StatusLine ctermbg=243 ctermfg=238 guibg=#818596 guifg=#161821
-highlight! StatusLineNC ctermbg=243 ctermfg=237 guibg=#3e445e guifg=#161821
+highlight! Error ctermbg=234 ctermfg=203 guibg=#131315 guifg=#e27878
+highlight! ErrorMsg ctermbg=234 ctermfg=203 guibg=#131315 guifg=#e27878
+highlight! NonText ctermbg=234 ctermfg=236 guibg=#131315 guifg=#242940
+highlight! Normal ctermbg=234 ctermfg=252 guibg=#131315 guifg=#c6c8d1
+highlight! SpecialKey ctermbg=234 ctermfg=236 guibg=#131315 guifg=#242940
+highlight! StatusLine ctermbg=243 ctermfg=238 guibg=#818596 guifg=#131315
+highlight! StatusLineNC ctermbg=243 ctermfg=237 guibg=#3e445e guifg=#131315
 highlight! TabLine cterm=NONE ctermbg=245 ctermfg=234 gui=NONE guibg=#1e2132 guifg=#818596
 highlight! TabLineFill cterm=reverse ctermbg=234 ctermfg=245 gui=NONE guibg=#1e2132 guifg=#818596
 highlight! TabLineSel cterm=NONE ctermbg=234 ctermfg=252 gui=NONE guibg=#3e445e guifg=#9a9ca5
-highlight! ALEErrorSign ctermbg=235 ctermfg=203 guibg=#161821 guifg=#e27878
-highlight! ALEWarningSign ctermbg=235 ctermfg=216 guibg=#161821 guifg=#e2a478
+highlight! WarningMsg ctermbg=234 ctermfg=203 guibg=#131315 guifg=#e27878
+highlight! ALEErrorSign ctermbg=235 ctermfg=203 guibg=#131315 guifg=#e27878
+highlight! ALEWarningSign ctermbg=235 ctermfg=216 guibg=#131315 guifg=#e2a478
 execute 'highlight! CursorLineNr guibg=' . synIDattr(synIDtrans(hlID('CursorLine')), 'bg', 'gui') . ' ctermbg=' . synIDattr(synIDtrans(hlID('CursorLine')), 'bg', 'cterm')
 execute 'highlight! SignColumn guibg=' . synIDattr(synIDtrans(hlID('Normal')), 'bg', 'gui') . ' ctermbg=' . synIDattr(synIDtrans(hlID('Normal')), 'bg', 'cterm')
 execute 'highlight! VertSplit guibg=' . synIDattr(synIDtrans(hlID('Normal')), 'bg', 'gui') . ' ctermbg=' . synIDattr(synIDtrans(hlID('Normal')), 'bg', 'cterm')
@@ -257,10 +265,3 @@ execute 'highlight! GitGutterAdd guibg=' . synIDattr(synIDtrans(hlID('Normal')),
 execute 'highlight! GitGutterChange guibg=' . synIDattr(synIDtrans(hlID('Normal')), 'bg', 'gui') . ' ctermbg=' . synIDattr(synIDtrans(hlID('Normal')), 'bg', 'cterm')
 execute 'highlight! GitGutterChangeDelete guibg=' . synIDattr(synIDtrans(hlID('Normal')), 'bg', 'gui') . ' ctermbg=' . synIDattr(synIDtrans(hlID('Normal')), 'bg', 'cterm')
 execute 'highlight! GitGutterDelete guibg=' . synIDattr(synIDtrans(hlID('Normal')), 'bg', 'gui') . ' ctermbg=' . synIDattr(synIDtrans(hlID('Normal')), 'bg', 'cterm')
-
-" ALE's virtual text.
-highlight! link ALEVirtualTextError ALEErrorSign
-highlight! link ALEVirtualTextWarning ALEWarningSign
-highlight! link ALEVirtualTextStyleError ALEVirtualTextError
-highlight! link ALEVirtualTextStyleWarning ALEVirtualTextWarning
-highlight! link ALEVirtualTextInfo ALEVirtualTextWarning
