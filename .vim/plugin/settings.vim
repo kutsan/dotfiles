@@ -48,7 +48,7 @@ set visualbell " Use visual bell instead of beeping on errors.
 
 " Interface
 set cursorline " Highlight the line background of the cursor.
-set fillchars=stl:\ ,stlnc:\ ,vert:│,fold:\ ,diff:\  " Characters to be used in various user-interface elements.
+set fillchars=stl:\ ,stlnc:\ ,vert:\ ,fold:\ ,diff:\  " Characters to be used in various user-interface elements.
 set laststatus=2 " Always show the status line.
 set linebreak " Wrap lines in 'breakat', rather than at the last character.
 set listchars=tab:│\ ,nbsp:␣,extends:…,precedes:… " Strings to use when 'list' option set.
