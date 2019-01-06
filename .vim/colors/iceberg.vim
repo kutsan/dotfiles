@@ -2,7 +2,7 @@
 " Iceberg, dark blue color scheme.
 "
 " @see github:cocopon/iceberg.vim
-" @version c4665cb
+" @version 8b5ca00
 ""
 
 if !has('gui_running') && &t_Co < 256
@@ -83,6 +83,8 @@ highlight! diffAdded ctermfg=150 guifg=#b4be82
 highlight! diffRemoved ctermfg=203 guifg=#e27878
 highlight! ALEErrorSign ctermbg=235 ctermfg=203 guibg=#1e2132 guifg=#e27878
 highlight! ALEWarningSign ctermbg=235 ctermfg=216 guibg=#1e2132 guifg=#e2a478
+highlight! ALEVirtualTextError ctermfg=203 guifg=#e27878
+highlight! ALEVirtualTextWarning ctermfg=216 guifg=#e2a478
 highlight! CtrlPMode1 ctermbg=241 ctermfg=234 guibg=#5a5f72 guifg=#17171b
 highlight! EasyMotionShade ctermfg=239 guifg=#3d425b
 highlight! EasyMotionTarget ctermfg=150 guifg=#b4be82
@@ -152,6 +154,7 @@ highlight! link jsClassDefinition Normal
 highlight! link jsClassFuncName Title
 highlight! link jsExport Statement
 highlight! link jsFuncName Title
+highlight! link jsFutureKeys Statement
 highlight! link jsFuncCall Normal
 highlight! link jsGlobalObjects Statement
 highlight! link jsModuleKeywords Statement
