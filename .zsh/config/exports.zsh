@@ -92,7 +92,7 @@ export MANPAGER="nvim +'set filetype=man' -"
 # nvim
 export NVIM_RPLUGIN_MANIFEST="$HOME/.vim/cache/share/rplugin.vim"
 # export NVIM_NODE_LOG_FILE="$HOME/.vim/cache/log/node.log"
-# export NVIM_NODE_LOG_LEVEL='4'
+# export NVIM_NODE_LOG_LEVEL='debug'
 
 # npm
 export NPM_CONFIG_INIT_AUTHOR_NAME='Kutsan Kaplan'
