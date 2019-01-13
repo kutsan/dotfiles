@@ -1,0 +1,2 @@
+include ~/.task/config/settings.conf
+include ~/.task/config/colors.conf
