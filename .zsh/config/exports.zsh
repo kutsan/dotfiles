@@ -140,6 +140,9 @@ export SDCV_PAGER='fold -s -w 100 | less'
 # bat
 export BAT_CONFIG_PATH="$HOME/.config/bat/bat.conf"
 
+# taskwarrior
+export TASKRC="$HOME/.task/taskrc"
+
 # less
 export LESS=" \
 	--ignore-case \
