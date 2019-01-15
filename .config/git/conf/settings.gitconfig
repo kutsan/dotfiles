@@ -16,6 +16,7 @@
 [diff]
 	tool = nvimdiff
 	renames = copies
+	submodule = log
 [difftool "nvimdiff"]
 	cmd = nvim -d $LOCAL $REMOTE
 	trustexitcode = true
