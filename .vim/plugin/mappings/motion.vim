@@ -1,6 +1,8 @@
-" [a]n [e]ntire buffer motion.
-onoremap <silent> ae :<C-u>keepjumps normal! GVgg0<Enter>
-xnoremap <silent> ae :<C-u>keepjumps normal! GVgg0<Enter>
+" [a]n and [i]n [e]ntire buffer motions.
+onoremap <silent> ae :call kutsan#mappings#motion#entire#a()<Enter>
+xnoremap <silent> ae :<C-u>call kutsan#mappings#motion#entire#a()<Enter>
+onoremap <silent> ie :call kutsan#mappings#motion#entire#i()<Enter>
+xnoremap <silent> ie :<C-u>call kutsan#mappings#motion#entire#i()<Enter>
 
 " [i]nner lin[e] motion.
 onoremap <silent> i_ :<C-u>normal! ^vg_<Enter>
