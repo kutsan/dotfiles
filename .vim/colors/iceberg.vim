@@ -243,7 +243,7 @@ endif
 " Overrides.
 highlight! Cursor ctermbg=252 ctermfg=234 guibg=#c6c8d1 guifg=#131315
 highlight! EndOfBuffer ctermbg=234 ctermfg=236 guibg=#131315 guifg=#242940
-highlight! EndOfBuffer ctermfg=bg guifg=bg | " Hide tilde symbols for all buffers.
+highlight! EndOfBuffer ctermfg=bg guifg=bg | " Hide end of buffer tilde symbols.
 highlight! Error ctermbg=234 ctermfg=203 guibg=#131315 guifg=#e27878
 highlight! ErrorMsg ctermbg=234 ctermfg=203 guibg=#131315 guifg=#e27878
 highlight! NonText ctermbg=234 ctermfg=236 guibg=#131315 guifg=#242940
