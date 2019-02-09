@@ -14,10 +14,10 @@ xnoremap <silent> a_ :<C-u>normal! 0v$<Enter>
 onoremap gv :<C-u>normal! gv<Enter>
 
 " [i]n and [a]round [i]ndent motions.
-onoremap <silent> ii :<C-u>call kutsan#mappings#motion#indent#({ 'motion': 'i' })<Enter>
-xnoremap <silent> ii :<C-u>call kutsan#mappings#motion#indent#({ 'motion': 'i' })<Enter>
-onoremap <silent> ai :<C-u>call kutsan#mappings#motion#indent#({ 'motion': 'a' })<Enter>
-xnoremap <silent> ai :<C-u>call kutsan#mappings#motion#indent#({ 'motion': 'a' })<Enter>
+onoremap <silent> ii :<C-u>call kutsan#mappings#motion#indent#({ 'mode': 'i' })<Enter>
+xnoremap <silent> ii :<C-u>call kutsan#mappings#motion#indent#({ 'mode': 'i' })<Enter>
+onoremap <silent> ai :<C-u>call kutsan#mappings#motion#indent#({ 'mode': 'a' })<Enter>
+xnoremap <silent> ai :<C-u>call kutsan#mappings#motion#indent#({ 'mode': 'a' })<Enter>
 
 " Execute a motion on the next or last text object.
 onoremap <silent> an :<C-u>call kutsan#mappings#motion#next#({ 'motion': 'a', 'direction': 'f' })<Enter>
