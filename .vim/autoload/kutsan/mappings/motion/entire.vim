@@ -1,33 +1,31 @@
 ""
-" Select an entire buffer.
+" Select an and in entire buffer.
 "
-" onoremap <silent> ae :call kutsan#mappings#motion#entire#a()<Enter>
-" xnoremap <silent> ae :<C-u>call kutsan#mappings#motion#entire#a()<Enter>
+" onoremap <silent> ie :<C-u>call kutsan#mappings#motion#entire#({ 'mode': 'i' })<Enter>
+" xnoremap <silent> ie :<C-u>call kutsan#mappings#motion#entire#({ 'mode': 'i' })<Enter>
+" onoremap <silent> ae :<C-u>call kutsan#mappings#motion#entire#({ 'mode': 'a' })<Enter>
+" xnoremap <silent> ae :<C-u>call kutsan#mappings#motion#entire#({ 'mode': 'a' })<Enter>
+"
+" @param {dictionary} options Configuration dictionary.
+" @param {string} options.mode Motion to select text, whether 'a' or 'i'.
 ""
-function! kutsan#mappings#motion#entire#a()
+function! kutsan#mappings#motion#entire#(options) abort
 	normal! m'
 
-	keepjumps normal! gg0VG
-endfunction
+	if a:options.mode ==# 'a'
+		keepjumps normal! gg0VG
 
-""
-" Select in entire buffer.
-"
-" onoremap <silent> ie :call kutsan#mappings#motion#entire#i()<Enter>
-" xnoremap <silent> ie :<C-u>call kutsan#mappings#motion#entire#i()<Enter>
-""
-function! kutsan#mappings#motion#entire#i()
-	normal! m'
+	elseif a:options.mode ==# 'i'
+		keepjumps normal! gg0
+		call search('\v\c^.', 'cW')
+		let l:startpos = getpos('.')
 
-	keepjumps normal! gg0
-	call search('\v\c^.', 'cW')
-	let l:startpos = getpos('.')
+		keepjumps normal! G$
+		call search('\v\c^.', 'bcW')
+		let l:endpos = getpos('.')
 
-	keepjumps normal! G$
-	call search('\v\c^.', 'bcW')
-	let l:endpos = getpos('.')
-
-	call setpos('.', l:startpos)
-	keepjumps normal! V
-	call setpos('.', l:endpos)
+		call setpos('.', l:startpos)
+		keepjumps normal! V
+		call setpos('.', l:endpos)
+	endif
 endfunction
