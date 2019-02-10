@@ -47,9 +47,8 @@ nnoremap s "
 nnoremap gp p=`]
 nnoremap gP P=`]
 
-" Correct previous and next spelling mistakes.
-nnoremap [gs [s1z=
-nnoremap ]gs ]s1z=
+" Correct spelling mistakes under the cursor.
+nnoremap z= 1z=
 
 " Scroll viewport faster.
 nnoremap <C-e> 2<C-e>
