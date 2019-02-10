@@ -8,7 +8,7 @@
 " @param {string} type Type of motion.
 ""
 function! kutsan#mappings#operator#comment#(type) abort
-	if a:type =~? 'v'
+	if a:type ==? 'v'
 		let l:save = {
 			\ 'register': getreg('@')
 		\ }

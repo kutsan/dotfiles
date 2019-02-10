@@ -8,16 +8,20 @@
 " @param {string} type Type of motion.
 ""
 function! kutsan#mappings#operator#execute#(type) abort
+	if !has('nvim')
+		return v:false
+	endif
+
 	let l:save = {
 		\ 'register': getreg('@')
 	\ }
 
-	if a:type =~? 'v'
-		silent execute 'normal! gvy'
+	if a:type ==? 'v'
+		silent normal! gvy
 	elseif a:type ==? 'line'
-		silent execute "normal! '[V']y"
+		silent normal! '[V']y
 	else
-		silent execute 'normal! `[v`]y'
+		silent normal! `[v`]y
 	endif
 
 	let l:executecontent = getreg('@')
