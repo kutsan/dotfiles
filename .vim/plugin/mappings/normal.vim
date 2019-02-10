@@ -33,8 +33,12 @@ nnoremap x "_x
 nnoremap Y y$
 
 " Refactor word under cursor.
-nnoremap c* *``cgn
-nnoremap c# #``cgN
+nnoremap c* /\<<C-R>=expand('<cword>')<Enter>\>\C<Enter>``cgn
+nnoremap c# ?\<<C-R>=expand('<cword>')<Enter>\>\C<Enter>``cgN
+
+" Delete word under cursor.
+nnoremap d* /\<<C-r>=expand('<cword>')<Enter>\>\C<Enter>``dgn
+nnoremap d# ?\<<C-r>=expand('<cword>')<Enter>\>\C<Enter>``dgN
 
 " Use `s` for registers.
 nnoremap s "
