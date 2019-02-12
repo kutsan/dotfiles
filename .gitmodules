@@ -51,3 +51,6 @@
 [submodule ".vim/pack/bundle/start/fugitive"]
 	path = .vim/pack/bundle/start/fugitive
 	url = https://github.com/tpope/vim-fugitive
+[submodule ".vim/pack/bundle/start/peartree"]
+	path = .vim/pack/bundle/start/peartree
+	url = https://github.com/tmsvg/pear-tree
