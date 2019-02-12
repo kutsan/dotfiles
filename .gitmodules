@@ -54,3 +54,6 @@
 [submodule ".vim/pack/bundle/start/peartree"]
 	path = .vim/pack/bundle/start/peartree
 	url = https://github.com/tmsvg/pear-tree
+[submodule ".vim/pack/bundle/start/sandwich"]
+	path = .vim/pack/bundle/start/sandwich
+	url = https://github.com/machakann/vim-sandwich
