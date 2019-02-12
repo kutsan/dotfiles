@@ -57,3 +57,6 @@
 [submodule ".vim/pack/bundle/start/sandwich"]
 	path = .vim/pack/bundle/start/sandwich
 	url = https://github.com/machakann/vim-sandwich
+[submodule ".vim/pack/bundle/start/wordmotion"]
+	path = .vim/pack/bundle/start/wordmotion
+	url = https://github.com/chaoren/vim-wordmotion
