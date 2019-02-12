@@ -60,3 +60,6 @@
 [submodule ".vim/pack/bundle/start/wordmotion"]
 	path = .vim/pack/bundle/start/wordmotion
 	url = https://github.com/chaoren/vim-wordmotion
+[submodule ".vim/pack/bundle/start/targets"]
+	path = .vim/pack/bundle/start/targets
+	url = https://github.com/wellle/targets.vim
