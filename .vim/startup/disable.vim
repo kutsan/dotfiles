@@ -20,6 +20,8 @@ nnoremap gT <Nop>
 " Disable substitute mappings, use `cl` and `cc`.
 nnoremap s <Nop>
 nnoremap S <Nop>
+xnoremap s <Nop>
+xnoremap S <Nop>
 
 " Disable beginning and end of line mappings.
 nnoremap 0 <Nop>

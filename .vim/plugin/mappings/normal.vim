@@ -40,9 +40,6 @@ nnoremap c# ?\<<C-R>=expand('<cword>')<Enter>\>\C<Enter>``cgN
 nnoremap d* /\<<C-r>=expand('<cword>')<Enter>\>\C<Enter>``dgn
 nnoremap d# ?\<<C-r>=expand('<cword>')<Enter>\>\C<Enter>``dgN
 
-" Use `s` for registers.
-nnoremap s "
-
 " Correct bad indent while pasting.
 nnoremap gp p=`]
 nnoremap gP P=`]
