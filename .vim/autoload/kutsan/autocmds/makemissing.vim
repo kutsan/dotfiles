@@ -1,7 +1,7 @@
 ""
 " Create directory path if it's not exist.
 "
-" autocmd BufWritePre * call kutsan#autocmds#makemissing#(expand('<afile>:p:h'))
+" autocmd BufWritePre * call kutsan#autocmds#makemissing#(expand('<afile>:p:h'), v:cmdbang)
 "
 " @param {string} directory Path of the missing directory to be created.
 " @param {boolean} [force=v:false] Create missing directory without prompting anything.
@@ -24,7 +24,7 @@ function! kutsan#autocmds#makemissing#(directory, force) abort
 				\ ''
 			\ )
 
-			if empty(l:answer)
+			if empty(l:answer) || l:answer ==? 'n'
 				return v:false
 			endif
 		finally
