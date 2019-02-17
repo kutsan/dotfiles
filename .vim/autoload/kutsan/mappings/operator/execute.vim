@@ -3,7 +3,6 @@
 "
 " nnoremap <silent> gx :<C-u>let b:executeoperatorview = winsaveview() <Bar> set operatorfunc=kutsan#mappings#operator#execute#<Enter>g@
 " xnoremap <silent> gx :<C-u>call kutsan#mappings#operator#execute#(visualmode())<Enter>
-" nnoremap <silent> gxl :<C-u>let b:executeoperatorview = winsaveview() <Bar> set operatorfunc=kutsan#mappings#operator#execute#<Bar> execute 'normal!' v:count 'g@_'<Enter>
 "
 " @param {string} type Type of motion.
 ""
@@ -18,10 +17,8 @@ function! kutsan#mappings#operator#execute#(type) abort
 
 	if a:type ==? 'v'
 		silent normal! gvy
-	elseif a:type ==? 'line'
-		silent normal! '[V']y
 	else
-		silent normal! `[v`]y
+		silent normal! `[V`]y
 	endif
 
 	let l:executecontent = getreg('@')
