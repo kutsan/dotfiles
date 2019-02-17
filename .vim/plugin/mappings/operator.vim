@@ -2,9 +2,6 @@
 onoremap w :<C-u>normal! vwh<Enter>
 onoremap W :<C-u>normal! vWh<Enter>
 
-" Construct range operator.
-nnoremap <silent> ! :set operatorfunc=kutsan#mappings#operator#construct#<Enter>g@
-
 " Send given motion to appropriate REPL operator.
 nnoremap <silent> gx :let b:executeoperatorview = winsaveview() <Bar> set operatorfunc=kutsan#mappings#operator#execute#<Enter>g@
 xnoremap <silent> gx :<C-u>call kutsan#mappings#operator#execute#(visualmode())<Enter>
