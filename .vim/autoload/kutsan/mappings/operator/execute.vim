@@ -11,14 +11,19 @@ function! kutsan#mappings#operator#execute#(type) abort
 		return v:false
 	endif
 
+	" The operator doesn't support block-wise motion.
+	if a:type ==# 'block' || a:type ==# "\<C-v>"
+		return v:false
+	endif
+
 	let l:save = {
 		\ 'register': getreg('@')
 	\ }
 
-	if a:type ==? 'v'
-		silent normal! gvy
-	else
+	if a:type ==# 'char' || a:type ==# 'line'
 		silent normal! `[V`]y
+	elseif a:type ==# 'v' || a:type ==# 'V'
+		silent normal! gvy
 	endif
 
 	let l:executecontent = getreg('@')
