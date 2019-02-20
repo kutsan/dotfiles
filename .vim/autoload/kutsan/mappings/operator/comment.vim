@@ -8,18 +8,12 @@
 " @param {string} type Type of motion.
 ""
 function! kutsan#mappings#operator#comment#(type) abort
-	if a:type ==? 'v'
-		let l:save = {
-			\ 'register': getreg('@')
-		\ }
-
-		silent execute 'normal! gvy'
-
-		call setreg('@', l:save.register)
-		unlet l:save
+	if index(['v', 'V', "\<C-v>"], a:type) !=# -1
+		let [l:mstart, l:mend] = [line("'<"), line("'>")]
+	elseif index(['char', 'line', 'block'], a:type) !=# -1
+		let [l:mstart, l:mend] = [line("'["), line("']")]
 	endif
 
-	let [l:mstart, l:mend] = [line("'["), line("']")]
 	let l:uncomment = 2
 
 	let [l:leftcommentstring, l:rightcommentstring] =

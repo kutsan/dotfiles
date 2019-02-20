@@ -7,8 +7,8 @@
 " @param {string} [type] Type of motion.
 ""
 function kutsan#mappings#operator#search#(type) abort
-	" Line-wise motion is not supported.
-	if a:type ==? 'line'
+	" The operator doesn't support line-wise and block-wise motions.
+	if index(['line', 'block', 'V', "\<C-v>"], a:type) !=# -1
 		return v:false
 	endif
 
@@ -16,19 +16,22 @@ function kutsan#mappings#operator#search#(type) abort
 		\ 'register': getreg('@')
 	\ }
 
-	if a:type ==? 'v'
-		silent normal! gvy
-	else
+	if a:type ==# 'char'
 		silent normal! `[v`]y
+	elseif a:type ==# 'v'
+		silent normal! gvy
 	endif
 
 	let l:query = getreg('@')
-
 	call setreg('@', l:save.register)
 	unlet l:save
 
-	let @/ = substitute(escape(l:query, '/\'), '\n', '\\n', 'g')
+	if line("'[") !=# line("']")
+		return v:false
+	endif
 
-	call feedkeys(printf(':%%substitute//%s/gc', escape(l:query, '/')), 'n')
+	let @/ = escape(l:query, '/\')
+
+	call feedkeys(printf(':%%substitute//%s/gc', @/), 'n')
 	call feedkeys("\<Left>\<Left>\<Left>", 'm')
 endfunction
