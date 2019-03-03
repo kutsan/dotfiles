@@ -66,13 +66,12 @@
 - [openssl](https://github.com/openssl/openssl) - Toolkit for the Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols
 - [openssh](https://www.openssh.com) - Connectivity tool for remote login with the SSH protocol
 - [rsync](https://rsync.samba.org) - Utility that provides fast incremental file transfer
-- [docker](https://github.com/docker/docker) - Container engine that provides abstraction and automation of virtualization
 - [fzf](https://github.com/junegunn/fzf) - General-purpose fuzzy finder that can be used among other Unix tools
 - [htop](https://github.com/hishamhm/htop) - Interactive text-based system monitor, process viewer and process manager
 - [newsboat](https://github.com/newsboat/newsboat) - RSS/Atom feed reader
 - [neomutt](https://github.com/neomutt/neomutt) - Fork of the mail user agent mutt with new features and patches
 - [msmtp](http://msmtp.sourceforge.net) - SMTP agent for sending e-mails through mail user agents or terminal
-- [taskwarrior](https://github.com/taskwarrior/task) - Text-based time, task and project management tool
+- [taskwarrior](https://github.com/GothenburgBitFactory/taskwarrior) - Text-based time, task and project management tool
 - [ncdu](https://dev.yorhel.nl/ncdu) - Disk usage analyzer for quickly finding big files with ncurses interface
 - [ripgrep](https://github.com/BurntSushi/ripgrep) - Line oriented search tool similar to grep that combines the usability of ag
 - [ffmpeg](https://github.com/FFmpeg/FFmpeg) - Cross-platform solution to handle, record, convert and stream audio and video
