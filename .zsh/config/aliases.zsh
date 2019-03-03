@@ -79,7 +79,7 @@ alias c-zsh='$EDITOR +"cd $ZDOTDIR" $ZDOTDIR/.zshrc'
 alias c-zshhistory='$EDITOR +"cd $ZDOTDIR" $HISTFILE'
 
 # Git
-foreach aliaskey (a b bl c co d ds dt dts l s sm) {
+foreach aliaskey (a b bl c co d ds dt dts f l s sm) {
 	alias g$aliaskey="git $aliaskey"
 }
 unset aliaskey

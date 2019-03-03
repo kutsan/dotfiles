@@ -9,6 +9,7 @@
 	dts = difftool --staged
 	d = diff --stat=100,100 --patch
 	ds = diff --stat=100,100 --patch --staged
+	f = fetch
 	bl = !git --no-pager branch --verbose --all
 	remotes = remote --verbose
 	contributors = shortlog --summary --numbered --email
