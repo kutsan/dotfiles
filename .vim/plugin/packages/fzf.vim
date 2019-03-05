@@ -47,6 +47,7 @@ nnoremap <silent> <C-p> :FGFiles<Enter>
 nnoremap <silent> <Leader><C-p> :FFiles<Enter>
 nnoremap <silent> <M-x> :FCommands<Enter>
 nnoremap <silent> <M-b> :FBuffers<Enter>
+nnoremap <silent> <C-f> :FTags<Enter>
 nnoremap <silent> <Leader>h :FHelptags<Enter>
 nnoremap <silent> <Leader>: :FHistory:<Enter>
 nnoremap <silent> <Leader>/ :FHistory/<Enter>
