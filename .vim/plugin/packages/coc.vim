@@ -21,40 +21,40 @@ let g:coc_global_extensions = [
 
 " User configuration.
 let g:coc_user_config = {
-	\ 'coc': {
-		\ 'preferences': {
-			\ 'autoTrigger': 'always',
-			\ 'triggerAfterInsertEnter': v:false,
-			\ 'timeout': 2000,
-			\ 'noselect': v:false,
-			\ 'formatOnType': v:false,
-			\ 'preferCompleteThanJumpPlaceholder': v:false,
-			\ 'messageLevel': 'error',
-			\ 'numberSelect': v:false,
-			\ 'fixInsertedWord': v:true,
-			\ 'openResourceCommand': 'split',
-			\ 'jumpCommand': 'split',
-			\ 'hoverTarget': v:false,
-			\ 'codeLens': {
-				\ 'enable': v:false
-			\ },
-			\ 'diagnostic': {
-				\ 'displayByAle': v:true,
-				\ 'enable': v:true,
-				\ 'signOffset': 1000,
-				\ 'errorSign': '•',
-				\ 'warningSign': '•',
-				\ 'infoSign': '•',
-				\ 'hintSign': '•',
-				\ 'virtualText': v:true,
-				\ 'virtualTextPrefix': '  ',
-				\ 'enableMessage': 'never'
-			\ }
-		\ }
+	\ 'suggest': {
+		\ 'autoTrigger': 'always',
+		\ 'triggerAfterInsertEnter': v:false,
+		\ 'timeout': 2000,
+		\ 'noselect': v:false,
+		\ 'keepCompleteopt': v:true,
+		\ 'minTriggerInputLength': 1,
+		\ 'acceptSuggestionOnCommitCharacter': v:true,
+		\ 'snippetIndicator': ' [snippet]',
+		\ 'enablePreview': v:false,
+		\ 'messageLevel': 'error',
+		\ 'numberSelect': v:false,
+		\ 'fixInsertedWord': v:true,
+		\ 'openResourceCommand': 'split',
+		\ 'jumpCommand': 'split',
+		\ 'hoverTarget': v:false
+	\ },
+	\ 'diagnostic': {
+		\ 'displayByAle': v:true,
+		\ 'enable': v:true,
+		\ 'signOffset': 1000,
+		\ 'errorSign': '•',
+		\ 'warningSign': '•',
+		\ 'infoSign': '•',
+		\ 'hintSign': '•',
+		\ 'virtualText': v:true,
+		\ 'virtualTextPrefix': '  ',
+		\ 'enableMessage': 'never'
+	\ },
+	\ 'codeLens': {
+		\ 'enable': v:false
 	\ },
 	\ 'snippets': {
 		\ 'priority': 200,
-		\ 'extends': [],
 		\ 'shortcut': 'S',
 		\ 'loadFromExtensions': v:false,
 		\ 'ultisnips': {
