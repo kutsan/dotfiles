@@ -98,5 +98,5 @@ let g:ale_sign_style_warning = g:ale_sign_warning
 
 " Define mappings.
 nmap <LocalLeader>f <Plug>(ale_fix)
-nmap <LocalLeader>K <Plug>(ale_previous)
-nmap <LocalLeader>J <Plug>(ale_next)
+nmap [f <Plug>(ale_previous)
+nmap ]f <Plug>(ale_next)
