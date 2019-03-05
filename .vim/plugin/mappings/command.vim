@@ -11,7 +11,7 @@ cnoremap <C-h> <Left>
 cnoremap <C-l> <Right>
 
 " Construct substitute command with 'very magic' mode.
-cnoremap :s substitute/\v//gc<Left><Left><Left><Left>
+cnoremap ;s substitute/\v//gc<Left><Left><Left><Left>
 
 " Construct global command with 'very magic' mode.
-cnoremap :g global/\v/<Left>
+cnoremap ;g global/\v/<Left>
