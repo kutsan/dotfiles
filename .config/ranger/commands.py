@@ -85,7 +85,7 @@ class jump(Command):
     """
     :jump
 
-    Jump to a most used directory with `fasd` and `fzf`.
+    Jump to a most used directory or file with `fasd` and `fzf`.
     """
 
     def execute(self):
