@@ -15,7 +15,7 @@ nnoremap K 5k
 " Override Ex mode with run @q.
 nnoremap Q @q
 
-" Go back to last buffer shortcut.
+" Go back to the last buffer shortcut.
 nnoremap <C-b> <C-^>
 
 " Alternative beginning and end of line mappings.
