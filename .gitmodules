@@ -30,9 +30,6 @@
 	path = .vim/pack/bundle/start/devicons
 	url = https://github.com/kutsan/vim-devicons
 	branch = nerdtree-syntax
-[submodule ".vim/pack/bundle/start/editorconfig"]
-	path = .vim/pack/bundle/start/editorconfig
-	url = https://github.com/editorconfig/editorconfig-vim
 [submodule ".vim/pack/bundle/start/fzf-core"]
 	path = .vim/pack/bundle/start/fzf-core
 	url = https://github.com/junegunn/fzf

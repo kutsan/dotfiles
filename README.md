@@ -17,7 +17,6 @@
 	- [ale](https://github.com/w0rp/ale) - Asynchronous lint engine for Neovim and Vim 8+
 	- [coc](https://github.com/neoclide/coc.nvim) - Context-aware completion engine
 	- [devicons](https://github.com/kutsan/vim-devicons) - Adds additional file type glyphs to popular plugins
-	- [editorconfig](https://github.com/editorconfig/editorconfig-vim) - EditorConfig integration
 	- [emmet](https://github.com/mattn/emmet-vim) - Emmet integration
 	- [fugitive](https://github.com/tpope/vim-fugitive) - Git client
 	- [fzf](https://github.com/junegunn/fzf.vim) - Fuzzy finder fzf as plugin
