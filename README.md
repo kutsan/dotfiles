@@ -46,7 +46,6 @@
 	- [pip](https://pypi.org) - Python package manager to install and manage packages written in Python
 		- [ranger](https://github.com/ranger/ranger) - Text-based file system manager for the console with Vim-like key bindings
 			- [exiftool](http://www.sno.phy.queensu.ca/~phil/exiftool) - Read, write and edit meta information in a wide variety of media files
-			- [atool](http://www.nongnu.org/atool) - Manage, list, create, diff and extract file archives of various types
 		- [asciinema](https://github.com/asciinema/asciinema) - Record and share terminal sessions as text-based colored format
 		- [vint](https://github.com/Kuniwak/vint) - Extensible, high performance Vimscript linter and analysis tool
 		- [stig](https://github.com/rndusr/stig) - TUI and CLI interface for transmission-daemon
