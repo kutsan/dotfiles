@@ -34,7 +34,6 @@ let g:coc_user_config = {
 		\ 'messageLevel': 'error',
 		\ 'numberSelect': v:false,
 		\ 'fixInsertedWord': v:true,
-		\ 'openResourceCommand': 'split',
 		\ 'jumpCommand': 'split',
 		\ 'hoverTarget': v:false
 	\ },
