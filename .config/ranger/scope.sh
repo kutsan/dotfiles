@@ -17,55 +17,42 @@ IFS=$'\n'
 # 7    | image		| Display the file directly as an image.
 
 # Script arguments
-FILE_PATH="${1}" # Full path of the highlighted file
-PV_WIDTH="${2}" # Width of the preview pane (number of fitting characters)
-PV_HEIGHT="${3}" # Height of the preview pane (number of fitting characters)
-IMAGE_CACHE_PATH="${4}" # Full path that should be used to cache image preview
-PV_IMAGE_ENABLED="${5}" # 'True' if image previews are enabled, 'False' otherwise.
+declare -g FILE_PATH="${1}" # Full path of the highlighted file.
+declare -g PV_WIDTH="${2}" # Width of the preview pane (number of fitting characters).
+declare -g PV_HEIGHT="${3}" # Height of the preview pane (number of fitting characters).
+declare -g IMAGE_CACHE_PATH="${4}" # Full path that should be used to cache image preview.
+declare -g PV_IMAGE_ENABLED="${5}" # 'True' if image previews are enabled, 'False' otherwise.
 
-FILE_EXTENSION="${FILE_PATH##*.}"
-FILE_EXTENSION_LOWER="${FILE_EXTENSION,,}"
+declare -g FILE_EXTENSION="${FILE_PATH##*.}"
+declare -g FILE_EXTENSION_LOWER="${FILE_EXTENSION,,}"
+declare -g FILE_MIMETYPE="$(file --dereference --brief --mime-type -- "${FILE_PATH}")"
 
 handle_extension() {
 	case "${FILE_EXTENSION_LOWER}" in
-		a|ace|alz|arc|arj|bz|bz2|cab|cpio|deb|gz|jar|lha|lz|lzh|lzma|lzo|\
-		rpm|rz|t7z|tar|tbz|tbz2|tgz|tlz|txz|tZ|tzo|war|xpi|xz|Z|zip)
-			atool --list -- "${FILE_PATH}" && exit 5
+		zip)
+			unzip -l -- "${FILE_PATH}" \
+				&& exit 5
 
 			exit 1
 			;;
 
-		rar)
-			# Avoid password prompt by providing empty password
-			unrar lt -p- -- "${FILE_PATH}" && exit 5
-
-			exit 1
-			;;
-
-		7z)
-			# Avoid password prompt by providing empty password
-			7z l -p -- "${FILE_PATH}" && exit 5
+		tar | gz)
+			tar tvvf "${FILE_PATH}" \
+				&& exit 5
 
 			exit 1
 			;;
 
 		pdf)
-			# Preview as text conversion
-			pdftotext -l 10 -nopgbrk -q -- "${FILE_PATH}" - && exit 5
-			exiftool "${FILE_PATH}" && exit 5
+			exiftool "${FILE_PATH}" \
+				&& exit 5
 
 			exit 1
 			;;
 
 		torrent)
-			transmission-show -- "${FILE_PATH}" && exit 5
-
-			exit 1
-			;;
-
-		odt|ods|odp|sxw)
-			# Preview as text conversion
-			odt2txt "${FILE_PATH}" && exit 5
+			transmission-show -- "${FILE_PATH}" \
+				&& exit 5
 
 			exit 1
 			;;
@@ -73,56 +60,66 @@ handle_extension() {
 }
 
 handle_image() {
-	local mimetype="${1}"
+	if [[ "${PV_IMAGE_ENABLED}" != 'True' ]]; then
+		return 1
+	fi
 
-	case "${mimetype}" in
+	case "$FILE_MIMETYPE" in
 		image/*)
 			exit 7
 			;;
 
 		video/*)
-			ffmpegthumbnailer -i "${FILE_PATH}" -o "${IMAGE_CACHE_PATH}" -s 0 && echo
+			ffmpegthumbnailer -i "${FILE_PATH}" -o "${IMAGE_CACHE_PATH}" -s 0 \
+				&& exit 6
+
+			exit 1
 			;;
 	esac
 }
 
 handle_mime() {
-	local mimetype="${1}"
-
-	case "${mimetype}" in
+	case "$FILE_MIMETYPE" in
 		text/* | */xml)
 			# Don't try to highlight big files.
-			(( "$(stat --printf='%s' -- "${FILE_PATH}")" > "262143" )) && exit 2
+			(( "$(stat --printf='%s' -- "${FILE_PATH}")" > "262143" )) \
+				&& exit 1
 
-			bat "${FILE_PATH}" && exit 5
+			bat "${FILE_PATH}" \
+				&& exit 5
 
 			exit 2
 			;;
 
 		image/*)
-			exiftool "${FILE_PATH}" && exit 5
+			exiftool "${FILE_PATH}" \
+				&& exit 5
 
 			exit 1
 			;;
 
 		video/* | audio/*)
-			exiftool "${FILE_PATH}" && exit 5
+			exiftool "${FILE_PATH}" \
+				&& exit 5
 
 			exit 1
 			;;
 	esac
 }
 
-handle_fallback() {
-	file --dereference --brief -- "${FILE_PATH}" && exit 5
-
-	exit 1
+print_fileinfo() {
+	printf '%s: %s\n\n' \
+		"$FILE_MIMETYPE" \
+		"$(file --dereference --brief -- ${FILE_PATH})"
 }
 
-handle_extension
-MIMETYPE="$( file --dereference --brief --mime-type -- "${FILE_PATH}" )"
-[[ "${PV_IMAGE_ENABLED}" == 'True' ]] && handle_image "${MIMETYPE}"
-handle_mime "${MIMETYPE}"
-handle_fallback
+main() {
+	print_fileinfo
 
-exit 1
+	handle_extension
+	handle_image
+	handle_mime
+
+	exit 5
+}
+main
