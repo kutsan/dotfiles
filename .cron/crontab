@@ -1,20 +1,12 @@
 PATH='/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin'
 
-#=====================================================================#
-#     0-23   0-59               0-30  0-6   1-12                      #
-#     |_    _|                 _|    _|    _|                         #
-#       |  |                  |     |     |            * any          #
-#    At HH:MM on day-of-month MD on WD in M            - range        #
-#       |  |                  |     |     |            , array        #
-#     __|__|            ______|     |   __|            / step         #
-#    |  |            __|         ___|__|                              #
-#   _|  |__         |         __|   |__                               #
-#  |       |        |        |         |                              #
-#  |       |        |        |         |                              #
-#=====================================================================#
-#  Min  |  Hour  |  Mday  |  Month  |  Wday  |  Command               #
-#=====================================================================#
-   0       *        *        *         *        newsboat -x reload
-   */30    *        *        *         *        flexget --cron execute
-   @reboot                                      transmission-daemon
-#=====================================================================#
+#  + min (0-59)                                    * any   - range
+#  |     + hour (0-23)                             , array / step
+#  |     |      + day of month (1-31, JAN-DEC)
+#  |     |      |      + month (1-12)
+#  |     |      |      |       + day of week (0-6, SUN-SAT) (0 == sunday)
+#  |     |      |      |       |
+#  min   hour   day    month   week   command
+   0     *      *      *       *      newsboat -x reload
+   */30  *      *      *       *      flexget --cron execute
+   @reboot                            transmission-daemon
