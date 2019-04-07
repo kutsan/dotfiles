@@ -11,3 +11,6 @@ let g:pear_tree_smart_backspace = v:true
 
 " Disable dot-repeatable functionality in favor of consistent behaviour.
 let g:pear_tree_repeatable_expand = v:false
+
+" Workaround for disabling default <Enter> mapping.
+imap <C-M-S-F12> <Plug>(PearTreeExpand)
