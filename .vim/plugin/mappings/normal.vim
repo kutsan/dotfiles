@@ -105,17 +105,9 @@ nnoremap <silent> cop :set paste!<Enter>
 nnoremap [<Space> :<C-u>put! =repeat(nr2char(10), v:count1) <Bar> ']+1<Enter>
 nnoremap ]<Space> :<C-u>put =repeat(nr2char(10), v:count1) <Bar> '[-1<Enter>
 
-" Navigation mappings for [l]ocation list.
-nnoremap <silent> =ol :lopen<Enter>
-nnoremap <silent> [l :lprevious<Enter>
-nnoremap <silent> ]l :lnext<Enter>
-nnoremap <silent> [L :lpfile<Enter>
-nnoremap <silent> ]L :lnfile<Enter>
-nnoremap <silent> [<C-l> :lfirst<Enter>
-nnoremap <silent> ]<C-l> :llast<Enter>
-
-" Navigation mappings for [q]uickfix list.
+" [q]uickfix list mappings.
 nnoremap <silent> =oq :copen<Enter>
+nnoremap <silent> =oQ :chistory<Enter>
 nnoremap <silent> [q :cprevious<Enter>
 nnoremap <silent> ]q :cnext<Enter>
 nnoremap <silent> [Q :cpfile<Enter>
@@ -127,27 +119,37 @@ nnoremap <silent> <Right> :cnfile<Enter>
 nnoremap <silent> [<C-q> :cfirst<Enter>
 nnoremap <silent> ]<C-q> :clast<Enter>
 
-" Navigation mappings for [b]uffer list.
+" [l]ocation list mappings.
+nnoremap <silent> =ol :lopen<Enter>
+nnoremap <silent> =oL :lhistory<Enter>
+nnoremap <silent> [l :lprevious<Enter>
+nnoremap <silent> ]l :lnext<Enter>
+nnoremap <silent> [L :lpfile<Enter>
+nnoremap <silent> ]L :lnfile<Enter>
+nnoremap <silent> [<C-l> :lfirst<Enter>
+nnoremap <silent> ]<C-l> :llast<Enter>
+
+" [b]uffer list mappings.
 nnoremap <silent> =ob :buffers!<Enter>
 nnoremap <silent> [b :bprevious<Enter>
 nnoremap <silent> ]b :bnext<Enter>
 nnoremap <silent> [B :bfirst<Enter>
 nnoremap <silent> ]B :blast<Enter>
 
-" Navigation mappings for [a]rgument list.
+" [a]rgument list mappings.
 nnoremap <silent> =oa :args<Enter>
 nnoremap <silent> [a :previous<Enter>
 nnoremap <silent> ]a :next<Enter>
 nnoremap <silent> [A :first<Enter>
 nnoremap <silent> ]A :last<Enter>
 
-" Navigation mappings for [t]abs.
+" [t]abs mappings.
 nnoremap <silent> =ot :tabs<Enter>
 nnoremap <silent> [t :tabprevious<Enter>
 nnoremap <silent> ]t :tabnext<Enter>
 
-" Navigation mappings for ta[g]s.
-nnoremap <C-]> g<C-]>
+" ta[g]s mappings.
+nnoremap <C-]> g<C-]>zt
 nnoremap <silent> =og :tags<Enter>
 nnoremap <silent> [g :pop<Enter>
 nnoremap <silent> ]g :tag<Enter>
