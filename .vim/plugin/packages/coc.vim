@@ -35,8 +35,7 @@ let g:coc_user_config = {
 		\ 'numberSelect': v:false,
 		\ 'fixInsertedWord': v:true,
 		\ 'jumpCommand': 'split',
-		\ 'hoverTarget': v:false,
-		\ 'reloadPumOnInsertChar': v:true
+		\ 'hoverTarget': v:false
 	\ },
 	\ 'diagnostic': {
 		\ 'displayByAle': v:true,
