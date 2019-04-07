@@ -69,6 +69,13 @@ nnoremap <S-Down> 2<C-w>-
 nnoremap <S-Right> 2<C-w>>
 nnoremap <S-Left> 2<C-w><
 
+" [y]ank [p]ath [f]ull.
+nnoremap <silent> ypf :let @+ = expand('%:p')<Enter>
+" [y]ank [p]ath [r]elative.
+nnoremap <silent> ypr :let @+ = expand('%')<Enter>
+" [y]ank [p]ath [n]ame of the file.
+nnoremap <silent> ypn :let @+ = expand('%:t')<Enter>
+
 " Store relative line number jumps in the jumplist if they exceed a threshold.
 nnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
 nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
