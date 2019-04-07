@@ -36,7 +36,11 @@ endfunction
 ""
 function! kutsan#mappings#insert#handle#enter() abort
 	if !pumvisible()
-		return "\<Enter>"
+		if exists('g:loaded_pear_tree')
+			return "\<Plug>(PearTreeExpand)"
+		else
+			return "\<Enter>"
+		endif
 	endif
 
 	return "\<C-y>"
