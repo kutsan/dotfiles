@@ -1,6 +1,5 @@
 ""
-" TODO
-" or a global function with silent!
+" Lookup definition under cursor.
 "
 " nnoremap <silent> gt :call kutsan#mappings#normal#lookup#()<Enter>
 ""
