@@ -83,9 +83,7 @@ function custom-fzf-launch-from-history() {
 
 	zle redisplay
 
-	if (typeset -f zle-line-init &>/dev/null) {
-		zle zle-line-init
-	}
+	typeset -f zle-line-init &>/dev/null && zle zle-line-init
 
 	return $stat
 }
