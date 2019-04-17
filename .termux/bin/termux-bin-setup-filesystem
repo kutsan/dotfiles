@@ -24,4 +24,5 @@ termux-setup-storage
 [[ -L ~/Documents ]] || ln -s /storage/emulated/0/Documents Documents
 
 # Make ~/Sync folder for Syncthing
-[[ -d ~/Sync ]] || mkdir -p ~/Sync
+[[ -d /storage/emulated/0/Sync ]] || mkdir -p /storage/emulated/0/Sync
+[[ -L ~/Sync ]] || ln -s /storage/emulated/0/Sync Sync
