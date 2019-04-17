@@ -98,6 +98,7 @@ function b() {
 		'i' '~/Pictures/'
 		'p' '~/Projects/'
 		'v' '~/Videos/'
+		's' '~/Sync/'
 	)
 
 	local selected_bookmark
