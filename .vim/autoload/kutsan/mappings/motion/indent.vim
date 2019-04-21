@@ -5,11 +5,20 @@
 " xnoremap <silent> ii :<C-u>call kutsan#mappings#motion#indent#({ 'mode': 'i' })<Enter>
 " onoremap <silent> ai :<C-u>call kutsan#mappings#motion#indent#({ 'mode': 'a' })<Enter>
 " xnoremap <silent> ai :<C-u>call kutsan#mappings#motion#indent#({ 'mode': 'a' })<Enter>
+" onoremap <silent> io :<C-u>call kutsan#mappings#motion#indent#({ 'mode': 'o' })<Enter>
+" xnoremap <silent> io :<C-u>call kutsan#mappings#motion#indent#({ 'mode': 'o' })<Enter>
 "
 " @param {dictionary} options Configuration dictionary.
 " @param {string} options.mode Motion to select text, whether 'a' or 'i'.
 ""
 function! kutsan#mappings#motion#indent#(options) abort
+	let l:save = {
+		\ 'marks': {
+			\ "'[": getpos("'["),
+			\ "']": getpos("']")
+		\ }
+	\ }
+
 	normal! ^
 	let l:virtcol = virtcol(getline('.') =~# '\v\c^\s*$' ? '$' : '.')
 
@@ -24,7 +33,7 @@ function! kutsan#mappings#motion#indent#(options) abort
 
 	" Exclude or include empty lines depending on mode.
 	if a:options.mode ==# 'a'
-		execute printf('normal! %sG0V%sG$o', l:start, l:end)
+		execute printf('normal! %sG0V%sG$', l:start, l:end)
 
 	elseif a:options.mode ==# 'i'
 		execute printf('normal! %sG0', l:start)
@@ -33,6 +42,13 @@ function! kutsan#mappings#motion#indent#(options) abort
 		execute printf('normal! Vo%sG', l:end)
 		call search('\v\c^[^\n\r]', 'bWc')
 
-		normal! $o
+		normal! 0
+
+	elseif a:options.mode ==# 'o'
+		execute printf('normal! %sG0V%sG$', l:start - 1, l:end + 1)
 	endif
+
+	for [l:key, l:value] in items(l:save.marks)
+		call setpos(l:key, l:value)
+	endfor
 endfunction
