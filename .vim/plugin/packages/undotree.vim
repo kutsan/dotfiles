@@ -41,7 +41,7 @@ let g:undotree_HighlightChangedText = 1
 " Default highlight groups for syntax items.
 let g:undotree_HighlightSyntaxAdd = 'DiffAdd'
 let g:undotree_HighlightSyntaxChange = 'DiffChange'
-let g:undotree_HighlightSyntaxDel = "DiffDelete"
+let g:undotree_HighlightSyntaxDel = 'DiffDelete'
 
 " Define mapping.
 nnoremap <silent> <Leader>u :call undotree#UndotreeToggle()<Enter>
