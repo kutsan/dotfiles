@@ -9,7 +9,7 @@ source "$ZDOTDIR/plugins/zsh-system-clipboard/zsh-system-clipboard.zsh"
 source "$ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 	typeset -g ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
 	typeset -g ZSH_AUTOSUGGEST_ORIGINAL_WIDGET_PREFIX='autosuggest-orig-'
-	typeset -g ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=''
+	typeset -g ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE='20'
 	typeset -g ZSH_AUTOSUGGEST_ASYNC_PTY_NAME='zsh_autosuggest_pty'
 	typeset -ga ZSH_AUTOSUGGEST_STRATEGY=('history')
 	typeset -ga ZSH_AUTOSUGGEST_EXECUTE_WIDGETS=()
