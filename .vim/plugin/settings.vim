@@ -63,7 +63,7 @@ set titlestring=%f " Format of the title used by 'title'.
 set tags=./.git/tags;,./tags;,tags " Look for `tags` file in .git/ directory.
 
 " Diff
-set diffopt=filler,vertical,foldcolumn:0 " Option settings for diff mode.
+set diffopt=filler,vertical,hiddenoff,foldcolumn:0,algorithm:patience " Option settings for diff mode.
 
 " Formatting
 let &formatprg = 'par b1 e1 g1 q1 r3 w80 R1 T4 B=.,\?_A_a Q=_s\>' " External formatter program that will be used with `gq` operator.
