@@ -251,9 +251,9 @@ highlight! Normal ctermbg=234 ctermfg=252 guibg=#131315 guifg=#c6c8d1
 highlight! SpecialKey ctermbg=234 ctermfg=236 guibg=#131315 guifg=#242940
 highlight! StatusLine ctermbg=243 ctermfg=238 guibg=#818596 guifg=#131315
 highlight! StatusLineNC ctermbg=243 ctermfg=237 guibg=#3e445e guifg=#131315
-highlight! TabLine cterm=NONE ctermbg=245 ctermfg=234 gui=NONE guibg=#1e2132 guifg=#818596
-highlight! TabLineFill cterm=reverse ctermbg=234 ctermfg=245 gui=NONE guibg=#1e2132 guifg=#818596
-highlight! TabLineSel cterm=NONE ctermbg=234 ctermfg=252 gui=NONE guibg=#3e445e guifg=#9a9ca5
+highlight! TabLine cterm=NONE ctermbg=245 ctermfg=234 gui=NONE guibg=#131315 guifg=#818596
+highlight! TabLineFill cterm=reverse ctermbg=234 ctermfg=245 gui=NONE guibg=#131315 guifg=#818596
+highlight! TabLineSel cterm=NONE ctermbg=234 ctermfg=252 gui=NONE guibg=#3e445e guifg=#c0c1c4
 highlight! WarningMsg ctermbg=234 ctermfg=203 guibg=#131315 guifg=#e27878
 highlight! ALEErrorSign ctermbg=235 ctermfg=203 guibg=#131315 guifg=#e27878
 highlight! ALEWarningSign ctermbg=235 ctermfg=216 guibg=#131315 guifg=#e2a478
