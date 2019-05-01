@@ -9,8 +9,7 @@ setopt ERR_EXIT PIPE_FAIL WARN_CREATE_GLOBAL WARN_NESTED_VAR
 ##
 function url_youtube-dl() {
 	if (! hash youtube-dl 2>/dev/null) {
-		echo; console.error 'youtube-dl is not installed.'; echo
-		return false
+		return 1
 	}
 
 	local file_path=$(youtube-dl "$1" --get-filename --restrict-filenames --output '~/Downloads/%(title)s.%(ext)s')
@@ -27,8 +26,7 @@ function url_youtube-dl() {
 ##
 function show_notification() {
 	if (! hash termux-notification 2>/dev/null) {
-		echo; console.error "Termux:API is not installed. Can't access termux-notification API to create notification."
-		return false
+		return 1
 	}
 
 	termux-notification \
@@ -41,10 +39,7 @@ function show_notification() {
 # @param $1 {string} URL, that will be handled by this program.
 ##
 function main() {
-	source $ZDOTDIR/lib/console.zsh || exit 1
-
 	if (( ${#@} == 0 )) {
-		echo; console.warn 'No argument was provided.'; echo
 		exit 0
 	}
 
