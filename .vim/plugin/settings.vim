@@ -114,6 +114,7 @@ set hidden " Allows you to hide buffers with unsaved changes without being promp
 set splitbelow " Splitting a window will put the new window below of the current one.
 set splitright " Splitting a window will put the new window right of the current one.
 set switchbuf=useopen " Jump to the first open window that contains the specified buffer.
+set tabline=%!kutsan#settings#tabline() " Custom tabline modifier function.
 set tabpagemax=50 " Maximum number of tab pages to be opened by the `tab all` command.
 
 " Command Mode
