@@ -1,5 +1,5 @@
 # newsboat
-bind-key N \
+bind-key -n M-N \
 	new-window -n newsboat newsboat --quiet \; \
 	split-window -t newsboat -h -l 55 -c $HOME/.newsboat \; \
 	select-pane -L \; \
@@ -7,7 +7,7 @@ bind-key N \
 	rename-window newsboat
 
 # stig
-bind-key S \
+bind-key -n M-S \
 	new-window -n stig stig \; \
 	split-window -t stig -v -l 25 -c $HOME/Downloads \; \
 	send-keys -t stig 'ranger' 'Enter' \; \
@@ -16,7 +16,7 @@ bind-key S \
 	rename-window stig
 
 # trackma
-bind-key T \
+bind-key -n M-T \
 	new-window -n trackma trackma-curses \; \
 	split-window -h -l 55 -c $HOME/Downloads \; \
 	send-keys "r --cmd='set viewmode!'" 'Enter' \; \
@@ -25,13 +25,13 @@ bind-key T \
 	rename-window trackma
 
 # htop
-bind-key H \
+bind-key -n M-H \
 	new-window -n htop htop \; \
 	set-window-option allow-rename off \; \
 	rename-window htop
 
 # cal
-bind-key C \
+bind-key -n M-C \
 	new-window -n cal \
 		"gcal \
 			--highlighting='\e[41m:\e[0m:\e[33m:\e[0m' \
@@ -41,3 +41,9 @@ bind-key C \
 			$(date +'%Y')" \; \
 	set-window-option allow-rename off \; \
 	rename-window cal
+
+# ranger
+bind-key -n M-R \
+	new-window -n file "ranger" \; \
+	set-window-option allow-rename off \; \
+	rename-window file
