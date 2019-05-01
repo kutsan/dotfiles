@@ -19,7 +19,8 @@ let g:fzf_layout = {
 " Set actions manually.
 let g:fzf_action = {
 	\ 'ctrl-e': 'split',
-	\ 'ctrl-v': 'vsplit'
+	\ 'ctrl-v': 'vsplit',
+	\ 'ctrl-t': 'tab split'
 \ }
 
 " History directory.
