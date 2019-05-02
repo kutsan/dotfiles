@@ -14,7 +14,7 @@ let g:WebDevIconsUnicodeDecorateFolderNodes = v:true
 let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
 
 " Set default file and directory icons.
-let g:WebDevIconsUnicodeDecorateFileNodesDefaultSymbol = ''
+let g:WebDevIconsUnicodeDecorateFileNodesDefaultSymbol = ''
 let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ''
 let g:DevIconsDefaultFolderOpenSymbol = ''
 
