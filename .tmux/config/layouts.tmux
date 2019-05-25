@@ -1,7 +1,7 @@
 # newsboat
 bind-key -n M-N \
 	new-window -n newsboat newsboat --quiet \; \
-	split-window -t newsboat -h -l 55 -c $HOME/.newsboat \; \
+	split-window -h -l 55 -c $HOME/.newsboat \; \
 	select-pane -L \; \
 	set-window-option allow-rename off \; \
 	rename-window newsboat
@@ -9,9 +9,9 @@ bind-key -n M-N \
 # stig
 bind-key -n M-S \
 	new-window -n stig stig \; \
-	split-window -t stig -v -l 25 -c $HOME/Downloads \; \
-	send-keys -t stig 'ranger' 'Enter' \; \
-	select-pane -t stig -U \; \
+	split-window -v -l 25 -c $HOME/Downloads \; \
+	send-keys 'ranger' 'Enter' \; \
+	select-pane -U \; \
 	set-window-option allow-rename off \; \
 	rename-window stig
 
@@ -29,6 +29,12 @@ bind-key -n M-H \
 	new-window -n htop htop \; \
 	set-window-option allow-rename off \; \
 	rename-window htop
+
+# mutt
+bind-key -n M-M \
+	new-window -n mail neomutt \; \
+	set-window-option allow-rename off \; \
+	rename-window mail
 
 # cal
 bind-key -n M-C \
