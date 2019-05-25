@@ -147,6 +147,14 @@ if has('nvim')
 	set wildoptions+=pum " Display the completion matches using the popupmenu.
 endif
 
+" Android
+if len($ANDROID_ROOT)
+	set laststatus=0
+	set nonumber
+	set norelativenumber
+	set signcolumn=no
+endif
+
 " Root
 if exists('$SUDO_USER')
 	set noswapfile
