@@ -133,21 +133,20 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_COLORS \
 
 # transmission
 export TRANSMISSION_HOME="$HOME/.config/transmission"
+export TR_AUTH='kutsan:EkYBoNSd6oIUznucRTfQTFCcxC5WeeDaBImPt6I9CncuY9g8mH'
 
 # sdcv
 export SDCV_PAGER='fold -s -w 100 | less'
 
 # gcal
-export GCAL="--highlighting=\e[41m:\e[0m:\e[33m:\e[0m \
+export GCAL="\
+	--highlighting=\e[41m:\e[0m:\e[33m:\e[0m \
 	--pager \
-	--starting-day=1 \
+	--starting-day=Monday \
 	--cc-holidays=TR"
 
 # bat
 export BAT_CONFIG_PATH="$HOME/.config/bat/bat.conf"
-
-# taskwarrior
-export TASKRC="$HOME/.task/taskrc"
 
 # less
 export LESS=" \

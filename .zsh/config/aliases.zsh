@@ -26,6 +26,7 @@ alias jq='jq --tab --indent 4'
 alias news='newsboat --quiet'
 alias def='sdcv --color'
 alias cal="gcal"
+alias tmr='transmission-remote --authenv'
 alias search="rg \
 	--color='always' \
 	--heading \
