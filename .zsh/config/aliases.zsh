@@ -25,12 +25,7 @@ alias syncthing='syncthing -home=$HOME/.config/syncthing'
 alias jq='jq --tab --indent 4'
 alias news='newsboat --quiet'
 alias def='sdcv --color'
-alias cal="gcal \
-	--highlighting='\e[41m:\e[0m:\e[33m:\e[0m' \
-	--pager \
-	--starting-day=1 \
-	--cc-holidays=TR \
-	\$(date +'%Y')"
+alias cal="gcal"
 alias search="rg \
 	--color='always' \
 	--heading \

@@ -137,6 +137,12 @@ export TRANSMISSION_HOME="$HOME/.config/transmission"
 # sdcv
 export SDCV_PAGER='fold -s -w 100 | less'
 
+# gcal
+export GCAL="--highlighting=\e[41m:\e[0m:\e[33m:\e[0m \
+	--pager \
+	--starting-day=1 \
+	--cc-holidays=TR"
+
 # bat
 export BAT_CONFIG_PATH="$HOME/.config/bat/bat.conf"
 
