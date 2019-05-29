@@ -59,6 +59,9 @@ onoremap <C-n> %
 " Select last changed or yanked area.
 nnoremap <expr> gV '`[' . strpart(getregtype(), 0, 1) . '`]'
 
+" Reveal syntax group under cursor.
+nnoremap <F2> :echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')<Enter>
+
 " Construct grep search.
 nnoremap gs :Search ''<Left>
 nnoremap gS :Search! ''<Left>
