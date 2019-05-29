@@ -1,34 +1,65 @@
-# Colors
-color normal	 color253    color234
-color indicator  color230    color238
-color status     color101    color16
-color tree       color208    color234
-color signature  color102    color234
-color message    color253    color234
-color attachment color117    color234
-color error      color30     color234
-color tilde      color130    color235
-color search     color100    default
-color markers    color138    default
-color quoted     color107    color234
-color quoted1    color66     color234
-color quoted2    color32     color234
-color quoted3    color30     color234
-color quoted4    color99     color234
-color quoted5    color36     color234
-color quoted6    color114    color234
-color quoted7    color109    color234
-color quoted8    color41     color234
-color quoted9    color138    color234
-color index      color202    color234  ~F
-color index      color39     color234  ~N
-color index      color39     color234  ~O
-color index      color229    color22   ~T
-color index      color240    color234  ~D
-color hdrdefault color30     color233
-color header	 color132    color233  '^date:'
-color header	 color153    color233  '^(to|cc|bcc):'
-color header	 color120    color233  '^from:'
-color header	 color178    color233  '^subject:'
-color header     color31     color233  '^user-agent:'
-color header	 color29     color233  '^reply-to:'
+# Default index colors:
+color index blue default '.*'
+color index_author cyan default '.*'
+color index_subject yellow default '.*'
+
+# New mail is boldened:
+color index brightblue default "~N"
+color index_author brightcyan default "~N"
+color index_subject brightyellow default "~N"
+
+# Other colors and aesthetic settings:
+mono bold bold
+mono underline underline
+mono indicator reverse
+mono error bold
+color normal default default
+color indicator black white
+color sidebar_highlight yellow black
+color sidebar_divider black black
+color sidebar_flagged red black
+color sidebar_new green black
+color normal yellow default
+color error red default
+color tilde black default
+color message cyan default
+color markers red white
+color attachment white default
+color search magenta default
+color status yellow black
+color hdrdefault green default
+color quoted green default
+color quoted1 blue default
+color quoted2 cyan default
+color quoted3 yellow default
+color quoted4 red default
+color quoted5 red default
+color signature green default
+color bold black default
+color underline black default
+color normal default default
+
+# Regex highlighting:
+color header blue default ".*"
+color header magenta default "^(From)"
+color header cyan default "^(Subject)"
+color header white default "^(CC|BCC)"
+color body red default "[\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+" # Email addresses
+color body underline default default "(https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+" # URL
+color body green default "\`[^\`]*\`" # Green text between ` and `
+color body blue default "^# \.*" # Headings as bold blue
+color body cyan default "^## \.*" # Subheadings as bold cyan
+color body green default "^### \.*" # Subsubheadings as bold green
+color body yellow default "^(\t| )*(-|\\*) \.*" # List items as yellow
+color body cyan default "[;:][-o][)/(|]" # emoticons
+color body cyan default "[;:][)(|]" # emoticons
+color body cyan default "[ ][*][^*]*[*][ ]?" # more emoticon?
+color body cyan default "[ ]?[*][^*]*[*][ ]" # more emoticon?
+color body red default "(BAD signature)"
+color body cyan default "(Good signature)"
+color body black default "^gpg: Good signature .*"
+color body yellow default "^gpg: "
+color body yellow red "^gpg: BAD signature from.*"
+mono body bold "^gpg: Good signature"
+mono body bold "^gpg: BAD signature from.*"
+color body bold default default "([a-z][a-z0-9+-]*://(((([a-z0-9_.!~*'();:&=+$,-]|%[0-9a-f][0-9a-f])*@)?((([a-z0-9]([a-z0-9-]*[a-z0-9])?)\\.)*([a-z]([a-z0-9-]*[a-z0-9])?)\\.?|[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+)(:[0-9]+)?)|([a-z0-9_.!~*'()$,;:@&=+-]|%[0-9a-f][0-9a-f])+)(/([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*(;([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*)*(/([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*(;([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*)*)*)?(\\?([a-z0-9_.!~*'();/?:@&=+$,-]|%[0-9a-f][0-9a-f])*)?(#([a-z0-9_.!~*'();/?:@&=+$,-]|%[0-9a-f][0-9a-f])*)?|(www|ftp)\\.(([a-z0-9]([a-z0-9-]*[a-z0-9])?)\\.)*([a-z]([a-z0-9-]*[a-z0-9])?)\\.?(:[0-9]+)?(/([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*(;([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*)*(/([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*(;([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*)*)*)?(\\?([-a-z0-9_.!~*'();/?:@&=+$,]|%[0-9a-f][0-9a-f])*)?(#([-a-z0-9_.!~*'();/?:@&=+$,]|%[0-9a-f][0-9a-f])*)?)[^].,:;!)? \t\r\n<>\"]"

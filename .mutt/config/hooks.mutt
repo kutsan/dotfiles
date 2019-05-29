@@ -1,0 +1,8 @@
+# TODO
+folder-hook 'com.gmail' 'source ~/.mutt/accounts/com.gmail/config.mutt'
+folder-hook 'com.kutsankaplan' 'source ~/.mutt/accounts/com.kutsankaplan/config.mutt'
+
+# TODO
+index-format-hook reldate "~d<24H" "%[%R]"
+index-format-hook reldate "~d>11m" "%[%Y-%m-%d]"
+index-format-hook reldate "~A"     "%[%d %b]"

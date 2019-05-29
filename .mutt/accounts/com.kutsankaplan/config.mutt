@@ -1,30 +1,33 @@
-# The email and its password for IMAP and SMTP.
+# Set basic information.
 set my_email = 'me@kutsankaplan.com'
-set my_password = `gpg --no-tty --quiet --decrypt ~/.mutt/accounts/com.kutsankaplan/secret.gpg`
-
-# Real or personal name.
+set from = $my_email
 set realname = 'Kutsan Kaplan'
 
-# Default 'from' adress.
-set from = $my_email
+# Set location of the mailbox.
+set folder = '~/.mutt/mailbox/com.kutsankaplan'
 
-# Receive email via IMAP.
-set imap_user = $my_email
-set imap_pass = $my_password
-set folder = 'imaps://imappro.zoho.com:993'
-
-# The spool mailbox location.
-set spoolfile = '+INBOX'
-
-# The draft file where postponed emails saved.
-set postponed = '+Drafts'
+# Set spool file.
+set spoolfile = '+Inbox'
 
 # Send email via SMTP with msmtp.
 set sendmail = "msmtp --file=$HOME/.mutt/msmtprc --account=com.kutsankaplan"
 
-# Cache databases. Store messages locally to speed things up.
-set header_cache = '~/.mutt/accounts/com.kutsankaplan/cache/headers/'
-set message_cachedir = '~/.mutt/accounts/com.kutsankaplan/cache/bodies/'
+# Cache databases.
+set header_cache = '~/.mutt/cache/com.kutsankaplan/headers'
+set message_cachedir = '~/.mutt/cache/com.kutsankaplan/bodies'
 
-# The file where the trusted certificates are saved instead of ~/.mutt_certificates.
-set certificate_file = '~/.mutt/accounts/com.kutsankaplan/certificates'
+# The file where the trusted certificates are saved.
+set certificate_file = '~/.mutt/cache/com.kutsankaplan/certificates'
+
+# Custom statusbar.
+set status_format = "  com.kutsankaplan   %f[%r] %>  %?M?%M/?%m messages, %?n?%n new, ?%?d?%d deleted, ?%?F?%F important, ?%?t?%t selected, ?%?p?%p drafts, ?%l "
+
+# Load mailboxes.
+unmailboxes *
+mailboxes \
+	"+Inbox" \
+	"+Drafts" \
+	"+Templates" \
+	"+Sent" \
+	"+Spam" \
+	"+Trash"

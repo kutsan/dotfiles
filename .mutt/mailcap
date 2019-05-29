@@ -1,1 +1,9 @@
-text/html; "$BROWSER" %s; needsterminal
+# Images
+image/*; xdg-open "%s"
+
+# PDF
+application/pdf; xdg-open "%s"
+
+# HTML
+text/html; google-chrome -- %s; nametemplate=%s.html
+text/html; elinks -dump %s -dump-charset %{charset} -force-html; nametemplate=%s.html; copiousoutput

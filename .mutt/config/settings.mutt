@@ -2,32 +2,62 @@
 set editor = "$EDITOR"
 
 # Character set.
-set charset = 'utf-8'
+set charset = 'UTF-8'
 
-# Don't save outgoing messages into ~/sent file.
-unset record
+# set spoolfile = '+Inbox'
+set postponed = '+Drafts'
+set mbox = '+Archive'
+set trash = '+Trash'
+set record = '+Sent'
 
-# Convert the given MIME types to text/plain when displaying messages.
-auto_view text/html
+# set folder_format = '%4C %t %f'
+
+# set move
 
 # The maximum amount of time in seconds that will wait before polling
 # open IMAP connections.
-set imap_keepalive = 300
+# set imap_keepalive = 300
 
 # Open new IMAP connection automatically.
-unset imap_passive
+# set imap_passive = ''
 
 # How often should look for new mails (time in seconds).
-set mail_check = 30
+# set mail_check = 30
 
-# Fetch the set of subscribed folders from server on connection, and
-# add them to the set of mailboxes it polls for new mail just as if had
-# issued individual "mailboxes" commands.
-set imap_check_subscribed
-
-# Show other folders in sidebar
+# Sidebar settings.
 set sidebar_visible = yes
+set sidebar_divider_char = '│'
+set sidebar_folder_indent = yes
+set sidebar_width = 30
+set sidebar_format = " %B%> %n %S "
+set sidebar_indent_string = ' '
+set sidebar_short_path = no
+
+set mail_check_stats
+
+set nohelp
+
+# TODO: change them maybe even make them icons
+set status_chars = ''
+
+set sleep_time = 0
+
+set nobeep
 
 # Specifies how to sort messages in the "index" menu.
-set sort = 'threads'
-set sort_aux = 'reverse-last-date-received'
+set sort = 'reverse-threads'
+set sort_aux = 'last-date-received'
+
+# TODO
+set pager_format = ''
+set pager_index_lines = 12
+set pager_stop = yes
+
+set index_format = " %Z %-10.10@reldate@ %-15.15L %s %>  %?l?%4l&%4c? "
+
+set autoedit			# go to the editor right away when composing
+set edit_headers		# let me edit the message header when composing
+
+set query_command="lbdbq %s 2>/dev/null"
+
+set nomark_old

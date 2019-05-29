@@ -1,4 +1,14 @@
-source ~/.mutt/accounts/com.kutsankaplan/config.mutt
+# source ~/.mutt/accounts/com.kutsankaplan/config.mutt
+source ~/.mutt/accounts/com.gmail/config.mutt
+
 source ~/.mutt/config/settings.mutt
+source ~/.mutt/config/commands.mutt
 source ~/.mutt/config/mappings.mutt
+source ~/.mutt/config/hooks.mutt
+source ~/.mutt/config/macros.mutt
 source ~/.mutt/config/colors.mutt
+
+# TODO:
+# - Tidy up settings with comments.
+# - Tidy up other files.
+# - Remove Starred mailbox if it's not used.
