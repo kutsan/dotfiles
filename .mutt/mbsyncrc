@@ -1,0 +1,103 @@
+# Globals
+Create Both
+Expunge Both
+SyncState *
+
+# Remotes
+IMAPStore remote/kutsankaplan
+Host imappro.zoho.com
+Port 993
+Timeout 20
+User me@kutsankaplan.com
+PassCmd "gpg --no-tty --quiet --decrypt ~/.mutt/accounts/com.kutsankaplan/secret.gpg"
+SSLType IMAPS
+AuthMechs LOGIN
+
+IMAPStore remote/gmail
+Host imap.gmail.com
+Port 993
+Timeout 20
+User EMAIL
+PassCmd "gpg --no-tty --quiet --decrypt ~/.mutt/accounts/com.gmail/secret.gpg"
+SSLType IMAPS
+AuthMechs LOGIN
+
+# Locals
+MaildirStore local/gmail
+Path ~/.mutt/mailbox/com.gmail/
+Inbox ~/.mutt/mailbox/com.gmail/INBOX
+SubFolders Verbatim
+
+MaildirStore local/kutsankaplan
+Path ~/.mutt/mailbox/com.kutsankaplan/
+Inbox ~/.mutt/mailbox/com.kutsankaplan/INBOX
+SubFolders Verbatim
+
+# Channels
+Channel gmail/INBOX
+Master :remote/gmail:INBOX
+Slave :local/gmail:INBOX
+
+Channel gmail/Drafts
+Master :remote/gmail:"[Gmail]/Drafts"
+Slave :local/gmail:Drafts
+
+Channel gmail/Sent
+Master :remote/gmail:"[Gmail]/Sent Mail"
+Slave :local/gmail:Sent
+
+Channel gmail/Starred
+Master :remote/gmail:"[Gmail]/Starred"
+Slave :local/gmail:Starred
+
+Channel gmail/Spam
+Master :remote/gmail:"[Gmail]/Spam"
+Slave :local/gmail:Spam
+
+Channel gmail/Trash
+Master :remote/gmail:"[Gmail]/Trash"
+Slave :local/gmail:Trash
+
+Channel gmail/All
+Master :remote/gmail:"[Gmail]/All Mail"
+Slave :local/gmail:All
+
+Channel kutsankaplan/Inbox
+Master :remote/kutsankaplan:Inbox
+Slave :local/kutsankaplan:Inbox
+
+Channel kutsankaplan/Drafts
+Master :remote/kutsankaplan:Drafts
+Slave :local/kutsankaplan:Drafts
+
+Channel kutsankaplan/Templates
+Master :remote/kutsankaplan:Templates
+Slave :local/kutsankaplan:Templates
+
+Channel kutsankaplan/Sent
+Master :remote/kutsankaplan:Sent
+Slave :local/kutsankaplan:Sent
+
+Channel kutsankaplan/Spam
+Master :remote/kutsankaplan:Spam
+Slave :local/kutsankaplan:Spam
+
+Channel kutsankaplan/Trash
+Master :remote/kutsankaplan:Trash
+Slave :local/kutsankaplan:Trash
+
+# Groups
+Group SyncAll
+Channel gmail/INBOX
+Channel gmail/Sent
+Channel gmail/Spam
+Channel gmail/Trash
+Channel gmail/All
+Channel gmail/Drafts
+Channel gmail/Starred
+Channel kutsankaplan/Inbox
+Channel kutsankaplan/Drafts
+Channel kutsankaplan/Templates
+Channel kutsankaplan/Sent
+Channel kutsankaplan/Spam
+Channel kutsankaplan/Trash
