@@ -1,5 +1,5 @@
 # Images
-image/*; mpv --profile='image-viewer' "%s"
+image/*; mpv "%s"
 
 # PDF
 application/pdf; xdg-open "%s"
