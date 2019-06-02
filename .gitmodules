@@ -17,19 +17,12 @@
 [submodule ".vim/pack/bundle/opt/emmet"]
 	path = .vim/pack/bundle/opt/emmet
 	url = https://github.com/mattn/emmet-vim
-[submodule ".vim/pack/bundle/opt/nerdtree"]
-	path = .vim/pack/bundle/opt/nerdtree
-	url = https://github.com/scrooloose/nerdtree
 [submodule ".vim/pack/bundle/opt/undotree"]
 	path = .vim/pack/bundle/opt/undotree
 	url = https://github.com/mbbill/undotree
 [submodule ".vim/pack/bundle/start/ale"]
 	path = .vim/pack/bundle/start/ale
 	url = https://github.com/w0rp/ale
-[submodule ".vim/pack/bundle/start/devicons"]
-	path = .vim/pack/bundle/start/devicons
-	url = https://github.com/kutsan/vim-devicons
-	branch = nerdtree-syntax
 [submodule ".vim/pack/bundle/start/fzf-core"]
 	path = .vim/pack/bundle/start/fzf-core
 	url = https://github.com/junegunn/fzf
