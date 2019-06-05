@@ -16,8 +16,7 @@ let g:coc_global_extensions = [
 	\ 'coc-snippets',
 	\ 'coc-stylelint',
 	\ 'coc-tag',
-	\ 'coc-tsserver',
-	\ 'coc-yank'
+	\ 'coc-tsserver'
 \ ]
 
 " User configuration.
@@ -61,23 +60,11 @@ let g:coc_user_config = {
 			\ 'enable': v:true,
 			\ 'directories': ['snippet']
 		\ }
-	\ },
-	\ 'yank': {
-		\ 'list': {
-			\ 'maxsize': 200
-		\ },
-		\ 'highlight': {
-			\ 'enable': v:true,
-			\ 'duration': 100
-		\ }
 	\ }
 \ }
 
 " Remap for rename current word.
 nmap <Leader>c* <Plug>(coc-rename)
-
-" Open yank list of coc-yank.
-nnoremap <silent> <Leader>y :<C-u>CocList --normal yank<Enter>
 
 augroup cocsettings
 	autocmd!
