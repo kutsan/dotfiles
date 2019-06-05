@@ -53,3 +53,9 @@
 [submodule ".vim/pack/bundle/start/targets"]
 	path = .vim/pack/bundle/start/targets
 	url = https://github.com/wellle/targets.vim
+[submodule ".vim/pack/bundle/start/defx"]
+	path = .vim/pack/bundle/start/defx
+	url = https://github.com/Shougo/defx.nvim
+[submodule ".vim/pack/bundle/start/defx-icons"]
+	path = .vim/pack/bundle/start/defx-icons
+	url = https://github.com/kristijanhusak/defx-icons
