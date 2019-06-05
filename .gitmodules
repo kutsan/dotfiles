@@ -1,0 +1,62 @@
+[submodule "autopair"]
+	path = .zsh/plugins/autopair
+	url = https://github.com/hlissner/zsh-autopair
+[submodule "autosuggestions"]
+	path = .zsh/plugins/autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
+[submodule "pure"]
+	path = .zsh/plugins/pure
+	url = https://github.com/sindresorhus/pure
+[submodule "syntax-highlighting"]
+	path = .zsh/plugins/syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting
+[submodule "system-clipboard"]
+	path = .zsh/plugins/system-clipboard
+	url = https://github.com/kutsan/zsh-system-clipboard
+
+[submodule "ale"]
+	path = .vim/pack/bundle/start/ale
+	url = https://github.com/w0rp/ale
+[submodule "coc"]
+	path = .vim/pack/bundle/start/coc
+	url = https://github.com/neoclide/coc.nvim
+[submodule "defx"]
+	path = .vim/pack/bundle/start/defx
+	url = https://github.com/Shougo/defx.nvim
+[submodule "defx-icons"]
+	path = .vim/pack/bundle/start/defx-icons
+	url = https://github.com/kristijanhusak/defx-icons
+	ignore = dirty
+[submodule "emmet"]
+	path = .vim/pack/bundle/opt/emmet
+	url = https://github.com/mattn/emmet-vim
+[submodule "fugitive"]
+	path = .vim/pack/bundle/start/fugitive
+	url = https://github.com/tpope/vim-fugitive
+[submodule "fzf-core"]
+	path = .vim/pack/bundle/start/fzf-core
+	url = https://github.com/junegunn/fzf
+[submodule "fzf-vim"]
+	path = .vim/pack/bundle/start/fzf-vim
+	url = https://github.com/junegunn/fzf.vim
+[submodule "peartree"]
+	path = .vim/pack/bundle/start/peartree
+	url = https://github.com/tmsvg/pear-tree
+[submodule "polyglot"]
+	path = .vim/pack/bundle/start/polyglot
+	url = https://github.com/sheerun/vim-polyglot
+[submodule "sandwich"]
+	path = .vim/pack/bundle/start/sandwich
+	url = https://github.com/machakann/vim-sandwich
+[submodule "signify"]
+	path = .vim/pack/bundle/start/signify
+	url = https://github.com/mhinz/vim-signify
+[submodule "targets"]
+	path = .vim/pack/bundle/start/targets
+	url = https://github.com/wellle/targets.vim
+[submodule "undotree"]
+	path = .vim/pack/bundle/opt/undotree
+	url = https://github.com/mbbill/undotree
+[submodule "wordmotion"]
+	path = .vim/pack/bundle/start/wordmotion
+	url = https://github.com/chaoren/vim-wordmotion
