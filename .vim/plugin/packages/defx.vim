@@ -2,7 +2,7 @@
 " File explorer.
 ""
 
-call defx#custom#option('_', {
+silent! call defx#custom#option('_', {
 	\ 'columns': 'indent:icons:filename',
 	\ 'winwidth': 35,
 	\ 'split': 'vertical',
