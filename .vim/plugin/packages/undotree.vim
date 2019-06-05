@@ -3,7 +3,7 @@
 ""
 
 " Add optional plugin to 'runtimepath' without sourcing anything.
-packadd! undotree
+silent! packadd! undotree
 
 " Open tree on the right side and open diff below that.
 let g:undotree_WindowLayout = 3
