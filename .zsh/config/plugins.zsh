@@ -1,12 +1,12 @@
 # zsh-autopair: Insert or delete brackets, parens, quotes in pair.
-source "$ZDOTDIR/plugins/zsh-autopair/autopair.zsh"
+source "$ZDOTDIR/plugins/autopair/autopair.zsh"
 
 # zsh-system-clipboard: Synchronize system clipboard with ZLE registers.
-source "$ZDOTDIR/plugins/zsh-system-clipboard/zsh-system-clipboard.zsh"
+source "$ZDOTDIR/plugins/system-clipboard/zsh-system-clipboard.zsh"
 	typeset -g ZSH_SYSTEM_CLIPBOARD_TMUX_SUPPORT='true'
 
 # zsh-autosuggestions: Fish-like auto-suggestions.
-source "$ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
+source "$ZDOTDIR/plugins/autosuggestions/zsh-autosuggestions.zsh"
 	typeset -g ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
 	typeset -g ZSH_AUTOSUGGEST_ORIGINAL_WIDGET_PREFIX='autosuggest-orig-'
 	typeset -g ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE='20'
@@ -43,7 +43,7 @@ source "$ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 	)
 
 # zsh-syntax-highlighting: Syntax highlighting support.
-source "$ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "$ZDOTDIR/plugins/syntax-highlighting/zsh-syntax-highlighting.zsh"
 	typeset -ga ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 	typeset -gA ZSH_HIGHLIGHT_STYLES
 
