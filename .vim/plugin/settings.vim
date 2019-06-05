@@ -148,7 +148,7 @@ if has('nvim')
 endif
 
 " Android
-if len($ANDROID_ROOT)
+if !empty($ANDROID_ROOT)
 	set laststatus=0
 	set nonumber
 	set norelativenumber
