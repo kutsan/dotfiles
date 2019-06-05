@@ -59,3 +59,4 @@
 [submodule ".vim/pack/bundle/start/defx-icons"]
 	path = .vim/pack/bundle/start/defx-icons
 	url = https://github.com/kristijanhusak/defx-icons
+	ignore = dirty
