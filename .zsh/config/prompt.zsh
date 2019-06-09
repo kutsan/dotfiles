@@ -10,16 +10,14 @@ typeset -g PROMPT='%(?.%F{white}.%F{red})❯%f '
 # ZLE hooks for prompt's vi mode status
 function zle-line-init zle-keymap-select {
 	# Change the cursor style depending on keymap mode.
-	if [[ "$SSH_CONNECTION" == '' ]] {
-		case $KEYMAP {
-			vicmd)
-				printf '\e[0 q' # Box.
-				;;
+	case $KEYMAP {
+		vicmd)
+			printf '\e[0 q' # Box.
+			;;
 
-			viins|main)
-				printf '\e[6 q' # Vertical bar.
-				;;
-		}
+		viins|main)
+			printf '\e[6 q' # Vertical bar.
+			;;
 	}
 }
 zle -N zle-line-init
