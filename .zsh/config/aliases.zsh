@@ -46,34 +46,6 @@ alias -g G='| grep'
 alias -g NE='2>/dev/null' # No sterr.
 alias -g NO='&>/dev/null' # No stout and sterr (shorthand for 1>/dev/null 2>&1).
 
-# Configs
-alias c-browsersync='$EDITOR +"cd ~/.config/browsersync/" ~/.config/browsersync/config.js'
-alias c-crontab='$EDITOR +"cd ~/.cron/" ~/.cron/crontab'
-alias c-editorconfig='$EDITOR ~/.config/editorconfig/.editorconfig'
-alias c-emacs='$EDITOR +"cd ~/.emacs.d/" ~/.emacs.d/init.el'
-alias c-flexget='$EDITOR +"cd ~/.flexget/" ~/.flexget/config.yml'
-alias c-git='$EDITOR +"cd ~/.config/git/" ~/.config/git/config'
-alias c-gpg='$EDITOR +"cd ~/.gnupg/" ~/.gnupg/gpg.conf'
-alias c-kitty='$EDITOR +"cd ~/.config/kitty/" ~/.config/kitty/kitty.conf'
-alias c-less='$EDITOR +"cd ~/.config/less/" $HOME/.config/less/'
-alias c-mailcap='$EDITOR +"cd ~/.mutt/" ~/.mutt/mailcap'
-alias c-mpv='$EDITOR +"cd ~/.config/mpv/" ~/.config/mpv/'
-alias c-mutt='$EDITOR +"cd ~/.mutt/" ~/.mutt/muttrc'
-alias c-newsboat='$EDITOR +"cd ~/.newsboat/" ~/.newsboat/config'
-alias c-ranger='$EDITOR +"cd ~/.config/ranger/" ~/.config/ranger/'
-alias c-ssh='$EDITOR +"cd ~/.ssh/" ~/.ssh/config'
-alias c-stig='$EDITOR +"cd ~/.config/stig/" ~/.config/stig/rc'
-alias c-task='$EDITOR +"cd ~/.task/" ~/.task/taskrc'
-alias c-termux='$EDITOR +"cd ~/.termux/" ~/.termux/'
-alias c-tmux='$EDITOR +"cd ~/.tmux/" ~/.tmux/tmux.conf'
-alias c-trackma='$EDITOR +"cd ~/.trackma/" ~/.trackma/'
-alias c-transmission='$EDITOR +"cd ~/.config/transmission/" ~/.config/transmission/settings.zsh'
-alias c-vim='$EDITOR +"cd ~/.vim/" ~/.vim/init.vim'
-alias c-wget='$EDITOR +"cd ~/.config/wget/" ~/.config/wget/wgetrc'
-alias c-youtube-dl='$EDITOR +"cd ~/.config/youtube-dl/" ~/.config/youtube-dl/config'
-alias c-zsh='$EDITOR +"cd $ZDOTDIR" $ZDOTDIR/.zshrc'
-alias c-zshhistory='$EDITOR +"cd $ZDOTDIR" $HISTFILE'
-
 # Git
 foreach aliaskey (a b bl c co d ds dt dts f l s sm) {
 	alias g$aliaskey="git $aliaskey"
