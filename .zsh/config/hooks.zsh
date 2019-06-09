@@ -1,18 +1,10 @@
 # Register hook functions.
 foreach hook (
-	'preexec _preexec_ssh'
 	'preexec _preexec_fasd'
 ) {
 	eval add-zsh-hook $hook
 }
 unset hook
-
-# Transform the cursor to box form on ssh command.
-function _preexec_ssh() {
-	if [[ "$2" =~ '^ssh[[:space:]]' ]] {
-		printf '\e[0 q'
-	}
-}
 
 # Register fasd to track most used files and directories.
 function _preexec_fasd() {
