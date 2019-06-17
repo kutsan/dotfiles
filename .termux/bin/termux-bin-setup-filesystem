@@ -4,7 +4,7 @@
 termux-setup-storage
 
 # Disable welcome message
-[[ -f ~/.hustlogin ]] || touch ~/.hustlogin
+[[ -f ~/.hushlogin ]] || touch ~/.hushlogin
 
 # Binaries
 [[ -L ~/bin ]] || ln -s ~/.termux/bin ~/bin
