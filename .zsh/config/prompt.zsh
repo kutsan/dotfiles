@@ -4,8 +4,9 @@ promptinit
 # Prompt theme.
 prompt pure
 
-# Primary prompt with additional tweaks.
-typeset -g PROMPT='%(?.%F{white}.%F{red})❯%f '
+# Prompt styles.
+zstyle :prompt:pure:prompt:error color 1
+zstyle :prompt:pure:prompt:success color 15
 
 # ZLE hooks for prompt's vi mode status
 function zle-line-init zle-keymap-select {
