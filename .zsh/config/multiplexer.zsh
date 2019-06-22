@@ -1,5 +1,5 @@
 function should_launch_multiplexer() {
-	if (! hash tmux 2>/dev/null) {
+	if ! (( $+commands[tmux] )) {
 		return 1
 	}
 

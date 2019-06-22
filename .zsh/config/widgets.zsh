@@ -34,7 +34,7 @@ function custom-insert-last-typed-word() {
 
 # Activate tmux copy-mode and scroll up depending on key stroke.
 function custom-tmux-scroll-up() {
-	if (! hash tmux &>/dev/null || [[ "$TMUX" == '' ]]) {
+	if (! (( $+commands[tmux] )) || [[ "$TMUX" == '' ]]) {
 		return 1
 	}
 
@@ -52,7 +52,7 @@ function custom-tmux-scroll-up() {
 
 # Select command from history into the command line.
 function custom-fzf-launch-from-history() {
-	if (! hash fzf &>/dev/null) {
+	if ! (( $+commands[fzf] )) {
 		return 1
 	}
 
@@ -90,7 +90,7 @@ function custom-fzf-launch-from-history() {
 
 # Execute Zsh Line Editor widgets.
 function custom-fzf-execute-widget() {
-	if (! hash fzf &>/dev/null) {
+	if ! (( $+commands[fzf] )) {
 		return 1
 	}
 

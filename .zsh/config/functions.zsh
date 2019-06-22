@@ -113,7 +113,7 @@ function b() {
 			bookmarks_table+="$key ${bookmarks[$key]}\n"
 		}
 
-		if (! hash fzf &>/dev/null) {
+		if ! (( $+commands[fzf] )) {
 			return 1
 		} else {
 			selected_bookmark=$(

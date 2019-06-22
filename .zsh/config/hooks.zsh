@@ -8,7 +8,7 @@ unset hook
 
 # Register fasd to track most used files and directories.
 function _preexec_fasd() {
-	if (hash fasd &>/dev/null) {
+	if (( $+commands[fasd] )) {
 		fasd --proc $(fasd --sanitize "$1") &>/dev/null
 	}
 }
