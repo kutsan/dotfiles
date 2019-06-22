@@ -1,6 +1,8 @@
 # kutsan's dotfiles
 
-![](https://i.imgur.com/cjUnlYR.png)
+![screenshot](./.github/screenshot.png?raw=true)
+
+> running **neovim** inside **tmux** that is inside **kitty** terminal emulator with **furacode** font on
 
 ## Overview
 
