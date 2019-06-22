@@ -1,11 +1,9 @@
 # Core Shortcuts
-alias ip='ip -color' # Use `ip` utility always with colors.
 alias rm='trash' # Use `trash` program instead of built-in irrecoverable way to delete nodes.
 alias mv='mv --interactive --verbose' # Move nodes with interactive mode and extra verbosity.
 alias cp='cp --interactive --verbose' # Copy nodes with interactive mode and extra verbosity.
 alias ln='ln --interactive --verbose' # Link nodes with interactive mode and extra verbosity.
 alias mkdir='mkdir --parents' # Make missing parent directories when creating folders.
-alias dirs='dirs -v -p' # Print directory stack with numbers and one directory per line.
 alias grep='grep --color=auto --exclude-dir=".git" --exclude-dir="node_modules"' # Grep with colors and ignore common directories.
 alias du='du --max-depth=1 --si' # Display size of files and folders under current directory.
 alias df='df --all --si --print-type' # Display all disk usage statistics with SI units and FS types.
@@ -16,35 +14,14 @@ alias tmp='command mkdir --parents --verbose $TMPDIR/$(whoami) && cd $TMPDIR/$(w
 # Custom Shortcuts
 alias v='nvim'
 alias g='git'
-alias t='task'
-alias mutt='neomutt'
 alias note='$EDITOR ~/Sync/notes'
 alias tmux='tmux -f "$HOME/.tmux/tmux.conf"'
-alias dfc='dfc -dmT'
-alias syncthing='syncthing -home=$HOME/.config/syncthing'
-alias jq='jq --tab --indent 4'
-alias news='newsboat --quiet'
 alias def='sdcv --color'
-alias cal="gcal"
 alias tmr='transmission-remote --authenv'
-alias search="rg \
-	--color='always' \
-	--heading \
-	--line-number \
-	--no-messages \
-	--no-ignore \
-	--hidden \
-	--follow \
-	--smart-case \
-	--glob '!.git/' \
-	--glob '!node_modules/' \
-	--regexp"
 
 # Global Aliases
 alias -g L='| less'
 alias -g G='| grep'
-alias -g NE='2>/dev/null' # No sterr.
-alias -g NO='&>/dev/null' # No stout and sterr (shorthand for 1>/dev/null 2>&1).
 
 # Git
 foreach aliaskey (a b bl c co d ds dt dts f l s sm) {
