@@ -49,6 +49,10 @@ function update-submodules() {
 
 	# Update vim tags.
 	nvim --headless -c 'helptags ALL' -c 'quit'
+
+	# Build vim coc plugin.
+	cd ~/.vim/pack/bundle/start/coc
+	npm install
 }
 
 ##
