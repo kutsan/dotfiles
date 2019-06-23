@@ -23,7 +23,6 @@ bindkey -M vicmd 'ds' delete-surround # Delete surround operator.
 bindkey -M vicmd 'ys' add-surround # Add surround operator.
 bindkey -M vicmd '^Y' custom-tmux-scroll-up # Activate tmux copy-mode and scroll up depending on key stroke.
 bindkey -M vicmd '^U' custom-tmux-scroll-up # Activate tmux copy-mode and scroll up depending on key stroke.
-bindkey -M vicmd ':' custom-fzf-execute-widget # Execute Zsh Line Editor widgets.
 
 # Visual Mode
 bindkey -M visual 'H' vi-beginning-of-line # Go beginning of line.
