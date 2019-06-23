@@ -13,6 +13,7 @@ foreach widget (
 	custom-tmux-scroll-up
 	custom-fzf-launch-from-history
 	custom-fzf-execute-widget
+	custom-fzf-select
 ) {
 	eval zle -N $widget
 }
@@ -111,4 +112,38 @@ function custom-fzf-execute-widget() {
 	}
 
 	return $stat
+}
+
+# Paste the selected files and directories onto the command-line.
+function custom-fzf-select() {
+	if ! (( $+commands[fzf] )) {
+		return 1
+	}
+
+	local directory=${${(ps: :)LBUFFER}[-1]}
+	(! [[ -d "$directory" ]]) && unset directory
+
+	local selected=$(
+		find -L ${directory:-'.'} \( -fstype 'dev' -or -fstype 'proc' \) -prune -or -print 2>/dev/null \
+		| sed 1d \
+		| ([[ -v directory ]] && cat || cut --bytes=3-) \
+		| fzf \
+			--no-multi \
+			--exact \
+			--prompt='select ' \
+			--preview-window='right:60%' \
+			--preview=' \
+				if [ -d {} ]; then; \
+					ls -l --si --almost-all --classify --color=always --group-directories-first --literal {} 2>/dev/null; \
+				else \
+					bat {} || cat {} 2>/dev/null; \
+				fi \
+			' \
+	)
+
+	if [[ "$selected" != '' ]] {
+		LBUFFER="${LBUFFER//${directory:-}/}${selected}"
+	}
+
+	zle redisplay
 }
