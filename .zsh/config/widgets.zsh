@@ -61,13 +61,13 @@ function custom-fzf-launch-from-history() {
 	local selected=(
 		$(
 			fc -l 1 \
-				| fzf \
-					--tac \
-					--nth='2..,..' \
-					--tiebreak='index' \
-					--query="${LBUFFER}" \
-					--exact \
-					--prompt='$ '
+			| fzf \
+				--tac \
+				--nth='2..,..' \
+				--tiebreak='index' \
+				--query="${LBUFFER}" \
+				--exact \
+				--prompt='$ '
 		)
 	)
 
