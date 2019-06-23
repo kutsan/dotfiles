@@ -1,8 +1,6 @@
 # Convert the given MIME types to text/plain when displaying messages.
 auto_view text/html
-
-# TODO
 alternative_order text/plain text/enriched text/html
 
-# TODO
+# Ignore User-Agent in list of headers.
 ignore User-Agent

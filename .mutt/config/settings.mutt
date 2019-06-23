@@ -1,30 +1,9 @@
-# Default editor.
 set editor = "$EDITOR"
-
-# Character set.
 set charset = 'UTF-8'
-
-# set spoolfile = '+Inbox'
 set postponed = '+Drafts'
 set mbox = '+Archive'
 set trash = '+Trash'
 set record = '+Sent'
-
-# set folder_format = '%4C %t %f'
-
-# set move
-
-# The maximum amount of time in seconds that will wait before polling
-# open IMAP connections.
-# set imap_keepalive = 300
-
-# Open new IMAP connection automatically.
-# set imap_passive = ''
-
-# How often should look for new mails (time in seconds).
-# set mail_check = 30
-
-# Sidebar settings.
 set sidebar_visible = yes
 set sidebar_divider_char = '│'
 set sidebar_folder_indent = yes
@@ -32,32 +11,18 @@ set sidebar_width = 30
 set sidebar_format = " %B%> %n %S "
 set sidebar_indent_string = ' '
 set sidebar_short_path = no
-
 set mail_check_stats
-
 set nohelp
-
-# TODO: change them maybe even make them icons
 set status_chars = ''
-
 set sleep_time = 0
-
 set nobeep
-
-# Specifies how to sort messages in the "index" menu.
 set sort = 'reverse-threads'
 set sort_aux = 'last-date-received'
-
-# TODO
 set pager_format = ''
 set pager_index_lines = 12
 set pager_stop = yes
-
 set index_format = " %Z %-10.10@reldate@ %-15.15L %s %>  %?l?%4l&%4c? "
-
-set autoedit			# go to the editor right away when composing
-set edit_headers		# let me edit the message header when composing
-
+set autoedit
+set edit_headers
 set query_command="lbdbq %s 2>/dev/null"
-
 set nomark_old
