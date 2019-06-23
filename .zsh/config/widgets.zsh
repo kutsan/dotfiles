@@ -12,7 +12,6 @@ foreach widget (
 	custom-insert-last-typed-word
 	custom-tmux-scroll-up
 	custom-fzf-launch-from-history
-	custom-fzf-execute-widget
 	custom-fzf-select
 ) {
 	eval zle -N $widget
@@ -85,31 +84,6 @@ function custom-fzf-launch-from-history() {
 	zle redisplay
 
 	typeset -f zle-line-init &>/dev/null && zle zle-line-init
-
-	return $stat
-}
-
-# Execute Zsh Line Editor widgets.
-function custom-fzf-execute-widget() {
-	if ! (( $+commands[fzf] )) {
-		return 1
-	}
-
-	local selected=$(
-		zle -al \
-			| command grep --extended-regexp --invert-match '(^orig|^\.|^_)' \
-			| fzf \
-				--tac \
-				--nth='2..,..' \
-				--tiebreak='index' \
-				--prompt=':'
-	)
-
-	local stat=$?
-
-	if [[ "$selected" != '' ]] {
-		zle $selected
-	}
 
 	return $stat
 }
