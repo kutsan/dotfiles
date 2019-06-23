@@ -33,4 +33,5 @@ foreach module (
 	zmodload zsh/$module
 }
 
-compinit -d $ZDOTDIR/cache/.zcompdump # Completion cache file.
+# Completion cache file.
+compinit -d $ZDOTDIR/cache/.zcompdump

@@ -1,21 +1,11 @@
 # Register hook functions.
-foreach hook (
-	'preexec _preexec_fasd'
-) {
-	eval add-zsh-hook $hook
-}
-unset hook
+add-zsh-hook preexec _preexec_fasd
 
 # Register fasd to track most used files and directories.
 function _preexec_fasd() {
 	if (( $+commands[fasd] )) {
 		fasd --proc $(fasd --sanitize "$1") &>/dev/null
 	}
-}
-
-# Compile lesskey file if compile is needed.
-if ([[ ! -f $LESSKEY ]] || [[ $LESSKEYRC -nt $LESSKEY ]]) {
-	lesskey -o $LESSKEY $LESSKEYRC
 }
 
 # Create symbolic links for neovim and vim configs.
