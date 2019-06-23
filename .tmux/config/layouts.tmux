@@ -1,7 +1,7 @@
 # newsboat
 bind-key -n M-N \
 	new-window -n newsboat newsboat --quiet \; \
-	split-window -h -l 55 -c $HOME/.newsboat \; \
+	split-window -h -l 55 '' \; \
 	select-pane -L \; \
 	set-window-option allow-rename off \; \
 	rename-window newsboat

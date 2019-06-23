@@ -26,7 +26,7 @@ bind-key -n M-z resize-pane -Z
 unbind-key '"'
 unbind-key %
 bind-key - split-window -v -c '#{pane_current_path}'
-bind-key \ split-window -h -c '#{pane_current_path}'
+bind-key \\ split-window -h -c '#{pane_current_path}'
 bind-key _ split-window -fv -c '#{pane_current_path}' # Full width.
 bind-key | split-window -fh -c '#{pane_current_path}' # Full height.
 
@@ -41,8 +41,8 @@ bind-key -n M-K resize-pane -U 1
 bind-key -n M-L resize-pane -R 2
 
 # Move panes.
-unbind-key {
-unbind-key }
+unbind-key \{
+unbind-key \}
 bind-key -r H swap-pane -U
 bind-key -r L swap-pane -D
 
@@ -77,8 +77,8 @@ unbind-key =
 bind-key P choose-buffer "paste-buffer -b '%%' -s ''"
 
 # Search
-bind-key -T copy-mode-vi / command-prompt -i -p '/' 'send-keys -X search-forward-incremental "%%%"'
-bind-key -T copy-mode-vi ? command-prompt -i -p '?' 'send-keys -X search-backward-incremental "%%%"'
+bind-key -T copy-mode-vi ? command-prompt -i -p '?' 'send-keys -X search-forward-incremental "%%%"'
+bind-key -T copy-mode-vi / command-prompt -i -p '/' 'send-keys -X search-backward-incremental "%%%"'
 
 # Jump search mode with prefix.
 bind-key / copy-mode \; send-keys '/'
