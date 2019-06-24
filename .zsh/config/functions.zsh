@@ -18,44 +18,6 @@ function r() {
 }
 
 ##
-# Update global packages.
-##
-function update() {
-	setopt LOCAL_OPTIONS XTRACE
-
-	case $OSTYPE {
-		darwin*)
-			brew update
-			brew upgrade
-			brew cleanup
-			;;
-	}
-
-	npm update --global
-	npm install npm --global
-}
-
-##
-# Update dotfiles submodules.
-##
-function update-submodules() {
-	setopt LOCAL_OPTIONS XTRACE
-
-	# Update them in home.
-	cd $HOME
-
-	# Update submodules.
-	git submodule update --remote
-
-	# Update vim tags.
-	nvim --headless -c 'helptags ALL' -c 'quit'
-
-	# Build vim coc plugin.
-	cd ~/.vim/pack/bundle/start/coc
-	npm install
-}
-
-##
 # Return a most used directory or file.
 ##
 function fz() {
