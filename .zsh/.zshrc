@@ -4,7 +4,6 @@ foreach piece (
 	hooks.zsh
 	prompt.zsh
 	settings.zsh
-	multiplexer.zsh
 	functions.zsh
 	aliases.zsh
 	widgets.zsh
