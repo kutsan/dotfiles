@@ -1,6 +1,9 @@
 # Set default prefix.
 set-option -g prefix C-a
 
+# Start with non-login shell.
+set-option -g default-command "$SHELL"
+
 # Default term.
 set-option -g default-terminal "screen-256color"
 
