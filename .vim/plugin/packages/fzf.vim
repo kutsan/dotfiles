@@ -6,7 +6,7 @@
 let g:fzf_command_prefix = 'F'
 
 " Jump to the existing window if possible.
-let g:fzf_buffers_jump = 1
+let g:fzf_buffers_jump = v:true
 
 " Directly execute the command without appending anything.
 let g:fzf_commands_expect = 'alt-enter'
