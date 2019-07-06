@@ -35,7 +35,9 @@ augroup defxsettings
 		nnoremap <buffer><silent><expr> L defx#do_action('open_tree_recursive')
 		nnoremap <buffer><silent><expr> h defx#do_action('close_tree')
 		nnoremap <buffer><silent><expr> gh defx#do_action('cd', getcwd())
-		nnoremap <buffer><silent><expr> gH defx#do_action('cd', ['..'])
+		nnoremap <buffer><silent><expr> - defx#do_action('cd', ['..'])
+		nnoremap <buffer><silent><expr> ~ defx#do_action('cd', defx#get_candidate().action__path)
+		nnoremap <buffer><silent><expr> zc defx#do_action('change_vim_cwd')
 
 		" Selection
 		nnoremap <buffer><silent><expr> a defx#do_action('toggle_select') . 'j'
