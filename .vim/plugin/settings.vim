@@ -153,7 +153,6 @@ if !empty($ANDROID_ROOT)
 	set nonumber
 	set norelativenumber
 	set signcolumn=no
-	set wrap
 endif
 
 " Root
