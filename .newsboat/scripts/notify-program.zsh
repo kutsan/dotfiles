@@ -5,7 +5,7 @@ exec &>> ~/.newsboat/logs/$(basename $0).log
 
 setopt ERR_EXIT PIPE_FAIL WARN_CREATE_GLOBAL WARN_NESTED_VAR
 
-if (! hash notify &>/dev/null) {
+if ! (( $+commands[notify] )) {
 	echo "[$(date +'%Y-%m-%d %H:%M:%S')] notify is not installed yet."
 	exit 1
 }
