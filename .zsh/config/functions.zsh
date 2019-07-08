@@ -9,12 +9,10 @@ function take() {
 
 ##
 # `cd` into the last directory upon exit.
-#
-# @param {string} [$1] Directory path which will cd into.
 ##
 function r() {
-	ranger "$1" --choosedir=$RANGER_LAST_DIRECTORY_BUFFER \
-		&& cd "$(cat $RANGER_LAST_DIRECTORY_BUFFER)" 2>/dev/null
+	ranger --choosedir=$RANGER_LAST_DIRECTORY_BUFFER \
+		&& cd "$(<$RANGER_LAST_DIRECTORY_BUFFER)" 2>/dev/null
 }
 
 ##
