@@ -5,7 +5,6 @@
 silent! call defx#custom#option('_', {
 	\ 'columns': 'indent:icons:filename',
 	\ 'winwidth': 35,
-	\ 'winheight': 12,
 	\ 'split': 'vertical',
 	\ 'direction': 'topleft',
 	\ 'ignored_files': '',
@@ -13,12 +12,6 @@ silent! call defx#custom#option('_', {
 	\ 'toggle': v:true,
 	\ 'buffer_name': 'explorer'
 \ })
-
-if exists('$ANDROID_ROOT')
-	silent! call defx#custom#option('_', {
-		\ 'split': 'horizontal'
-	\ })
-endif
 
 " Launch Defx.
 nnoremap <silent> <Leader>f :Defx<Enter>
