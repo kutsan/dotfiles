@@ -73,6 +73,11 @@ nnoremap ]<MiddleMouse> <Nop>
 " Disable sleep mapping.
 nnoremap gs <Nop>
 
+" Use 'cedit' key to open command-line window.
+nnoremap q: <Nop>
+nnoremap q/ <Nop>
+nnoremap q? <Nop>
+
 " Disable join mapping.
 xnoremap J <Nop>
 
