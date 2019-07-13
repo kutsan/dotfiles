@@ -21,7 +21,8 @@ set comments= " Clear default 'comments' value, let the filetype handle it.
 set confirm " Seek for confirmation for certain commands instead of giving errors.
 set display=lastline " As much as possible of the last line in a window will be displayed.
 set keywordprg= " Disable definition search by default.
-set modelines=1 " Maximum number of lines that is checked for set commands.
+set modelines=0 " Disable modelines as a security precaution
+set nomodeline
 set mouse=nv " Enable mouse support only for normal and visual modes.
 set nojoinspaces " Disable inserting two spaces after `.`, `?`, `!` with join command.
 set nolangremap " Setting 'langmap' does not apply to characters resulting from a mapping.
