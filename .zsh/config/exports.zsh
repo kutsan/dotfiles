@@ -148,6 +148,10 @@ export GCAL="\
 # bat
 export BAT_CONFIG_PATH="$HOME/.config/bat/bat.conf"
 
+# hledger
+export LEDGER_FILE="$HOME/Sync/notes/finance.ledger"
+export LEDGER_DATE_FORMAT='%Y-%m-%d'
+
 # less
 export LESS=" \
 	--ignore-case \
