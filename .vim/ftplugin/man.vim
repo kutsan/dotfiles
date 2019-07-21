@@ -20,4 +20,4 @@ setlocal foldmethod=indent nofoldenable
 nnoremap <buffer><silent> gO :call kutsan#ftplugin#man#showtoc()<Enter>
 nnoremap <buffer><silent> <C-]> :call kutsan#ftplugin#man#jumptag()<Enter>
 nnoremap <buffer><silent> [g :call kutsan#ftplugin#man#poptag()<Enter>
-nnoremap <buffer> <LocalLeader>q /\v\s{7}\zs()<Left>
+nnoremap <buffer> <LocalLeader>q /\v\s{5}\zs()<Left>
