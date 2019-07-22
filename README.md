@@ -84,6 +84,7 @@
 - [bat](https://github.com/sharkdp/bat) - A cat clone with additional features like git integration and syntax highlighting
 - [universal-ctags](https://github.com/universal-ctags/ctags) - A maintained ctags implementation
 - [wireguard](https://github.com/WireGuard/wireguard-go) - Virtual Private Network protocol to create secure point-to-point connections
+- [ledger](https://github.com/ledger/ledger) - Double-entry accounting system with a command-line reporting interface
 
 ## License
 
