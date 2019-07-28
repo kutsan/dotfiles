@@ -1,0 +1,3 @@
+--date-format %Y-%m-%d
+--file ~/Sync/finance/accounts.ledger
+--file ~/Sync/finance/journal.ledger
