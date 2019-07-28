@@ -43,6 +43,7 @@
 		- [authcli](https://github.com/sam3d/auth) - Two-factor authentication token manager
 		- [clipboard-cli](https://github.com/sindresorhus/clipboard-cli) - Cross-platform clipboard wrapper
 		- [fx](https://github.com/antonmedv/fx) - TUI JSON viewer
+		- [bitwarden](https://github.com/bitwarden/cli) - Password manager
 - [python](https://www.python.org) - High-level programming language for general-purpose programming
 - [coreutils](https://www.gnu.org/software/coreutils/coreutils.html) - GNU core utilities for basic file, shell and text manipulation
 - [findutils](https://www.gnu.org/software/findutils) - GNU basic directory searching utilities that provides find, locate and xargs
