@@ -86,6 +86,8 @@
 - [universal-ctags](https://github.com/universal-ctags/ctags) - A maintained ctags implementation
 - [wireguard](https://github.com/WireGuard/wireguard-go) - Virtual Private Network protocol to create secure point-to-point connections
 - [ledger](https://github.com/ledger/ledger) - Double-entry accounting system with a command-line reporting interface
+- [hledger](https://github.com/simonmichael/hledger) - Haskell implementation of ledger with curses interface and more features
+- [gnuplot](https://github.com/gnuplot/gnuplot) - Command-line driven graphing utility
 
 ## License
 
