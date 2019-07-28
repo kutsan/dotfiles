@@ -14,7 +14,7 @@ alias tmp='command mkdir --parents --verbose $TMPDIR/$(whoami) && cd $TMPDIR/$(w
 # Custom Shortcuts
 alias v='nvim'
 alias g='git'
-alias note='$EDITOR ~/Sync/notes'
+alias s='$EDITOR ~/Sync/'
 alias tmux='tmux -f "$HOME/.tmux/tmux.conf"'
 alias def='sdcv --color'
 alias tmr='transmission-remote --authenv'
