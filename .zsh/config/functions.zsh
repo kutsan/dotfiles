@@ -11,7 +11,7 @@ function take() {
 # `cd` into the last directory upon exit.
 ##
 function r() {
-	ranger --choosedir=$RANGER_LAST_DIRECTORY_BUFFER \
+	ranger $1 --choosedir=$RANGER_LAST_DIRECTORY_BUFFER \
 		&& cd "$(<$RANGER_LAST_DIRECTORY_BUFFER)" 2>/dev/null
 }
 
