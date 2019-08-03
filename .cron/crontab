@@ -9,5 +9,3 @@ PATH='/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin'
 #  min   hour   day    month   week   command
    0     *      *      *       *      newsboat -x reload
    */30  *      *      *       *      flexget --cron execute
-   @reboot                            transmission-daemon
-   @reboot                            syncthing -home=$HOME/.config/syncthing -no-browser -no-restart
