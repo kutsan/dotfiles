@@ -132,7 +132,6 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_COLORS \
 	--bind='ctrl-f:jump-accept'"
 
 # transmission
-export TRANSMISSION_HOME="$HOME/.config/transmission"
 export TR_AUTH='kutsan:EkYBoNSd6oIUznucRTfQTFCcxC5WeeDaBImPt6I9CncuY9g8mH'
 
 # sdcv
