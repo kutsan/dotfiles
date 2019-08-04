@@ -1,9 +1,19 @@
 variables: variables.yml
 
+templates:
+  anchors:
+    _transmission: &transmission
+      host: '{? transmission.host ?}'
+      port: '{? transmission.port ?}'
+      username: '{? transmission.username ?}'
+      password: '{? transmission.password ?}'
+
 tasks:
   SEARCH:
+    # internal
     priority: 1
 
+    # input
     discover:
       what:
         - next_series_episodes: yes
@@ -11,25 +21,21 @@ tasks:
         - nyaa:
             category: anime eng
             filter: trusted only
-
       release_estimations: ignore
-      interval: 25 minutes
+      interval: 30 minutes
 
+    # filter
     series:
-      settings:
-        ENTRIES:
-          quality: 1080p
-          identified_by: sequence
+      - Fairy Tail Final Season:
           from_group: HorribleSubs
-      ENTRIES:
-        # - <anime-name-here>
+          quality: 1080p
 
+    # output
     transmission:
-      host: localhost
-      port: 9091
-      username: '{? transmission.username ?}'
-      password: '{? transmission.password ?}'
+      action: add
+      <<: *transmission
 
+    # output
     exec:
       allow_background: yes
       auto_escape: yes
@@ -42,13 +48,23 @@ tasks:
             &
 
   CLEAN:
+    # internal
     priority: 2
+    disable:
+      - seen
+      - seen_info_hash
 
-    clean_transmission:
-      host: localhost
-      port: 9091
-      username: '{? transmission.username ?}'
-      password: '{? transmission.password ?}'
-      tracker: nyaa
+    # input
+    from_transmission:
+      only_complete: yes
+      <<: *transmission
 
-    disable: details
+    # filter
+    if:
+      - transmission_progress == 100: accept
+      - transmission_ratio < 0.2: reject
+
+    # output
+    transmission:
+      action: remove
+      <<: *transmission
