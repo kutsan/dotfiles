@@ -65,6 +65,7 @@
 - [trackma](https://github.com/z411/trackma) - Multi-site anime, manga list manager
 - [flexget](https://github.com/Flexget/Flexget) - Multipurpose automation tool for all of media.
 	- [transmissionrpc](https://pypi.org/project/transmissionrpc) - Python module implementing the json-rpc client protocol for transmission
+	- [python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot) - Python wrapper of Telegram Bot API
 - [htop](https://github.com/hishamhm/htop) - Interactive text-based system monitor, process viewer and process manager
 - [newsboat](https://github.com/newsboat/newsboat) - RSS/Atom feed reader
 - [neomutt](https://github.com/neomutt/neomutt) - Fork of the mail user agent mutt with new features and patches
