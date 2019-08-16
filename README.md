@@ -39,7 +39,6 @@
 		- [browser-sync](https://github.com/BrowserSync/browser-sync) - Improve web workflow with auto-reload, interaction sync and more
 		- [neovim-node-client](https://github.com/neovim/node-client) - Neovim Node support for plugins
 		- [trash-cli](https://github.com/sindresorhus/trash-cli) - Move files and folders to the trash
-		- [node-notifier-cli](https://github.com/mikaelbr/node-notifier-cli) - Send cross-platform native notifications
 		- [authcli](https://github.com/sam3d/auth) - Two-factor authentication token manager
 		- [clipboard-cli](https://github.com/sindresorhus/clipboard-cli) - Cross-platform clipboard wrapper
 		- [fx](https://github.com/antonmedv/fx) - TUI JSON viewer
