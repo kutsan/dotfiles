@@ -1,12 +1,17 @@
-variables: variables.yml
+variables: secret.yml
 
 templates:
   anchors:
     _transmission: &transmission
-      host: '{? transmission.host ?}'
-      port: '{? transmission.port ?}'
-      username: '{? transmission.username ?}'
-      password: '{? transmission.password ?}'
+      host: 192.168.1.10
+      port: 9091
+      username: kutsan
+      password: EkYBoNSd6oIUznucRTfQTFCcxC5WeeDaBImPt6I9CncuY9g8mH
+
+schedules:
+  - tasks: '*'
+    interval:
+      hours: 1
 
 tasks:
   SEARCH:
@@ -20,14 +25,18 @@ tasks:
       from:
         - nyaa:
             category: anime eng
-            filter: trusted only
+            filter: all
       release_estimations: ignore
-      interval: 30 minutes
+      interval: 1 hours
 
     # filter
     series:
       - Fairy Tail Final Season:
           from_group: HorribleSubs
+          quality: 1080p
+
+      - Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka II:
+          from_group: Erai-raws
           quality: 1080p
 
     # output
@@ -36,16 +45,17 @@ tasks:
       <<: *transmission
 
     # output
-    exec:
-      allow_background: yes
-      auto_escape: yes
-      on_output:
-        for_accepted:
-          - notify
-            --title 'flexget'
-            --subtitle '{{series_name}}'
-            --message 'EP{{series_id}} has been captured into transmission.'
-            &
+    notify:
+      entries:
+        message: '*EP{{series_id}}* of *{{series_name}}* has captured by transmission daemon.'
+        what: accepted
+        via:
+          - telegram:
+              bot_token: '{? telegram.bot_token ?}'
+              parse_mode: markdown
+              disable_previews: no
+              recipients:
+                - username: kutsan
 
   CLEAN:
     # internal
@@ -62,7 +72,7 @@ tasks:
     # filter
     if:
       - transmission_progress == 100: accept
-      - transmission_ratio < 0.2: reject
+      - transmission_ratio < 0.1: reject
 
     # output
     transmission:
