@@ -27,7 +27,7 @@ tasks:
             category: anime eng
             filter: all
       release_estimations: ignore
-      interval: 30 minutes
+      interval: 25 minutes
 
     # filter
     series:
