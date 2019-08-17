@@ -11,7 +11,7 @@
 			<string>/usr/local/bin/syncthing</string>
 			<string>-no-browser</string>
 			<string>-no-restart</string>
-			<string>-logflags=0</string>
+			<string>-logflags=3</string>
 			<string>-home=/Users/Kutsan/.config/syncthing</string>
 		</array>
 
