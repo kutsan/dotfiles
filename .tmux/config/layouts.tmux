@@ -47,9 +47,3 @@ bind-key -n M-C \
 			$(date +'%Y')" \; \
 	set-window-option allow-rename off \; \
 	rename-window cal
-
-# ranger
-bind-key -n M-R \
-	new-window -n file "ranger" \; \
-	set-window-option allow-rename off \; \
-	rename-window file
