@@ -35,10 +35,6 @@ tasks:
           from_group: HorribleSubs
           quality: 1080p
 
-      - Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka II:
-          from_group: Erai-raws
-          quality: 1080p
-
     # output
     transmission:
       action: add
