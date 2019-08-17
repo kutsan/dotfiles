@@ -16,39 +16,6 @@ function r() {
 }
 
 ##
-# Return a most used directory or file.
-##
-function fz() {
-	local selected_path=$(
-		fasd -l \
-		| sed "s#$HOME#~#" \
-		| fzf \
-			--exact \
-			--tac \
-			--no-sort \
-			--prompt='fz ' \
-			--preview-window='right:60%' \
-			--preview=' \
-				CURRENT_ITEM=$(echo {} | sed s#~#$HOME#) && \
-				if [ -d $CURRENT_ITEM ]; then; \
-					ls -l --si --almost-all --classify --color=always --group-directories-first --literal $CURRENT_ITEM; \
-				else \
-					bat $CURRENT_ITEM || cat {} 2>/dev/null; \
-				fi \
-			' \
-	)
-
-	# Expand ~ (tilde) variable.
-	selected_path=$(eval echo "$selected_path")
-
-	if ([[ -d "$selected_path" ]]) {
-		cd "$selected_path"
-	} else {
-		$EDITOR "$selected_path"
-	}
-}
-
-##
 # Bookmark manager.
 #
 # @param {string} [$1] Defined bookmark string.

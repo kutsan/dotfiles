@@ -81,47 +81,6 @@ class locate(Command):
             else:
                 self.fm.select_file(fzf_file)
 
-class jump(Command):
-    """
-    :jump
-
-    Jump to a most used directory or file with `fasd` and `fzf`.
-    """
-
-    def execute(self):
-        import subprocess
-
-        command=" \
-            fasd -l \
-            | sed s#$HOME#~# \
-            | fzf \
-                --exact \
-                --tac \
-                --no-sort \
-                --prompt='jump ' \
-                --height='100%' \
-                --preview-window='right:60%' \
-                --preview=' \
-                    CURRENT_ITEM=$(echo {} | sed s#~#$HOME#) && \
-                    if [ -d $CURRENT_ITEM ]; then; \
-                        ls -l --si --almost-all --classify --color=always --group-directories-first --literal $CURRENT_ITEM; \
-                    else \
-                        bat $CURRENT_ITEM || cat {} 2>/dev/null; \
-                    fi \
-                ' \
-        "
-
-        fzf = self.fm.execute_command(command, stdout=subprocess.PIPE)
-        stdout, stderr = fzf.communicate()
-
-        if fzf.returncode == 0:
-            fzf_file = os.path.abspath(os.path.expanduser(stdout.decode('UTF-8').rstrip('\n')))
-
-            if os.path.isdir(fzf_file):
-                self.fm.cd(fzf_file)
-            else:
-                self.fm.select_file(fzf_file)
-
 class toggle_alternate_view(Command):
     """
     :toggle_alternate_view

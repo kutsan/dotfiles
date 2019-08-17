@@ -80,7 +80,6 @@
 - [bind](https://source.isc.org/cgi-bin/gitweb.cgi) - Domain Name System tools
 - [sdcv](https://github.com/Dushistov/sdcv) - StarDict command-line version, offline directories
 - [gcal](https://www.gnu.org/software/gcal) - Calculate and print calendars
-- [fasd](https://github.com/clvv/fasd) - Track your most used directories, based on frequency for quick access later
 - [mpv](https://github.com/mpv-player/mpv) - Minimalist video player based on MPlayer
 - [bat](https://github.com/sharkdp/bat) - A cat clone with additional features like git integration and syntax highlighting
 - [universal-ctags](https://github.com/universal-ctags/ctags) - A maintained ctags implementation
