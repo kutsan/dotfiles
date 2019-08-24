@@ -44,6 +44,19 @@
 		- [fx](https://github.com/antonmedv/fx) - TUI JSON viewer
 		- [bitwarden](https://github.com/bitwarden/cli) - Password manager
 - [python](https://www.python.org) - High-level programming language for general-purpose programming
+	- [pip](https://pypi.org) - Python package manager to install and manage packages written in Python
+		- [ranger](https://github.com/ranger/ranger) - Text-based file system manager for the console with Vim-like key bindings
+			- [exiftool](http://www.sno.phy.queensu.ca/~phil/exiftool) - Read, write and edit meta information in a wide variety of media files
+		- [vint](https://github.com/Kuniwak/vint) - Extensible, high performance Vimscript linter and analysis tool
+		- [stig](https://github.com/rndusr/stig) - TUI and CLI interface for transmission-daemon
+			- [maxminddb](https://github.com/maxmind/MaxMind-DB-Reader-python) - Python MaxMind DB reader extension
+		- [terminal-colors](https://github.com/eikenb/terminal-colors) - Test utility for color capabilities of terminal
+		- [grip](https://github.com/joeyespo/grip) - Preview Markdown files in local server
+		- [trackma](https://github.com/z411/trackma) - Multi-site anime, manga list manager
+		- [flexget](https://github.com/Flexget/Flexget) - Multipurpose automation tool for all of media.
+			- [transmissionrpc](https://pypi.org/project/transmissionrpc) - Python module implementing the json-rpc client protocol for transmission
+			- [python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot) - Python wrapper of Telegram Bot API
+		- [pynvim](https://github.com/neovim/pynvim) - Python client for neovim
 - [coreutils](https://www.gnu.org/software/coreutils/coreutils.html) - GNU core utilities for basic file, shell and text manipulation
 - [findutils](https://www.gnu.org/software/findutils) - GNU basic directory searching utilities that provides find, locate and xargs
 - [less](http://www.greenwoodsoftware.com/less) - Standard file pager for Unix-like systems
@@ -55,17 +68,6 @@
 - [openssh](https://www.openssh.com) - Connectivity tool for remote login with the SSH protocol
 - [rsync](https://rsync.samba.org) - Utility that provides fast incremental file transfer
 - [fzf](https://github.com/junegunn/fzf) - General-purpose fuzzy finder that can be used among other Unix tools
-- [ranger](https://github.com/ranger/ranger) - Text-based file system manager for the console with Vim-like key bindings
-	- [exiftool](http://www.sno.phy.queensu.ca/~phil/exiftool) - Read, write and edit meta information in a wide variety of media files
-- [asciinema](https://github.com/asciinema/asciinema) - Record and share terminal sessions as text-based colored format
-- [vint](https://github.com/Kuniwak/vint) - Extensible, high performance Vimscript linter and analysis tool
-- [stig](https://github.com/rndusr/stig) - TUI and CLI interface for transmission-daemon
-- [terminal-colors](https://github.com/eikenb/terminal-colors) - Test utility for color capabilities of terminal
-- [grip](https://github.com/joeyespo/grip) - Preview Markdown files in local server
-- [trackma](https://github.com/z411/trackma) - Multi-site anime, manga list manager
-- [flexget](https://github.com/Flexget/Flexget) - Multipurpose automation tool for all of media.
-	- [transmissionrpc](https://pypi.org/project/transmissionrpc) - Python module implementing the json-rpc client protocol for transmission
-	- [python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot) - Python wrapper of Telegram Bot API
 - [htop](https://github.com/hishamhm/htop) - Interactive text-based system monitor, process viewer and process manager
 - [newsboat](https://github.com/newsboat/newsboat) - RSS/Atom feed reader
 - [neomutt](https://github.com/neomutt/neomutt) - Fork of the mail user agent mutt with new features and patches
@@ -85,7 +87,6 @@
 - [universal-ctags](https://github.com/universal-ctags/ctags) - A maintained ctags implementation
 - [wireguard](https://github.com/WireGuard/wireguard-go) - Virtual Private Network protocol to create secure point-to-point connections
 - [ledger](https://github.com/ledger/ledger) - Double-entry accounting system with a command-line reporting interface
-- [hledger](https://github.com/simonmichael/hledger) - Haskell implementation of ledger with curses interface and more features
 - [gnuplot](https://github.com/gnuplot/gnuplot) - Command-line driven graphing utility
 
 ## License
