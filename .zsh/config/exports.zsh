@@ -48,15 +48,6 @@ case $OSTYPE {
 			$manpath
 		)
 		;;
-
-	linux-android*)
-		export SHELL=$(which zsh)
-
-		path=(
-			$HOME/.termux/bin
-			$path
-		)
-		;;
 }
 
 # Term
