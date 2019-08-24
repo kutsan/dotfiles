@@ -18,6 +18,7 @@
 	- [coc](https://github.com/neoclide/coc.nvim) - Context-aware completion engine
 	- [emmet](https://github.com/mattn/emmet-vim) - Emmet integration
 	- [defx](https://github.com/Shougo/defx.nvim) - File explorer
+		- [Send2Trash](https://github.com/hsoft/send2trash) - Python library to natively send files to trash
 	- [defx-icons](https://github.com/kristijanhusak/defx-icons) - Icon columm support for defx
 	- [fugitive](https://github.com/tpope/vim-fugitive) - Git client
 	- [fzf](https://github.com/junegunn/fzf.vim) - Fuzzy finder fzf as plugin
