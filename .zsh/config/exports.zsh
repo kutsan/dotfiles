@@ -6,6 +6,7 @@ path=(
 	/bin
 	/usr/sbin
 	/sbin
+	~/.local/bin
 	$path
 )
 
@@ -22,8 +23,7 @@ case $OSTYPE {
 		export OPENSSL_HOME='/usr/local/opt/openssl/bin'
 		export OPENSSL_MAN_HOME='/usr/local/opt/openssl/man'
 		export PYTHON_SYMLINKS_HOME='/usr/local/opt/python/libexec/bin'
-		export PYTHON_USER_BIN_HOME="$HOME/Library/Python/3.7/bin"
-		export PYTHON_USER_LIB_HOME="$HOME/Library/Python/3.7/lib"
+		export PYTHONUSERBASE="$HOME/.local/"
 
 		path=(
 			$GNU_COREUTILS_HOME
@@ -32,8 +32,6 @@ case $OSTYPE {
 			$NCURSES_HOME
 			$OPENSSL_HOME
 			$PYTHON_SYMLINKS_HOME
-			$PYTHON_USER_BIN_HOME
-			$PYTHON_USER_LIB_HOME
 			$ANDROID_HOME/{tools,platform-tools}
 			$path
 		)
