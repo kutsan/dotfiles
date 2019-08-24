@@ -24,8 +24,6 @@ case $OSTYPE {
 		export PYTHON_SYMLINKS_HOME='/usr/local/opt/python/libexec/bin'
 		export PYTHON_USER_BIN_HOME="$HOME/Library/Python/3.7/bin"
 		export PYTHON_USER_LIB_HOME="$HOME/Library/Python/3.7/lib"
-		export ANDROID_HOME="$HOME/Library/Android/sdk"
-		export JAVA_HOME=$(/usr/libexec/java_home)
 
 		path=(
 			$GNU_COREUTILS_HOME
@@ -79,7 +77,7 @@ export LANGUAGE='en_US.UTF-8'
 eval $(dircolors --sh "$HOME/.dircolors")
 
 # man
-export MANWIDTH='100' # Fixed line width for man pages
+export MANWIDTH='100' # Fixed line width for man pages.
 	if ([[ $OSTYPE =~ 'linux-android*' ]] 2>/dev/null) { MANWIDTH='50' }
 export MANPAGER="nvim +'set filetype=man' -"
 	if ([[ $OSTYPE =~ 'linux-android*' ]] 2>/dev/null) { unset MANPAGER }
@@ -109,14 +107,6 @@ export RANGER_LOAD_DEFAULT_RC='false'
 export RANGER_LAST_DIRECTORY_BUFFER="$XDG_DATA_HOME/ranger/last_directory"
 
 # fzf
-export FZF_DEFAULT_COMMAND="rg \
-	--files \
-	--no-messages \
-	--no-ignore \
-	--hidden \
-	--follow \
-	--ignore-case \
-	--glob '!{.git,node_modules}/*'"
 export FZF_DEFAULT_COLORS='--color=dark,fg:7,fg+:7,bg:0,bg+:8,hl:4,hl+:4,info:8,border:8,prompt:4,pointer:3,marker:3,spinner:8,header:6'
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_COLORS \
 	--exact \
