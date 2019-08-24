@@ -85,7 +85,7 @@ handle_mime() {
 			(( "$(stat --printf='%s' -- "${FILE_PATH}")" > "262143" )) \
 				&& exit 1
 
-			bat "${FILE_PATH}" \
+			cat "${FILE_PATH}" \
 				&& exit 5
 
 			exit 2
