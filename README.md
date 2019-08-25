@@ -39,7 +39,6 @@
 		- [ngrok](https://github.com/bubenshchykov/ngrok) - Proxy-like tunneling service to expose localhost to the web
 		- [browser-sync](https://github.com/BrowserSync/browser-sync) - Improve web workflow with auto-reload, interaction sync and more
 		- [neovim-node-client](https://github.com/neovim/node-client) - Neovim Node support for plugins
-		- [clipboard-cli](https://github.com/sindresorhus/clipboard-cli) - Cross-platform clipboard wrapper
 		- [fx](https://github.com/antonmedv/fx) - TUI JSON viewer
 		- [bitwarden](https://github.com/bitwarden/cli) - Password manager
 - [python](https://www.python.org) - High-level programming language for general-purpose programming
