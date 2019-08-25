@@ -16,6 +16,13 @@ function r() {
 }
 
 ##
+# `oathtool` 2FA utility function.
+##
+function auth() {
+	oathtool --base32 --totp "$(gpg --no-tty --quiet --decrypt ~/.auth/totp-$1.gpg)"
+}
+
+##
 # Bookmark manager.
 #
 # @param {string} [$1] Defined bookmark string.
