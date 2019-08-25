@@ -39,8 +39,6 @@
 		- [ngrok](https://github.com/bubenshchykov/ngrok) - Proxy-like tunneling service to expose localhost to the web
 		- [browser-sync](https://github.com/BrowserSync/browser-sync) - Improve web workflow with auto-reload, interaction sync and more
 		- [neovim-node-client](https://github.com/neovim/node-client) - Neovim Node support for plugins
-		- [trash-cli](https://github.com/sindresorhus/trash-cli) - Move files and folders to the trash
-		- [authcli](https://github.com/sam3d/auth) - Two-factor authentication token manager
 		- [clipboard-cli](https://github.com/sindresorhus/clipboard-cli) - Cross-platform clipboard wrapper
 		- [fx](https://github.com/antonmedv/fx) - TUI JSON viewer
 		- [bitwarden](https://github.com/bitwarden/cli) - Password manager
@@ -58,6 +56,7 @@
 			- [transmissionrpc](https://pypi.org/project/transmissionrpc) - Python module implementing the json-rpc client protocol for transmission
 			- [python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot) - Python wrapper of Telegram Bot API
 		- [pynvim](https://github.com/neovim/pynvim) - Python client for neovim
+		- [trash-cli](https://github.com/andreafrancia/trash-cli) - Move files and folders to the trash
 - [coreutils](https://www.gnu.org/software/coreutils/coreutils.html) - GNU core utilities for basic file, shell and text manipulation
 - [findutils](https://www.gnu.org/software/findutils) - GNU basic directory searching utilities that provides find, locate and xargs
 - [less](http://www.greenwoodsoftware.com/less) - Standard file pager for Unix-like systems
@@ -89,6 +88,7 @@
 - [wireguard](https://github.com/WireGuard/wireguard-go) - Virtual Private Network protocol to create secure point-to-point connections
 - [ledger](https://github.com/ledger/ledger) - Double-entry accounting system with a command-line reporting interface
 - [gnuplot](https://github.com/gnuplot/gnuplot) - Command-line driven graphing utility
+- [oath-toolkit](https://www.nongnu.org/oath-toolkit) - Provides components for building one-time password authentication systems
 
 ## License
 
