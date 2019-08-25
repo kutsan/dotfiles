@@ -18,9 +18,9 @@ bindkey -M vicmd '^K' up-history # ^K to previous command.
 bindkey -M vicmd '^J' down-history # ^J to next command.
 bindkey -M vicmd 'H' vi-beginning-of-line # Go beginning of line.
 bindkey -M vicmd 'L' vi-end-of-line # Go end of line.
-bindkey -M vicmd 'cs' change-surround # Change surround operator.
-bindkey -M vicmd 'ds' delete-surround # Delete surround operator.
-bindkey -M vicmd 'ys' add-surround # Add surround operator.
+bindkey -M vicmd 'sr' change-surround # Change surround operator.
+bindkey -M vicmd 'sd' delete-surround # Delete surround operator.
+bindkey -M vicmd 'sa' add-surround # Add surround operator.
 bindkey -M vicmd '^Y' custom-tmux-scroll-up # Activate tmux copy-mode and scroll up depending on key stroke.
 bindkey -M vicmd '^U' custom-tmux-scroll-up # Activate tmux copy-mode and scroll up depending on key stroke.
 
