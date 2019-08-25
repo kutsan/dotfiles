@@ -20,6 +20,7 @@ alias def='sdcv --color'
 alias bwlogin='bw login --code "$(auth bitwarden)" "$(< .mutt/accounts/com.gmail/email.txt)" "$(gpg --no-tty --quiet --decrypt ~/.bitwarden/secret.gpg)"'
 alias bwunlock='export BW_SESSION="$(bw unlock --raw $(gpg --no-tty --quiet --decrypt ~/.bitwarden/secret.gpg))"'
 alias pacman='sudo pacman'
+alias rsync='rsync --protect-args --compress --verbose --progress --human-readable'
 
 # Global Aliases
 alias -g L='| less'
