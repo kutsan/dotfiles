@@ -9,7 +9,7 @@ bindkey -M viins '^[[3~' delete-char # Ensure delete key always delete forward.
 bindkey -M viins ' ' custom-expand-global-alias # Space key to expand global aliases.
 bindkey -M viins '^Y' custom-insert-last-typed-word # Insert last typed word for quick copy-paste.
 bindkey -M viins '^R' custom-fzf-launch-from-history # Select command from history into the command line.
-bindkey -M viins '^S' custom-fzf-select
+bindkey -M viins '^P' custom-fzf-select # Paste the selected files and directories into the command-line.
 
 # Normal Mode
 bindkey -M vicmd 'j' down-line # Override down-line-or-history.

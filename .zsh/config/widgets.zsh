@@ -88,7 +88,7 @@ function custom-fzf-launch-from-history() {
 	return $stat
 }
 
-# Paste the selected files and directories onto the command-line.
+# Paste the selected files and directories into the command-line.
 function custom-fzf-select() {
 	if ! (( $+commands[fzf] )) {
 		return 1
