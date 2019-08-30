@@ -25,7 +25,7 @@ bind-key -n M-T \
 	rename-window trackma
 
 # htop
-bind-key -n M-H \
+bind-key -n M-O \
 	new-window -n htop htop \; \
 	set-window-option allow-rename off \; \
 	rename-window htop

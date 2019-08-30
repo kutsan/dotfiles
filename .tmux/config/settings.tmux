@@ -1,3 +1,9 @@
+# Unbind all default bindings.
+unbind-key -T prefix -a
+unbind-key -T root -a
+unbind-key -T copy-mode -a
+unbind-key -T copy-mode-vi -a
+
 # Set default prefix.
 set-option -g prefix C-a
 
