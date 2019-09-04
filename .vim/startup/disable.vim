@@ -24,9 +24,6 @@ xnoremap s <Nop>
 xnoremap S <Nop>
 
 " Disable beginning and end of line mappings.
-nnoremap 0 <Nop>
-xnoremap 0 <Nop>
-onoremap 0 <Nop>
 nnoremap ^ <Nop>
 xnoremap ^ <Nop>
 onoremap ^ <Nop>
