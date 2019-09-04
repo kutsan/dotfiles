@@ -5,6 +5,9 @@ endif
 " Disable built-in ftplugin.
 let b:did_ftplugin = v:true
 
+" Respect $MANWIDTH.
+let g:man_hardwrap = v:true
+
 " Initialize the manual page.
 if !exists('b:man_sect')
 	call man#init_pager()
