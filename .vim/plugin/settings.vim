@@ -144,7 +144,7 @@ if has('nvim')
 	set inccommand=nosplit " Show live substitution results as you type.
 	set fillchars+=eob:\  " Hide end of buffer tilde symbols.
 	set display+=msgsep " Only scroll lines on command line pager, not the entire screen.
-	silent! set wildoptions+=pum " Display the completion matches using the popupmenu.
+	set wildoptions+=pum " Display the completion matches using the popupmenu.
 endif
 
 " Android
