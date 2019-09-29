@@ -11,6 +11,6 @@ http://vimcasts.org/feeds/quicktime.rss "~Vimcasts" blog
 	http://localhost:0002 "~ "
 
 # Newsletter
-	http://localhost:0003 "~# Newsletter"
+	http://localhost:0002 "~# Newsletter"
 http://javascriptweekly.com/rss "~JavaScript Weekly" newsletter
 http://reactjsnewsletter.com/issues.rss "~React Newsletter" newsletter
