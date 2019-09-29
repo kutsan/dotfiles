@@ -31,8 +31,8 @@ tasks:
 
     # filter
     series:
-      - Fairy Tail Final Season:
-          from_group: HorribleSubs
+      - ANIME_NAME:
+          from_group: FANSUB_NAME
           quality: 1080p
 
     # output
