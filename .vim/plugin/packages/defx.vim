@@ -20,7 +20,9 @@ augroup defxsettings
 	autocmd!
 
 	" Set common settings.
-	autocmd FileType defx setlocal statusline=defx
+	autocmd FileType defx setlocal
+		\ statusline=defx
+		\ signcolumn=yes
 
 	" Set mappings.
 	autocmd FileType defx call s:defxmappings()
