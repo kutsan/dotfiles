@@ -4,9 +4,6 @@
 
 scriptencoding UTF-8
 
-" Only support git version system.
-let g:signify_vcs_list = ['git']
-
 " Disable showing counts next to signs.
 let g:signify_sign_show_count = v:false
 
