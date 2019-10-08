@@ -29,7 +29,6 @@ augroup defxsettings
 
 	function! s:defxmappings() abort
 		" Navigation
-		nnoremap <buffer><silent><expr> <CR> defx#do_action('drop')
 		nnoremap <buffer><silent><expr> l
 			\ defx#is_directory()
 				\ ? defx#do_action('open_or_close_tree')
