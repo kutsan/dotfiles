@@ -6,18 +6,9 @@ termux-setup-storage
 # Disable welcome message
 [[ -f ~/.hushlogin ]] || touch ~/.hushlogin
 
-# Binaries
-[[ -L ~/bin ]] || ln -s ~/.termux/bin ~/bin
-
-# Termux:Widget home
-[[ -L ~/.shortcuts ]] || ln -s ~/.termux/shortcuts ~/.shortcuts
-
 # Make ~/Downloads folder
 [[ -d /storage/emulated/0/Download ]] || mkdir -p /storage/emulated/0/Download
 [[ -L ~/Downloads ]] || ln -s /storage/emulated/0/Download Downloads
-
-# Make alternative ~/download folder used by termux-file-opener
-[[ -L ~/downloads ]] || ln -s /storage/emulated/0/Download downloads
 
 # Make ~/Documents folder
 [[ -d /storage/emulated/0/Documents ]] || mkdir -p /storage/emulated/0/Documents
