@@ -1,6 +1,3 @@
-" Enable spell checking.
-setlocal spell
-
 " Disable all line numbers.
 setlocal nonumber
 setlocal norelativenumber
