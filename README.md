@@ -16,6 +16,7 @@
 	- [iceberg](https://github.com/cocopon/iceberg.vim) - Color scheme
 	- [ale](https://github.com/w0rp/ale) - Asynchronous lint engine for Neovim and Vim 8+
 	- [coc](https://github.com/neoclide/coc.nvim) - Context-aware completion engine
+	- [colorizer](https://github.com/norcalli/nvim-colorizer.lua) - High-performance color highlighter
 	- [emmet](https://github.com/mattn/emmet-vim) - Emmet integration
 	- [defx](https://github.com/Shougo/defx.nvim) - File explorer
 		- [Send2Trash](https://github.com/hsoft/send2trash) - Python library to natively send files to trash

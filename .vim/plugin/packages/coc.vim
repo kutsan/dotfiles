@@ -10,7 +10,6 @@ let g:coc_auto_copen = v:false
 " List of extensions.
 let g:coc_global_extensions = [
 	\ 'coc-css',
-	\ 'coc-highlight',
 	\ 'coc-html',
 	\ 'coc-json',
 	\ 'coc-snippets',
