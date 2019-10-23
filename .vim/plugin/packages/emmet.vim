@@ -5,7 +5,7 @@
 " Load optional plugin for appropriate file types.
 augroup loademmet
 	autocmd!
-	autocmd FileType html,css,sass,javascript
+	autocmd FileType html,css,sass,javascript,javascriptreact
 		\ packadd emmet |
 		\ EmmetInstall
 augroup end
@@ -24,8 +24,3 @@ let g:user_emmet_install_command = v:false
 
 " Disable creating global mappings.
 let g:user_emmet_install_global = v:false
-
-" Override default settings.
-let g:user_emmet_settings = {
-	\ 'javascript.jsx': { 'extends': 'jsx' }
-\ }

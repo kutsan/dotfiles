@@ -6,7 +6,7 @@
 function! kutsan#mappings#normal#lookup#() abort
 	let l:supportedfiletypes = [
 		\ 'javascript',
-		\ 'javascript.jsx',
+		\ 'javascriptreact',
 		\ 'css'
 	\ ]
 

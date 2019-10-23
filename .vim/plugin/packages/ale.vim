@@ -33,7 +33,7 @@ let g:ale_fixers = {
 	\ 'css': ['prettier', 'stylelint'],
 	\ 'sass': ['prettier'],
 	\ 'javascript': ['eslint', 'prettier'],
-	\ 'javascript.jsx': ['eslint', 'prettier'],
+	\ 'javascriptreact': ['eslint', 'prettier'],
 	\ 'json': ['prettier'],
 	\ 'graphql': ['prettier'],
 	\ 'markdown': ['prettier']
