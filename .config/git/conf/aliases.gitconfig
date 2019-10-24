@@ -20,7 +20,7 @@
 		--decorate \
 		--all \
 		--date=format:'%Y-%m-%d %H:%M' \
-		--format=format:'%C(blue)%ad%C(reset) %C(yellow)%h%C(reset) %C(white)%s%C(reset) %C(blue)%an%C(reset) %C(cyan)%GK%x20%G?%C(reset) %C(bold yellow)%d%C(reset)'
+		--format=format:'%C(blue)%ad%C(reset) %C(yellow)%h%C(reset) %C(white)%s%C(reset) %C(blue)%an%C(reset) %C(bold yellow)%d%C(reset)'
 	pr = "! \
 		function f() { \
 			git fetch --force --update-head-ok ${2:-origin} refs/pull/$1/head:pr/$1 && git checkout pr/$1; \
