@@ -6,11 +6,8 @@ set realname = 'Kutsan Kaplan'
 # Set location of the mailbox.
 set folder = '~/.mutt/mailbox/com.gmail'
 
-# Set spool file.
-set spoolfile = '+All'
-
 # Send email via SMTP with msmtp.
-set sendmail = "msmtp --file=$HOME/.mutt/msmtprc --account=com.kutsankaplan"
+set sendmail = "msmtp --file=$HOME/.mutt/msmtprc --account=com.gmail"
 
 # Cache databases.
 set header_cache = '~/.mutt/cache/com.gmail/headers'
@@ -25,11 +22,8 @@ set status_format = "  com.gmail   %f%r %>  %?M?%M/?%m messages, %?n?%n ne
 # Load mailboxes.
 unmailboxes *
 mailboxes \
-	"+All" \
-	"+INBOX" \
-	"+Starred" \
+	"+Inbox" \
 	"+Sent" \
 	"+Drafts" \
 	"+Spam" \
-	"+Trash" \
-	"+me@kutsankaplan.com"
+	"+Trash"

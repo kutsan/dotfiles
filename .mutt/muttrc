@@ -1,6 +1,4 @@
-# source ~/.mutt/accounts/com.kutsankaplan/config.mutt
-source ~/.mutt/accounts/com.gmail/config.mutt
-
+source ~/.mutt/accounts/com.kutsankaplan/config.mutt
 source ~/.mutt/config/settings.mutt
 source ~/.mutt/config/signing.mutt
 source ~/.mutt/config/commands.mutt

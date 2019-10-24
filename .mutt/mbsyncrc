@@ -34,21 +34,17 @@ Inbox ~/.mutt/mailbox/com.kutsankaplan/INBOX
 SubFolders Verbatim
 
 # Channels
-Channel gmail/INBOX
+Channel gmail/Inbox
 Master :remote/gmail:INBOX
-Slave :local/gmail:INBOX
-
-Channel gmail/Drafts
-Master :remote/gmail:"[Gmail]/Drafts"
-Slave :local/gmail:Drafts
+Slave :local/gmail:Inbox
 
 Channel gmail/Sent
 Master :remote/gmail:"[Gmail]/Sent Mail"
 Slave :local/gmail:Sent
 
-Channel gmail/Starred
-Master :remote/gmail:"[Gmail]/Starred"
-Slave :local/gmail:Starred
+Channel gmail/Drafts
+Master :remote/gmail:"[Gmail]/Drafts"
+Slave :local/gmail:Drafts
 
 Channel gmail/Spam
 Master :remote/gmail:"[Gmail]/Spam"
@@ -58,25 +54,17 @@ Channel gmail/Trash
 Master :remote/gmail:"[Gmail]/Trash"
 Slave :local/gmail:Trash
 
-Channel gmail/All
-Master :remote/gmail:"[Gmail]/All Mail"
-Slave :local/gmail:All
-
 Channel kutsankaplan/Inbox
 Master :remote/kutsankaplan:Inbox
 Slave :local/kutsankaplan:Inbox
 
-Channel kutsankaplan/Drafts
-Master :remote/kutsankaplan:Drafts
-Slave :local/kutsankaplan:Drafts
-
-Channel kutsankaplan/Templates
-Master :remote/kutsankaplan:Templates
-Slave :local/kutsankaplan:Templates
-
 Channel kutsankaplan/Sent
 Master :remote/kutsankaplan:Sent
 Slave :local/kutsankaplan:Sent
+
+Channel kutsankaplan/Drafts
+Master :remote/kutsankaplan:Drafts
+Slave :local/kutsankaplan:Drafts
 
 Channel kutsankaplan/Spam
 Master :remote/kutsankaplan:Spam
@@ -88,16 +76,13 @@ Slave :local/kutsankaplan:Trash
 
 # Groups
 Group SyncAll
-Channel gmail/INBOX
+Channel gmail/Inbox
 Channel gmail/Sent
+Channel gmail/Drafts
 Channel gmail/Spam
 Channel gmail/Trash
-Channel gmail/All
-Channel gmail/Drafts
-Channel gmail/Starred
 Channel kutsankaplan/Inbox
-Channel kutsankaplan/Drafts
-Channel kutsankaplan/Templates
 Channel kutsankaplan/Sent
+Channel kutsankaplan/Drafts
 Channel kutsankaplan/Spam
 Channel kutsankaplan/Trash

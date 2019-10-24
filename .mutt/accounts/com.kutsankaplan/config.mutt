@@ -6,9 +6,6 @@ set realname = 'Kutsan Kaplan'
 # Set location of the mailbox.
 set folder = '~/.mutt/mailbox/com.kutsankaplan'
 
-# Set spool file.
-set spoolfile = '+Inbox'
-
 # Send email via SMTP with msmtp.
 set sendmail = "msmtp --file=$HOME/.mutt/msmtprc --account=com.kutsankaplan"
 
@@ -26,8 +23,7 @@ set status_format = "  com.kutsankaplan   %f[%r] %>  %?M?%M/?%m messages, 
 unmailboxes *
 mailboxes \
 	"+Inbox" \
-	"+Drafts" \
-	"+Templates" \
 	"+Sent" \
+	"+Drafts" \
 	"+Spam" \
 	"+Trash"

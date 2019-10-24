@@ -2,8 +2,9 @@ set editor = "$EDITOR"
 set charset = 'UTF-8'
 set postponed = '+Drafts'
 set mbox = '+Archive'
+set spoolfile = '+Inbox'
+set record = ''
 set trash = '+Trash'
-set record = '+Sent'
 set sidebar_visible = yes
 set sidebar_divider_char = '│'
 set sidebar_folder_indent = yes
@@ -26,3 +27,5 @@ set autoedit
 set edit_headers
 set query_command="lbdbq %s 2>/dev/null"
 set nomark_old
+set user_agent
+set send_charset = 'utf-8'
