@@ -7,4 +7,6 @@ if !has('nvim')
 endif
 
 " Register autocmd FileType * hook.
-lua require'colorizer'.setup()
+if !exists('$ANDROID_ROOT')
+	lua require'colorizer'.setup()
+endif
