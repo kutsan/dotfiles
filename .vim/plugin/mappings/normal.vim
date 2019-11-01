@@ -94,7 +94,7 @@ nnoremap <silent> <C-z> :call kutsan#mappings#normal#terminal#()<Enter>
 nnoremap <silent> gz :call kutsan#mappings#normal#zoom#()<Enter>
 
 " Open URL under cursor in browser or open path in GUI explorer.
-nnoremap <silent> gb :execute printf('silent !xdg-open "%s" 2>/dev/null', fnameescape(expand('<cfile>')))<Enter>
+nnoremap <silent> gb :execute printf('silent !xdg-open "%s" 2>/dev/null', expand('<cfile>'))<Enter>
 
 " Toggle common options.
 nnoremap <silent> cos :set spell!<Enter>
