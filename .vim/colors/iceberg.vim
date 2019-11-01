@@ -257,7 +257,7 @@ highlight! TabLineSel cterm=NONE ctermbg=234 ctermfg=252 gui=NONE guibg=#3e445e 
 highlight! WarningMsg ctermbg=234 ctermfg=203 guibg=#131315 guifg=#e27878
 highlight! ALEErrorSign ctermbg=235 ctermfg=203 guibg=#131315 guifg=#e27878
 highlight! ALEWarningSign ctermbg=235 ctermfg=216 guibg=#131315 guifg=#e2a478
-execute 'highlight! CursorLineNr guibg=' . synIDattr(synIDtrans(hlID('CursorLine')), 'bg', 'gui') . ' ctermbg=' . synIDattr(synIDtrans(hlID('CursorLine')), 'bg', 'cterm')
+execute 'highlight! CursorLineNr cterm=NONE guibg=' . synIDattr(synIDtrans(hlID('CursorLine')), 'bg', 'gui') . ' ctermbg=' . synIDattr(synIDtrans(hlID('CursorLine')), 'bg', 'cterm')
 execute 'highlight! SignColumn guibg=' . synIDattr(synIDtrans(hlID('Normal')), 'bg', 'gui') . ' ctermbg=' . synIDattr(synIDtrans(hlID('Normal')), 'bg', 'cterm')
 execute 'highlight! VertSplit guibg=' . synIDattr(synIDtrans(hlID('Normal')), 'bg', 'gui') . ' ctermbg=' . synIDattr(synIDtrans(hlID('Normal')), 'bg', 'cterm')
 execute 'highlight! LineNr guibg=' . synIDattr(synIDtrans(hlID('Normal')), 'bg', 'gui') . ' ctermbg=' . synIDattr(synIDtrans(hlID('Normal')), 'bg', 'cterm')
