@@ -10,7 +10,7 @@ function! kutsan#statusline#linter() abort
 	let l:allerrors = l:counts.error + l:counts.style_error
 	let l:allwarnings = l:counts.total - l:allerrors
 
-	return printf(' %d  %d', l:allerrors, l:allwarnings)
+	return printf('𥉉%d  %d', l:allerrors, l:allwarnings)
 endfunction
 
 function! kutsan#statusline#fileprefix() abort
