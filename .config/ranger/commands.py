@@ -17,11 +17,15 @@ class select(Command):
             | sed 1d \
             | cut --bytes=3- \
             | fzf \
-                --no-multi \
                 --exact \
-                --prompt='select ' \
+                --no-multi \
+                --no-mouse \
                 --height='100%' \
-                --preview-window='right:60%' \
+                --layout='reverse' \
+                --margin='2,6' \
+                --prompt='select ' \
+                --no-bold \
+                --preview-window='bottom:60%' \
                 --preview=' \
                     if [ -d {} ]; then; \
                         ls -l --si --almost-all --classify --color=always --group-directories-first --literal {} 2>/dev/null; \
@@ -62,11 +66,15 @@ class locate(Command):
                 --smart-case \
                 --glob '!{.git,node_modules}/*' \
             | fzf \
-                --no-multi \
                 --exact \
-                --prompt='locate ' \
+                --no-multi \
+                --no-mouse \
                 --height='100%' \
-                --preview-window='right:60%' \
+                --layout='reverse' \
+                --margin='2,6' \
+                --prompt='locate ' \
+                --no-bold \
+                --preview-window='bottom:60%' \
                 --preview='bat {} || cat {} 2>/dev/null' \
         " \
 
@@ -80,23 +88,3 @@ class locate(Command):
                 self.fm.cd(fzf_file)
             else:
                 self.fm.select_file(fzf_file)
-
-class toggle_alternate_view(Command):
-    """
-    :toggle_alternate_view
-
-    Toggle alternative column ratios.
-    """
-
-    def execute(self):
-        MAIN_RATIOUS = '2,2,3,3'
-        ALTERNATE_RATIOUS = '2,3'
-
-        def get_current_column_ratios():
-            return ','.join(str(e) for e in self.fm.settings['column_ratios'])
-
-        if (self.fm.settings['viewmode'] == 'miller'):
-            if (get_current_column_ratios() == MAIN_RATIOUS):
-                self.fm.set_option_from_string('column_ratios', ALTERNATE_RATIOUS)
-            elif (get_current_column_ratios() == ALTERNATE_RATIOUS):
-                self.fm.set_option_from_string('column_ratios', MAIN_RATIOUS)
