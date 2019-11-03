@@ -102,8 +102,6 @@ function custom-fzf-select() {
 		| sed 1d \
 		| ([[ -v directory ]] && cat || cut --bytes=3-) \
 		| fzf \
-			--no-multi \
-			--exact \
 			--prompt='select ' \
 			--preview-window='right:60%' \
 			--preview=' \
