@@ -60,16 +60,5 @@ augroup defxsettings
 		nnoremap <buffer><silent><expr> <C-g> defx#do_action('print')
 		nnoremap <buffer><silent><expr> zh defx#do_action('toggle_ignored_files')
 		nnoremap <buffer><silent><expr> ypf defx#do_action('yank_path')
-
-		" Custom
-		nnoremap <buffer><silent><expr> gl defx#do_action('call', 'DefxTmuxExplorer')
-		function! g:DefxTmuxExplorer(context) abort
-			if empty('$TMUX')
-				return v:false
-			endif
-
-			let l:parent = fnamemodify(a:context['targets'][0], ':h')
-			silent execute printf('!tmux split-window -p 40 -c "%s" ranger', l:parent)
-		endfunction
 	endfunction
 augroup end
