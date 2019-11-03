@@ -119,7 +119,7 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_COLORS \
 export TR_AUTH='kutsan:EkYBoNSd6oIUznucRTfQTFCcxC5WeeDaBImPt6I9CncuY9g8mH'
 
 # sdcv
-export SDCV_PAGER='fold -s -w 100 | less'
+export SDCV_PAGER='fold -s -w 80 | less'
 
 # gcal
 export GCAL="\
