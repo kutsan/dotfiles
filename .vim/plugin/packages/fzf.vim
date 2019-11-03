@@ -28,8 +28,8 @@ let g:fzf_action = {
 " History directory.
 let g:fzf_history_dir = $HOME . '/.vim/cache/share/fzf/'
 
-" Customize `fzf` options.
-let $FZF_DEFAULT_OPTS='--layout=reverse --margin=1,4 --color=dark,fg:7,bg:-1,hl:4,fg+:15,bg+:-1,hl+:4,info:-1,prompt:0,pointer:12,marker:4,spinner:11,header:-1'
+" Override `fzf` options.
+let $FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS . " --margin='1,4' --no-inline-info --bold --color='fg+:15,bg+:-1,info:8,prompt:0,pointer:12'"
 
 " Define key mappings.
 nnoremap <silent> <C-p> :FGFiles<Enter>
@@ -43,22 +43,16 @@ nnoremap <silent> <Leader>/ :FHistory/<Enter>
 nnoremap <silent> <Leader>` :FMarks<Enter>
 
 function! g:Fzffloatingwindow()
-	let l:buf = nvim_create_buf(v:false, v:true)
-	call setbufvar(l:buf, '&signcolumn', 'no')
-
-	let l:height = float2nr(20)
-	let l:width = float2nr(80)
-	let l:horizontal = float2nr((&columns - l:width) / 2)
-	let l:vertical = 5
-
-	let l:opts = {
-		\ 'relative': 'editor',
-		\ 'row': l:vertical,
-		\ 'col': l:horizontal,
-		\ 'width': l:width,
-		\ 'height': l:height,
-		\ 'style': 'minimal'
-	\ }
-
-	call nvim_open_win(l:buf, v:true, l:opts)
+	call nvim_open_win(
+		\ nvim_create_buf(v:false, v:true),
+		\ v:true,
+		\ {
+			\ 'relative': 'editor',
+			\ 'row': 5,
+			\ 'col': (&columns - 80) / 2,
+			\ 'width': 80,
+			\ 'height': 20,
+			\ 'style': 'minimal'
+		\ }
+	\ )
 endfunction
