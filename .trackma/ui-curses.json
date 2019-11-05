@@ -42,9 +42,9 @@
 		"info_section": ["dark blue", "default"],
 		"info_title": ["dark blue", "default"],
 		"item_airing": ["dark green", "default"],
-		"item_neweps": ["yellow", "default"],
-		"item_notaired": ["dark cyan", "default"],
-		"item_playing": ["dark red", "default"],
+		"item_neweps": ["brown", "default"],
+		"item_notaired": ["dark red", "default"],
+		"item_playing": ["dark cyan", "default"],
 		"item_updated": ["dark blue", "default"],
 		"status": ["dark cyan", "black"],
 		"window": ["black", "dark cyan"]
