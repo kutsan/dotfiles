@@ -14,8 +14,8 @@ if ! [[ -L $ZDOTDIR/autoload/async ]] {
 	ln -s $ZDOTDIR/plugins/pure/async.zsh $ZDOTDIR/autoload/async
 }
 
-# Recompile prompt files if it's needed.
-zrecompile -p \
-	-M $ZDOTDIR/cache/.zcompdump -- \
-	-M $ZDOTDIR/autoload/async -- \
-	-M $ZDOTDIR/autoload/prompt_pure_setup
+# # Recompile prompt files if it's needed.
+# zrecompile -p \
+# 	-M $ZDOTDIR/cache/.zcompdump -- \
+# 	-M $ZDOTDIR/autoload/async -- \
+# 	-M $ZDOTDIR/autoload/prompt_pure_setup
