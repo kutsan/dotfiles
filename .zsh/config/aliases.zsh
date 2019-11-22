@@ -9,7 +9,6 @@ alias du='du --max-depth=1 --si' # Display size of files and folders under curre
 alias df='df --all --si --print-type' # Display all disk usage statistics with SI units and FS types.
 alias ls='ls --almost-all --classify --color=always --group-directories-first --literal' # List name of nodes.
 alias la='ls -l --almost-all --si' # List nodes with their details.
-alias tmp='command mkdir --parents --verbose $TMPDIR/$(whoami) && cd $TMPDIR/$(whoami)' # Make temporary directory and cd into that.
 
 # Custom Shortcuts
 alias v='nvim'
