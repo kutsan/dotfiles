@@ -1,3 +1,8 @@
+# Finish if there isn't a plugins directory.
+if ! [[ -d "$ZDOTDIR/plugins/" ]] {
+	return 1
+}
+
 # zsh-autopair: Insert or delete brackets, parens, quotes in pair.
 source "$ZDOTDIR/plugins/autopair/autopair.zsh"
 

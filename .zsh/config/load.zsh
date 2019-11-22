@@ -1,9 +1,6 @@
 # Make special variables duplicate-free.
 typeset -gU path fpath cdpath
 
-# Set zsh custom autoload directory.
-fpath=($fpath "$ZDOTDIR/autoload")
-
 # Define functions to load them on execution.
 foreach function (
 	add-zsh-hook
