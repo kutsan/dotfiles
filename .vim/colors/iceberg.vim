@@ -2,7 +2,7 @@
 " Iceberg, dark blue color scheme.
 "
 " @see github:cocopon/iceberg.vim
-" @version 8b5ca00
+" @version dc4b4b5
 ""
 
 if !has('gui_running') && &t_Co < 256
@@ -69,9 +69,10 @@ highlight! StatusLineTermNC cterm=reverse ctermbg=238 ctermfg=233 gui=reverse gu
 highlight! StorageClass ctermfg=110 guifg=#84a0c6
 highlight! String ctermfg=109 guifg=#89b8c2
 highlight! Structure ctermfg=110 guifg=#84a0c6
-highlight! TabLine cterm=NONE ctermbg=245 ctermfg=234 gui=NONE guibg=#818596 guifg=#17171b
-highlight! TabLineFill cterm=reverse ctermbg=234 ctermfg=245 gui=reverse guibg=#17171b guifg=#818596
+highlight! TabLine cterm=NONE ctermbg=233 ctermfg=238 gui=NONE guibg=#0f1117 guifg=#3e445e
+highlight! TabLineFill cterm=reverse ctermbg=238 ctermfg=233 gui=reverse guibg=#3e445e guifg=#0f1117
 highlight! TabLineSel cterm=NONE ctermbg=234 ctermfg=252 gui=NONE guibg=#161821 guifg=#9a9ca5
+highlight! TermCursorNC ctermbg=242 ctermfg=234 guibg=#6b7089 guifg=#161821
 highlight! Title ctermfg=216 gui=NONE guifg=#e2a478
 highlight! Todo ctermbg=234 ctermfg=150 guibg=#45493e guifg=#b4be82
 highlight! Type ctermfg=110 gui=NONE guifg=#84a0c6
@@ -85,7 +86,7 @@ highlight! ALEErrorSign ctermbg=235 ctermfg=203 guibg=#1e2132 guifg=#e27878
 highlight! ALEWarningSign ctermbg=235 ctermfg=216 guibg=#1e2132 guifg=#e2a478
 highlight! ALEVirtualTextError ctermfg=203 guifg=#e27878
 highlight! ALEVirtualTextWarning ctermfg=216 guifg=#e2a478
-highlight! CtrlPMode1 ctermbg=241 ctermfg=234 guibg=#5a5f72 guifg=#17171b
+highlight! CtrlPMode1 ctermbg=236 ctermfg=242 guibg=#2e313f guifg=#6b7089
 highlight! EasyMotionShade ctermfg=239 guifg=#3d425b
 highlight! EasyMotionTarget ctermfg=150 guifg=#b4be82
 highlight! EasyMotionTarget2First ctermfg=216 guifg=#e2a478
@@ -94,6 +95,8 @@ highlight! GitGutterAdd ctermbg=235 ctermfg=150 guibg=#1e2132 guifg=#b4be82
 highlight! GitGutterChange ctermbg=235 ctermfg=109 guibg=#1e2132 guifg=#89b8c2
 highlight! GitGutterChangeDelete ctermbg=235 ctermfg=109 guibg=#1e2132 guifg=#89b8c2
 highlight! GitGutterDelete ctermbg=235 ctermfg=203 guibg=#1e2132 guifg=#e27878
+highlight! gitmessengerEndOfBuffer ctermbg=235 ctermfg=239 guibg=#1e2132 guifg=#444b71
+highlight! gitmessengerPopupNormal ctermbg=235 ctermfg=252 guibg=#1e2132 guifg=#c6c8d1
 highlight! Sneak ctermbg=140 ctermfg=234 guibg=#a093c7 guifg=#161821
 highlight! SneakScope ctermbg=236 ctermfg=242 guibg=#272c42 guifg=#6b7089
 highlight! SyntasticErrorSign ctermbg=235 ctermfg=203 guibg=#1e2132 guifg=#e27878
@@ -103,6 +106,7 @@ highlight! SyntasticWarningSign ctermbg=235 ctermfg=216 guibg=#1e2132 guifg=#e2a
 highlight! ZenSpace ctermbg=203 guibg=#e27878
 highlight! icebergALAccentRed ctermfg=203 guifg=#e27878
 
+highlight! link TermCursor Cursor
 highlight! link cssBraces Delimiter
 highlight! link cssClassName Special
 highlight! link cssClassNameDot Normal
@@ -144,11 +148,26 @@ highlight! link CtrlPMatch Title
 highlight! link CtrlPMode2 StatusLine
 highlight! link deniteMatched Normal
 highlight! link deniteMatchedChar Title
+highlight! link elixirBlockDefinition Statement
+highlight! link elixirDefine Statement
+highlight! link elixirDocSigilDelimiter String
+highlight! link elixirDocTest String
+highlight! link elixirExUnitMacro Statement
+highlight! link elixirExceptionDefine Statement
+highlight! link elixirFunctionDeclaration Title
+highlight! link elixirKeyword Statement
+highlight! link elixirModuleDeclaration Normal
+highlight! link elixirModuleDefine Statement
+highlight! link elixirPrivateDefine Statement
+highlight! link elixirStringDelimiter String
 highlight! link jsFlowMaybe Normal
 highlight! link jsFlowObject Normal
 highlight! link jsFlowType PreProc
 highlight! link graphqlName Normal
 highlight! link graphqlOperator Normal
+highlight! link gitmessengerHash Comment
+highlight! link gitmessengerHeader Statement
+highlight! link gitmessengerHistory Constant
 highlight! link jsArrowFunction Operator
 highlight! link jsClassDefinition Normal
 highlight! link jsClassFuncName Title
