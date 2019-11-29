@@ -57,9 +57,6 @@
 [submodule "undotree"]
 	path = .vim/pack/bundle/opt/undotree
 	url = https://github.com/mbbill/undotree
-[submodule "wordmotion"]
-	path = .vim/pack/bundle/start/wordmotion
-	url = https://github.com/chaoren/vim-wordmotion
 [submodule "colorizer"]
 	path = .vim/pack/bundle/start/colorizer
 	url = https://github.com/norcalli/nvim-colorizer.lua

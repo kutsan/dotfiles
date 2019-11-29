@@ -29,7 +29,6 @@
 	- [signify](https://github.com/mhinz/vim-signify) - Show Git diff in the sign column
 	- [targets](https://github.com/wellle/targets.vim) - Additional various text objects
 	- [undotree](https://github.com/mbbill/undotree) - Visualize undo tree
-	- [wordmotion](https://github.com/chaoren/vim-wordmotion) - Enchant default basic word motions
 - [git](https://git-scm.com) - Version control system for tracking changes in files and coordinating the work
 - [tmux](https://github.com/tmux/tmux) - Terminal multiplexer enables working with split panes, tabs and detachable sessions
 - [nodejs](https://nodejs.org) - JavaScript runtime environment for developing a diverse variety of applications
