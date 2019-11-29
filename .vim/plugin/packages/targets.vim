@@ -1,3 +1,0 @@
-""
-" Additional various text objects.
-""

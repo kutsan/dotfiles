@@ -27,7 +27,6 @@
 	- [polyglot](https://github.com/sheerun/vim-polyglot) - Big collection of language packs as scripts are loaded only on demand
 	- [sandwich](https://github.com/machakann/vim-sandwich) - The set of operator and text object plugins to search, select, edit sandwiched text objects
 	- [signify](https://github.com/mhinz/vim-signify) - Show Git diff in the sign column
-	- [targets](https://github.com/wellle/targets.vim) - Additional various text objects
 	- [undotree](https://github.com/mbbill/undotree) - Visualize undo tree
 - [git](https://git-scm.com) - Version control system for tracking changes in files and coordinating the work
 - [tmux](https://github.com/tmux/tmux) - Terminal multiplexer enables working with split panes, tabs and detachable sessions
