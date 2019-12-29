@@ -13,47 +13,13 @@ PassCmd "gpg --no-tty --for-your-eyes-only --quiet --decrypt ~/.mutt/accounts/co
 SSLType IMAPS
 AuthMechs LOGIN
 
-IMAPStore remote/gmail
-Host imap.gmail.com
-Port 993
-Timeout 20
-User EMAIL
-PassCmd "gpg --no-tty --for-your-eyes-only --quiet --decrypt ~/.mutt/accounts/com.gmail/secret.gpg"
-SSLType IMAPS
-AuthMechs LOGIN
-
 # Locals
-MaildirStore local/gmail
-Path ~/.mutt/mailbox/com.gmail/
-Inbox ~/.mutt/mailbox/com.gmail/INBOX
-SubFolders Verbatim
-
 MaildirStore local/kutsankaplan
 Path ~/.mutt/mailbox/com.kutsankaplan/
 Inbox ~/.mutt/mailbox/com.kutsankaplan/INBOX
 SubFolders Verbatim
 
 # Channels
-Channel gmail/Inbox
-Master :remote/gmail:INBOX
-Slave :local/gmail:Inbox
-
-Channel gmail/Sent
-Master :remote/gmail:"[Gmail]/Sent Mail"
-Slave :local/gmail:Sent
-
-Channel gmail/Drafts
-Master :remote/gmail:"[Gmail]/Drafts"
-Slave :local/gmail:Drafts
-
-Channel gmail/Spam
-Master :remote/gmail:"[Gmail]/Spam"
-Slave :local/gmail:Spam
-
-Channel gmail/Trash
-Master :remote/gmail:"[Gmail]/Trash"
-Slave :local/gmail:Trash
-
 Channel kutsankaplan/Inbox
 Master :remote/kutsankaplan:Inbox
 Slave :local/kutsankaplan:Inbox
@@ -76,11 +42,6 @@ Slave :local/kutsankaplan:Trash
 
 # Groups
 Group SyncAll
-Channel gmail/Inbox
-Channel gmail/Sent
-Channel gmail/Drafts
-Channel gmail/Spam
-Channel gmail/Trash
 Channel kutsankaplan/Inbox
 Channel kutsankaplan/Sent
 Channel kutsankaplan/Drafts

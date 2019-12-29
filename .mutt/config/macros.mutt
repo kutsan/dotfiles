@@ -1,2 +1,0 @@
-macro index <f2> '<sync-mailbox><enter-command>source ~/.mutt/accounts/com.gmail/config.mutt<enter><change-folder>!<enter>'
-macro index <f3> '<sync-mailbox><enter-command>source ~/.mutt/accounts/com.kutsankaplan/config.mutt<enter><change-folder>!<enter>'
