@@ -3,7 +3,7 @@ variables: secret.yml
 templates:
   anchors:
     _transmission: &transmission
-      host: 192.168.1.10
+      host: localhost
       port: 9091
       username: kutsan
       password: EkYBoNSd6oIUznucRTfQTFCcxC5WeeDaBImPt6I9CncuY9g8mH
