@@ -29,7 +29,7 @@ alias -g G='| grep'
 alias l='ledger'
 alias lnet="ledger register '^expenses' '^income' --period 'this month' --subtotal --invert"
 alias lweek="ledger register '^expenses' --period 'this week' --invert"
-alias lmonth="ledger register '^expenses' --period 'this month'"
+alias lmonth="ledger register '^expenses' --period 'this month' --invert"
 alias lbal="ledger balance '^assets' '^liabilities' --empty --flat"
 
 # git
