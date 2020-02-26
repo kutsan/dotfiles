@@ -5,16 +5,21 @@
 silent! call defx#custom#option('_', {
 	\ 'columns': 'indent:icons:filename',
 	\ 'winwidth': 35,
-	\ 'split': 'vertical',
+	\ 'split': exists('$ANDROID_ROOT') ? 'no' : 'vertical',
 	\ 'direction': 'topleft',
 	\ 'ignored_files': '',
 	\ 'show_ignored_files': v:true,
 	\ 'toggle': v:true,
-	\ 'buffer_name': 'explorer'
+	\ 'buffer_name': 'explorer',
+	\ 'listed': v:true,
+	\ 'resume': v:true
 \ })
+
+
 
 " Launch Defx.
 nnoremap <silent> <Leader>f :Defx<Enter>
+nnoremap <silent> <Leader>F :Defx -no-toggle -search=`expand('%:p')` `getcwd()`<Enter>
 
 augroup defxsettings
 	autocmd!
