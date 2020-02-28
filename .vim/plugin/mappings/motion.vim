@@ -1,8 +1,6 @@
 " [a]n and [i]n [e]ntire buffer motions.
-onoremap <silent> ie :<C-u>call kutsan#mappings#motion#entire#({ 'mode': 'i' })<Enter>
-xnoremap <silent> ie :<C-u>call kutsan#mappings#motion#entire#({ 'mode': 'i' })<Enter>
-onoremap <silent> ae :<C-u>call kutsan#mappings#motion#entire#({ 'mode': 'a' })<Enter>
-xnoremap <silent> ae :<C-u>call kutsan#mappings#motion#entire#({ 'mode': 'a' })<Enter>
+onoremap <silent> ae :<C-u>call kutsan#mappings#motion#entire#()<Enter>
+xnoremap <silent> ae :<C-u>call kutsan#mappings#motion#entire#()<Enter>
 
 " [i]nner and [a]round line motions.
 onoremap <silent> i_ :<C-u>normal! ^vg_<Enter>
