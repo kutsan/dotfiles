@@ -21,7 +21,8 @@ tasks:
     # input
     discover:
       what:
-        - next_series_episodes: yes
+        - next_series_episodes:
+            from_start: yes
       from:
         - nyaa:
             category: anime eng
@@ -31,9 +32,10 @@ tasks:
 
     # filter
     series:
-      - ANIME_NAME:
+      - 'ANIME_NAME':
           from_group: FANSUB_NAME
           quality: 1080p
+          identified_by: sequence
 
     # output
     transmission:
