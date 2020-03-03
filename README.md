@@ -50,9 +50,6 @@
 		- [terminal-colors](https://github.com/eikenb/terminal-colors) - Test utility for color capabilities of terminal
 		- [grip](https://github.com/joeyespo/grip) - Preview Markdown files in local server
 		- [trackma](https://github.com/z411/trackma) - Multi-site anime, manga list manager
-		- [flexget](https://github.com/Flexget/Flexget) - Multipurpose automation tool for all of media.
-			- [transmissionrpc](https://pypi.org/project/transmissionrpc) - Python module implementing the json-rpc client protocol for transmission
-			- [python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot) - Python wrapper of Telegram Bot API
 		- [pynvim](https://github.com/neovim/pynvim) - Python client for neovim
 		- [trash-cli](https://github.com/andreafrancia/trash-cli) - Move files and folders to the trash
 - [coreutils](https://www.gnu.org/software/coreutils/coreutils.html) - GNU core utilities for basic file, shell and text manipulation
