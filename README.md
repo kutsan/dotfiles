@@ -74,7 +74,6 @@
 - [ripgrep](https://github.com/BurntSushi/ripgrep) - Line oriented search tool similar to grep that combines the usability of ag
 - [ffmpeg](https://github.com/FFmpeg/FFmpeg) - Cross-platform solution to handle, record, convert and stream audio and video
 - [transmission-cli](https://github.com/transmission/transmission) - BitTorrent client and daemon with web UI for remote controlling
-- [syncthing](https://github.com/syncthing/syncthing) - Continuous file synchronization utility
 - [tidy-html5](https://github.com/htacg/tidy-html5) - HTML linter with support for modern web standards
 - [par](https://github.com/sergi/par) - Paragraph reformatter and aligner for e-mails and plain text
 - [bind](https://source.isc.org/cgi-bin/gitweb.cgi) - Domain Name System tools
