@@ -40,19 +40,6 @@ tasks:
       action: add
       <<: *transmission
 
-    # output
-    notify:
-      entries:
-        message: '*EP{{series_id}}* of *{{series_name}}* has captured by transmission daemon.'
-        what: accepted
-        via:
-          - telegram:
-              bot_token: '{? telegram.bot_token ?}'
-              parse_mode: markdown
-              disable_previews: no
-              recipients:
-                - username: kutsan
-
   CLEAN:
     # internal
     priority: 2
