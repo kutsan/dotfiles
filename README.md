@@ -16,7 +16,6 @@
 	- [iceberg](https://github.com/cocopon/iceberg.vim) - Color scheme
 	- [coc](https://github.com/neoclide/coc.nvim) - Context-aware completion engine
 	- [colorizer](https://github.com/norcalli/nvim-colorizer.lua) - High-performance color highlighter
-	- [emmet](https://github.com/mattn/emmet-vim) - Emmet integration
 	- [defx](https://github.com/Shougo/defx.nvim) - File explorer
 		- [Send2Trash](https://github.com/hsoft/send2trash) - Python library to natively send files to trash
 	- [defx-icons](https://github.com/kristijanhusak/defx-icons) - Icon columm support for defx

@@ -24,9 +24,6 @@
 	path = .vim/pack/bundle/start/defx-icons
 	url = https://github.com/kristijanhusak/defx-icons
 	ignore = dirty
-[submodule "emmet"]
-	path = .vim/pack/bundle/opt/emmet
-	url = https://github.com/mattn/emmet-vim
 [submodule "fugitive"]
 	path = .vim/pack/bundle/start/fugitive
 	url = https://github.com/tpope/vim-fugitive
