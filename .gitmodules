@@ -14,9 +14,6 @@
 	path = .zsh/plugins/system-clipboard
 	url = https://github.com/kutsan/zsh-system-clipboard
 
-[submodule "ale"]
-	path = .vim/pack/bundle/start/ale
-	url = https://github.com/w0rp/ale
 [submodule "coc"]
 	path = .vim/pack/bundle/start/coc
 	url = https://github.com/neoclide/coc.nvim

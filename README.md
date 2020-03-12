@@ -14,7 +14,6 @@
 	- [autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) - Fish-like auto-suggestions for interactive terminal based on command history
 - [neovim](https://github.com/neovim/neovim) - The fork of ubiquitous text editor focused on extensibility and usability
 	- [iceberg](https://github.com/cocopon/iceberg.vim) - Color scheme
-	- [ale](https://github.com/w0rp/ale) - Asynchronous lint engine for Neovim and Vim 8+
 	- [coc](https://github.com/neoclide/coc.nvim) - Context-aware completion engine
 	- [colorizer](https://github.com/norcalli/nvim-colorizer.lua) - High-performance color highlighter
 	- [emmet](https://github.com/mattn/emmet-vim) - Emmet integration
