@@ -8,7 +8,6 @@ git ls-files \
 	| ctags \
 		-L - \
 		-f "$gitdir/$$.tags" \
-		--tag-relative=yes \
-		--languages=-javascript,sql
+		--tag-relative=yes
 
 mv "$gitdir/$$.tags" "$gitdir/tags"
