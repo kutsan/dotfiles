@@ -35,13 +35,14 @@ endfunction
 " inoremap <expr> <Enter> kutsan#mappings#insert#handle#enter()
 ""
 function! kutsan#mappings#insert#handle#enter() abort
-	if !pumvisible()
+	" If it's selected.
+	if complete_info()["selected"] != "-1"
+		return "\<C-y>"
+	else
 		if exists('g:loaded_pear_tree')
 			return pear_tree#insert_mode#PrepareExpansion()
 		else
-			return "\<Enter>"
+			return "\<C-g>u\<Enter>"
 		endif
 	endif
-
-	return "\<C-y>"
 endfunction
