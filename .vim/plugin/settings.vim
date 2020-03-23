@@ -13,6 +13,7 @@ set termguicolors " Enable True Color support.
 colorscheme iceberg " Color scheme.
 
 " Behaviour
+let &keywordprg = '' " Disable definition search by default.
 set backspace=indent,eol,start " Allow backspacing over everything in insert mode.
 set belloff=all " Turn off the bell upon all events.
 set breakindent " Wrapped lines will be indented with same amount of space.
@@ -20,7 +21,6 @@ set clipboard=unnamedplus " Sync unnamed register with system clipboard.
 set comments= " Clear default 'comments' value, let the filetype handle it.
 set confirm " Seek for confirmation for certain commands instead of giving errors.
 set display=lastline " As much as possible of the last line in a window will be displayed.
-set keywordprg= " Disable definition search by default.
 set modelines=0 " Disable modeline altogether.
 set mouse=nv " Enable mouse support only for normal and visual modes.
 set nojoinspaces " Disable inserting two spaces after `.`, `?`, `!` with join command.
@@ -44,7 +44,7 @@ set textwidth=0 " Prevent auto wrapping when using affecting keys.
 set timeoutlen=500 " Mapping delays in milliseconds.
 set ttimeoutlen=10 " Key code delays in milliseconds.
 set ttyfast " More characters will be sent to the screen for redrawing in terminal. (vim-only)
-set updatetime=2000 " If that milliseconds nothing is typed CursorHold event will trigger.
+set updatetime=1000 " If that milliseconds nothing is typed CursorHold event will trigger.
 set visualbell " Use visual bell instead of beeping on errors.
 
 " Interface
