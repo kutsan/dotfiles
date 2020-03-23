@@ -1,16 +1,15 @@
 scriptencoding UTF-8
 
 function! kutsan#statusline#linter() abort
-	if !exists('g:loaded_ale')
+	if !exists('g:did_coc_loaded')
 		return ''
 	endif
 
-	let l:counts = ale#statusline#Count(bufnr(''))
-
-	let l:allerrors = l:counts.error + l:counts.style_error
-	let l:allwarnings = l:counts.total - l:allerrors
-
-	return printf('𥉉%d  %d', l:allerrors, l:allwarnings)
+	return printf(
+		\ '𥉉%d  %d',
+		\ get(get(b:, 'coc_diagnostic_info', {}), 'error', 0),
+		\ get(get(b:, 'coc_diagnostic_info', {}), 'warning', 0)
+	\ )
 endfunction
 
 function! kutsan#statusline#fileprefix() abort
