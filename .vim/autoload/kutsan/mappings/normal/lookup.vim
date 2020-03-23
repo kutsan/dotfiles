@@ -7,6 +7,8 @@ function! kutsan#mappings#normal#lookup#() abort
 	if !empty(&keywordprg)
 		normal! K
 	else
-		call CocAction('doHover')
+		if exists('g:did_coc_loaded')
+			call CocAction('doHover')
+		endif
 	endif
 endfunction
