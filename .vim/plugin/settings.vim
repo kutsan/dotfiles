@@ -10,7 +10,8 @@ execute printf('set viminfo+=n~/.vim/cache/share/%s', has('nvim') ? 'nviminfo' :
 " Colors
 set background=dark " Choose dark colors if available.
 set termguicolors " Enable True Color support.
-colorscheme iceberg " Color scheme.
+let g:material_theme_style = 'ocean'
+colorscheme material " Color scheme.
 
 " Behaviour
 let &keywordprg = '' " Disable definition search by default.
