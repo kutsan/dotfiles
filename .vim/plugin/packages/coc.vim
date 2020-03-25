@@ -33,6 +33,7 @@ let g:coc_user_config = {
 		\ 'hintSign': '•',
 	\ },
 	\ 'snippets': {
+		\ 'priority': 200,
 		\ 'ultisnips': {
 			\ 'directories': ['snippet']
 		\ }
