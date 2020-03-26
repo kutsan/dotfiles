@@ -17,8 +17,8 @@ bind-key -T prefix -r \{ swap-pane -U
 bind-key -T prefix -r \} swap-pane -D
 
 # Swap windows across themselves.
-bind-key -T prefix -r '<' swap-window -t -1
-bind-key -T prefix -r '>' swap-window -t +1
+bind-key -T prefix -r '<' swap-window -d -t -1
+bind-key -T prefix -r '>' swap-window -d -t +1
 
 # Paste
 bind-key -T prefix p paste-buffer -s '' # Paste without CR feed.
