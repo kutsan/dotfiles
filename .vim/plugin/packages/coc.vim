@@ -30,7 +30,7 @@ let g:coc_user_config = {
 		\ 'errorSign': '•',
 		\ 'warningSign': '•',
 		\ 'infoSign': '•',
-		\ 'hintSign': '•',
+		\ 'hintSign': '•'
 	\ },
 	\ 'snippets': {
 		\ 'priority': 200,
