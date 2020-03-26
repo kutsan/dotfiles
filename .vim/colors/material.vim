@@ -188,6 +188,8 @@ call s:SetHighlight('SpellCap', s:blue, '', 'undercurl')
 call s:SetHighlight('SpellBad', s:red, '', 'undercurl')
 call s:SetHighlight('StatusLine', s:fg, s:selection, '')
 call s:SetHighlight('StatusLineNC', s:comments, s:selection, '')
+highlight! StatusLine ctermbg=243 ctermfg=238 guibg=#818596 guifg=#131315
+highlight! StatusLineNC ctermbg=243 ctermfg=237 guibg=#3e445e guifg=#131315
 call s:SetHighlight('StatusLineTerm', s:bg, s:green, '')
 call s:SetHighlight('StatusLineTermNC', s:bg, s:green, '')
 call s:SetHighlight('TabLine', s:fg, s:line_numbers, '')
@@ -394,24 +396,31 @@ if has('nvim')
 	call s:SetHighlight('NERDTreeFile', s:fg, '', '')
 endif
 
-" Neovim terminal colors
+" Neovim terminal colors.
 if has('nvim')
-	let g:terminal_color_background = s:bg
-	let g:terminal_color_foreground = s:fg
-	let g:terminal_color_0 = s:black
-	let g:terminal_color_1 = s:red
-	let g:terminal_color_2 = s:green
-	let g:terminal_color_3 = s:yellow
-	let g:terminal_color_4 = s:blue
-	let g:terminal_color_5 = s:purple
-	let g:terminal_color_6 = s:cyan
-	let g:terminal_color_7 = s:white
-	let g:terminal_color_8 = g:terminal_color_0
-	let g:terminal_color_9 = g:terminal_color_1
-	let g:terminal_color_10 = g:terminal_color_2
-	let g:terminal_color_11 = g:terminal_color_3
-	let g:terminal_color_12 = g:terminal_color_4
-	let g:terminal_color_13 = g:terminal_color_5
-	let g:terminal_color_14 = g:terminal_color_6
-	let g:terminal_color_15 = g:terminal_color_7
+	let g:terminal_color_foreground = '#e3f1e4'
+	let g:terminal_color_background = '#0f111a'
+	let g:terminal_color_0  = '#4e4537'
+	let g:terminal_color_1  = '#d8726f'
+	let g:terminal_color_2  = '#97bb92'
+	let g:terminal_color_3  = '#eebb6e'
+	let g:terminal_color_4  = '#76a8f1'
+	let g:terminal_color_5  = '#e5c499'
+	let g:terminal_color_6  = '#bdcfe5'
+	let g:terminal_color_7  = '#c8b8a9'
+	let g:terminal_color_8  = '#685656'
+	let g:terminal_color_9  = '#d76b42'
+	let g:terminal_color_10 = '#99b52c'
+	let g:terminal_color_11 = '#ffb670'
+	let g:terminal_color_12 = '#97d7ef'
+	let g:terminal_color_13 = '#aa7900'
+	let g:terminal_color_14 = '#bdcfe5'
+	let g:terminal_color_15 = '#e4d5c7'
 endif
+
+" Overrides.
+call s:SetHighlight('StatusLine', s:comments, s:bg, '')
+call s:SetHighlight('StatusLineNC', s:selection, s:bg, '')
+call s:SetHighlight('TabLine', s:comments, s:bg, '')
+call s:SetHighlight('TabLineFill', s:comments, s:bg, '')
+call s:SetHighlight('TabLineSel', s:blue, s:bg, '')
