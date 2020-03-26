@@ -11,6 +11,9 @@ let g:fzf_buffers_jump = v:true
 " Directly execute the command without appending anything.
 let g:fzf_commands_expect = 'alt-enter'
 
+" Enable preview window.
+let g:fzf_preview_window = 'down:60%'
+
 " Set custom layout.
 let g:fzf_layout = {
 	\ 'window': has('nvim')
@@ -29,7 +32,7 @@ let g:fzf_action = {
 let g:fzf_history_dir = $HOME . '/.vim/cache/share/fzf/'
 
 " Override `fzf` options.
-let $FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS . " --margin='1,4' --no-inline-info --bold --color='fg+:15,bg+:-1,info:8,prompt:8,pointer:12'"
+let $FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS . " --margin='1,4' --info='hidden' --bold --prompt='a' --color='fg+:15,bg+:-1,info:12,prompt:4,pointer:12'"
 
 " Define key mappings.
 nnoremap <silent> <C-p> :FGFiles<Enter>
@@ -48,10 +51,10 @@ function! g:Fzffloatingwindow()
 		\ v:true,
 		\ {
 			\ 'relative': 'editor',
-			\ 'row': 5,
+			\ 'row': 3,
 			\ 'col': (&columns - 80) / 2,
 			\ 'width': 80,
-			\ 'height': 20,
+			\ 'height': 30,
 			\ 'style': 'minimal'
 		\ }
 	\ )
