@@ -2,7 +2,7 @@
 
 ![screenshot](./.github/screenshot.png?raw=true)
 
-> running **neovim** inside **tmux** that is inside **kitty** terminal emulator with **furacode** font on
+> running **neovim** inside **tmux** that is inside **kitty** terminal emulator with **monaco** font on
 
 ## Overview
 
