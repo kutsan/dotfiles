@@ -6,7 +6,7 @@ function! kutsan#statusline#linter() abort
 	endif
 
 	return printf(
-		\ '𥉉%d  %d',
+		\ ' %d  %d',
 		\ get(get(b:, 'coc_diagnostic_info', {}), 'error', 0),
 		\ get(get(b:, 'coc_diagnostic_info', {}), 'warning', 0)
 	\ )
