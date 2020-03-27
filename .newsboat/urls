@@ -1,16 +1,26 @@
 # Blog
 	http://localhost:0001 "~# Blog"
-https://feeds.feedburner.com/2ality "~Axel Rauschmayer" blog
+https://davidwalsh.name/feed "~David Walsh" blog
 https://dmitripavlutin.com/rss "~Dmitri Pavlutin" blog
+https://feeds.feedburner.com/2ality "~Axel Rauschmayer" blog
 https://jakearchibald.com/posts.rss "~Jake Archibald" blog
-https://neovim.io/news.xml "~Neovim" blog
-https://ponyfoo.com/articles/feed "~Pony Foo" blog
-https://reactjs.org/feed.xml "~React" blog
-https://blog.risingstack.com/rss "~RisingStack" blog
-http://vimcasts.org/feeds/quicktime.rss "~Vimcasts" blog
+https://kentcdodds.com/blog/rss.xml "~Kent C. Dodds" blog
+https://overreacted.io/rss.xml "~Dan Abramov" blog
 	http://localhost:0002 "~ "
 
 # Newsletter
 	http://localhost:0003 "~# Newsletter"
-http://javascriptweekly.com/rss "~JavaScript Weekly" newsletter
+https://blog.risingstack.com/rss "~RisingStack" newsletter
+https://css-tricks.com/feed/ "~CSS-Tricks" newsletter
+https://hackernoon.com/feed "~Hackernoon" newsletter
+https://javascriptweekly.com/rss "~JavaScript Weekly" newsletter
+https://ponyfoo.com/articles/feed "~Pony Foo" newsletter
+http://reactjs.org/feed.xml "~React" newsletter
 http://reactjsnewsletter.com/issues.rss "~React Newsletter" newsletter
+https://scotch.io/feed "~Scotch" newsletter
+https://www.freecodecamp.org/news/rss/ "~FreeCodeCamp" newsletter
+	http://localhost:0004 "~ "
+
+# Podcasts
+	http://localhost:0005 "~# Podcasts"
+https://feed.syntax.fm/rss "~Syntax" podcasts
