@@ -36,6 +36,9 @@ let g:coc_user_config = {
 		\ 'priority': 200,
 		\ 'ultisnips': {
 			\ 'directories': ['snippet']
+		\ },
+		\ 'extends': {
+			\ "javascriptreact": ["javascript"]
 		\ }
 	\ }
 \ }
