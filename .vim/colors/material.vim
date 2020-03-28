@@ -400,7 +400,7 @@ endif
 if has('nvim')
 	let g:terminal_color_foreground = '#e3f1e4'
 	let g:terminal_color_background = '#0f111a'
-	let g:terminal_color_0  = '#4e4537'
+	let g:terminal_color_0  = '#1d2030'
 	let g:terminal_color_1  = '#d8726f'
 	let g:terminal_color_2  = '#97bb92'
 	let g:terminal_color_3  = '#eebb6e'
@@ -408,7 +408,7 @@ if has('nvim')
 	let g:terminal_color_5  = '#e5c499'
 	let g:terminal_color_6  = '#bdcfe5'
 	let g:terminal_color_7  = '#c8b8a9'
-	let g:terminal_color_8  = '#685656'
+	let g:terminal_color_8  = '#3e445e'
 	let g:terminal_color_9  = '#d76b42'
 	let g:terminal_color_10 = '#99b52c'
 	let g:terminal_color_11 = '#ffb670'
@@ -424,3 +424,6 @@ call s:SetHighlight('StatusLineNC', s:selection, s:bg, '')
 call s:SetHighlight('TabLine', s:comments, s:bg, '')
 call s:SetHighlight('TabLineFill', s:comments, s:bg, '')
 call s:SetHighlight('TabLineSel', s:blue, s:bg, '')
+call s:SetHighlight('diffAdded', s:green, s:bg, '')
+call s:SetHighlight('diffRemoved', s:red, s:bg, '')
+call s:SetHighlight('diffChanged', s:yellow, s:bg, '')
