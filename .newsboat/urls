@@ -12,13 +12,11 @@ https://overreacted.io/rss.xml "~Dan Abramov" blog
 	http://localhost:0003 "~# Newsletter"
 https://blog.risingstack.com/rss "~RisingStack" newsletter
 https://css-tricks.com/feed/ "~CSS-Tricks" newsletter
-https://hackernoon.com/feed "~Hackernoon" newsletter
 https://javascriptweekly.com/rss "~JavaScript Weekly" newsletter
 https://ponyfoo.com/articles/feed "~Pony Foo" newsletter
 http://reactjs.org/feed.xml "~React" newsletter
 http://reactjsnewsletter.com/issues.rss "~React Newsletter" newsletter
 https://scotch.io/feed "~Scotch" newsletter
-https://www.freecodecamp.org/news/rss/ "~FreeCodeCamp" newsletter
 	http://localhost:0004 "~ "
 
 # Podcasts
