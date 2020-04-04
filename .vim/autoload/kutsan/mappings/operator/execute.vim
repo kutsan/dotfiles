@@ -35,15 +35,6 @@ function! kutsan#mappings#operator#execute#(type) abort
 
 	function! l:executefunctions.javascript() abort closure
 		let l:process = {}
-		let l:swap = v:null
-
-		function! l:process.on_stdout(jobid, data, event) abort closure
-			if !l:swap
-				" Fix weird behavior of Node REPL prompt.
-				call feedkeys("\<Space>\<BS>")
-				let l:swap = v:true
-			endif
-		endfunction
 
 		function! l:process.on_exit(jobid, data, event) abort
 			silent execute 'bdelete!' bufnr('')
