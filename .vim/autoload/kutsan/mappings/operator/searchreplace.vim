@@ -1,12 +1,12 @@
 ""
 " Search and replace operator.
 "
-" nnoremap <silent> go :set operatorfunc=kutsan#mappings#operator#search#<Enter>g@
-" xnoremap <silent> go :<C-u>call kutsan#mappings#operator#search#(visualmode())<Enter>
+" nnoremap <silent> gc* :set operatorfunc=kutsan#mappings#operator#searchreplace<Enter>g@
+" xnoremap <silent> gc* :<C-u>call kutsan#mappings#operator#searchreplace(visualmode())<Enter>
 "
 " @param {string} [type] Type of motion.
 ""
-function kutsan#mappings#operator#search#(type) abort
+function kutsan#mappings#operator#searchreplace(type) abort
 	" The operator doesn't support line-wise and block-wise motions.
 	if index(['line', 'block', 'V', "\<C-v>"], a:type) !=# -1
 		return v:false
