@@ -9,7 +9,7 @@
 " xnoremap <silent> io :<C-u>call kutsan#mappings#motion#indent#({ 'mode': 'o' })<Enter>
 "
 " @param {dictionary} options Configuration dictionary.
-" @param {string} options.mode Motion to select text, whether 'a' or 'i'.
+" @param {string} options.mode Motion to select text, whether 'a', 'i' or 'o'.
 ""
 function! kutsan#mappings#motion#indent#(options) abort
 	let l:save = {
