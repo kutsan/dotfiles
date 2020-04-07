@@ -17,7 +17,7 @@ let g:fzf_preview_window = 'down:60%'
 " Set custom layout.
 let g:fzf_layout = {
 	\ 'window': has('nvim')
-		\ ? 'call g:Fzffloatingwindow()'
+		\ ? 'call g:FzfFloatingWindow()'
 		\ : 'silent 18split enew'
 \ }
 
@@ -44,8 +44,20 @@ nnoremap <silent> <Leader>h :FHelptags<Enter>
 nnoremap <silent> <Leader>: :FHistory:<Enter>
 nnoremap <silent> <Leader>/ :FHistory/<Enter>
 nnoremap <silent> <Leader>` :FMarks<Enter>
+nnoremap <silent> g<C-p> :call fzf#run(
+	\ fzf#wrap(
+		\ 'projects',
+		\ {
+		\	'source': 'ls ~/Projects',
+		\	'dir': '~/Projects',
+		\	'sink': {dir -> execute(printf('silent edit %s', dir))},
+		\	'options': '--no-multi --prompt="> "'
+		\ },
+		\ 0
+	\ )
+\ )<Enter>
 
-function! g:Fzffloatingwindow()
+function! g:FzfFloatingWindow() abort
 	call nvim_open_win(
 		\ nvim_create_buf(v:false, v:true),
 		\ v:true,
