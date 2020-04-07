@@ -15,8 +15,6 @@ silent! call defx#custom#option('_', {
 	\ 'resume': v:true
 \ })
 
-
-
 " Launch Defx.
 nnoremap <silent> <Leader>f :Defx<Enter>
 nnoremap <silent> <Leader>F :Defx -no-toggle -search=`expand('%:p')` `getcwd()`<Enter>
