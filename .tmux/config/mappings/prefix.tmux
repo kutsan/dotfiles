@@ -21,7 +21,6 @@ bind-key -T prefix -r '<' swap-window -d -t -1
 bind-key -T prefix -r '>' swap-window -d -t +1
 
 # Paste
-bind-key -T prefix p paste-buffer -s '' # Paste without CR feed.
 bind-key -T prefix P choose-buffer "paste-buffer -b '%%' -s ''"
 
 # Kill windows without prompt.
