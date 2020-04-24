@@ -31,7 +31,7 @@ file_node_extensions = {
                     'jpg': '',
                    'jpeg': '',
                     'bmp': '',
-                    'png': ',
+                    'png': '',
                     'gif': '',
                     'ico': '',
                     'svg': '',
