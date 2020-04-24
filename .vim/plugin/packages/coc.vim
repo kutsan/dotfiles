@@ -11,7 +11,7 @@ let g:coc_global_extensions = [
 	\ 'coc-json',
 	\ 'coc-tag',
 	\ 'coc-snippets',
-	\ 'coc-stylelint',
+	\ 'coc-stylelintplus',
 	\ 'coc-tsserver',
 	\ 'coc-eslint',
 	\ 'coc-prettier',
@@ -22,11 +22,11 @@ let g:coc_global_extensions = [
 let g:coc_user_config = {
 	\ 'suggest': {
 		\ 'maxPreviewWidth': 50,
-		\ 'keepCompleteopt': v:true
+		\ 'keepCompleteopt': v:true,
+		\ 'floatEnable': v:false
 	\ },
 	\ 'diagnostic': {
-		\ 'virtualText': v:true,
-		\ 'virtualTextPrefix': '  ',
+		\ 'checkCurrentLine': v:true,
 		\ 'errorSign': '•',
 		\ 'warningSign': '•',
 		\ 'infoSign': '•',
@@ -39,7 +39,19 @@ let g:coc_user_config = {
 		\ },
 		\ 'extends': {
 			\ "javascriptreact": ["javascript"]
-		\ }
+		\ },
+	\ },
+	\ 'emmet': {
+		\ 'excludeLanguages': ['markdown', 'css']
+	\ },
+	\ 'css': {
+		\ 'validate': v:false
+	\ },
+	\ 'stylelintplus': {
+		\ 'autoFixOnFormat': v:true
+	\ },
+	\ 'prettier': {
+		\ 'disableLanguages': ['css']
 	\ }
 \ }
 
@@ -47,7 +59,7 @@ let g:coc_user_config = {
 nmap <Leader>c* <Plug>(coc-rename)
 nmap <Leader>cr <Plug>(coc-refactor)
 nmap <silent> <Leader>gd <Plug>(coc-definition)
-nnoremap <silent> <LocalLeader>f :CocCommand prettier.formatFile<Enter>
+nmap <silent> <LocalLeader>f <Plug>(coc-format)
 
 augroup cocsettings
 	autocmd!
