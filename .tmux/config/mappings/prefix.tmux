@@ -39,6 +39,9 @@ bind-key -T prefix ? copy-mode \; send-keys '?'
 # Launch command prompt.
 bind-key -T prefix : command-prompt
 
+# Rename current window.
+bind-key -T prefix , command-prompt -I "#W" "rename-window -- '%%'"
+
 # Show clock.
 bind-key -T prefix t clock-mode
 
