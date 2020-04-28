@@ -52,6 +52,11 @@ let g:coc_user_config = {
 	\ },
 	\ 'prettier': {
 		\ 'disableLanguages': ['css']
+	\ },
+	\ 'javascript': {
+		\ 'validate': {
+			\ 'enable': v:false
+		\ }
 	\ }
 \ }
 
