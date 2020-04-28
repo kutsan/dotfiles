@@ -12,7 +12,7 @@ silent! call defx#custom#option('_', {
 	\ 'toggle': v:true,
 	\ 'buffer_name': 'explorer',
 	\ 'listed': v:true,
-	\ 'resume': v:true
+	\ 'resume': v:false
 \ })
 
 " Launch Defx.
@@ -23,7 +23,7 @@ augroup defxsettings
 	autocmd!
 
 	" Set common settings.
-	autocmd FileType defx setlocal statusline=defx
+	autocmd FileType defx setlocal statusline=defx signcolumn=yes
 
 	" Set mappings.
 	autocmd FileType defx call s:defxmappings()

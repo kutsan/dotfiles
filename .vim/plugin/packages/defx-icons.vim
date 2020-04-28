@@ -5,9 +5,9 @@
 scriptencoding UTF-8
 
 let g:defx_icons_enable_syntax_highlight = v:true
-let g:defx_icons_column_length = 2
+let g:defx_icons_column_length = 1
 let g:defx_icons_directory_icon = ''
-let g:defx_icons_mark_icon = ' ﯂'
+let g:defx_icons_mark_icon = '﯂'
 let g:defx_icons_parent_icon = ''
 let g:defx_icons_root_opened_tree_icon = ''
 let g:defx_icons_default_icon = ''
