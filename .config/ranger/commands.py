@@ -13,9 +13,15 @@ class select(Command):
         import subprocess
 
         command=" \
-            find -L . \( -fstype 'dev' -or -fstype 'proc' \) -prune -or -print 2>/dev/null \
-            | sed 1d \
-            | cut --bytes=3- \
+            rg . \
+                --files \
+                --no-messages \
+                --no-ignore \
+                --hidden \
+                --follow \
+                --smart-case \
+                --glob '!\.git' \
+                --glob '!node_modules' \
             | fzf \
                 --exact \
                 --no-multi \
@@ -64,7 +70,8 @@ class locate(Command):
                 --hidden \
                 --follow \
                 --smart-case \
-                --glob '!{.git,node_modules}/*' \
+                --glob '!\.git' \
+                --glob '!node_modules' \
             | fzf \
                 --exact \
                 --no-multi \
