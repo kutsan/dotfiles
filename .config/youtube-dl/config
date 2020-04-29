@@ -1,8 +1,0 @@
-# Do not use the Last-modified header to set the file modification time.
---no-mtime
-
-# Save under ~/Downloads directory.
---output ~/Downloads/%(title)s.%(ext)s
-
-# Escape all kind of weird characters in file name.
---restrict-filenames
