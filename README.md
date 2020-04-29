@@ -30,12 +30,7 @@
 - [tmux](https://github.com/tmux/tmux) - Terminal multiplexer enables working with split panes, tabs and detachable sessions
 - [nodejs](https://nodejs.org) - JavaScript runtime environment for developing a diverse variety of applications
 	- [npm](https://www.npmjs.com) - Node Package Manager mainly for the JavaScript programming language
-		- [eslint](https://github.com/eslint/eslint) - AST-based JavaScript linter for identifying and reporting on patterns
-		- [prettier](https://github.com/prettier/prettier) - Opinionated code formatter
-		- [stylelint](https://github.com/stylelint/stylelint) - CSS linter
-		- [ngrok](https://github.com/bubenshchykov/ngrok) - Proxy-like tunneling service to expose localhost to the web
-		- [browser-sync](https://github.com/BrowserSync/browser-sync) - Improve web workflow with auto-reload, interaction sync and more
-		- [neovim-node-client](https://github.com/neovim/node-client) - Neovim Node support for plugins
+		- [neovim](https://github.com/neovim/node-client) - Neovim Node support for plugins
 		- [fx](https://github.com/antonmedv/fx) - TUI JSON viewer
 		- [bitwarden](https://github.com/bitwarden/cli) - Password manager
 - [python](https://www.python.org) - High-level programming language for general-purpose programming
@@ -44,7 +39,6 @@
 			- [exiftool](http://www.sno.phy.queensu.ca/~phil/exiftool) - Read, write and edit meta information in a wide variety of media files
 		- [vint](https://github.com/Kuniwak/vint) - Extensible, high performance Vimscript linter and analysis tool
 		- [stig](https://github.com/rndusr/stig) - TUI and CLI interface for transmission-daemon
-			- [maxminddb](https://github.com/maxmind/MaxMind-DB-Reader-python) - Python MaxMind DB reader extension
 		- [terminal-colors](https://github.com/eikenb/terminal-colors) - Test utility for color capabilities of terminal
 		- [grip](https://github.com/joeyespo/grip) - Preview Markdown files in local server
 		- [trackma](https://github.com/z411/trackma) - Multi-site anime, manga list manager
@@ -81,6 +75,8 @@
 - [ledger](https://github.com/ledger/ledger) - Double-entry accounting system with a command-line reporting interface
 - [gnuplot](https://github.com/gnuplot/gnuplot) - Command-line driven graphing utility
 - [oath-toolkit](https://www.nongnu.org/oath-toolkit) - Provides components for building one-time password authentication systems
+- [gptfdisk](https://www.rodsbooks.com/gdisk) - Interactive GUID partition table (GPT) manipulator
+- [imagemagick](https://imagemagick.org) - Software suite for displaying, converting, and editing raster image and vector image files
 
 ## License
 
