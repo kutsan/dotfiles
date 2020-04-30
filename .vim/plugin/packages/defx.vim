@@ -12,7 +12,7 @@ silent! call defx#custom#option('_', {
 	\ 'toggle': v:true,
 	\ 'buffer_name': 'explorer',
 	\ 'listed': v:true,
-	\ 'resume': v:false
+	\ 'resume': v:true
 \ })
 
 " Launch Defx.
