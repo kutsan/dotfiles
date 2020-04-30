@@ -105,8 +105,8 @@ nnoremap <silent> col :set list!<Enter>
 nnoremap <silent> cop :set paste!<Enter>
 
 " Add [count] blank lines above or below the cursor.
-nnoremap [<Space> :<C-u>put! =repeat(nr2char(10), v:count1) <Bar> ']+1<Enter>
-nnoremap ]<Space> :<C-u>put =repeat(nr2char(10), v:count1) <Bar> '[-1<Enter>
+nnoremap <silent> [<Space> :<C-u>put! =repeat(nr2char(10), v:count1) <Bar> ']+1<Enter>
+nnoremap <silent> ]<Space> :<C-u>put =repeat(nr2char(10), v:count1) <Bar> '[-1<Enter>
 
 " [q]uickfix list mappings.
 nnoremap <silent> =oq :copen<Enter>
