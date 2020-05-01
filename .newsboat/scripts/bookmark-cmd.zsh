@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 # Redirect all output to log file.
-exec &>> ~/.newsboat/logs/$(basename $0).log
+exec &>> ~/.newsboat/log/$(basename $0).log
 
 setopt ERR_EXIT PIPE_FAIL WARN_CREATE_GLOBAL WARN_NESTED_VAR
 
