@@ -18,7 +18,7 @@ let &keywordprg = '' " Disable definition search by default.
 set backspace=indent,eol,start " Allow backspacing over everything in insert mode.
 set belloff=all " Turn off the bell upon all events.
 set breakindent " Wrapped lines will be indented with same amount of space.
-set clipboard=unnamedplus " Sync unnamed register with system clipboard.
+set clipboard=  " Don't sync system clipboard with vim registers.
 set comments= " Clear default 'comments' value, let the filetype handle it.
 set confirm " Seek for confirmation for certain commands instead of giving errors.
 set display=lastline " As much as possible of the last line in a window will be displayed.
