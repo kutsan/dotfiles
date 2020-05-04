@@ -32,15 +32,9 @@ nnoremap d# ?\<<C-r>=expand('<cword>')<Enter>\>\C<Enter>``dgN
 nnoremap gp p=`]
 nnoremap gP P=`]
 
-" Correct spelling mistakes under the cursor.
-nnoremap z= 1z=
-
 " Scroll viewport faster.
 nnoremap <C-e> 2<C-e>
 nnoremap <C-y> 2<C-y>
-
-" Select last changed or yanked area.
-nnoremap <expr> gV '`[' . strpart(getregtype(), 0, 1) . '`]'
 
 " Reveal syntax group under cursor.
 nnoremap <F2> :echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')<Enter>
