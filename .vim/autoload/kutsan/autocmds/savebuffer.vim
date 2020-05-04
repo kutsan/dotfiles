@@ -5,7 +5,9 @@
 " autocmd FocusGained,BufEnter,CursorHold * silent! checktime
 ""
 function! kutsan#autocmds#savebuffer#() abort
-	if empty(&buftype) && !empty(bufname(''))
+	if empty(&buftype)
+		\ && !empty(bufname(''))
+		\ && &filetype !=# 'gitcommit'
 		let l:save = {
 			\ 'marks': {
 				\ "'[": getpos("'["),
