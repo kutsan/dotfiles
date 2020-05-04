@@ -1,7 +1,3 @@
-" Jump to the beginning and end of line.
-cnoremap <C-a> <Home>
-cnoremap <C-e> <End>
-
 " Jump previous and next commands from history.
 cnoremap <C-j> <Down>
 cnoremap <C-k> <Up>
