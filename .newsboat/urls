@@ -1,25 +1,16 @@
-# Blog
-	http://localhost:0001 "~# Blog"
-https://addyosmani.com/rss.xml "~Addy Osmani" blog
-https://davidwalsh.name/feed "~David Walsh" blog
-https://dmitripavlutin.com/rss "~Dmitri Pavlutin" blog
-https://feeds.feedburner.com/2ality "~Axel Rauschmayer" blog
-https://jakearchibald.com/posts.rss "~Jake Archibald" blog
-https://kentcdodds.com/blog/rss.xml "~Kent C. Dodds" blog
-https://overreacted.io/rss.xml "~Dan Abramov" blog
-	http://localhost:0002 "~ "
-
-# Newsletter
-	http://localhost:0003 "~# Newsletter"
-https://blog.risingstack.com/rss "~RisingStack" newsletter
-https://css-tricks.com/feed/ "~CSS-Tricks" newsletter
-https://javascriptweekly.com/rss "~JavaScript Weekly" newsletter
-https://ponyfoo.com/articles/feed "~Pony Foo" newsletter
-http://reactjs.org/feed.xml "~React" newsletter
-http://reactjsnewsletter.com/issues.rss "~React Newsletter" newsletter
-https://scotch.io/feed "~Scotch" newsletter
-	http://localhost:0004 "~ "
-
-# Podcasts
-	http://localhost:0005 "~# Podcasts"
-https://feed.syntax.fm/rss "~Syntax" podcasts
+https://addyosmani.com/rss.xml "~Addy Osmani"
+https://davidwalsh.name/feed "~David Walsh"
+https://dmitripavlutin.com/rss "~Dmitri Pavlutin"
+https://feeds.feedburner.com/2ality "~Axel Rauschmayer"
+https://jakearchibald.com/posts.rss "~Jake Archibald"
+https://kentcdodds.com/blog/rss.xml "~Kent C. Dodds"
+https://overreacted.io/rss.xml "~Dan Abramov"
+https://blog.risingstack.com/rss "~RisingStack"
+https://css-tricks.com/feed/ "~CSS-Tricks"
+https://javascriptweekly.com/rss "~JavaScript Weekly"
+https://ponyfoo.com/articles/feed "~Pony Foo"
+http://reactjs.org/feed.xml "~React"
+http://reactjsnewsletter.com/issues.rss "~React Newsletter"
+https://scotch.io/feed "~Scotch"
+https://feed.syntax.fm/rss "~Syntax"
+https://v8.dev/blog.atom "~V8"
