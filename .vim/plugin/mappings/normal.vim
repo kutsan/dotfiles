@@ -60,6 +60,14 @@ nnoremap <silent> ypn :let @+ = expand('%:t')<Enter>
 tnoremap <silent> <C-z> <C-\><C-n>:call kutsan#mappings#normal#terminal#()<Enter>
 nnoremap <silent> <C-z> :call kutsan#mappings#normal#terminal#()<Enter>
 
+" Store relative line number jumps in the jumplist if they exceed a threshold.
+nnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
+nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
+
+" Add [count] blank lines above or below the cursor.
+nnoremap <silent> [<Space> :<C-u>put! =repeat(nr2char(10), v:count1) <Bar> ']+1<Enter>
+nnoremap <silent> ]<Space> :<C-u>put =repeat(nr2char(10), v:count1) <Bar> '[-1<Enter>
+
 " Open URL under cursor in browser or open path in GUI explorer.
 nnoremap <silent> gb :execute printf('silent !xdg-open "%s" 2>/dev/null', expand('<cfile>'))<Enter>
 
