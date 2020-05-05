@@ -44,7 +44,7 @@ function! kutsan#statusline#git() abort
 		return ''
 	endif
 
-	return printf('%s ', fugitive#head(7))
+	return printf('%s ', fugitive#head(7))
 endfunction
 
 function! kutsan#statusline#markdownpreview() abort
