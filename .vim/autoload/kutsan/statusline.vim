@@ -5,11 +5,12 @@ function! kutsan#statusline#linter() abort
 		return ''
 	endif
 
-	return printf(
-		\ ' %d  %d',
-		\ get(get(b:, 'coc_diagnostic_info', {}), 'error', 0),
-		\ get(get(b:, 'coc_diagnostic_info', {}), 'warning', 0)
-	\ )
+	if get(get(b:, 'coc_diagnostic_info', {}), 'error', v:null)
+		\ || get(get(b:, 'coc_diagnostic_info', {}), 'warning', v:null)
+		return '•'
+	else
+		return ''
+	endif
 endfunction
 
 function! kutsan#statusline#fileprefix() abort
@@ -20,14 +21,6 @@ function! kutsan#statusline#fileprefix() abort
 	else
 		return substitute(l:basename . '/', '\C^' . $HOME, '~', '')
 	endif
-endfunction
-
-function! kutsan#statusline#filetypesymbol() abort
-	if !exists('*WebDevIconsGetFileTypeSymbol')
-		return ''
-	endif
-
-	return WebDevIconsGetFileTypeSymbol()
 endfunction
 
 function! kutsan#statusline#hlsearch() abort
@@ -43,17 +36,15 @@ function! kutsan#statusline#spell() abort
 		return ''
 	endif
 
-	return '' . ' '
+	return '' . ' '
 endfunction
 
 function! kutsan#statusline#git() abort
-	let s:head = ''
-
-	if exists('g:loaded_fugitive')
-		let s:head = fugitive#head(7)
+	if !exists('g:loaded_fugitive')
+		return ''
 	endif
 
-	return printf('%s ', s:head)
+	return printf('%s ', fugitive#head(7))
 endfunction
 
 function! kutsan#statusline#markdownpreview() abort
