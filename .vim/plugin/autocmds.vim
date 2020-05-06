@@ -23,7 +23,7 @@ augroup end
 " Save the current buffer after any changes.
 augroup savebuffer
 	autocmd!
-	autocmd InsertLeave,TextChanged * nested call kutsan#autocmds#savebuffer#()
+	autocmd InsertLeave,TextChanged * call kutsan#autocmds#savebuffer#()
 	autocmd FocusGained,BufEnter,CursorHold * silent! checktime
 augroup end
 
