@@ -13,4 +13,4 @@ cnoremap ;s substitute/\v//gc<Left><Left><Left><Left>
 cnoremap ;g global/\v/<Left>
 
 " Construct search and replace with populated quickfix list.
-cnoremap ;r cfdo %substitute/<C-r>=@/<Enter>//gce<Left><Left><Left><Left>
+cnoremap ;r cdo substitute/<C-r>=@/<Enter>//gce<Left><Left><Left><Left>
