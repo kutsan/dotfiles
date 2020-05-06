@@ -39,14 +39,6 @@ function! kutsan#statusline#spell() abort
 	return '' . ' '
 endfunction
 
-function! kutsan#statusline#git() abort
-	if !exists('g:loaded_fugitive')
-		return ''
-	endif
-
-	return printf('%s ', fugitive#head(7))
-endfunction
-
 function! kutsan#statusline#markdownpreview() abort
 	if !exists('b:markdownpreview')
 		return ''

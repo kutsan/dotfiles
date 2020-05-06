@@ -28,7 +28,3 @@ set statusline+=%{repeat('\ ',2)}
 " Line numbers and column numbers in <Line>:<Column> format.
 set statusline+=%02l/%02L:%02c
 set statusline+=%{repeat('\ ',2)}
-
-" Git HEAD status.
-set statusline+=%{kutsan#statusline#git()}
-set statusline+=%{repeat('\ ',2)}
