@@ -20,10 +20,11 @@ augroup togglenumbers
 	autocmd InsertLeave,BufEnter,WinEnter,FocusGained * call kutsan#autocmds#togglenumbers#('setlocal relativenumber')
 augroup end
 
-" Save the current buffer after certain event triggers.
+" Save the current buffer after any changes.
 augroup savebuffer
 	autocmd!
-	autocmd FocusLost,BufWinLeave * nested call kutsan#autocmds#savebuffer#()
+	autocmd InsertLeave,TextChanged * nested call kutsan#autocmds#savebuffer#()
+	autocmd FocusGained,BufEnter,CursorHold * silent! checktime
 augroup end
 
 " Set current working directory project root.
