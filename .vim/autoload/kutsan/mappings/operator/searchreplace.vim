@@ -6,7 +6,7 @@
 "
 " @param {string} [type] Type of motion.
 ""
-function kutsan#mappings#operator#searchreplace#(type) abort
+function! kutsan#mappings#operator#searchreplace#(type) abort
 	" The operator doesn't support line-wise and block-wise motions.
 	if index(['line', 'block', 'V', "\<C-v>"], a:type) !=# -1
 		return v:false
