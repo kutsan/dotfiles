@@ -1,11 +1,11 @@
 " [a]n [e]ntire buffer motions.
-onoremap <silent> ae :<C-u>call kutsan#mappings#motion#entire#()<Enter>
-xnoremap <silent> ae :<C-u>call kutsan#mappings#motion#entire#()<Enter>
+onoremap <silent> ae :<C-u>call kutsan#mappings#motion#entire#()<CR>
+xnoremap <silent> ae :<C-u>call kutsan#mappings#motion#entire#()<CR>
 
 " [i]n and [a]round [i]ndent motions.
-onoremap <silent> ii :<C-u>call kutsan#mappings#motion#indent#({ 'mode': 'i' })<Enter>
-xnoremap <silent> ii :<C-u>call kutsan#mappings#motion#indent#({ 'mode': 'i' })<Enter>
-onoremap <silent> ai :<C-u>call kutsan#mappings#motion#indent#({ 'mode': 'a' })<Enter>
-xnoremap <silent> ai :<C-u>call kutsan#mappings#motion#indent#({ 'mode': 'a' })<Enter>
-onoremap <silent> io :<C-u>call kutsan#mappings#motion#indent#({ 'mode': 'o' })<Enter>
-xnoremap <silent> io :<C-u>call kutsan#mappings#motion#indent#({ 'mode': 'o' })<Enter>
+onoremap <silent> ii :<C-u>call kutsan#mappings#motion#indent#({ 'mode': 'i' })<CR>
+xnoremap <silent> ii :<C-u>call kutsan#mappings#motion#indent#({ 'mode': 'i' })<CR>
+onoremap <silent> ai :<C-u>call kutsan#mappings#motion#indent#({ 'mode': 'a' })<CR>
+xnoremap <silent> ai :<C-u>call kutsan#mappings#motion#indent#({ 'mode': 'a' })<CR>
+onoremap <silent> io :<C-u>call kutsan#mappings#motion#indent#({ 'mode': 'o' })<CR>
+xnoremap <silent> io :<C-u>call kutsan#mappings#motion#indent#({ 'mode': 'o' })<CR>

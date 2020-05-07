@@ -1,10 +1,10 @@
 ""
 " JavaScript wrapper function for `gf`, `<C-w>f`, `<C-w><C-f>` and `<C-w>gf` keys.
 "
-" nnoremap <buffer><silent> gf :call kutsan#ftplugin#javascript#gotofile(expand('<cfile>'))<Enter>
-" nnoremap <buffer><silent> <C-w>f :call kutsan#ftplugin#javascript#gotofile(expand('<cfile>'), 'split')<Enter>
-" nnoremap <buffer><silent> <C-w><C-f> :call kutsan#ftplugin#javascript#gotofile(expand('<cfile>'), 'split')<Enter>
-" nnoremap <buffer><silent> <C-w>gf :call kutsan#ftplugin#javascript#gotofile(expand('<cfile>'), 'tab split')<Enter>
+" nnoremap <buffer><silent> gf :call kutsan#ftplugin#javascript#gotofile(expand('<cfile>'))<CR>
+" nnoremap <buffer><silent> <C-w>f :call kutsan#ftplugin#javascript#gotofile(expand('<cfile>'), 'split')<CR>
+" nnoremap <buffer><silent> <C-w><C-f> :call kutsan#ftplugin#javascript#gotofile(expand('<cfile>'), 'split')<CR>
+" nnoremap <buffer><silent> <C-w>gf :call kutsan#ftplugin#javascript#gotofile(expand('<cfile>'), 'tab split')<CR>
 "
 " @param {string} fname Path under the cursor for `gf`.
 " @param {dictionary} [options] Configuration dictionary.

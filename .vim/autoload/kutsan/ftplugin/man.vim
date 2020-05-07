@@ -2,7 +2,7 @@
 " Show table of contents window.
 " Modified version of man#show_toc() and ftplugin/qf.vim's s:setup_toc().
 "
-" nnoremap <buffer><silent> gO :call kutsan#ftplugin#man#showtoc()<Enter>
+" nnoremap <buffer><silent> gO :call kutsan#ftplugin#man#showtoc()<CR>
 ""
 function! kutsan#ftplugin#man#showtoc() abort
 	if !has('nvim')
@@ -41,8 +41,8 @@ function! kutsan#ftplugin#man#showtoc() abort
 	setlocal nonumber norelativenumber
 
 	" Define mappings.
-	nnoremap <buffer><silent> l <Enter>zt
-	nnoremap <buffer><silent> <Enter> <Enter>zt
+	nnoremap <buffer><silent> l <CR>zt
+	nnoremap <buffer><silent> <CR> <CR>zt
 
 	" Abort if there is nothing to show.
 	let l:list = getloclist(0)
@@ -66,7 +66,7 @@ endfunction
 ""
 " Open man page under the cursor.
 "
-" nnoremap <buffer><silent> <C-]> :call kutsan#ftplugin#man#jumptag()<Enter>
+" nnoremap <buffer><silent> <C-]> :call kutsan#ftplugin#man#jumptag()<CR>
 ""
 function! kutsan#ftplugin#man#jumptag() abort
 	if !has('nvim')
@@ -79,7 +79,7 @@ endfunction
 ""
 " Jump to the previous entry in tag stack.
 "
-" nnoremap <buffer><silent> [g :call kutsan#ftplugin#man#poptag()<Enter>
+" nnoremap <buffer><silent> [g :call kutsan#ftplugin#man#poptag()<CR>
 ""
 function! kutsan#ftplugin#man#poptag() abort
 	if !has('nvim')

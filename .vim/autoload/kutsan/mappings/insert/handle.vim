@@ -32,9 +32,9 @@ endfunction
 ""
 " Accept current completion when popup menu is visible.
 "
-" inoremap <expr> <Enter> kutsan#mappings#insert#handle#enter()
+" inoremap <expr> <CR> kutsan#mappings#insert#handle#cr()
 ""
-function! kutsan#mappings#insert#handle#enter() abort
+function! kutsan#mappings#insert#handle#cr() abort
 	" If it's selected.
 	if complete_info()["selected"] != "-1"
 		return "\<C-y>"
@@ -42,7 +42,7 @@ function! kutsan#mappings#insert#handle#enter() abort
 		if exists('g:loaded_pear_tree')
 			return pear_tree#insert_mode#PrepareExpansion()
 		else
-			return "\<C-g>u\<Enter>"
+			return "\<C-g>u\<CR>"
 		endif
 	endif
 endfunction

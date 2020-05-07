@@ -35,17 +35,17 @@ let g:fzf_history_dir = $HOME . '/.vim/cache/share/fzf/'
 let $FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS . " --margin='1,4' --info='hidden' --bold --color='fg+:15,bg+:-1,info:12,prompt:4,pointer:12'"
 
 " Define key mappings.
-nnoremap <silent> <C-p> :FGFiles<Enter>
-nnoremap <silent> gis :FGFiles?<Enter>
-nnoremap <silent> <Leader><C-p> :FFiles<Enter>
-nnoremap <silent> <M-x> :FCommands<Enter>
-nnoremap <silent> <C-b> :FBuffers<Enter>
-nnoremap <silent> <C-f> :FBTags<Enter>
-nnoremap <silent> <Leader><C-f> :FTags<Enter>
-nnoremap <silent> <Leader>h :FHelptags<Enter>
-nnoremap <silent> <Leader>: :FHistory:<Enter>
-nnoremap <silent> <Leader>/ :FHistory/<Enter>
-nnoremap <silent> <Leader>` :FMarks<Enter>
+nnoremap <silent> <C-p> :FGFiles<CR>
+nnoremap <silent> gis :FGFiles?<CR>
+nnoremap <silent> <Leader><C-p> :FFiles<CR>
+nnoremap <silent> <M-x> :FCommands<CR>
+nnoremap <silent> <C-b> :FBuffers<CR>
+nnoremap <silent> <C-f> :FBTags<CR>
+nnoremap <silent> <Leader><C-f> :FTags<CR>
+nnoremap <silent> <Leader>h :FHelptags<CR>
+nnoremap <silent> <Leader>: :FHistory:<CR>
+nnoremap <silent> <Leader>/ :FHistory/<CR>
+nnoremap <silent> <Leader>` :FMarks<CR>
 nnoremap <silent> g<C-p> :call fzf#run(
 	\ fzf#wrap(
 		\ 'projects',
@@ -57,7 +57,7 @@ nnoremap <silent> g<C-p> :call fzf#run(
 		\ },
 		\ 0
 	\ )
-\ )<Enter>
+\ )<CR>
 
 function! g:FzfFloatingWindow() abort
 	call nvim_open_win(

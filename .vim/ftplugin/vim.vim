@@ -2,4 +2,4 @@
 setlocal keywordprg=:help
 
 " Source current file.
-nnoremap <buffer><silent> <LocalLeader>r :source %<Enter>
+nnoremap <buffer><silent> <LocalLeader>r :source %<CR>

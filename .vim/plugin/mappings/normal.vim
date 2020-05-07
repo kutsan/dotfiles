@@ -1,5 +1,5 @@
 " Quickly close current window.
-nnoremap <silent> <Leader>q :quit<Enter>
+nnoremap <silent> <Leader>q :quit<CR>
 
 " Pane nagivation.
 nnoremap <C-j> <C-w>j
@@ -18,12 +18,12 @@ nnoremap Q @q
 nnoremap x "_x
 
 " Refactor word under cursor.
-nnoremap c* /\<<C-R>=expand('<cword>')<Enter>\>\C<Enter>``cgn
-nnoremap c# ?\<<C-R>=expand('<cword>')<Enter>\>\C<Enter>``cgN
+nnoremap c* /\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgn
+nnoremap c# ?\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgN
 
 " Delete word under cursor.
-nnoremap d* /\<<C-r>=expand('<cword>')<Enter>\>\C<Enter>``dgn
-nnoremap d# ?\<<C-r>=expand('<cword>')<Enter>\>\C<Enter>``dgN
+nnoremap d* /\<<C-r>=expand('<cword>')<CR>\>\C<CR>``dgn
+nnoremap d# ?\<<C-r>=expand('<cword>')<CR>\>\C<CR>``dgN
 
 " Correct bad indent while pasting.
 nnoremap gp p=`]
@@ -34,7 +34,7 @@ nnoremap <C-e> 2<C-e>
 nnoremap <C-y> 2<C-y>
 
 " Reveal syntax group under cursor.
-nnoremap <F2> :echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')<Enter>
+nnoremap <F2> :echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')<CR>
 
 " Construct grep search.
 nnoremap gs :Search ''<Left>
@@ -47,45 +47,45 @@ nnoremap <S-Right> 2<C-w>>
 nnoremap <S-Left> 2<C-w><
 
 " [y]ank [p]ath [f]ull.
-nnoremap <silent> ypf :let @+ = expand('%:p')<Enter>
+nnoremap <silent> ypf :let @+ = expand('%:p')<CR>
 " [y]ank [p]ath [r]elative.
-nnoremap <silent> ypr :let @+ = expand('%')<Enter>
+nnoremap <silent> ypr :let @+ = expand('%')<CR>
 " [y]ank [p]ath [n]ame.
-nnoremap <silent> ypn :let @+ = expand('%:t')<Enter>
+nnoremap <silent> ypn :let @+ = expand('%:t')<CR>
 
 " Toggle terminal buffer.
-tnoremap <silent> <C-z> <C-\><C-n>:call kutsan#mappings#normal#terminal#()<Enter>
-nnoremap <silent> <C-z> :call kutsan#mappings#normal#terminal#()<Enter>
+tnoremap <silent> <C-z> <C-\><C-n>:call kutsan#mappings#normal#terminal#()<CR>
+nnoremap <silent> <C-z> :call kutsan#mappings#normal#terminal#()<CR>
 
 " Store relative line number jumps in the jumplist if they exceed a threshold.
 nnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
 nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
 
 " Add [count] blank lines above or below the cursor.
-nnoremap <silent> [<Space> :<C-u>put! =repeat(nr2char(10), v:count1) <Bar> ']+1<Enter>
-nnoremap <silent> ]<Space> :<C-u>put =repeat(nr2char(10), v:count1) <Bar> '[-1<Enter>
+nnoremap <silent> [<Space> :<C-u>put! =repeat(nr2char(10), v:count1) <Bar> ']+1<CR>
+nnoremap <silent> ]<Space> :<C-u>put =repeat(nr2char(10), v:count1) <Bar> '[-1<CR>
 
 " Open URL under cursor in browser or open path in GUI explorer.
-nnoremap <silent> gb :execute printf('silent !xdg-open "%s" 2>/dev/null', expand('<cfile>'))<Enter>
+nnoremap <silent> gb :execute printf('silent !xdg-open "%s" 2>/dev/null', expand('<cfile>'))<CR>
 
 " Toggle common options.
-nnoremap <silent> cos :set spell!<Enter>
-nnoremap <silent> cow :set wrap!<Enter>
-nnoremap <silent> coh :set hlsearch!<Enter>
+nnoremap <silent> cos :set spell!<CR>
+nnoremap <silent> cow :set wrap!<CR>
+nnoremap <silent> coh :set hlsearch!<CR>
 
 " Jump to a tag directly when there is only one match.
 nnoremap <C-]> g<C-]>zt
 
 " Go previous and next buffers.
-nnoremap <silent> [b :bprevious<Enter>
-nnoremap <silent> ]b :bnext<Enter>
+nnoremap <silent> [b :bprevious<CR>
+nnoremap <silent> ]b :bnext<CR>
 
 " Go previous and next location list entry.
-nnoremap <silent> [l :labove<Enter>
-nnoremap <silent> ]l :lbelow<Enter>
+nnoremap <silent> [l :labove<CR>
+nnoremap <silent> ]l :lbelow<CR>
 
 " QuickFix navigation mappings.
-nnoremap <silent> <Up> :cprevious<Enter>
-nnoremap <silent> <Down> :cnext<Enter>
-nnoremap <silent> <Left> :cpfile<Enter>
-nnoremap <silent> <Right> :cnfile<Enter>
+nnoremap <silent> <Up> :cprevious<CR>
+nnoremap <silent> <Down> :cnext<CR>
+nnoremap <silent> <Left> :cpfile<CR>
+nnoremap <silent> <Right> :cnfile<CR>

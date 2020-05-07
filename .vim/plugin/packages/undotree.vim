@@ -44,4 +44,4 @@ let g:undotree_HighlightSyntaxChange = 'DiffChange'
 let g:undotree_HighlightSyntaxDel = 'DiffDelete'
 
 " Define mapping.
-nnoremap <silent> <Leader>u :call undotree#UndotreeToggle()<Enter>
+nnoremap <silent> <Leader>u :call undotree#UndotreeToggle()<CR>

@@ -16,8 +16,8 @@ silent! call defx#custom#option('_', {
 \ })
 
 " Launch Defx.
-nnoremap <silent> <Leader>f :Defx<Enter>
-nnoremap <silent> <Leader>F :Defx -no-toggle -search=`expand('%:p')` `getcwd()`<Enter>
+nnoremap <silent> <Leader>f :Defx<CR>
+nnoremap <silent> <Leader>F :Defx -no-toggle -search=`expand('%:p')` `getcwd()`<CR>
 
 augroup defxsettings
 	autocmd!

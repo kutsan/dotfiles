@@ -1,12 +1,12 @@
 ""
 " Allow indented text blocks to be treated as text objects.
 "
-" onoremap <silent> ii :<C-u>call kutsan#mappings#motion#indent#({ 'mode': 'i' })<Enter>
-" xnoremap <silent> ii :<C-u>call kutsan#mappings#motion#indent#({ 'mode': 'i' })<Enter>
-" onoremap <silent> ai :<C-u>call kutsan#mappings#motion#indent#({ 'mode': 'a' })<Enter>
-" xnoremap <silent> ai :<C-u>call kutsan#mappings#motion#indent#({ 'mode': 'a' })<Enter>
-" onoremap <silent> io :<C-u>call kutsan#mappings#motion#indent#({ 'mode': 'o' })<Enter>
-" xnoremap <silent> io :<C-u>call kutsan#mappings#motion#indent#({ 'mode': 'o' })<Enter>
+" onoremap <silent> ii :<C-u>call kutsan#mappings#motion#indent#({ 'mode': 'i' })<CR>
+" xnoremap <silent> ii :<C-u>call kutsan#mappings#motion#indent#({ 'mode': 'i' })<CR>
+" onoremap <silent> ai :<C-u>call kutsan#mappings#motion#indent#({ 'mode': 'a' })<CR>
+" xnoremap <silent> ai :<C-u>call kutsan#mappings#motion#indent#({ 'mode': 'a' })<CR>
+" onoremap <silent> io :<C-u>call kutsan#mappings#motion#indent#({ 'mode': 'o' })<CR>
+" xnoremap <silent> io :<C-u>call kutsan#mappings#motion#indent#({ 'mode': 'o' })<CR>
 "
 " @param {dictionary} options Configuration dictionary.
 " @param {string} options.mode Motion to select text, whether 'a', 'i' or 'o'.

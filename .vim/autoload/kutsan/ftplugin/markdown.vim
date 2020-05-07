@@ -3,7 +3,7 @@
 "
 " See kutsan#statusline#markdownpreview() function for its indicator.
 "
-" nnoremap <buffer><silent> <LocalLeader>r :call kutsan#ftplugin#markdown#preview()<Enter>
+" nnoremap <buffer><silent> <LocalLeader>r :call kutsan#ftplugin#markdown#preview()<CR>
 ""
 function! kutsan#ftplugin#markdown#preview() abort
 	if !has('nvim')

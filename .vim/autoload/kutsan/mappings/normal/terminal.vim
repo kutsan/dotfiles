@@ -1,8 +1,8 @@
 ""
 " Toggle terminal buffer or create new one if there is none.
 "
-" nnoremap <silent> <C-z> :call kutsan#mappings#normal#terminal#()<Enter>
-" tnoremap <silent> <C-z> <C-\><C-n>:call kutsan#mappings#normal#terminal#()<Enter>
+" nnoremap <silent> <C-z> :call kutsan#mappings#normal#terminal#()<CR>
+" tnoremap <silent> <C-z> <C-\><C-n>:call kutsan#mappings#normal#terminal#()<CR>
 ""
 function! kutsan#mappings#normal#terminal#() abort
 	if !has('nvim')

@@ -1,7 +1,7 @@
 ""
 " `gq` wrapper that formats without moving cursor.
 "
-" nnoremap <silent> gq :let w:gqview = winsaveview()<Enter>:set opfunc=kutsan#mappings#operator#format#<Enter>g@
+" nnoremap <silent> gq :let w:gqview = winsaveview()<CR>:set opfunc=kutsan#mappings#operator#format#<CR>g@
 ""
 function! kutsan#mappings#operator#format#(type) abort
 	normal! '[v']gq

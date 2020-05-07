@@ -39,7 +39,7 @@ function! kutsan#commands#search#(bang, query) abort
 
 		" Enable highlighting and save its previous value.
 		let b:savehlsearch = &hlsearch
-		call feedkeys(":set hlsearch \<Bar> echo\<Enter>", 'n')
+		call feedkeys(":set hlsearch \<Bar> echo\<CR>", 'n')
 
 		" Revert highlighting to its previous value after exiting quickfix.
 		autocmd BufUnload <buffer>
