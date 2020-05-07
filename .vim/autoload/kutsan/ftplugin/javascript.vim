@@ -79,14 +79,14 @@ endfunction
 " @param {string} path Resolved path after s:resolveform() function.
 " @return {string} Real location of given path.
 ""
-function! s:resolvepath(path)
+function! s:resolvepath(path) abort
 	""
 	" Try to find given file path with extensions in 'suffixesadd' option.
 	"
 	" @param {string} path File path without extension.
 	" @return {string} Readable file path with extension or empty string.
 	""
-	function! s:resolvewithsuffixesadd(path)
+	function! s:resolvewithsuffixesadd(path) abort
 		for l:suffix in split(&l:suffixesadd, ',')
 			let l:path = a:path . l:suffix
 			if filereadable(l:path)
@@ -136,7 +136,7 @@ endfunction
 " @param {string} from Relative buffer path to current working directory.
 " @return {string} Path in various forms based on 'fname'.
 ""
-function! s:resolveform(fname, from)
+function! s:resolveform(fname, from) abort
 	let l:fromdirectory = isdirectory(a:from) ? a:from : fnamemodify(a:from, ':h')
 
 	" Absolute path, e.g. '/usr/local/lib/node_modules/example'.

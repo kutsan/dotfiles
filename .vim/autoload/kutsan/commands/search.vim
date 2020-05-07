@@ -42,11 +42,14 @@ function! kutsan#commands#search#(bang, query) abort
 		call feedkeys(":set hlsearch \<Bar> echo\<CR>", 'n')
 
 		" Revert highlighting to its previous value after exiting quickfix.
-		autocmd BufUnload <buffer>
-			\ if exists('b:savehlsearch') |
-				\ silent let &hlsearch = b:savehlsearch |
-				\ unlet b:savehlsearch |
-			\ endif
+		augroup search
+			autocmd!
+			autocmd BufUnload <buffer>
+				\ if exists('b:savehlsearch') |
+					\ silent let &hlsearch = b:savehlsearch |
+					\ unlet b:savehlsearch |
+				\ endif
+		augroup end
 
 		" Remove focus from quickfix buffer.
 		wincmd p

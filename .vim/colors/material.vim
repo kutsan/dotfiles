@@ -17,7 +17,7 @@ let g:material_theme_style = get(g:, 'material_theme_style', 'default')
 let g:material_terminal_italics = get(g:, 'material_terminal_italics', 0)
 
 " For backwards compatibility
-if (g:material_theme_style == 'dark')
+if (g:material_theme_style ==# 'dark')
 	let g:material_theme_style = 'darker'
 endif
 
@@ -26,7 +26,7 @@ endif
 function! s:SetHighlight(group, fg, bg, attr)
 	let l:attr = a:attr
 
-	if !g:material_terminal_italics && l:attr == 'italic'
+	if !g:material_terminal_italics && l:attr ==# 'italic'
 		let l:attr = ''
 	endif
 
@@ -75,7 +75,7 @@ let s:pink = '#f07178'
 let s:violet = '#bb80b3'
 
 " Theme-specific color overrides
-if g:material_theme_style == 'palenight'
+if g:material_theme_style ==# 'palenight'
 	let s:bg = '#292d3e'
 	let s:fg = '#a6accd'
 	let s:invisibles = '#4e5579'
@@ -84,7 +84,7 @@ if g:material_theme_style == 'palenight'
 	let s:guides = '#4e5579'
 	let s:line_numbers = '#3a3f58'
 	let s:line_highlight = '#1c1f2b'
-elseif g:material_theme_style == 'darker'
+elseif g:material_theme_style ==# 'darker'
 	let s:bg = '#212121'
 	let s:fg = '#eeffff'
 	let s:invisibles = '#65737e'
@@ -93,7 +93,7 @@ elseif g:material_theme_style == 'darker'
 	let s:guides = '#424242'
 	let s:line_numbers = '#424242'
 	let s:line_highlight = '#171717'
-elseif g:material_theme_style == 'ocean'
+elseif g:material_theme_style ==# 'ocean'
 	let s:bg = '#0f111a'
 	let s:fg = '#8f93a2'
 	let s:invisibles = '#80869e'
@@ -102,7 +102,7 @@ elseif g:material_theme_style == 'ocean'
 	let s:guides = '#3b3f51'
 	let s:line_numbers = '#3b3f51'
 	let s:line_highlight = '#0a0c12'
-elseif g:material_theme_style == 'lighter'
+elseif g:material_theme_style ==# 'lighter'
 	set background=light
 	let s:bg = '#fafafa'
 	let s:fg = '#90a4ae'

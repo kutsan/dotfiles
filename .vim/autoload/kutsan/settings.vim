@@ -17,7 +17,7 @@ endfunction
 "
 " set tabline=%!kutsan#settings#tabline()
 ""
-function kutsan#settings#tabline() abort
+function! kutsan#settings#tabline() abort
 	let l:line = ''
 	let l:current = tabpagenr()
 
