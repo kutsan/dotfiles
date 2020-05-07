@@ -36,10 +36,12 @@ let $FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS . " --margin='1,4' --info='hidden' --bol
 
 " Define key mappings.
 nnoremap <silent> <C-p> :FGFiles<Enter>
+nnoremap <silent> gis :FGFiles?<Enter>
 nnoremap <silent> <Leader><C-p> :FFiles<Enter>
 nnoremap <silent> <M-x> :FCommands<Enter>
-nnoremap <silent> <M-b> :FBuffers<Enter>
-nnoremap <silent> <C-f> :FTags<Enter>
+nnoremap <silent> <C-b> :FBuffers<Enter>
+nnoremap <silent> <C-f> :FBTags<Enter>
+nnoremap <silent> <Leader><C-f> :FTags<Enter>
 nnoremap <silent> <Leader>h :FHelptags<Enter>
 nnoremap <silent> <Leader>: :FHistory:<Enter>
 nnoremap <silent> <Leader>/ :FHistory/<Enter>
