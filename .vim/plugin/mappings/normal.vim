@@ -14,9 +14,6 @@ nnoremap ? ?\v
 " Override Ex mode with run @q.
 nnoremap Q @q
 
-" Go back to the last buffer shortcut.
-nnoremap <C-b> <C-^>
-
 " Always send contents of a `x` command to the black hole register.
 nnoremap x "_x
 
