@@ -23,4 +23,4 @@ jobs:
         run: pip install vim-vint
 
       - name: Run vint linter
-        run: vint .vim/
+        run: vint --stat .vim/
