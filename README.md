@@ -1,5 +1,7 @@
 # kutsan's dotfiles
 
+![vint](https://github.com/kutsan/dotfiles/workflows/vint/badge.svg?branch=master)
+
 ![screenshot](./.github/screenshot.png?raw=true)
 
 > running **neovim** inside **tmux** that is inside **kitty** terminal emulator with **monaco** font on
