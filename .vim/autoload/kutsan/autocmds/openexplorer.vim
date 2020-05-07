@@ -9,6 +9,8 @@ function! kutsan#autocmds#openexplorer#() abort
 	if isdirectory(l:directory)
 		execute printf('cd %s', fnameescape(l:directory))
 
-		Defx
+		if exists('g:loaded_defx')
+			Defx
+		endif
 	endif
 endfunction
