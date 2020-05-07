@@ -1,6 +1,6 @@
 # kutsan's dotfiles
 
-![vint](https://github.com/kutsan/dotfiles/workflows/vint/badge.svg?branch=master)
+[![vint](https://github.com/kutsan/dotfiles/workflows/vint/badge.svg?branch=master)](https://github.com/kutsan/dotfiles/actions?query=workflow%3Avint)
 
 ![screenshot](./.github/screenshot.png?raw=true)
 
