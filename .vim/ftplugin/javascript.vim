@@ -1,13 +1,13 @@
 " List of file extensions which are used with `gf` like commands.
 setlocal suffixesadd=.js,.jsx
 
+" Set include pattern for only ECMAScript modules.
+let &l:include = '\<from\>\s["'']\zs[^"'']\+\ze["'']'
+
 " Define 'formatprg'.
 if !empty(glob('node_modules/prettier/bin-prettier.js'))
 	let &l:formatprg = 'node_modules/prettier/bin-prettier.js --parser "babel" 2>/dev/null'
 endif
-
-" Set include pattern for only ECMAScript modules.
-let &l:include = '\<from\>\s["'']\zs[^"'']\+\ze["'']'
 
 " Always use wrapper 'includeexpr', not just as fallback.
 nnoremap <buffer><silent> gf :call kutsan#ftplugin#javascript#gotofile(expand('<cfile>'))<Enter>
