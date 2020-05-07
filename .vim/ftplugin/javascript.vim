@@ -22,8 +22,8 @@ nnoremap <buffer><silent> <LocalLeader>r :execute 'split <Bar> terminal node' sh
 nmap <buffer><silent> <LocalLeader>f gqae
 
 " Insert `console.log()`.
-func s:eatchar(pat)
+function! s:eatchar(pat) abort
 	let c = nr2char(getchar(0))
 	return (c =~ a:pat) ? '' : c
-endfunc
+endfunction
 inoreabbrev <silent> log console.log()<Left><C-r>=<SID>eatchar('\s')<Enter>
