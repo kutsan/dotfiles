@@ -10,12 +10,9 @@ let g:coc_global_extensions = [
 	\ 'coc-html',
 	\ 'coc-json',
 	\ 'coc-tag',
-	\ 'coc-snippets',
 	\ 'coc-stylelintplus',
 	\ 'coc-tsserver',
-	\ 'coc-eslint',
-	\ 'coc-prettier',
-	\ 'coc-emmet'
+	\ 'coc-eslint'
 \ ]
 
 " User configuration.
@@ -32,26 +29,8 @@ let g:coc_user_config = {
 		\ 'infoSign': '•',
 		\ 'hintSign': '•'
 	\ },
-	\ 'snippets': {
-		\ 'priority': 200,
-		\ 'ultisnips': {
-			\ 'directories': ['snippet']
-		\ },
-		\ 'extends': {
-			\ "javascriptreact": ["javascript"]
-		\ },
-	\ },
-	\ 'emmet': {
-		\ 'excludeLanguages': ['markdown', 'css']
-	\ },
 	\ 'css': {
 		\ 'validate': v:false
-	\ },
-	\ 'stylelintplus': {
-		\ 'autoFixOnFormat': v:true
-	\ },
-	\ 'prettier': {
-		\ 'disableLanguages': ['css']
 	\ },
 	\ 'javascript': {
 		\ 'validate': {
@@ -64,7 +43,6 @@ let g:coc_user_config = {
 nmap <Leader>c* <Plug>(coc-rename)
 nmap <Leader>cr <Plug>(coc-refactor)
 nmap <silent> <Leader>gd <Plug>(coc-definition)
-nmap <silent> <LocalLeader>f <Plug>(coc-format)
 
 augroup cocsettings
 	autocmd!
