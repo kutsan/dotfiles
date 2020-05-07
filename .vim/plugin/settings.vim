@@ -1,3 +1,5 @@
+" vint: -ProhibitEncodingOptionAfterScriptEncoding
+
 " Encoding
 set encoding=UTF-8 " Default encoding. (vim-only)
 scriptencoding UTF-8 " Default encoding for current script.
