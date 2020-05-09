@@ -1,24 +1,19 @@
 {
-	"private": true,
-
 	"name": "",
 	"version": "0.0.0",
+	"private": true,
 	"description": "",
-	"preferGlobal": false,
-	"license": "GPL-3.0",
-	"repository": "github:kutsan/",
-	"homepage": "",
 	"keywords": [],
-
+	"homepage": "",
+	"repository": "github:kutsan/",
+	"license": "GPL-3.0",
 	"author": "Kutsan Kaplan <me@kutsankaplan.com> (https://kutsankaplan.com)",
 	"contributors": [],
-
-	"engines": {},
-	"files": [],
 	"main": "",
-	"bin": "",
+	"bin": {
+		"binary": "path"
+	},
 	"man": "",
-
 	"scripts": {
 		"start": "",
 		"test": ""
