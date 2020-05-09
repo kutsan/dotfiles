@@ -1,0 +1,19 @@
+# Options
+set horizontal-scroll = 5
+set tab-size = 4
+set ignore-case = smart-case
+set main-view = \
+	date:display=custom,format="%Y-%m-%d %H:%M" \
+	author:display=full \
+	id:display=true \
+	commit-title:graph=v2,refs=true
+
+# Bindings
+bind diff D >git difftool --tool=nvimdiff --trust-exit-code --no-prompt %(commit)^! -- %(file)
+bind stage D >sh -c "git difftool --tool=nvimdiff --trust-exit-code --no-prompt `expr '%(status)' : 'Staged changes' >/dev/null && echo --cached` -- '%(file)'"
+bind generic <Ctrl-g> !@sh -c "git rev-parse --short %(commit) | xclip -i -selection clipboard"
+
+# Colors
+color cursor default black
+color title-focus yellow black
+color title-blur yellow black

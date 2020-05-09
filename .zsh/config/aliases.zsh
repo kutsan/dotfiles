@@ -22,6 +22,7 @@ alias rsync='rsync --protect-args --compress --verbose --progress --human-readab
 alias l="ledger balance '^assets' '^liabilities' --empty --flat"
 alias le='$EDITOR ~/Sync/finance/journal-$(date +%Y).ledger'
 alias lnet="ledger register '^expenses' '^income' --period 'this month' --subtotal --invert"
+alias gt='tig'
 
 # Global Aliases
 alias -g L='| less'

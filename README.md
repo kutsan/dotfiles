@@ -79,6 +79,7 @@
 - [gptfdisk](https://www.rodsbooks.com/gdisk) - Interactive GUID partition table (GPT) manipulator
 - [imagemagick](https://imagemagick.org) - Software suite for displaying, converting, and editing raster image and vector image files
 - [delta](https://github.com/dandavison/delta) - A syntax-highlighter for git and diff output
+- [tig](https://github.com/jonas/tig) - TUI interface for git
 
 ## License
 
