@@ -68,7 +68,6 @@
 - [tidy-html5](https://github.com/htacg/tidy-html5) - HTML linter with support for modern web standards
 - [par](https://github.com/sergi/par) - Paragraph reformatter and aligner for e-mails and plain text
 - [bind](https://source.isc.org/cgi-bin/gitweb.cgi) - Domain Name System tools
-- [sdcv](https://github.com/Dushistov/sdcv) - StarDict command-line version, offline directories
 - [gcal](https://www.gnu.org/software/gcal) - Calculate and print calendars
 - [mpv](https://github.com/mpv-player/mpv) - Minimalist video player based on MPlayer
 - [bat](https://github.com/sharkdp/bat) - A cat clone with additional features like git integration and syntax highlighting

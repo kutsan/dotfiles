@@ -118,9 +118,6 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_COLORS \
 # transmission
 export TR_AUTH='kutsan:EkYBoNSd6oIUznucRTfQTFCcxC5WeeDaBImPt6I9CncuY9g8mH'
 
-# sdcv
-export SDCV_PAGER='fold -s -w 80 | less'
-
 # gcal
 export GCAL="\
 	--highlighting=\e[41m:\e[0m:\e[33m:\e[0m \
