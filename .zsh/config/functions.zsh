@@ -1,13 +1,4 @@
 ##
-# Makes directory and `cd`s into it.
-#
-# @param {string} $1 Directory name that will be created.
-##
-function take() {
-	command mkdir --parents --verbose "$1" && cd "$1"
-}
-
-##
 # `cd` into the last directory upon exit.
 ##
 function r() {
