@@ -89,3 +89,6 @@ nnoremap <silent> <Up> :cprevious<CR>
 nnoremap <silent> <Down> :cnext<CR>
 nnoremap <silent> <Left> :cpfile<CR>
 nnoremap <silent> <Right> :cnfile<CR>
+
+" Format whole file using `gq` wrapper and `[a]n [e]ntire` operator.
+nmap <silent> \f gqae

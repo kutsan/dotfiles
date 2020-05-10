@@ -6,7 +6,6 @@ let s:undo =
 	\ . " | execute 'nunmap <buffer> <C-w><C-f>'"
 	\ . " | execute 'nunmap <buffer> <C-w>gf'"
 	\ . " | execute 'nunmap <buffer> <LocalLeader>r'"
-	\ . " | execute 'nunmap <buffer> <LocalLeader>f'"
 
 if exists('b:undo_ftplugin')
 	let b:undo_ftplugin .= ' | ' . s:undo

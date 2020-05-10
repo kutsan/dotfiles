@@ -18,9 +18,6 @@ nnoremap <buffer><silent> <C-w>gf :call kutsan#ftplugin#javascript#gotofile(expa
 " Execute current file.
 nnoremap <buffer><silent> <LocalLeader>r :execute 'split <Bar> terminal node' shellescape(@%, 1)<CR>
 
-" Format whole file using `gq` wrapper and `[a]n [e]ntire` operator.
-nmap <buffer><silent> <LocalLeader>f gqae
-
 " Insert `console.log()`.
 function! s:eatchar(pat) abort
 	let c = nr2char(getchar(0))
