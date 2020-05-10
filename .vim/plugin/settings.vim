@@ -69,7 +69,6 @@ set tags=./.git/tags;,./tags;,tags " Look for `tags` file in .git/ directory.
 set diffopt=filler,vertical,hiddenoff,foldcolumn:0,algorithm:patience " Option settings for diff mode.
 
 " Formatting
-let &formatprg = 'par b1 e1 g1 q1 r3 w80 R1 T4 B=.,\?_A_a Q=_s\>' " External formatter program that will be used with `gq` operator.
 set formatoptions=croqnj " General text formatting options used by many mechanics.
 
 " Completion

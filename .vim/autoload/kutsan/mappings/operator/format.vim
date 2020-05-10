@@ -1,12 +1,54 @@
 ""
 " `gq` wrapper that formats without moving cursor.
 "
-" nnoremap <silent> gq :let w:gqview = winsaveview()<CR>:set opfunc=kutsan#mappings#operator#format#<CR>g@
+" nnoremap <silent> gq :let w:gqview = winsaveview()<CR>:set opfunc=kutsan#mappings#operator#format#gq<CR>g@
+" xnoremap <silent> gq :<C-u>call kutsan#mappings#operator#format#gq(visualmode())<CR>
 ""
-function! kutsan#mappings#operator#format#(type) abort
-	normal! '[v']gq
+function! kutsan#mappings#operator#format#gq(type) abort
+	if index(['char', 'block', 'v', "\<C-v>"], a:type) !=# -1
+		return v:false
+	endif
 
-	call winrestview(w:gqview)
+	if a:type ==# 'V'
+		silent normal! gvgq
+	elseif a:type ==# 'line'
+		silent normal! '[v']gq
+	endif
 
-	unlet w:gqview
+	if exists('w:gqview')
+		call winrestview(w:gqview)
+		unlet w:gqview
+	endif
+endfunction
+
+""
+" Use alternate 'formatprg' `par` via `gQ`.
+"
+" nnoremap <silent> gQ :let w:gQview = winsaveview()<CR>:set opfunc=kutsan#mappings#operator#format#gQ<CR>g@
+" xnoremap <silent> gQ :<C-u>call kutsan#mappings#operator#format#gQ(visualmode())<CR>
+""
+function! kutsan#mappings#operator#format#gQ(type) abort
+	if index(['char', 'block', 'v', "\<C-v>"], a:type) !=# -1
+		return v:false
+	endif
+
+	let l:save = {
+		\ 'formatprg': &l:formatprg
+	\ }
+
+	let &l:formatprg = 'par b1 e1 g1 q1 r3 w80 R1 T4 B=.,\?_A_a Q=_s\>'
+
+	if a:type ==# 'V'
+		silent normal! gvgq
+	elseif a:type ==# 'line'
+		silent normal! '[v']gq
+	endif
+
+	if exists('w:gQview')
+		call winrestview(w:gQview)
+		unlet w:gQview
+	endif
+
+	let &l:formatprg = l:save.formatprg
+	unlet l:save
 endfunction
