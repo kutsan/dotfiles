@@ -92,3 +92,6 @@ nnoremap <silent> <Right> :cnfile<CR>
 
 " Format whole file using `gq` wrapper and `[a]n [e]ntire` operator.
 nmap <silent> \f gqae
+
+" Select last changed or yanked area.
+nnoremap <expr> gV '`[' . strpart(getregtype(), 0, 1) . '`]'
