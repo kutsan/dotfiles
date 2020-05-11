@@ -9,8 +9,6 @@ foreach function (
 	select-bracketed
 	select-quoted
 	surround
-	vcs_info
-	zrecompile
 ) {
 	autoload -U $function
 }
@@ -30,5 +28,5 @@ foreach module (
 	zmodload zsh/$module
 }
 
-# Completion cache file.
+# Initialize completion with its cache file.
 compinit -i -d $ZDOTDIR/cache/.zcompdump
