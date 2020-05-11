@@ -31,4 +31,4 @@ foreach module (
 }
 
 # Completion cache file.
-compinit -d $ZDOTDIR/cache/.zcompdump
+compinit -i -d $ZDOTDIR/cache/.zcompdump
