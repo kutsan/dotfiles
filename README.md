@@ -32,6 +32,7 @@
 - [tmux](https://github.com/tmux/tmux) - Terminal multiplexer enables working with split panes, tabs and detachable sessions
 - [nodejs](https://nodejs.org) - JavaScript runtime environment for developing a diverse variety of applications
 	- [npm](https://www.npmjs.com) - Node Package Manager mainly for the JavaScript programming language
+		- [prettier](https://github.com/prettier/prettier) - Code formatter for various web file types
 		- [neovim](https://github.com/neovim/node-client) - Neovim Node support for plugins
 		- [fx](https://github.com/antonmedv/fx) - TUI JSON viewer
 		- [bitwarden](https://github.com/bitwarden/cli) - Password manager
