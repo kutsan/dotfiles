@@ -5,9 +5,12 @@ setlocal suffixesadd=.js,.jsx
 let &l:include = '\<from\>\s["'']\zs[^"'']\+\ze["'']'
 
 " Define 'formatprg'.
-if !empty(glob('node_modules/prettier/bin-prettier.js'))
-	let &l:formatprg = 'node_modules/prettier/bin-prettier.js --parser "babel" 2>/dev/null'
-endif
+let &l:formatprg = printf(
+	\ '%s --parser "babel" 2>/dev/null',
+	\ !empty(glob('node_modules/prettier/bin-prettier.js'))
+		\ ? 'node_modules/prettier/bin-prettier.js'
+		\ : 'prettier'
+\ )
 
 " Always use wrapper 'includeexpr', not just as fallback.
 nnoremap <buffer><silent> gf :call kutsan#ftplugin#javascript#gotofile(expand('<cfile>'))<CR>
