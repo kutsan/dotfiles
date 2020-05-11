@@ -51,6 +51,7 @@
 - [findutils](https://www.gnu.org/software/findutils) - GNU basic directory searching utilities that provides find, locate and xargs
 - [less](http://www.greenwoodsoftware.com/less) - Standard file pager for Unix-like systems
 - [curl](https://github.com/curl/curl) - Tool for transferring data using various protocols
+- [sed](https://www.gnu.org/software/sed) - Non-interactive command-line text editor
 - [wget](https://www.gnu.org/software/wget) - Tool for retrieving files using the most widely-used Internet protocols
 - [gnupg](https://www.gnupg.org) - Hybrid-encryption software suit, free implementation of the OpenPGP standard
 - [nmap](https://github.com/nmap/nmap) - Network security scanner and mapper for exploration and security auditing
@@ -80,7 +81,7 @@
 - [gptfdisk](https://www.rodsbooks.com/gdisk) - Interactive GUID partition table (GPT) manipulator
 - [imagemagick](https://imagemagick.org) - Software suite for displaying, converting, and editing raster image and vector image files
 - [delta](https://github.com/dandavison/delta) - A syntax-highlighter for git and diff output
-- [tig](https://github.com/jonas/tig) - TUI interface for git
+- [tig](https://github.com/jonas/tig) - A ncurses-based text-mode interface for git
 
 ## License
 
