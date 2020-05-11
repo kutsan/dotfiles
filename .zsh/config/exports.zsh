@@ -17,6 +17,8 @@ case $OSTYPE {
 		export GNU_COREUTILS_MAN_HOME='/usr/local/opt/coreutils/libexec/gnuman'
 		export GNU_FINDUTILS_HOME='/usr/local/opt/findutils/libexec/gnubin'
 		export GNU_FINDUTILS_MAN_HOME='/usr/local/opt/findutils/libexec/gnuman'
+		export GNU_SED_HOME='/usr/local/opt/gnu-sed/libexec/gnubin'
+		export GNU_SED_MAN_HOME='/usr/local/opt/gnu-sed/libexec/gnuman'
 		export CURL_HOME='/usr/local/opt/curl/bin'
 		export CURL_MAN_HOME='/usr/local/opt/curl/share/man'
 		export NCURSES_HOME='/usr/local/opt/ncurses/bin'
@@ -28,17 +30,18 @@ case $OSTYPE {
 		path=(
 			$GNU_COREUTILS_HOME
 			$GNU_FINDUTILS_HOME
+			$GNU_SED_HOME
 			$CURL_HOME
 			$NCURSES_HOME
 			$OPENSSL_HOME
 			$PYTHON_SYMLINKS_HOME
-			$ANDROID_HOME/{tools,platform-tools}
 			$path
 		)
 
 		manpath=(
 			$GNU_COREUTILS_MAN_HOME
 			$GNU_FINDUTILS_MAN_HOME
+			$GNU_SED_MAN_HOME
 			$CURL_MAN_HOME
 			$OPENSSL_MAN_HOME
 			$manpath
