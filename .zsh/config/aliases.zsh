@@ -31,7 +31,7 @@ alias -g L='| less'
 alias -g G='| grep'
 
 # git
-foreach aliaskey (a b bl c co d ds dt dts f l s sm) {
+foreach aliaskey (a b bl c co d ds dt dts f l s sm w) {
 	alias g$aliaskey="git $aliaskey"
 }
 unset aliaskey

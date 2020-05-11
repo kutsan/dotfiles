@@ -1,18 +1,14 @@
 [alias]
 	a = add
 	b = branch
+	bl = !git --no-pager branch --verbose --all
 	c = commit
-	s = status
-	co = checkout
-	sm = submodule
-	dt = difftool
-	dts = difftool --staged
+	co = checkout --no-guess
 	d = diff --stat=100,100 --patch
 	ds = diff --stat=100,100 --patch --staged
+	dt = difftool
+	dts = difftool --staged
 	f = fetch
-	bl = !git --no-pager branch --verbose --all
-	contributors = shortlog --summary --numbered --email
-	ctags = !.git/hooks/ctags
 	l = log \
 		--graph \
 		--abbrev-commit \
@@ -20,6 +16,10 @@
 		--all \
 		--date=format:'%Y-%m-%d %H:%M' \
 		--format=format:'%C(blue)%ad%C(reset) %C(yellow)%h%C(reset) %C(white)%s%C(reset) %C(blue)%an%C(reset) %C(bold yellow)%d%C(reset)'
+	s = status
+	sm = submodule
+	w = whatchanged
+	ctags = !.git/hooks/ctags
 	pr = "! \
 		function f() { \
 			git fetch --force --update-head-ok ${2:-origin} refs/pull/$1/head:pr/$1 && git checkout pr/$1; \
