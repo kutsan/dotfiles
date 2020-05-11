@@ -5,14 +5,19 @@
 " xnoremap <silent> gq :<C-u>call kutsan#mappings#operator#format#gq(visualmode())<CR>
 ""
 function! kutsan#mappings#operator#format#gq(type) abort
-	if index(['char', 'block', 'v', "\<C-v>"], a:type) !=# -1
-		return v:false
+	if index(['v', 'V', "\<C-v>"], a:type) >= 0
+		silent normal! gvgq
+	else
+		silent normal! '[v']gq
 	endif
 
-	if a:type ==# 'V'
-		silent normal! gvgq
-	elseif a:type ==# 'line'
-		silent normal! '[v']gq
+	if v:shell_error > 0
+		silent undo
+		execute printf(
+			\ 'echoerr "Formatter \"%s\" exited with exit code %d."',
+			\ &l:formatprg,
+			\ v:shell_error
+		\ )
 	endif
 
 	if exists('w:gqview')
@@ -28,20 +33,25 @@ endfunction
 " xnoremap <silent> gQ :<C-u>call kutsan#mappings#operator#format#gQ(visualmode())<CR>
 ""
 function! kutsan#mappings#operator#format#gQ(type) abort
-	if index(['char', 'block', 'v', "\<C-v>"], a:type) !=# -1
-		return v:false
-	endif
-
 	let l:save = {
 		\ 'formatprg': &l:formatprg
 	\ }
 
 	let &l:formatprg = 'par b1 e1 g1 q1 r3 w80 R1 T4 B=.,\?_A_a Q=_s\>'
 
-	if a:type ==# 'V'
+	if index(['v', 'V', "\<C-v>"], a:type) >= 0
 		silent normal! gvgq
-	elseif a:type ==# 'line'
+	else
 		silent normal! '[v']gq
+	endif
+
+	if v:shell_error > 0
+		silent undo
+		execute printf(
+			\ 'echoerr "Formatter \"%s\" exited with exit code %d."',
+			\ &l:formatprg,
+			\ v:shell_error
+		\ )
 	endif
 
 	if exists('w:gQview')
