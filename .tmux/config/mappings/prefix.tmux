@@ -20,9 +20,6 @@ bind-key -T prefix -r \} swap-pane -D
 bind-key -T prefix -r '<' swap-window -d -t -1
 bind-key -T prefix -r '>' swap-window -d -t +1
 
-# Paste
-bind-key -T prefix P choose-buffer "paste-buffer -b '%%' -s ''"
-
 # Kill windows without prompt.
 bind-key -T prefix x kill-window
 
