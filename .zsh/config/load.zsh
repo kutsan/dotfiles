@@ -3,7 +3,6 @@ typeset -gU path fpath cdpath
 
 # Define functions to load them on execution.
 foreach function (
-	add-zsh-hook
 	compinit
 	promptinit
 	select-bracketed
@@ -28,5 +27,15 @@ foreach module (
 	zmodload zsh/$module
 }
 
-# Initialize completion with its cache file.
-compinit -i -d $ZDOTDIR/cache/.zcompdump
+# Initialize the completion system with a cache time of 24 hours.
+typeset -g zcompdump="$ZDOTDIR/cache/.zcompdump"
+typeset -g comp_files=($zcompdump(Nm-24))
+
+if (( $#comp_files )) {
+    compinit -i -C -d $zcompdump
+} else {
+	compinit -i -d $zcompdump
+}
+
+unset zcompdump
+unset comp_files
