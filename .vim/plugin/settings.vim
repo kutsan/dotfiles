@@ -151,10 +151,8 @@ endif
 
 " Android
 if exists('$ANDROID_ROOT')
-	set laststatus=0
 	set nonumber
 	set norelativenumber
-	set signcolumn=no
 endif
 
 " Root
