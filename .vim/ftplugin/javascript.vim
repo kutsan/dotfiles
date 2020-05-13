@@ -6,7 +6,7 @@ let &l:include = '\<from\>\s["'']\zs[^"'']\+\ze["'']'
 
 " Define 'formatprg'.
 let &l:formatprg = printf(
-	\ '%s --parser "babel" 2>/dev/null',
+	\ '%s --parser "babel"',
 	\ !empty(glob('node_modules/prettier/bin-prettier.js'))
 		\ ? 'node_modules/prettier/bin-prettier.js'
 		\ : 'prettier'

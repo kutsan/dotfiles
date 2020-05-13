@@ -8,16 +8,14 @@ function! kutsan#mappings#operator#format#gq(type) abort
 	if index(['v', 'V', "\<C-v>"], a:type) >= 0
 		silent normal! gvgq
 	else
-		silent normal! '[v']gq
+		silent execute printf("'[,']!%s", &l:formatprg)
 	endif
 
 	if v:shell_error > 0
+		let l:formaterror = join(getline(line("'["), line("']")), "\n")
 		silent undo
-		execute printf(
-			\ 'echoerr "Formatter \"%s\" exited with exit code %d."',
-			\ &l:formatprg,
-			\ v:shell_error
-		\ )
+
+		echoerr l:formaterror
 	endif
 
 	if exists('w:gqview')
@@ -42,16 +40,14 @@ function! kutsan#mappings#operator#format#gQ(type) abort
 	if index(['v', 'V', "\<C-v>"], a:type) >= 0
 		silent normal! gvgq
 	else
-		silent normal! '[v']gq
+		silent execute printf("'[,']!%s", &l:formatprg)
 	endif
 
 	if v:shell_error > 0
+		let l:formaterror = join(getline(line("'["), line("']")), "\n")
 		silent undo
-		execute printf(
-			\ 'echoerr "Formatter \"%s\" exited with exit code %d."',
-			\ &l:formatprg,
-			\ v:shell_error
-		\ )
+
+		echoerr l:formaterror
 	endif
 
 	if exists('w:gQview')
