@@ -1,7 +1,3 @@
-""
-" High-performance color highlighter.
-""
-
 if !has('nvim')
 	finish
 endif
