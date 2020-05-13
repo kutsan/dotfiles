@@ -1,7 +1,3 @@
-""
-" Git client.
-""
-
 " Define mappings.
 nnoremap <silent> gib :Git blame<CR>
 nnoremap <silent> gid :Gdiffsplit<CR>

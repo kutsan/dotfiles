@@ -1,7 +1,3 @@
-""
-" Visualize undo tree.
-""
-
 " Add optional plugin to 'runtimepath' without sourcing anything.
 silent! packadd! undotree
 

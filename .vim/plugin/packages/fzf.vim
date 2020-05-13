@@ -1,7 +1,3 @@
-""
-" Fuzzy finder fzf as Vim plugin.
-""
-
 " Add prefix 'Fzf' commands for grouping.
 let g:fzf_command_prefix = 'F'
 

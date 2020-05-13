@@ -1,7 +1,3 @@
-""
-" Show Git diff in the sign column.
-""
-
 scriptencoding UTF-8
 
 " Disable showing counts next to signs.

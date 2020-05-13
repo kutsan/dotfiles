@@ -1,7 +1,3 @@
-""
-" Filetype icon support for defx.
-""
-
 scriptencoding UTF-8
 
 let g:defx_icons_enable_syntax_highlight = v:true

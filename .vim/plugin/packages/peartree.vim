@@ -1,7 +1,3 @@
-""
-" Auto-pair plugin that supports multi-character pairs and intelligent matching.
-""
-
 " Define pairs.
 let g:pear_tree_pairs = {
 	\ '(': { 'closer': ')' },
