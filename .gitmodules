@@ -14,9 +14,6 @@
 	path = .zsh/plugins/system-clipboard
 	url = https://github.com/kutsan/zsh-system-clipboard
 
-[submodule "coc"]
-	path = .vim/pack/bundle/start/coc
-	url = https://github.com/neoclide/coc.nvim
 [submodule "defx"]
 	path = .vim/pack/bundle/start/defx
 	url = https://github.com/Shougo/defx.nvim
@@ -45,9 +42,6 @@
 [submodule "signify"]
 	path = .vim/pack/bundle/start/signify
 	url = https://github.com/mhinz/vim-signify
-[submodule "targets"]
-	path = .vim/pack/bundle/start/targets
-	url = https://github.com/wellle/targets.vim
 [submodule "undotree"]
 	path = .vim/pack/bundle/opt/undotree
 	url = https://github.com/mbbill/undotree
