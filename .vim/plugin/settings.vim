@@ -34,7 +34,6 @@ set nostartofline " Prevent the cursor from changing the current column when jum
 set nowrap " Prevent wrapping for long lines.
 set nrformats=bin,hex " Only accept binary and hexadecimal numbers.
 set pumheight=10 " Maximum number of items to show in the pop-up menu for completion.
-set regexpengine=1 " Use old regular expression engine.
 set report=1000 " Threshold for reporting number of lines changed.
 set scrolloff=8 " Minimum number of screen lines to keep above and below the cursor.
 set sessionoptions=blank,buffers,curdir,folds,help,localoptions,resize,tabpages,winsize " Options for `mksession` command.
