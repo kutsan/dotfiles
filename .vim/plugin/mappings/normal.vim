@@ -21,10 +21,6 @@ nnoremap x "_x
 nnoremap c* /\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgn
 nnoremap c# ?\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgN
 
-" Delete word under cursor.
-nnoremap d* /\<<C-r>=expand('<cword>')<CR>\>\C<CR>``dgn
-nnoremap d# ?\<<C-r>=expand('<cword>')<CR>\>\C<CR>``dgN
-
 " Correct bad indent while pasting.
 nnoremap gp p=`]
 nnoremap gP P=`]
