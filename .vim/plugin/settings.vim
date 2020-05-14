@@ -33,7 +33,6 @@ set noshowmatch " When a bracket is inserted, do not jump to the matching one.
 set nostartofline " Prevent the cursor from changing the current column when jumping.
 set nowrap " Prevent wrapping for long lines.
 set nrformats=bin,hex " Only accept binary and hexadecimal numbers.
-set pumheight=10 " Maximum number of items to show in the pop-up menu for completion.
 set report=1000 " Threshold for reporting number of lines changed.
 set scrolloff=8 " Minimum number of screen lines to keep above and below the cursor.
 set sessionoptions=blank,buffers,curdir,folds,help,localoptions,resize,tabpages,winsize " Options for `mksession` command.
@@ -58,8 +57,6 @@ set listchars=tab:│\ ,nbsp:␣,extends:…,precedes:… " Strings to use when 
 set number " Show line numbers alongside relative numbers.
 set relativenumber " Show relative line numbers alongside numbers.
 set signcolumn=yes " Always draw the sign column even there is no sign in it.
-set title " Show title as in 'titlestring' in title bar of window.
-set titlestring=%f " Format of the title used by 'title'.
 
 " Tags
 set tags=./.git/tags;,./tags;,tags " Look for `tags` file in .git/ directory.
@@ -74,7 +71,7 @@ set formatoptions=croqnj " General text formatting options used by many mechanic
 set complete=.,w,b,k,t " Options for keyword completion.
 set completeopt=noinsert,menuone " Options for insert mode completion.
 set path=.,, " List of directories which will be searched when using related features.
-set pumheight=8 " Maximum height of the popup menu for insert mode completion.
+set pumheight=10 " Maximum height of the popup menu for insert mode completion.
 
 " Indentation
 set tabstop=4 " Length of a <Tab> character.
