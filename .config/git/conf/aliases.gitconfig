@@ -16,6 +16,7 @@
 		--all \
 		--date=format:'%Y-%m-%d %H:%M' \
 		--format=format:'%C(blue)%ad%C(reset) %C(yellow)%h%C(reset) %C(white)%s%C(reset) %C(blue)%an%C(reset) %C(bold yellow)%d%C(reset)'
+	r = reset
 	s = status
 	sm = submodule
 	w = whatchanged
