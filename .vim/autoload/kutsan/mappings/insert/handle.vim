@@ -36,7 +36,7 @@ endfunction
 ""
 function! kutsan#mappings#insert#handle#cr() abort
 	" If it's selected.
-	if complete_info()['selected'] !=# '-1'
+	if complete_info()['selected'] != -1
 		return "\<C-y>"
 	else
 		if exists('g:loaded_pear_tree')
