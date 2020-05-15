@@ -41,7 +41,7 @@ let g:coc_user_config = {
 			\ 'directories': ['snippet']
 		\ },
 		\ 'extends': {
-			\ "javascriptreact": ["javascript"]
+			\ 'javascriptreact': ['javascript']
 		\ },
 	\ },
 \ }
