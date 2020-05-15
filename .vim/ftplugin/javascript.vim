@@ -20,10 +20,3 @@ nnoremap <buffer><silent> <C-w>gf :call kutsan#ftplugin#javascript#gotofile(expa
 
 " Execute current file.
 nnoremap <buffer><silent> <LocalLeader>r :execute 'split <Bar> terminal node' shellescape(@%, 1)<CR>
-
-" Insert `console.log()`.
-function! s:eatchar(pat) abort
-	let c = nr2char(getchar(0))
-	return (c =~ a:pat) ? '' : c
-endfunction
-inoreabbrev <silent> log console.log()<Left><C-r>=<SID>eatchar('\s')<CR>

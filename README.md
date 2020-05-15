@@ -14,6 +14,7 @@
 	- [`autosuggestions`](https://github.com/zsh-users/zsh-autosuggestions) - Fish-like auto-suggestions for interactive terminal based on command history
 - [`neovim`](https://github.com/neovim/neovim) - The fork of ubiquitous text editor focused on extensibility and usability
 	- [`material`](https://github.com/kaicataldo/material.vim) - Color scheme
+	- [`coc`](https://github.com/neoclide/coc.nvim) - Context-aware completion engine
 	- [`colorizer`](https://github.com/norcalli/nvim-colorizer.lua) - High-performance color highlighter
 	- [`defx`](https://github.com/Shougo/defx.nvim) - File explorer
 		- [`Send2Trash`](https://github.com/hsoft/send2trash) - Python library to natively send files to trash
