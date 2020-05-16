@@ -6,17 +6,6 @@ termux-setup-storage
 # Disable welcome message
 [[ -f ~/.hushlogin ]] || touch ~/.hushlogin
 
-# Termux:Widget home
-[[ -L ~/.shortcuts ]] || ln -s ~/.termux/shortcuts ~/.shortcuts
-
 # Make ~/Downloads folder
 [[ -d /storage/emulated/0/Download ]] || mkdir -p /storage/emulated/0/Download
 [[ -L ~/Downloads ]] || ln -s /storage/emulated/0/Download Downloads
-
-# Make ~/Documents folder
-[[ -d /storage/emulated/0/Documents ]] || mkdir -p /storage/emulated/0/Documents
-[[ -L ~/Documents ]] || ln -s /storage/emulated/0/Documents Documents
-
-# Make ~/Sync folder for Syncthing
-[[ -d /storage/emulated/0/Sync ]] || mkdir -p /storage/emulated/0/Sync
-[[ -L ~/Sync ]] || ln -s /storage/emulated/0/Sync Sync
