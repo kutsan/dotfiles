@@ -2,6 +2,10 @@
 onoremap <silent> ae :<C-u>call kutsan#mappings#motion#entire#()<CR>
 xnoremap <silent> ae :<C-u>call kutsan#mappings#motion#entire#()<CR>
 
+" [i]nner line motion.
+onoremap <silent> i_ :<C-u>normal! ^vg_<CR>
+xnoremap <silent> i_ :<C-u>normal! ^vg_<CR>
+
 " [i]n and [a]round [i]ndent motions.
 onoremap <silent> ii :<C-u>call kutsan#mappings#motion#indent#({ 'mode': 'i' })<CR>
 xnoremap <silent> ii :<C-u>call kutsan#mappings#motion#indent#({ 'mode': 'i' })<CR>
