@@ -1,6 +1,6 @@
 silent! call defx#custom#option('_', {
 	\ 'columns': 'indent:icons:filename',
-	\ 'winwidth': 35,
+	\ 'winwidth': 30,
 	\ 'split': exists('$ANDROID_ROOT') ? 'no' : 'vertical',
 	\ 'direction': 'topleft',
 	\ 'ignored_files': '',
