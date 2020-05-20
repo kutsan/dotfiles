@@ -61,7 +61,7 @@ function! g:FzfFloatingWindow() abort
 		\ v:true,
 		\ {
 			\ 'relative': 'editor',
-			\ 'row': 3,
+			\ 'row': 2,
 			\ 'col': (&columns - 80) / 2,
 			\ 'width': 80,
 			\ 'height': 30,
