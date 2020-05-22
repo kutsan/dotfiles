@@ -1,9 +1,3 @@
-" Local command-line window settings.
-augroup commandlinewindow
-	autocmd!
-	autocmd CmdwinEnter * setlocal signcolumn=no nonumber norelativenumber
-augroup end
-
 " Start insert mode and disable line numbers in terminal buffer.
 augroup terminalsettings
 	autocmd!
