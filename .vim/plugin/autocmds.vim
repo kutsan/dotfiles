@@ -13,13 +13,6 @@ augroup terminalsettings
 	endif
 augroup end
 
-" Toggle relative numbers in Insert/Normal mode.
-augroup togglenumbers
-	autocmd!
-	autocmd InsertEnter,BufLeave,WinLeave,FocusLost * call kutsan#autocmds#togglenumbers#('setlocal norelativenumber')
-	autocmd InsertLeave,BufEnter,WinEnter,FocusGained * call kutsan#autocmds#togglenumbers#('setlocal relativenumber')
-augroup end
-
 " Save the current buffer after any changes.
 augroup savebuffer
 	autocmd!

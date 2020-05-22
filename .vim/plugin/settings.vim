@@ -57,7 +57,6 @@ set path=.,, " List of directories which will be searched when using related fea
 
 " Interface
 set number " Show line numbers alongside relative numbers.
-set relativenumber " Show relative line numbers alongside numbers.
 set cursorline " Highlight the line background of the cursor.
 set fillchars=stl:\ ,stlnc:\ ,vert:\ ,fold:\ ,diff:\  " Characters to be used in various user-interface elements.
 set laststatus=2 " Always show the status line.
@@ -144,12 +143,6 @@ if has('nvim')
 	set inccommand=split " Show live substitution results as you type.
 	set fillchars+=eob:\  " Hide end of buffer tilde symbols.
 	set display+=msgsep " Only scroll lines on command line pager, not the entire screen.
-endif
-
-" Android
-if exists('$ANDROID_ROOT')
-	set nonumber
-	set norelativenumber
 endif
 
 " Root
