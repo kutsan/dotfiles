@@ -54,6 +54,7 @@ set linebreak " Wrap lines in 'breakat', rather than at the last character.
 set complete=.,w,b,k,t " Options for keyword completion.
 set completeopt=noinsert,menuone " Options for insert mode completion.
 set path=.,, " List of directories which will be searched when using related features.
+set lazyredraw " Don't redraw screen while executing macros.
 
 " Interface
 set number " Show line numbers alongside relative numbers.
