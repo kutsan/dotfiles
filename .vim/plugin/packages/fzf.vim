@@ -19,7 +19,7 @@ let g:fzf_layout = {
 
 " Set actions manually.
 let g:fzf_action = {
-	\ 'ctrl-e': 'split',
+	\ 'ctrl-s': 'split',
 	\ 'ctrl-v': 'vsplit',
 	\ 'ctrl-t': 'tab split'
 \ }
