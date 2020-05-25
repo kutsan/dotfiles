@@ -7,6 +7,15 @@ augroup terminalsettings
 	endif
 augroup end
 
+" Briefly highlight yanked region.
+augroup highlightyank
+	autocmd!
+
+	if has('nvim')
+		autocmd TextYankPost * lua require'vim.highlight'.on_yank('Visual', 100)
+	endif
+augroup end
+
 " Save the current buffer after any changes.
 augroup savebuffer
 	autocmd!
