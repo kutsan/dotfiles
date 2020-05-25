@@ -142,7 +142,7 @@ endif
 if has('nvim')
 	set guicursor=n-v-c-sm:block,i-ci:ver25,r-cr-o-ve:hor20 " Configures the cursor style for each mode.
 	set inccommand=split " Show live substitution results as you type.
-	set fillchars+=eob:\  " Hide end of buffer tilde symbols.
+	set fillchars+=eob:\ ,msgsep:─ " Hide end of buffer tilde symbols and set msgsep symbol.
 	set display+=msgsep " Only scroll lines on command line pager, not the entire screen.
 endif
 
