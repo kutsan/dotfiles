@@ -33,8 +33,8 @@ function! kutsan#settings#tabline() abort
 			\ ':t'
 		\ )
 
-		let l:line .= '%' . i . 'T' " Starts mouse click target region.
-		let l:line .= '  ' . l:label . '  '
+		let l:line .= '%' .. i .. 'T' " Starts mouse click target region.
+		let l:line .= '  ' .. l:label .. '  '
 	endfor
 
 	let l:line .= '%#TabLineFill#'

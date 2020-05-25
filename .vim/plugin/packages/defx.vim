@@ -41,7 +41,7 @@ augroup defxsettings
 		nnoremap <buffer><silent><expr> ~ defx#do_action('open_tree_recursive')
 
 		" Selection
-		nnoremap <buffer><silent><expr> a defx#do_action('toggle_select') . 'j'
+		nnoremap <buffer><silent><expr> a defx#do_action('toggle_select') .. 'j'
 		xnoremap <buffer><silent><expr> a defx#do_action('toggle_select_visual')
 		nnoremap <buffer><silent><expr> uv defx#do_action('clear_select_all')
 

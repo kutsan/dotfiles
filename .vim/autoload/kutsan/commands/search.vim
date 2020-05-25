@@ -33,7 +33,7 @@ function! kutsan#commands#search#(bang, query) abort
 
 	if !empty(getqflist())
 		" Add searched query to search history as vim regex compatible.
-		let l:vimquery = '\v' . a:query
+		let l:vimquery = '\v' .. a:query
 		let @/ = l:vimquery
 		call histadd('search', l:vimquery)
 

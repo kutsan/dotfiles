@@ -19,7 +19,7 @@ function! kutsan#statusline#fileprefix() abort
 	if l:basename ==# '' || l:basename ==# '.'
 		return ''
 	else
-		return substitute(l:basename . '/', '\C^' . $HOME, '~', '')
+		return substitute(l:basename .. '/', '\C^' .. $HOME, '~', '')
 	endif
 endfunction
 
@@ -28,7 +28,7 @@ function! kutsan#statusline#hlsearch() abort
 		return ''
 	endif
 
-	return '' . ' '
+	return '' .. ' '
 endfunction
 
 function! kutsan#statusline#spell() abort
@@ -36,7 +36,7 @@ function! kutsan#statusline#spell() abort
 		return ''
 	endif
 
-	return '' . ' '
+	return '' .. ' '
 endfunction
 
 function! kutsan#statusline#markdownpreview() abort
@@ -44,5 +44,5 @@ function! kutsan#statusline#markdownpreview() abort
 		return ''
 	endif
 
-	return '' . ' '
+	return '' .. ' '
 endfunction

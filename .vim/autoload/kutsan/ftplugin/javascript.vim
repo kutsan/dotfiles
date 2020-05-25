@@ -20,7 +20,7 @@ function! kutsan#ftplugin#javascript#gotofile(fname, ...) abort
 	" Emulate built-in error if file is not found.
 	if empty(l:path)
 		echohl ErrorMsg
-		echomsg "E447: Can't find file \"" . a:fname . "\" in path"
+		echomsg "E447: Can't find file \"" .. a:fname .. "\" in path"
 		echohl None
 
 		return v:false
@@ -41,7 +41,7 @@ function! kutsan#ftplugin#javascript#gotofile(fname, ...) abort
 				\ )
 			\ )
 
-		let l:path = l:tempdir . '/' . l:filename
+		let l:path = l:tempdir .. '/' .. l:filename
 	endif
 
 	" Open path.
@@ -66,7 +66,7 @@ function! s:includeexpr(fname) abort
 
 	" If it's a core Node module, then return GitHub URL for module code.
 	if index(l:NODE_CORE_MODULES, a:fname) != -1
-		return 'https://raw.githubusercontent.com/nodejs/node/master/lib/' . a:fname . '.js'
+		return 'https://raw.githubusercontent.com/nodejs/node/master/lib/' .. a:fname .. '.js'
 	endif
 
 	return s:resolvepath(s:resolveform(a:fname, expand('%')))
@@ -88,7 +88,7 @@ function! s:resolvepath(path) abort
 	""
 	function! s:resolvewithsuffixesadd(path) abort
 		for l:suffix in split(&l:suffixesadd, ',')
-			let l:path = a:path . l:suffix
+			let l:path = a:path .. l:suffix
 			if filereadable(l:path)
 				return l:path
 			endif
@@ -111,11 +111,11 @@ function! s:resolvepath(path) abort
 
 	if isdirectory(a:path)
 		" Try to find under main value for package.json file.
-		if filereadable(a:path . '/package.json')
-			let l:packagejson = json_decode(join(readfile(a:path . '/package.json')))
+		if filereadable(a:path .. '/package.json')
+			let l:packagejson = json_decode(join(readfile(a:path .. '/package.json')))
 
 			if has_key(l:packagejson, 'main')
-				let l:path = s:resolvepath(a:path . '/' . l:packagejson.main)
+				let l:path = s:resolvepath(a:path .. '/' .. l:packagejson.main)
 
 				if !empty(l:path)
 					return l:path
@@ -124,7 +124,7 @@ function! s:resolvepath(path) abort
 		endif
 
 		" Try to find index variants.
-		return s:resolvewithsuffixesadd(a:path . '/index')
+		return s:resolvewithsuffixesadd(a:path .. '/index')
 	endif
 endfunction
 
@@ -148,23 +148,23 @@ function! s:resolveform(fname, from) abort
 	elseif a:fname =~# '\v\c^\.\.?(/|$)'
 
 		" e.g. 'app/./components/Header'.
-		return l:fromdirectory . '/' . a:fname
+		return l:fromdirectory .. '/' .. a:fname
 
 	" Bare filename without leading dots and slashes but with file
 	" extension, e.g. 'example.js'.
-	elseif a:fname !~# '\v\c^(/|\./|\.\./)' && filereadable(l:fromdirectory . '/' . a:fname)
+	elseif a:fname !~# '\v\c^(/|\./|\.\./)' && filereadable(l:fromdirectory .. '/' .. a:fname)
 		" e.g. 'app/example.js'
-		return l:fromdirectory . '/' . a:fname
+		return l:fromdirectory .. '/' .. a:fname
 
 	" If it's neither core module, absolute path, relative path nor
 	" filename; it should be installed module, e.g. 'react'.
 	" Note that, it doesn't try to find where node_modules folder at, it
 	" thinks your current working directory is git root.
 	else
-		if !isdirectory(getcwd() . '/node_modules')
+		if !isdirectory(getcwd() .. '/node_modules')
 			return ''
 		endif
 
-		return getcwd() . '/node_modules/' . a:fname
+		return getcwd() .. '/node_modules/' .. a:fname
 	endif
 endfunction

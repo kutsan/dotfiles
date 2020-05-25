@@ -10,5 +10,5 @@ function! kutsan#debug#log(content) abort
 		\ a:content
 	\ )
 
-	call writefile([l:contentwithdate], $HOME . '/.vim/cache/log/debug.log', 'aS')
+	call writefile([l:contentwithdate], $HOME .. '/.vim/cache/log/debug.log', 'aS')
 endfunction

@@ -59,7 +59,7 @@ function! kutsan#mappings#operator#comment#(type) abort
 		let l:line = getline(l:linenumber)
 
 		if strlen(l:rightcommentstring) > 2
-				\ && l:leftcommentstring . l:rightcommentstring !~# '\\'
+				\ && l:leftcommentstring .. l:rightcommentstring !~# '\\'
 			let l:line = substitute(
 				\ l:line,
 				\ printf(
@@ -88,7 +88,7 @@ function! kutsan#mappings#operator#comment#(type) abort
 					\ '^\%(%s\|\s*\)\zs.*\S\@<=',
 					\ matchstr(getline(l:mstart), '^\s*')
 				\ ),
-				\ '\=l:leftcommentstring . submatch(0) . l:rightcommentstring',
+				\ '\=l:leftcommentstring .. submatch(0) .. l:rightcommentstring',
 				\ ''
 			\ )
 		endif

@@ -10,7 +10,7 @@ function! kutsan#autocmds#setroot#() abort
 		return v:false
 	endif
 
-	let l:gitdir = finddir('.git', l:currentdir . ';')
+	let l:gitdir = finddir('.git', l:currentdir .. ';')
 	let l:rootdir = fnameescape(fnamemodify(l:gitdir, ':h'))
 
 	if l:rootdir !=# $HOME

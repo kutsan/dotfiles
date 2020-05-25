@@ -90,4 +90,4 @@ nnoremap <silent> <Right> :cnfile<CR>
 nmap <silent> \f gqae
 
 " Select last changed or yanked area.
-nnoremap <expr> gV '`[' . strpart(getregtype(), 0, 1) . '`]'
+nnoremap <expr> gV '`[' .. strpart(getregtype(), 0, 1) .. '`]'
