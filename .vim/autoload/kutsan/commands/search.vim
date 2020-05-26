@@ -9,6 +9,12 @@
 " @param {string} query Search query.
 ""
 function! kutsan#commands#search#(bang, query) abort
+	" Query can't be empty.
+	if empty(a:query)
+		echo ''
+		return v:false
+	endif
+
 	" Keep cursor position before search command used under `S mark.
 	normal! mS
 
