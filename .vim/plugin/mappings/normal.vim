@@ -1,6 +1,10 @@
 " Quickly close current window.
 nnoremap <silent> <Leader>q :quit<CR>
 
+" Correct bad indent while pasting.
+nnoremap <Leader>p p=`]
+nnoremap <Leader>P P=`]
+
 " Pane nagivation.
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -21,10 +25,6 @@ nnoremap x "_x
 nnoremap c* /\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgn
 nnoremap c# ?\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgN
 
-" Correct bad indent while pasting.
-nnoremap gp p=`]
-nnoremap gP P=`]
-
 " Scroll viewport faster.
 nnoremap <C-e> 2<C-e>
 nnoremap <C-y> 2<C-y>
@@ -42,20 +42,9 @@ nnoremap <S-Down> 2<C-w>-
 nnoremap <S-Right> 2<C-w>>
 nnoremap <S-Left> 2<C-w><
 
-" [y]ank [p]ath [f]ull.
-nnoremap <silent> ypf :let @+ = expand('%:p')<CR>
-" [y]ank [p]ath [r]elative.
-nnoremap <silent> ypr :let @+ = expand('%')<CR>
-" [y]ank [p]ath [n]ame.
-nnoremap <silent> ypn :let @+ = expand('%:t')<CR>
-
 " Toggle terminal buffer.
 tnoremap <silent> <C-z> <C-\><C-n>:call kutsan#mappings#normal#terminal#()<CR>
 nnoremap <silent> <C-z> :call kutsan#mappings#normal#terminal#()<CR>
-
-" Store relative line number jumps in the jumplist if they exceed a threshold.
-nnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
-nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
 
 " Add [count] blank lines above or below the cursor.
 nnoremap <silent> [<Space> :<C-u>put! =repeat(nr2char(10), v:count1) <Bar> ']+1<CR>
@@ -71,10 +60,6 @@ nnoremap <silent> coh :set hlsearch!<CR>
 
 " Jump to a tag directly when there is only one match.
 nnoremap <C-]> g<C-]>zt
-
-" Go previous and next buffers.
-nnoremap <silent> [b :bprevious<CR>
-nnoremap <silent> ]b :bnext<CR>
 
 " Go previous and next location list entry.
 nnoremap <silent> [l :labove<CR>
