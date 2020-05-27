@@ -40,12 +40,6 @@ augroup trimtrailing
 	autocmd BufWritePre * call kutsan#autocmds#trimtrailing#()
 augroup end
 
-" Open file explorer if argument list contains at least one directory.
-augroup openexplorer
-	autocmd!
-	autocmd VimEnter * call kutsan#autocmds#openexplorer#()
-augroup end
-
 " Create directory path if it's not exist.
 augroup makemissing
 	autocmd!
