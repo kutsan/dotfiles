@@ -1,9 +1,17 @@
 ""
-" Set current working directory to git root.
+" Set the current working directory to the directory that is provided with
+" argument list or to the git root.
 "
-" autocmd VimEnter,BufEnter * call kutsan#autocmds#setroot#()
+" autocmd VimEnter * call kutsan#autocmds#setroot#()
 ""
 function! kutsan#autocmds#setroot#() abort
+	let l:amatch = expand('<amatch>')
+
+	if isdirectory(l:amatch)
+		execute printf('cd %s', fnameescape(l:amatch))
+		return v:true
+	endif
+
 	let l:currentdir = escape(expand('%:p:h'), ' ')
 
 	if !isdirectory(l:currentdir)
@@ -13,22 +21,5 @@ function! kutsan#autocmds#setroot#() abort
 	let l:gitdir = finddir('.git', l:currentdir .. ';')
 	let l:rootdir = fnameescape(fnamemodify(l:gitdir, ':h'))
 
-	if l:rootdir !=# $HOME
-		execute 'cd' l:rootdir
-	endif
+	execute 'cd' l:rootdir
 endfunction
-
-"""
-"" Open file explorer if argument list contains at least one directory.
-""
-"" autocmd VimEnter * call kutsan#autocmds#openexplorer#()
-"""
-"function! kutsan#autocmds#openexplorer#() abort
-"	" TODO: Move this logic to setroot and delete this altogether.
-"	" TODO: Also try to make it VimEnter-only for performance reasons.
-"	let l:directory = expand('<amatch>')
-
-"	if isdirectory(l:directory)
-"		execute printf('cd %s', fnameescape(l:directory))
-"	endif
-"endfunction

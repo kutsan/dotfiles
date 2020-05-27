@@ -22,10 +22,10 @@ augroup savebuffer
 	autocmd InsertLeave,TextChanged * call kutsan#autocmds#savebuffer#()
 augroup end
 
-" Set current working directory project root.
+" Set current working directory.
 augroup setroot
 	autocmd!
-	autocmd VimEnter,BufEnter * call kutsan#autocmds#setroot#()
+	autocmd VimEnter * call kutsan#autocmds#setroot#()
 augroup end
 
 " Jump to last known position and center buffer around cursor.
