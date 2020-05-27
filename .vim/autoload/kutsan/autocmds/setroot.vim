@@ -17,3 +17,18 @@ function! kutsan#autocmds#setroot#() abort
 		execute 'cd' l:rootdir
 	endif
 endfunction
+
+"""
+"" Open file explorer if argument list contains at least one directory.
+""
+"" autocmd VimEnter * call kutsan#autocmds#openexplorer#()
+"""
+"function! kutsan#autocmds#openexplorer#() abort
+"	" TODO: Move this logic to setroot and delete this altogether.
+"	" TODO: Also try to make it VimEnter-only for performance reasons.
+"	let l:directory = expand('<amatch>')
+
+"	if isdirectory(l:directory)
+"		execute printf('cd %s', fnameescape(l:directory))
+"	endif
+"endfunction

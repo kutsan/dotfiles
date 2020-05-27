@@ -1,3 +1,3 @@
 " vint: -ProhibitAutocmdWithNoGroup
 " Set filetype to conf for files with .conf extension.
-autocmd BufNewFile,BufRead *.conf setfiletype conf
+autocmd BufNewFile,BufReadPost *.conf setfiletype conf
