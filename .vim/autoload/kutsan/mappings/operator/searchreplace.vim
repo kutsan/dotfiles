@@ -32,6 +32,6 @@ function! kutsan#mappings#operator#searchreplace#(type) abort
 
 	let @/ = escape(l:query, '/\')
 
-	call feedkeys(printf(':%%substitute//%s/gc', @/), 'n')
+	call feedkeys(printf(':%%substitute/\v<%s>//gc', @/), 'n')
 	call feedkeys("\<Left>\<Left>\<Left>", 'm')
 endfunction
