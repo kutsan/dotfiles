@@ -45,3 +45,9 @@ augroup makemissing
 	autocmd!
 	autocmd BufWritePre * call kutsan#autocmds#makemissing#(expand('<afile>:p:h'), v:cmdbang)
 augroup end
+
+" Block changes to read-only files.
+augroup blockreadonly
+	autocmd!
+	autocmd BufRead * let &l:modifiable = !&readonly
+augroup end
