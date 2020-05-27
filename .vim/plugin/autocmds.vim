@@ -20,7 +20,6 @@ augroup end
 augroup savebuffer
 	autocmd!
 	autocmd InsertLeave,TextChanged * call kutsan#autocmds#savebuffer#()
-	autocmd FocusGained,BufEnter,CursorHold * silent! checktime
 augroup end
 
 " Set current working directory project root.
