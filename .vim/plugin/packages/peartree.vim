@@ -5,15 +5,7 @@ let g:pear_tree_pairs = {
 	\ '{': { 'closer': '}' },
 	\ "'": { 'closer': "'" },
 	\ '"': { 'closer': '"' },
-	\ '<': { 'closer': '>' },
-	\ '<*>': {'closer': '</*>',
-        \ 'not_if': [
-		\	'br', 'hr', 'img', 'input', 'link', 'meta', 'area', 'base', 'col',
-		\	'command', 'embed', 'keygen', 'param', 'source', 'track', 'wbr'
-		\ ],
-		\ 'not_like': '/$',
-		\ 'until': '[^a-zA-Z0-9-._]'
-	\ }
+	\ '<': { 'closer': '>' }
 \ }
 
 " Define filetypes should be disabled.
