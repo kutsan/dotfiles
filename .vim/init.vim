@@ -1,3 +1,9 @@
+" Enable loading {ftdetect,ftplugin,indent}/*.vim files.
+filetype plugin indent on
+
+" Enable loading syntax/*.vim files.
+syntax on
+
 " Set leader keys.
 let g:mapleader = "\<Space>"
 let g:maplocalleader = '\'
@@ -45,9 +51,3 @@ elseif exists('$DISPLAY') && executable('xclip')
 		\ }
 	\ }
 endif
-
-" Enable loading {ftdetect,ftplugin,indent}/*.vim files.
-filetype plugin indent on
-
-" Enable loading syntax/*.vim files.
-syntax on
