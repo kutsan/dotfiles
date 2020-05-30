@@ -40,12 +40,6 @@ augroup trimtrailing
 	autocmd BufWritePre * call kutsan#autocmds#trimtrailing#()
 augroup end
 
-" Create directory path if it's not exist.
-augroup makemissing
-	autocmd!
-	autocmd BufWritePre * call kutsan#autocmds#makemissing#(expand('<afile>:p:h'), v:cmdbang)
-augroup end
-
 " Block changes to read-only buffers.
 augroup blockreadonly
 	autocmd!
