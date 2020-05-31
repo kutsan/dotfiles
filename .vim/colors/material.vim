@@ -197,7 +197,6 @@ call s:SetHighlight('TabLineFill', s:fg, s:selection, '')
 call s:SetHighlight('TabLineSel', s:bg, s:cyan, '')
 call s:SetHighlight('Title', s:green, '', '')
 call s:SetHighlight('VertSplit', s:comments, '', '')
-call s:SetHighlight('Visual', s:fg, s:selection, '')
 call s:SetHighlight('WarningMsg', s:red, '', '')
 call s:SetHighlight('WildMenu', s:bg, s:cyan, '')
 
@@ -428,6 +427,7 @@ call s:SetHighlight('diffAdded', s:green, s:bg, '')
 call s:SetHighlight('diffRemoved', s:red, s:bg, '')
 call s:SetHighlight('diffChanged', s:yellow, s:bg, '')
 call s:SetHighlight('ErrorMsg', s:red, s:bg, '')
+call s:SetHighlight('Visual', '', s:selection, '')
 highlight! DiffAdd ctermbg=29 ctermfg=158 guibg=#45493e guifg=#c0c5b9
 highlight! DiffChange ctermbg=23 ctermfg=159 guibg=#384851 guifg=#b3c3cc
 highlight! DiffDelete ctermbg=95 ctermfg=224 guibg=#53343b guifg=#ceb0b6
