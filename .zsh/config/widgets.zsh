@@ -108,7 +108,7 @@ function custom-fzf-select() {
 				if [ -d {} ]; then; \
 					ls -l --si --almost-all --classify --color=always --group-directories-first --literal {} 2>/dev/null; \
 				else \
-					bat {} || cat {} 2>/dev/null; \
+					cat {} 2>/dev/null; \
 				fi \
 			' \
 	)

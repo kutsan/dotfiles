@@ -1,10 +1,7 @@
 [core]
 	editor = $EDITOR
-	pager = delta --theme='TwoDark' --paging='always' --width='variable' --hunk-style='plain'
+	pager = less
 	whitespace = space-before-tab,-indent-with-non-tab,trailing-space
-
-[interactive]
-	diffFilter = delta --color-only
 
 [init]
 	templatedir = ~/.config/git/templatedir

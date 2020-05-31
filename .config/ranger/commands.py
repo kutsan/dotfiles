@@ -36,7 +36,7 @@ class select(Command):
                     if [ -d {} ]; then; \
                         ls -l --si --almost-all --classify --color=always --group-directories-first --literal {} 2>/dev/null; \
                     else \
-                        bat {} || cat {} 2>/dev/null; \
+                        cat {} 2>/dev/null; \
                     fi \
                 ' \
         " \
@@ -82,7 +82,7 @@ class locate(Command):
                 --prompt='locate ' \
                 --no-bold \
                 --preview-window='bottom:60%' \
-                --preview='bat {} || cat {} 2>/dev/null' \
+                --preview='cat {} 2>/dev/null' \
         " \
 
         fzf = self.fm.execute_command(command, stdout=subprocess.PIPE)

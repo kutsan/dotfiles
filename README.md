@@ -70,7 +70,6 @@
 - [`bind`](https://source.isc.org/cgi-bin/gitweb.cgi) - Domain Name System tools
 - [`gcal`](https://www.gnu.org/software/gcal) - Calculate and print calendars
 - [`mpv`](https://github.com/mpv-player/mpv) - Minimalist video player based on MPlayer
-- [`bat`](https://github.com/sharkdp/bat) - A cat clone with additional features like git integration and syntax highlighting
 - [`universal-ctags`](https://github.com/universal-ctags/ctags) - A maintained ctags implementation
 - [`wireguard`](https://github.com/WireGuard/wireguard-go) - Virtual Private Network protocol to create secure point-to-point connections
 - [`ledger`](https://github.com/ledger/ledger) - Double-entry accounting system with a command-line reporting interface
@@ -78,7 +77,6 @@
 - [`oath-toolkit`](https://www.nongnu.org/oath-toolkit) - Provides components for building one-time password authentication systems
 - [`gptfdisk`](https://www.rodsbooks.com/gdisk) - Interactive GUID partition table (GPT) manipulator
 - [`imagemagick`](https://imagemagick.org) - Software suite for displaying, converting, and editing raster image and vector image files
-- [`delta`](https://github.com/dandavison/delta) - A syntax-highlighter for git and diff output
 
 ## License
 

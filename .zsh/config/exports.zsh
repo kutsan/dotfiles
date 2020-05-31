@@ -128,9 +128,6 @@ export GCAL="\
 	--starting-day=Monday \
 	--cc-holidays=TR"
 
-# bat
-export BAT_CONFIG_PATH="$HOME/.config/bat/bat.conf"
-
 # less
 export LESS=" \
 	--ignore-case \
@@ -144,7 +141,6 @@ export LESS=" \
 	--silent \
 	--tabs=4 \
 	--shift=5"
-export LESSOPEN="| bat %s 2>/dev/null" # Use `bat` program to syntax-wise highlight files.
 export LESSHISTFILE="$HOME/.config/less/lesshistory" # Command and search history file.
 export LESSKEYRC="$HOME/.config/less/lesskey" # Path of the uncompiled lesskey file.
 export LESSKEY="$LESSKEYRC.lwc" # Path of the compiled lesskey file.
