@@ -76,9 +76,7 @@ export LANGUAGE='en_US.UTF-8'
 
 # man
 export MANWIDTH='100' # Fixed line width for man pages.
-	if ([[ $OSTYPE =~ 'linux-android*' ]] 2>/dev/null) { MANWIDTH='50' }
 export MANPAGER="nvim +'set filetype=man' -"
-	if ([[ $OSTYPE =~ 'linux-android*' ]] 2>/dev/null) { unset MANPAGER }
 
 # nvim
 export NVIM_RPLUGIN_MANIFEST="$HOME/.vim/cache/share/rplugin.vim"
@@ -116,8 +114,7 @@ export TR_AUTH='kutsan:EkYBoNSd6oIUznucRTfQTFCcxC5WeeDaBImPt6I9CncuY9g8mH'
 export GCAL="\
 	--highlighting=\e[41m:\e[0m:\e[33m:\e[0m \
 	--pager \
-	--starting-day=Monday \
-	--cc-holidays=TR"
+	--starting-day=Monday"
 
 # less
 export LESS="\
