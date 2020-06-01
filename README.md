@@ -46,6 +46,9 @@
 - [`findutils`](https://www.gnu.org/software/findutils) - GNU basic directory searching utilities that provides find, locate and xargs
 - [`less`](http://www.greenwoodsoftware.com/less) - Standard file pager for Unix-like systems
 - [`curl`](https://github.com/curl/curl) - Tool for transferring data using various protocols
+- [`grep`](https://www.gnu.org/software/grep) - Search plain-text data sets for lines that match a regular expression
+- [`tar`](https://www.gnu.org/software/tar) - File archiver
+- [`gzip`](https://www.gnu.org/software/gzip) - Data compression utility
 - [`sed`](https://www.gnu.org/software/sed) - Non-interactive command-line text editor
 - [`gnupg`](https://www.gnupg.org) - Hybrid-encryption software suit, free implementation of the OpenPGP standard
 - [`nmap`](https://github.com/nmap/nmap) - Network security scanner and mapper for exploration and security auditing
