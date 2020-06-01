@@ -36,7 +36,6 @@
 		- [`bitwarden`](https://github.com/bitwarden/cli) - Password manager
 - [`python`](https://www.python.org) - High-level programming language for general-purpose programming
 	- [`pip`](https://pypi.org) - Python package manager to install and manage packages written in Python
-		- [`vint`](https://github.com/Kuniwak/vint) - Extensible, high performance Vimscript linter and analysis tool
 		- [`stig`](https://github.com/rndusr/stig) - TUI and CLI interface for transmission-daemon
 		- [`terminal-colors`](https://github.com/eikenb/terminal-colors) - Test utility for color capabilities of terminal
 		- [`grip`](https://github.com/joeyespo/grip) - Preview Markdown files in local server
@@ -48,7 +47,6 @@
 - [`less`](http://www.greenwoodsoftware.com/less) - Standard file pager for Unix-like systems
 - [`curl`](https://github.com/curl/curl) - Tool for transferring data using various protocols
 - [`sed`](https://www.gnu.org/software/sed) - Non-interactive command-line text editor
-- [`wget`](https://www.gnu.org/software/wget) - Tool for retrieving files using the most widely-used Internet protocols
 - [`gnupg`](https://www.gnupg.org) - Hybrid-encryption software suit, free implementation of the OpenPGP standard
 - [`nmap`](https://github.com/nmap/nmap) - Network security scanner and mapper for exploration and security auditing
 - [`openssl`](https://github.com/openssl/openssl) - Toolkit for the Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols
@@ -60,8 +58,7 @@
 	- [`msmtp`](http://msmtp.sourceforge.net) - SMTP agent for sending e-mails through mail user agents or terminal
 - [`ripgrep`](https://github.com/BurntSushi/ripgrep) - Line oriented search tool similar to grep that combines the usability of ag
 - [`ffmpeg`](https://github.com/FFmpeg/FFmpeg) - Cross-platform solution to handle, record, convert and stream audio and video
-- [`transmission-cli`](https://github.com/transmission/transmission) - BitTorrent client and daemon with web UI for remote controlling
-- [`tidy-html5`](https://github.com/htacg/tidy-html5) - HTML linter with support for modern web standards
+- [`transmission`](https://github.com/transmission/transmission) - BitTorrent client and daemon with web UI for remote controlling
 - [`par`](https://github.com/sergi/par) - Paragraph reformatter and aligner for e-mails and plain text
 - [`bind`](https://source.isc.org/cgi-bin/gitweb.cgi) - Domain Name System tools
 - [`gcal`](https://www.gnu.org/software/gcal) - Calculate and print calendars
