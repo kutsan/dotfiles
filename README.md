@@ -36,8 +36,6 @@
 		- [`bitwarden`](https://github.com/bitwarden/cli) - Password manager
 - [`python`](https://www.python.org) - High-level programming language for general-purpose programming
 	- [`pip`](https://pypi.org) - Python package manager to install and manage packages written in Python
-		- [`ranger`](https://github.com/ranger/ranger) - Text-based file system manager for the console with Vim-like key bindings
-			- [`exiftool`](http://www.sno.phy.queensu.ca/~phil/exiftool) - Read, write and edit meta information in a wide variety of media files
 		- [`vint`](https://github.com/Kuniwak/vint) - Extensible, high performance Vimscript linter and analysis tool
 		- [`stig`](https://github.com/rndusr/stig) - TUI and CLI interface for transmission-daemon
 		- [`terminal-colors`](https://github.com/eikenb/terminal-colors) - Test utility for color capabilities of terminal
