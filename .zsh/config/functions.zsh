@@ -1,12 +1,4 @@
 ##
-# `cd` into the last directory upon exit.
-##
-function r() {
-	ranger $1 --choosedir=$RANGER_LAST_DIRECTORY_BUFFER \
-		&& cd "$(<$RANGER_LAST_DIRECTORY_BUFFER)" 2>/dev/null
-}
-
-##
 # `oathtool` 2FA utility function.
 ##
 function auth() {
