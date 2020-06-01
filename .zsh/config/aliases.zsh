@@ -22,7 +22,7 @@ alias l="ledger balance '^assets' '^liabilities' --empty --flat"
 alias le='$EDITOR ~/Sync/finance/journal-$(date +%Y).ledger'
 alias lnet="ledger register '^expenses' '^income' --period 'this month' --subtotal --invert"
 alias gen-npm='cp "$HOME/.config/npm/package.json" "package.json"'
-alias gen-editorconfig='cp "$HOME/.config/editorconfig/.editorconfig" ".editorconfig"'
+alias gen-editorconfig='cp "$HOME/.editorconfig" ".editorconfig"'
 
 # Global Aliases
 alias -g L='| less'
