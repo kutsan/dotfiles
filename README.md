@@ -56,7 +56,6 @@
 - [`rsync`](https://rsync.samba.org) - Utility that provides fast incremental file transfer
 - [`fzf`](https://github.com/junegunn/fzf) - General-purpose fuzzy finder that can be used among other Unix tools
 - [`htop`](https://github.com/hishamhm/htop) - Interactive text-based system monitor, process viewer and process manager
-- [`newsboat`](https://github.com/newsboat/newsboat) - RSS/Atom feed reader
 - [`neomutt`](https://github.com/neomutt/neomutt) - Fork of the mail user agent mutt with new features and patches
 	- [`msmtp`](http://msmtp.sourceforge.net) - SMTP agent for sending e-mails through mail user agents or terminal
 - [`ripgrep`](https://github.com/BurntSushi/ripgrep) - Line oriented search tool similar to grep that combines the usability of ag

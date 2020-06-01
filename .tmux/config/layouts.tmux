@@ -3,11 +3,6 @@ bind-key -n M-V \
 	new-window \; \
 	send-keys 'v' 'Enter'
 
-# newsboat
-bind-key -n M-N \
-	new-window \; \
-	send-keys 'newsboat' 'Enter'
-
 # stig
 bind-key -n M-S \
 	new-window \; \
