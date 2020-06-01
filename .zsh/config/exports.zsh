@@ -82,8 +82,6 @@ export MANPAGER="nvim +'set filetype=man' -"
 
 # nvim
 export NVIM_RPLUGIN_MANIFEST="$HOME/.vim/cache/share/rplugin.vim"
-# export NVIM_NODE_LOG_FILE="$HOME/.vim/cache/log/node.log"
-# export NVIM_NODE_LOG_LEVEL='debug'
 	# Create symbolic links for neovim and vim configs.
 	if ! [[ -L ~/.vim/vimrc ]] { ln -s ~/.vim/init.vim ~/.vim/vimrc }
 	if ! [[ -L ~/.config/nvim ]] { ln -s ~/.vim ~/.config/nvim }
@@ -129,7 +127,7 @@ export GCAL="\
 	--cc-holidays=TR"
 
 # less
-export LESS=" \
+export LESS="\
 	--ignore-case \
 	--tilde \
 	--chop-long-lines \
