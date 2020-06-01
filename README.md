@@ -61,7 +61,6 @@
 - [`newsboat`](https://github.com/newsboat/newsboat) - RSS/Atom feed reader
 - [`neomutt`](https://github.com/neomutt/neomutt) - Fork of the mail user agent mutt with new features and patches
 	- [`msmtp`](http://msmtp.sourceforge.net) - SMTP agent for sending e-mails through mail user agents or terminal
-- [`ncdu`](https://dev.yorhel.nl/ncdu) - Disk usage analyzer for quickly finding big files with ncurses interface
 - [`ripgrep`](https://github.com/BurntSushi/ripgrep) - Line oriented search tool similar to grep that combines the usability of ag
 - [`ffmpeg`](https://github.com/FFmpeg/FFmpeg) - Cross-platform solution to handle, record, convert and stream audio and video
 - [`transmission-cli`](https://github.com/transmission/transmission) - BitTorrent client and daemon with web UI for remote controlling
