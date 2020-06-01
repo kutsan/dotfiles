@@ -21,11 +21,6 @@ bind-key -n M-O \
 
 # gcal
 bind-key -n M-C \
-	new-window -n gcal \
-		"gcal \
-			--highlighting='\e[41m:\e[0m:\e[33m:\e[0m' \
-			--pager \
-			--starting-day=1 \
-			$(date +'%Y')" \; \
+	new-window -n gcal "gcal $(date +'%Y')" \; \
 	set-window-option allow-rename off \; \
 	rename-window gcal
