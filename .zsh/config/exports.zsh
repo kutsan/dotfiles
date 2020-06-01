@@ -49,16 +49,10 @@ case $OSTYPE {
 		;;
 }
 
-# Term
+# Basics
 export TERM='xterm-256color'
-
-# Default Editor
 export EDITOR='nvim'
-
-# Default Pager
 export PAGER='less'
-
-# Browser
 export BROWSER='xdg-open'
 
 # Default Config and Cache Home
