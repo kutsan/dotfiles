@@ -1,8 +1,3 @@
-# neovim
-bind-key -n M-V \
-	new-window \; \
-	send-keys 'v' 'Enter'
-
 # stig
 bind-key -n M-S \
 	new-window \; \
@@ -11,11 +6,9 @@ bind-key -n M-S \
 # trackma
 bind-key -n M-T \
 	new-window \; \
-	send-keys 'trackma-curses' 'Enter' \; \
-	split-window -v -l 20 -c $HOME/Downloads \; \
-	send-keys "r --cmd='set viewmode!'" 'Enter'
+	send-keys 'trackma-curses' 'Enter'
 
-# mutt
+# neomutt
 bind-key -n M-M \
 	new-window \; \
 	send-keys 'neomutt' 'Enter'
@@ -26,14 +19,13 @@ bind-key -n M-O \
 	set-window-option allow-rename off \; \
 	rename-window htop
 
-# cal
+# gcal
 bind-key -n M-C \
-	new-window -n cal \
+	new-window -n gcal \
 		"gcal \
 			--highlighting='\e[41m:\e[0m:\e[33m:\e[0m' \
 			--pager \
 			--starting-day=1 \
-			--cc-holidays=TR \
 			$(date +'%Y')" \; \
 	set-window-option allow-rename off \; \
-	rename-window cal
+	rename-window gcal
