@@ -25,7 +25,7 @@ case $OSTYPE {
 		export OPENSSL_HOME='/usr/local/opt/openssl/bin'
 		export OPENSSL_MAN_HOME='/usr/local/opt/openssl/man'
 		export PYTHON_SYMLINKS_HOME='/usr/local/opt/python/libexec/bin'
-		export PYTHONUSERBASE="$HOME/.local/"
+		export PYTHONUSERBASE="$HOME/.local"
 
 		path=(
 			$GNU_COREUTILS_HOME
