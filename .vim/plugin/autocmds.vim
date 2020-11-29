@@ -12,7 +12,7 @@ augroup highlightyank
 	autocmd!
 
 	if has('nvim')
-		autocmd TextYankPost * lua require'vim.highlight'.on_yank('Visual', 100)
+		autocmd TextYankPost * lua vim.highlight.on_yank {higroup="Visual", timeout=100}
 	endif
 augroup end
 
