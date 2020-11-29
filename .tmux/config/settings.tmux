@@ -11,7 +11,7 @@ set-option -g prefix C-a
 set-option -g default-command "$SHELL"
 
 # Default term.
-set-option -g default-terminal "screen-256color"
+set-option -g default-terminal "tmux-256color"
 
 # Enable vi style key bindings in command mode.
 set-option -g mode-keys vi
