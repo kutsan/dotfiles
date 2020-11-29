@@ -7,7 +7,7 @@ set fileformats=unix " Only use Unix end-of-line format.
 
 " Shared Data
 if has('nvim')
-	set shada=!,'100,<50,s10,h,n~/.vim/cache/share/nviminfo
+	set shada=!,'100,<50,s10,h,n~/.vim/cache/share/main.shada
 else
 	set viminfo=!,'100,<50,s10,h,n~/.vim/cache/share/viminfo
 endif
