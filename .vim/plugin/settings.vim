@@ -27,7 +27,7 @@ set comments= " Clear default 'comments' value, let the filetype handle it.
 set display=lastline " As much as possible of the last line in a window will be displayed.
 set modelines=0 " Set number of lines that is checked for set commands.
 set nomodeline " Disable modeline altogether.
-set mouse= " Disable mouse support altogether.
+set mouse=nv " Enable mouse support for normal and visual modes.
 set nojoinspaces " Disable inserting two spaces after `.`, `?`, `!` with join command.
 set nolangremap " Setting 'langmap' does not apply to characters resulting from a mapping.
 set noshowmatch " When a bracket is inserted, do not jump to the matching one.
