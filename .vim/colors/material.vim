@@ -17,7 +17,7 @@ let g:material_theme_style = get(g:, 'material_theme_style', 'default')
 let g:material_terminal_italics = get(g:, 'material_terminal_italics', 0)
 
 " For backwards compatibility
-if (g:material_theme_style ==# 'dark')
+if (g:material_theme_style == 'dark')
 	let g:material_theme_style = 'darker'
 endif
 
@@ -26,7 +26,7 @@ endif
 function! s:SetHighlight(group, fg, bg, attr)
 	let l:attr = a:attr
 
-	if !g:material_terminal_italics && l:attr ==# 'italic'
+	if !g:material_terminal_italics && l:attr == 'italic'
 		let l:attr = ''
 	endif
 
@@ -35,11 +35,11 @@ function! s:SetHighlight(group, fg, bg, attr)
 	endif
 
 	if !empty(a:fg)
-		exec 'hi ' . a:group . ' guifg=' . a:fg
+		exec 'hi ' . a:group . ' guifg=' . a:fg.gui . ' ctermfg=' . a:fg.cterm
 	endif
 
 	if !empty(a:bg)
-		exec 'hi ' . a:group . ' guibg=' . a:bg
+		exec 'hi ' . a:group . ' guibg=' . a:bg.gui . ' ctermbg=' . a:bg.cterm
 	endif
 
 	if !empty(l:attr)
@@ -51,81 +51,81 @@ endfun
 
 " Default colors
 set background=dark
-let s:bg = '#263238'
-let s:fg = '#eeffff'
-let s:invisibles = '#65738e'
-let s:comments = '#546e7a'
-let s:caret = '#ffcc00'
-let s:selection = '#2c3b41'
-let s:guides = '#37474f'
-let s:line_numbers = '#37474f'
-let s:line_highlight = '#1a2327'
-let s:white = '#ffffff'
-let s:black = '#000000'
-let s:red = '#ff5370'
-let s:orange = '#f78c6c'
-let s:yellow = '#ffcb6b'
-let s:green = '#c3e88d'
-let s:cyan = '#89ddff'
-let s:blue = '#82aaff'
-let s:paleblue = '#b2ccd6'
-let s:purple = '#c792ea'
-let s:brown = '#c17e70'
-let s:pink = '#f07178'
-let s:violet = '#bb80b3'
+let s:bg = { 'gui': '#263238', 'cterm': 'none' }
+let s:fg = { 'gui': '#eeffff', 'cterm': 231 }
+let s:invisibles = { 'gui': '#65738e', 'cterm': 66 }
+let s:comments = { 'gui': '#546e7a', 'cterm': 145 }
+let s:caret = { 'gui': '#ffcc00', 'cterm': 220 }
+let s:selection = { 'gui': '#2c3b41', 'cterm': 239 }
+let s:guides = { 'gui': '#37474f', 'cterm': 17 }
+let s:line_numbers = { 'gui': '#37474f', 'cterm': 145 }
+let s:line_highlight = { 'gui': '#1a2327', 'cterm': 235 }
+let s:white = { 'gui': '#ffffff', 'cterm': 231 }
+let s:black = { 'gui': '#000000', 'cterm': 232 }
+let s:red = { 'gui': '#ff5370', 'cterm': 203 }
+let s:orange = { 'gui': '#f78c6c', 'cterm': 209 }
+let s:yellow = { 'gui': '#ffcb6b', 'cterm': 11 }
+let s:green = { 'gui': '#c3e88d', 'cterm': 2 } " 186 –– almost perfect match
+let s:cyan = { 'gui': '#89ddff', 'cterm': 117 }
+let s:blue = { 'gui': '#82aaff', 'cterm': 111 }
+let s:paleblue = { 'gui': '#b2ccd6', 'cterm': 152 }
+let s:purple = { 'gui': '#c792ea', 'cterm': 176 }
+let s:brown = { 'gui': '#c17e70', 'cterm': 137 }
+let s:pink = { 'gui': '#f07178', 'cterm': 204 }
+let s:violet = { 'gui': '#bb80b3', 'cterm': 139 }
 
 " Theme-specific color overrides
-if g:material_theme_style ==# 'palenight'
-	let s:bg = '#292d3e'
-	let s:fg = '#a6accd'
-	let s:invisibles = '#4e5579'
-	let s:comments = '#676e95'
-	let s:selection = '#343b51'
-	let s:guides = '#4e5579'
-	let s:line_numbers = '#3a3f58'
-	let s:line_highlight = '#1c1f2b'
-elseif g:material_theme_style ==# 'darker'
-	let s:bg = '#212121'
-	let s:fg = '#eeffff'
-	let s:invisibles = '#65737e'
-	let s:comments = '#545454'
-	let s:selection = '#2c2c2c'
-	let s:guides = '#424242'
-	let s:line_numbers = '#424242'
-	let s:line_highlight = '#171717'
-elseif g:material_theme_style ==# 'ocean'
-	let s:bg = '#0f111a'
-	let s:fg = '#8f93a2'
-	let s:invisibles = '#80869e'
-	let s:comments = '#464b5d'
-	let s:selection = '#1f2233'
-	let s:guides = '#3b3f51'
-	let s:line_numbers = '#3b3f51'
-	let s:line_highlight = '#0a0c12'
-elseif g:material_theme_style ==# 'lighter'
+if g:material_theme_style == 'palenight' || g:material_theme_style == 'palenight-community'
+	let s:bg = { 'gui': '#292d3e', 'cterm': 'none' }
+	let s:fg = { 'gui': '#a6accd', 'cterm': 146 }
+	let s:invisibles = { 'gui': '#4e5579', 'cterm': 60 }
+	let s:comments = { 'gui': '#676e95', 'cterm': 60 }
+	let s:selection = { 'gui': '#343b51', 'cterm': 60 }
+	let s:guides = { 'gui': '#4e5579', 'cterm': 60 }
+	let s:line_numbers = { 'gui': '#3a3f58', 'cterm': 60 }
+	let s:line_highlight = { 'gui': '#1c1f2b', 'cterm': 234 }
+elseif g:material_theme_style == 'darker' || g:material_theme_style == 'darker-community'
+	let s:bg = { 'gui': '#212121', 'cterm': 'none' }
+	let s:fg = { 'gui': '#eeffff', 'cterm': 231 }
+	let s:invisibles = { 'gui': '#65737e', 'cterm': 66 }
+	let s:comments = { 'gui': '#545454', 'cterm': 59 }
+	let s:selection = { 'gui': '#2c2c2c', 'cterm': 237 }
+	let s:guides = { 'gui': '#424242', 'cterm': 0 }
+	let s:line_numbers = { 'gui': '#424242', 'cterm': 0 }
+	let s:line_highlight = { 'gui': '#171717', 'cterm': 0 }
+elseif g:material_theme_style == 'ocean' || g:material_theme_style == 'ocean-community'
+	let s:bg = { 'gui': '#0f111a', 'cterm': 'none' }
+	let s:fg = { 'gui': '#8f93a2', 'cterm': 103 }
+	let s:invisibles = { 'gui': '#80869e', 'cterm': 103 }
+	let s:comments = { 'gui': '#464b5d', 'cterm': 60 }
+	let s:selection = { 'gui': '#1f2233', 'cterm': 60 }
+	let s:guides = { 'gui': '#3b3f51', 'cterm': 17 }
+	let s:line_numbers = { 'gui': '#3b3f51', 'cterm': 60 }
+	let s:line_highlight = { 'gui': '#0a0c12', 'cterm': 0 }
+elseif g:material_theme_style == 'lighter' || g:material_theme_style == 'lighter-community'
 	set background=light
-	let s:bg = '#fafafa'
-	let s:fg = '#90a4ae'
-	let s:invisibles = '#e7eaec'
-	let s:comments = '#90a4ae'
-	let s:caret = '#272727'
-	let s:selection = '#ebf4f3'
-	let s:guides = '#b0bec5'
-	let s:line_numbers = '#cfd8dc'
-	let s:line_highlight = '#ecf0f1'
-	let s:white = '#ffffff'
-	let s:black = '#000000'
-	let s:red = '#e53935'
-	let s:orange = '#f76d47'
-	let s:yellow = '#ffb62c'
-	let s:green = '#91b859'
-	let s:cyan = '#39adb5'
-	let s:blue = '#6182b8'
-	let s:paleblue = '#8796b0'
-	let s:purple = '#7c4dff'
-	let s:brown = '#c17e70'
-	let s:pink = '#ff5370'
-	let s:violet = '#945eb8'
+	let s:bg = { 'gui': '#fafafa', 'cterm': 'none' }
+	let s:fg = { 'gui': '#90a4ae', 'cterm': 109 }
+	let s:invisibles = { 'gui': '#e7eaec', 'cterm': 189 }
+	let s:comments = { 'gui': '#90a4ae', 'cterm': 109 }
+	let s:caret = { 'gui': '#272727', 'cterm': 0 }
+	let s:selection = { 'gui': '#ebf4f3', 'cterm': 254 }
+	let s:guides = { 'gui': '#b0bec5', 'cterm': 146 }
+	let s:line_numbers = { 'gui': '#cfd8dc', 'cterm': 188 }
+	let s:line_highlight = { 'gui': '#ecf0f1', 'cterm': 253 }
+	let s:white = { 'gui': '#ffffff', 'cterm': 231 }
+	let s:black = { 'gui': '#000000', 'cterm': 0 }
+	let s:red = { 'gui': '#e53935', 'cterm': 160 }
+	let s:orange = { 'gui': '#f76d47', 'cterm': 202 }
+	let s:yellow = { 'gui': '#ffb62c', 'cterm': 214 }
+	let s:green = { 'gui': '#91b859', 'cterm': 107 }
+	let s:cyan = { 'gui': '#39adb5', 'cterm': 37 }
+	let s:blue = { 'gui': '#6182b8', 'cterm': 67 }
+	let s:paleblue = { 'gui': '#8796b0', 'cterm': 103 }
+	let s:purple = { 'gui': '#7c4dff', 'cterm': 99 }
+	let s:brown = { 'gui': '#c17e70', 'cterm': 137 }
+	let s:pink = { 'gui': '#ff5370', 'cterm': 203 }
+	let s:violet = { 'gui': '#945eb8', 'cterm': 97 }
 endif
 
 " Defined globally so that the Airline theme has access
@@ -162,10 +162,10 @@ call s:SetHighlight('CursorColumn', '', s:line_highlight, '')
 call s:SetHighlight('CursorLine', '', s:line_highlight, '')
 call s:SetHighlight('CursorLineNr', s:comments, '', '')
 call s:SetHighlight('Directory', s:blue, '', '')
-call s:SetHighlight('DiffAdd', s:bg, s:green, '')
-call s:SetHighlight('DiffDelete', s:bg, s:red, '')
-call s:SetHighlight('DiffChange', s:bg, s:yellow, '')
-call s:SetHighlight('DiffText', s:bg, s:orange, '')
+call s:SetHighlight('DiffAdd', s:green, s:bg, '')
+call s:SetHighlight('DiffDelete', s:red, s:bg, '')
+call s:SetHighlight('DiffChange', s:yellow, s:bg, '')
+call s:SetHighlight('DiffText', s:orange, s:bg, '')
 call s:SetHighlight('ErrorMsg', s:bg, s:red, 'bold')
 call s:SetHighlight('FoldColumn', s:line_numbers, s:bg, '')
 call s:SetHighlight('Folded', s:brown, s:bg, 'bold')
@@ -188,8 +188,6 @@ call s:SetHighlight('SpellCap', s:blue, '', 'undercurl')
 call s:SetHighlight('SpellBad', s:red, '', 'undercurl')
 call s:SetHighlight('StatusLine', s:fg, s:selection, '')
 call s:SetHighlight('StatusLineNC', s:comments, s:selection, '')
-highlight! StatusLine ctermbg=243 ctermfg=238 guibg=#818596 guifg=#131315
-highlight! StatusLineNC ctermbg=243 ctermfg=237 guibg=#3e445e guifg=#131315
 call s:SetHighlight('StatusLineTerm', s:bg, s:green, '')
 call s:SetHighlight('StatusLineTermNC', s:bg, s:green, '')
 call s:SetHighlight('TabLine', s:fg, s:line_numbers, '')
@@ -197,6 +195,7 @@ call s:SetHighlight('TabLineFill', s:fg, s:selection, '')
 call s:SetHighlight('TabLineSel', s:bg, s:cyan, '')
 call s:SetHighlight('Title', s:green, '', '')
 call s:SetHighlight('VertSplit', s:comments, '', '')
+call s:SetHighlight('Visual', s:fg, s:selection, '')
 call s:SetHighlight('WarningMsg', s:red, '', '')
 call s:SetHighlight('WildMenu', s:bg, s:cyan, '')
 
@@ -220,6 +219,14 @@ call s:SetHighlight('Special', s:violet, '', '')
 call s:SetHighlight('Underlined', s:blue, '', '')
 call s:SetHighlight('Error', s:bg, s:red, '')
 call s:SetHighlight('Todo', s:orange, s:bg, 'italic')
+
+" Legacy groups for official git.vim and diff.vim syntax
+hi! link diffFile DiffAdd
+hi! link diffNewFile DiffDelete
+hi! link diffAdded DiffAdd
+hi! link diffChanged DiffChange
+hi! link diffLine DiffChange
+hi! link diffRemoved DiffDelete
 
 " Git Commit Messages
 call s:SetHighlight('gitcommitHeader', s:purple, '', '')
@@ -247,29 +254,85 @@ call s:SetHighlight('javaScriptRequire', s:cyan, '', '')
 call s:SetHighlight('javaScriptReserved', s:purple, '', '')
 
 " pangloss/vim-javascript
-call s:SetHighlight('jsArrowFunction', s:purple, '', '')
-call s:SetHighlight('jsAsyncKeyword', s:purple, '', '')
-call s:SetHighlight('jsExtendsKeyword', s:purple, '', '')
-call s:SetHighlight('jsClassKeyword', s:purple, '', '')
-call s:SetHighlight('jsDocParam', s:green, '', '')
-call s:SetHighlight('jsDocTags', s:cyan, '', '')
-call s:SetHighlight('jsForAwait', s:purple, '', '')
-call s:SetHighlight('jsFlowArgumentDef', s:yellow, '', '')
-call s:SetHighlight('jsFrom', s:purple, '', '')
-call s:SetHighlight('jsImport', s:purple, '', '')
-call s:SetHighlight('jsExport', s:purple, '', '')
-call s:SetHighlight('jsExportDefault', s:purple, '', '')
-call s:SetHighlight('jsFuncCall', s:blue, '', '')
-call s:SetHighlight('jsFunction', s:purple, '', '')
-call s:SetHighlight('jsGlobalObjects', s:yellow, '', '')
-call s:SetHighlight('jsGlobalNodeObjects', s:yellow, '', '')
-call s:SetHighlight('jsModuleAs', s:purple, '', '')
-call s:SetHighlight('jsNull', s:orange, '', '')
-call s:SetHighlight('jsStorageClass', s:purple, '', '')
-call s:SetHighlight('jsTemplateBraces', s:red, '', '')
-call s:SetHighlight('jsTemplateExpression', s:red, '', '')
-call s:SetHighlight('jsThis', s:red, '', '')
-call s:SetHighlight('jsUndefined', s:orange, '', '')
+if g:material_theme_style !~ '-community$'
+	call s:SetHighlight('jsArrowFunction', s:purple, '', '')
+	call s:SetHighlight('jsAsyncKeyword', s:purple, '', '')
+	call s:SetHighlight('jsBooleanTrue', s:orange, '', '')
+	call s:SetHighlight('jsBooleanFalse', s:orange, '', '')
+	call s:SetHighlight('jsBrackets', s:pink, '', '')
+	call s:SetHighlight('jsCatch', s:cyan, '', 'italic')
+	call s:SetHighlight('jsClassBraces', s:cyan, '', '')
+	call s:SetHighlight('jsClassDefinition', s:yellow, '', '')
+	call s:SetHighlight('jsClassFuncName', s:pink, '', '')
+	call s:SetHighlight('jsClassProperty', s:pink, '', '')
+	call s:SetHighlight('jsClassKeyword', s:purple, '', '')
+	call s:SetHighlight('jsConditional', s:cyan, '', 'italic')
+	call s:SetHighlight('jsDocParam', s:green, '', '')
+	call s:SetHighlight('jsDocTags', s:cyan, '', '')
+	call s:SetHighlight('jsDot', s:cyan, '', '')
+	call s:SetHighlight('jsException', s:cyan, '', 'italic')
+	call s:SetHighlight('jsExceptions', s:yellow, '', '')
+	call s:SetHighlight('jsExport', s:cyan, '', 'italic')
+	call s:SetHighlight('jsExportDefault', s:cyan, '', 'italic')
+	call s:SetHighlight('jsExtendsKeyword', s:purple, '', '')
+	call s:SetHighlight('jsFinally', s:cyan, '', 'italic')
+	call s:SetHighlight('jsFinallyBraces', s:cyan, '', '')
+	call s:SetHighlight('jsFlowArgumentDef', s:yellow, '', '')
+	call s:SetHighlight('jsForAwait', s:cyan, '', 'italic')
+	call s:SetHighlight('jsFrom', s:cyan, '', 'italic')
+	call s:SetHighlight('jsFuncBraces', s:cyan, '', '')
+	call s:SetHighlight('jsFuncCall', s:blue, '', '')
+	call s:SetHighlight('jsFuncParens', s:cyan, '', '')
+	call s:SetHighlight('jsFunction', s:purple, '', '')
+	call s:SetHighlight('jsFunctionKey', s:pink, '', '')
+	call s:SetHighlight('jsGlobalObjects', s:yellow, '', '')
+	call s:SetHighlight('jsGlobalNodeObjects', s:yellow, '', '')
+	call s:SetHighlight('jsIfElseBraces', s:cyan, '', '')
+	call s:SetHighlight('jsImport', s:cyan, '', 'italic')
+	call s:SetHighlight('jsModuleAs', s:cyan, '', 'italic')
+	call s:SetHighlight('jsModuleBraces', s:cyan, '', '')
+	call s:SetHighlight('jsNull', s:cyan, '', '')
+	call s:SetHighlight('jsNoise', s:cyan, '', '')
+	call s:SetHighlight('jsObjectBraces', s:cyan, '', '')
+	call s:SetHighlight('jsObjectColon', s:cyan, '', '')
+	call s:SetHighlight('jsObjectKey', s:pink, '', '')
+	call s:SetHighlight('jsObjectSeparator', s:cyan, '', '')
+	call s:SetHighlight('jsParens', s:pink, '', '')
+	call s:SetHighlight('jsRepeat', s:cyan, '', 'italic')
+	call s:SetHighlight('jsReturn', s:cyan, '', 'italic')
+	call s:SetHighlight('jsStorageClass', s:purple, '', '')
+	call s:SetHighlight('jsTemplateBraces', s:cyan, '', '')
+	call s:SetHighlight('jsTemplateExpression', s:fg, '', '')
+	call s:SetHighlight('jsTemplateString', s:green, '', '')
+	call s:SetHighlight('jsThis', s:cyan, '', 'italic')
+	call s:SetHighlight('jsTry', s:cyan, '', 'italic')
+	call s:SetHighlight('jsTryCatchBraces', s:cyan, '', '')
+	call s:SetHighlight('jsUndefined', s:cyan, '', '')
+else
+	call s:SetHighlight('jsArrowFunction', s:purple, '', '')
+	call s:SetHighlight('jsAsyncKeyword', s:purple, '', '')
+	call s:SetHighlight('jsExtendsKeyword', s:purple, '', '')
+	call s:SetHighlight('jsClassKeyword', s:purple, '', '')
+	call s:SetHighlight('jsDocParam', s:green, '', '')
+	call s:SetHighlight('jsDocTags', s:cyan, '', '')
+	call s:SetHighlight('jsForAwait', s:purple, '', '')
+	call s:SetHighlight('jsFlowArgumentDef', s:yellow, '', '')
+	call s:SetHighlight('jsFrom', s:purple, '', '')
+	call s:SetHighlight('jsImport', s:purple, '', '')
+	call s:SetHighlight('jsExport', s:purple, '', '')
+	call s:SetHighlight('jsExportDefault', s:purple, '', '')
+	call s:SetHighlight('jsFuncCall', s:blue, '', '')
+	call s:SetHighlight('jsFunction', s:purple, '', '')
+	call s:SetHighlight('jsGlobalObjects', s:yellow, '', '')
+	call s:SetHighlight('jsGlobalNodeObjects', s:yellow, '', '')
+	call s:SetHighlight('jsModuleAs', s:purple, '', '')
+	call s:SetHighlight('jsNull', s:orange, '', '')
+	call s:SetHighlight('jsStorageClass', s:purple, '', '')
+	call s:SetHighlight('jsTemplateBraces', s:red, '', '')
+	call s:SetHighlight('jsTemplateExpression', s:red, '', '')
+	call s:SetHighlight('jsThis', s:red, '', '')
+	call s:SetHighlight('jsUndefined', s:orange, '', '')
+endif
 
 " MaxMEllon/vim-jsx-pretty
 call s:SetHighlight('jsxTag', s:cyan, '', '')
@@ -318,12 +381,22 @@ call s:SetHighlight('lessFunction', s:blue, '', '')
 call s:SetHighlight('lessVariable', s:purple, '', '')
 
 " HTML
+call s:SetHighlight('htmlTagName', s:pink, '', '')
 call s:SetHighlight('htmlEndTag', s:cyan, '', '')
-call s:SetHighlight('htmlLink', s:green, '', '')
 call s:SetHighlight('htmlTag', s:cyan, '', '')
-call s:SetHighlight('htmlTitle', s:fg, '', '')
 call s:SetHighlight('htmlSpecialTagName', s:yellow, '', '')
 call s:SetHighlight('htmlArg', s:purple, '', 'italic')
+call s:SetHighlight('htmlTitle', s:fg, '', '')
+call s:SetHighlight('htmlLink', s:fg, '', '')
+"" Consistency with plasticboy/vim-markdown
+call s:SetHighlight('htmlBold', s:pink, '', 'bold')
+call s:SetHighlight('htmlH1', s:yellow, '', '')
+call s:SetHighlight('htmlH2', s:yellow, '', '')
+call s:SetHighlight('htmlH3', s:yellow, '', '')
+call s:SetHighlight('htmlH4', s:yellow, '', '')
+call s:SetHighlight('htmlH5', s:yellow, '', '')
+call s:SetHighlight('htmlH6', s:yellow, '', '')
+call s:SetHighlight('htmlItalic', s:pink, '', 'italic')
 
 " XML
 call s:SetHighlight('xmlAttrib', s:purple, '', 'italic')
@@ -362,19 +435,78 @@ call s:SetHighlight('texMath', s:orange, '', '')
 call s:SetHighlight('texMathOper', s:yellow, '', '')
 
 " Markdown
-call s:SetHighlight('markdownBold', s:yellow, '', 'bold')
-call s:SetHighlight('markdownCode', s:cyan, '', '')
-call s:SetHighlight('markdownCodeBlock', s:cyan, '', '')
-call s:SetHighlight('markdownCodeDelimiter', s:cyan, '', '')
-call s:SetHighlight('markdownHeadingDelimiter', s:green, '', '')
-call s:SetHighlight('markdownHeadingRule', s:comments, '', '')
-call s:SetHighlight('markdownId', s:purple, '', '')
-call s:SetHighlight('markdownItalic', s:blue, '', 'italic')
-call s:SetHighlight('markdownListMarker', s:orange, '', '')
-call s:SetHighlight('markdownOrderedListMarker', s:orange, '', '')
-call s:SetHighlight('markdownRule', s:comments, '', '')
-call s:SetHighlight('markdownUrl', s:purple, '', '')
-call s:SetHighlight('markdownUrlTitleDelimiter', s:green, '', '')
+if g:material_theme_style !~ '-community$'
+	call s:SetHighlight('markdownBold', s:pink, '', 'bold')
+	call s:SetHighlight('markdownBoldDelimiter', s:cyan, '', '')
+	call s:SetHighlight('markdownCode', s:paleblue, '', '')
+	call s:SetHighlight('markdownCodeDelimiter', s:green, '', '')
+	call s:SetHighlight('markdownHeadingDelimiter', s:cyan, '', '')
+	call s:SetHighlight('markdownH1', s:yellow, '', '')
+	call s:SetHighlight('markdownH2', s:yellow, '', '')
+	call s:SetHighlight('markdownH3', s:yellow, '', '')
+	call s:SetHighlight('markdownH4', s:yellow, '', '')
+	call s:SetHighlight('markdownH5', s:yellow, '', '')
+	call s:SetHighlight('markdownH6', s:yellow, '', '')
+	call s:SetHighlight('markdownItalic', s:pink, '', 'italic')
+	call s:SetHighlight('markdownItalicDelimiter', s:cyan, '', '')
+	call s:SetHighlight('markdownLinkDelimiter', s:cyan, '', '')
+	call s:SetHighlight('markdownLinkText', s:green, '', '')
+	call s:SetHighlight('markdownLinkTextDelimiter', s:cyan, '', '')
+	call s:SetHighlight('markdownListMarker', s:cyan, '', '')
+	call s:SetHighlight('markdownUrl', s:pink, '', 'underline')
+	call s:SetHighlight('markdownUrlTitleDelimiter', s:green, '', '')
+else
+	call s:SetHighlight('markdownBold', s:yellow, '', 'bold')
+	call s:SetHighlight('markdownCode', s:cyan, '', '')
+	call s:SetHighlight('markdownCodeBlock', s:cyan, '', '')
+	call s:SetHighlight('markdownCodeDelimiter', s:cyan, '', '')
+	call s:SetHighlight('markdownHeadingDelimiter', s:green, '', '')
+	call s:SetHighlight('markdownHeadingRule', s:comments, '', '')
+	call s:SetHighlight('markdownId', s:purple, '', '')
+	call s:SetHighlight('markdownItalic', s:blue, '', 'italic')
+	call s:SetHighlight('markdownListMarker', s:orange, '', '')
+	call s:SetHighlight('markdownOrderedListMarker', s:orange, '', '')
+	call s:SetHighlight('markdownRule', s:comments, '', '')
+	call s:SetHighlight('markdownUrl', s:purple, '', '')
+	call s:SetHighlight('markdownUrlTitleDelimiter', s:yellow, '', '')
+endif
+
+" plasticboy/vim-markdown
+if g:material_theme_style !~ '-community$'
+	call s:SetHighlight('mkdBold', s:cyan, '', '')
+	call s:SetHighlight('mkdCodeStart', s:green, '', '')
+	call s:SetHighlight('mkdCodeDelimiter', s:cyan, '', '')
+	call s:SetHighlight('mkdDelimiter', s:cyan, '', '')
+	call s:SetHighlight('mkdHeading', s:cyan, '', '')
+	call s:SetHighlight('mkdItalic', s:cyan, '', '')
+	call s:SetHighlight('mkdLink', s:green, '', '')
+	call s:SetHighlight('mkdListItem', s:cyan, '', '')
+	call s:SetHighlight('mkdURL', s:pink, '', 'underline')
+endif
+
+" vimwiki/vimwiki
+if g:material_theme_style !~ '-community$'
+	call s:SetHighlight('VimwikiBold', s:pink, '', 'bold')
+	call s:SetHighlight('VimwikiBoldChar', s:cyan, '', 'bold')
+	call s:SetHighlight('VimwikiDelText', s:pink, '', 'strikethrough')
+	call s:SetHighlight('VimwikiDelTextChar', s:cyan, '', '')
+	call s:SetHighlight('VimwikiCode', s:green, '', '')
+	call s:SetHighlight('VimwikiCodeChar', s:cyan, '', '')
+	call s:SetHighlight('VimwikiHeader1', s:yellow, '', '')
+	call s:SetHighlight('VimwikiHeader2', s:yellow, '', '')
+	call s:SetHighlight('VimwikiHeader3', s:yellow, '', '')
+	call s:SetHighlight('VimwikiHeader4', s:yellow, '', '')
+	call s:SetHighlight('VimwikiHeader5', s:yellow, '', '')
+	call s:SetHighlight('VimwikiHeader6', s:yellow, '', '')
+	call s:SetHighlight('VimwikiHeaderChar', s:cyan, '', '')
+	call s:SetHighlight('VimwikiImage', s:cyan, '', '')
+	call s:SetHighlight('VimwikiItalic', s:pink, '', 'italic')
+	call s:SetHighlight('VimwikiItalicChar', s:cyan, '', '')
+	call s:SetHighlight('VimwikiLink', s:green, '', 'underline')
+	call s:SetHighlight('VimwikiListTodo', s:cyan, '', '')
+	call s:SetHighlight('VimwikiPre', s:green, '', '')
+	call s:SetHighlight('VimwikiWebLink1', s:green, '', 'underline')
+endif
 
 " vim-gitgutter
 call s:SetHighlight('GitGutterAdd', s:green, '', '')
@@ -395,7 +527,14 @@ if has('nvim')
 	call s:SetHighlight('NERDTreeFile', s:fg, '', '')
 endif
 
-" Neovim terminal colors.
+" coc.nvim
+call s:SetHighlight('CocMarkdownLink', s:purple, '', '')
+call s:SetHighlight('CocErrorSign', s:red, '', '')
+call s:SetHighlight('CocWarningSign', s:orange, '', '')
+call s:SetHighlight('CocHintSign', s:yellow, '', '')
+call s:SetHighlight('CocInfoSign', s:green, '', '')
+
+" Neovim terminal colors
 if has('nvim')
 	let g:terminal_color_foreground = '#e3f1e4'
 	let g:terminal_color_background = '#0f111a'
