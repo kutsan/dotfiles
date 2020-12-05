@@ -32,7 +32,10 @@ let g:undotree_DiffpanelHeight = 10
 let g:undotree_DiffCommand = 'diff'
 
 " Highlight changed text.
-let g:undotree_HighlightChangedText = 1
+let g:undotree_HighlightChangedText = v:true
+
+" Show cursorline.
+let g:undotree_CursorLine = v:true
 
 " Default highlight groups for syntax items.
 let g:undotree_HighlightSyntaxAdd = 'DiffAdd'
