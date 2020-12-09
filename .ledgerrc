@@ -1,6 +1,6 @@
 --pedantic
 --date-format %Y-%m-%d
 --start-of-week=1
---file ~/Sync/finance/strict.ledger
---file ~/Sync/finance/journal-2019.ledger
---file ~/Sync/finance/journal-2020.ledger
+--file ~/Projects/sync/finance/strict.ledger
+--file ~/Projects/sync/finance/journal-2019.ledger
+--file ~/Projects/sync/finance/journal-2020.ledger
