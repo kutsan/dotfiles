@@ -8,8 +8,7 @@ let g:coc_global_extensions = [
 	\ 'coc-tag',
 	\ 'coc-stylelintplus',
 	\ 'coc-tsserver',
-	\ 'coc-eslint',
-	\ 'coc-snippets'
+	\ 'coc-eslint'
 \ ]
 
 " User configuration.
@@ -34,16 +33,7 @@ let g:coc_user_config = {
 		\ 'validate': {
 			\ 'enable': v:false
 		\ }
-	\ },
-	\ 'snippets': {
-		\ 'priority': 200,
-		\ 'ultisnips': {
-			\ 'directories': ['snippet']
-		\ },
-		\ 'extends': {
-			\ 'javascriptreact': ['javascript']
-		\ },
-	\ },
+	\ }
 \ }
 
 " Mappings.
