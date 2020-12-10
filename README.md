@@ -2,7 +2,7 @@
 
 ![screenshot](https://raw.githubusercontent.com/kutsan/dotfiles/master/.github/screenshot.png)
 
-> running **neovim** inside **tmux** that is inside **kitty** terminal emulator with **monaco** font on
+> running **neovim** inside **tmux** that is inside **kitty** terminal emulator with **fira** font on
 
 ## Overview
 
