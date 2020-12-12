@@ -6,6 +6,9 @@ cnoremap <C-k> <Up>
 cnoremap <C-h> <Left>
 cnoremap <C-l> <Right>
 
+" Construct search with 'very magic' mode.
+cnoremap ;v /\v/<Left>
+
 " Construct substitute command with 'very magic' mode.
 cnoremap ;s substitute/\v//gc<Left><Left><Left><Left>
 
