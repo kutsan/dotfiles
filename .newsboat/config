@@ -1,0 +1,3 @@
+include ~/.newsboat/conf/settings.conf
+include ~/.newsboat/conf/mappings.conf
+include ~/.newsboat/conf/style.conf
