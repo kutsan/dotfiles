@@ -31,17 +31,12 @@
 - [`nodejs`](https://nodejs.org) - JavaScript runtime environment for developing a diverse variety of applications
 	- [`npm`](https://www.npmjs.com) - Node Package Manager mainly for the JavaScript programming language
 		- [`prettier`](https://github.com/prettier/prettier) - Code formatter for various web file types
-		- [`neovim`](https://github.com/neovim/node-client) - Neovim Node support for plugins
 		- [`fx`](https://github.com/antonmedv/fx) - TUI JSON viewer
 		- [`bitwarden`](https://github.com/bitwarden/cli) - Password manager
 - [`python`](https://www.python.org) - High-level programming language for general-purpose programming
 	- [`pip`](https://pypi.org) - Python package manager to install and manage packages written in Python
-		- [`ranger`](https://github.com/ranger/ranger) - Text-based file system manager for the console with Vim-like key bindings
-			- [`exiftool`](http://www.sno.phy.queensu.ca/~phil/exiftool) - Read, write and edit meta information in a wide variety of media files
 		- [`stig`](https://github.com/rndusr/stig) - TUI and CLI interface for transmission-daemon
-		- [`terminal-colors`](https://github.com/eikenb/terminal-colors) - Test utility for color capabilities of terminal
 		- [`grip`](https://github.com/joeyespo/grip) - Preview Markdown files in local server
-		- [`trackma`](https://github.com/z411/trackma) - Multi-site anime, manga list manager
 		- [`pynvim`](https://github.com/neovim/pynvim) - Python client for neovim
 		- [`trash-cli`](https://github.com/andreafrancia/trash-cli) - Move files and folders to the trash
 - [`coreutils`](https://www.gnu.org/software/coreutils/coreutils.html) - GNU core utilities for basic file, shell and text manipulation
@@ -61,8 +56,11 @@
 - [`htop`](https://github.com/hishamhm/htop) - Interactive text-based system monitor, process viewer and process manager
 - [`neomutt`](https://github.com/neomutt/neomutt) - Fork of the mail user agent mutt with new features and patches
 	- [`msmtp`](http://msmtp.sourceforge.net) - SMTP agent for sending e-mails through mail user agents or terminal
+- [`newsboat`](https://github.com/newsboat/newsboat) - RSS/Atom feed reader
 - [`ripgrep`](https://github.com/BurntSushi/ripgrep) - Line oriented search tool similar to grep that combines the usability of ag
 - [`ffmpeg`](https://github.com/FFmpeg/FFmpeg) - Cross-platform solution to handle, record, convert and stream audio and video
+- [`ranger`](https://github.com/ranger/ranger) - Text-based file system manager for the console with Vim-like key bindings
+	- [`exiftool`](http://www.sno.phy.queensu.ca/~phil/exiftool) - Read, write and edit meta information in a wide variety of media files
 - [`transmission`](https://github.com/transmission/transmission) - BitTorrent client and daemon with web UI for remote controlling
 - [`par`](https://github.com/sergi/par) - Paragraph reformatter and aligner for e-mails and plain text
 - [`bind`](https://source.isc.org/cgi-bin/gitweb.cgi) - Domain Name System tools
