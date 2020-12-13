@@ -1,8 +1,8 @@
 ""
 " Search and replace operator.
 "
-" nnoremap <silent> gc* :set operatorfunc=kutsan#mappings#operator#searchreplace#<CR>g@
-" xnoremap <silent> gc* :<C-u>call kutsan#mappings#operator#searchreplace#(visualmode())<CR>
+" nnoremap <silent> gy :set operatorfunc=kutsan#mappings#operator#searchreplace#<CR>g@
+" xnoremap <silent> gy :<C-u>call kutsan#mappings#operator#searchreplace#(visualmode())<CR>
 "
 " @param {string} [type] Type of motion.
 ""
