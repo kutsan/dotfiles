@@ -20,13 +20,6 @@
 [submodule "colorizer"]
 	path = .vim/pack/bundle/start/colorizer
 	url = https://github.com/norcalli/nvim-colorizer.lua
-[submodule "defx"]
-	path = .vim/pack/bundle/start/defx
-	url = https://github.com/Shougo/defx.nvim
-[submodule "defx-icons"]
-	path = .vim/pack/bundle/start/defx-icons
-	url = https://github.com/kristijanhusak/defx-icons
-	ignore = dirty
 [submodule "fugitive"]
 	path = .vim/pack/bundle/start/fugitive
 	url = https://github.com/tpope/vim-fugitive
