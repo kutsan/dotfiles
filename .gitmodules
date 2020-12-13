@@ -29,6 +29,12 @@
 [submodule "fzf-vim"]
 	path = .vim/pack/bundle/start/fzf-vim
 	url = https://github.com/junegunn/fzf.vim
+[submodule "lua-tree"]
+	path = .vim/pack/bundle/start/lua-tree
+	url = https://github.com/kyazdani42/nvim-tree.lua
+[submodule "lua-web-devicons"]
+	path = .vim/pack/bundle/start/lua-web-devicons
+	url = https://github.com/kyazdani42/nvim-web-devicons
 [submodule "peartree"]
 	path = .vim/pack/bundle/start/peartree
 	url = https://github.com/tmsvg/pear-tree
