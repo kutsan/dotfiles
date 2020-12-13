@@ -22,8 +22,8 @@ nnoremap Q @q
 nnoremap x "_x
 
 " Refactor word under cursor.
-nnoremap c* /\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgn
-nnoremap c# ?\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgN
+nnoremap c* /\<<C-r>=expand('<cword>')<CR>\>\C<CR>``cgn
+nnoremap c# ?\<<C-r>=expand('<cword>')<CR>\>\C<CR>``cgN
 
 " Scroll viewport faster.
 nnoremap <C-e> 2<C-e>
