@@ -1,6 +1,7 @@
 " Start insert mode and disable line numbers in terminal buffer.
 augroup terminalsettings
 	autocmd!
+
 	if has('nvim')
 		autocmd TermOpen * setlocal nonumber norelativenumber
 		autocmd TermOpen * startinsert
