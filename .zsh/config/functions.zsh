@@ -29,6 +29,6 @@ function gen-ssh-keygen-rsa() {
 function lpush() {
 	cd ~/Projects/sync && \
 		git add finance/journal-$(date +%Y).ledger && \
-		git commit --message='finance: Add new journal entry' && \
+		git commit --message='finance: add new journal entry' && \
 		git push origin master
 }
