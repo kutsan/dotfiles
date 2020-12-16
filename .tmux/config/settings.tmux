@@ -23,10 +23,6 @@ set-option -g mouse on
 # Time in milliseconds for which tmux waits after an escape.
 set-option -g escape-time 0
 
-# Keep commands history and set its limit.
-set-option -g history-file ~/.tmux/cache/history
-set-option -g history-limit 10000
-
 # Start window numbers at 1 to match keyboard order with tmux window order.
 set-option -g base-index 1
 set-option -g pane-base-index 1
