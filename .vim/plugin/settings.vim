@@ -84,16 +84,13 @@ set foldtext=kutsan#settings#foldtext() " Use custom fold text function for fold
 set foldopen=hor,mark,percent,quickfix,tag,undo " Specifies for which type of commands folds will be opened.
 
 " Search
-let &grepprg = 'rg
-	\ --vimgrep
+let &grepprg = 'grep
+	\ --line-number
+	\ --binary-file="without-match"
 	\ --no-messages
-	\ --no-ignore
-	\ --hidden
-	\ --follow
-	\ --smart-case
-	\ --glob "!.git/"
-	\ --glob "!node_modules/"
-	\ --regexp' " Program to use for the :grep command.
+	\ --recursive
+	\ --exclude-dir={.git,node_modules}
+	\ --perl-regexp' " Progrem to use for :grep command.
 set grepformat=%f:%l:%c:%m,%f:%l:%m " Format to recognize for the :grep command output.
 set ignorecase " Make default search is not case sensitive.
 set incsearch " Instantly show results when you start searching.
