@@ -13,7 +13,7 @@ alias la='ls -l --almost-all --si' # List nodes with their details.
 # Custom Shortcuts
 alias v='nvim'
 alias g='git'
-alias tmux='tmux -f "$HOME/.tmux/tmux.conf"'
+alias tmux='tmux -f "$HOME/.config/tmux/tmux.conf"'
 alias bwlogin='bw login --code "$(auth bitwarden)" "$(< ~/.config/neomutt/accounts/com.gmail/email.txt)" "$(gpg --no-tty --for-your-eyes-only --quiet --decrypt ~/.bitwarden/secret.gpg)"'
 alias bwunlock='export BW_SESSION="$(bw unlock --raw $(gpg --no-tty --for-your-eyes-only --quiet --decrypt ~/.bitwarden/secret.gpg))"'
 alias pacman='sudo pacman'

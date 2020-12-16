@@ -32,7 +32,7 @@ if (should_launch_multiplexer) {
 	tmux attach-session -t "$session" 2>/dev/null \
 		&& exit 0
 
-	eval tmux -f "$HOME/.tmux/tmux.conf" new-session -s "$session" $launch_options \
+	eval tmux -f "$HOME/.config/tmux/tmux.conf" new-session -s "$session" $launch_options \
 		&& exit 0
 
 	unset session
