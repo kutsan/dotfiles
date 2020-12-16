@@ -27,9 +27,6 @@ let g:fzf_action = {
 " History directory.
 let g:fzf_history_dir = $HOME .. '/.vim/cache/share/fzf/'
 
-" Override `fzf` options.
-let $FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS .. " --margin='1,4' --info='hidden' --bold --color='fg+:15,bg+:-1,info:12,prompt:4,pointer:12'"
-
 " Define key mappings.
 nnoremap <silent> <C-p> :FGFiles<CR>
 nnoremap <silent> gis :FGFiles?<CR>
