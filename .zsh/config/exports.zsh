@@ -10,47 +10,28 @@ path=(
 	$path
 )
 
-# Platform specific variables.
-case $OSTYPE {
-	darwin*)
-		export GNU_COREUTILS_HOME='/usr/local/opt/coreutils/libexec/gnubin'
-		export GNU_COREUTILS_MAN_HOME='/usr/local/opt/coreutils/libexec/gnuman'
-		export GNU_FINDUTILS_HOME='/usr/local/opt/findutils/libexec/gnubin'
-		export GNU_FINDUTILS_MAN_HOME='/usr/local/opt/findutils/libexec/gnuman'
-		export GNU_SED_HOME='/usr/local/opt/gnu-sed/libexec/gnubin'
-		export GNU_SED_MAN_HOME='/usr/local/opt/gnu-sed/libexec/gnuman'
-		export GNU_GREP_HOME='/usr/local/opt/grep/libexec/gnubin'
-		export GNU_GREP_MAN_HOME='/usr/local/opt/grep/libexec/gnuman'
-		export CURL_HOME='/usr/local/opt/curl/bin'
-		export CURL_MAN_HOME='/usr/local/opt/curl/share/man'
-		export NCURSES_HOME='/usr/local/opt/ncurses/bin'
-		export OPENSSL_HOME='/usr/local/opt/openssl/bin'
-		export OPENSSL_MAN_HOME='/usr/local/opt/openssl/man'
-		export PYTHON_SYMLINKS_HOME='/usr/local/opt/python/libexec/bin'
-		export PYTHONUSERBASE="$HOME/.local"
+# macOS specific exports.
+if ([[ $OSTYPE =~ 'darwin*' ]]) {
+	path=(
+		'/usr/local/opt/coreutils/libexec/gnubin'
+		'/usr/local/opt/findutils/libexec/gnubin'
+		'/usr/local/opt/gnu-sed/libexec/gnubin'
+		'/usr/local/opt/grep/libexec/gnubin'
+		'/usr/local/opt/curl/bin'
+		'/usr/local/opt/ncurses/bin'
+		'/usr/local/opt/openssl/bin'
+		'/usr/local/opt/python/libexec/bin'
+		$path
+	)
 
-		path=(
-			$GNU_COREUTILS_HOME
-			$GNU_FINDUTILS_HOME
-			$GNU_SED_HOME
-			$GNU_GREP_HOME
-			$CURL_HOME
-			$NCURSES_HOME
-			$OPENSSL_HOME
-			$PYTHON_SYMLINKS_HOME
-			$path
-		)
-
-		manpath=(
-			$GNU_COREUTILS_MAN_HOME
-			$GNU_FINDUTILS_MAN_HOME
-			$GNU_SED_MAN_HOME
-			$GNU_GREP_MAN_HOME
-			$CURL_MAN_HOME
-			$OPENSSL_MAN_HOME
-			$manpath
-		)
-		;;
+	manpath=(
+		'/usr/local/opt/coreutils/libexec/gnuman'
+		'/usr/local/opt/findutils/libexec/gnuman'
+		'/usr/local/opt/gnu-sed/libexec/gnuman'
+		'/usr/local/opt/grep/libexec/gnuman'
+		'/usr/local/opt/curl/share/man'
+		$manpath
+	)
 }
 
 # Basics
@@ -58,23 +39,17 @@ export TERM='xterm-256color'
 export EDITOR='nvim'
 export PAGER='less'
 export BROWSER='xdg-open'
-
-# Default Config and Cache Home
+export LANG='en_US.UTF-8'
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 
-# Mailcap
-export MAILCAPS="$HOME/.mutt/mailcap"
-
-# Locale
-export LANG='en_US.UTF-8'
-export LC_ALL='en_US.UTF-8'
-export LANGUAGE='en_US.UTF-8'
-
 # man
-export MANWIDTH='100' # Fixed line width for man pages.
+export MANWIDTH='100'
 export MANPAGER="nvim +'set filetype=man' -"
+
+# neomutt
+export MAILCAPS="$HOME/.mutt/mailcap"
 
 # nvim
 export NVIM_RPLUGIN_MANIFEST="$HOME/.vim/cache/share/rplugin.vim"
@@ -88,11 +63,11 @@ export NPM_CONFIG_INIT_AUTHOR_EMAIL='me@kutsankaplan.com'
 export NPM_CONFIG_INIT_AUTHOR_URL='https://kutsankaplan.com'
 export NPM_CONFIG_INIT_LICENSE='GPL-3.0'
 export NPM_CONFIG_INIT_VERSION='0.0.0'
-export NPM_CONFIG_SAVE_PREFIX='~'
 export NPM_CONFIG_SIGN_GIT_TAG='true'
 
 # GnuPG
 export GPG_TTY=$(tty)
+export GNUPGHOME="$XDG_CONFIG_HOME/gnupg"
 
 # ranger
 export RANGER_LOAD_DEFAULT_RC='false'
@@ -100,14 +75,18 @@ export RANGER_LAST_DIRECTORY_BUFFER="$XDG_DATA_HOME/ranger/last_directory"
 
 # fzf
 export FZF_DEFAULT_COLORS='--color=dark,fg:-1,bg:-1,hl:4,fg+:7,bg+:8,gutter:-1,hl+:4,info:8,border:8,prompt:4,pointer:3,marker:3,spinner:8,header:6'
-export FZF_DEFAULT_OPTS="$FZF_DEFAULT_COLORS \
+export FZF_DEFAULT_OPTS="\
+	$FZF_DEFAULT_COLORS \
 	--exact \
 	--no-multi \
 	--no-mouse \
 	--height='40%' \
+	--margin='1,3' \
 	--layout='reverse' \
-	--inline-info \
-	--no-bold"
+	--info='inline' \
+	--no-bold \
+	--jump-labels='asdfghjkl;' \
+	--bind='ctrl-f:jump-accept'"
 
 # transmission
 export TR_AUTH='kutsan:EkYBoNSd6oIUznucRTfQTFCcxC5WeeDaBImPt6I9CncuY9g8mH'
