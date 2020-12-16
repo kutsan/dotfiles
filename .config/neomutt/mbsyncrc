@@ -9,14 +9,14 @@ Host imappro.zoho.com
 Port 993
 Timeout 20
 User me@kutsankaplan.com
-PassCmd "gpg --no-tty --for-your-eyes-only --quiet --decrypt ~/.mutt/accounts/com.kutsankaplan/secret.gpg"
+PassCmd "gpg --no-tty --for-your-eyes-only --quiet --decrypt ~/.config/neomutt/accounts/com.kutsankaplan/secret.gpg"
 SSLType IMAPS
 AuthMechs LOGIN
 
 # Locals
 MaildirStore local/kutsankaplan
-Path ~/.mutt/mailbox/com.kutsankaplan/
-Inbox ~/.mutt/mailbox/com.kutsankaplan/INBOX
+Path ~/.config/neomutt/mailbox/com.kutsankaplan/
+Inbox ~/.config/neomutt/mailbox/com.kutsankaplan/INBOX
 SubFolders Verbatim
 
 # Channels

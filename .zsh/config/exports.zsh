@@ -49,7 +49,7 @@ export MANWIDTH='100'
 export MANPAGER="nvim +'set filetype=man' -"
 
 # neomutt
-export MAILCAPS="$HOME/.mutt/mailcap"
+export MAILCAPS="$HOME/.config/neomutt/mailcap"
 
 # nvim
 export NVIM_RPLUGIN_MANIFEST="$HOME/.vim/cache/share/rplugin.vim"

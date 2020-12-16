@@ -1,0 +1,6 @@
+source accounts/com.kutsankaplan/config.mutt
+source config/settings.mutt
+source config/commands.mutt
+source config/mappings.mutt
+source config/hooks.mutt
+source config/colors.mutt

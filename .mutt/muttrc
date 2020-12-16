@@ -1,7 +1,0 @@
-source ~/.mutt/accounts/com.kutsankaplan/config.mutt
-source ~/.mutt/config/settings.mutt
-source ~/.mutt/config/signing.mutt
-source ~/.mutt/config/commands.mutt
-source ~/.mutt/config/mappings.mutt
-source ~/.mutt/config/hooks.mutt
-source ~/.mutt/config/colors.mutt

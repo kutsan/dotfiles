@@ -4,17 +4,17 @@ set from = $my_email
 set realname = 'Kutsan Kaplan'
 
 # Set location of the mailbox.
-set folder = '~/.mutt/mailbox/com.kutsankaplan'
+set folder = '~/.config/neomutt/mailbox/com.kutsankaplan'
 
 # Send email via SMTP with msmtp.
-set sendmail = "msmtp --file=$HOME/.mutt/msmtprc --account=com.kutsankaplan"
+set sendmail = "msmtp --file=$HOME/.config/neomutt/msmtprc --account=com.kutsankaplan"
 
 # Cache databases.
-set header_cache = '~/.mutt/cache/com.kutsankaplan/headers'
-set message_cachedir = '~/.mutt/cache/com.kutsankaplan/bodies'
+set header_cache = '~/.config/neomutt/cache/com.kutsankaplan/headers'
+set message_cachedir = '~/.config/neomutt/cache/com.kutsankaplan/bodies'
 
 # The file where the trusted certificates are saved.
-set certificate_file = '~/.mutt/cache/com.kutsankaplan/certificates'
+set certificate_file = '~/.config/neomutt/cache/com.kutsankaplan/certificates'
 
 # Custom statusbar.
 set status_format = "  com.kutsankaplan   %f[%r] %>  %?M?%M/?%m messages, %?n?%n new, ?%?d?%d deleted, ?%?F?%F important, ?%?t?%t selected, ?%?p?%p drafts, ?%l "
