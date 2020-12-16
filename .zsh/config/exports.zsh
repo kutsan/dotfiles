@@ -53,9 +53,6 @@ export MAILCAPS="$HOME/.config/neomutt/mailcap"
 
 # nvim
 export NVIM_RPLUGIN_MANIFEST="$HOME/.vim/cache/share/rplugin.vim"
-	# Create symbolic links for neovim and vim configs.
-	if ! [[ -L ~/.vim/vimrc ]] { ln -s ~/.vim/init.vim ~/.vim/vimrc }
-	if ! [[ -L ~/.config/nvim ]] { ln -s ~/.vim ~/.config/nvim }
 
 # npm
 export NPM_CONFIG_INIT_AUTHOR_NAME='Kutsan Kaplan'
