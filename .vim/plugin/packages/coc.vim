@@ -8,7 +8,8 @@ let g:coc_global_extensions = [
 	\ 'coc-tag',
 	\ 'coc-stylelintplus',
 	\ 'coc-tsserver',
-	\ 'coc-eslint'
+	\ 'coc-eslint',
+	\ 'coc-lua'
 \ ]
 
 " User configuration.
