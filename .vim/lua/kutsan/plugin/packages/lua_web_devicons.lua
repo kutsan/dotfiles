@@ -1,3 +1,7 @@
+if not vim.g.loaded_devicons then
+	return nil
+end
+
 local devicons = require('nvim-web-devicons')
 
 devicons.setup({
