@@ -19,6 +19,8 @@ case $OSTYPE {
 		export GNU_FINDUTILS_MAN_HOME='/usr/local/opt/findutils/libexec/gnuman'
 		export GNU_SED_HOME='/usr/local/opt/gnu-sed/libexec/gnubin'
 		export GNU_SED_MAN_HOME='/usr/local/opt/gnu-sed/libexec/gnuman'
+		export GNU_GREP_HOME='/usr/local/opt/grep/libexec/gnubin'
+		export GNU_GREP_MAN_HOME='/usr/local/opt/grep/libexec/gnuman'
 		export CURL_HOME='/usr/local/opt/curl/bin'
 		export CURL_MAN_HOME='/usr/local/opt/curl/share/man'
 		export NCURSES_HOME='/usr/local/opt/ncurses/bin'
@@ -31,6 +33,7 @@ case $OSTYPE {
 			$GNU_COREUTILS_HOME
 			$GNU_FINDUTILS_HOME
 			$GNU_SED_HOME
+			$GNU_GREP_HOME
 			$CURL_HOME
 			$NCURSES_HOME
 			$OPENSSL_HOME
@@ -42,6 +45,7 @@ case $OSTYPE {
 			$GNU_COREUTILS_MAN_HOME
 			$GNU_FINDUTILS_MAN_HOME
 			$GNU_SED_MAN_HOME
+			$GNU_GREP_MAN_HOME
 			$CURL_MAN_HOME
 			$OPENSSL_MAN_HOME
 			$manpath
