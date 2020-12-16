@@ -4,7 +4,7 @@ alias mv='mv --interactive --verbose' # Move nodes with interactive mode and ext
 alias cp='cp --interactive --verbose' # Copy nodes with interactive mode and extra verbosity.
 alias ln='ln --interactive --verbose' # Link nodes with interactive mode and extra verbosity.
 alias mkdir='mkdir --parents' # Make missing parent directories when creating folders.
-alias grep='grep --color=auto --exclude-dir=".git" --exclude-dir="node_modules"' # Grep with colors and ignore common directories.
+alias grep="grep --color='auto'" # Grep with colors.
 alias du='du --max-depth=1 --si' # Display size of files and folders under current directory.
 alias df='df --all --si --print-type' # Display all disk usage statistics with SI units and FS types.
 alias ls='ls --almost-all --classify --color=always --group-directories-first --literal' # List name of nodes.
@@ -22,7 +22,7 @@ alias l="ledger balance '^assets' '^liabilities' --empty"
 alias le='$EDITOR ~/Projects/sync/finance/journal-$(date +%Y).ledger'
 alias lnet="ledger register '^expenses' '^income' --period 'this month' --subtotal --invert"
 alias s='$EDITOR ~/Projects/sync/notes/tasks.yml'
-alias gen-npm='cp "$HOME/.config/npm/package.json" "package.json"'
+alias gen-packagejson='cp "$HOME/.config/npm/package.json" "package.json"'
 alias gen-editorconfig='cp "$HOME/.editorconfig" ".editorconfig"'
 
 # Global Aliases
