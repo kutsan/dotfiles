@@ -66,8 +66,7 @@ function custom-fzf-launch-from-history() {
 				--nth='2..,..' \
 				--tiebreak='index' \
 				--query="${LBUFFER}" \
-				--exact \
-				--prompt='$ '
+				--exact
 		)
 	)
 
@@ -102,7 +101,6 @@ function custom-fzf-select() {
 		| sed 1d \
 		| ([[ -v directory ]] && cat || cut --bytes=3-) \
 		| fzf \
-			--prompt='select ' \
 			--preview-window='right:60%' \
 			--preview=' \
 				if [ -d {} ]; then; \
