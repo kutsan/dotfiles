@@ -14,8 +14,8 @@ alias la='ls -l --almost-all --si' # List nodes with their details.
 alias v='nvim'
 alias g='git'
 alias tmux='tmux -f "$HOME/.config/tmux/tmux.conf"'
-alias bwlogin='bw login --code "$(auth bitwarden)" "$(< ~/.config/neomutt/accounts/com.gmail/email.txt)" "$(gpg --no-tty --for-your-eyes-only --quiet --decrypt ~/.bitwarden/secret.gpg)"'
-alias bwunlock='export BW_SESSION="$(bw unlock --raw $(gpg --no-tty --for-your-eyes-only --quiet --decrypt ~/.bitwarden/secret.gpg))"'
+alias bwlogin='bw login --code "$(auth bitwarden)" "$(< ~/.config/neomutt/accounts/com.gmail/email.txt)" "$(gpg --no-tty --for-your-eyes-only --quiet --decrypt ~/.config/auth/bitwarden.gpg)"'
+alias bwunlock='export BW_SESSION="$(bw unlock --raw $(gpg --no-tty --for-your-eyes-only --quiet --decrypt ~/.config/auth/bitwarden.gpg))"'
 alias pacman='sudo pacman'
 alias rsync='rsync --protect-args --compress --verbose --progress --human-readable'
 alias l="ledger balance '^assets' '^liabilities' --empty"

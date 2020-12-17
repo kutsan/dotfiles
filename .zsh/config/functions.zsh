@@ -10,7 +10,15 @@ function r() {
 # `oathtool` 2FA utility function.
 ##
 function auth() {
-	oathtool --base32 --totp "$(gpg --no-tty --for-your-eyes-only --quiet --decrypt ~/.auth/totp-$1.gpg)"
+	oathtool \
+		--base32 \
+		--totp \
+		"$(gpg \
+			--no-tty \
+			--for-your-eyes-only \
+			--quiet \
+			--decrypt \
+			~/.config/auth/totp-$1.gpg)"
 }
 
 ##
