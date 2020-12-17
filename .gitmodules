@@ -15,38 +15,38 @@
 	url = https://github.com/kutsan/zsh-system-clipboard
 
 [submodule "coc"]
-	path = .vim/pack/bundle/start/coc
+	path = .config/nvim/pack/bundle/start/coc
 	url = https://github.com/neoclide/coc.nvim
 [submodule "colorizer"]
-	path = .vim/pack/bundle/start/colorizer
+	path = .config/nvim/pack/bundle/start/colorizer
 	url = https://github.com/norcalli/nvim-colorizer.lua
 [submodule "fugitive"]
-	path = .vim/pack/bundle/start/fugitive
+	path = .config/nvim/pack/bundle/start/fugitive
 	url = https://github.com/tpope/vim-fugitive
 [submodule "fzf-core"]
-	path = .vim/pack/bundle/start/fzf-core
+	path = .config/nvim/pack/bundle/start/fzf-core
 	url = https://github.com/junegunn/fzf
 [submodule "fzf-vim"]
-	path = .vim/pack/bundle/start/fzf-vim
+	path = .config/nvim/pack/bundle/start/fzf-vim
 	url = https://github.com/junegunn/fzf.vim
 [submodule "lua-tree"]
-	path = .vim/pack/bundle/start/lua-tree
+	path = .config/nvim/pack/bundle/start/lua-tree
 	url = https://github.com/kyazdani42/nvim-tree.lua
 [submodule "lua-web-devicons"]
-	path = .vim/pack/bundle/start/lua-web-devicons
+	path = .config/nvim/pack/bundle/start/lua-web-devicons
 	url = https://github.com/kyazdani42/nvim-web-devicons
 [submodule "peartree"]
-	path = .vim/pack/bundle/start/peartree
+	path = .config/nvim/pack/bundle/start/peartree
 	url = https://github.com/tmsvg/pear-tree
 [submodule "polyglot"]
-	path = .vim/pack/bundle/start/polyglot
+	path = .config/nvim/pack/bundle/start/polyglot
 	url = https://github.com/sheerun/vim-polyglot
 [submodule "sandwich"]
-	path = .vim/pack/bundle/start/sandwich
+	path = .config/nvim/pack/bundle/start/sandwich
 	url = https://github.com/machakann/vim-sandwich
 [submodule "signify"]
-	path = .vim/pack/bundle/start/signify
+	path = .config/nvim/pack/bundle/start/signify
 	url = https://github.com/mhinz/vim-signify
 [submodule "undotree"]
-	path = .vim/pack/bundle/opt/undotree
+	path = .config/nvim/pack/bundle/opt/undotree
 	url = https://github.com/mbbill/undotree
