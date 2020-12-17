@@ -1,17 +1,17 @@
 [submodule "autopair"]
-	path = .zsh/plugins/autopair
+	path = .config/zsh/plugins/autopair
 	url = https://github.com/hlissner/zsh-autopair
 [submodule "autosuggestions"]
-	path = .zsh/plugins/autosuggestions
+	path = .config/zsh/plugins/autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
 [submodule "pure"]
-	path = .zsh/plugins/pure
+	path = .config/zsh/plugins/pure
 	url = https://github.com/sindresorhus/pure
 [submodule "syntax-highlighting"]
-	path = .zsh/plugins/syntax-highlighting
+	path = .config/zsh/plugins/syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
 [submodule "system-clipboard"]
-	path = .zsh/plugins/system-clipboard
+	path = .config/zsh/plugins/system-clipboard
 	url = https://github.com/kutsan/zsh-system-clipboard
 
 [submodule "coc"]
