@@ -5,10 +5,6 @@
 " nnoremap <buffer><silent> gO :call kutsan#ftplugin#man#showtoc()<CR>
 ""
 function! kutsan#ftplugin#man#showtoc() abort
-	if !has('nvim')
-		return v:false
-	endif
-
 	let l:bufname = bufname('%')
 	let l:info = getloclist(0, { 'winid': 1 })
 
@@ -69,10 +65,6 @@ endfunction
 " nnoremap <buffer><silent> <C-]> :call kutsan#ftplugin#man#jumptag()<CR>
 ""
 function! kutsan#ftplugin#man#jumptag() abort
-	if !has('nvim')
-		return v:false
-	endif
-
 	call man#open_page(v:false, 1, '')
 endfunction
 
@@ -82,9 +74,5 @@ endfunction
 " nnoremap <buffer><silent> [g :call kutsan#ftplugin#man#poptag()<CR>
 ""
 function! kutsan#ftplugin#man#poptag() abort
-	if !has('nvim')
-		return v:false
-	endif
-
 	call man#pop_tag()
 endfunction

@@ -1,7 +1,3 @@
-if !has('nvim')
-	finish
-endif
-
 " Disable built-in ftplugin.
 let b:did_ftplugin = v:true
 

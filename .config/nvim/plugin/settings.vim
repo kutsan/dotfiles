@@ -1,16 +1,9 @@
 " vint: -ProhibitEncodingOptionAfterScriptEncoding
 
 " Encoding
-set encoding=UTF-8 " Default encoding. (vim-only)
+set encoding=UTF-8 " Default encoding.
 scriptencoding UTF-8 " Default encoding for current script.
 set fileformats=unix " Only use Unix end-of-line format.
-
-" Shared Data
-if has('nvim')
-	set shada=!,'100,<50,s10,h,n~/.vim/cache/share/main.shada
-else
-	set viminfo=!,'100,<50,s10,h,n~/.vim/cache/share/viminfo
-endif
 
 " Colors
 set background=dark " Choose dark colors if available.
@@ -24,7 +17,7 @@ set belloff=all " Never ring the bell for any reason.
 set breakindent " Wrapped lines will be visually indented with same amount of space.
 set clipboard=  " Don't sync system clipboard with vim registers.
 set comments= " Clear default 'comments' value, let the filetype handle it.
-set display=lastline " As much as possible of the last line in a window will be displayed.
+set display=lastline,msgsep " Change the way text is displayed.
 set modelines=0 " Set number of lines that is checked for set commands.
 set nomodeline " Disable modeline altogether.
 set mouse=nv " Enable mouse support for normal and visual modes.
@@ -59,13 +52,15 @@ set lazyredraw " Don't redraw screen while executing macros.
 " Interface
 set number " Show line numbers alongside relative numbers.
 set cursorline " Highlight the line background of the cursor.
-set fillchars=stl:\ ,stlnc:\ ,vert:\ ,fold:\ ,diff:\  " Characters to be used in various user-interface elements.
+set fillchars=stl:\ ,stlnc:\ ,vert:\ ,fold:\ ,diff:\ ,msgsep:─,eob:\  " Characters to be used in various user-interface elements.
 set laststatus=2 " Always show the status line.
 set noruler " Disable showing line numbers in command line.
 set list " Show characters in 'listchars' in place of certain special characters.
 set listchars=tab:│\ ,nbsp:␣,extends:…,precedes:… " Strings to use when 'list' option set.
 set signcolumn=yes " Always draw the sign column even there is no sign in it.
 set pumheight=10 " Maximum height of the popup menu for insert mode completion.
+set guicursor=n-v-c-sm:block,i-ci:ver25,r-cr-o-ve:hor20 " Configures the cursor style for each mode.
+set inccommand=split " Show live substitution results as you type.
 
 " Indentation
 set tabstop=4 " Length of a <Tab> character.
@@ -98,10 +93,11 @@ set nohlsearch " Disable highlight the matched search results by default.
 set smartcase " If a uppercase character is entered, the search will be case sensitive.
 
 " Backup
-set backupdir=~/.vim/cache/backup// " The directory for backup files.
-set directory=~/.vim/cache/swap// " The directory for swap files.
-set undodir=~/.vim/cache/undo// " The directory for undo files.
-set viewdir=~/.vim/cache/view// " Name of the directory where to store files for :mkview.
+set shada=!,'100,<50,s10,h,n~/.config/nvim/cache/share/main.shada " Shared data file.
+set backupdir=~/.config/nvim/cache/backup// " The directory for backup files.
+set directory=~/.config/nvim/cache/swap// " The directory for swap files.
+set undodir=~/.config/nvim/cache/undo// " The directory for undo files.
+set viewdir=~/.config/nvim/cache/view// " Name of the directory where to store files for :mkview.
 set undofile " Undo tree to be saved to a file when exiting a buffer.
 set undolevels=100000 " Maximum undo limit.
 set updatecount=100 " Typing this many characters will create the swap file.
@@ -126,34 +122,11 @@ set wildignorecase " Ignore case when completing in command menu.
 set wildmenu " Command-line completion operates in an enhanced mode.
 set wildmode=full " Wildmenu options.
 
-" Vim
-if !has('nvim') && !has('gui')
-	set ttyfast " More characters will be sent to the screen for redrawing in terminal.
-
-	" Configures the cursor style for each mode.
-	let &t_SI = "\<Esc>[6 q" " [S]tart [I]nsert
-	let &t_SR = "\<Esc>[4 q" " [S]tart [R]eplace
-	let &t_EI = "\<Esc>[2 q" " [E]nd [I]nsert
-endif
-
-" Neovim
-if has('nvim')
-	set guicursor=n-v-c-sm:block,i-ci:ver25,r-cr-o-ve:hor20 " Configures the cursor style for each mode.
-	set inccommand=split " Show live substitution results as you type.
-	set fillchars+=eob:\ ,msgsep:─ " Hide end of buffer tilde symbols and set msgsep symbol.
-	set display+=msgsep " Only scroll lines on command line pager, not the entire screen.
-endif
-
 " Root
 if exists('$SUDO_USER')
 	set noswapfile
 	set nobackup
 	set nowritebackup
 	set noundofile
-
-	if has('nvim')
-		set viminfo=
-	else
-		set shada=
-	endif
+	set shada=
 endif

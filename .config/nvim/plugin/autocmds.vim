@@ -2,19 +2,15 @@
 augroup terminalsettings
 	autocmd!
 
-	if has('nvim')
-		autocmd TermOpen * setlocal nonumber norelativenumber
-		autocmd TermOpen * startinsert
-	endif
+	autocmd TermOpen * setlocal nonumber norelativenumber
+	autocmd TermOpen * startinsert
 augroup end
 
 " Briefly highlight yanked region.
 augroup highlightyank
 	autocmd!
 
-	if has('nvim')
-		autocmd TextYankPost * lua vim.highlight.on_yank({higroup="Visual", timeout=100})
-	endif
+	autocmd TextYankPost * lua vim.highlight.on_yank({higroup="Visual", timeout=100})
 augroup end
 
 " Save the current buffer after any changes.

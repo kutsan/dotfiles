@@ -6,10 +6,6 @@
 " nnoremap <buffer><silent> <LocalLeader>r :call kutsan#ftplugin#markdown#preview()<CR>
 ""
 function! kutsan#ftplugin#markdown#preview() abort
-	if !has('nvim')
-		return v:false
-	endif
-
 	" Initialize global dictionary.
 	if !exists('g:markdownpreview')
 		let g:markdownpreview = {

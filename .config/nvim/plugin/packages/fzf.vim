@@ -12,9 +12,7 @@ let g:fzf_preview_window = 'down:60%'
 
 " Set custom layout.
 let g:fzf_layout = {
-	\ 'window': has('nvim')
-		\ ? 'call g:FzfFloatingWindow()'
-		\ : 'silent 18split enew'
+	\ 'window': 'call g:FzfFloatingWindow()'
 \ }
 
 " Set actions manually.
@@ -25,7 +23,7 @@ let g:fzf_action = {
 \ }
 
 " History directory.
-let g:fzf_history_dir = $HOME .. '/.vim/cache/share/fzf/'
+let g:fzf_history_dir = $HOME .. '/.config/nvim/cache/share/fzf/'
 
 " Define key mappings.
 nnoremap <silent> <C-p> :FGFiles<CR>
