@@ -1,7 +1,7 @@
 -- Toggle floating terminal or create new one if there is none.
 --
--- tnoremap <silent> <C-z> <C-\><C-n>:lua require('kutsan.mappings.normal.terminal').toggle()<CR>
--- nnoremap <silent> <C-z> :lua require('kutsan.mappings.normal.terminal').toggle()<CR>
+-- tnoremap <silent> <C-z> <C-\><C-n>:lua require('kutsan/mappings/normal/terminal').toggle()<CR>
+-- nnoremap <silent> <C-z> :lua require('kutsan/mappings/normal/terminal').toggle()<CR>
 
 local api = vim.api
 local fn = vim.fn
@@ -42,7 +42,7 @@ terminal.open = function ()
 	end
 
 	vim.cmd('startinsert')
-	vim.cmd("autocmd! TermClose <buffer> lua require('kutsan.mappings.normal.terminal').close(true)")
+	vim.cmd("autocmd! TermClose <buffer> lua require('kutsan/mappings/normal/terminal').close(true)")
 
 	-- Save current handles.
 	terminal.win = win
