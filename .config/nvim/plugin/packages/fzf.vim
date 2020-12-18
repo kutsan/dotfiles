@@ -57,9 +57,9 @@ function! g:FzfFloatingWindow() abort
 		\ {
 			\ 'relative': 'editor',
 			\ 'row': 2,
-			\ 'col': (&columns - 80) / 2,
-			\ 'width': 80,
-			\ 'height': 30,
+			\ 'col': (&columns - (&columns * 0.65)) / 2,
+			\ 'width': float2nr(&columns * 0.65),
+			\ 'height': float2nr(&lines * 0.9),
 			\ 'style': 'minimal'
 		\ }
 	\ )
