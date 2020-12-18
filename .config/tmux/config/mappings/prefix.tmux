@@ -37,7 +37,7 @@ bind-key -T prefix ? copy-mode \; send-keys '?'
 bind-key -T prefix : command-prompt
 
 # Rename current window.
-bind-key -T prefix , command-prompt -I "#W" "rename-window -- '%%'"
+bind-key -T prefix , command-prompt -I '#W' "rename-window -- '%%'"
 
 # Show clock.
 bind-key -T prefix t clock-mode
@@ -50,8 +50,8 @@ bind-key -T prefix h select-pane -L
 bind-key -T prefix j select-pane -D
 bind-key -T prefix k select-pane -U
 bind-key -T prefix l select-pane -R
-bind-key -T prefix p select-window -t :- # Previous window.
-bind-key -T prefix n select-window -t :+ # Next window.
+bind-key -T prefix p select-window -p # Previous window.
+bind-key -T prefix n select-window -n # Next window.
 bind-key -T prefix z resize-pane -Z
 bind-key -T prefix H resize-pane -L 2
 bind-key -T prefix J resize-pane -D 1

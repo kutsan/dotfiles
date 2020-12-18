@@ -37,4 +37,4 @@ set-option -g clock-mode-colour white
 set-option -g clock-mode-style 24
 
 # Message
-set-option -g message-style bg=yellow,fg=black
+set-option -g message-style bg=default,fg=yellow
