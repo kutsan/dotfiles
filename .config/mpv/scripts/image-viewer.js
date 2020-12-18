@@ -35,19 +35,19 @@ function stateChanged() {
 	}
 }
 
-mp.observe_property('video-out-params/par', 'number', function(_, val) {
+mp.observe_property('video-out-params/par', 'number', function (_, val) {
 	outParamsReady = { outParamsReady: val !== null && val > 0 }
 
 	stateChanged()
 })
 
-mp.observe_property('estimated-frame-count', 'number', function(_, val) {
+mp.observe_property('estimated-frame-count', 'number', function (_, val) {
 	frameCount = val
 
 	stateChanged()
 })
 
-mp.observe_property('path', 'string', function(_, val) {
+mp.observe_property('path', 'string', function (_, val) {
 	if (!val || val === '') {
 		path = null
 	} else {
@@ -57,7 +57,7 @@ mp.observe_property('path', 'string', function(_, val) {
 	stateChanged()
 })
 
-mp.register_event('tracks-changed', function() {
+mp.register_event('tracks-changed', function () {
 	audioTracks = 0
 	var tracks = 0
 
