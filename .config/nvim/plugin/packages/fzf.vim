@@ -1,5 +1,5 @@
-" Add prefix 'Fzf' commands for grouping.
-let g:fzf_command_prefix = 'F'
+" Add prefix to commands for grouping.
+let g:fzf_command_prefix = 'Fzf'
 
 " Jump to the existing window if possible.
 let g:fzf_buffers_jump = v:true
@@ -26,17 +26,17 @@ let g:fzf_action = {
 let g:fzf_history_dir = $HOME .. '/.config/nvim/cache/share/fzf/'
 
 " Define key mappings.
-nnoremap <silent> <C-p> :FGFiles<CR>
-nnoremap <silent> gis :FGFiles?<CR>
-nnoremap <silent> <Leader><C-p> :FFiles<CR>
-nnoremap <silent> <M-x> :FCommands<CR>
-nnoremap <silent> <C-b> :FBuffers<CR>
-nnoremap <silent> <C-f> :FBTags<CR>
-nnoremap <silent> <Leader><C-f> :FTags<CR>
-nnoremap <silent> <Leader>h :FHelptags<CR>
-nnoremap <silent> <Leader>: :FHistory:<CR>
-nnoremap <silent> <Leader>/ :FHistory/<CR>
-nnoremap <silent> <Leader>` :FMarks<CR>
+nnoremap <silent> <C-p> :FzfGFiles<CR>
+nnoremap <silent> gis :FzfGFiles?<CR>
+nnoremap <silent> <Leader><C-p> :FzfFiles<CR>
+nnoremap <silent> <M-x> :FzfCommands<CR>
+nnoremap <silent> <C-b> :FzfBuffers<CR>
+nnoremap <silent> <C-f> :FzfBTags<CR>
+nnoremap <silent> <Leader><C-f> :FzfTags<CR>
+nnoremap <silent> <Leader>h :FzfHelptags<CR>
+nnoremap <silent> <Leader>: :FzfHistory:<CR>
+nnoremap <silent> <Leader>/ :FzfHistory/<CR>
+nnoremap <silent> <Leader>` :FzfMarks<CR>
 nnoremap <silent> g<C-p> :call fzf#run(
 	\ fzf#wrap(
 		\ 'projects',
