@@ -1,14 +1,6 @@
 ##
 # `cd` into the last directory upon exit.
 ##
-function r() {
-	ranger $1 --choosedir=$RANGER_LAST_DIRECTORY_BUFFER \
-		&& cd "$(<$RANGER_LAST_DIRECTORY_BUFFER)" 2>/dev/null
-}
-
-##
-# `cd` into the last directory upon exit.
-##
 function lf() {
 	command lf "$@" -last-dir-path="$XDG_DATA_HOME/lf/.lastd" \
 		&& cd "$(<$XDG_DATA_HOME/lf/.lastd)" 2>/dev/null

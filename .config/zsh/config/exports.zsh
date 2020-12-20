@@ -66,10 +66,6 @@ export NPM_CONFIG_SIGN_GIT_TAG='true'
 export GPG_TTY=$(tty)
 export GNUPGHOME="$XDG_CONFIG_HOME/gnupg"
 
-# ranger
-export RANGER_LOAD_DEFAULT_RC='false'
-export RANGER_LAST_DIRECTORY_BUFFER="$XDG_DATA_HOME/ranger/last_directory"
-
 # fzf
 export FZF_DEFAULT_COLORS='--color=dark,fg:-1,bg:-1,hl:4,fg+:7,bg+:8,gutter:-1,hl+:4,info:8,border:8,prompt:4,pointer:3,marker:3,spinner:8,header:6'
 export FZF_DEFAULT_OPTS="\

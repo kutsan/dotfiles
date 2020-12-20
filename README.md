@@ -59,7 +59,6 @@
 	- [`isync`](https://isync.sourceforge.io) - IMAP and Maildir mailbox synchronizer
 - [`newsboat`](https://github.com/newsboat/newsboat) - RSS/Atom feed reader
 - [`ffmpeg`](https://github.com/FFmpeg/FFmpeg) - Cross-platform solution to handle, record, convert and stream audio and video
-- [`ranger`](https://github.com/ranger/ranger) - Text-based file system manager for the console with Vim-like key bindings
 - [`lf`](https://github.com/gokcehan/lf) - Terminal file manager with vim-like key bindings
 	- [`exiftool`](http://www.sno.phy.queensu.ca/~phil/exiftool) - Read, write and edit meta information in a wide variety of media files
 - [`transmission`](https://github.com/transmission/transmission) - BitTorrent client and daemon with web UI for remote controlling
