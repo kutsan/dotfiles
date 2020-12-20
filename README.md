@@ -40,6 +40,7 @@
 		- [`trash-cli`](https://github.com/andreafrancia/trash-cli) - Move files and folders to the trash
 - [`coreutils`](https://www.gnu.org/software/coreutils/coreutils.html) - GNU core utilities for basic file, shell and text manipulation
 - [`findutils`](https://www.gnu.org/software/findutils) - GNU basic directory searching utilities that provides find, locate and xargs
+- [`moreutils`](https://joeyh.name/code/moreutils) - Additional general purpose command-line utilities
 - [`less`](http://www.greenwoodsoftware.com/less) - Standard file pager for Unix-like systems
 - [`curl`](https://github.com/curl/curl) - Tool for transferring data using various protocols
 - [`grep`](https://www.gnu.org/software/grep) - Search plain-text data sets for lines that match a regular expression
@@ -59,6 +60,7 @@
 - [`newsboat`](https://github.com/newsboat/newsboat) - RSS/Atom feed reader
 - [`ffmpeg`](https://github.com/FFmpeg/FFmpeg) - Cross-platform solution to handle, record, convert and stream audio and video
 - [`ranger`](https://github.com/ranger/ranger) - Text-based file system manager for the console with Vim-like key bindings
+- [`lf`](https://github.com/gokcehan/lf) - Terminal file manager with vim-like key bindings
 	- [`exiftool`](http://www.sno.phy.queensu.ca/~phil/exiftool) - Read, write and edit meta information in a wide variety of media files
 - [`transmission`](https://github.com/transmission/transmission) - BitTorrent client and daemon with web UI for remote controlling
 - [`par`](https://github.com/sergi/par) - Paragraph reformatter and aligner for e-mails and plain text

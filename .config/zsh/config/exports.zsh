@@ -209,3 +209,22 @@ mfasl=38;5;7:*.mi=38;5;7:*.mtx=38;5;7:*.pc=38;5;7:*.pi=38;5;7:*.plt=38;5;7:*.pm=
 ;7:*.sug=38;5;7:*.t=38;5;7:*.tdy=38;5;7:*.tfm=38;5;7:*.tfnt=38;5;7:*.tg=38;5;7:*\
 .vcard=38;5;7:*.vcf=38;5;7:*.xln=38;5;7:*.iml=38;5;166:*.xcconfig=1:*.entitlemen\
 ts=1:*.strings=1:*.storyboard=38;5;196:*.xcsettings=1:*.xib=38;5;208:"
+
+# lf
+export LF_ICONS="tw=:st=:ow=:dt=:di=:fi=:ln=:or=:ex=:\
+*.styl=:*.scss=:*.html=:*.css=:*.md=:*.json=:*.js=:*.jsx=:*.rb=:\
+*.php=:*.py=:*.pyc=:*.pyo=:*.pyd=:*.conf=:*.ini=:*.yml=:*.bat=:\
+*.jpg=:*.jpeg=:*.bmp=:*.png=:*.gif=:*.ico=:*.svg=:*.cpp=:*.c++=:\
+*.cxx=:*.cc=:*.cp=:*.c=:*.hs=:*.lhs=:*.lua=:*.java=:*.sh=:*.fish=:\
+*.ml=λ:*.mli=λ:*.diff=:*.db=:*.sql=:*.dump=:*.clj=:*.cljc=:*.cljs=:\
+*.edn=:*.scala=:*.go=:*.dart=:*.xul=:*.sln=:*.suo=:*.pl=:*.pm=:\
+*.t=:*.rss=:*.fsscript=:*.fsx=:*.fs=:*.fsi=:*.rs=:*.rlib=:*.d=:\
+*.erl=:*.hrl=:*.vim=:*.vimrc=:*.ai=:*.psd=:*.psb=:*.ts=:*.jl=:*.rc=:\
+*.xml=:*.log=:*.avi=:*.mpeg=:*.mpg=:*.mkv=:*.flv=:*.mp4=:*.mp3=:\
+*.flac=:*.wav=:*.ogg=:*.epub=:*.pdf=:*.7z=:*.apk=:*.bz2=:*.cab=:\
+*.cpio=:*.deb=:*.gem=:*.gz=:*.gzip=:*.lha=:*.lzh=:*.lzma=:*.rar=:\
+*.rpm=:*.tar=:*.tgz=:*.xz=:*.zip=:.config::.git=:.ssh=:.Trash=:\
+Desktop=:Documents=:Downloads=:Pictures=:Projects=:.DS_Store=:\
+.gitconfig=:.gitignore=:.bashrc=:.bashprofile=:favicon.ico=:LICENSE=:\
+node_modules=:procfile=:.Xdefaults=:.Xresources=:.dmrc=:.gitconfig=:\
+.profile=:.xinputrc=:ini=:config=:"

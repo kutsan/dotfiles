@@ -1,0 +1,48 @@
+# Options
+set hidden
+set icons
+set ratios 1:1:1
+set incsearch
+set info size
+set scrolloff 8
+set tabstop 4
+set shell zsh
+set promptfmt "\033[34;1m%w\033[0m\033[1m%f\033[0m"
+set previewer "~/.config/lf/previewer.zsh"
+
+# Commands
+cmd open ${{
+	case $(file --dereference --brief --mime-type -- "$f") {
+		text/*) $EDITOR -- "$f" ;;
+		video/*) mpv -- "$f" &>/dev/null & ;;
+		*) xdg-open "$f" &>/dev/null & ;;
+	}
+}}
+
+# Mappings
+map c
+map u
+map za
+map zn
+map zr
+map zs
+map zt
+map zi set info size:time
+map zs set info size
+map zv :set nopreview; set ratios 1; set info size:time
+map zV :set ratios 1:1:1; set preview; set info size
+map bw cd ~/Downloads
+map bd cd ~/Documents
+map bp cd ~/Projects
+map bc cd ~/.config
+map bl cd ~/.local/share
+map ud clear
+map uy clear
+map u<space> unselect
+map Dy %trash $fx
+map R $vidir
+map i $~/.config/lf/previewer.zsh "$f" | less
+map o push :$<space>"$f"<home><right>
+map cf push :%touch<space>
+map cd push :%mkdir<space>-p<space>
+map = push :%chmod<space>"$f"<home><a-f><space>
