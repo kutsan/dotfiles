@@ -10,7 +10,12 @@ augroup end
 augroup highlightyank
 	autocmd!
 
-	autocmd TextYankPost * lua vim.highlight.on_yank({higroup="Visual", timeout=100})
+	autocmd TextYankPost *
+		\ lua vim.highlight.on_yank({
+			\ higroup = 'Visual',
+			\ timeout = 100,
+			\ on_visual = false
+		\ })
 augroup end
 
 " Save the current buffer after any changes.
