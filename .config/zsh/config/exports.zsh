@@ -100,7 +100,7 @@ export LESS="\
 	--silent \
 	--tabs=4 \
 	--shift=5"
-export LESSHISTFILE="$HOME/.config/less/lesshistory" # Command and search history file.
+export LESSHISTFILE='-' # Disable history.
 export LESSKEYRC="$HOME/.config/less/lesskey" # Path of the uncompiled lesskey file.
 export LESSKEY="$LESSKEYRC.lwc" # Path of the compiled lesskey file.
 export LESS_TERMCAP_md=$'\e[01;34m' # Turn on bold mode.
