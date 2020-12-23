@@ -7,6 +7,7 @@ path=(
 	/usr/sbin
 	/sbin
 	~/.local/bin
+	~/.local/share/cargo/bin
 	$path
 )
 
@@ -40,9 +41,16 @@ export EDITOR='nvim'
 export PAGER='less'
 export BROWSER='xdg-open'
 export LANG='en_US.UTF-8'
-export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
+
+# Python
+export PYTHONUSERBASE="$HOME/.local"
+
+# Rust
+export CARGO_HOME="$HOME/.local/share/cargo"
+export RUSTUP_HOME="$HOME/.local/share/rustup"
 
 # man
 export MANWIDTH='100'
@@ -52,12 +60,18 @@ export MANPAGER="nvim +'set filetype=man' -"
 export MAILCAPS="$HOME/.config/neomutt/mailcap"
 
 # npm
+export NPM_CONFIG_USERCONFIG="$HOME/.config/npm/npmrc"
+export NPM_CONFIG_CACHE="$HOME/.cache/npm"
+export NPM_CONFIG_TMP="$TMPDIR/npm"
 export NPM_CONFIG_INIT_AUTHOR_NAME='Kutsan Kaplan'
 export NPM_CONFIG_INIT_AUTHOR_EMAIL='me@kutsankaplan.com'
 export NPM_CONFIG_INIT_AUTHOR_URL='https://kutsankaplan.com'
 export NPM_CONFIG_INIT_LICENSE='GPL-3.0'
 export NPM_CONFIG_INIT_VERSION='0.0.0'
 export NPM_CONFIG_SIGN_GIT_TAG='true'
+
+# grip
+export GRIPHOME="$HOME/.config/grip"
 
 # GnuPG
 export GPG_TTY=$(tty)
