@@ -22,9 +22,6 @@ let g:fzf_action = {
 	\ 'ctrl-t': 'tab split'
 \ }
 
-" History directory.
-let g:fzf_history_dir = $HOME .. '/.config/nvim/cache/share/fzf/'
-
 " Define key mappings.
 nnoremap <silent> <C-p> :FzfGFiles<CR>
 nnoremap <silent> gis :FzfGFiles?<CR>
