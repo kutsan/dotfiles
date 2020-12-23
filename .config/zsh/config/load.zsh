@@ -28,7 +28,7 @@ foreach module (
 }
 
 # Initialize the completion system with a cache time of 24 hours.
-typeset -g zcompdump="$ZDOTDIR/cache/.zcompdump"
+typeset -g zcompdump="$HOME/.local/share/zsh/zcompdump"
 typeset -g comp_files=($zcompdump(Nm-24))
 
 if (( $#comp_files )) {
