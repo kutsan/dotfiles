@@ -43,7 +43,7 @@ unset -f should_launch_multiplexer
 
 # Asynchronously zcompile .zcompdump file.
 {
-  	typeset -g zcompdump="$ZDOTDIR/cache/.zcompdump"
+  	typeset -g zcompdump="$HOME/.local/share/zsh/zcompdump"
 
 	if ([[ -s "$zcompdump" && (! -s "${zcompdump}.zwc" || "$zcompdump" -nt "${zcompdump}.zwc") ]]) {
     	zcompile "$zcompdump"
