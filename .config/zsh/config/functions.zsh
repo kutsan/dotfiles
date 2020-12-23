@@ -2,8 +2,8 @@
 # `cd` into the last directory upon exit.
 ##
 function lf() {
-	command lf "$@" -last-dir-path="$XDG_DATA_HOME/lf/.lastd" \
-		&& cd "$(<$XDG_DATA_HOME/lf/.lastd)" 2>/dev/null
+	command lf "$@" -last-dir-path="$HOME/.local/share/lf/lastdir" \
+		&& cd "$(<$HOME/.local/share/lf/lastdir)" 2>/dev/null
 }
 
 ##
