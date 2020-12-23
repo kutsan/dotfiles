@@ -51,9 +51,6 @@ export MANPAGER="nvim +'set filetype=man' -"
 # neomutt
 export MAILCAPS="$HOME/.config/neomutt/mailcap"
 
-# nvim
-export NVIM_RPLUGIN_MANIFEST="$HOME/.config/nvim/cache/share/rplugin.vim"
-
 # npm
 export NPM_CONFIG_INIT_AUTHOR_NAME='Kutsan Kaplan'
 export NPM_CONFIG_INIT_AUTHOR_EMAIL='me@kutsankaplan.com'

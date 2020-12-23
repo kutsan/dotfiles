@@ -93,11 +93,11 @@ set nohlsearch " Disable highlight the matched search results by default.
 set smartcase " If a uppercase character is entered, the search will be case sensitive.
 
 " Backup
-set shada=!,'100,<50,s10,h,n~/.config/nvim/cache/share/main.shada " Shared data file.
-set backupdir=~/.config/nvim/cache/backup// " The directory for backup files.
-set directory=~/.config/nvim/cache/swap// " The directory for swap files.
-set undodir=~/.config/nvim/cache/undo// " The directory for undo files.
-set viewdir=~/.config/nvim/cache/view// " Name of the directory where to store files for :mkview.
+set shada=!,'100,<50,s10,h,n~/.local/share/nvim/shada/main.shada " Shared data file.
+set backupdir=~/.local/share/nvim/backup// " The directory for backup files.
+set directory=~/.local/share/nvim/swap// " The directory for swap files.
+set undodir=~/.local/share/nvim/undo// " The directory for undo files.
+set viewdir=~/.local/share/nvim/view// " Name of the directory where to store files for :mkview.
 set undofile " Undo tree to be saved to a file when exiting a buffer.
 set undolevels=100000 " Maximum undo limit.
 set updatecount=100 " Typing this many characters will create the swap file.
