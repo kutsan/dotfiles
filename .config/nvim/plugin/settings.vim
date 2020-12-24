@@ -75,7 +75,6 @@ set smartindent " Automatically inserts one extra level of indentation in some c
 " Folding
 set foldlevelstart=99 " Start editing with all folds open.
 set foldmethod=indent " Use indent model for folding mechanism.
-set foldtext=kutsan#settings#foldtext() " Use custom fold text function for folds.
 set foldopen=hor,mark,percent,quickfix,tag,undo " Specifies for which type of commands folds will be opened.
 
 " Search
