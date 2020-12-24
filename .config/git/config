@@ -1,6 +1,84 @@
 [include]
-	path = ./conf/user.gitconfig
-	path = ./conf/settings.gitconfig
-	path = ./conf/aliases.gitconfig
-	path = ./conf/colors.gitconfig
-	path = ./conf/urls.gitconfig
+	path = ./aliases.gitconfig
+
+[user]
+	name = Kutsan Kaplan
+	email = me@kutsankaplan.com
+	signingkey = 439AC30C
+
+[core]
+	editor = $EDITOR
+	pager = less
+	whitespace = space-before-tab,-indent-with-non-tab,trailing-space
+
+[init]
+	templatedir = ~/.config/git/templatedir
+
+[pull]
+	rebase = true
+
+[push]
+	default = nothing
+	followtags = true
+
+[diff]
+	algorithm = patience
+	tool = nvimdiff
+	renames = copies
+	submodule = log
+
+[difftool "nvimdiff"]
+	cmd = nvim -d $LOCAL $REMOTE
+	trustexitcode = true
+
+[merge]
+	tool = nvimmerge
+	keepBackup = false
+	log = true
+
+[mergetool "nvimmerge"]
+	cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+	trustexitcode = true
+
+[commit]
+	gpgsign = true
+	verbose = true
+
+[status]
+	short = true
+	branch = true
+
+[apply]
+	whitespace = error
+
+[grep]
+	linenumber = true
+	patterntype = perl
+
+[column]
+	ui = auto
+	tag = never
+
+[color]
+	ui = auto
+
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+
+[color "status"]
+	added = yellow
+	changed = blue
+	untracked = red
+
+[url "git@github.com:"]
+	insteadOf = "g:"
+	pushInsteadOf = "g:"
