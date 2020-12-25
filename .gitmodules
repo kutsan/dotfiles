@@ -7,9 +7,6 @@
 [submodule "pure"]
 	path = .config/zsh/plugins/pure
 	url = https://github.com/sindresorhus/pure
-[submodule "syntax-highlighting"]
-	path = .config/zsh/plugins/syntax-highlighting
-	url = https://github.com/zsh-users/zsh-syntax-highlighting
 [submodule "system-clipboard"]
 	path = .config/zsh/plugins/system-clipboard
 	url = https://github.com/kutsan/zsh-system-clipboard
