@@ -26,10 +26,6 @@ alias s='$EDITOR ~/Projects/sync/notes/tasks.yml'
 alias gen-packagejson='cp "$HOME/.config/npm/package.json" "package.json"'
 alias gen-editorconfig='cp "$HOME/.editorconfig" ".editorconfig"'
 
-# Global Aliases
-alias -g L='| less'
-alias -g G='| grep'
-
 # git
 foreach aliaskey (a b bl c co d ds dt dts f l r s sm w) {
 	alias g$aliaskey="git $aliaskey"
