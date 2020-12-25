@@ -1,5 +1,5 @@
 # Finish if there isn't a plugins directory.
-if ! [[ -d "$ZDOTDIR/plugins/" ]] {
+if (! [[ -d "$ZDOTDIR/plugins/" ]]) {
 	return 1
 }
 
