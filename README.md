@@ -10,7 +10,7 @@
 	- [`pure`](https://github.com/sindresorhus/pure) - Minimal and fast Zsh prompt with asynchronous git fetch
 	- [`autopair`](https://github.com/hlissner/zsh-autopair) - Auto-close and delete matching delimiters
 	- [`system-clipboard`](https://github.com/kutsan/zsh-system-clipboard) - Synchronize ZLE clipboard buffer with system clipboard
-	- [`syntax-highlighting`](https://github.com/zsh-users/zsh-syntax-highlighting) - Fish-like syntax highlighting support for interactive terminal
+	- [`fast-syntax-highlighting`](https://github.com/zdharma/fast-syntax-highlighting) - Fish-like syntax highlighting support for interactive terminal
 	- [`autosuggestions`](https://github.com/zsh-users/zsh-autosuggestions) - Fish-like auto-suggestions for interactive terminal based on command history
 - [`neovim`](https://github.com/neovim/neovim) - The fork of ubiquitous text editor focused on extensibility and usability
 	- [`material`](https://github.com/kaicataldo/material.vim) - Color scheme

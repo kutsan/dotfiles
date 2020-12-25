@@ -10,6 +10,9 @@
 [submodule "system-clipboard"]
 	path = .config/zsh/plugins/system-clipboard
 	url = https://github.com/kutsan/zsh-system-clipboard
+[submodule "fast-syntax-highlighting"]
+	path = .config/zsh/plugins/fast-syntax-highlighting
+	url = https://github.com/zdharma/fast-syntax-highlighting
 
 [submodule "coc"]
 	path = .config/nvim/pack/bundle/start/coc

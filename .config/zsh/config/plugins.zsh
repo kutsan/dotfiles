@@ -11,3 +11,7 @@ source "$ZDOTDIR/plugins/system-clipboard/zsh-system-clipboard.zsh"
 
 # zsh-autosuggestions: Fish-like auto-suggestions.
 source "$ZDOTDIR/plugins/autosuggestions/zsh-autosuggestions.zsh"
+
+# fast-syntax-highlighting: Syntax highlighting support.
+source "$ZDOTDIR/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
+	FAST_HIGHLIGHT_STYLES[${FAST_THEME_NAME}unknown-token]='fg=red'
