@@ -11,3 +11,4 @@ foreach file (
 ) {
 	source $ZDOTDIR/config/$file
 }
+unset file
