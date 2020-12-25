@@ -1,4 +1,4 @@
-foreach piece (
+foreach file (
 	load.zsh
 	exports.zsh
 	prompt.zsh
@@ -9,5 +9,5 @@ foreach piece (
 	mappings.zsh
 	plugins.zsh
 ) {
-	source $ZDOTDIR/config/$piece
+	source $ZDOTDIR/config/$file
 }
