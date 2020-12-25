@@ -1,9 +1,10 @@
-# Add prompt to fpath.
-if [[ -d "$ZDOTDIR/plugins/pure" ]] {
-	fpath=($fpath "$ZDOTDIR/plugins/pure")
-} else {
+# Check prompt installation.
+if (! [[ -d "$ZDOTDIR/plugins/pure" ]]) {
 	return 1
 }
+
+# Add prompt to fpath.
+fpath=($fpath "$ZDOTDIR/plugins/pure")
 
 # Initialize the prompt system.
 promptinit
