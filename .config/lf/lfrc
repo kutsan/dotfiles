@@ -43,6 +43,6 @@ map Dy %trash $fx
 map R $vidir
 map i $~/.config/lf/previewer.zsh "$f" | less
 map o push :$<space>"$f"<home><right>
-map cf push :%touch<space>
-map cd push :%mkdir<space>-p<space>
+map cf push :%touch<space>''<left>
+map cd push :%mkdir<space>-p<space>''<left>
 map = push :%chmod<space>"$f"<home><a-f><space>
