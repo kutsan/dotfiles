@@ -23,9 +23,9 @@ if ( \
 
 # Asynchronously zcompile .zcompdump file.
 {
-  	typeset -g zcompdump="$HOME/.local/share/zsh/zcompdump"
+	typeset -g zcompdump="$HOME/.local/share/zsh/zcompdump"
 
 	if ([[ -s "$zcompdump" && (! -s "${zcompdump}.zwc" || "$zcompdump" -nt "${zcompdump}.zwc") ]]) {
-    	zcompile "$zcompdump"
+		zcompile "$zcompdump"
 	}
 } &!
