@@ -5,8 +5,6 @@ typeset -gU path fpath cdpath
 foreach function (
 	compinit
 	promptinit
-	select-bracketed
-	select-quoted
 	surround
 ) {
 	autoload -U $function
