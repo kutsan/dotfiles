@@ -40,7 +40,7 @@ nnoremap <silent> g<C-p> :call fzf#run(
 		\ {
 		\	'source': 'ls ~/Projects',
 		\	'dir': '~/Projects',
-		\	'sink': {dir -> execute(printf('silent edit %s', dir))},
+		\	'sink': {dir -> execute([printf('cd %s', dir), printf('edit %s', dir)])},
 		\	'options': '--no-multi --prompt="> "'
 		\ },
 		\ 0
