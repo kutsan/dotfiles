@@ -29,7 +29,7 @@ let g:lua_tree_icons = {
 " Highlight nodes according to current git status.
 let g:lua_tree_git_hl = 1
 
-" Automatically close the tree if it's the last remaining buffer.
+" Automatically close the tree if it's the last remaining window.
 let g:lua_tree_auto_close = 1
 
 " Set key bindings.
