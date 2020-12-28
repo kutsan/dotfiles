@@ -19,6 +19,12 @@ cmd open ${{
 	}
 }}
 
+cmd trash %{{
+	local acc=''
+	foreach item (${(ps:\n:)fx}) { acc+="'$item' " }
+	eval command trash $acc
+}}
+
 # Mappings
 map c
 map u
@@ -39,7 +45,7 @@ map bl cd ~/.local/share
 map ud clear
 map uy clear
 map u<space> unselect
-map Dy %trash $fx
+map Dy trash
 map R $vidir
 map i $~/.config/lf/previewer.zsh "$f" | less
 map o push :$<space>"$f"<home><right>
