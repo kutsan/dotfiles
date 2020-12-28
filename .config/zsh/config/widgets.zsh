@@ -3,6 +3,8 @@ foreach widget (
 	'add-surround surround'
 	'delete-surround surround'
 	'change-surround surround'
+	select-bracketed
+	select-quoted
 	user-fuzzy-history
 	user-fuzzy-select
 ) {

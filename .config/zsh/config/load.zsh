@@ -6,6 +6,8 @@ foreach function (
 	compinit
 	promptinit
 	surround
+	select-bracketed
+	select-quoted
 ) {
 	autoload -U $function
 }

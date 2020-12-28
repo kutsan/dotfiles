@@ -17,6 +17,12 @@ bindkey -M vicmd 'sa' add-surround
 
 # Visual Mode
 bindkey -M visual 'sa' add-surround
+foreach char ({a,i}{\',\",\`}) { bindkey -M visual $char select-quoted } && unset char
+foreach char ({a,i}${(s..)^:-'()[]{}<>bB'}) { bindkey -M visual $char select-bracketed } && unset char
+
+# Operator Mode
+foreach char ({a,i}{\',\",\`}) { bindkey -M viopp $char select-quoted } && unset char
+foreach char ({a,i}${(s..)^:-'()[]{}<>bB'}) { bindkey -M viopp $char select-bracketed } && unset char
 
 # Completion Mode
 bindkey -M menuselect '^?' undo
