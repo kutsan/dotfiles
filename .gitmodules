@@ -29,11 +29,11 @@
 [submodule "fzf-vim"]
 	path = .config/nvim/pack/bundle/start/fzf-vim
 	url = https://github.com/junegunn/fzf.vim
-[submodule "lua-tree"]
-	path = .config/nvim/pack/bundle/start/lua-tree
+[submodule "nvim-tree"]
+	path = .config/nvim/pack/bundle/start/nvim-tree
 	url = https://github.com/kyazdani42/nvim-tree.lua
-[submodule "lua-web-devicons"]
-	path = .config/nvim/pack/bundle/start/lua-web-devicons
+[submodule "nvim-web-devicons"]
+	path = .config/nvim/pack/bundle/start/nvim-web-devicons
 	url = https://github.com/kyazdani42/nvim-web-devicons
 [submodule "peartree"]
 	path = .config/nvim/pack/bundle/start/peartree

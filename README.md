@@ -18,8 +18,8 @@
 	- [`colorizer`](https://github.com/norcalli/nvim-colorizer.lua) - High-performance color highlighter
 	- [`fugitive`](https://github.com/tpope/vim-fugitive) - Git client
 	- [`fzf`](https://github.com/junegunn/fzf.vim) - Fuzzy finder fzf as plugin
-	- [`lua-tree`](https://github.com/kyazdani42/nvim-tree.lua) - File explorer
-	- [`lua-web-devicons`](https://github.com/kyazdani42/nvim-web-devicons) - Nerd Font icon API support
+	- [`nvim-tree`](https://github.com/kyazdani42/nvim-tree.lua) - File explorer
+	- [`nvim-web-devicons`](https://github.com/kyazdani42/nvim-web-devicons) - Nerd Font icon API support
 	- [`peartree`](https://github.com/tmsvg/pear-tree) - Auto-pair plugin that supports multi-character pairs and intelligent matching
 	- [`polyglot`](https://github.com/sheerun/vim-polyglot) - Big collection of language packs as scripts are loaded only on demand
 	- [`sandwich`](https://github.com/machakann/vim-sandwich) - The set of operator and text object plugins to search, select, edit sandwiched text objects

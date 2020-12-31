@@ -1,14 +1,14 @@
 scriptencoding UTF-8
 
 " Set whether or not to show certain icons.
-let g:lua_tree_show_icons = {
+let g:nvim_tree_show_icons = {
 	\ 'git': 0,
 	\ 'folders': 1,
 	\ 'files': 1
 \ }
 
 " Customize icons.
-let g:lua_tree_icons = {
+let g:nvim_tree_icons = {
 	\ 'default': '',
 	\ 'symlink': '',
 	\ 'git': {
@@ -27,13 +27,13 @@ let g:lua_tree_icons = {
 \ }
 
 " Highlight nodes according to current git status.
-let g:lua_tree_git_hl = 1
+let g:nvim_tree_git_hl = 1
 
 " Automatically close the tree if it's the last remaining window.
-let g:lua_tree_auto_close = 1
+let g:nvim_tree_auto_close = 1
 
 " Set key bindings.
-let g:lua_tree_bindings = {
+let g:nvim_tree_bindings = {
 	\ 'edit': 'l',
 	\ 'edit_split': '<C-s>',
 	\ 'edit_vsplit': '<C-v>',
@@ -51,12 +51,12 @@ let g:lua_tree_bindings = {
 	\ 'next_git_item': ']c',
 \ }
 
-nnoremap <silent> <Leader>f :LuaTreeToggle<CR>
-nnoremap <silent> <Leader>F :LuaTreeFindFile<CR>
+nnoremap <silent> <Leader>f :NvimTreeToggle<CR>
+nnoremap <silent> <Leader>F :NvimTreeFindFile<CR>
 
-augroup luatreesettings
+augroup nvimtreesettings
 	autocmd!
 
 	" Set statusline.
-	autocmd FileType LuaTree let &l:statusline = ' luatree'
+	autocmd FileType NvimTree let &l:statusline = ' nvimtree'
 augroup end

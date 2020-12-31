@@ -1,4 +1,4 @@
-if not vim.g.loaded_devicons then
+if vim.g.nvim_web_devicons ~= 1 then
 	return nil
 end
 
