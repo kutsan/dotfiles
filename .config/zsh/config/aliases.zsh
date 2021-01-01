@@ -27,7 +27,7 @@ alias gen-packagejson='cp "$HOME/.config/npm/package.json" "package.json"'
 alias gen-editorconfig='cp "$HOME/.editorconfig" ".editorconfig"'
 
 # git
-foreach aliaskey (a b bl c co d ds dt dts f l r s sm w) {
+foreach aliaskey (a b bl c co d ds dt dts f l ld r rd s sm w) {
 	alias g$aliaskey="git $aliaskey"
 }
 unset aliaskey

@@ -9,14 +9,10 @@
 	dt = difftool
 	dts = difftool --staged
 	f = fetch
-	l = log \
-		--graph \
-		--abbrev-commit \
-		--decorate \
-		--all \
-		--date=format:'%Y-%m-%d %H:%M' \
-		--format=format:'%C(blue)%ad%C(reset) %C(yellow)%h%C(reset) %C(white)%s%C(reset) %C(blue)%an%C(reset) %C(bold yellow)%d%C(reset)'
-	r = reset
+	l = log --graph --all --date=iso8601 --pretty=log-default
+	ld = log --graph --all --date=iso8601 --pretty=log-full
+	r = reflog --date=iso8601 --pretty=reflog-default
+	rd = reflog --date=iso8601 --pretty=reflog-full
 	s = status
 	sm = submodule
 	w = whatchanged
