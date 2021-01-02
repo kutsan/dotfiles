@@ -13,9 +13,8 @@ set previewer "~/.config/lf/previewer.zsh"
 # Commands
 cmd open ${{
 	case $(file --dereference --brief --mime-type -- "$f") {
-		text/*) $EDITOR -- "$f" ;;
-		video/*) mpv -- "$f" &>/dev/null & ;;
-		*) xdg-open "$f" &>/dev/null & ;;
+		video/* | image/*) xdg-open -- "$f" &>/dev/null & ;;
+		*) $EDITOR -- "$f" ;;
 	}
 }}
 
