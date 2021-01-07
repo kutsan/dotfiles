@@ -19,4 +19,4 @@ nnoremap <buffer><silent> <C-w><C-f> :call kutsan#ftplugin#javascript#gotofile(e
 nnoremap <buffer><silent> <C-w>gf :call kutsan#ftplugin#javascript#gotofile(expand('<cfile>'), { 'command': 'tab split' })<CR>
 
 " Execute current file.
-nnoremap <buffer><silent> <LocalLeader>r :execute 'split <Bar> terminal node' shellescape(@%, 1)<CR>
+nnoremap <buffer><silent> <LocalLeader>r :execute 'vsplit <Bar> terminal node' shellescape(@%, 1)<CR>
