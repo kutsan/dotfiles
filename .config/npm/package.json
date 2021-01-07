@@ -11,7 +11,7 @@
 	"contributors": [],
 	"main": "",
 	"bin": {
-		"binary": "path"
+		"binary": ""
 	},
 	"man": "",
 	"scripts": {
