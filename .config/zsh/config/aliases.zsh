@@ -24,7 +24,7 @@ alias le='$EDITOR ~/Projects/sync/finance/journal-$(date +%Y).ledger'
 alias lnet="ledger register '^expenses' '^income' --period 'this month' --subtotal --invert"
 alias s='$EDITOR ~/Projects/sync/notes/tasks.yml'
 alias gen-packagejson='cp "$HOME/.config/npm/package.json" "package.json"'
-alias gen-editorconfig='cp "$HOME/.editorconfig" ".editorconfig"'
+alias gen-editorconfig='cp "$HOME/.config/editorconfig/.editorconfig" ".editorconfig"'
 
 # git
 foreach aliaskey (a b bl c co d ds dt dts f l ld r rd s sm w) {
