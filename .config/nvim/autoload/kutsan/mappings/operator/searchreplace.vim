@@ -7,31 +7,31 @@
 " @param {string} [type] Type of motion.
 ""
 function! kutsan#mappings#operator#searchreplace#(type) abort
-	" The operator doesn't support line-wise and block-wise motions.
-	if index(['line', 'block', 'V', "\<C-v>"], a:type) !=# -1
-		return v:false
-	endif
+  " The operator doesn't support line-wise and block-wise motions.
+  if index(['line', 'block', 'V', "\<C-v>"], a:type) !=# -1
+    return v:false
+  endif
 
-	let l:save = {
-		\ 'register': getreg('@')
-	\ }
+  let l:save = {
+    \ 'register': getreg('@')
+  \ }
 
-	if a:type ==# 'char'
-		silent normal! `[v`]y
-	elseif a:type ==# 'v'
-		silent normal! gvy
-	endif
+  if a:type ==# 'char'
+    silent normal! `[v`]y
+  elseif a:type ==# 'v'
+    silent normal! gvy
+  endif
 
-	let l:query = getreg('@')
-	call setreg('@', l:save.register)
-	unlet l:save
+  let l:query = getreg('@')
+  call setreg('@', l:save.register)
+  unlet l:save
 
-	if line("'[") !=# line("']")
-		return v:false
-	endif
+  if line("'[") !=# line("']")
+    return v:false
+  endif
 
-	let @/ = escape(l:query, '/\')
+  let @/ = escape(l:query, '/\')
 
-	call feedkeys(printf(':%%substitute/\v<%s>//gc', @/), 'n')
-	call feedkeys("\<Left>\<Left>\<Left>", 'm')
+  call feedkeys(printf(':%%substitute/\v<%s>//gc', @/), 'n')
+  call feedkeys("\<Left>\<Left>\<Left>", 'm')
 endfunction

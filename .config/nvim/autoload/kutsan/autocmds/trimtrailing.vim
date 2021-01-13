@@ -6,13 +6,13 @@
 " autocmd BufWritePre * call kutsan#autocmds#trimtrailing#()
 ""
 function! kutsan#autocmds#trimtrailing#() abort
-	if &l:modifiable && !&l:binary
-		let l:view = winsaveview()
+  if &l:modifiable && !&l:binary
+    let l:view = winsaveview()
 
-		try
-			keeppatterns silent! 1,$substitute/\s\+$//e
-		finally
-			call winrestview(l:view)
-		endtry
-	endif
+    try
+      keeppatterns silent! 1,$substitute/\s\+$//e
+    finally
+      call winrestview(l:view)
+    endtry
+  endif
 endfunction

@@ -5,21 +5,21 @@
 " autocmd VimEnter * call kutsan#autocmds#setroot#()
 ""
 function! kutsan#autocmds#setroot#() abort
-	let l:amatch = expand('<amatch>')
+  let l:amatch = expand('<amatch>')
 
-	if isdirectory(l:amatch)
-		execute printf('cd %s', fnameescape(l:amatch))
-		return v:true
-	endif
+  if isdirectory(l:amatch)
+    execute printf('cd %s', fnameescape(l:amatch))
+    return v:true
+  endif
 
-	let l:currentdir = escape(expand('%:p:h'), ' ')
+  let l:currentdir = escape(expand('%:p:h'), ' ')
 
-	if !isdirectory(l:currentdir)
-		return v:false
-	endif
+  if !isdirectory(l:currentdir)
+    return v:false
+  endif
 
-	let l:gitdir = finddir('.git', l:currentdir .. ';')
-	let l:rootdir = fnameescape(fnamemodify(l:gitdir, ':h'))
+  let l:gitdir = finddir('.git', l:currentdir .. ';')
+  let l:rootdir = fnameescape(fnamemodify(l:gitdir, ':h'))
 
-	execute 'cd' l:rootdir
+  execute 'cd' l:rootdir
 endfunction

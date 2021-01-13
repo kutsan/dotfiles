@@ -12,14 +12,14 @@ let g:fzf_preview_window = 'down:60%'
 
 " Set custom layout.
 let g:fzf_layout = {
-	\ 'window': 'call g:FzfFloatingWindow()'
+  \ 'window': 'call g:FzfFloatingWindow()'
 \ }
 
 " Set actions manually.
 let g:fzf_action = {
-	\ 'ctrl-s': 'split',
-	\ 'ctrl-v': 'vsplit',
-	\ 'ctrl-t': 'tab split'
+  \ 'ctrl-s': 'split',
+  \ 'ctrl-v': 'vsplit',
+  \ 'ctrl-t': 'tab split'
 \ }
 
 " Define key mappings.
@@ -35,29 +35,29 @@ nnoremap <silent> <Leader>: :FzfHistory:<CR>
 nnoremap <silent> <Leader>/ :FzfHistory/<CR>
 nnoremap <silent> <Leader>` :FzfMarks<CR>
 nnoremap <silent> g<C-p> :call fzf#run(
-	\ fzf#wrap(
-		\ 'projects',
-		\ {
-		\	'source': 'ls ~/Projects',
-		\	'dir': '~/Projects',
-		\	'sink': {dir -> execute([printf('cd %s', dir), printf('edit %s', dir)])},
-		\	'options': '--no-multi --prompt="> "'
-		\ },
-		\ 0
-	\ )
+  \ fzf#wrap(
+    \ 'projects',
+    \ {
+    \ 'source': 'ls ~/Projects',
+    \ 'dir': '~/Projects',
+    \ 'sink': {dir -> execute([printf('cd %s', dir), printf('edit %s', dir)])},
+    \ 'options': '--no-multi --prompt="> "'
+    \ },
+    \ 0
+  \ )
 \ )<CR>
 
 function! g:FzfFloatingWindow() abort
-	call nvim_open_win(
-		\ nvim_create_buf(v:false, v:true),
-		\ v:true,
-		\ {
-			\ 'relative': 'editor',
-			\ 'row': 2,
-			\ 'col': (&columns - (&columns * 0.65)) / 2,
-			\ 'width': float2nr(&columns * 0.65),
-			\ 'height': float2nr(&lines * 0.9),
-			\ 'style': 'minimal'
-		\ }
-	\ )
+  call nvim_open_win(
+    \ nvim_create_buf(v:false, v:true),
+    \ v:true,
+    \ {
+      \ 'relative': 'editor',
+      \ 'row': 2,
+      \ 'col': (&columns - (&columns * 0.65)) / 2,
+      \ 'width': float2nr(&columns * 0.65),
+      \ 'height': float2nr(&lines * 0.9),
+      \ 'style': 'minimal'
+    \ }
+  \ )
 endfunction

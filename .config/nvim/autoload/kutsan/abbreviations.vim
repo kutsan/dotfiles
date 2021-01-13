@@ -6,17 +6,17 @@
 " @return {shebang} Shebang string, with or without interpreter.
 ""
 function! kutsan#abbreviations#shebang() abort
-	if empty(&filetype)
-		return '#!/usr/bin/env'
-	endif
+  if empty(&filetype)
+    return '#!/usr/bin/env'
+  endif
 
-	let l:interpreters = {
-		\ 'javascript': 'node',
-		\ 'sh': 'bash'
-	\ }
+  let l:interpreters = {
+    \ 'javascript': 'node',
+    \ 'sh': 'bash'
+  \ }
 
-	return printf(
-		\ '#!/usr/bin/env %s',
-		\ get(l:interpreters, split(&filetype, '\v\c\.')[0], &filetype)
-	\ )
+  return printf(
+    \ '#!/usr/bin/env %s',
+    \ get(l:interpreters, split(&filetype, '\v\c\.')[0], &filetype)
+  \ )
 endfunction

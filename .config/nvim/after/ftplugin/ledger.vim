@@ -1,12 +1,12 @@
 " Undo filetype specific settings upon changing filetype.
 let s:undo =
-	\      'setlocal commentstring< iskeyword<'
-	\ .. " | execute 'nunmap <buffer> <LocalLeader>a'"
+  \      'setlocal commentstring< iskeyword<'
+  \ .. " | execute 'nunmap <buffer> <LocalLeader>a'"
 
 if exists('b:undo_ftplugin')
-	let b:undo_ftplugin .= ' | ' .. s:undo
+  let b:undo_ftplugin .= ' | ' .. s:undo
 else
-	let b:undo_ftplugin = s:undo
+  let b:undo_ftplugin = s:undo
 endif
 
 unlet s:undo

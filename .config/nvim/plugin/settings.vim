@@ -79,12 +79,12 @@ set foldopen=hor,mark,percent,quickfix,tag,undo " Specifies for which type of co
 
 " Search
 let &grepprg = 'grep
-	\ --line-number
-	\ --binary-file="without-match"
-	\ --no-messages
-	\ --recursive
-	\ --exclude-dir={.git,node_modules}
-	\ --perl-regexp' " Progrem to use for :grep command.
+  \ --line-number
+  \ --binary-file="without-match"
+  \ --no-messages
+  \ --recursive
+  \ --exclude-dir={.git,node_modules}
+  \ --perl-regexp' " Progrem to use for :grep command.
 set grepformat=%f:%l:%c:%m,%f:%l:%m " Format to recognize for the :grep command output.
 set ignorecase " Make default search is not case sensitive.
 set incsearch " Instantly show results when you start searching.
@@ -123,9 +123,9 @@ set wildmode=full " Wildmenu options.
 
 " Root
 if exists('$SUDO_USER')
-	set noswapfile
-	set nobackup
-	set nowritebackup
-	set noundofile
-	set shada=
+  set noswapfile
+  set nobackup
+  set nowritebackup
+  set noundofile
+  set shada=
 endif

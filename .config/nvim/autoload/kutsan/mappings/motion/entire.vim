@@ -5,7 +5,7 @@
 " xnoremap <silent> ae :<C-u>call kutsan#mappings#motion#entire#()<CR>
 ""
 function! kutsan#mappings#motion#entire#() abort
-	normal! m'
+  normal! m'
 
-	keepjumps normal! gg0VG
+  keepjumps normal! gg0VG
 endfunction
