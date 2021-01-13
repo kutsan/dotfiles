@@ -1,93 +1,93 @@
 [include]
-	path = ./aliases.gitconfig
+  path = ./aliases.gitconfig
 
 [user]
-	name = Kutsan Kaplan
-	email = me@kutsankaplan.com
-	signingkey = 439AC30C
+  name = Kutsan Kaplan
+  email = me@kutsankaplan.com
+  signingkey = 439AC30C
 
 [core]
-	editor = $EDITOR
-	pager = less
-	whitespace = space-before-tab,-indent-with-non-tab,trailing-space
+  editor = $EDITOR
+  pager = less
+  whitespace = space-before-tab,-indent-with-non-tab,trailing-space
 
 [init]
-	templatedir = ~/.config/git/templatedir
+  templatedir = ~/.config/git/templatedir
 
 [pull]
-	rebase = true
+  rebase = true
 
 [push]
-	default = nothing
-	followtags = true
+  default = nothing
+  followtags = true
 
 [diff]
-	algorithm = patience
-	tool = nvimdiff
-	renames = copies
-	submodule = log
+  algorithm = patience
+  tool = nvimdiff
+  renames = copies
+  submodule = log
 
 [difftool "nvimdiff"]
-	cmd = nvim -d $LOCAL $REMOTE
-	trustexitcode = true
+  cmd = nvim -d $LOCAL $REMOTE
+  trustexitcode = true
 
 [merge]
-	tool = nvimmerge
-	keepBackup = false
-	log = true
+  tool = nvimmerge
+  keepBackup = false
+  log = true
 
 [mergetool "nvimmerge"]
-	cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
-	trustexitcode = true
+  cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+  trustexitcode = true
 
 [commit]
-	gpgsign = true
-	verbose = true
+  gpgsign = true
+  verbose = true
 
 [status]
-	short = true
-	branch = true
+  short = true
+  branch = true
 
 [apply]
-	whitespace = error
+  whitespace = error
 
 [grep]
-	linenumber = true
-	patterntype = perl
+  linenumber = true
+  patterntype = perl
 
 [column]
-	ui = auto
-	tag = never
+  ui = auto
+  tag = never
 
 [format]
-	pretty = log-full
+  pretty = log-full
 
 [pretty]
-	log-default = format:%C(auto)%h%C(reset) %C(blue)%ad%C(reset) %C(cyan)(%ar)%C(reset)%C(auto)%d%C(reset)%n %C(yellow)●%C(reset) %s %C(241)%aN <%aE>%C(reset)%n%w(0,7,7)%+(trailers:only,unfold)
-	log-full = format:%C(auto)%h%C(reset)%C(auto)%d%C(reset)   %C(239)[P: %p] [T: %t]%C(reset)%n%C(white)Author:%C(reset)   %aN %C(241)<%aE>%C(reset)%n          %C(blue)%ad%C(reset) %C(cyan)(%ar)%C(reset)%n%C(white)Commit:%C(reset)   %cN %C(241)<%cE>%C(reset)   %C(239)[GPG: %G?% GK]%C(reset)%n          %C(blue)%cd%C(reset) %C(cyan)(%cr)%C(reset)%w(0,4,4)%n%n%C(bold)%s%C(reset)%n%n%-b%n%n%-N%n
-	reflog-default = format:%C(auto)%h%C(reset) %C(blue)%ad%C(reset) %C(cyan)(%ar)%C(reset)%C(auto)%d%C(reset)%n %C(yellow)●%C(reset) %s %C(241)%aN <%aE>%C(reset)%n %C(yellow)○%C(reset) %C(bold yellow)(%C(magenta)%gd%C(bold yellow))%C(reset) %gs %C(241)%gN <%gE>%C(reset)%n%w(0,7,7)%+(trailers:only,unfold)
-	reflog-full = format:%C(auto)%h%C(reset) %C(bold yellow)(%C(magenta)%gd%C(bold yellow))%C(reset)%C(auto)%d%C(reset)   %C(239)[P: %p] [T: %t]%C(reset)%n%C(white)Author:%C(reset)   %aN %C(241)<%aE>%C(reset)%n          %C(blue)%ad%C(reset) %C(cyan)(%ar)%C(reset)%n%C(white)Commit:%C(reset)   %cN %C(241)<%cE>%C(reset)   %C(239)[GPG: %G?% GK]%C(reset)%n          %C(blue)%cd%C(reset) %C(cyan)(%cr)%C(reset)%n%C(white)Reflog:%C(reset)   %gN %C(241)<%gE>%C(reset)%n          %C(auto)%gs%C(reset)%w(0,4,4)%n%n%C(bold)%s%C(reset)%n%n%-b%n%n%-N%n
+  log-default = format:%C(auto)%h%C(reset) %C(blue)%ad%C(reset) %C(cyan)(%ar)%C(reset)%C(auto)%d%C(reset)%n %C(yellow)●%C(reset) %s %C(241)%aN <%aE>%C(reset)%n%w(0,7,7)%+(trailers:only,unfold)
+  log-full = format:%C(auto)%h%C(reset)%C(auto)%d%C(reset)   %C(239)[P: %p] [T: %t]%C(reset)%n%C(white)Author:%C(reset)   %aN %C(241)<%aE>%C(reset)%n          %C(blue)%ad%C(reset) %C(cyan)(%ar)%C(reset)%n%C(white)Commit:%C(reset)   %cN %C(241)<%cE>%C(reset)   %C(239)[GPG: %G?% GK]%C(reset)%n          %C(blue)%cd%C(reset) %C(cyan)(%cr)%C(reset)%w(0,4,4)%n%n%C(bold)%s%C(reset)%n%n%-b%n%n%-N%n
+  reflog-default = format:%C(auto)%h%C(reset) %C(blue)%ad%C(reset) %C(cyan)(%ar)%C(reset)%C(auto)%d%C(reset)%n %C(yellow)●%C(reset) %s %C(241)%aN <%aE>%C(reset)%n %C(yellow)○%C(reset) %C(bold yellow)(%C(magenta)%gd%C(bold yellow))%C(reset) %gs %C(241)%gN <%gE>%C(reset)%n%w(0,7,7)%+(trailers:only,unfold)
+  reflog-full = format:%C(auto)%h%C(reset) %C(bold yellow)(%C(magenta)%gd%C(bold yellow))%C(reset)%C(auto)%d%C(reset)   %C(239)[P: %p] [T: %t]%C(reset)%n%C(white)Author:%C(reset)   %aN %C(241)<%aE>%C(reset)%n          %C(blue)%ad%C(reset) %C(cyan)(%ar)%C(reset)%n%C(white)Commit:%C(reset)   %cN %C(241)<%cE>%C(reset)   %C(239)[GPG: %G?% GK]%C(reset)%n          %C(blue)%cd%C(reset) %C(cyan)(%cr)%C(reset)%n%C(white)Reflog:%C(reset)   %gN %C(241)<%gE>%C(reset)%n          %C(auto)%gs%C(reset)%w(0,4,4)%n%n%C(bold)%s%C(reset)%n%n%-b%n%n%-N%n
 
 [color]
-	ui = auto
+  ui = auto
 
 [color "branch"]
-	current = yellow reverse
-	local = yellow
-	remote = green
+  current = yellow reverse
+  local = yellow
+  remote = green
 
 [color "diff"]
-	meta = yellow bold
-	frag = magenta bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+  whitespace = red reverse
 
 [color "status"]
-	added = yellow
-	changed = blue
-	untracked = red
+  added = yellow
+  changed = blue
+  untracked = red
 
 [url "git@github.com:"]
-	insteadOf = "g:"
-	pushInsteadOf = "g:"
+  insteadOf = "g:"
+  pushInsteadOf = "g:"

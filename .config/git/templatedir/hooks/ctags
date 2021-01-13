@@ -5,9 +5,9 @@ export PATH="/usr/local/bin:$PATH"
 declare gitdir="$(git rev-parse --git-dir)"
 
 git ls-files \
-	| ctags \
-		-L - \
-		-f "$gitdir/$$.tags" \
-		--tag-relative=yes
+  | ctags \
+    -L - \
+    -f "$gitdir/$$.tags" \
+    --tag-relative=yes
 
 mv "$gitdir/$$.tags" "$gitdir/tags"
