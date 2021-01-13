@@ -22,8 +22,8 @@ set status_format = "  com.kutsankaplan   %f[%r] %>  %?M?%M/?%m messages, 
 # Load mailboxes.
 unmailboxes *
 mailboxes \
-	"+Inbox" \
-	"+Sent" \
-	"+Drafts" \
-	"+Spam" \
-	"+Trash"
+  "+Inbox" \
+  "+Sent" \
+  "+Drafts" \
+  "+Spam" \
+  "+Trash"
