@@ -28,6 +28,6 @@ alias gen-editorconfig='cp "$HOME/.config/editorconfig/.editorconfig" ".editorco
 
 # git
 foreach aliaskey (a b bl c co d ds dt dts f l ld r rd s sm w) {
-	alias g$aliaskey="git $aliaskey"
+  alias g$aliaskey="git $aliaskey"
 }
 unset aliaskey

@@ -1,38 +1,38 @@
 # Initialize $PATH with system binaries.
 path=(
-	/usr/local/bin
-	/usr/local/sbin
-	/usr/bin
-	/bin
-	/usr/sbin
-	/sbin
-	~/.local/bin
-	~/.local/share/cargo/bin
-	$path
+  /usr/local/bin
+  /usr/local/sbin
+  /usr/bin
+  /bin
+  /usr/sbin
+  /sbin
+  ~/.local/bin
+  ~/.local/share/cargo/bin
+  $path
 )
 
 # macOS specific exports.
 if ([[ $OSTYPE =~ 'darwin*' ]]) {
-	path=(
-		'/usr/local/opt/coreutils/libexec/gnubin'
-		'/usr/local/opt/findutils/libexec/gnubin'
-		'/usr/local/opt/gnu-sed/libexec/gnubin'
-		'/usr/local/opt/grep/libexec/gnubin'
-		'/usr/local/opt/curl/bin'
-		'/usr/local/opt/ncurses/bin'
-		'/usr/local/opt/openssl/bin'
-		'/usr/local/opt/python/libexec/bin'
-		$path
-	)
+  path=(
+    '/usr/local/opt/coreutils/libexec/gnubin'
+    '/usr/local/opt/findutils/libexec/gnubin'
+    '/usr/local/opt/gnu-sed/libexec/gnubin'
+    '/usr/local/opt/grep/libexec/gnubin'
+    '/usr/local/opt/curl/bin'
+    '/usr/local/opt/ncurses/bin'
+    '/usr/local/opt/openssl/bin'
+    '/usr/local/opt/python/libexec/bin'
+    $path
+  )
 
-	manpath=(
-		'/usr/local/opt/coreutils/libexec/gnuman'
-		'/usr/local/opt/findutils/libexec/gnuman'
-		'/usr/local/opt/gnu-sed/libexec/gnuman'
-		'/usr/local/opt/grep/libexec/gnuman'
-		'/usr/local/opt/curl/share/man'
-		$manpath
-	)
+  manpath=(
+    '/usr/local/opt/coreutils/libexec/gnuman'
+    '/usr/local/opt/findutils/libexec/gnuman'
+    '/usr/local/opt/gnu-sed/libexec/gnuman'
+    '/usr/local/opt/grep/libexec/gnuman'
+    '/usr/local/opt/curl/share/man'
+    $manpath
+  )
 }
 
 # Basics
@@ -80,40 +80,40 @@ export GNUPGHOME="$HOME/.config/gnupg"
 # fzf
 export FZF_DEFAULT_COLORS='--color=dark,fg:-1,bg:-1,hl:4,fg+:7,bg+:8,gutter:-1,hl+:4,info:8,border:8,prompt:4,pointer:3,marker:3,spinner:8,header:6'
 export FZF_DEFAULT_OPTS="\
-	$FZF_DEFAULT_COLORS \
-	--exact \
-	--no-multi \
-	--no-mouse \
-	--height='40%' \
-	--margin='1,3' \
-	--layout='reverse' \
-	--info='inline' \
-	--no-bold \
-	--jump-labels='asdfghjkl;' \
-	--bind='ctrl-f:jump-accept'"
+  $FZF_DEFAULT_COLORS \
+  --exact \
+  --no-multi \
+  --no-mouse \
+  --height='40%' \
+  --margin='1,3' \
+  --layout='reverse' \
+  --info='inline' \
+  --no-bold \
+  --jump-labels='asdfghjkl;' \
+  --bind='ctrl-f:jump-accept'"
 
 # transmission
 export TR_AUTH='kutsan:EkYBoNSd6oIUznucRTfQTFCcxC5WeeDaBImPt6I9CncuY9g8mH'
 
 # gcal
 export GCAL="\
-	--highlighting=\e[41m:\e[0m:\e[33m:\e[0m \
-	--pager \
-	--starting-day=Monday"
+  --highlighting=\e[41m:\e[0m:\e[33m:\e[0m \
+  --pager \
+  --starting-day=Monday"
 
 # less
 export LESS="\
-	--ignore-case \
-	--tilde \
-	--chop-long-lines \
-	--status-column \
-	--LONG-PROMPT \
-	--jump-target=10 \
-	--RAW-CONTROL-CHARS \
-	--clear-screen \
-	--silent \
-	--tabs=4 \
-	--shift=5"
+  --ignore-case \
+  --tilde \
+  --chop-long-lines \
+  --status-column \
+  --LONG-PROMPT \
+  --jump-target=10 \
+  --RAW-CONTROL-CHARS \
+  --clear-screen \
+  --silent \
+  --tabs=4 \
+  --shift=5"
 export LESSHISTFILE='-' # Disable history.
 export LESSKEYRC="$HOME/.config/less/lesskey" # Path of the uncompiled lesskey file.
 export LESSKEY="$LESSKEYRC.lwc" # Path of the compiled lesskey file.

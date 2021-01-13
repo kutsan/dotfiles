@@ -1,6 +1,6 @@
 # Check prompt installation.
 if (! [[ -d "$ZDOTDIR/plugins/pure" ]]) {
-	return 1
+  return 1
 }
 
 # Add prompt to fpath.
