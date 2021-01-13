@@ -1,52 +1,52 @@
 [submodule "autopair"]
-	path = .config/zsh/plugins/autopair
-	url = https://github.com/hlissner/zsh-autopair
+  path = .config/zsh/plugins/autopair
+  url = https://github.com/hlissner/zsh-autopair
 [submodule "autosuggestions"]
-	path = .config/zsh/plugins/autosuggestions
-	url = https://github.com/zsh-users/zsh-autosuggestions
+  path = .config/zsh/plugins/autosuggestions
+  url = https://github.com/zsh-users/zsh-autosuggestions
 [submodule "pure"]
-	path = .config/zsh/plugins/pure
-	url = https://github.com/sindresorhus/pure
+  path = .config/zsh/plugins/pure
+  url = https://github.com/sindresorhus/pure
 [submodule "system-clipboard"]
-	path = .config/zsh/plugins/system-clipboard
-	url = https://github.com/kutsan/zsh-system-clipboard
+  path = .config/zsh/plugins/system-clipboard
+  url = https://github.com/kutsan/zsh-system-clipboard
 [submodule "fast-syntax-highlighting"]
-	path = .config/zsh/plugins/fast-syntax-highlighting
-	url = https://github.com/zdharma/fast-syntax-highlighting
+  path = .config/zsh/plugins/fast-syntax-highlighting
+  url = https://github.com/zdharma/fast-syntax-highlighting
 
 [submodule "coc"]
-	path = .config/nvim/pack/bundle/start/coc
-	url = https://github.com/neoclide/coc.nvim
+  path = .config/nvim/pack/bundle/start/coc
+  url = https://github.com/neoclide/coc.nvim
 [submodule "colorizer"]
-	path = .config/nvim/pack/bundle/start/colorizer
-	url = https://github.com/norcalli/nvim-colorizer.lua
+  path = .config/nvim/pack/bundle/start/colorizer
+  url = https://github.com/norcalli/nvim-colorizer.lua
 [submodule "fugitive"]
-	path = .config/nvim/pack/bundle/start/fugitive
-	url = https://github.com/tpope/vim-fugitive
+  path = .config/nvim/pack/bundle/start/fugitive
+  url = https://github.com/tpope/vim-fugitive
 [submodule "fzf-core"]
-	path = .config/nvim/pack/bundle/start/fzf-core
-	url = https://github.com/junegunn/fzf
+  path = .config/nvim/pack/bundle/start/fzf-core
+  url = https://github.com/junegunn/fzf
 [submodule "fzf-vim"]
-	path = .config/nvim/pack/bundle/start/fzf-vim
-	url = https://github.com/junegunn/fzf.vim
+  path = .config/nvim/pack/bundle/start/fzf-vim
+  url = https://github.com/junegunn/fzf.vim
 [submodule "nvim-tree"]
-	path = .config/nvim/pack/bundle/start/nvim-tree
-	url = https://github.com/kyazdani42/nvim-tree.lua
+  path = .config/nvim/pack/bundle/start/nvim-tree
+  url = https://github.com/kyazdani42/nvim-tree.lua
 [submodule "nvim-web-devicons"]
-	path = .config/nvim/pack/bundle/start/nvim-web-devicons
-	url = https://github.com/kyazdani42/nvim-web-devicons
+  path = .config/nvim/pack/bundle/start/nvim-web-devicons
+  url = https://github.com/kyazdani42/nvim-web-devicons
 [submodule "peartree"]
-	path = .config/nvim/pack/bundle/start/peartree
-	url = https://github.com/tmsvg/pear-tree
+  path = .config/nvim/pack/bundle/start/peartree
+  url = https://github.com/tmsvg/pear-tree
 [submodule "polyglot"]
-	path = .config/nvim/pack/bundle/start/polyglot
-	url = https://github.com/sheerun/vim-polyglot
+  path = .config/nvim/pack/bundle/start/polyglot
+  url = https://github.com/sheerun/vim-polyglot
 [submodule "sandwich"]
-	path = .config/nvim/pack/bundle/start/sandwich
-	url = https://github.com/machakann/vim-sandwich
+  path = .config/nvim/pack/bundle/start/sandwich
+  url = https://github.com/machakann/vim-sandwich
 [submodule "signify"]
-	path = .config/nvim/pack/bundle/start/signify
-	url = https://github.com/mhinz/vim-signify
+  path = .config/nvim/pack/bundle/start/signify
+  url = https://github.com/mhinz/vim-signify
 [submodule "undotree"]
-	path = .config/nvim/pack/bundle/opt/undotree
-	url = https://github.com/mbbill/undotree
+  path = .config/nvim/pack/bundle/opt/undotree
+  url = https://github.com/mbbill/undotree
