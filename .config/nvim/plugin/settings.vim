@@ -63,10 +63,10 @@ set guicursor=n-v-c-sm:block,i-ci:ver25,r-cr-o-ve:hor20 " Configures the cursor 
 set inccommand=split " Show live substitution results as you type.
 
 " Indentation
-set tabstop=4 " Length of a <Tab> character.
+set tabstop=2 " Length of a <Tab> character.
 set shiftwidth=0 " Number of spaces to use for each step of auto indent operators.
 set softtabstop=-1 " Number of spaces that a <Tab> counts.
-set noexpandtab " Disable using spaces instead of tab characters.
+set expandtab " Enable using spaces instead of tab characters.
 set smarttab " Make <Tab>, <BS> indent and remove indent in leading whitespaces.
 set autoindent " Copy indent from current line when starting a new line.
 set shiftround " Round indent to multiple of 'shiftwidth'. Applies to > and < commands.
