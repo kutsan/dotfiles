@@ -1,23 +1,23 @@
 {
-	"name": "",
-	"version": "0.0.0",
-	"private": true,
-	"description": "",
-	"keywords": [],
-	"homepage": "",
-	"repository": "github:kutsan/",
-	"license": "GPL-3.0",
-	"author": "Kutsan Kaplan <me@kutsankaplan.com> (https://kutsankaplan.com)",
-	"contributors": [],
-	"main": "",
-	"bin": {
-		"binary": ""
-	},
-	"man": "",
-	"scripts": {
-		"start": "",
-		"test": ""
-	},
-	"dependencies": {},
-	"devDependencies": {}
+  "name": "",
+  "version": "0.0.0",
+  "private": true,
+  "description": "",
+  "keywords": [],
+  "homepage": "",
+  "repository": "github:kutsan/",
+  "license": "GPL-3.0",
+  "author": "Kutsan Kaplan <me@kutsankaplan.com> (https://kutsankaplan.com)",
+  "contributors": [],
+  "main": "",
+  "bin": {
+    "binary": ""
+  },
+  "man": "",
+  "scripts": {
+    "start": "",
+    "test": ""
+  },
+  "dependencies": {},
+  "devDependencies": {}
 }
