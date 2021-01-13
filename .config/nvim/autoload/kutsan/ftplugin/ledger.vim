@@ -9,8 +9,8 @@ function! kutsan#ftplugin#ledger#add() abort
 
 	let l:template = printf(
 		\ "%s \n
-		\	account  value currency\n
-		\	account",
+		\  account  value currency\n
+		\  account",
 		\ strftime('%Y-%m-%d')
 	\ )
 
