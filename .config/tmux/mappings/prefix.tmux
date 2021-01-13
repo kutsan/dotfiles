@@ -3,8 +3,8 @@ bind-key -T prefix C-a send-prefix
 
 # Reload configuration.
 bind-key -T prefix r \
-	source-file ~/.config/tmux/tmux.conf \; \
-	display-message ' (!) ~/.config/tmux/tmux.conf reloaded.'
+  source-file ~/.config/tmux/tmux.conf \; \
+  display-message ' (!) ~/.config/tmux/tmux.conf reloaded.'
 
 # Split panes with same directory.
 bind-key -T prefix - split-window -v -c '#{pane_current_path}'
