@@ -12,16 +12,16 @@ set previewer "~/.config/lf/previewer.zsh"
 
 # Commands
 cmd open ${{
-	case $(file --dereference --brief --mime-type -- "$f") {
-		video/* | image/*) xdg-open -- "$f" &>/dev/null & ;;
-		*) $EDITOR -- "$f" ;;
-	}
+  case $(file --dereference --brief --mime-type -- "$f") {
+    video/* | image/*) xdg-open -- "$f" &>/dev/null & ;;
+    *) $EDITOR -- "$f" ;;
+  }
 }}
 
 cmd trash %{{
-	local acc=''
-	foreach item (${(ps:\n:)fx}) { acc+="'$item' " }
-	eval command trash $acc
+  local acc=''
+  foreach item (${(ps:\n:)fx}) { acc+="'$item' " }
+  eval command trash $acc
 }}
 
 # Mappings
