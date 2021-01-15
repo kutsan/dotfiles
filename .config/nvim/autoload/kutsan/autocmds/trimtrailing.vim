@@ -1,5 +1,3 @@
-" vint: -ProhibitCommandWithUnintendedSideEffect -ProhibitCommandRelyOnUser
-
 ""
 " Trim trailing whitespace characters from end of each line.
 "
