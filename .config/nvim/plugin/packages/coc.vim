@@ -16,8 +16,7 @@ let g:coc_global_extensions = [
 let g:coc_user_config = {
   \ 'suggest': {
     \ 'maxPreviewWidth': 50,
-    \ 'keepCompleteopt': v:true,
-    \ 'floatEnable': v:false
+    \ 'keepCompleteopt': v:true
   \ },
   \ 'diagnostic': {
     \ 'checkCurrentLine': v:true,
@@ -29,18 +28,16 @@ let g:coc_user_config = {
   \ },
   \ 'css': {
     \ 'validate': v:false
-  \ },
-  \ 'javascript': {
-    \ 'validate': {
-      \ 'enable': v:false
-    \ }
   \ }
 \ }
 
 " Mappings.
 nmap <Leader>c* <Plug>(coc-rename)
 nmap <Leader>cr <Plug>(coc-refactor)
+nmap <Leader>]l <Plug>(coc-diagnostic-next)
+nmap <Leader>[l <Plug>(coc-diagnostic-prev)
 nmap <silent> <Leader>gd <Plug>(coc-definition)
+nnoremap <silent> <Leader>K :call CocActionAsync('doHover')<CR>
 
 augroup cocsettings
   autocmd!
