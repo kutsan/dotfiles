@@ -38,7 +38,7 @@ terminal.open = function ()
 
   -- Launch terminal.
   if not terminal.buf then
-    terminal.pid = fn.termopen(string.format('%s --login', os.getenv('SHELL')))
+    terminal.pid = fn.termopen(string.format('%s', os.getenv('SHELL')))
   end
 
   vim.cmd('startinsert')
