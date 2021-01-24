@@ -2,7 +2,7 @@
 # `cd` into the last directory upon exit.
 ##
 function lf() {
-  command lf "$@" -last-dir-path="$HOME/.local/share/lf/lastdir" \
+  command lf -last-dir-path="$HOME/.local/share/lf/lastdir" "$@" \
     && cd "$(<$HOME/.local/share/lf/lastdir)" 2>/dev/null
 }
 
