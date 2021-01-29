@@ -1,3 +1,9 @@
+# Data directory should be created manually since zsh doesn't conform to
+# XDG Base Directory specification.
+if (! [[ -d "$HOME/.local/share/zsh" ]]) {
+  command mkdir --parent "$HOME/.local/share/zsh"
+}
+
 # Auto-attach tmux.
 if ( \
   (( $+commands[tmux] )) \
