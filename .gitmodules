@@ -22,8 +22,8 @@
   path = .config/nvim/pack/bundle/start/colorizer
   url = https://github.com/norcalli/nvim-colorizer.lua
 [submodule "editorconfig"]
-	path = .config/nvim/pack/bundle/start/editorconfig
-	url = https://github.com/editorconfig/editorconfig-vim
+  path = .config/nvim/pack/bundle/start/editorconfig
+  url = https://github.com/editorconfig/editorconfig-vim
 [submodule "fugitive"]
   path = .config/nvim/pack/bundle/start/fugitive
   url = https://github.com/tpope/vim-fugitive
@@ -34,8 +34,8 @@
   path = .config/nvim/pack/bundle/start/fzf-vim
   url = https://github.com/junegunn/fzf.vim
 [submodule "indentline"]
-	path = .config/nvim/pack/bundle/start/indentline
-	url = https://github.com/Yggdroot/indentLine
+  path = .config/nvim/pack/bundle/start/indentline
+  url = https://github.com/Yggdroot/indentLine
 [submodule "nvim-tree"]
   path = .config/nvim/pack/bundle/start/nvim-tree
   url = https://github.com/kyazdani42/nvim-tree.lua
