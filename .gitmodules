@@ -17,6 +17,7 @@
 [submodule "coc"]
   path = .config/nvim/pack/bundle/start/coc
   url = https://github.com/neoclide/coc.nvim
+  branch = release
 [submodule "colorizer"]
   path = .config/nvim/pack/bundle/start/colorizer
   url = https://github.com/norcalli/nvim-colorizer.lua
