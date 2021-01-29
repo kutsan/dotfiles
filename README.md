@@ -16,8 +16,10 @@
   - [`material`](https://github.com/kaicataldo/material.vim) - Color scheme
   - [`coc`](https://github.com/neoclide/coc.nvim) - Context-aware completion engine
   - [`colorizer`](https://github.com/norcalli/nvim-colorizer.lua) - High-performance color highlighter
+  - [`editorconfig`](https://github.com/editorconfig/editorconfig-vim) - EditorConfig support
   - [`fugitive`](https://github.com/tpope/vim-fugitive) - Git client
   - [`fzf`](https://github.com/junegunn/fzf.vim) - Fuzzy finder fzf as plugin
+  - [`indentline`](https://github.com/Yggdroot/indentLine) - Display the indention levels with thin vertical lines
   - [`nvim-tree`](https://github.com/kyazdani42/nvim-tree.lua) - File explorer
   - [`nvim-web-devicons`](https://github.com/kyazdani42/nvim-web-devicons) - Nerd Font icon API support
   - [`peartree`](https://github.com/tmsvg/pear-tree) - Auto-pair plugin that supports multi-character pairs and intelligent matching
