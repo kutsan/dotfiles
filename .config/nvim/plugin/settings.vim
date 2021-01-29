@@ -19,7 +19,7 @@ set sidescrolloff=5 " Minimum number of screen columns to keep to cursor right.
 set synmaxcol=200 " Maximum column in which to search for syntax items.
 set timeoutlen=500 " Mapping delays in milliseconds.
 set ttimeoutlen=0 " Key code delays in milliseconds.
-set updatetime=1000 " If that milliseconds nothing is typed CursorHold event will trigger.
+set updatetime=300 " If that milliseconds nothing is typed CursorHold event will trigger.
 set diffopt=filler,vertical,hiddenoff,foldcolumn:0,algorithm:patience " Option settings for diff mode.
 set linebreak " Wrap lines in 'breakat', rather than at the last character.
 set completeopt=noinsert,menuone " Options for insert mode completion.....
