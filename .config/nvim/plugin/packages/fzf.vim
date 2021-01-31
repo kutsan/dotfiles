@@ -28,8 +28,6 @@ nnoremap <silent> gis :FzfGFiles?<CR>
 nnoremap <silent> <Leader><C-p> :FzfFiles<CR>
 nnoremap <silent> <M-x> :FzfCommands<CR>
 nnoremap <silent> <C-b> :FzfBuffers<CR>
-nnoremap <silent> <C-f> :FzfBTags<CR>
-nnoremap <silent> <Leader><C-f> :FzfTags<CR>
 nnoremap <silent> <Leader>h :FzfHelptags<CR>
 nnoremap <silent> <Leader>: :FzfHistory:<CR>
 nnoremap <silent> <Leader>/ :FzfHistory/<CR>
