@@ -1,5 +1,3 @@
-scriptencoding UTF-8
-
 " Disable showing counts next to signs.
 let g:signify_sign_show_count = v:false
 

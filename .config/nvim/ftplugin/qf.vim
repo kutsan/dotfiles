@@ -1,5 +1,3 @@
-scriptencoding UTF-8
-
 " Disable built-in statusline.
 let g:qf_disable_statusline = v:true
 

@@ -1,5 +1,3 @@
-scriptencoding UTF-8
-
 " Set whether or not to show certain icons.
 let g:nvim_tree_show_icons = {
   \ 'git': 0,

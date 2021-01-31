@@ -1,5 +1,3 @@
-scriptencoding UTF-8
-
 function! kutsan#statusline#linter() abort
   if !exists('g:did_coc_loaded')
     return ''
