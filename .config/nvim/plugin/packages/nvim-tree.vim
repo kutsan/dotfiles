@@ -12,17 +12,17 @@ let g:nvim_tree_icons = {
   \ 'default': '',
   \ 'symlink': '',
   \ 'git': {
-  \ 'unstaged': '',
-  \ 'staged': '',
-  \ 'unmerged': '',
-  \ 'renamed': '',
-  \ 'deleted': '',
-  \ 'untracked': ''
+    \ 'unstaged': '',
+    \ 'staged': '',
+    \ 'unmerged': '',
+    \ 'renamed': '',
+    \ 'deleted': '',
+    \ 'untracked': ''
   \ },
   \ 'folder': {
-  \ 'default': '',
-  \ 'open': '',
-  \ 'symlink': ''
+    \ 'default': '',
+    \ 'open': '',
+    \ 'symlink': ''
   \ }
 \ }
 
