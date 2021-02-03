@@ -10,3 +10,6 @@ bind-key -T root M-n select-window -t :+ # Next window.
 
 # Enter copy mode.
 bind-key -T root M-v copy-mode
+
+# Toggle zoom.
+bind-key -T root M-z resize-pane -Z
