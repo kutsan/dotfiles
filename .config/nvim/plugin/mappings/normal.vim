@@ -21,6 +21,9 @@ nnoremap Q @q
 " Always send contents of a `x` command to the black hole register.
 nnoremap x "_x
 
+" Go to the alternate buffer.
+nnoremap <C-n> <C-^>
+
 " Refactor word under cursor.
 nnoremap c* /\<<C-r>=expand('<cword>')<CR>\>\C<CR>``cgn
 nnoremap c# ?\<<C-r>=expand('<cword>')<CR>\>\C<CR>``cgN
