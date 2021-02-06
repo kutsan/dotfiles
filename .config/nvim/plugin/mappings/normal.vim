@@ -29,9 +29,6 @@ nnoremap c# ?\<<C-r>=expand('<cword>')<CR>\>\C<CR>``cgN
 nnoremap <C-e> 2<C-e>
 nnoremap <C-y> 2<C-y>
 
-" Reveal syntax group under cursor.
-nnoremap <F2> :echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')<CR>
-
 " Construct grep search.
 nnoremap gs :Search ''<Left>
 nnoremap gS :Search! ''<Left>
@@ -70,9 +67,6 @@ nnoremap <silent> <Up> :cprevious<CR>
 nnoremap <silent> <Down> :cnext<CR>
 nnoremap <silent> <Left> :cpfile<CR>
 nnoremap <silent> <Right> :cnfile<CR>
-
-" Format whole file using `gq` wrapper and `[a]n [e]ntire` operator.
-nmap <silent> \f gqae
 
 " Select last changed or yanked area.
 nnoremap <expr> gV '`[' .. strpart(getregtype(), 0, 1) .. '`]'
