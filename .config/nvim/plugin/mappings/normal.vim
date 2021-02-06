@@ -33,8 +33,8 @@ nnoremap <C-e> 2<C-e>
 nnoremap <C-y> 2<C-y>
 
 " Construct grep search.
-nnoremap gs :Search ''<Left>
-nnoremap gS :Search! ''<Left>
+nnoremap gs :Grep ''<Left>
+nnoremap gS :Grep! ''<Left>
 
 " Resize current window sizes.
 nnoremap <S-Up> 2<C-w>+

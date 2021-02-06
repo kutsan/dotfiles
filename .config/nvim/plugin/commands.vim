@@ -1,2 +1,2 @@
-" Search text in git repository or current working directory.
-command -nargs=1 -bang Search call kutsan#commands#search#(<bang>v:false, <args>)
+" Grep text in git repository or current working directory.
+command -nargs=1 -bang Grep call kutsan#commands#grep#(<bang>v:false, <args>)
