@@ -1,9 +1,9 @@
 " Quickly close current window.
-nnoremap <silent> <Leader>q :quit<CR>
+nnoremap <silent> <Space>q :quit<CR>
 
 " Correct bad indent while pasting.
-nnoremap <Leader>p p=`]
-nnoremap <Leader>P P=`]
+nnoremap <Space>p p=`]
+nnoremap <Space>P P=`]
 
 " Pane nagivation.
 nnoremap <C-j> <C-w>j

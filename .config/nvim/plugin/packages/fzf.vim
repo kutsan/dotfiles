@@ -25,13 +25,13 @@ let g:fzf_action = {
 " Define key mappings.
 nnoremap <silent> <C-p> :FzfGFiles<CR>
 nnoremap <silent> gis :FzfGFiles?<CR>
-nnoremap <silent> <Leader><C-p> :FzfFiles<CR>
+nnoremap <silent> <Space><C-p> :FzfFiles<CR>
 nnoremap <silent> <M-x> :FzfCommands<CR>
 nnoremap <silent> <C-b> :FzfBuffers<CR>
-nnoremap <silent> <Leader>h :FzfHelptags<CR>
-nnoremap <silent> <Leader>: :FzfHistory:<CR>
-nnoremap <silent> <Leader>/ :FzfHistory/<CR>
-nnoremap <silent> <Leader>` :FzfMarks<CR>
+nnoremap <silent> <Space>h :FzfHelptags<CR>
+nnoremap <silent> <Space>: :FzfHistory:<CR>
+nnoremap <silent> <Space>/ :FzfHistory/<CR>
+nnoremap <silent> <Space>` :FzfMarks<CR>
 nnoremap <silent> g<C-p> :call fzf#run(
   \ fzf#wrap(
     \ 'projects',

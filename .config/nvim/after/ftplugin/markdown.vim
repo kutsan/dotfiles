@@ -1,7 +1,7 @@
 " Undo filetype specific settings upon changing filetype.
 let s:undo =
   \      'setlocal number< relativenumber<'
-  \ .. " | execute 'nunmap <buffer> <LocalLeader>r'"
+  \ .. " | execute 'nunmap <buffer> \r'"
 
 if exists('b:undo_ftplugin')
   let b:undo_ftplugin .= ' | ' .. s:undo

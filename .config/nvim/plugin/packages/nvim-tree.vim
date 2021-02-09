@@ -49,8 +49,8 @@ let g:nvim_tree_bindings = {
   \ 'next_git_item': ']c',
 \ }
 
-nnoremap <silent> <Leader>f :NvimTreeToggle<CR>
-nnoremap <silent> <Leader>F :NvimTreeFindFile<CR>
+nnoremap <silent> <Space>f :NvimTreeToggle<CR>
+nnoremap <silent> <Space>F :NvimTreeFindFile<CR>
 
 augroup nvimtreesettings
   autocmd!

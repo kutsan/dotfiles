@@ -4,10 +4,6 @@ local cmd = vim.cmd
 -- Enable loading {ftdetect,ftplugin,indent}/*.vim files.
 cmd('filetype plugin indent on')
 
--- Set leader keys.
-g.mapleader = ' '
-g.maplocalleader = '\\'
-
 -- Enable loading syntax/*.vim files.
 g.syntax_on = true
 
