@@ -104,4 +104,7 @@ augroup cocsettings
 
   " Update signature help on jump placeholder.
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+
+  " Remove underlines from warnings and errors.
+  autocmd User CocNvimInit highlight! CocUnderline cterm=NONE gui=NONE
 augroup end
