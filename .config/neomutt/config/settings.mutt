@@ -27,5 +27,4 @@ set autoedit
 set edit_headers
 set query_command="lbdbq %s 2>/dev/null"
 set nomark_old
-set user_agent
 set send_charset = 'utf-8'
