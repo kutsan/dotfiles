@@ -80,9 +80,9 @@ let g:coc_user_config = {
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gr <Plug>(coc-references)
-nmap <Leader>c* <Plug>(coc-rename)
-nmap <Leader>cr <Plug>(coc-refactor)
-nmap <LocalLeader>f <Plug>(coc-format)
+nmap <Space>c* <Plug>(coc-rename)
+nmap <Space>cr <Plug>(coc-refactor)
+nmap \f <Plug>(coc-format)
 nmap <silent> <C-s> <Plug>(coc-range-select)
 xmap <silent> <C-s> <Plug>(coc-range-select)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
@@ -97,7 +97,7 @@ xmap ac <Plug>(coc-classobj-a)
 omap ac <Plug>(coc-classobj-a)
 nnoremap <silent> K :call CocActionAsync('doHover')<CR>
 nnoremap <silent> <C-f> :CocList outline<CR>
-nnoremap <silent> <Leader><C-f> :CocList symbols<CR>
+nnoremap <silent> <Space><C-f> :CocList symbols<CR>
 
 augroup cocsettings
   autocmd!
