@@ -74,6 +74,11 @@ let g:coc_user_config = {
   \ 'prettier': {
       \ 'disableLanguages': ['css']
   \ },
+  \ 'Lua': {
+    \ 'diagnostics': {
+      \ 'globals': ['vim']
+    \ }
+  \ }
 \ }
 
 " Mappings.
