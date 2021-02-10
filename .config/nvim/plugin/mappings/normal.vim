@@ -1,3 +1,6 @@
+" Quickly close current window.
+nnoremap <silent> <Space>q :quit<CR>
+
 " Pane nagivation.
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
