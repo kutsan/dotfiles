@@ -103,9 +103,13 @@ omap ac <Plug>(coc-classobj-a)
 nnoremap <silent> K :call CocActionAsync('doHover')<CR>
 nnoremap <silent> <C-f> :CocList outline<CR>
 nnoremap <silent> <Space><C-f> :CocList symbols<CR>
+inoremap <silent><expr> <C-Space> coc#refresh()
 
 augroup cocsettings
   autocmd!
+
+  " Highlight the symbol under cursor.
+  autocmd CursorHold * silent call CocActionAsync('highlight')
 
   " Update signature help on jump placeholder.
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
