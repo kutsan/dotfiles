@@ -1,5 +1,6 @@
 " Colors
 set termguicolors " Enable True Color support.
+let g:material_terminal_italics = v:true
 let g:material_theme_style = 'ocean'
 colorscheme material " Color scheme.
 
