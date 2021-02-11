@@ -24,10 +24,10 @@ let g:fzf_action = {
 
 " Define key mappings.
 nnoremap <silent> <C-p> :FzfGFiles<CR>
-nnoremap <silent> gis :FzfGFiles?<CR>
-nnoremap <silent> <Space><C-p> :FzfFiles<CR>
 nnoremap <silent> <M-x> :FzfCommands<CR>
 nnoremap <silent> <C-b> :FzfBuffers<CR>
+nnoremap <silent> <Space>gS :FzfGFiles?<CR>
+nnoremap <silent> <Space><C-p> :FzfFiles<CR>
 nnoremap <silent> <Space>h :FzfHelptags<CR>
 nnoremap <silent> <Space>: :FzfHistory:<CR>
 nnoremap <silent> <Space>/ :FzfHistory/<CR>
