@@ -58,7 +58,7 @@ function user-fuzzy-select() {
       \( \
         -fstype 'dev' \
         -or -fstype 'proc' \
-        -or \( -name 'node_modules' -and -type 'd' \) \
+        -or \( -type d -name 'node_modules' -or -type d -name '.git' \) \
       \) -prune \
       -or \( -type 'd' -printf '%p/\n' , -type 'f' -print \) 2>/dev/null \
     | sed 1d \
