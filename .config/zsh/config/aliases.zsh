@@ -22,7 +22,7 @@ alias l='ledger'
 alias lb="ledger balance '^assets' '^liabilities' --empty"
 alias le='$EDITOR ~/Projects/sync/finance/journal-$(date +%Y).ledger'
 alias lnet="ledger register '^expenses' '^income' --period 'this month' --subtotal --invert"
-alias s='$EDITOR ~/Projects/sync/notes/tasks.yml'
+alias s='$EDITOR ~/Projects/sync/notes/tasks.md'
 alias gen-packagejson='cp "$HOME/.config/npm/package.json" "package.json"'
 alias gen-editorconfig='cp "$HOME/.config/editorconfig/.editorconfig" ".editorconfig"'
 
