@@ -13,6 +13,9 @@ path=(
 
 # macOS specific exports.
 if ([[ $OSTYPE =~ 'darwin*' ]]) {
+  export ANDROID_HOME=$HOME/Library/Android/sdk
+  export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home"
+
   path=(
     '/usr/local/opt/coreutils/libexec/gnubin'
     '/usr/local/opt/findutils/libexec/gnubin'
@@ -22,6 +25,11 @@ if ([[ $OSTYPE =~ 'darwin*' ]]) {
     '/usr/local/opt/ncurses/bin'
     '/usr/local/opt/openssl/bin'
     '/usr/local/opt/python/libexec/bin'
+    "$ANDROID_HOME/emulator"
+    "$ANDROID_HOME/tools"
+    "$ANDROID_HOME/tools/bin"
+    "$ANDROID_HOME/platform-tools"
+    "$JAVA_HOME"
     $path
   )
 
