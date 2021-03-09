@@ -37,6 +37,7 @@ map zs set info size
 map zv :set nopreview; set ratios 1; set info size:time
 map zV :set ratios 1:1:1; set preview; set info size
 map bw cd ~/Downloads
+map bW cd ~/Work
 map bd cd ~/Documents
 map bp cd ~/Projects
 map bc cd ~/.config
