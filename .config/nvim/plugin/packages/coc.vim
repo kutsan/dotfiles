@@ -62,17 +62,17 @@ let g:coc_user_config = {
   \ },
   \ 'snippets': {
     \ 'ultisnips': {
-        \ 'directories': ['snippet']
+      \ 'directories': ['snippet']
     \ }
   \ },
   \ 'css': {
     \ 'validate': v:false
   \ },
   \ 'stylelintplus': {
-      \ 'autoFixOnFormat': v:true
+    \ 'autoFixOnFormat': v:true
   \ },
   \ 'prettier': {
-      \ 'disableLanguages': ['css']
+    \ 'disableLanguages': ['css']
   \ },
   \ 'Lua': {
     \ 'diagnostics': {
