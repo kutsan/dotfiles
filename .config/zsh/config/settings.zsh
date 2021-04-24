@@ -28,6 +28,7 @@ setopt GLOB_COMPLETE # Don't insert anything resulting from a glob pattern, show
 setopt NO_LIST_BEEP # Don't beep on an ambiguous completion.
 setopt LIST_PACKED # Try to make the completion list smaller by drawing smaller columns.
 setopt MENU_COMPLETE # Instead of listing possibilities, select the first match immediately.
+compdef g='git' # Trigger git completions for g alias.
 
 # Expansion and Globbing
 setopt BRACE_CCL # Expand expressions in braces which would not otherwise undergo brace expansion.
