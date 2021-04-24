@@ -24,6 +24,7 @@ set updatetime=300 " If that milliseconds nothing is typed CursorHold event will
 set diffopt=filler,vertical,hiddenoff,foldcolumn:0,algorithm:patience " Option settings for diff mode.
 set linebreak " Wrap lines in 'breakat', rather than at the last character.
 set completeopt=noinsert,menuone " Options for insert mode completion.....
+set keymap=diacritic " Enable diacritic key mappings.
 
 " Interface
 set number " Show line numbers alongside relative numbers.
