@@ -1,15 +1,21 @@
 # Initialize $PATH with system binaries.
 path=(
-  /usr/local/bin
-  /usr/local/sbin
-  /usr/bin
-  /bin
-  /usr/sbin
-  /sbin
   ~/.local/bin
   ~/.local/share/cargo/bin
   $path
 )
+
+if ([[ $OSTYPE != 'linux-android' ]]) {
+  path=(
+    /usr/local/bin
+    /usr/local/sbin
+    /usr/bin
+    /bin
+    /usr/sbin
+    /sbin
+    $path
+  )
+}
 
 # macOS specific exports.
 if ([[ $OSTYPE =~ 'darwin*' ]]) {
