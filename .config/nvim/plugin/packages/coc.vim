@@ -54,6 +54,7 @@ let g:coc_user_config = {
   \ 'diagnostic': {
     \ 'format': '%message [%source%code]',
     \ 'checkCurrentLine': v:true,
+    \ 'enableMessage': 'jump',
     \ 'enableHighlightLineNumber': v:false,
     \ 'errorSign': '•',
     \ 'warningSign': '•',
@@ -100,6 +101,7 @@ xmap ic <Plug>(coc-classobj-i)
 omap ic <Plug>(coc-classobj-i)
 xmap ac <Plug>(coc-classobj-a)
 omap ac <Plug>(coc-classobj-a)
+nnoremap <silent> J :call CocActionAsync('diagnosticInfo')<CR>
 nnoremap <silent> K :call CocActionAsync('doHover')<CR>
 nnoremap <silent> <C-f> :CocList outline<CR>
 nnoremap <silent> <Space><C-f> :CocList symbols<CR>
