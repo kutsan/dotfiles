@@ -23,7 +23,7 @@ set ttimeoutlen=0 " Key code delays in milliseconds.
 set updatetime=300 " If that milliseconds nothing is typed CursorHold event will trigger.
 set diffopt=filler,vertical,hiddenoff,foldcolumn:0,algorithm:patience " Option settings for diff mode.
 set linebreak " Wrap lines in 'breakat', rather than at the last character.
-set completeopt=noinsert,menuone " Options for insert mode completion.....
+set completeopt=noinsert,menuone " Options for insert mode completion.
 set keymap=diacritic " Enable diacritic key mappings.
 
 " Interface
