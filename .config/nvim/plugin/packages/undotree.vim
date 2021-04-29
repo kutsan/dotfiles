@@ -7,6 +7,9 @@ let g:undotree_WindowLayout = 3
 " Set the tree node shape.
 let g:undotree_TreeNodeShape = '*'
 
+" Set the tree vertical shape.
+let g:undotree_TreeVertShape = '|'
+
 " Use relative timestamps.
 let g:undotree_RelativeTimestamp = 1
 
