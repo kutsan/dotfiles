@@ -2,7 +2,7 @@
 
 ![screenshot](https://raw.githubusercontent.com/kutsan/dotfiles/master/.github/screenshot.png)
 
-> running **neovim** inside **tmux** that is inside **kitty** terminal emulator with **fira** font on
+> running **neovim** inside **kitty** terminal emulator with **fira** font on
 
 ## Overview
 
@@ -28,7 +28,6 @@
   - [`signify`](https://github.com/mhinz/vim-signify) - Show Git diff in the sign column
   - [`undotree`](https://github.com/mbbill/undotree) - Visualize undo tree
 - [`git`](https://git-scm.com) - Version control system for tracking changes in files and coordinating the work
-- [`tmux`](https://github.com/tmux/tmux) - Terminal multiplexer enables working with split panes, tabs and detachable sessions
 - [`nodejs`](https://nodejs.org) - JavaScript runtime environment for developing a diverse variety of applications
   - [`npm`](https://www.npmjs.com) - Node Package Manager mainly for the JavaScript programming language
     - [`prettier`](https://github.com/prettier/prettier) - Code formatter for various web file types
