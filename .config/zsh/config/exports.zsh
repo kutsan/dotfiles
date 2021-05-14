@@ -19,7 +19,7 @@ if ([[ $OSTYPE != 'linux-android' ]]) {
 
 # macOS specific exports.
 if ([[ $OSTYPE =~ 'darwin*' ]]) {
-  export ANDROID_HOME=$HOME/Library/Android/sdk
+  export ANDROID_HOME="$HOME/Library/Android/sdk"
   export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home"
 
   path=(
@@ -50,7 +50,6 @@ if ([[ $OSTYPE =~ 'darwin*' ]]) {
 }
 
 # Basics
-export TERM='xterm-256color'
 export EDITOR='nvim'
 export PAGER='less'
 export BROWSER='xdg-open'
