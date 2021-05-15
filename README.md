@@ -22,7 +22,6 @@
   - [`indentline`](https://github.com/Yggdroot/indentLine) - Display the indention levels with thin vertical lines
   - [`nvim-tree`](https://github.com/kyazdani42/nvim-tree.lua) - File explorer
   - [`nvim-web-devicons`](https://github.com/kyazdani42/nvim-web-devicons) - Nerd Font icon API support
-  - [`peartree`](https://github.com/tmsvg/pear-tree) - Auto-pair plugin that supports multi-character pairs and intelligent matching
   - [`polyglot`](https://github.com/sheerun/vim-polyglot) - Big collection of language packs as scripts are loaded only on demand
   - [`sandwich`](https://github.com/machakann/vim-sandwich) - The set of operator and text object plugins to search, select, edit sandwiched text objects
   - [`signify`](https://github.com/mhinz/vim-signify) - Show Git diff in the sign column
