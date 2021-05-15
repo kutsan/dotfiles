@@ -42,6 +42,9 @@
 [submodule "nvim-web-devicons"]
   path = .config/nvim/pack/bundle/start/nvim-web-devicons
   url = https://github.com/kyazdani42/nvim-web-devicons
+[submodule "pears"]
+	path = .config/nvim/pack/bundle/start/pears
+	url = https://github.com/steelsojka/pears.nvim
 [submodule "polyglot"]
   path = .config/nvim/pack/bundle/start/polyglot
   url = https://github.com/sheerun/vim-polyglot
