@@ -28,17 +28,3 @@ function! kutsan#mappings#insert#handle#tab(options) abort
     return "\<C-p>"
   endif
 endfunction
-
-""
-" Accept current completion when popup menu is visible.
-"
-" inoremap <expr> <CR> kutsan#mappings#insert#handle#cr()
-""
-function! kutsan#mappings#insert#handle#cr() abort
-  " If it's selected.
-  if complete_info()['selected'] != -1
-    return "\<C-y>"
-  else
-    return "\<C-g>u\<CR>"
-  endif
-endfunction
