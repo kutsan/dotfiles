@@ -39,10 +39,6 @@ function! kutsan#mappings#insert#handle#cr() abort
   if complete_info()['selected'] != -1
     return "\<C-y>"
   else
-    if exists('g:loaded_pear_tree')
-      return pear_tree#insert_mode#PrepareExpansion()
-    else
-      return "\<C-g>u\<CR>"
-    endif
+    return "\<C-g>u\<CR>"
   endif
 endfunction
