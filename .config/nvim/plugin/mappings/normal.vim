@@ -39,8 +39,8 @@ nnoremap <S-Right> 2<C-w>>
 nnoremap <S-Left> 2<C-w><
 
 " Toggle floating terminal or create new one if there is none.
-tnoremap <silent> <C-z> <C-\><C-n>:lua require('kutsan/mappings/normal/terminal').toggle()<CR>
-nnoremap <silent> <C-z> :lua require('kutsan/mappings/normal/terminal').toggle()<CR>
+tnoremap <silent> <C-z> <C-\><C-n>:lua require('kutsan.mappings.normal.terminal').toggle()<CR>
+nnoremap <silent> <C-z> :lua require('kutsan.mappings.normal.terminal').toggle()<CR>
 
 " Add [count] blank lines above or below the cursor.
 nnoremap <silent> [<Space> :<C-u>put! =repeat(nr2char(10), v:count1) <Bar> ']+1<CR>
