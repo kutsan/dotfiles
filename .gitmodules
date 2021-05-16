@@ -4,9 +4,6 @@
 [submodule "autosuggestions"]
   path = .config/zsh/plugins/autosuggestions
   url = https://github.com/zsh-users/zsh-autosuggestions
-[submodule "pure"]
-  path = .config/zsh/plugins/pure
-  url = https://github.com/sindresorhus/pure
 [submodule "system-clipboard"]
   path = .config/zsh/plugins/system-clipboard
   url = https://github.com/kutsan/zsh-system-clipboard
@@ -43,8 +40,8 @@
   path = .config/nvim/pack/bundle/start/nvim-web-devicons
   url = https://github.com/kyazdani42/nvim-web-devicons
 [submodule "pears"]
-	path = .config/nvim/pack/bundle/start/pears
-	url = https://github.com/steelsojka/pears.nvim
+  path = .config/nvim/pack/bundle/start/pears
+  url = https://github.com/steelsojka/pears.nvim
 [submodule "polyglot"]
   path = .config/nvim/pack/bundle/start/polyglot
   url = https://github.com/sheerun/vim-polyglot
