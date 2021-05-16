@@ -55,5 +55,5 @@ augroup loadluaftplugin
   autocmd!
 
   " Automatically find `ftplugin/*.lua` and `after/ftplugin/*.lua` files.
-  autocmd Filetype * :lua require('kutsan.ftplugin').do_filetype(vim.fn.expand("<amatch>"))
+  autocmd Filetype * lua require('kutsan.ftplugin').do_filetype(vim.fn.expand("<amatch>"))
 augroup end
