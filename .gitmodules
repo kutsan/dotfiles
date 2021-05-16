@@ -4,6 +4,9 @@
 [submodule "autosuggestions"]
   path = .config/zsh/plugins/autosuggestions
   url = https://github.com/zsh-users/zsh-autosuggestions
+[submodule "pure"]
+  path = .config/zsh/plugins/pure
+  url = https://github.com/kutsan/pure
 [submodule "system-clipboard"]
   path = .config/zsh/plugins/system-clipboard
   url = https://github.com/kutsan/zsh-system-clipboard
