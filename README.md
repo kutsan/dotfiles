@@ -7,7 +7,7 @@
 ## Overview
 
 - [`zsh`](https://github.com/zsh-users/zsh) - Highly customizable interactive login shell and command interpreter for shell scripting
-  - [`pure`](https://github.com/sindresorhus/pure) - Minimal and fast Zsh prompt with asynchronous git fetch
+  - [`pure`](https://github.com/kutsan/pure) - Minimal and fast Zsh prompt with asynchronous git fetch
   - [`autopair`](https://github.com/hlissner/zsh-autopair) - Auto-close and delete matching delimiters
   - [`system-clipboard`](https://github.com/kutsan/zsh-system-clipboard) - Synchronize ZLE clipboard buffer with system clipboard
   - [`fast-syntax-highlighting`](https://github.com/zdharma/fast-syntax-highlighting) - Fish-like syntax highlighting support for interactive terminal
