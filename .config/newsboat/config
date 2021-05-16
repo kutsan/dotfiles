@@ -1,3 +1,0 @@
-include conf/settings.conf
-include conf/mappings.conf
-include conf/style.conf
