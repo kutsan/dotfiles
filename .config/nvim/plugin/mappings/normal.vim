@@ -25,8 +25,8 @@ nnoremap c* /\<<C-r>=expand('<cword>')<CR>\>\C<CR>``cgn
 nnoremap c# ?\<<C-r>=expand('<cword>')<CR>\>\C<CR>``cgN
 
 " Scroll viewport faster.
-nnoremap <C-e> 2<C-e>
-nnoremap <C-y> 2<C-y>
+nnoremap <C-e> 3<C-e>
+nnoremap <C-y> 3<C-y>
 
 " Construct grep search.
 nnoremap gs :Grep ''<Left>
