@@ -15,10 +15,13 @@
 - [`neovim`](https://github.com/neovim/neovim) - The fork of ubiquitous text editor focused on extensibility and usability
   - [`material`](https://github.com/kaicataldo/material.vim) - Color scheme
   - [`colorizer`](https://github.com/norcalli/nvim-colorizer.lua) - High-performance color highlighter
+  - [`compe`](https://github.com/hrsh7th/nvim-compe/) - Auto completion support
   - [`editorconfig`](https://github.com/editorconfig/editorconfig-vim) - EditorConfig support
+  - [`formatter`](https://github.com/mhartington/formatter.nvim) - Format runner
   - [`fugitive`](https://github.com/tpope/vim-fugitive) - Git client
   - [`fzf`](https://github.com/junegunn/fzf.vim) - Fuzzy finder fzf as plugin
   - [`indentline`](https://github.com/Yggdroot/indentLine) - Display the indention levels with thin vertical lines
+  - [`lspconfig`](https://github.com/neovim/nvim-lspconfig) - Quick configuration setups for LSP clients
   - [`nvim-tree`](https://github.com/kyazdani42/nvim-tree.lua) - File explorer
   - [`nvim-web-devicons`](https://github.com/kyazdani42/nvim-web-devicons) - Nerd Font icon API support
   - [`polyglot`](https://github.com/sheerun/vim-polyglot) - Big collection of language packs as scripts are loaded only on demand
