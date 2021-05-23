@@ -20,6 +20,9 @@
 [submodule "editorconfig"]
   path = .config/nvim/pack/bundle/start/editorconfig
   url = https://github.com/editorconfig/editorconfig-vim
+[submodule "formatter"]
+  path = .config/nvim/pack/bundle/start/formatter
+  url = https://github.com/mhartington/formatter.nvim
 [submodule "fugitive"]
   path = .config/nvim/pack/bundle/start/fugitive
   url = https://github.com/tpope/vim-fugitive
