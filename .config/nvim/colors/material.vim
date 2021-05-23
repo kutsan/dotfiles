@@ -573,6 +573,7 @@ highlight! DiffChange ctermbg=23 ctermfg=159 guibg=#384851 guifg=#b3c3cc
 highlight! DiffDelete ctermbg=95 ctermfg=224 guibg=#53343b guifg=#ceb0b6
 highlight! DiffText cterm=NONE ctermbg=30 ctermfg=195 gui=NONE guibg=#5b7881 guifg=#c6c8d1
 highlight! NonText guifg=#1d2029
+highlight! NvimTreeIndentMarker guifg=#1d2030
 highlight! LspReferenceText guibg=#22242e
 highlight! LspReferenceRead guibg=#22242e
 highlight! LspReferenceWrite guibg=#22242e
