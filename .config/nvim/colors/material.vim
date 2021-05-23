@@ -567,9 +567,12 @@ call s:SetHighlight('diffRemoved', s:red, s:bg, '')
 call s:SetHighlight('diffChanged', s:yellow, s:bg, '')
 call s:SetHighlight('ErrorMsg', s:red, s:bg, '')
 call s:SetHighlight('Visual', '', s:selection, '')
+call s:SetHighlight('LspDiagnosticsDefaultError', s:red, '', '')
 highlight! DiffAdd ctermbg=29 ctermfg=158 guibg=#45493e guifg=#c0c5b9
 highlight! DiffChange ctermbg=23 ctermfg=159 guibg=#384851 guifg=#b3c3cc
 highlight! DiffDelete ctermbg=95 ctermfg=224 guibg=#53343b guifg=#ceb0b6
 highlight! DiffText cterm=NONE ctermbg=30 ctermfg=195 gui=NONE guibg=#5b7881 guifg=#c6c8d1
 highlight! NonText guifg=#1d2029
-highlight! CocHighlightText guibg=#22242e
+highlight! LspReferenceText guibg=#22242e
+highlight! LspReferenceRead guibg=#22242e
+highlight! LspReferenceWrite guibg=#22242e

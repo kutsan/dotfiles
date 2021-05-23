@@ -32,6 +32,9 @@
 [submodule "indentline"]
   path = .config/nvim/pack/bundle/start/indentline
   url = https://github.com/Yggdroot/indentLine
+[submodule "lspconfig"]
+  path = .config/nvim/pack/bundle/start/lspconfig
+  url = https://github.com/neovim/nvim-lspconfig
 [submodule "nvim-tree"]
   path = .config/nvim/pack/bundle/start/nvim-tree
   url = https://github.com/kyazdani42/nvim-tree.lua
