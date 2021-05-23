@@ -17,6 +17,9 @@
 [submodule "colorizer"]
   path = .config/nvim/pack/bundle/start/colorizer
   url = https://github.com/norcalli/nvim-colorizer.lua
+[submodule "compe"]
+  path = .config/nvim/pack/bundle/start/compe
+  url = https://github.com/hrsh7th/nvim-compe
 [submodule "editorconfig"]
   path = .config/nvim/pack/bundle/start/editorconfig
   url = https://github.com/editorconfig/editorconfig-vim
