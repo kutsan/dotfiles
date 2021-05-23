@@ -1,16 +1,3 @@
-function! kutsan#statusline#linter() abort
-  if !exists('g:did_coc_loaded')
-    return ''
-  endif
-
-  if get(get(b:, 'coc_diagnostic_info', {}), 'error', v:null)
-    \ || get(get(b:, 'coc_diagnostic_info', {}), 'warning', v:null)
-    return '•'
-  else
-    return ''
-  endif
-endfunction
-
 function! kutsan#statusline#fileprefix() abort
   let l:basename = expand('%:h')
 

@@ -1,6 +1,5 @@
 ""
-" Cycle through completion items when popup menu is visible, trigger
-" completion upon written words.
+" Cycle through completion items when popup menu is visible.
 "
 " inoremap <expr> <Tab> kutsan#mappings#insert#handle#tab({ 'key': "\<Tab>" })
 " inoremap <expr> <S-Tab> kutsan#mappings#insert#handle#tab({ 'key': "\<S-Tab>" })
@@ -13,12 +12,6 @@ function! kutsan#mappings#insert#handle#tab(options) abort
     " If there is nothing before cursor, perform their original action.
     if !(col('.') - 1) || getline('.')[col('.') - 2] =~# '\s'
       return a:options.key
-
-    " Trigger completion upon written words.
-    else
-      if exists('g:did_coc_loaded')
-        return coc#refresh()
-      endif
     endif
   endif
 

@@ -14,7 +14,6 @@
   - [`autosuggestions`](https://github.com/zsh-users/zsh-autosuggestions) - Fish-like auto-suggestions for interactive terminal based on command history
 - [`neovim`](https://github.com/neovim/neovim) - The fork of ubiquitous text editor focused on extensibility and usability
   - [`material`](https://github.com/kaicataldo/material.vim) - Color scheme
-  - [`coc`](https://github.com/neoclide/coc.nvim) - Context-aware completion engine
   - [`colorizer`](https://github.com/norcalli/nvim-colorizer.lua) - High-performance color highlighter
   - [`editorconfig`](https://github.com/editorconfig/editorconfig-vim) - EditorConfig support
   - [`fugitive`](https://github.com/tpope/vim-fugitive) - Git client
