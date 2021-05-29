@@ -2,7 +2,6 @@ local compe = require('compe')
 
 compe.setup({
   preselect = 'always',
-  documentation = false,
   source = {
     path = true,
     buffer = true,
