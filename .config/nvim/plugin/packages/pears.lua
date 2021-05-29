@@ -1,6 +1,8 @@
 local pears = require("pears")
 
 pears.setup(function(config)
+  config.preset('tag_matching')
+
   config.on_enter(function(pears_handle)
     if vim.fn.pumvisible() == 1 and vim.fn.complete_info().selected ~= -1 then
       return vim.api.nvim_feedkeys(
