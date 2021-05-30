@@ -10,6 +10,14 @@ set statusline+=%{kutsan#statusline#fileprefix()}
 " File name for current buffer.
 set statusline+=%t
 
+" Linter status.
+set statusline+=%{repeat('\ ',1)}
+set statusline+=%#diffRemoved#
+set statusline+=%{kutsan#statusline#linter('Error')}
+set statusline+=%#diffChanged#
+set statusline+=%{kutsan#statusline#linter('Warning')}
+set statusline+=%*
+
 " Align all items to right from this point on.
 set statusline+=%=
 

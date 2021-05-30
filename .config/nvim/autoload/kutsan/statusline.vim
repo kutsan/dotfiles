@@ -1,3 +1,12 @@
+function! kutsan#statusline#linter(severity) abort
+  if luaeval(printf('vim.lsp.diagnostic.get_count(0, "%s")', a:severity))
+    return '•'
+
+  else
+    return ''
+  endif
+endfunction
+
 function! kutsan#statusline#fileprefix() abort
   let l:basename = expand('%:h')
 
