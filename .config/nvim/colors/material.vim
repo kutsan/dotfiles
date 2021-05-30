@@ -557,23 +557,40 @@ if has('nvim')
 endif
 
 " Overrides.
-call s:SetHighlight('StatusLine', s:comments, s:bg, '')
-call s:SetHighlight('StatusLineNC', s:selection, s:bg, '')
-call s:SetHighlight('TabLine', s:comments, s:bg, '')
-call s:SetHighlight('TabLineFill', s:comments, s:bg, '')
-call s:SetHighlight('TabLineSel', s:blue, s:bg, '')
-call s:SetHighlight('diffAdded', s:green, s:bg, '')
-call s:SetHighlight('diffRemoved', s:red, s:bg, '')
-call s:SetHighlight('diffChanged', s:yellow, s:bg, '')
-call s:SetHighlight('ErrorMsg', s:red, s:bg, '')
-call s:SetHighlight('Visual', '', s:selection, '')
-call s:SetHighlight('LspDiagnosticsDefaultError', s:red, '', '')
+highlight! StatusLineNC guifg=#1f2233 guibg=#0f111a
+highlight! StatusLine guifg=#464b5d guibg=#0f111a
+highlight! diffAdded guifg=#c3e88d guibg=#0f111a
+highlight! diffRemoved guifg=#ff5370 guibg=#0f111a
+highlight! diffChanged guifg=#ffcb6b guibg=#0f111a
+highlight! ErrorMsg guifg=#8f93a2 guibg=#0f111a
+highlight! Visual guifg=NONE guibg=#1f2233
 highlight! DiffAdd ctermbg=29 ctermfg=158 guibg=#45493e guifg=#c0c5b9
 highlight! DiffChange ctermbg=23 ctermfg=159 guibg=#384851 guifg=#b3c3cc
 highlight! DiffDelete ctermbg=95 ctermfg=224 guibg=#53343b guifg=#ceb0b6
 highlight! DiffText cterm=NONE ctermbg=30 ctermfg=195 gui=NONE guibg=#5b7881 guifg=#c6c8d1
 highlight! NonText guifg=#1d2029
 highlight! NvimTreeIndentMarker guifg=#1d2030
-highlight! LspReferenceText guibg=#22242e
-highlight! LspReferenceRead guibg=#22242e
-highlight! LspReferenceWrite guibg=#22242e
+highlight! NvimTreeNormal guibg=#090B10
+highlight! LspDiagnosticsDefaultError guifg=#FF5370
+highlight! LspDiagnosticsSignError guifg=#FF5370
+highlight! LspDiagnosticsFloatingError guifg=#FF5370
+highlight! LspDiagnosticsVirtualTextError guifg=#FF5370
+highlight! LspDiagnosticsUnderlineError gui=undercurl guisp=#FF5370
+highlight! LspDiagnosticsDefaultWarning guifg=#FFCB6B
+highlight! LspDiagnosticsSignWarning guifg=#FFCB6B
+highlight! LspDiagnosticsFloatingWarning guifg=#FFCB6B
+highlight! LspDiagnosticsVirtualTextWarning guifg=#FFCB6B
+highlight! LspDiagnosticsUnderlineWarning gui=undercurl guisp=#FFCB6B
+highlight! LspDiagnosticsDefaultInformation guifg=#B0C9FF
+highlight! LspDiagnosticsSignInformation guifg=#B0C9FF
+highlight! LspDiagnosticsFloatingInformation guifg=#B0C9FF
+highlight! LspDiagnosticsVirtualTextInformation guifg=#B0C9FF
+highlight! LspDiagnosticsUnderlineInformation gui=undercurl guisp=#B0C9FF
+highlight! LspDiagnosticsDefaultHint guifg=#C792EA
+highlight! LspDiagnosticsSignHint guifg=#C792EA
+highlight! LspDiagnosticsFloatingHint guifg=#C792EA
+highlight! LspDiagnosticsVirtualTextHint guifg=#C792EA
+highlight! LspDiagnosticsUnderlineHint gui=undercurl guisp=#B0C9FF
+highlight! LspReferenceText guifg=#84FFFF guibg=#1F2233
+highlight! LspReferenceRead guifg=#84FFFF guibg=#1F2233
+highlight! LspReferenceWrite guifg=#84FFFF guibg=#1F2233
