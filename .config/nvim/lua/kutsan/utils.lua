@@ -7,7 +7,7 @@ function utils.map(mode, lhs, rhs, opts)
 end
 
 function utils.buf_map(...)
-  api.nvim_buf_set_keymap(bufnr, ...)
+  api.nvim_buf_set_keymap(nil, ...)
 end
 
 return utils

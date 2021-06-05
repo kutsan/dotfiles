@@ -14,7 +14,7 @@ local terminal = {
 
 terminal.open = function()
   -- Create buffer.
-  local buf = nil
+  local buf
 
   if terminal.buf and api.nvim_buf_is_loaded(terminal.buf) then
     buf = terminal.buf

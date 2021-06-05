@@ -1,6 +1,5 @@
 local lspconfig = require('lspconfig')
 local buf_map = require('kutsan.utils').buf_map
-local api = vim.api
 local lsp = vim.lsp
 local fn = vim.fn
 
@@ -16,7 +15,7 @@ fn.sign_define('LspDiagnosticsSignWarning', { text = '•' })
 fn.sign_define('LspDiagnosticsSignInformation', { text = '•' })
 fn.sign_define('LspDiagnosticsSignHint', { text = '•' })
 
-local function on_attach(client)
+local function on_attach()
   local opts = {
     noremap = true,
     silent = true,
