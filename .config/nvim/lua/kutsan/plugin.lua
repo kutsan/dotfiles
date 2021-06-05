@@ -5,8 +5,8 @@ plugin.source = function()
     local ok, msg = pcall(loadfile(mod))
 
     if not ok then
-      print("Failed to load: ", mod)
-      print("\t", msg)
+      print('Failed to load: ', mod)
+      print('\t', msg)
     end
   end
 end

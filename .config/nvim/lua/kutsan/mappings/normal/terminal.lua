@@ -9,10 +9,10 @@ local fn = vim.fn
 local terminal = {
   buf = nil,
   win = nil,
-  pid = nil
+  pid = nil,
 }
 
-terminal.open = function ()
+terminal.open = function()
   -- Create buffer.
   local buf = nil
 
@@ -49,7 +49,7 @@ terminal.open = function ()
   terminal.buf = buf
 end
 
-terminal.close = function (force)
+terminal.close = function(force)
   if not terminal.win then
     return
   end
@@ -72,7 +72,7 @@ terminal.close = function (force)
   end
 end
 
-terminal.toggle = function ()
+terminal.toggle = function()
   if not terminal.win then
     terminal.open()
   else

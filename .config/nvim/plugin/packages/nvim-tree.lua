@@ -7,7 +7,7 @@ local g = vim.g
 g.nvim_tree_show_icons = {
   git = 0,
   folders = 1,
-  files = 1
+  files = 1,
 }
 
 -- Customize icons.
@@ -21,13 +21,13 @@ g.nvim_tree_icons = {
     renamed = '',
     deleted = '',
     untracked = '',
-    ignored = ''
+    ignored = '',
   },
   folder = {
     default = '',
     open = '',
-    symlink = ''
-  }
+    symlink = '',
+  },
 }
 
 -- Highlight nodes according to current git status.
@@ -59,11 +59,21 @@ g.nvim_tree_bindings = {
   ['y'] = tree_cmd('copy'),
   ['p'] = tree_cmd('paste'),
   ['[c'] = tree_cmd('prev_git_item'),
-  [']c'] = tree_cmd('next_git_item')
+  [']c'] = tree_cmd('next_git_item'),
 }
 
-map('n', '<Space>f', '<Cmd>NvimTreeToggle<CR>', { noremap = true, silent = true })
-map('n', '<Space>F', '<Cmd>NvimTreeFindFile<CR>', { noremap = true, silent = true })
+map(
+  'n',
+  '<Space>f',
+  '<Cmd>NvimTreeToggle<CR>',
+  { noremap = true, silent = true }
+)
+map(
+  'n',
+  '<Space>F',
+  '<Cmd>NvimTreeFindFile<CR>',
+  { noremap = true, silent = true }
+)
 
 api.nvim_command([[
   augroup nvimtreesettings

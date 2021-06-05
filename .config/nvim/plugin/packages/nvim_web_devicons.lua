@@ -12,5 +12,5 @@ devicons.setup({
     jpg = { icon = '', color = '#16a085', name = 'Jpg' },
     svg = { icon = '', color = '#3affdb', name = 'Svg' },
     LICENSE = { icon = '', color = '#f1f1f1', name = 'License' },
-  }
+  },
 })

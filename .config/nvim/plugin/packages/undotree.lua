@@ -50,4 +50,9 @@ g.undotree_HighlightSyntaxChange = 'DiffChange'
 g.undotree_HighlightSyntaxDel = 'DiffDelete'
 
 -- Define mapping.
-map('n', '<Space>u', '<Cmd>call undotree#UndotreeToggle()<CR>', { noremap = true, silent = true })
+map(
+  'n',
+  '<Space>u',
+  '<Cmd>call undotree#UndotreeToggle()<CR>',
+  { noremap = true, silent = true }
+)

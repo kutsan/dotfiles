@@ -7,7 +7,7 @@ local fn = vim.fn
 lsp.handlers['textDocument/publishDiagnostics'] = lsp.with(
   lsp.diagnostic.on_publish_diagnostics,
   {
-    virtual_text = false
+    virtual_text = false,
   }
 )
 
@@ -19,7 +19,7 @@ fn.sign_define('LspDiagnosticsSignHint', { text = '•' })
 local function on_attach(client)
   local opts = {
     noremap = true,
-    silent = true
+    silent = true,
   }
 
   buf_map('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
@@ -28,7 +28,12 @@ local function on_attach(client)
   buf_map('n', '<Space>c*', '<Cmd>lua vim.lsp.buf.rename()<CR>', opts)
   buf_map('n', 'gi', '<Cmd>lua vim.lsp.buf.implementation()<CR>', opts)
   buf_map('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
-  buf_map('n', 'J', '<Cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ show_header = false })<CR>', opts)
+  buf_map(
+    'n',
+    'J',
+    '<Cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ show_header = false })<CR>',
+    opts
+  )
   buf_map('n', '[g', '<Cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
   buf_map('n', ']g', '<Cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
   buf_map('n', '<C-f>', '<Cmd>lua vim.lsp.buf.document_symbol()<CR>', opts)
@@ -40,19 +45,19 @@ lspconfig.cssls.setup({ on_attach = on_attach })
 lspconfig.html.setup({ on_attach = on_attach })
 lspconfig.jsonls.setup({ on_attach = on_attach })
 
-lspconfig.diagnosticls.setup {
+lspconfig.diagnosticls.setup({
   filetypes = {
     'javascript',
     'javascriptreact',
     'typescript',
-    'typescriptreact'
+    'typescriptreact',
   },
   init_options = {
     filetypes = {
       javascript = 'eslint',
       typescript = 'eslint',
       javascriptreact = 'eslint',
-      typescriptreact = 'eslint'
+      typescriptreact = 'eslint',
     },
     linters = {
       eslint = {
@@ -61,7 +66,7 @@ lspconfig.diagnosticls.setup {
         rootPatterns = {
           '.git',
           '.eslitrc.js',
-          'package.json'
+          'package.json',
         },
         debounce = 500,
         args = {
@@ -70,7 +75,7 @@ lspconfig.diagnosticls.setup {
           '--stdin-filename',
           '%filepath',
           '--format',
-          'json'
+          'json',
         },
         parseJson = {
           errorsRoot = '[0].messages',
@@ -79,13 +84,13 @@ lspconfig.diagnosticls.setup {
           endLine = 'endLine',
           endColumn = 'endColumn',
           message = '${message} [${ruleId}]',
-          security = 'severity'
+          security = 'severity',
         },
         securities = {
           ['2'] = 'error',
-          ['1'] = 'warning'
-        }
-      }
-    }
-  }
-}
+          ['1'] = 'warning',
+        },
+      },
+    },
+  },
+})
