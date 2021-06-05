@@ -1,4 +1,4 @@
-# `kutsan's dotfiles`
+# `kutsan's dotfiles` [![luacheck](https://github.com/kutsan/dotfiles/actions/workflows/luacheck.yml/badge.svg)](https://github.com/kutsan/dotfiles/actions/workflows/luacheck.yml)
 
 ![screenshot](https://raw.githubusercontent.com/kutsan/dotfiles/master/.github/screenshot.png)
 
