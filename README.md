@@ -28,7 +28,6 @@
     - [`html-language-server`](https://github.com/vscode-langservers/vscode-html-languageserver-bin) - HTML Language Server
     - [`json-language-server`](https://github.com/vscode-langservers/vscode-json-languageserver) - JSON Language Server
     - [`lua-language-server`](https://github.com/sumneko/lua-language-server) - Lua Language Server
-  - [`lspconfig`](https://github.com/neovim/nvim-lspconfig) - Quick configuration setups for LSP clients
   - [`nvim-tree`](https://github.com/kyazdani42/nvim-tree.lua) - File explorer
   - [`nvim-web-devicons`](https://github.com/kyazdani42/nvim-web-devicons) - Nerd Font icon API support
   - [`polyglot`](https://github.com/sheerun/vim-polyglot) - Big collection of language packs as scripts are loaded only on demand
