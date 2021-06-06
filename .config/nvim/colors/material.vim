@@ -13,8 +13,8 @@ if exists('syntax_on')
 endif
 
 let g:colors_name = 'material'
-let g:material_theme_style = get(g:, 'material_theme_style', 'default')
-let g:material_terminal_italics = get(g:, 'material_terminal_italics', 0)
+let g:material_theme_style = get(g:, 'material_theme_style', 'ocean')
+let g:material_terminal_italics = get(g:, 'material_terminal_italics', v:true)
 
 " For backwards compatibility
 if (g:material_theme_style == 'dark')
@@ -564,10 +564,10 @@ highlight! diffRemoved guifg=#ff5370 guibg=#0f111a
 highlight! diffChanged guifg=#ffcb6b guibg=#0f111a
 highlight! ErrorMsg guifg=#8f93a2 guibg=#0f111a
 highlight! Visual guifg=NONE guibg=#1f2233
-highlight! DiffAdd ctermbg=29 ctermfg=158 guibg=#45493e guifg=#c0c5b9
-highlight! DiffChange ctermbg=23 ctermfg=159 guibg=#384851 guifg=#b3c3cc
-highlight! DiffDelete ctermbg=95 ctermfg=224 guibg=#53343b guifg=#ceb0b6
-highlight! DiffText cterm=NONE ctermbg=30 ctermfg=195 gui=NONE guibg=#5b7881 guifg=#c6c8d1
+highlight! DiffAdd guibg=#45493e guifg=NONE
+highlight! DiffChange guibg=#384851 guifg=NONE
+highlight! DiffDelete guibg=#53343b guifg=NONE
+highlight! DiffText guibg=#5b7881 guifg=NONE
 highlight! NonText guifg=#1d2029
 highlight! NvimTreeIndentMarker guifg=#1d2030
 highlight! NvimTreeNormal guibg=#090B10
