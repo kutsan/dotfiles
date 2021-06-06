@@ -2,6 +2,8 @@ local lspconfig = require('lspconfig')
 local buf_map = require('kutsan.utils').buf_map
 local lsp = vim.lsp
 local fn = vim.fn
+local env = vim.env
+local split = vim.split
 
 lsp.handlers['textDocument/publishDiagnostics'] = lsp.with(
   lsp.diagnostic.on_publish_diagnostics,
@@ -44,12 +46,45 @@ lspconfig.cssls.setup({ on_attach = on_attach })
 lspconfig.html.setup({ on_attach = on_attach })
 lspconfig.jsonls.setup({ on_attach = on_attach })
 
+lspconfig.sumneko_lua.setup({
+  on_attach = on_attach,
+  cmd = {
+    string.format(
+      '%s/.local/lib/lua-language-server/bin/%s/lua-language-server',
+      env.HOME,
+      fn.has('mac') == 1 and 'macOS' or 'Linux'
+    ),
+    '-E',
+    string.format('%s/.local/lib/lua-language-server/main.lua', env.HOME),
+  },
+  settings = {
+    Lua = {
+      runtime = {
+        version = 'LuaJIT',
+        path = split(package.path, ';'),
+      },
+      diagnostics = {
+        globals = { 'vim' },
+      },
+      workspace = {
+        library = {
+          [fn.expand('$VIMRUNTIME/lua')] = true,
+          [fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
+        },
+      },
+      telemetry = { enable = false },
+    },
+  },
+})
+
 lspconfig.diagnosticls.setup({
+  on_attach = on_attach,
   filetypes = {
     'javascript',
     'javascriptreact',
     'typescript',
     'typescriptreact',
+    'lua',
   },
   init_options = {
     filetypes = {
@@ -57,6 +92,7 @@ lspconfig.diagnosticls.setup({
       typescript = 'eslint',
       javascriptreact = 'eslint',
       typescriptreact = 'eslint',
+      lua = 'luacheck',
     },
     linters = {
       eslint = {
@@ -88,6 +124,37 @@ lspconfig.diagnosticls.setup({
         securities = {
           ['2'] = 'error',
           ['1'] = 'warning',
+        },
+      },
+
+      luacheck = {
+        command = 'luacheck',
+        args = {
+          '--formatter',
+          'plain',
+          '--ranges',
+          '--filename',
+          '%filepath',
+          '-',
+        },
+        sourceName = 'luacheck',
+        formatPattern = {
+          '^[^:]+:(\\d+):(\\d+)-(\\d+):\\s+\\((\\w)\\d+\\)\\s+(.*)$',
+          {
+            line = 1,
+            column = 2,
+            endLine = 1,
+            endColumn = 3,
+            security = 4,
+            message = 5,
+          },
+        },
+        rootPatterns = { '.luacheckrc' },
+        requiredFiles = { '.luacheckrc' },
+        debounce = 100,
+        securities = {
+          E = 'error',
+          W = 'warning',
         },
       },
     },
