@@ -19,7 +19,7 @@
   followtags = true
 
 [diff]
-  algorithm = patience
+  algorithm = histogram
   tool = nvimdiff
   renames = copies
   submodule = log
