@@ -69,9 +69,6 @@ export RUSTUP_HOME="$HOME/.local/share/rustup"
 export MANWIDTH='100'
 export MANPAGER="nvim +'set filetype=man' -"
 
-# neomutt
-export MAILCAPS="$HOME/.config/neomutt/mailcap"
-
 # npm
 export NPM_CONFIG_USERCONFIG="$HOME/.config/npm/npmrc"
 export NPM_CONFIG_CACHE="$HOME/.cache/npm"
