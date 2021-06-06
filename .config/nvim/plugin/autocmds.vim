@@ -10,14 +10,12 @@ augroup end
 augroup highlightyank
   autocmd!
 
-  if has('nvim-0.5.0')
-    autocmd TextYankPost *
-      \ lua vim.highlight.on_yank({
-        \ higroup = 'Visual',
-        \ timeout = 100,
-        \ on_visual = false
-      \ })
-  endif
+  autocmd TextYankPost *
+    \ lua vim.highlight.on_yank({
+      \ higroup = 'Visual',
+      \ timeout = 100,
+      \ on_visual = false
+    \ })
 augroup end
 
 " Save the current buffer after any changes.
