@@ -1,9 +1,0 @@
-# Images
-image/*; mpv "%s"
-
-# PDF
-application/pdf; xdg-open "%s"
-
-# HTML
-text/html; google-chrome -- %s; nametemplate=%s.html
-text/html; elinks -dump %s -dump-charset %{charset} -force-html; nametemplate=%s.html; copiousoutput

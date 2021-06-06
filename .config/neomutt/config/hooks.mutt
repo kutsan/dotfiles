@@ -1,3 +1,0 @@
-index-format-hook reldate "~d<24H" "%[%R]"
-index-format-hook reldate "~d>11m" "%[%Y-%m-%d]"
-index-format-hook reldate "~A"     "%[%d %b]"
