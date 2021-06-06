@@ -22,12 +22,12 @@
   - [`fzf`](https://github.com/junegunn/fzf.vim) - Fuzzy finder fzf as plugin
   - [`indentline`](https://github.com/Yggdroot/indentLine) - Display the indention levels with thin vertical lines
   - [`lspconfig`](https://github.com/neovim/nvim-lspconfig) - Quickstart configurations for the neovim LSP client
-    - [`diagnosticls`](https://github.com/iamcco/diagnostic-languageserver) - General purpose language server that integrate with linters
-    - [`tsserver`](https://github.com/theia-ide/typescript-language-server) - TypeScript & JavaScript Language Server
-    - [`cssls`](https://github.com/vscode-langservers/vscode-css-languageserver-bin) - CSS Language Server
-    - [`html`](https://github.com/vscode-langservers/vscode-html-languageserver-bin) - HTML Language Server
-    - [`json`](https://github.com/vscode-langservers/vscode-json-languageserver) - JSON Language Server
-    - [`lualsp`](https://github.com/sumneko/lua-language-server) - Lua Language Server
+    - [`diagnostic-language-server`](https://github.com/iamcco/diagnostic-languageserver) - General purpose language server that integrate with linters
+    - [`typescript-language-server`](https://github.com/theia-ide/typescript-language-server) - TypeScript & JavaScript Language Server
+    - [`css-language-server`](https://github.com/vscode-langservers/vscode-css-languageserver-bin) - CSS Language Server
+    - [`html-language-server`](https://github.com/vscode-langservers/vscode-html-languageserver-bin) - HTML Language Server
+    - [`json-language-server`](https://github.com/vscode-langservers/vscode-json-languageserver) - JSON Language Server
+    - [`lua-language-server`](https://github.com/sumneko/lua-language-server) - Lua Language Server
   - [`lspconfig`](https://github.com/neovim/nvim-lspconfig) - Quick configuration setups for LSP clients
   - [`nvim-tree`](https://github.com/kyazdani42/nvim-tree.lua) - File explorer
   - [`nvim-web-devicons`](https://github.com/kyazdani42/nvim-web-devicons) - Nerd Font icon API support
