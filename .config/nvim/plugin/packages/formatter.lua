@@ -13,6 +13,16 @@ local function prettier()
   }
 end
 
+local function stylua()
+  return {
+    exe = 'stylua',
+    args = {
+      '-',
+    },
+    stdin = true,
+  }
+end
+
 formatter.setup({
   logging = true,
   filetype = {
@@ -26,6 +36,7 @@ formatter.setup({
     markdown = { prettier },
     yaml = { prettier },
     html = { prettier },
+    lua = { stylua },
   },
 })
 
