@@ -47,8 +47,8 @@
     - [`grip`](https://github.com/joeyespo/grip) - Preview Markdown files in local server
     - [`trash-cli`](https://github.com/andreafrancia/trash-cli) - Move files and folders to the trash
 - [`lua@5.1`](https://www.lua.org) - Lightweight, embeddable scripting language
-    - [`luarocks`](https://luarocks.org) - Package manager for Lua modules
-      - [`luacheck`](https://github.com/mpeterv/luacheck) - Linting and static analysis of Lua code
+  - [`luarocks`](https://luarocks.org) - Package manager for Lua modules
+    - [`luacheck`](https://github.com/mpeterv/luacheck) - Linting and static analysis of Lua code
 - [`rust`](https://www.rust-lang.org) - Multi-paradigm programming language designed for performance and safety
   - [`cargo`](https://crates.io) - Package manager for Rust crates
     - [`stylua`](https://github.com/johnnymorganz/stylua) - Lua formatter
