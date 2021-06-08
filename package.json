@@ -1,0 +1,28 @@
+{
+  "name": "@kutsan/dotfiles",
+  "version": "0.0.0",
+  "private": true,
+  "description": "My dotfiles: Experimental, ongoing configuration files, development environment and scripts for various Unix-like systems, text-based command-line applications and interfaces.",
+  "keywords": [
+    "vim",
+    "linux",
+    "dotfiles",
+    "zsh",
+    "tmux",
+    "unix",
+    "neovim"
+  ],
+  "repository": "github:kutsan/dotfiles",
+  "license": "GPL-3.0",
+  "author": "Kutsan Kaplan <me@kutsankaplan.com> (https://kutsankaplan.com)",
+  "scripts": {
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.3.1"
+  }
+}
