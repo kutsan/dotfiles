@@ -21,6 +21,3 @@ g.loaded_getscriptPlugin = true
 g.loaded_logipat = true
 g.loaded_tutor_mode_plugin = true
 g.loaded_matchit = true
-
--- Until https://github.com/neovim/neovim/issues/12670 is resolved.
-require('kutsan.plugin').source()
