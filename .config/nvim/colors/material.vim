@@ -571,6 +571,8 @@ highlight! DiffText guibg=#5b7881 guifg=NONE
 highlight! NonText guifg=#1d2029
 highlight! NvimTreeIndentMarker guifg=#1d2030
 highlight! NvimTreeNormal guibg=#090B10
+highlight! SpellCap guifg=NONE guisp=#82aaff gui=undercurl
+highlight! SpellBad guifg=NONE guisp=#ff5370 gui=undercurl
 highlight! LspDiagnosticsDefaultError guifg=#FF5370
 highlight! LspDiagnosticsSignError guifg=#FF5370
 highlight! LspDiagnosticsFloatingError guifg=#FF5370
