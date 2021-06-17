@@ -6,14 +6,13 @@ g.qf_disable_statusline = true
 
 local qf_statusline = {
   '%{repeat(nr2char(32),4)}', -- Generate space characters given number of times.
-  ' ', -- Show a custom list icon.
-  '%{repeat(nr2char(32),1)}',
+  '', -- Show a custom list icon.
+  '%{nr2char(32)}', -- A space character.
   '%t', -- File name, either [Quickfix List] or [Location List].
-  '%{exists("w:quickfix_title")?"\\ "..w:quickfix_title:""}',
   '%=', -- Align all items to right from this point on.
-  '%{repeat(nr2char(32),1)}',
+  '%{nr2char(32)}', -- A space character.
   '%l/%L', -- Current line number and total item count.
-  '%{repeat(nr2char(32),1)}',
+  '%{repeat(nr2char(32),2)}',
 }
 
 -- Set statusline.
