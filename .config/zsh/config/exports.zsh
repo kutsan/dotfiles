@@ -67,7 +67,7 @@ export RUSTUP_HOME="$HOME/.local/share/rustup"
 
 # man
 export MANWIDTH='100'
-export MANPAGER="nvim +'set filetype=man' -"
+export MANPAGER="nvim +'set filetype=man'"
 
 # npm
 export NPM_CONFIG_USERCONFIG="$HOME/.config/npm/npmrc"
