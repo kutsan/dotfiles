@@ -1,6 +1,5 @@
 local opt = vim.opt
 local cmd = vim.cmd
-local fn = vim.fn
 local env = vim.env
 
 -- Colorscheme
@@ -39,7 +38,7 @@ opt.sidescroll = 5 -- Columns to scroll horizontally when cursor is moved off th
 opt.sidescrolloff = 5 -- Minimum number of screen columns to keep to cursor right.
 opt.timeoutlen = 500 -- Time in milliseconds to wait for a mapped sequence to complete.
 opt.ttimeoutlen = 0 -- Time in milliseconds to wait for a key code sequence to complete.
-opt.updatetime = 1000 -- Trigger CursorHold event faster.
+opt.updatetime = 500 -- Trigger CursorHold event faster.
 opt.diffopt = { -- Option settings for diff mode.
   'filler', -- Show filler lines.
   'vertical', -- Start diff mode with vertical splits.
@@ -98,7 +97,6 @@ opt.splitright = true -- Splitting a window will put the new window right of the
 opt.switchbuf = 'useopen' -- Jump to the first open window that contains the specified buffer.
 opt.showcmd = false -- Disable displaying key presses at the right bottom.
 opt.showmode = false -- Disable native mode indicator.
-opt.wildcharm = fn.char2nr('<C-z>') -- The key to start wildcard expansion inside macro.
 opt.tabline = '%!kutsan#settings#tabline()' -- Custom tabline modifier function.
 
 -- Window Options

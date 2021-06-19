@@ -1,5 +1,6 @@
 local lspconfig = require('lspconfig')
 local buf_map = require('kutsan.utils').buf_map
+local cmd = vim.cmd
 local lsp = vim.lsp
 local fn = vim.fn
 local env = vim.env
@@ -22,6 +23,10 @@ local function on_attach()
     noremap = true,
     silent = true,
   }
+
+  cmd('autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()')
+  cmd('autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()')
+  cmd('autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()')
 
   buf_map('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
   buf_map('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)

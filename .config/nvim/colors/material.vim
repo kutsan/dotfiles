@@ -593,6 +593,6 @@ highlight! LspDiagnosticsSignHint guifg=#C792EA
 highlight! LspDiagnosticsFloatingHint guifg=#C792EA
 highlight! LspDiagnosticsVirtualTextHint guifg=#C792EA
 highlight! LspDiagnosticsUnderlineHint gui=undercurl guisp=#B0C9FF
-highlight! LspReferenceText guifg=#84FFFF guibg=#1F2233
-highlight! LspReferenceRead guifg=#84FFFF guibg=#1F2233
-highlight! LspReferenceWrite guifg=#84FFFF guibg=#1F2233
+highlight! LspReferenceText guifg=NONE guibg=#1F2233
+highlight! LspReferenceRead guifg=NONE guibg=#1F2233
+highlight! LspReferenceWrite guifg=NONE guibg=#1F2233
