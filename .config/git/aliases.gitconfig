@@ -16,7 +16,6 @@
   s = status
   sm = submodule
   w = whatchanged
-  ctags = !.git/hooks/ctags
   pr = "! \
     function f() { \
       git fetch --force --update-head-ok ${2:-origin} refs/pull/$1/head:pr/$1 && git checkout pr/$1; \
