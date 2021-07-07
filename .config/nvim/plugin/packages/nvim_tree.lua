@@ -44,22 +44,22 @@ g.nvim_tree_auto_close = 1
 
 -- Set key bindings.
 g.nvim_tree_bindings = {
-  ['l'] = tree_cmd('edit'),
-  ['<C-s>'] = tree_cmd('split'),
-  ['<C-v>'] = tree_cmd('vsplit'),
-  ['<C-t>'] = tree_cmd('tabnew'),
-  ['<C-r>'] = tree_cmd('refresh'),
-  ['h'] = tree_cmd('close_node'),
-  ['L'] = tree_cmd('cd'),
-  ['i'] = tree_cmd('preview'),
-  ['c'] = tree_cmd('create'),
-  ['D'] = tree_cmd('remove'),
-  ['r'] = tree_cmd('rename'),
-  ['d'] = tree_cmd('cut'),
-  ['y'] = tree_cmd('copy'),
-  ['p'] = tree_cmd('paste'),
-  ['[c'] = tree_cmd('prev_git_item'),
-  [']c'] = tree_cmd('next_git_item'),
+  { key = 'l', cb = tree_cmd('edit') },
+  { key = '<C-s>', cb = tree_cmd('split') },
+  { key = '<C-v>', cb = tree_cmd('vsplit') },
+  { key = '<C-t>', cb = tree_cmd('tabnew') },
+  { key = '<C-r>', cb = tree_cmd('refresh') },
+  { key = 'h', cb = tree_cmd('close_node') },
+  { key = 'L', cb = tree_cmd('cd') },
+  { key = 'i', cb = tree_cmd('preview') },
+  { key = 'c', cb = tree_cmd('create') },
+  { key = 'D', cb = tree_cmd('remove') },
+  { key = 'r', cb = tree_cmd('rename') },
+  { key = 'd', cb = tree_cmd('cut') },
+  { key = 'y', cb = tree_cmd('copy') },
+  { key = 'p', cb = tree_cmd('paste') },
+  { key = '[c', cb = tree_cmd('prev_git_item') },
+  { key = ']c', cb = tree_cmd('next_git_item') },
 }
 
 map(
