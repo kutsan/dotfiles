@@ -71,7 +71,7 @@ map(
 map(
   'n',
   '<Space>F',
-  '<Cmd>NvimTreeFindFile<CR>',
+  '<Cmd>NvimTreeFindFile<CR>z.',
   { noremap = true, silent = true }
 )
 
