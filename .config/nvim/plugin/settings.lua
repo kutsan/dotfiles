@@ -15,6 +15,7 @@ opt.joinspaces = false -- Disable inserting two spaces after `.`, `?`, `!` with 
 opt.startofline = true -- Move cursor to the start of each line when jumping with certain commands.
 opt.report = 1000 -- Threshold for reporting number of lines changed.
 opt.scrolloff = 5 -- Minimum number of screen lines to keep above and below the cursor.
+opt.laststatus = 0 -- Disable statusline.
 opt.shortmess =
   table.concat({ -- Use abbreviations and short messages in command menu line.
     'f', -- Use "(3 of 5)" instead of "(file 3 of 5)".
