@@ -97,7 +97,6 @@ opt.splitright = true -- Splitting a window will put the new window right of the
 opt.switchbuf = 'useopen' -- Jump to the first open window that contains the specified buffer.
 opt.showcmd = false -- Disable displaying key presses at the right bottom.
 opt.showmode = false -- Disable native mode indicator.
-opt.tabline = '%!kutsan#settings#tabline()' -- Custom tabline modifier function.
 
 -- Window Options
 opt.breakindent = true -- Wrapped lines will be visually indented with same amount of space.
