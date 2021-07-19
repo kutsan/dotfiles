@@ -14,6 +14,9 @@
   path = .config/zsh/plugins/fast-syntax-highlighting
   url = https://github.com/zdharma/fast-syntax-highlighting
 
+[submodule "bufdelete"]
+  path = .config/nvim/pack/bundle/start/bufdelete
+  url = https://github.com/famiu/bufdelete.nvim
 [submodule "colorizer"]
   path = .config/nvim/pack/bundle/start/colorizer
   url = https://github.com/norcalli/nvim-colorizer.lua
