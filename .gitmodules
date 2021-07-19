@@ -17,6 +17,9 @@
 [submodule "bufdelete"]
   path = .config/nvim/pack/bundle/start/bufdelete
   url = https://github.com/famiu/bufdelete.nvim
+[submodule "bufferline"]
+  path = .config/nvim/pack/bundle/start/bufferline
+  url = https://github.com/akinsho/nvim-bufferline.lua
 [submodule "colorizer"]
   path = .config/nvim/pack/bundle/start/colorizer
   url = https://github.com/norcalli/nvim-colorizer.lua

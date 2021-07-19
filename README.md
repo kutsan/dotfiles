@@ -15,6 +15,7 @@
 - [`neovim`](https://github.com/neovim/neovim) - The fork of ubiquitous text editor focused on extensibility and usability
   - [`material`](https://github.com/kaicataldo/material.vim) - Color scheme
   - [`bufdelete`](https://github.com/famiu/bufdelete.nvim) - Delete buffers without losing window layout
+  - [`bufferline`](https://github.com/akinsho/nvim-bufferline.lua) - Bufferline
   - [`colorizer`](https://github.com/norcalli/nvim-colorizer.lua) - High-performance color highlighter
   - [`compe`](https://github.com/hrsh7th/nvim-compe/) - Auto completion support
   - [`editorconfig`](https://github.com/editorconfig/editorconfig-vim) - EditorConfig support
