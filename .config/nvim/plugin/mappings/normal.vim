@@ -61,6 +61,10 @@ nnoremap <C-]> g<C-]>zt
 nnoremap <silent> [l :labove<CR>
 nnoremap <silent> ]l :lbelow<CR>
 
+" Go previous and next buffers in buffer list.
+nnoremap <silent> <M-p> <Cmd>bprevious<CR>
+nnoremap <silent> <M-n> <Cmd>bnext<CR>
+
 " QuickFix navigation mappings.
 nnoremap <silent> <Up> :cprevious<CR>
 nnoremap <silent> <Down> :cnext<CR>
