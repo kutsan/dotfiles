@@ -37,11 +37,21 @@ local function on_attach()
   buf_map(
     'n',
     'J',
-    '<Cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ show_header = false })<CR>',
+    '<Cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ show_header = false, width = 55 })<CR>',
     opts
   )
-  buf_map('n', '[g', '<Cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
-  buf_map('n', ']g', '<Cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
+  buf_map(
+    'n',
+    '[g',
+    '<Cmd>lua vim.lsp.diagnostic.goto_prev({ popup_opts = { width = 55 }})<CR>',
+    opts
+  )
+  buf_map(
+    'n',
+    ']g',
+    '<Cmd>lua vim.lsp.diagnostic.goto_next({ popup_opts = { width = 55 }})<CR>',
+    opts
+  )
   buf_map('n', '<C-f>', '<Cmd>lua vim.lsp.buf.document_symbol()<CR>', opts)
   buf_map('i', '<C-k>', '<Cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
 end
