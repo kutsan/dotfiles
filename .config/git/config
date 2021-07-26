@@ -89,9 +89,5 @@
   insteadOf = "g:"
   pushInsteadOf = "g:"
 
-[url "git@bitbucket.org:"]
-  insteadOf = "b:"
-  pushInsteadOf = "b:"
-
 [includeIf "gitdir:~/Work/"]
   path = work.gitconfig
