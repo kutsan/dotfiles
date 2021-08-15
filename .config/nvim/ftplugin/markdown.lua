@@ -1,4 +1,3 @@
-local buf_map = require('kutsan.utils').buf_map
 local g = vim.g
 local cmd = vim.cmd
 
@@ -12,9 +11,3 @@ cmd('setlocal norelativenumber')
 -- Disable conceal feature of markdown ftplugin.
 g.vim_markdown_conceal = false
 g.vim_markdown_conceal_code_blocks = false
-
--- Toggle local preview server.
-buf_map('n', '\\r', '<Cmd>call kutsan#ftplugin#markdown#preview()<CR>', {
-  noremap = true,
-  silent = true,
-})

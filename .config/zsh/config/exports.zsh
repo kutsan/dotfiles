@@ -80,9 +80,6 @@ export NPM_CONFIG_INIT_LICENSE='GPL-3.0'
 export NPM_CONFIG_INIT_VERSION='0.0.0'
 export NPM_CONFIG_SIGN_GIT_TAG='true'
 
-# grip
-export GRIPHOME="$HOME/.config/grip"
-
 # GnuPG
 export GPG_TTY=$(tty)
 export GNUPGHOME="$HOME/.config/gnupg"
