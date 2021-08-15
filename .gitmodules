@@ -41,6 +41,9 @@
 [submodule "fzf-vim"]
   path = .config/nvim/pack/bundle/start/fzf-vim
   url = https://github.com/junegunn/fzf.vim
+[submodule "indent-blankline"]
+  path = .config/nvim/pack/bundle/start/indent-blankline
+  url = https://github.com/lukas-reineke/indent-blankline.nvim
 [submodule "lspconfig"]
   path = .config/nvim/pack/bundle/start/lspconfig
   url = https://github.com/neovim/nvim-lspconfig
