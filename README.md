@@ -22,7 +22,6 @@
   - [`formatter`](https://github.com/mhartington/formatter.nvim) - Format runner
   - [`fugitive`](https://github.com/tpope/vim-fugitive) - Git client
   - [`fzf`](https://github.com/junegunn/fzf.vim) - Fuzzy finder fzf as plugin
-  - [`indentline`](https://github.com/Yggdroot/indentLine) - Display the indention levels with thin vertical lines
   - [`lspconfig`](https://github.com/neovim/nvim-lspconfig) - Quickstart configurations for the neovim LSP client
     - [`diagnostic-language-server`](https://github.com/iamcco/diagnostic-languageserver) - General purpose language server that integrate with linters
     - [`typescript-language-server`](https://github.com/theia-ide/typescript-language-server) - TypeScript & JavaScript Language Server
