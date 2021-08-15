@@ -45,8 +45,6 @@
     - [`eslint_d`](https://github.com/mantoni/eslint_d.js) - Run ESLint as a daemon
 - [`python`](https://www.python.org) - High-level programming language for general-purpose programming
   - [`pip`](https://pypi.org) - Python package manager to install and manage packages written in Python
-    - [`stig`](https://github.com/rndusr/stig) - TUI and CLI interface for transmission-daemon
-    - [`grip`](https://github.com/joeyespo/grip) - Preview Markdown files in local server
     - [`trash-cli`](https://github.com/andreafrancia/trash-cli) - Move files and folders to the trash
 - [`lua@5.1`](https://www.lua.org) - Lightweight, embeddable scripting language
   - [`luarocks`](https://luarocks.org) - Package manager for Lua modules
