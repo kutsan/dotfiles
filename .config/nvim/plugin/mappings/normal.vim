@@ -52,7 +52,8 @@ nnoremap <silent> gb :execute printf('silent !xdg-open "%s" 2>/dev/null', expand
 " Toggle common options.
 nnoremap <silent> cos :set spell!<CR>
 nnoremap <silent> cow :set wrap!<CR>
-nnoremap <silent> coh :set hlsearch!<CR>
+nnoremap <silent> coh :nohlsearch<CR>
+nnoremap <silent> coH :set hlsearch!<CR>
 
 " Jump to a tag directly when there is only one match.
 nnoremap <C-]> g<C-]>zt
