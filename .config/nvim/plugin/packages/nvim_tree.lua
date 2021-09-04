@@ -39,9 +39,6 @@ g.nvim_tree_indent_markers = 1
 -- Disable special files.
 g.nvim_tree_special_files = {}
 
--- Automatically close the tree if it's the last remaining window.
-g.nvim_tree_auto_close = 1
-
 -- Set key bindings.
 g.nvim_tree_bindings = {
   { key = 'l', cb = tree_cmd('edit') },
