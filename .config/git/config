@@ -84,8 +84,8 @@
   whitespace = red reverse
 
 [color "status"]
-  added = yellow
-  changed = blue
+  added = green
+  changed = yellow
   untracked = red
 
 [url "git@github.com:"]
