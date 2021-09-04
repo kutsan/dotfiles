@@ -13,6 +13,19 @@ local function prettier()
   }
 end
 
+local function stylelint()
+  return {
+    exe = 'node_modules/.bin/stylelint',
+    args = {
+      '--fix',
+      '--stdin',
+      '--stdin-filename',
+      api.nvim_buf_get_name(0),
+    },
+    stdin = true,
+  }
+end
+
 local function stylua()
   return {
     exe = 'stylua',
@@ -30,7 +43,7 @@ formatter.setup({
     javascriptreact = { prettier },
     typescript = { prettier },
     typescriptreact = { prettier },
-    css = { prettier },
+    css = { prettier, stylelint },
     json = { prettier },
     graphql = { prettier },
     markdown = { prettier },
@@ -40,4 +53,4 @@ formatter.setup({
   },
 })
 
-map('n', '\\f', '<Cmd>FormatWrite<CR>', { noremap = true, silent = true })
+map('n', '\\f', '<Cmd>silent FormatWrite<CR>', { noremap = true })
