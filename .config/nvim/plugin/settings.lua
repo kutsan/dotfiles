@@ -110,12 +110,13 @@ opt.foldmethod = 'indent' -- Use indent folding method to fold lines.
 
 -- Buffer Options
 opt.modeline = false -- Disable modeline feature altogether.
-opt.keymap = 'diacritic' -- Enable diacritic key mappings in keymap folder.
 opt.tabstop = 2 -- Number of spaces that a <Tab> in the file counts for.
 opt.shiftwidth = 0 -- Number of spaces to use for each step of auto indent.
 opt.softtabstop = -1 -- Number of spaces that a <Tab> counts.
 opt.expandtab = true -- Use spaces instead of tab characters.
 opt.undofile = true -- Persist undo history to an undo file.
+-- Use cmd until https://github.com/neovim/neovim/issues/14670 is fixed.
+cmd('set keymap=diacritic') -- Enable diacritic key mappings in keymap folder.
 
 -- Root
 if env.SUDO_USER ~= nil then
