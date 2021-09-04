@@ -59,7 +59,7 @@ end
 lspconfig.tsserver.setup({ on_attach = on_attach })
 lspconfig.cssls.setup({ on_attach = on_attach })
 lspconfig.html.setup({ on_attach = on_attach })
-lspconfig.jsonls.setup({ on_attach = on_attach })
+lspconfig.jsonls.setup({})
 
 lspconfig.sumneko_lua.setup({
   on_attach = on_attach,
