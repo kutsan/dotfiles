@@ -30,6 +30,9 @@ g.nvim_tree_icons = {
   },
 }
 
+-- Only show the current folder as the root instead of full path.
+g.nvim_tree_root_folder_modifier = ':t'
+
 -- Highlight nodes according to current git status.
 g.nvim_tree_git_hl = 1
 
