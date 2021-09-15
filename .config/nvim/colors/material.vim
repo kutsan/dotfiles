@@ -566,7 +566,7 @@ highlight! ErrorMsg guifg=#8f93a2 guibg=#0f111a
 highlight! Visual guifg=NONE guibg=#1f2233
 highlight! DiffAdd guibg=#45493e guifg=NONE
 highlight! DiffChange guibg=#384851 guifg=NONE
-highlight! DiffDelete guibg=#53343b guifg=NONE
+highlight! DiffDelete guibg=NONE guifg=#464b5d
 highlight! DiffText guibg=#5b7881 guifg=NONE
 highlight! NonText guifg=#1d2029
 highlight! NvimTreeIndentMarker guifg=#1d2030
