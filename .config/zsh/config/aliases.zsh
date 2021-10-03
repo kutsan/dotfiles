@@ -16,12 +16,11 @@ alias g='git'
 alias bwlogin='bw login --code "$(auth bitwarden)" "$(< ~/.config/email)" "$(gpg --no-tty --for-your-eyes-only --quiet --decrypt ~/.config/auth/bitwarden.gpg 2>/dev/null)"'
 alias bwunlock='export BW_SESSION="$(bw unlock --raw $(gpg --no-tty --for-your-eyes-only --quiet --decrypt ~/.config/auth/bitwarden.gpg 2>/dev/null))"'
 alias pacman='sudo pacman'
-alias rsync='rsync --protect-args --compress --verbose --progress --human-readable'
 alias l='ledger'
 alias lb="ledger balance '^assets' '^liabilities' --empty"
-alias le='$EDITOR ~/Projects/sync/finance/journal-$(date +%Y).ledger'
-alias lnet="ledger register '^expenses' '^income' --period 'this month' --subtotal --invert"
+alias le='cd ~/Projects/sync && git pull --ff-only && $EDITOR ~/Projects/sync/finance/journal-$(date +%Y).ledger'
 alias s='$EDITOR ~/Projects/sync/notes/tasks.md'
+alias scd='cd ~/Projects/sync'
 alias gen-packagejson='cp "$HOME/.config/npm/package.json" "package.json"'
 alias gen-editorconfig='cp "$HOME/.config/editorconfig/.editorconfig" ".editorconfig"'
 
