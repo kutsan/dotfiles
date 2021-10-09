@@ -573,6 +573,31 @@ highlight! NvimTreeIndentMarker guifg=#1d2030
 highlight! NvimTreeNormal guibg=#090B10
 highlight! SpellCap guifg=NONE guisp=#82aaff gui=undercurl
 highlight! SpellBad guifg=NONE guisp=#ff5370 gui=undercurl
+highlight! LspReferenceText guifg=NONE guibg=#1F2233
+highlight! LspReferenceRead guifg=NONE guibg=#1F2233
+highlight! LspReferenceWrite guifg=NONE guibg=#1F2233
+highlight! DiagnosticError guifg=#FF5370
+highlight! DiagnosticFloatingError guifg=#FF5370
+highlight! DiagnosticFloatingHint guifg=#C792EA
+highlight! DiagnosticFloatingInfo guifg=#B0C9FF
+highlight! DiagnosticFloatingWarn guifg=#FFCB6B
+highlight! DiagnosticHint guifg=#C792EA
+highlight! DiagnosticInfo guifg=#B0C9FF
+highlight! DiagnosticSignError guifg=#FF5370
+highlight! DiagnosticSignHint guifg=#C792EA
+highlight! DiagnosticSignInfo guifg=#B0C9FF
+highlight! DiagnosticSignWarn guifg=#FFCB6B
+highlight! DiagnosticUnderlineError gui=undercurl guisp=#FF5370
+highlight! DiagnosticUnderlineHint gui=undercurl guisp=#B0C9FF
+highlight! DiagnosticUnderlineInfo gui=undercurl guisp=#B0C9FF
+highlight! DiagnosticUnderlineWarn gui=undercurl guisp=#FFCB6B
+highlight! DiagnosticVirtualTextError guifg=#FF5370
+highlight! DiagnosticVirtualTextHint guifg=#C792EA
+highlight! DiagnosticVirtualTextInfo guifg=#B0C9FF
+highlight! DiagnosticVirtualTextWarn guifg=#FFCB6B
+highlight! DiagnosticWarn guifg=#FFCB6B
+
+" Deprecated sign highlights.
 highlight! LspDiagnosticsDefaultError guifg=#FF5370
 highlight! LspDiagnosticsSignError guifg=#FF5370
 highlight! LspDiagnosticsFloatingError guifg=#FF5370
@@ -593,6 +618,3 @@ highlight! LspDiagnosticsSignHint guifg=#C792EA
 highlight! LspDiagnosticsFloatingHint guifg=#C792EA
 highlight! LspDiagnosticsVirtualTextHint guifg=#C792EA
 highlight! LspDiagnosticsUnderlineHint gui=undercurl guisp=#B0C9FF
-highlight! LspReferenceText guifg=NONE guibg=#1F2233
-highlight! LspReferenceRead guifg=NONE guibg=#1F2233
-highlight! LspReferenceWrite guifg=NONE guibg=#1F2233

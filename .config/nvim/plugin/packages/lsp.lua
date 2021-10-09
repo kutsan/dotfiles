@@ -13,10 +13,17 @@ lsp.handlers['textDocument/publishDiagnostics'] = lsp.with(
   }
 )
 
-fn.sign_define('LspDiagnosticsSignError', { text = '•' })
-fn.sign_define('LspDiagnosticsSignWarning', { text = '•' })
-fn.sign_define('LspDiagnosticsSignInformation', { text = '•' })
-fn.sign_define('LspDiagnosticsSignHint', { text = '•' })
+local signChar = '•' -- U+2022 BULLET
+fn.sign_define('DiagnosticSignError', { text = signChar })
+fn.sign_define('DiagnosticSignWarn', { text = signChar })
+fn.sign_define('DiagnosticSignInfo', { text = signChar })
+fn.sign_define('DiagnosticSignHint', { text = signChar })
+
+-- Deprecated signs.
+fn.sign_define('LspDiagnosticsSignError', { text = signChar })
+fn.sign_define('LspDiagnosticsSignWarning', { text = signChar })
+fn.sign_define('LspDiagnosticsSignInformation', { text = signChar })
+fn.sign_define('LspDiagnosticsSignHint', { text = signChar })
 
 local function on_attach()
   local opts = {
