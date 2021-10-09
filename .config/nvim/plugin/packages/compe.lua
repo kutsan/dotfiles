@@ -1,3 +1,4 @@
+local map = require('kutsan.utils').map
 local compe = require('compe')
 
 compe.setup({
@@ -10,3 +11,5 @@ compe.setup({
     nvim_lua = true,
   },
 })
+
+map('i', '<C-Space>', 'compe#complete()', { expr = true, silent = true })
