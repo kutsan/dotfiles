@@ -18,7 +18,7 @@ alias bwunlock='export BW_SESSION="$(bw unlock --raw $(gpg --no-tty --for-your-e
 alias pacman='sudo pacman'
 alias l='ledger'
 alias lb="ledger balance '^assets' '^liabilities' --empty"
-alias le='cd ~/Projects/sync && git pull --ff-only && $EDITOR ~/Projects/sync/finance/journal-$(date +%Y).ledger'
+alias le='cd ~/Projects/sync && git pull --ff-only; $EDITOR ~/Projects/sync/finance/journal-$(date +%Y).ledger'
 alias s='$EDITOR ~/Projects/sync/notes/tasks.md'
 alias scd='cd ~/Projects/sync'
 alias gen-packagejson='cp "$HOME/.config/npm/package.json" "package.json"'
