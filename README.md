@@ -19,6 +19,7 @@
   - [`colorizer`](https://github.com/norcalli/nvim-colorizer.lua) - High-performance color highlighter
   - [`compe`](https://github.com/hrsh7th/nvim-compe/) - Auto completion support
   - [`editorconfig`](https://github.com/editorconfig/editorconfig-vim) - EditorConfig support
+  - [`filetype`](https://github.com/nathom/filetype.nvim) - A faster version of filetype.vim
   - [`formatter`](https://github.com/mhartington/formatter.nvim) - Format runner
   - [`fugitive`](https://github.com/tpope/vim-fugitive) - Git client
   - [`fzf`](https://github.com/junegunn/fzf.vim) - Fuzzy finder fzf as plugin
