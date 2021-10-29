@@ -3,10 +3,10 @@ local cmd = vim.cmd
 local env = vim.env
 
 -- Colorscheme
+opt.termguicolors = true -- Enables 24-bit RGB color support.
 cmd('colorscheme material')
 
 -- Global Options
-opt.termguicolors = true -- Enables 24-bit RGB color support.
 opt.mouse = table.concat({ -- Enable mouse support for normal and visual modes.
   'n', -- Normal mode
   'v', -- Visual mode
