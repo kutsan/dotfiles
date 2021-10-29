@@ -62,18 +62,8 @@ g.nvim_tree_bindings = {
   { key = ']c', cb = tree_cmd('next_git_item') },
 }
 
-map(
-  'n',
-  '<Space>f',
-  '<Cmd>NvimTreeToggle<CR>',
-  { noremap = true, silent = true }
-)
-map(
-  'n',
-  '<Space>F',
-  '<Cmd>NvimTreeFindFile<CR>z.',
-  { noremap = true, silent = true }
-)
+map('n', '<Space>f', '<Cmd>NvimTreeToggle<CR>', { silent = true })
+map('n', '<Space>F', '<Cmd>NvimTreeFindFile<CR>z.', { silent = true })
 
 api.nvim_command([[
   augroup nvimtreesettings

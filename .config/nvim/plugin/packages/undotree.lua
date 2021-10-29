@@ -54,5 +54,5 @@ map(
   'n',
   '<Space>u',
   '<Cmd>call undotree#UndotreeToggle()<CR>',
-  { noremap = true, silent = true }
+  { silent = true }
 )

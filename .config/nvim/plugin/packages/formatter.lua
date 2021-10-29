@@ -53,4 +53,4 @@ formatter.setup({
   },
 })
 
-map('n', '\\f', '<Cmd>silent FormatWrite<CR>', { noremap = true })
+map('n', '\\f', '<Cmd>silent FormatWrite<CR>')
