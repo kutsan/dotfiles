@@ -1,17 +1,16 @@
 local lspconfig = require('lspconfig')
-local buf_map = require('kutsan.utils').buf_map
+local buf_map = require('kutsan/utils').buf_map
 local cmd = vim.cmd
 local lsp = vim.lsp
 local fn = vim.fn
 local env = vim.env
 local split = vim.split
+local diagnostic = vim.diagnostic
 
-lsp.handlers['textDocument/publishDiagnostics'] = lsp.with(
-  lsp.diagnostic.on_publish_diagnostics,
-  {
-    virtual_text = false,
-  }
-)
+diagnostic.config({
+  update_in_insert = false,
+  virtual_text = false,
+})
 
 local signChar = '•' -- U+2022 BULLET
 fn.sign_define('DiagnosticSignError', { text = signChar })
@@ -25,11 +24,8 @@ fn.sign_define('LspDiagnosticsSignWarning', { text = signChar })
 fn.sign_define('LspDiagnosticsSignInformation', { text = signChar })
 fn.sign_define('LspDiagnosticsSignHint', { text = signChar })
 
-local function on_attach()
-  local opts = {
-    noremap = true,
-    silent = true,
-  }
+local function handle_attach()
+  local opts = { silent = true }
 
   cmd('autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()')
   cmd('autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()')
@@ -44,26 +40,26 @@ local function on_attach()
   buf_map(
     'n',
     'J',
-    '<Cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ show_header = false, width = 55 })<CR>',
+    '<Cmd>lua vim.diagnostic.open_float(0, { scope = "line", show_header = false, width = 55 })<CR>',
     opts
   )
   buf_map(
     'n',
     '[g',
-    '<Cmd>lua vim.lsp.diagnostic.goto_prev({ popup_opts = { width = 55 }})<CR>',
+    '<Cmd>lua vim.diagnostic.goto_prev({ float = { width = 55 }})<CR>',
     opts
   )
   buf_map(
     'n',
     ']g',
-    '<Cmd>lua vim.lsp.diagnostic.goto_next({ popup_opts = { width = 55 }})<CR>',
+    '<Cmd>lua vim.diagnostic.goto_next({ float = { width = 55 }})<CR>',
     opts
   )
   buf_map('n', '<C-f>', '<Cmd>lua vim.lsp.buf.document_symbol()<CR>', opts)
   buf_map('i', '<C-k>', '<Cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
 end
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
+local capabilities = lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities.textDocument.completion.completionItem.resolveSupport = {
   properties = {
@@ -73,13 +69,13 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
   },
 }
 
-lspconfig.tsserver.setup({ on_attach = on_attach })
-lspconfig.cssls.setup({ on_attach = on_attach, capabilities = capabilities })
-lspconfig.html.setup({ on_attach = on_attach })
+lspconfig.tsserver.setup({ on_attach = handle_attach })
+lspconfig.cssls.setup({ on_attach = handle_attach, capabilities = capabilities })
+lspconfig.html.setup({ on_attach = handle_attach })
 lspconfig.jsonls.setup({})
 
 lspconfig.sumneko_lua.setup({
-  on_attach = on_attach,
+  on_attach = handle_attach,
   cmd = {
     string.format(
       '%s/.local/lib/lua-language-server/bin/%s/lua-language-server',
@@ -110,7 +106,7 @@ lspconfig.sumneko_lua.setup({
 })
 
 lspconfig.diagnosticls.setup({
-  on_attach = on_attach,
+  on_attach = handle_attach,
   filetypes = {
     'javascript',
     'javascriptreact',
