@@ -1,4 +1,4 @@
-local map = require('kutsan.utils').map
+local map = require('kutsan/utils').map
 local compe = require('compe')
 
 compe.setup({

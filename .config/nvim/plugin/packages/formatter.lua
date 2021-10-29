@@ -1,5 +1,5 @@
 local formatter = require('formatter')
-local map = require('kutsan.utils').map
+local map = require('kutsan/utils').map
 local api = vim.api
 
 local function prettier()

@@ -1,5 +1,5 @@
-local tree_cmd = require('nvim-tree.config').nvim_tree_callback
-local map = require('kutsan.utils').map
+local tree_cmd = require('nvim-tree/config').nvim_tree_callback
+local map = require('kutsan/utils').map
 local api = vim.api
 local g = vim.g
 

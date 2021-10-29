@@ -1,4 +1,4 @@
-local map = require('kutsan.utils').map
+local map = require('kutsan/utils').map
 
 -- Define mappings.
 map('n', '<Space>gs', '<Cmd>Git<CR>', { silent = true })

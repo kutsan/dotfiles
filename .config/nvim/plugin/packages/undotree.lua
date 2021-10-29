@@ -1,4 +1,4 @@
-local map = require('kutsan.utils').map
+local map = require('kutsan/utils').map
 local cmd = vim.cmd
 local g = vim.g
 
