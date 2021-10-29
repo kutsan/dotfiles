@@ -45,12 +45,13 @@ g.nvim_tree_special_files = {}
 -- Set key bindings.
 g.nvim_tree_bindings = {
   { key = 'l', cb = tree_cmd('edit') },
+  { key = 'h', cb = tree_cmd('close_node') },
+  { key = 'H', cb = tree_cmd('dir_up') },
+  { key = 'L', cb = tree_cmd('cd') },
   { key = '<C-s>', cb = tree_cmd('split') },
   { key = '<C-v>', cb = tree_cmd('vsplit') },
   { key = '<C-t>', cb = tree_cmd('tabnew') },
   { key = '<C-r>', cb = tree_cmd('refresh') },
-  { key = 'h', cb = tree_cmd('close_node') },
-  { key = 'L', cb = tree_cmd('cd') },
   { key = 'i', cb = tree_cmd('preview') },
   { key = 'c', cb = tree_cmd('create') },
   { key = 'D', cb = tree_cmd('remove') },
