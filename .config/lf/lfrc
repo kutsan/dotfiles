@@ -46,7 +46,7 @@ map ud clear
 map uy clear
 map u<space> unselect
 map Dy trash
-map R $vidir
+map R reload
 map i $~/.config/lf/previewer.zsh "$f" | less
 map o push :$<space>"$f"<home><right>
 map cf push :%touch<space>''<left>
