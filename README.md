@@ -17,7 +17,6 @@
   - [`bufdelete`](https://github.com/famiu/bufdelete.nvim) - Delete buffers without losing window layout
   - [`bufferline`](https://github.com/akinsho/nvim-bufferline.lua) - Bufferline
   - [`colorizer`](https://github.com/norcalli/nvim-colorizer.lua) - High-performance color highlighter
-  - [`compe`](https://github.com/hrsh7th/nvim-compe/) - Auto completion support
   - [`diffview`](https://github.com/sindrets/diffview.nvim) - Single tabpage interface for all modified files in git
   - [`editorconfig`](https://github.com/editorconfig/editorconfig-vim) - EditorConfig support
   - [`filetype`](https://github.com/nathom/filetype.nvim) - A faster version of filetype.vim
