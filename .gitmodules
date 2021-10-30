@@ -44,6 +44,9 @@
 [submodule "fzf-vim"]
   path = .config/nvim/pack/bundle/start/fzf-vim
   url = https://github.com/junegunn/fzf.vim
+[submodule "gitsigns"]
+  path = .config/nvim/pack/bundle/start/gitsigns
+  url = https://github.com/lewis6991/gitsigns.nvim
 [submodule "indent-blankline"]
   path = .config/nvim/pack/bundle/start/indent-blankline
   url = https://github.com/lukas-reineke/indent-blankline.nvim
@@ -59,6 +62,9 @@
 [submodule "pears"]
   path = .config/nvim/pack/bundle/start/pears
   url = https://github.com/steelsojka/pears.nvim
+[submodule "plenary"]
+  path = .config/nvim/pack/bundle/start/plenary
+  url = https://github.com/nvim-lua/plenary.nvim
 [submodule "polyglot"]
   path = .config/nvim/pack/bundle/start/polyglot
   url = https://github.com/sheerun/vim-polyglot
