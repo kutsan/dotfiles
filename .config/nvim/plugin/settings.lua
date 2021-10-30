@@ -1,9 +1,11 @@
 local opt = vim.opt
 local cmd = vim.cmd
 local env = vim.env
+local g = vim.g
 
 -- Color scheme
 opt.termguicolors = true -- Enables 24-bit RGB color support.
+g.material_style = 'deep ocean'
 cmd('colorscheme material')
 
 -- Global Options
@@ -48,6 +50,7 @@ opt.diffopt = { -- Option settings for diff mode.
   'algorithm:histogram', -- Use the specified diff algorithm.
 }
 opt.completeopt = { -- Options for insert mode completion.
+  'menu', -- Use the pop-up menu.
   'menuone', -- Use the pop-up menu also when there is only one match.
   'noselect', -- Do not select a match in the menu.
 }

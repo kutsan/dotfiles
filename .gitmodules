@@ -53,6 +53,9 @@
 [submodule "lspconfig"]
   path = .config/nvim/pack/bundle/start/lspconfig
   url = https://github.com/neovim/nvim-lspconfig
+[submodule "material"]
+  path = .config/nvim/pack/bundle/start/material
+  url = https://github.com/marko-cerovac/material.nvim
 [submodule "nvim-tree"]
   path = .config/nvim/pack/bundle/start/nvim-tree
   url = https://github.com/kyazdani42/nvim-tree.lua
