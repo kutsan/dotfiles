@@ -2,7 +2,7 @@ local opt = vim.opt
 local cmd = vim.cmd
 local env = vim.env
 
--- Colorscheme
+-- Color scheme
 opt.termguicolors = true -- Enables 24-bit RGB color support.
 cmd('colorscheme material')
 
@@ -15,7 +15,7 @@ opt.joinspaces = false -- Disable inserting two spaces after `.`, `?`, `!` with 
 opt.startofline = true -- Move cursor to the start of each line when jumping with certain commands.
 opt.report = 1000 -- Threshold for reporting number of lines changed.
 opt.scrolloff = 5 -- Minimum number of screen lines to keep above and below the cursor.
-opt.laststatus = 0 -- Disable statusline.
+opt.laststatus = 0 -- Disable status line.
 opt.shortmess =
   table.concat({ -- Use abbreviations and short messages in command menu line.
     'f', -- Use "(3 of 5)" instead of "(file 3 of 5)".
@@ -48,12 +48,12 @@ opt.diffopt = { -- Option settings for diff mode.
   'algorithm:histogram', -- Use the specified diff algorithm.
 }
 opt.completeopt = { -- Options for insert mode completion.
-  'menuone', -- Use the popup menu also when there is only one match.
+  'menuone', -- Use the pop-up menu also when there is only one match.
   'noselect', -- Do not select a match in the menu.
 }
 opt.fillchars = { -- Characters to be used in various user-interface elements.
-  stl = ' ', -- Statusline of the current window.
-  stlnc = ' ', -- Statusline of the non-current windows.
+  stl = ' ', -- Status line of the current window.
+  stlnc = ' ', -- Status line of the non-current windows.
   vert = ' ', -- Vertical separator to be used with :vsplit.
   fold = ' ', -- Character to be used with 'foldtext'.
   diff = '╱', -- Deleted lines of the 'diff' option.
