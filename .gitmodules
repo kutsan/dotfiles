@@ -65,9 +65,6 @@
 [submodule "sandwich"]
   path = .config/nvim/pack/bundle/start/sandwich
   url = https://github.com/machakann/vim-sandwich
-[submodule "signify"]
-  path = .config/nvim/pack/bundle/start/signify
-  url = https://github.com/mhinz/vim-signify
 [submodule "undotree"]
   path = .config/nvim/pack/bundle/opt/undotree
   url = https://github.com/mbbill/undotree
