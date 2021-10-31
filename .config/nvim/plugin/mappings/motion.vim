@@ -1,6 +1,6 @@
 " [a]n [e]ntire buffer motions.
-onoremap <silent> ae :<C-u>call kutsan#mappings#motion#entire#()<CR>
-xnoremap <silent> ae :<C-u>call kutsan#mappings#motion#entire#()<CR>
+onoremap <silent> ae <Cmd>lua require('kutsan/mappings/motion/entire').select_entire_buffer()<CR>
+xnoremap <silent> ae <Cmd>lua require('kutsan/mappings/motion/entire').select_entire_buffer()<CR>
 
 " [i]nner line motion.
 onoremap <silent> i_ :<C-u>normal! ^vg_<CR>
