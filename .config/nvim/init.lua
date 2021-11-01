@@ -1,11 +1,4 @@
 local g = vim.g
-local cmd = vim.cmd
-
--- Enable loading {ftdetect,ftplugin,indent}/*.vim files.
-cmd('filetype plugin indent on')
-
--- Enable loading syntax/*.vim files.
-g.syntax_on = true
 
 -- Disable unused built-in plugins.
 g.loaded_gzip = true
