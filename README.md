@@ -13,7 +13,6 @@
   - [`fast-syntax-highlighting`](https://github.com/kutsan/fast-syntax-highlighting) - Fish-like syntax highlighting support for interactive terminal
   - [`autosuggestions`](https://github.com/zsh-users/zsh-autosuggestions) - Fish-like auto-suggestions for interactive terminal based on command history
 - [`neovim`](https://github.com/neovim/neovim) - The fork of ubiquitous text editor focused on extensibility and usability
-  - [`material`](https://github.com/kaicataldo/material.vim) - Color scheme
   - [`bufdelete`](https://github.com/famiu/bufdelete.nvim) - Delete buffers without losing window layout
   - [`bufferline`](https://github.com/akinsho/nvim-bufferline.lua) - Bufferline
   - [`colorizer`](https://github.com/norcalli/nvim-colorizer.lua) - High-performance color highlighter
@@ -23,6 +22,7 @@
   - [`formatter`](https://github.com/mhartington/formatter.nvim) - Format runner
   - [`fugitive`](https://github.com/tpope/vim-fugitive) - Git client
   - [`fzf`](https://github.com/junegunn/fzf.vim) - Fuzzy finder fzf as plugin
+  - [`gitsigns`](https://github.com/lewis6991/gitsigns.nvim) - Asynchronous git diff in sign column
   - [`indent-blankline`](https://github.com/lukas-reineke/indent-blankline.nvim) - Display the indention levels with thin vertical lines
   - [`lspconfig`](https://github.com/neovim/nvim-lspconfig) - Quickstart configurations for the neovim LSP client
     - [`diagnostic-language-server`](https://github.com/iamcco/diagnostic-languageserver) - General purpose language server that integrate with linters
@@ -31,12 +31,14 @@
     - [`html-language-server`](https://github.com/vscode-langservers/vscode-html-languageserver-bin) - HTML Language Server
     - [`json-language-server`](https://github.com/vscode-langservers/vscode-json-languageserver) - JSON Language Server
     - [`lua-language-server`](https://github.com/sumneko/lua-language-server) - Lua Language Server
+  - [`luasnip`](https://github.com/L3MON4D3/LuaSnip) - High-performance snippet engine
+  - [`material`](https://github.com/marko-cerovac/material.nvim) - Color scheme
   - [`nvim-tree`](https://github.com/kyazdani42/nvim-tree.lua) - File explorer
   - [`nvim-web-devicons`](https://github.com/kyazdani42/nvim-web-devicons) - Nerd Font icon API support
   - [`pears`](https://github.com/steelsojka/pears.nvim) - Auto pair plugin
+  - [`plenary`](https://github.com/nvim-lua/plenary.nvim) - Asynchronous modules using coroutines
   - [`polyglot`](https://github.com/sheerun/vim-polyglot) - Big collection of language packs as scripts are loaded only on demand
   - [`sandwich`](https://github.com/machakann/vim-sandwich) - The set of operator and text object plugins to search, select, edit sandwiched text objects
-  - [`signify`](https://github.com/mhinz/vim-signify) - Show Git diff in the sign column
   - [`undotree`](https://github.com/mbbill/undotree) - Visualize undo tree
 - [`git`](https://git-scm.com) - Version control system for tracking changes in files and coordinating the work
 - [`nodejs`](https://nodejs.org) - JavaScript runtime environment for developing a diverse variety of applications
