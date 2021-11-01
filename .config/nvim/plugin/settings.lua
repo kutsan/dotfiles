@@ -13,7 +13,6 @@ opt.mouse = table.concat({ -- Enable mouse support for normal and visual modes.
   'n', -- Normal mode
   'v', -- Visual mode
 })
-opt.joinspaces = false -- Disable inserting two spaces after `.`, `?`, `!` with join command.
 opt.startofline = true -- Move cursor to the start of each line when jumping with certain commands.
 opt.report = 1000 -- Threshold for reporting number of lines changed.
 opt.scrolloff = 5 -- Minimum number of screen lines to keep above and below the cursor.
@@ -94,7 +93,6 @@ opt.grepformat = '%f:%l:%c:%m,%f:%l:%m' -- Format to recognize for the :grep com
 opt.ignorecase = true -- Ignore case in search patterns.
 opt.smartcase = true -- Set 'noignorecase' if search pattern contains an uppercase letter.
 opt.undolevels = 100000 -- Maximum number of changes that can be undone.
-opt.hidden = true -- Buffers becomes hidden when they are abandoned.
 opt.splitbelow = true -- Splitting a window will put the new window below of the current one.
 opt.splitright = true -- Splitting a window will put the new window right of the current one.
 opt.switchbuf = 'useopen' -- Jump to the first open window that contains the specified buffer.
