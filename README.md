@@ -35,7 +35,6 @@
   - [`material`](https://github.com/marko-cerovac/material.nvim) - Color scheme
   - [`nvim-tree`](https://github.com/kyazdani42/nvim-tree.lua) - File explorer
   - [`nvim-web-devicons`](https://github.com/kyazdani42/nvim-web-devicons) - Nerd Font icon API support
-  - [`pears`](https://github.com/steelsojka/pears.nvim) - Auto pair plugin
   - [`plenary`](https://github.com/nvim-lua/plenary.nvim) - Asynchronous modules using coroutines
   - [`polyglot`](https://github.com/sheerun/vim-polyglot) - Big collection of language packs as scripts are loaded only on demand
   - [`sandwich`](https://github.com/machakann/vim-sandwich) - The set of operator and text object plugins to search, select, edit sandwiched text objects

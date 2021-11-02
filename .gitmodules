@@ -65,9 +65,6 @@
 [submodule "nvim-web-devicons"]
   path = .config/nvim/pack/bundle/start/nvim-web-devicons
   url = https://github.com/kyazdani42/nvim-web-devicons
-[submodule "pears"]
-  path = .config/nvim/pack/bundle/start/pears
-  url = https://github.com/steelsojka/pears.nvim
 [submodule "plenary"]
   path = .config/nvim/pack/bundle/start/plenary
   url = https://github.com/nvim-lua/plenary.nvim
