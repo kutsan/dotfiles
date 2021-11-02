@@ -13,6 +13,7 @@
   - [`fast-syntax-highlighting`](https://github.com/kutsan/fast-syntax-highlighting) - Fish-like syntax highlighting support for interactive terminal
   - [`autosuggestions`](https://github.com/zsh-users/zsh-autosuggestions) - Fish-like auto-suggestions for interactive terminal based on command history
 - [`neovim`](https://github.com/neovim/neovim) - The fork of ubiquitous text editor focused on extensibility and usability
+  - [`autopairs`](https://github.com/windwp/nvim-autopairs) - Auto pair plugin
   - [`bufdelete`](https://github.com/famiu/bufdelete.nvim) - Delete buffers without losing window layout
   - [`bufferline`](https://github.com/akinsho/nvim-bufferline.lua) - Bufferline
   - [`colorizer`](https://github.com/norcalli/nvim-colorizer.lua) - High-performance color highlighter

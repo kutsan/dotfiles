@@ -14,6 +14,9 @@
   path = .config/zsh/plugins/fast-syntax-highlighting
   url = https://github.com/kutsan/fast-syntax-highlighting
 
+[submodule "autopairs"]
+  path = .config/nvim/pack/bundle/start/autopairs
+  url = https://github.com/windwp/nvim-autopairs
 [submodule "bufdelete"]
   path = .config/nvim/pack/bundle/start/bufdelete
   url = https://github.com/famiu/bufdelete.nvim
