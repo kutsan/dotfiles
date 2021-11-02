@@ -41,12 +41,6 @@
 [submodule "fugitive"]
   path = .config/nvim/pack/bundle/start/fugitive
   url = https://github.com/tpope/vim-fugitive
-[submodule "fzf-core"]
-  path = .config/nvim/pack/bundle/start/fzf-core
-  url = https://github.com/junegunn/fzf
-[submodule "fzf-vim"]
-  path = .config/nvim/pack/bundle/start/fzf-vim
-  url = https://github.com/junegunn/fzf.vim
 [submodule "gitsigns"]
   path = .config/nvim/pack/bundle/start/gitsigns
   url = https://github.com/lewis6991/gitsigns.nvim
