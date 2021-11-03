@@ -14,7 +14,7 @@ diffview.setup({
 })
 
 map('n', '<Space>gvo', '<Cmd>DiffviewOpen<CR>', { silent = true })
-map('n', '<Space>gvh', '<Cmd>DiffviewFileHistory<CR>', { silent = true })
+map('n', '<Space>gvl', '<Cmd>DiffviewFileHistory<CR>', { silent = true })
 
 -- TODO: Add generic tab mappings and replace this with :tabclose.
 map('n', '<Space>gvq', '<Cmd>DiffviewClose<CR>', { silent = true })
