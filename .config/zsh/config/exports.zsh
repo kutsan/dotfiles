@@ -100,8 +100,8 @@ export FZF_DEFAULT_OPTS="\
   --layout='reverse' \
   --info='inline' \
   --no-bold \
-  --jump-labels='asdfghjkl;' \
-  --bind='ctrl-f:jump-accept'"
+  --bind='ctrl-f:half-page-down' \
+  --bind='ctrl-b:half-page-up'"
 
 # transmission
 export TR_AUTH='kutsan:EkYBoNSd6oIUznucRTfQTFCcxC5WeeDaBImPt6I9CncuY9g8mH'
