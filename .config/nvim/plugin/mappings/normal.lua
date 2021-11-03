@@ -30,10 +30,6 @@ map('n', 'c#', "?\\<<C-r>=expand('<cword>')<CR>\\>\\C<CR>``cgN")
 map('n', '<C-e>', '3<C-e>')
 map('n', '<C-y>', '3<C-y>')
 
--- Construct grep search.
-map('n', 'gs', ':Grep<Space>')
-map('n', 'gS', ':Grep!<Space>')
-
 -- Resize current window sizes.
 map('n', '<S-Up>', '2<C-w>+')
 map('n', '<S-Down>', '2<C-w>-')
