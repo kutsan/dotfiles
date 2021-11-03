@@ -44,6 +44,7 @@ g.nvim_tree_special_files = {}
 
 local nvim_tree = require('nvim-tree')
 nvim_tree.setup({
+  update_cwd = true,
   view = {
     auto_resize = true,
     mappings = {
