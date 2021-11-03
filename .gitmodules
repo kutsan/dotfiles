@@ -41,6 +41,9 @@
 [submodule "fugitive"]
   path = .config/nvim/pack/bundle/start/fugitive
   url = https://github.com/tpope/vim-fugitive
+[submodule "fzf-lua"]
+  path = .config/nvim/pack/bundle/start/fzf-lua
+  url = https://github.com/ibhagwan/fzf-lua
 [submodule "gitsigns"]
   path = .config/nvim/pack/bundle/start/gitsigns
   url = https://github.com/lewis6991/gitsigns.nvim
@@ -56,6 +59,9 @@
 [submodule "material"]
   path = .config/nvim/pack/bundle/start/material
   url = https://github.com/marko-cerovac/material.nvim
+[submodule "nvim-fzf"]
+  path = .config/nvim/pack/bundle/start/nvim-fzf
+  url = https://github.com/vijaymarupudi/nvim-fzf
 [submodule "nvim-tree"]
   path = .config/nvim/pack/bundle/start/nvim-tree
   url = https://github.com/kyazdani42/nvim-tree.lua

@@ -22,7 +22,7 @@
   - [`filetype`](https://github.com/nathom/filetype.nvim) - A faster version of filetype.vim
   - [`formatter`](https://github.com/mhartington/formatter.nvim) - Format runner
   - [`fugitive`](https://github.com/tpope/vim-fugitive) - Git client
-  - [`fzf`](https://github.com/junegunn/fzf.vim) - Fuzzy finder fzf as plugin
+  - [`fzf-lua`](https://github.com/ibhagwan/fzf-lua) - Lua implementation of fuzzy finder fzf plugin
   - [`gitsigns`](https://github.com/lewis6991/gitsigns.nvim) - Asynchronous git diff in sign column
   - [`indent-blankline`](https://github.com/lukas-reineke/indent-blankline.nvim) - Display the indention levels with thin vertical lines
   - [`lspconfig`](https://github.com/neovim/nvim-lspconfig) - Quickstart configurations for the neovim LSP client
@@ -34,6 +34,7 @@
     - [`lua-language-server`](https://github.com/sumneko/lua-language-server) - Lua Language Server
   - [`luasnip`](https://github.com/L3MON4D3/LuaSnip) - High-performance snippet engine
   - [`material`](https://github.com/marko-cerovac/material.nvim) - Color scheme
+  - [`nvim-fzf`](https://github.com/vijaymarupudi/nvim-fzf) - Asynchronous Lua API for using fzf
   - [`nvim-tree`](https://github.com/kyazdani42/nvim-tree.lua) - File explorer
   - [`nvim-web-devicons`](https://github.com/kyazdani42/nvim-web-devicons) - Nerd Font icon API support
   - [`plenary`](https://github.com/nvim-lua/plenary.nvim) - Asynchronous modules using coroutines
