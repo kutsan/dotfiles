@@ -4,11 +4,8 @@ local api = vim.api
 
 local function prettier()
   return {
-    exe = 'node_modules/.bin/prettier',
-    args = {
-      '--stdin-filepath',
-      api.nvim_buf_get_name(0),
-    },
+    exe = 'prettierd',
+    args = { vim.api.nvim_buf_get_name(0) },
     stdin = true,
   }
 end
@@ -53,4 +50,4 @@ formatter.setup({
   },
 })
 
-map('n', '\\f', '<Cmd>silent FormatWrite<CR>')
+map('n', '\\f', '<Cmd>silent Format<CR>')
