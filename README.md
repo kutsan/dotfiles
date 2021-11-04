@@ -42,14 +42,12 @@
   - [`sandwich`](https://github.com/machakann/vim-sandwich) - The set of operator and text object plugins to search, select, edit sandwiched text objects
   - [`undotree`](https://github.com/mbbill/undotree) - Visualize undo tree
 - [`git`](https://git-scm.com) - Version control system for tracking changes in files and coordinating the work
-- [`nodejs`](https://nodejs.org) - JavaScript runtime environment for developing a diverse variety of applications
+- [`node`](https://nodejs.org) - JavaScript runtime environment for developing a diverse variety of applications
   - [`npm`](https://www.npmjs.com) - Node Package Manager mainly for the JavaScript programming language
     - [`fx`](https://github.com/antonmedv/fx) - TUI JSON viewer
     - [`bitwarden`](https://github.com/bitwarden/cli) - Password manager
     - [`eslint_d`](https://github.com/mantoni/eslint_d.js) - Run ESLint as a daemon
-- [`python`](https://www.python.org) - High-level programming language for general-purpose programming
-  - [`pip`](https://pypi.org) - Python package manager to install and manage packages written in Python
-    - [`trash-cli`](https://github.com/andreafrancia/trash-cli) - Move files and folders to the trash
+    - [`prettierd`](https://github.com/fsouza/prettierd) - Run Prettier as a daemon
 - [`lua@5.1`](https://www.lua.org) - Lightweight, embeddable scripting language
   - [`luarocks`](https://luarocks.org) - Package manager for Lua modules
     - [`luacheck`](https://github.com/mpeterv/luacheck) - Linting and static analysis of Lua code
@@ -68,8 +66,8 @@
 - [`nmap`](https://github.com/nmap/nmap) - Network security scanner and mapper for exploration and security auditing
 - [`openssl`](https://github.com/openssl/openssl) - Toolkit for the Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols
 - [`openssh`](https://www.openssh.com) - Connectivity tool for remote login with the SSH protocol
-- [`rsync`](https://rsync.samba.org) - Utility that provides fast incremental file transfer
 - [`fzf`](https://github.com/junegunn/fzf) - General-purpose fuzzy finder that can be used among other Unix tools
+- [`ripgrep`](https://github.com/BurntSushi/ripgrep) - Search tool that recursively searches the current directory for a regex pattern
 - [`htop`](https://github.com/hishamhm/htop) - Interactive text-based system monitor, process viewer and process manager
 - [`ffmpeg`](https://github.com/FFmpeg/FFmpeg) - Cross-platform solution to handle, record, convert and stream audio and video
 - [`lf`](https://github.com/gokcehan/lf) - Terminal file manager with vim-like key bindings
@@ -82,6 +80,7 @@
 - [`ledger`](https://github.com/ledger/ledger) - Double-entry accounting system with a command-line reporting interface
 - [`oath-toolkit`](https://www.nongnu.org/oath-toolkit) - Provides components for building one-time password authentication systems
 - [`gptfdisk`](https://www.rodsbooks.com/gdisk) - Interactive GUID partition table (GPT) manipulator
+- [`trash-cli`](https://github.com/andreafrancia/trash-cli) - Move files and folders to the trash
 
 ## License
 
