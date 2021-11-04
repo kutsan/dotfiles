@@ -122,7 +122,6 @@ export LESS="\
   --jump-target=10 \
   --RAW-CONTROL-CHARS \
   --clear-screen \
-  --silent \
   --tabs=4 \
   --shift=5"
 export LESSHISTFILE='-' # Disable history.
