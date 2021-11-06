@@ -26,6 +26,14 @@ map('n', '<C-n>', '<C-^>')
 map('n', 'c*', "/\\<<C-r>=expand('<cword>')<CR>\\>\\C<CR>``cgn")
 map('n', 'c#', "?\\<<C-r>=expand('<cword>')<CR>\\>\\C<CR>``cgN")
 
+-- Refactor symbol under cursor with LSP.
+map(
+  'n',
+  '<Space>c*',
+  "<Cmd>lua require('kutsan/mappings/normal/rename').rename()<CR>",
+  { silent = true }
+)
+
 -- Scroll viewport faster.
 map('n', '<C-e>', '3<C-e>')
 map('n', '<C-y>', '3<C-y>')
