@@ -17,6 +17,11 @@ opt.startofline = true -- Move cursor to the start of each line when jumping wit
 opt.report = 1000 -- Threshold for reporting number of lines changed.
 opt.scrolloff = 5 -- Minimum number of screen lines to keep above and below the cursor.
 opt.laststatus = 0 -- Disable status line.
+opt.statusline = table.concat({ -- Set status line.
+  '    ', -- Add margin to left.
+  '%<', -- Truncate lines to left if they are too long.
+  '%t', -- File name for current buffer.
+})
 opt.shortmess =
   table.concat({ -- Use abbreviations and short messages in command menu line.
     'f', -- Use "(3 of 5)" instead of "(file 3 of 5)".
