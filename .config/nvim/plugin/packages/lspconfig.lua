@@ -35,7 +35,6 @@ local function handle_attach()
   buf_map('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
   buf_map('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
   buf_map('n', 'gr', '<Cmd>lua vim.lsp.buf.references()<CR>', opts)
-  buf_map('n', '<Space>c*', '<Cmd>lua vim.lsp.buf.rename()<CR>', opts)
   buf_map('n', 'gi', '<Cmd>lua vim.lsp.buf.implementation()<CR>', opts)
   buf_map('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
   buf_map(
@@ -56,7 +55,6 @@ local function handle_attach()
     '<Cmd>lua vim.diagnostic.goto_next({ float = { width = 55 }})<CR>',
     opts
   )
-  buf_map('n', '<C-f>', '<Cmd>lua vim.lsp.buf.document_symbol()<CR>', opts)
   buf_map('i', '<C-k>', '<Cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
 end
 
