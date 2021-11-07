@@ -16,6 +16,11 @@
   - [`autopairs`](https://github.com/windwp/nvim-autopairs) - Auto pair plugin
   - [`bufdelete`](https://github.com/famiu/bufdelete.nvim) - Delete buffers without losing window layout
   - [`bufferline`](https://github.com/akinsho/nvim-bufferline.lua) - Bufferline
+  - [`cmp`](https://github.com/hrsh7th/nvim-cmp) - Auto completion support
+    - [`cmp-buffer`](https://github.com/hrsh7th/cmp-buffer) - cmp source for buffer words
+    - [`cmp-lsp`](https://github.com/hrsh7th/cmp-nvim-lsp) - cmp source for LSP clent
+    - [`cmp-luasnip`](https://github.com/saadparwaiz1/cmp_luasnip) - cmp source for luasnip snippets
+    - [`cmp-path`](https://github.com/hrsh7th/cmp-path) - cmp source for filesystem paths
   - [`colorizer`](https://github.com/norcalli/nvim-colorizer.lua) - High-performance color highlighter
   - [`diffview`](https://github.com/sindrets/diffview.nvim) - Single tabpage interface for all modified files in git
   - [`editorconfig`](https://github.com/editorconfig/editorconfig-vim) - EditorConfig support

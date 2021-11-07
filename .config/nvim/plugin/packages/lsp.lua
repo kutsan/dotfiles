@@ -1,7 +1,8 @@
 local lspconfig = require('lspconfig')
 local buf_map = require('kutsan/utils').buf_map
+local cmp_capabilities =
+  require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 local cmd = vim.cmd
-local lsp = vim.lsp
 local fn = vim.fn
 local env = vim.env
 local split = vim.split
@@ -59,20 +60,21 @@ local function handle_attach()
   buf_map('i', '<C-k>', '<Cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
 end
 
-local capabilities = lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-capabilities.textDocument.completion.completionItem.resolveSupport = {
-  properties = {
-    'documentation',
-    'detail',
-    'additionalTextEdits',
-  },
-}
-
-lspconfig.tsserver.setup({ on_attach = handle_attach })
-lspconfig.cssls.setup({ on_attach = handle_attach, capabilities = capabilities })
-lspconfig.html.setup({ on_attach = handle_attach })
-lspconfig.jsonls.setup({})
+lspconfig.tsserver.setup({
+  on_attach = handle_attach,
+  capabilities = cmp_capabilities,
+})
+lspconfig.cssls.setup({
+  on_attach = handle_attach,
+  capabilities = cmp_capabilities,
+})
+lspconfig.html.setup({
+  on_attach = handle_attach,
+  capabilities = cmp_capabilities,
+})
+lspconfig.jsonls.setup({
+  capabilities = cmp_capabilities,
+})
 
 lspconfig.sumneko_lua.setup({
   on_attach = handle_attach,
