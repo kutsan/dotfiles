@@ -7,7 +7,6 @@ local function rename()
   local current_name = fn.expand('<cword>')
 
   local window = popup.create(current_name, {
-    title = 'New Name',
     style = 'minimal',
     borderchars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' },
     relative = 'cursor',
