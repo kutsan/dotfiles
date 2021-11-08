@@ -39,9 +39,6 @@ g.nvim_tree_git_hl = 1
 -- Enable indent markers.
 g.nvim_tree_indent_markers = 1
 
--- Disable special files.
-g.nvim_tree_special_files = {}
-
 local nvim_tree = require('nvim-tree')
 nvim_tree.setup({
   update_cwd = true,
