@@ -16,12 +16,8 @@ opt.mouse = table.concat({ -- Enable mouse support for normal and visual modes.
 opt.startofline = true -- Move cursor to the start of each line when jumping with certain commands.
 opt.report = 1000 -- Threshold for reporting number of lines changed.
 opt.scrolloff = 5 -- Minimum number of screen lines to keep above and below the cursor.
-opt.laststatus = 0 -- Disable status line.
-opt.statusline = table.concat({ -- Set status line.
-  '    ', -- Add margin to left.
-  '%<', -- Truncate lines to left if they are too long.
-  '%t', -- File name for current buffer.
-})
+opt.laststatus = 0 -- Disable status-line.
+opt.statusline = ' ' -- Disable built-in status-line string for splits.
 opt.shortmess =
   table.concat({ -- Use abbreviations and short messages in command menu line.
     'f', -- Use "(3 of 5)" instead of "(file 3 of 5)".
@@ -59,8 +55,8 @@ opt.completeopt = { -- Options for insert mode completion.
   'noselect', -- Do not select a match in the menu.
 }
 opt.fillchars = { -- Characters to be used in various user-interface elements.
-  stl = ' ', -- Status line of the current window.
-  stlnc = ' ', -- Status line of the non-current windows.
+  stl = ' ', -- Status-line of the current window.
+  stlnc = ' ', -- Status-line of the non-current windows.
   vert = ' ', -- Vertical separator to be used with :vsplit.
   fold = ' ', -- Character to be used with 'foldtext'.
   diff = '╱', -- Deleted lines of the 'diff' option.
