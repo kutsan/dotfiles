@@ -44,7 +44,24 @@ material.setup({
     -- NvimTree
     NvimTreeIndentMarker = { fg = colors.selection },
     NvimTreeNormal = { bg = colors.contrast },
-    NvimTreeFolderIcon = {},
+    NvimTreeFolderIcon = { fg = colors.fg },
+    NvimTreeGitDirty = { fg = colors.yellow },
+    NvimTreeGitStaged = { fg = colors.green },
+    NvimTreeGitMerge = { fg = colors.red },
+    NvimTreeGitRenamed = { fg = colors.orange },
+    NvimTreeGitNew = { fg = colors.pink },
+    NvimTreeGitDeleted = { fg = colors.red },
+
+    -- GitSigns
+    GitSignsAdd = { fg = colors.green },
+    GitSignsAddNr = { fg = colors.green },
+    GitSignsAddLn = { fg = colors.green },
+    GitSignsChange = { fg = colors.yellow },
+    GitSignsChangeNr = { fg = colors.yellow },
+    GitSignsChangeLn = { fg = colors.yellow },
+    GitSignsDelete = { fg = colors.red },
+    GitSignsDeleteNr = { fg = colors.red },
+    GitSignsDeleteLn = { fg = colors.red },
 
     -- CSS
     cssAttrComma = { fg = colors.fg },
