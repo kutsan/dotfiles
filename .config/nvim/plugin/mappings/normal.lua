@@ -30,7 +30,7 @@ map('n', 'c#', "?\\<<C-r>=expand('<cword>')<CR>\\>\\C<CR>``cgN")
 map(
   'n',
   '<Space>c*',
-  "<Cmd>lua require('kutsan/mappings/normal/rename').rename()<CR>",
+  "<Cmd>lua require('kutsan/mappings/normal/rename').open_rename_window()<CR>",
   { silent = true }
 )
 
