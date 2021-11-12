@@ -17,9 +17,6 @@
 [submodule "autopairs"]
   path = .config/nvim/pack/bundle/start/autopairs
   url = https://github.com/windwp/nvim-autopairs
-[submodule "bufdelete"]
-  path = .config/nvim/pack/bundle/start/bufdelete
-  url = https://github.com/famiu/bufdelete.nvim
 [submodule "bufferline"]
   path = .config/nvim/pack/bundle/start/bufferline
   url = https://github.com/akinsho/nvim-bufferline.lua
