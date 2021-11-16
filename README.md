@@ -72,7 +72,6 @@
 - [`openssl`](https://github.com/openssl/openssl) - Toolkit for the Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols
 - [`openssh`](https://www.openssh.com) - Connectivity tool for remote login with the SSH protocol
 - [`fzf`](https://github.com/junegunn/fzf) - General-purpose fuzzy finder that can be used among other Unix tools
-- [`ripgrep`](https://github.com/BurntSushi/ripgrep) - Search tool that recursively searches the current directory for a regex pattern
 - [`htop`](https://github.com/hishamhm/htop) - Interactive text-based system monitor, process viewer and process manager
 - [`ffmpeg`](https://github.com/FFmpeg/FFmpeg) - Cross-platform solution to handle, record, convert and stream audio and video
 - [`lf`](https://github.com/gokcehan/lf) - Terminal file manager with vim-like key bindings
