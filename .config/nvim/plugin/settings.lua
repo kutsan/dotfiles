@@ -95,7 +95,6 @@ opt.smartcase = true -- Set 'noignorecase' if search pattern contains an upperca
 opt.undolevels = 100000 -- Maximum number of changes that can be undone.
 opt.splitbelow = true -- Splitting a window will put the new window below of the current one.
 opt.splitright = true -- Splitting a window will put the new window right of the current one.
-opt.switchbuf = 'useopen' -- Jump to the first open window that contains the specified buffer.
 opt.showcmd = false -- Disable displaying key presses at the right bottom.
 opt.showmode = false -- Disable native mode indicator.
 
