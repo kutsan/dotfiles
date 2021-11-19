@@ -72,7 +72,6 @@ opt.listchars = { -- Strings to use when 'list' option set.
   precedes = '·', -- Character to show in the first visible column.
 }
 opt.pumheight = 10 -- Maximum number of items to show in the popup menu.
-opt.inccommand = 'split' -- Show live substitution results as you type.
 opt.shiftround = true -- Round indent to multiple of 'shiftwidth'.
 opt.foldlevelstart = 99 -- Start editing with all folds open.
 opt.foldopen = { -- Specifies for which type of commands folds will be opened.
