@@ -1,29 +1,36 @@
 local lspconfig = require('lspconfig')
 local buf_map = require('kutsan/utils').buf_map
-local cmp_capabilities =
-  require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local cmp_capabilities = require('cmp_nvim_lsp')
+
 local cmd = vim.cmd
 local fn = vim.fn
 local env = vim.env
 local split = vim.split
 local diagnostic = vim.diagnostic
+local lsp = vim.lsp
 
 diagnostic.config({
   update_in_insert = false,
   virtual_text = false,
 })
 
-local signChar = '•' -- U+2022 BULLET
-fn.sign_define('DiagnosticSignError', { text = signChar })
-fn.sign_define('DiagnosticSignWarn', { text = signChar })
-fn.sign_define('DiagnosticSignInfo', { text = signChar })
-fn.sign_define('DiagnosticSignHint', { text = signChar })
-
--- Deprecated signs.
-fn.sign_define('LspDiagnosticsSignError', { text = signChar })
-fn.sign_define('LspDiagnosticsSignWarning', { text = signChar })
-fn.sign_define('LspDiagnosticsSignInformation', { text = signChar })
-fn.sign_define('LspDiagnosticsSignHint', { text = signChar })
+local sign_char = '•' -- U+2022 BULLET
+fn.sign_define('DiagnosticSignError', {
+  text = sign_char,
+  texthl = 'DiagnosticSignError',
+})
+fn.sign_define('DiagnosticSignWarn', {
+  text = sign_char,
+  texthl = 'DiagnosticSignWarn',
+})
+fn.sign_define('DiagnosticSignInfo', {
+  text = sign_char,
+  texthl = 'DiagnosticSignInfo',
+})
+fn.sign_define('DiagnosticSignHint', {
+  text = sign_char,
+  texthl = 'DiagnosticSignHint',
+})
 
 local function handle_attach()
   local opts = { silent = true }
@@ -40,7 +47,7 @@ local function handle_attach()
   buf_map(
     'n',
     'J',
-    '<Cmd>lua vim.diagnostic.open_float(0, { scope = "line", show_header = false, width = 55 })<CR>',
+    '<Cmd>lua vim.diagnostic.open_float(0, { scope = "line", header = false, width = 55 })<CR>',
     opts
   )
   buf_map(
@@ -58,20 +65,23 @@ local function handle_attach()
   buf_map('i', '<C-k>', '<Cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
 end
 
+local capabilities =
+  cmp_capabilities.update_capabilities(lsp.protocol.make_client_capabilities())
+
 lspconfig.tsserver.setup({
   on_attach = handle_attach,
-  capabilities = cmp_capabilities,
+  capabilities = capabilities,
 })
 lspconfig.cssls.setup({
   on_attach = handle_attach,
-  capabilities = cmp_capabilities,
+  capabilities = capabilities,
 })
 lspconfig.html.setup({
   on_attach = handle_attach,
-  capabilities = cmp_capabilities,
+  capabilities = capabilities,
 })
 lspconfig.jsonls.setup({
-  capabilities = cmp_capabilities,
+  capabilities = capabilities,
 })
 
 lspconfig.sumneko_lua.setup({
