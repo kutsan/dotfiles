@@ -58,6 +58,20 @@ map(
   { silent = true }
 )
 
+-- Remove current buffer without losing window layout.
+map(
+  'n',
+  '\\q',
+  "<Cmd>lua require('kutsan/mappings/normal/bufremove').bufremove({ force = false })<CR>",
+  { silent = true }
+)
+map(
+  'n',
+  '\\Q',
+  "<Cmd>lua require('kutsan/mappings/normal/bufremove').bufremove({ force = true })<CR>",
+  { silent = true }
+)
+
 -- Add [count] blank lines above or below the cursor.
 map(
   'n',
