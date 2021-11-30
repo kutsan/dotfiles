@@ -42,6 +42,10 @@ g.nvim_tree_indent_markers = 1
 local nvim_tree = require('nvim-tree')
 nvim_tree.setup({
   update_cwd = true,
+  hijack_cursor = true,
+  git = {
+    ignore = false,
+  },
   view = {
     auto_resize = true,
     mappings = {
@@ -56,7 +60,7 @@ nvim_tree.setup({
         { key = 'i', cb = tree_cb('preview') },
         { key = 'R', cb = tree_cb('refresh') },
         { key = 'c', cb = tree_cb('create') },
-        { key = 'D', cb = tree_cb('remove') },
+        { key = 'D', cb = tree_cb('trash') },
         { key = 'r', cb = tree_cb('rename') },
         { key = 'd', cb = tree_cb('cut') },
         { key = 'y', cb = tree_cb('copy') },
