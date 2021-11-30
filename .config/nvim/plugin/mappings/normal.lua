@@ -97,11 +97,11 @@ map('n', ']l', '<Cmd>lbelow<CR>', { silent = true })
 map('n', '<M-p>', '<Cmd>bprevious<CR>', { silent = true })
 map('n', '<M-n>', '<Cmd>bnext<CR>', { silent = true })
 
--- QuickFix navigation mappings.
-map('n', '<Up>', '<Cmd>cprevious<CR>', { silent = true })
-map('n', '<Down>', '<Cmd>cnext<CR>', { silent = true })
-map('n', '<Left>', '<Cmd>cpfile<CR>', { silent = true })
-map('n', '<Right>', '<Cmd>cnfile<CR>', { silent = true })
+-- Quickfix navigation mappings.
+map('n', '<Up>', '<Cmd>cprevious<CR>zz', { silent = true })
+map('n', '<Down>', '<Cmd>cnext<CR>zz', { silent = true })
+map('n', '<Left>', '<Cmd>cpfile<CR>zz', { silent = true })
+map('n', '<Right>', '<Cmd>cnfile<CR>zz', { silent = true })
 
 -- Select last changed or yanked area.
 map('n', 'gV', "'`[' .. strpart(getregtype(), 0, 1) .. '`]'", { expr = true })
