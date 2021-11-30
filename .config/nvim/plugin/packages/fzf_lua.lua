@@ -62,17 +62,7 @@ fzf_lua.setup({
     prompt = 'Grep> ',
     input_prompt = 'Grep> ',
     git_icons = false,
-    rg_opts = table.concat({
-      '--vimgrep',
-      '--hidden',
-      '--no-ignore',
-      '--column',
-      '--line-number',
-      '--no-heading',
-      '--color=always',
-      '--smart-case',
-      "--glob '!{.git,node_modules}/*'",
-    }, ' '),
+    cmd = 'git grep --line-number --column -I --ignore-case'
   },
   args = {
     prompt = 'Args> ',
