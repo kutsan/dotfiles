@@ -25,7 +25,6 @@
   - [`diffview`](https://github.com/sindrets/diffview.nvim) - Single tabpage interface for all modified files in git
   - [`editorconfig`](https://github.com/editorconfig/editorconfig-vim) - EditorConfig support
   - [`filetype`](https://github.com/nathom/filetype.nvim) - A faster version of filetype.vim
-  - [`formatter`](https://github.com/mhartington/formatter.nvim) - Format runner
   - [`fugitive`](https://github.com/tpope/vim-fugitive) - Git client
   - [`fzf-lua`](https://github.com/ibhagwan/fzf-lua) - Lua implementation of fuzzy finder fzf plugin
   - [`gitsigns`](https://github.com/lewis6991/gitsigns.nvim) - Asynchronous git diff in sign column

@@ -47,9 +47,6 @@
 [submodule "filetype"]
   path = .config/nvim/pack/bundle/start/filetype
   url = https://github.com/nathom/filetype.nvim
-[submodule "formatter"]
-  path = .config/nvim/pack/bundle/start/formatter
-  url = https://github.com/mhartington/formatter.nvim
 [submodule "fugitive"]
   path = .config/nvim/pack/bundle/start/fugitive
   url = https://github.com/tpope/vim-fugitive
