@@ -3,7 +3,7 @@
   b = branch
   bl = !git --no-pager branch --verbose --all
   c = commit
-  co = checkout --no-guess
+  co = checkout
   d = diff --stat=100,100 --patch
   ds = diff --stat=100,100 --patch --staged
   dt = difftool
