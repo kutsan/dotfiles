@@ -32,44 +32,54 @@ fn.sign_define('DiagnosticSignHint', {
   texthl = 'DiagnosticSignHint',
 })
 
-local function handle_attach()
+local function handle_attach(client)
   local opts = { silent = true }
 
-  cmd('autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()')
-  cmd('autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()')
-  cmd('autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()')
+  if client.resolved_capabilities.document_highlight then
+    cmd('autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()')
+    cmd('autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()')
+    cmd('autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()')
+  end
 
   buf_map('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
   buf_map('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
   buf_map('n', 'gr', '<Cmd>lua vim.lsp.buf.references()<CR>', opts)
   buf_map('n', 'gi', '<Cmd>lua vim.lsp.buf.implementation()<CR>', opts)
   buf_map('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
+  buf_map('n', 'gx', '<Cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+  buf_map('n', '\\f', '<Cmd>lua vim.lsp.buf.formatting()<CR>', opts)
   buf_map(
     'n',
     'J',
-    '<Cmd>lua vim.diagnostic.open_float(0, { scope = "line", header = false, width = 55 })<CR>',
+    '<Cmd>lua vim.diagnostic.open_float(0, { source = "always", scope = "line", header = false, width = 55 })<CR>',
     opts
   )
   buf_map(
     'n',
     '[g',
-    '<Cmd>lua vim.diagnostic.goto_prev({ float = { width = 55 }})<CR>',
+    '<Cmd>lua vim.diagnostic.goto_prev({ float = { source = "always", width = 55 }})<CR>',
     opts
   )
   buf_map(
     'n',
     ']g',
-    '<Cmd>lua vim.diagnostic.goto_next({ float = { width = 55 }})<CR>',
+    '<Cmd>lua vim.diagnostic.goto_next({ float = { source = "always", width = 55 }})<CR>',
     opts
   )
   buf_map('i', '<C-k>', '<Cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
 end
 
-local capabilities =
-  cmp_capabilities.update_capabilities(lsp.protocol.make_client_capabilities())
+local capabilities = cmp_capabilities.update_capabilities(
+  lsp.protocol.make_client_capabilities()
+)
 
 lspconfig.tsserver.setup({
-  on_attach = handle_attach,
+  on_attach = function(client)
+    client.resolved_capabilities.document_formatting = false
+    client.resolved_capabilities.document_range_formatting = false
+
+    handle_attach(client)
+  end,
   capabilities = capabilities,
 })
 lspconfig.cssls.setup({
@@ -83,9 +93,9 @@ lspconfig.html.setup({
 lspconfig.jsonls.setup({
   capabilities = capabilities,
 })
-
 lspconfig.sumneko_lua.setup({
   on_attach = handle_attach,
+  capabilities = capabilities,
   cmd = {
     string.format(
       '%s/.local/lib/lua-language-server/bin/%s/lua-language-server',
