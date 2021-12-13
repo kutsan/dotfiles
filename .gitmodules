@@ -26,6 +26,9 @@
 [submodule "cmp-buffer"]
   path = .config/nvim/pack/bundle/start/cmp-buffer
   url = https://github.com/hrsh7th/cmp-buffer
+[submodule "cmp-calc"]
+  path = .config/nvim/pack/bundle/start/cmp-calc
+  url = https://github.com/hrsh7th/cmp-calc
 [submodule "cmp-lsp"]
   path = .config/nvim/pack/bundle/start/cmp-lsp
   url = https://github.com/hrsh7th/cmp-nvim-lsp
