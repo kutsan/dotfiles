@@ -44,9 +44,6 @@
 [submodule "diffview"]
   path = .config/nvim/pack/bundle/start/diffview
   url = https://github.com/sindrets/diffview.nvim
-[submodule "editorconfig"]
-  path = .config/nvim/pack/bundle/start/editorconfig
-  url = https://github.com/editorconfig/editorconfig-vim
 [submodule "filetype"]
   path = .config/nvim/pack/bundle/start/filetype
   url = https://github.com/nathom/filetype.nvim
