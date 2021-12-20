@@ -10,8 +10,8 @@ local diagnostic = vim.diagnostic
 local lsp = vim.lsp
 
 diagnostic.config({
-  update_in_insert = false,
   virtual_text = false,
+  severity_sort = true,
 })
 
 local sign_char = '•' -- U+2022 BULLET
