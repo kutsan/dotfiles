@@ -46,6 +46,7 @@
   - [`plenary`](https://github.com/nvim-lua/plenary.nvim) - Asynchronous modules using coroutines
   - [`polyglot`](https://github.com/sheerun/vim-polyglot) - Big collection of language packs as scripts are loaded only on demand
   - [`sandwich`](https://github.com/machakann/vim-sandwich) - The set of operator and text object plugins to search, select, edit sandwiched text objects
+  - [`schema-store`](https://github.com/b0o/SchemaStore.nvim) - Access to the SchemaStore catalog for JSON langauge server
   - [`undotree`](https://github.com/mbbill/undotree) - Visualize undo tree
 - [`git`](https://git-scm.com) - Version control system for tracking changes in files and coordinating the work
 - [`node`](https://nodejs.org) - JavaScript runtime environment for developing a diverse variety of applications

@@ -92,6 +92,17 @@ lspconfig.html.setup({
 })
 lspconfig.jsonls.setup({
   capabilities = capabilities,
+  on_attach = function(client)
+    client.resolved_capabilities.document_formatting = false
+    client.resolved_capabilities.document_range_formatting = false
+
+    handle_attach(client)
+  end,
+  settings = {
+    json = {
+      schemas = require('schemastore').json.schemas(),
+    },
+  },
 })
 lspconfig.sumneko_lua.setup({
   on_attach = handle_attach,
