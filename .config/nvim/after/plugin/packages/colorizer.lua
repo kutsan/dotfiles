@@ -1,5 +1,3 @@
-local g = vim.g
+local colorizer = require('colorizer')
 
-if g.loaded_colorizer ~= nil then
-  require('colorizer').setup()
-end
+colorizer.setup()
