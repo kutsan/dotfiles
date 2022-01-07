@@ -26,6 +26,7 @@
   - [`diffview`](https://github.com/sindrets/diffview.nvim) - Single tabpage interface for all modified files in git
   - [`editorconfig`](https://github.com/gpanders/editorconfig.nvim) - EditorConfig support
   - [`filetype`](https://github.com/nathom/filetype.nvim) - A faster version of filetype.vim
+  - [`fix-cursorhold`](https://github.com/antoinemadec/FixCursorHold.nvim) - Fix neovim CursorHold and CursorHoldI autocmd events performance bug
   - [`fugitive`](https://github.com/tpope/vim-fugitive) - Git client
   - [`fzf-lua`](https://github.com/ibhagwan/fzf-lua) - Lua implementation of fuzzy finder fzf plugin
   - [`gitsigns`](https://github.com/lewis6991/gitsigns.nvim) - Asynchronous git diff in sign column
