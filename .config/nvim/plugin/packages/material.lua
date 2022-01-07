@@ -92,6 +92,9 @@ material.setup({
     GitSignsDeleteNr = { fg = colors.red },
     GitSignsDeleteLn = { fg = colors.red },
 
+    -- Lightspeed
+    LightspeedGreyWash = {},
+
     -- CSS
     cssAttrComma = { fg = colors.fg },
     cssPseudoClassId = { fg = colors.yellow },

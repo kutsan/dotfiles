@@ -62,6 +62,9 @@
 [submodule "indent-blankline"]
   path = .config/nvim/pack/bundle/start/indent-blankline
   url = https://github.com/lukas-reineke/indent-blankline.nvim
+[submodule "lightspeed"]
+  path = .config/nvim/pack/bundle/start/lightspeed
+  url = https://github.com/ggandor/lightspeed.nvim
 [submodule "lspconfig"]
   path = .config/nvim/pack/bundle/start/lspconfig
   url = https://github.com/neovim/nvim-lspconfig
