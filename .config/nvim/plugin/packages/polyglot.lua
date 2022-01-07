@@ -1,4 +1,4 @@
 local g = vim.g
 
--- Set vim-javascript options.
-g.javascript_plugin_jsdoc = true -- Enables syntax highlighting for JSDocs.
+-- Only use certain pre-processors for vim-vue.
+g.vue_pre_processors = { 'scss' }
