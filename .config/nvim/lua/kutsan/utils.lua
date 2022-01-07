@@ -1,9 +1,7 @@
 local api = vim.api
 local b = vim.b
 
-local utils = {}
-
-function utils.map(mode, lhs, rhs, opts_overrides)
+local function map(mode, lhs, rhs, opts_overrides)
   local opts = { noremap = true }
 
   for key, value in pairs(opts_overrides or {}) do
@@ -13,7 +11,7 @@ function utils.map(mode, lhs, rhs, opts_overrides)
   api.nvim_set_keymap(mode, lhs, rhs, opts)
 end
 
-function utils.buf_map(mode, lhs, rhs, opts_overrides)
+local function buf_map(mode, lhs, rhs, opts_overrides)
   local opts = { noremap = true }
 
   for key, value in pairs(opts_overrides or {}) do
@@ -23,7 +21,7 @@ function utils.buf_map(mode, lhs, rhs, opts_overrides)
   api.nvim_buf_set_keymap(nil, mode, lhs, rhs, opts)
 end
 
-function utils.set_undo_ftplugin(cmd)
+local function set_undo_ftplugin(cmd)
   local undo_cmd = cmd
 
   if b.undo_ftplugin ~= nil then
@@ -33,4 +31,8 @@ function utils.set_undo_ftplugin(cmd)
   b.undo_ftplugin = undo_cmd
 end
 
-return utils
+return {
+  map = map,
+  buf_map = buf_map,
+  set_undo_ftplugin = set_undo_ftplugin,
+}
