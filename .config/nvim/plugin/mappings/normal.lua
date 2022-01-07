@@ -34,6 +34,14 @@ map(
   { silent = true }
 )
 
+-- Reveal syntax group under cursor.
+map(
+  'n',
+  '<F10>',
+  "<Cmd>lua require('kutsan/mappings/normal/syntax').reveal_syntax_group()<CR>",
+  { silent = true }
+)
+
 -- Scroll viewport faster.
 map('n', '<C-e>', '3<C-e>')
 map('n', '<C-y>', '3<C-y>')
