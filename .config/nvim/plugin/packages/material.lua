@@ -62,9 +62,9 @@ material.setup({
     NvimTreeGitDeleted = { fg = colors.red },
 
     -- Cmp
-    CmpItemAbbrMatch = { fg = colors.blue },
-    CmpItemAbbrDeprecated = { fg = colors.commens },
-    CmpItemAbbrMatchFuzzy = { fg = colors.blue },
+    CmpItemAbbrMatch = { fg = colors.blue, style = 'bold' },
+    CmpItemAbbrDeprecated = { fg = colors.comments, style = 'bold' },
+    CmpItemAbbrMatchFuzzy = { fg = colors.blue, style = 'bold' },
     CmpItemKindText = { fg = colors.fg },
     CmpItemKindMethod = { fg = colors.paleblue },
     CmpItemKindFunction = { fg = colors.purple },
