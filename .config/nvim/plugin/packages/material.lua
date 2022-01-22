@@ -6,11 +6,18 @@ g.material_style = 'deep ocean'
 local colors = require('material/colors')
 
 material.setup({
+  contrast = {
+    sidebars = true,
+    floating_windows = false,
+    line_numbers = false,
+    sign_column = false,
+    cursor_line = false,
+    popup_menu = true,
+  },
   italics = {
     comments = true,
   },
-  popup_menu = 'light',
-  contrast_windows = {},
+  contrast_filetypes = {},
   disable = {
     term_colors = true,
   },
@@ -45,6 +52,8 @@ material.setup({
     NvimTreeIndentMarker = { fg = colors.selection },
     NvimTreeNormal = { bg = colors.contrast },
     NvimTreeFolderIcon = { fg = colors.fg },
+    NvimTreeFolderName = { fg = colors.blue },
+    NvimTreeOpenedFolderName = { fg = colors.blue, style = 'italic' },
     NvimTreeGitDirty = { fg = colors.yellow },
     NvimTreeGitStaged = { fg = colors.green },
     NvimTreeGitMerge = { fg = colors.red },
