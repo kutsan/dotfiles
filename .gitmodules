@@ -92,6 +92,9 @@
 [submodule "polyglot"]
   path = .config/nvim/pack/bundle/start/polyglot
   url = https://github.com/sheerun/vim-polyglot
+[submodule "pounce"]
+  path = .config/nvim/pack/bundle/start/pounce
+  url = https://github.com/rlane/pounce.nvim
 [submodule "sandwich"]
   path = .config/nvim/pack/bundle/start/sandwich
   url = https://github.com/machakann/vim-sandwich
