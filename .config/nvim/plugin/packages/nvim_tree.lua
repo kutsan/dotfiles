@@ -46,6 +46,7 @@ nvim_tree.setup({
     ignore = false,
   },
   view = {
+    width = 32,
     auto_resize = true,
     mappings = {
       custom_only = true,
