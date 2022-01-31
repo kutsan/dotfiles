@@ -1,69 +1,30 @@
-# Initialize $PATH with system binaries.
 path=(
   ~/.local/bin
   ~/.local/share/cargo/bin
   $path
 )
 
-if ([[ $OSTYPE != 'linux-android' ]]) {
-  path=(
-    /usr/local/bin
-    /usr/local/sbin
-    /usr/bin
-    /bin
-    /usr/sbin
-    /sbin
-    $path
-  )
-}
-
 # macOS specific exports.
 if ([[ $OSTYPE =~ 'darwin*' ]]) {
-  export ANDROID_HOME="$HOME/Library/Android/sdk"
-  export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home"
-
   path=(
-    '/usr/local/opt/coreutils/libexec/gnubin'
-    '/usr/local/opt/findutils/libexec/gnubin'
-    '/usr/local/opt/gnu-sed/libexec/gnubin'
-    '/usr/local/opt/grep/libexec/gnubin'
-    '/usr/local/opt/curl/bin'
-    '/usr/local/opt/ncurses/bin'
-    '/usr/local/opt/openssl/bin'
-    '/usr/local/opt/python/libexec/bin'
-    "$ANDROID_HOME/emulator"
-    "$ANDROID_HOME/tools"
-    "$ANDROID_HOME/tools/bin"
-    "$ANDROID_HOME/platform-tools"
-    "$JAVA_HOME"
+    '/opt/homebrew/bin'
+    '/opt/homebrew/opt/coreutils/libexec/gnubin'
+    '/opt/homebrew/opt/findutils/libexec/gnubin'
+    '/opt/homebrew/opt/gnu-sed/libexec/gnubin'
+    '/opt/homebrew/opt/gnu-tar/libexec/gnubin'
+    '/opt/homebrew/opt/grep/libexec/gnubin'
+    '/opt/homebrew/opt/curl/bin'
     $path
-  )
-
-  manpath=(
-    '/usr/local/opt/coreutils/libexec/gnuman'
-    '/usr/local/opt/findutils/libexec/gnuman'
-    '/usr/local/opt/gnu-sed/libexec/gnuman'
-    '/usr/local/opt/grep/libexec/gnuman'
-    '/usr/local/opt/curl/share/man'
-    $manpath
   )
 }
 
 # Basics
 export EDITOR='nvim'
 export PAGER='less'
-export BROWSER='xdg-open'
 export LANG='en_US.UTF-8'
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
-
-# Python
-export PYTHONUSERBASE="$HOME/.local"
-
-# Rust
-export CARGO_HOME="$HOME/.local/share/cargo"
-export RUSTUP_HOME="$HOME/.local/share/rustup"
 
 # man
 export MANWIDTH='100'
@@ -79,6 +40,10 @@ export NPM_CONFIG_INIT_AUTHOR_URL='https://kutsankaplan.com'
 export NPM_CONFIG_INIT_LICENSE='GPL-3.0'
 export NPM_CONFIG_INIT_VERSION='0.0.0'
 export NPM_CONFIG_SIGN_GIT_TAG='true'
+
+# Rust
+export CARGO_HOME="$HOME/.local/share/cargo"
+export RUSTUP_HOME="$HOME/.local/share/rustup"
 
 # GnuPG
 export GPG_TTY=$(tty)
