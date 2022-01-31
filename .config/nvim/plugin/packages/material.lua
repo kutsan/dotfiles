@@ -60,6 +60,7 @@ material.setup({
     NvimTreeGitRenamed = { fg = colors.orange },
     NvimTreeGitNew = { fg = colors.pink },
     NvimTreeGitDeleted = { fg = colors.red },
+    NvimTreeGitIgnored = { fg = colors.comments },
 
     -- Cmp
     CmpItemAbbrMatch = { fg = colors.blue, style = 'bold' },
