@@ -98,7 +98,7 @@ map(
 map(
   'n',
   'gb',
-  "<Cmd>lua vim.cmd(string.format('silent !xdg-open \"%s\"', vim.fn.escape(vim.fn.expand('<cfile>'), '#%!')))<CR>",
+  "<Cmd>lua vim.cmd(string.format('silent !open \"%s\"', vim.fn.escape(vim.fn.expand('<cfile>'), '#%!')))<CR>",
   { silent = true }
 )
 
