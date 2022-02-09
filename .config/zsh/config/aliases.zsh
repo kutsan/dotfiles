@@ -16,9 +16,8 @@ alias g='git'
 alias pacman='sudo pacman'
 alias l='ledger'
 alias lb="ledger balance '^assets' '^liabilities' --empty"
-alias le='cd ~/Projects/sync && git pull --ff-only; nvim +"normal! Gzz" ~/Projects/sync/finance/journal-$(date +%Y).ledger'
-alias s='$EDITOR ~/Projects/sync/notes/tasks.md'
-alias scd='cd ~/Projects/sync'
+alias le='cd ~/Projects/finance && git pull --ff-only; nvim +"normal! Gzz" ~/Projects/finance/$(date +%Y)/$(date +%m).ledger'
+alias s='$EDITOR ~/Projects/notes'
 alias gen-packagejson='cp "$HOME/.config/npm/package.json" "package.json"'
 alias gen-editorconfig='cp "$HOME/.config/editorconfig/.editorconfig" ".editorconfig"'
 

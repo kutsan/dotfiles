@@ -35,9 +35,9 @@ function gen-ssh-keygen-rsa() {
 # Commit and push ledger journal updates.
 ##
 function lpush() {
-  cd ~/Projects/sync && \
-    git add finance/journal-$(date +%Y).ledger && \
-    git commit --message='finance: update journal file' && \
+  cd ~/Projects/finance && \
+    git add . && \
+    git commit --message='update journal file' && \
     git push origin master
 }
 
