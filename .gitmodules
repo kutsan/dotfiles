@@ -32,6 +32,9 @@
 [submodule "cmp-lsp"]
   path = .config/nvim/pack/bundle/start/cmp-lsp
   url = https://github.com/hrsh7th/cmp-nvim-lsp
+[submodule "cmp-lsp-signature-help"]
+  path = .config/nvim/pack/bundle/start/cmp-lsp-signature-help
+  url = https://github.com/hrsh7th/cmp-nvim-lsp-signature-help
 [submodule "cmp-luasnip"]
   path = .config/nvim/pack/bundle/start/cmp-luasnip
   url = https://github.com/saadparwaiz1/cmp_luasnip

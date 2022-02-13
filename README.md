@@ -19,7 +19,8 @@
   - [`cmp`](https://github.com/hrsh7th/nvim-cmp) - Auto completion support
     - [`cmp-buffer`](https://github.com/hrsh7th/cmp-buffer) - cmp source for buffer words
     - [`cmp-calc`](https://github.com/hrsh7th/cmp-calc) - cmp source for math calculation
-    - [`cmp-lsp`](https://github.com/hrsh7th/cmp-nvim-lsp) - cmp source for LSP clent
+    - [`cmp-lsp`](https://github.com/hrsh7th/cmp-nvim-lsp) - cmp source for LSP client
+    - [`cmp-lsp-signature-help`](https://github.com/hrsh7th/cmp-nvim-lsp-signature-help) - cmp source for LSP signatures
     - [`cmp-luasnip`](https://github.com/saadparwaiz1/cmp_luasnip) - cmp source for luasnip snippets
     - [`cmp-path`](https://github.com/hrsh7th/cmp-path) - cmp source for filesystem paths
   - [`colorizer`](https://github.com/norcalli/nvim-colorizer.lua) - High-performance color highlighter
