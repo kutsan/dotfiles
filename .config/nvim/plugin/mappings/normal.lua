@@ -10,8 +10,8 @@ map('n', '<C-h>', '<C-w>h')
 map('n', '<C-l>', '<C-w>l')
 
 -- Always search with 'very magic' mode.
-map('n', '<M-/>', '/\\v')
-map('n', '<M-?>', '?\\v')
+map('n', '/', '/\\v')
+map('n', '?', '?\\v')
 
 -- Override Ex mode with run @q.
 map('n', 'Q', '@q')
