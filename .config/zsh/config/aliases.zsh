@@ -13,16 +13,15 @@ alias la='ls -l --almost-all --si' # List nodes with their details.
 # Custom Shortcuts
 alias v='nvim'
 alias g='git'
-alias pacman='sudo pacman'
 alias l='ledger'
 alias lb="ledger balance '^assets' '^liabilities' --empty"
 alias le='cd ~/Projects/finance && git pull --ff-only; nvim +"normal! Gzz" ~/Projects/finance/$(date +%Y)/$(date +%m).ledger'
-alias s='$EDITOR ~/Projects/notes'
+alias s='cd ~/Projects/notes && $EDITOR ~/Projects/notes/tasks.md'
 alias gen-packagejson='cp "$HOME/.config/npm/package.json" "package.json"'
 alias gen-editorconfig='cp "$HOME/.config/editorconfig/.editorconfig" ".editorconfig"'
 
 # git
-foreach aliaskey (a b bl c co d ds dt dts f l ld r rd s sm w) {
-  alias g$aliaskey="git $aliaskey"
+foreach key (a b bl c co d ds dt dts f l ld r rd s sm w) {
+  alias g$key="git $key"
 }
-unset aliaskey
+unset key
