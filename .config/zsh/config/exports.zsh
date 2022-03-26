@@ -25,6 +25,7 @@ export LANG='en_US.UTF-8'
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
+export JOURNAL_HOME="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/journal"
 
 # man
 export MANWIDTH='100'
