@@ -43,7 +43,6 @@ fzf_lua.setup({
   git = {
     files = {
       prompt = '> ',
-      git_icons = false,
     },
     status = {
       prompt = 'GitStatus> ',
