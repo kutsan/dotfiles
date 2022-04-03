@@ -44,6 +44,10 @@ g.undotree_HighlightChangedText = true
 -- Show cursorline.
 g.undotree_CursorLine = true
 
+-- Tree split characters.
+g.undotree_TreeSplitShape = '/'
+g.undotree_TreeReturnShape = '\\'
+
 -- Default highlight groups for syntax items.
 g.undotree_HighlightSyntaxAdd = 'DiffAdd'
 g.undotree_HighlightSyntaxChange = 'DiffChange'
