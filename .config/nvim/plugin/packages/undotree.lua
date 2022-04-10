@@ -8,12 +8,6 @@ cmd('silent! packadd! undotree')
 -- Open tree on the right side and open diff below that.
 g.undotree_WindowLayout = 3
 
--- Set the tree node shape.
-g.undotree_TreeNodeShape = '*'
-
--- Set the tree vertical shape.
-g.undotree_TreeVertShape = '|'
-
 -- Use relative timestamps.
 g.undotree_RelativeTimestamp = 1
 
@@ -47,6 +41,9 @@ g.undotree_CursorLine = true
 -- Tree split characters.
 g.undotree_TreeSplitShape = '/'
 g.undotree_TreeReturnShape = '\\'
+g.undotree_TreeNodeShape = '*'
+g.undotree_TreeVertShape = '|'
+
 
 -- Default highlight groups for syntax items.
 g.undotree_HighlightSyntaxAdd = 'DiffAdd'
