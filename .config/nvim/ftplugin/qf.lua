@@ -1,4 +1,4 @@
-local cmd = vim.cmd
+local opt_local = vim.opt_local
 local g = vim.g
 
 -- Disable built-in statusline.
@@ -16,6 +16,4 @@ local qf_statusline = {
 }
 
 -- Set statusline.
--- opt_local.statusline = table.concat(qf_statusline)
--- Use cmd until https://github.com/neovim/neovim/issues/14670 is fixed.
-cmd(string.format('setlocal statusline=%s', table.concat(qf_statusline)))
+opt_local.statusline = table.concat(qf_statusline)

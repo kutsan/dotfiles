@@ -1,6 +1,4 @@
-local cmd = vim.cmd
+local opt_local = vim.opt_local
 
 -- Fix 'commentstring'.
--- opt_local.commentstring = '; %s'
--- Use cmd until https://github.com/neovim/neovim/issues/14670 is fixed.
-cmd('setlocal commentstring=;\\ %s')
+opt_local.commentstring = '; %s'
