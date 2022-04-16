@@ -50,9 +50,6 @@
 [submodule "editorconfig"]
   path = .config/nvim/pack/bundle/start/editorconfig
   url = https://github.com/gpanders/editorconfig.nvim
-[submodule "filetype"]
-  path = .config/nvim/pack/bundle/start/filetype
-  url = https://github.com/nathom/filetype.nvim
 [submodule "fix-cursorhold"]
   path = .config/nvim/pack/bundle/start/fix-cursorhold
   url = https://github.com/antoinemadec/FixCursorHold.nvim
