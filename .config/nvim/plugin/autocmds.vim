@@ -1,24 +1,4 @@
-" Start insert mode and disable line numbers in terminal buffer.
-augroup terminalsettings
-  autocmd!
-
-  autocmd TermOpen * setlocal nonumber norelativenumber
-  autocmd TermOpen * startinsert
-augroup end
-
-" Briefly highlight yanked region.
-augroup highlightyank
-  autocmd!
-
-  autocmd TextYankPost *
-    \ lua vim.highlight.on_yank({
-      \ higroup = 'Visual',
-      \ timeout = 100,
-      \ on_visual = false
-    \ })
-augroup end
-
-" Save the current buffer after any changes.
+" Save the current buffer after changes.
 augroup savebuffer
   autocmd!
   autocmd InsertLeave,TextChanged * call kutsan#autocmds#savebuffer#()
@@ -34,10 +14,4 @@ augroup end
 augroup trimtrailing
   autocmd!
   autocmd BufWritePre * call kutsan#autocmds#trimtrailing#()
-augroup end
-
-" Block changes to read-only buffers.
-augroup blockreadonly
-  autocmd!
-  autocmd BufReadPost * let &l:modifiable = !&readonly
 augroup end
