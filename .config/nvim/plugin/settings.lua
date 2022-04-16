@@ -115,8 +115,7 @@ opt.shiftwidth = 0 -- Number of spaces to use for each step of auto indent.
 opt.softtabstop = -1 -- Number of spaces that a <Tab> counts.
 opt.expandtab = true -- Use spaces instead of tab characters.
 opt.undofile = true -- Persist undo history to an undo file.
--- Use cmd until https://github.com/neovim/neovim/issues/14670 is fixed.
-cmd('set keymap=diacritic') -- Enable diacritic key mappings in keymap folder.
+opt.keymap = 'diacritic' -- Enable diacritic key mappings in keymap folder.
 
 -- Root
 if env.SUDO_USER ~= nil then
