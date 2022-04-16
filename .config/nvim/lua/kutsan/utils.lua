@@ -18,7 +18,7 @@ local function buf_map(mode, lhs, rhs, opts_overrides)
     opts[key] = value
   end
 
-  api.nvim_buf_set_keymap(nil, mode, lhs, rhs, opts)
+  api.nvim_buf_set_keymap(0, mode, lhs, rhs, opts)
 end
 
 local function set_undo_ftplugin(cmd)
