@@ -13,9 +13,6 @@ map('n', '<C-l>', '<C-w>l')
 map('n', '/', '/\\v')
 map('n', '?', '?\\v')
 
--- Override Ex mode with run @q.
-map('n', 'Q', '@q')
-
 -- Always send contents of a `x` command to the black hole register.
 map('n', 'x', '"_x')
 
