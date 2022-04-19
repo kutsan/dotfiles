@@ -34,7 +34,6 @@ export MANPAGER='nvim +Man!'
 # npm
 export NPM_CONFIG_USERCONFIG="$HOME/.config/npm/npmrc"
 export NPM_CONFIG_CACHE="$HOME/.cache/npm"
-export NPM_CONFIG_TMP="$TMPDIR/npm"
 export NPM_CONFIG_INIT_AUTHOR_NAME='Kutsan Kaplan'
 export NPM_CONFIG_INIT_AUTHOR_EMAIL='me@kutsankaplan.com'
 export NPM_CONFIG_INIT_AUTHOR_URL='https://kutsankaplan.com'
