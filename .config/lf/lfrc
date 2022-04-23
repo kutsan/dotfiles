@@ -9,6 +9,7 @@ set tabstop 4
 set shell zsh
 set promptfmt "\033[34;1m%w/\033[0m\033[1m%f\033[0m"
 set previewer "~/.config/lf/previewer.zsh"
+set cleaner "~/.config/lf/cleaner.zsh"
 
 # Commands
 cmd open ${{
