@@ -49,20 +49,6 @@ keymap.set('n', '<S-Down>', '2<C-w>-')
 keymap.set('n', '<S-Right>', '2<C-w>>')
 keymap.set('n', '<S-Left>', '2<C-w><')
 
--- Toggle floating terminal or create new one if there is none.
-keymap.set(
-  't',
-  '<C-z>',
-  "<Cmd>lua require('kutsan/mappings/normal/terminal').toggle()<CR>",
-  { silent = true }
-)
-keymap.set(
-  'n',
-  '<C-z>',
-  "<Cmd>lua require('kutsan/mappings/normal/terminal').toggle()<CR>",
-  { silent = true }
-)
-
 -- Remove current buffer without losing window layout.
 keymap.set(
   'n',
