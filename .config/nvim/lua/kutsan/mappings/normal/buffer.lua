@@ -2,7 +2,7 @@ local api = vim.api
 local fn = vim.fn
 local cmd = vim.cmd
 
-local function bufremove(opts)
+local function remove(opts)
   local target_buf_id = api.nvim_get_current_buf()
 
   -- Do nothing if buffer is in modified state.
@@ -41,4 +41,4 @@ local function bufremove(opts)
   cmd(string.format('bdelete%s %d', opts.force and '!' or '', target_buf_id))
 end
 
-return { bufremove = bufremove }
+return { remove = remove }

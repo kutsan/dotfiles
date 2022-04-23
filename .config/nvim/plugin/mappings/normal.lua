@@ -1,4 +1,6 @@
 local keymap = vim.keymap
+local cmd = vim.cmd
+local fn = vim.fn
 
 -- Quickly close current window.
 keymap.set('n', '<Space>q', '<Cmd>quit<CR>', { silent = true })
@@ -27,7 +29,10 @@ keymap.set('n', 'c#', "?\\<<C-r>=expand('<cword>')<CR>\\>\\C<CR>``cgN")
 keymap.set(
   'n',
   '<Space>c*',
-  "<Cmd>lua require('kutsan/mappings/normal/rename').open_rename_window()<CR>",
+  function()
+    local rename = require('kutsan/mappings/normal/rename')
+    rename.open_rename_window()
+  end,
   { silent = true }
 )
 
@@ -35,7 +40,10 @@ keymap.set(
 keymap.set(
   'n',
   '<F10>',
-  "<Cmd>lua require('kutsan/mappings/normal/syntax').reveal_syntax_group()<CR>",
+  function()
+    local syntax = require('kutsan/mappings/normal/syntax')
+    syntax.reveal_syntax_group()
+  end,
   { silent = true }
 )
 
@@ -53,13 +61,19 @@ keymap.set('n', '<S-Left>', '2<C-w><')
 keymap.set(
   'n',
   '\\q',
-  "<Cmd>lua require('kutsan/mappings/normal/bufremove').bufremove({ force = false })<CR>",
+  function()
+    local buffer = require('kutsan/mappings/normal/buffer')
+    buffer.remove({ force = false })
+  end,
   { silent = true }
 )
 keymap.set(
   'n',
   '\\Q',
-  "<Cmd>lua require('kutsan/mappings/normal/bufremove').bufremove({ force = true })<CR>",
+  function()
+    local buffer = require('kutsan/mappings/normal/buffer')
+    buffer.remove({ force = true })
+  end,
   { silent = true }
 )
 
@@ -81,7 +95,12 @@ keymap.set(
 keymap.set(
   'n',
   'gb',
-  "<Cmd>lua vim.cmd(string.format('silent !open \"%s\"', vim.fn.escape(vim.fn.expand('<cfile>'), '#%!')))<CR>",
+  function()
+    local url = fn.expand('<cfile>')
+    local escaped_url = fn.escape(url, '#%!')
+
+    cmd(('silent !open \"%s\"'):format(escaped_url))
+  end,
   { silent = true }
 )
 

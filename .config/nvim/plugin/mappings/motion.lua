@@ -2,15 +2,12 @@ local keymap = vim.keymap
 
 -- [a]n [e]ntire buffer motions.
 keymap.set(
-  'o',
+  { 'o', 'x' },
   'ae',
-  "<Cmd>lua require('kutsan/mappings/motion/entire').select_entire_buffer()<CR>",
-  { silent = true }
-)
-keymap.set(
-  'x',
-  'ae',
-  "<Cmd>lua require('kutsan/mappings/motion/entire').select_entire_buffer()<CR>",
+  function()
+    local entire = require('kutsan/mappings/motion/entire')
+    entire.select_entire_buffer()
+  end,
   { silent = true }
 )
 
