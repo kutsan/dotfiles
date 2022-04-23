@@ -10,12 +10,52 @@ cmp.setup({
   completion = {
     completeopt = 'menu,menuone,noinsert',
   },
+  window = {
+    documentation = {
+      max_width = 60,
+      max_height = 15,
+    },
+  },
+  formatting = {
+    fields = { 'kind', 'abbr', 'menu', },
+    format = function(entry, item)
+      local kind_icons = {
+        Text = "",
+        Method = "",
+        Function = "",
+        Constructor = "",
+        Field = "ﰠ",
+        Variable = "",
+        Class = "ﴯ",
+        Interface = "",
+        Module = "",
+        Property = "ﰠ",
+        Unit = "塞",
+        Value = "",
+        Enum = "",
+        Keyword = "",
+        Snippet = "",
+        Color = "",
+        File = "",
+        Reference = "",
+        Folder = "",
+        EnumMember = "",
+        Constant = "",
+        Struct = "פּ",
+        Event = "",
+        Operator = "",
+        TypeParameter = "",
+      }
+
+      item.kind = kind_icons[item.kind]
+      return item
+    end,
+  },
   mapping = {
     ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4)),
     ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4)),
     ['<C-Space>'] = cmp.mapping(cmp.mapping.complete()),
-    ['<C-y>'] = cmp.config.disable,
-    ['<C-e>'] = cmp.mapping(cmp.mapping.close()),
+    ['<C-e>'] = cmp.mapping.abort(),
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
     ['<Tab>'] = cmp.mapping(function(fallback)
       local function has_words_before()
