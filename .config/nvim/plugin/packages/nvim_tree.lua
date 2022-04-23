@@ -35,9 +35,6 @@ g.nvim_tree_root_folder_modifier = ':t'
 -- Highlight nodes according to current git status.
 g.nvim_tree_git_hl = 1
 
--- Enable indent markers.
-g.nvim_tree_indent_markers = 1
-
 local nvim_tree = require('nvim-tree')
 nvim_tree.setup({
   update_cwd = true,
@@ -75,6 +72,11 @@ nvim_tree.setup({
         { key = 's', action = 'system_open' },
         { key = 'q', action = 'close' },
       },
+    },
+  },
+  renderer = {
+    indent_markers = {
+      enable = true,
     },
   },
 })
