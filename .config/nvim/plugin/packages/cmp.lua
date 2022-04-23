@@ -18,7 +18,7 @@ cmp.setup({
   },
   formatting = {
     fields = { 'kind', 'abbr', 'menu', },
-    format = function(entry, item)
+    format = function(_, item)
       local kind_icons = {
         Text = "",
         Method = "",
