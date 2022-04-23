@@ -1,15 +1,15 @@
-local map = require('kutsan/utils').map
+local keymap = vim.keymap
 
 -- Jump previous and next commands from history.
-map('c', '<C-j>', '<Down>')
-map('c', '<C-k>', '<Up>')
+keymap.set('c', '<C-j>', '<Down>')
+keymap.set('c', '<C-k>', '<Up>')
 
 -- Construct substitute command with
-map('c', ';s', 'substitute/\\v//gc<Left><Left><Left><Left>')
+keymap.set('c', ';s', 'substitute/\\v//gc<Left><Left><Left><Left>')
 
 -- Construct global command with 'very magic' mode.
-map('c', ';g', 'global/\\v/<Left>')
+keymap.set('c', ';g', 'global/\\v/<Left>')
 
 -- Construct search and replace.
-map('c', ';r', 'substitute/<C-r>=@/<CR>//gce<Left><Left><Left><Left>')
-map('c', ';R', 'cdo substitute/<C-r>=@/<CR>//gce<Left><Left><Left><Left>')
+keymap.set('c', ';r', 'substitute/<C-r>=@/<CR>//gce<Left><Left><Left><Left>')
+keymap.set('c', ';R', 'cdo substitute/<C-r>=@/<CR>//gce<Left><Left><Left><Left>')

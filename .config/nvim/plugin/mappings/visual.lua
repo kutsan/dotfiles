@@ -1,25 +1,25 @@
-local map = require('kutsan/utils').map
+local keymap = vim.keymap
 
 -- Stay in visual mode when indenting.
-map('x', '<', '<gv')
-map('x', '>', '>gv')
+keymap.set('x', '<', '<gv')
+keymap.set('x', '>', '>gv')
 
 -- Always search with 'very magic' mode.
-map('x', '/', '/\\v')
-map('x', '?', '?\\v')
+keymap.set('x', '/', '/\\v')
+keymap.set('x', '?', '?\\v')
 
 -- Start a * or # search from a visual selection.
-map(
+keymap.set(
   'x',
   '*',
   '<Cmd>lua require("kutsan/mappings/visual/search").set_search("/")<CR>/<C-R>=@/<CR><CR>'
 )
-map(
+keymap.set(
   'x',
   '#',
   '<Cmd>lua require("kutsan/mappings/visual/search").set_search("?")<CR>?<C-R>=@/<CR><CR>'
 )
 
 -- Refactor selection.
-map('x', '<Space>c*', '*Ncgn', { noremap = false })
-map('x', '<Space>c#', '#cgN', { noremap = false })
+keymap.set('x', '<Space>c*', '*Ncgn', { noremap = false })
+keymap.set('x', '<Space>c#', '#cgN', { noremap = false })

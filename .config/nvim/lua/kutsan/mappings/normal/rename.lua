@@ -1,8 +1,8 @@
-local buf_map = require('kutsan/utils').buf_map
 local api = vim.api
 local fn = vim.fn
 local cmd = vim.cmd
 local lsp = vim.lsp
+local keymap = vim.keymap
 
 local function open_rename_window()
   local current_name = fn.expand('<cword>')
@@ -23,9 +23,9 @@ local function open_rename_window()
 
   cmd('startinsert!')
 
-  buf_map('i', '<Esc>', '<Cmd>stopinsert <Bar> quit!<CR>', { silent = true })
-  buf_map('n', '<Esc>', '<Cmd>quit!<CR>', { silent = true })
-  buf_map(
+  keymap.set('i', '<Esc>', '<Cmd>stopinsert <Bar> quit!<CR>', { buffer = true, silent = true })
+  keymap.set('n', '<Esc>', '<Cmd>quit!<CR>', { buffer = true, silent = true })
+  keymap.set(
     'i',
     '<CR>',
     ('<Cmd>stopinsert | lua require("kutsan/mappings/normal/rename").rename_symbol_from_window(%d, "%s")<CR>'):format(
@@ -33,10 +33,11 @@ local function open_rename_window()
       current_name
     ),
     {
+      buffer = true,
       silent = true,
     }
   )
-  buf_map(
+  keymap.set(
     'n',
     '<CR>',
     ('<Cmd>stopinsert | lua require("kutsan/mappings/normal/rename").rename_symbol_from_window(%d, "%s")<CR>'):format(
@@ -44,6 +45,7 @@ local function open_rename_window()
       current_name
     ),
     {
+      buffer = true,
       silent = true,
     }
   )

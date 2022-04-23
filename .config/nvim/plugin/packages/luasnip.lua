@@ -1,5 +1,5 @@
-local map = require('kutsan/utils').map
 local luasnip = require('luasnip')
+local keymap = vim.keymap
 
 local snippet = luasnip.snippet
 local text_node = luasnip.text_node
@@ -29,7 +29,7 @@ luasnip.add_snippets('ledger', {
   }),
 })
 
-map('i', '<C-j>', '<Plug>luasnip-expand-or-jump', { noremap = false })
-map('s', '<C-j>', '<Plug>luasnip-expand-or-jump', { noremap = false })
-map('i', '<C-k>', '<Plug>luasnip-jump-prev', { noremap = false })
-map('s', '<C-k>', '<Plug>luasnip-jump-prev', { noremap = false })
+keymap.set('i', '<C-j>', '<Plug>luasnip-expand-or-jump')
+keymap.set('s', '<C-j>', '<Plug>luasnip-expand-or-jump')
+keymap.set('i', '<C-k>', '<Plug>luasnip-jump-prev')
+keymap.set('s', '<C-k>', '<Plug>luasnip-jump-prev')

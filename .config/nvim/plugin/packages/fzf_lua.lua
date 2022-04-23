@@ -1,5 +1,5 @@
-local map = require('kutsan/utils').map
 local fzf_lua = require('fzf-lua')
+local keymap = vim.keymap
 
 fzf_lua.setup({
   winopts = {
@@ -87,17 +87,17 @@ fzf_lua.setup({
 
 local map_opts = { silent = true }
 
-map('n', '<Space><C-p>', '<Cmd>FzfLua files<CR>', map_opts)
-map('n', '<M-x>', '<Cmd>FzfLua commands<CR>', map_opts)
-map('n', '<C-b>', '<Cmd>FzfLua buffers<CR>', map_opts)
-map('n', '<Space>h', '<Cmd>FzfLua help_tags<CR>', map_opts)
-map('n', '<Space>:', '<Cmd>FzfLua command_history<CR>', map_opts)
-map('n', '<Space>/', '<Cmd>FzfLua search_history<CR>', map_opts)
-map('n', '<Space>`', '<Cmd>FzfLua marks<CR>', map_opts)
-map('n', 'gs', '<Cmd>FzfLua live_grep_native<CR>', map_opts)
-map('x', 'gs', '<Cmd>FzfLua grep_visual<CR>', map_opts)
-map('n', '<C-p>', '<Cmd>FzfLua git_files<CR>', map_opts)
-map('n', '<Space>gl', '<Cmd>FzfLua git_bcommits<CR>', map_opts)
-map('n', '<Space>gL', '<Cmd>FzfLua git_commits<CR>', map_opts)
-map('n', '<Space>gs', '<Cmd>FzfLua git_status<CR>', map_opts)
-map('n', '<C-f>', '<Cmd>FzfLua lsp_document_symbols<CR>', map_opts)
+keymap.set('n', '<Space><C-p>', '<Cmd>FzfLua files<CR>', map_opts)
+keymap.set('n', '<M-x>', '<Cmd>FzfLua commands<CR>', map_opts)
+keymap.set('n', '<C-b>', '<Cmd>FzfLua buffers<CR>', map_opts)
+keymap.set('n', '<Space>h', '<Cmd>FzfLua help_tags<CR>', map_opts)
+keymap.set('n', '<Space>:', '<Cmd>FzfLua command_history<CR>', map_opts)
+keymap.set('n', '<Space>/', '<Cmd>FzfLua search_history<CR>', map_opts)
+keymap.set('n', '<Space>`', '<Cmd>FzfLua marks<CR>', map_opts)
+keymap.set('n', 'gs', '<Cmd>FzfLua live_grep_native<CR>', map_opts)
+keymap.set('x', 'gs', '<Cmd>FzfLua grep_visual<CR>', map_opts)
+keymap.set('n', '<C-p>', '<Cmd>FzfLua git_files<CR>', map_opts)
+keymap.set('n', '<Space>gl', '<Cmd>FzfLua git_bcommits<CR>', map_opts)
+keymap.set('n', '<Space>gL', '<Cmd>FzfLua git_commits<CR>', map_opts)
+keymap.set('n', '<Space>gs', '<Cmd>FzfLua git_status<CR>', map_opts)
+keymap.set('n', '<C-f>', '<Cmd>FzfLua lsp_document_symbols<CR>', map_opts)

@@ -1,6 +1,6 @@
-local map = require('kutsan/utils').map
 local api = vim.api
 local g = vim.g
+local keymap = vim.keymap
 
 -- Set whether or not to show certain icons.
 g.nvim_tree_show_icons = {
@@ -81,8 +81,8 @@ nvim_tree.setup({
   },
 })
 
-map('n', '<Space>f', '<Cmd>NvimTreeToggle<CR>', { silent = true })
-map('n', '<Space>F', '<Cmd>NvimTreeFindFile<CR>z.', { silent = true })
+keymap.set('n', '<Space>f', '<Cmd>NvimTreeToggle<CR>', { silent = true })
+keymap.set('n', '<Space>F', '<Cmd>NvimTreeFindFile<CR>z.', { silent = true })
 
 api.nvim_command([[
   augroup nvimtreesettings

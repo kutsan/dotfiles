@@ -1,5 +1,5 @@
-local map = require('kutsan/utils').map
 local diffview = require('diffview')
+local keymap = vim.keymap
 
 diffview.setup({
   file_panel = {
@@ -13,8 +13,8 @@ diffview.setup({
   },
 })
 
-map('n', '<Space>gvo', '<Cmd>DiffviewOpen<CR>', { silent = true })
-map('n', '<Space>gvl', '<Cmd>DiffviewFileHistory<CR>', { silent = true })
+keymap.set('n', '<Space>gvo', '<Cmd>DiffviewOpen<CR>', { silent = true })
+keymap.set('n', '<Space>gvl', '<Cmd>DiffviewFileHistory<CR>', { silent = true })
 
 -- TODO: Add generic tab mappings and replace this with :tabclose.
-map('n', '<Space>gvq', '<Cmd>DiffviewClose<CR>', { silent = true })
+keymap.set('n', '<Space>gvq', '<Cmd>DiffviewClose<CR>', { silent = true })

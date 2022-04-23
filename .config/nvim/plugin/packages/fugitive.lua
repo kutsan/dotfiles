@@ -1,5 +1,5 @@
-local map = require('kutsan/utils').map
+local keymap = vim.keymap
 
 -- Define mappings.
-map('n', '<Space>gb', '<Cmd>Git blame<CR>', { silent = true })
-map('n', '<Space>gd', '<Cmd>Gdiffsplit<CR>', { silent = true })
+keymap.set('n', '<Space>gb', '<Cmd>Git blame<CR>', { silent = true })
+keymap.set('n', '<Space>gd', '<Cmd>Gdiffsplit<CR>', { silent = true })

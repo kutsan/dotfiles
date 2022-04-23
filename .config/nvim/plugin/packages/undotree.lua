@@ -1,6 +1,6 @@
-local map = require('kutsan/utils').map
 local cmd = vim.cmd
 local g = vim.g
+local keymap = vim.keymap
 
 -- Add optional plugin to 'runtimepath' without sourcing anything.
 cmd('silent! packadd! undotree')
@@ -51,7 +51,7 @@ g.undotree_HighlightSyntaxChange = 'DiffChange'
 g.undotree_HighlightSyntaxDel = 'DiffDelete'
 
 -- Define mapping.
-map(
+keymap.set(
   'n',
   '<Space>u',
   '<Cmd>call undotree#UndotreeToggle()<CR>',

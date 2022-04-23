@@ -1,5 +1,4 @@
 local lspconfig = require('lspconfig')
-local buf_map = require('kutsan/utils').buf_map
 local cmp_capabilities = require('cmp_nvim_lsp')
 
 local cmd = vim.cmd
@@ -8,6 +7,7 @@ local env = vim.env
 local split = vim.split
 local diagnostic = vim.diagnostic
 local lsp = vim.lsp
+local keymap = vim.keymap
 
 diagnostic.config({
   virtual_text = false,
@@ -33,40 +33,43 @@ fn.sign_define('DiagnosticSignHint', {
 })
 
 local function handle_attach(client)
-  local opts = { silent = true }
-
   if client.resolved_capabilities.document_highlight then
     cmd('autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()')
     cmd('autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()')
     cmd('autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()')
   end
 
-  buf_map('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-  buf_map('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-  buf_map('n', 'gr', '<Cmd>lua vim.lsp.buf.references()<CR>', opts)
-  buf_map('n', 'gi', '<Cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-  buf_map('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
-  buf_map('n', 'gx', '<Cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-  buf_map('n', '\\f', '<Cmd>lua vim.lsp.buf.formatting()<CR>', opts)
-  buf_map(
+  local map_opts = {
+    buffer = true,
+    silent = true,
+  }
+
+  keymap.set('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', map_opts)
+  keymap.set('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', map_opts)
+  keymap.set('n', 'gr', '<Cmd>lua vim.lsp.buf.references()<CR>', map_opts)
+  keymap.set('n', 'gi', '<Cmd>lua vim.lsp.buf.implementation()<CR>', map_opts)
+  keymap.set('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', map_opts)
+  keymap.set('n', 'gx', '<Cmd>lua vim.lsp.buf.code_action()<CR>', map_opts)
+  keymap.set('n', '\\f', '<Cmd>lua vim.lsp.buf.formatting()<CR>', map_opts)
+  keymap.set(
     'n',
     'J',
     '<Cmd>lua vim.diagnostic.open_float(0, { source = "always", scope = "line", header = false, width = 55 })<CR>',
-    opts
+    map_opts
   )
-  buf_map(
+  keymap.set(
     'n',
     '[g',
     '<Cmd>lua vim.diagnostic.goto_prev({ float = { source = "always", width = 55 }})<CR>',
-    opts
+    map_opts
   )
-  buf_map(
+  keymap.set(
     'n',
     ']g',
     '<Cmd>lua vim.diagnostic.goto_next({ float = { source = "always", width = 55 }})<CR>',
-    opts
+    map_opts
   )
-  buf_map('i', '<C-k>', '<Cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+  keymap.set('i', '<C-k>', '<Cmd>lua vim.lsp.buf.signature_help()<CR>', map_opts)
 end
 
 local capabilities = cmp_capabilities.update_capabilities(
