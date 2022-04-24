@@ -8,6 +8,7 @@ local split = vim.split
 local diagnostic = vim.diagnostic
 local lsp = vim.lsp
 local keymap = vim.keymap
+local api = vim.api
 
 diagnostic.config({
   virtual_text = false,
@@ -32,11 +33,24 @@ fn.sign_define('DiagnosticSignHint', {
   texthl = 'DiagnosticSignHint',
 })
 
-local function handle_attach(client)
+local function handle_attach(client, buffer)
   if client.resolved_capabilities.document_highlight then
-    cmd('autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()')
-    cmd('autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()')
-    cmd('autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()')
+    local document_highlight_group = api.nvim_create_augroup('DocumentHighlight', { clear = true })
+    api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
+      group = document_highlight_group,
+      buffer = 0,
+      callback = function()
+        lsp.buf.document_highlight()
+      end
+    })
+
+    api.nvim_create_autocmd('CursorMoved', {
+      group = document_highlight_group,
+      buffer = 0,
+      callback = function()
+        lsp.buf.clear_references()
+      end
+    })
   end
 
   local map_opts = {
@@ -44,32 +58,57 @@ local function handle_attach(client)
     silent = true,
   }
 
-  keymap.set('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', map_opts)
-  keymap.set('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', map_opts)
-  keymap.set('n', 'gr', '<Cmd>lua vim.lsp.buf.references()<CR>', map_opts)
-  keymap.set('n', 'gi', '<Cmd>lua vim.lsp.buf.implementation()<CR>', map_opts)
-  keymap.set('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', map_opts)
-  keymap.set('n', 'gx', '<Cmd>lua vim.lsp.buf.code_action()<CR>', map_opts)
-  keymap.set('n', '\\f', '<Cmd>lua vim.lsp.buf.formatting()<CR>', map_opts)
+  local floating_windows_width = 55
+
+  keymap.set('n', 'gd', function() lsp.buf.definition() end, map_opts)
+  keymap.set('n', 'gD', function() lsp.buf.declaration() end, map_opts)
+  keymap.set('n', 'gt', function() lsp.buf.type_definition() end, map_opts)
+  keymap.set('n', 'gr', function() lsp.buf.references() end, map_opts)
+  keymap.set('n', 'gi', function() lsp.buf.implementation() end, map_opts)
+  keymap.set('n', '<Space>c*', function() lsp.buf.rename() end, map_opts)
+  keymap.set('n', 'K', function() lsp.buf.hover() end, map_opts)
+  keymap.set('n', 'gx', function() lsp.buf.code_action() end, map_opts)
+  keymap.set('n', '\\f', function() vim.lsp.buf.formatting() end, map_opts)
+  keymap.set({ 'n', 'i' }, '<C-k>', function() lsp.buf.signature_help() end, map_opts)
   keymap.set(
     'n',
     'J',
-    '<Cmd>lua vim.diagnostic.open_float(0, { source = "always", scope = "line", header = false, width = 55 })<CR>',
+    function()
+      diagnostic.open_float(0, {
+        source = "always",
+        scope = "line",
+        header = false,
+        width = floating_windows_width,
+      })
+    end,
     map_opts
   )
   keymap.set(
     'n',
     '[g',
-    '<Cmd>lua vim.diagnostic.goto_prev({ float = { source = "always", width = 55 }})<CR>',
+    function()
+      diagnostic.goto_prev({
+        float = {
+          source = "always",
+          width = floating_windows_width,
+        }
+      })
+    end,
     map_opts
   )
   keymap.set(
     'n',
     ']g',
-    '<Cmd>lua vim.diagnostic.goto_next({ float = { source = "always", width = 55 }})<CR>',
+    function()
+      diagnostic.goto_next({
+        float = {
+          source = "always",
+          width = floating_windows_width,
+        }
+      })
+    end,
     map_opts
   )
-  keymap.set('i', '<C-k>', '<Cmd>lua vim.lsp.buf.signature_help()<CR>', map_opts)
 end
 
 local capabilities = cmp_capabilities.update_capabilities(
