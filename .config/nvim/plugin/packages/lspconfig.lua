@@ -1,7 +1,6 @@
 local lspconfig = require('lspconfig')
 local cmp_capabilities = require('cmp_nvim_lsp')
 
-local cmd = vim.cmd
 local fn = vim.fn
 local env = vim.env
 local split = vim.split
@@ -33,7 +32,7 @@ fn.sign_define('DiagnosticSignHint', {
   texthl = 'DiagnosticSignHint',
 })
 
-local function handle_attach(client, buffer)
+local function handle_attach(client)
   if client.resolved_capabilities.document_highlight then
     local document_highlight_group = api.nvim_create_augroup('DocumentHighlight', { clear = true })
     api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
