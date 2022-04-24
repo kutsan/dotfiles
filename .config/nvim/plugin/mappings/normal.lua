@@ -25,16 +25,6 @@ keymap.set('n', '<C-n>', '<C-^>')
 keymap.set('n', 'c*', "/\\<<C-r>=expand('<cword>')<CR>\\>\\C<CR>``cgn")
 keymap.set('n', 'c#', "?\\<<C-r>=expand('<cword>')<CR>\\>\\C<CR>``cgN")
 
--- Refactor symbol under cursor with LSP.
-keymap.set(
-  'n',
-  '<Space>c*',
-  function()
-    local rename = require('kutsan/mappings/normal/rename')
-    rename.open_rename_window()
-  end,
-  { silent = true }
-)
 
 -- Reveal syntax group under cursor.
 keymap.set(
