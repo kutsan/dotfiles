@@ -56,7 +56,10 @@ cmp.setup({
     ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4)),
     ['<C-Space>'] = cmp.mapping(cmp.mapping.complete()),
     ['<C-e>'] = cmp.mapping.abort(),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    ['<CR>'] = cmp.mapping.confirm({
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = true,
+    }),
     ['<Tab>'] = cmp.mapping(function(fallback)
       local function has_words_before()
         local line, col = unpack(vim.api.nvim_win_get_cursor(0))
