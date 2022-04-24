@@ -89,7 +89,7 @@ local map_opts = { silent = true }
 
 keymap.set('n', '<Space><C-p>', '<Cmd>FzfLua files<CR>', map_opts)
 keymap.set('n', '<M-x>', '<Cmd>FzfLua commands<CR>', map_opts)
-keymap.set('n', '<C-b>', '<Cmd>FzfLua buffers<CR>', map_opts)
+keymap.set('n', '<Space><Space>', '<Cmd>FzfLua buffers<CR>', map_opts)
 keymap.set('n', '<Space>h', '<Cmd>FzfLua help_tags<CR>', map_opts)
 keymap.set('n', '<Space>:', '<Cmd>FzfLua command_history<CR>', map_opts)
 keymap.set('n', '<Space>/', '<Cmd>FzfLua search_history<CR>', map_opts)
