@@ -33,6 +33,17 @@ api.nvim_create_autocmd('BufReadPost', {
   end
 })
 
+-- Closes neovim automatically when nvim-tree is the last window in the view.
+api.nvim_create_autocmd('BufEnter', {
+  group = api.nvim_create_augroup('AutoCloseNvimTree', { clear = true }),
+  nested = true,
+  callback = function()
+    if #api.nvim_list_wins() == 1 and api.nvim_buf_get_name(0):match('NvimTree_') ~= nil then
+      cmd('quit')
+    end
+  end
+})
+
 -- -- Save the current buffer after changes.
 -- api.nvim_create_autocmd({ 'InsertLeave', 'TextChanged', }, {
 --   callback = function()
