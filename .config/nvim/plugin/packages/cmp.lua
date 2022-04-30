@@ -54,6 +54,8 @@ cmp.setup({
   mapping = {
     ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4)),
     ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4)),
+    ['<C-n>'] = cmp.mapping(cmp.mapping.select_next_item()),
+    ['<C-p>'] = cmp.mapping(cmp.mapping.select_prev_item()),
     ['<C-Space>'] = cmp.mapping(cmp.mapping.complete()),
     ['<C-e>'] = cmp.mapping.abort(),
     ['<CR>'] = cmp.mapping.confirm({
