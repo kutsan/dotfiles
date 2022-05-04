@@ -83,9 +83,3 @@ nvim_tree.setup({
 
 keymap.set('n', '<Space>f', '<Cmd>NvimTreeToggle<CR>', { silent = true })
 keymap.set('n', '<Space>F', '<Cmd>NvimTreeFindFile<CR>z.', { silent = true })
-
-api.nvim_command([[
-  augroup nvimtreesettings
-    autocmd BufWinEnter NvimTree let &l:statusline = ' nvimtree'
-  augroup end
-]])
