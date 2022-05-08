@@ -41,9 +41,13 @@ nvim_tree.setup({
   git = {
     ignore = false,
   },
+  actions = {
+    open_file = {
+      resize_window = true
+    },
+  },
   view = {
     width = 32,
-    auto_resize = true,
     mappings = {
       custom_only = true,
       list = {
