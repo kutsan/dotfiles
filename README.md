@@ -41,7 +41,6 @@
   - [`luasnip`](https://github.com/L3MON4D3/LuaSnip) - High-performance snippet engine
   - [`material`](https://github.com/marko-cerovac/material.nvim) - Color scheme
   - [`null-ls`](https://github.com/jose-elias-alvarez/null-ls.nvim) - Use langauge server to inject diagnostics, formatter etc.
-  - [`nvim-fzf`](https://github.com/vijaymarupudi/nvim-fzf) - Asynchronous Lua API for using fzf
   - [`nvim-tree`](https://github.com/kyazdani42/nvim-tree.lua) - File explorer
   - [`nvim-web-devicons`](https://github.com/kyazdani42/nvim-web-devicons) - Nerd Font icon API support
   - [`plenary`](https://github.com/nvim-lua/plenary.nvim) - Asynchronous modules using coroutines

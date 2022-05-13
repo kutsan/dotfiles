@@ -77,9 +77,6 @@
 [submodule "null-ls"]
   path = .config/nvim/pack/bundle/start/null-ls
   url = https://github.com/jose-elias-alvarez/null-ls.nvim
-[submodule "nvim-fzf"]
-  path = .config/nvim/pack/bundle/start/nvim-fzf
-  url = https://github.com/vijaymarupudi/nvim-fzf
 [submodule "nvim-tree"]
   path = .config/nvim/pack/bundle/start/nvim-tree
   url = https://github.com/kyazdani42/nvim-tree.lua
