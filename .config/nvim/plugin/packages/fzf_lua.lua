@@ -11,6 +11,7 @@ fzf_lua.setup({
       border = 'FloatBorder',
     },
     preview = {
+      default = 'head',
       vertical = 'down:60%',
       layout = 'vertical',
       scrollbar = 'float',
