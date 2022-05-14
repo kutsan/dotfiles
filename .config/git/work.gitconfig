@@ -1,3 +1,5 @@
 [user]
   email = kutsan@hubx.co
-  signingkey = 3CA5387F
+
+[commit]
+  gpgsign = false
