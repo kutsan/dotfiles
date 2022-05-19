@@ -37,6 +37,11 @@ material.setup({
     LspReferenceText = { fg = colors.none, bg = '#1F2233' },
     LspReferenceRead = { fg = colors.none, bg = '#1F2233' },
     LspReferenceWrite = { fg = colors.none, bg = '#1F2233' },
+    Pmenu = { fg = colors.fg, bg = colors.border },
+    PmenuSel = { bg = colors.comments },
+    PmenuSbar = { bg = colors.active },
+    PmenuThumb = { bg = colors.fg },
+    NormalFloat = { bg = colors.border },
 
     -- Git Commit Messages
     gitcommitHeader = { fg = colors.purple },
@@ -63,6 +68,7 @@ material.setup({
     NvimTreeGitIgnored = { fg = colors.comments },
 
     -- Cmp
+    CmpItemMenu = { fg = colors.gray },
     CmpItemAbbrMatch = { fg = colors.blue, style = 'bold' },
     CmpItemAbbrDeprecated = { fg = colors.comments, style = 'bold' },
     CmpItemAbbrMatchFuzzy = { fg = colors.blue, style = 'bold' },
