@@ -1,5 +1,34 @@
 local cmp = require('cmp')
 local luasnip = require('luasnip')
+local fn = vim.fn
+
+local kind_icons = {
+  Text = "",
+  Method = "",
+  Function = "",
+  Constructor = "",
+  Field = "ﰠ",
+  Variable = "",
+  Class = "ﴯ",
+  Interface = "",
+  Module = "",
+  Property = "ﰠ",
+  Unit = "塞",
+  Value = "",
+  Enum = "",
+  Keyword = "",
+  Snippet = "",
+  Color = "",
+  File = "",
+  Reference = "",
+  Folder = "",
+  EnumMember = "",
+  Constant = "",
+  Struct = "פּ",
+  Event = "",
+  Operator = "",
+  TypeParameter = "",
+}
 
 cmp.setup({
   snippet = {
@@ -19,34 +48,18 @@ cmp.setup({
   formatting = {
     fields = { 'kind', 'abbr', 'menu', },
     format = function(_, item)
-      local kind_icons = {
-        Text = "",
-        Method = "",
-        Function = "",
-        Constructor = "",
-        Field = "ﰠ",
-        Variable = "",
-        Class = "ﴯ",
-        Interface = "",
-        Module = "",
-        Property = "ﰠ",
-        Unit = "塞",
-        Value = "",
-        Enum = "",
-        Keyword = "",
-        Snippet = "",
-        Color = "",
-        File = "",
-        Reference = "",
-        Folder = "",
-        EnumMember = "",
-        Constant = "",
-        Struct = "פּ",
-        Event = "",
-        Operator = "",
-        TypeParameter = "",
-      }
+      local label_width = 20
+      local label = item.abbr
+      local truncated_label = fn.strcharpart(label, 0, label_width)
 
+      if truncated_label ~= label then
+        item.abbr = truncated_label .. '…'
+      elseif string.len(label) < label_width then
+        local padding = string.rep(' ', label_width - string.len(label))
+        item.abbr = label .. padding
+      end
+
+      item.menu = item.kind
       item.kind = kind_icons[item.kind]
       return item
     end,
