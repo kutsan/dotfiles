@@ -192,6 +192,9 @@ null_ls.setup({
 
     null_ls.builtins.diagnostics.eslint_d,
     null_ls.builtins.diagnostics.luacheck,
+    null_ls.builtins.diagnostics.stylelint.with({
+      command = 'node_modules/.bin/stylelint',
+    }),
 
     null_ls.builtins.code_actions.eslint_d,
     null_ls.builtins.code_actions.gitsigns,
