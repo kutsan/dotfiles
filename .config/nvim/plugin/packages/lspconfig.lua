@@ -69,7 +69,7 @@ local function handle_attach(client)
   keymap.set('n', 'gx', function() lsp.buf.code_action() end, map_opts)
   keymap.set('n', '\\f', function()
     vim.lsp.buf.format({
-      filter = function(client) return client.name ~= "tsserver" end
+      filter = function(server) return server.name ~= "tsserver" end
     })
   end, map_opts)
   keymap.set('i', '<C-k>', function() lsp.buf.signature_help() end, map_opts)
