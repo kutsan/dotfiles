@@ -19,6 +19,7 @@ material.setup({
   },
   contrast_filetypes = {},
   disable = {
+    colored_cursor = true,
     term_colors = true,
   },
   custom_highlights = {
