@@ -1,4 +1,3 @@
-local g = vim.g
 local keymap = vim.keymap
 local nvim_tree = require('nvim-tree')
 
