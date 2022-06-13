@@ -33,7 +33,7 @@ fn.sign_define('DiagnosticSignHint', {
 })
 
 local function handle_attach(client)
-  if client.resolved_capabilities.document_highlight then
+  if client.server_capabilities.documentHighlightProvider then
     local document_highlight_group = api.nvim_create_augroup('DocumentHighlight', { clear = true })
     api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
       group = document_highlight_group,
@@ -67,7 +67,11 @@ local function handle_attach(client)
   keymap.set('n', '<Space>c*', function() lsp.buf.rename() end, map_opts)
   keymap.set('n', 'K', function() lsp.buf.hover() end, map_opts)
   keymap.set('n', 'gx', function() lsp.buf.code_action() end, map_opts)
-  keymap.set('n', '\\f', function() vim.lsp.buf.formatting() end, map_opts)
+  keymap.set('n', '\\f', function()
+    vim.lsp.buf.format({
+      filter = function(client) return client.name ~= "tsserver" end
+    })
+  end, map_opts)
   keymap.set('i', '<C-k>', function() lsp.buf.signature_help() end, map_opts)
   keymap.set(
     'n',
@@ -115,12 +119,7 @@ local capabilities = cmp_capabilities.update_capabilities(
 )
 
 lspconfig.tsserver.setup({
-  on_attach = function(client)
-    client.resolved_capabilities.document_formatting = false
-    client.resolved_capabilities.document_range_formatting = false
-
-    handle_attach(client)
-  end,
+  on_attach = handle_attach,
   capabilities = capabilities,
 })
 lspconfig.cssls.setup({
@@ -133,12 +132,7 @@ lspconfig.html.setup({
 })
 lspconfig.jsonls.setup({
   capabilities = capabilities,
-  on_attach = function(client)
-    client.resolved_capabilities.document_formatting = false
-    client.resolved_capabilities.document_range_formatting = false
-
-    handle_attach(client)
-  end,
+  on_attach = handle_attach,
   settings = {
     json = {
       schemas = require('schemastore').json.schemas(),
