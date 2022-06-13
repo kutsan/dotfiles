@@ -1,40 +1,7 @@
 local g = vim.g
 local keymap = vim.keymap
-
--- Set whether or not to show certain icons.
-g.nvim_tree_show_icons = {
-  git = 0,
-  folders = 1,
-  files = 1,
-}
-
--- Customize icons.
-g.nvim_tree_icons = {
-  default = '',
-  symlink = '',
-  git = {
-    unstaged = '',
-    staged = '',
-    unmerged = '',
-    renamed = '',
-    deleted = '',
-    untracked = '',
-    ignored = '',
-  },
-  folder = {
-    default = '',
-    open = '',
-    symlink = '',
-  },
-}
-
--- Only show the current folder as the root instead of full path.
-g.nvim_tree_root_folder_modifier = ':t'
-
--- Highlight nodes according to current git status.
-g.nvim_tree_git_hl = 1
-
 local nvim_tree = require('nvim-tree')
+
 nvim_tree.setup({
   update_cwd = true,
   hijack_cursor = true,
@@ -78,6 +45,34 @@ nvim_tree.setup({
     },
   },
   renderer = {
+    highlight_git = true,
+    root_folder_modifier = ':t',
+    icons = {
+      glyphs = {
+        default = '',
+        symlink = '',
+        git = {
+          unstaged = '',
+          staged = '',
+          unmerged = '',
+          renamed = '',
+          deleted = '',
+          untracked = '',
+          ignored = '',
+        },
+        folder = {
+          default = '',
+          open = '',
+          symlink = '',
+        },
+      },
+      show = {
+        git = false,
+        file = true,
+        folder = true,
+        folder_arrow = false,
+      },
+    },
     indent_markers = {
       enable = true,
     },
