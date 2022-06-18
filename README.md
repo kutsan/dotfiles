@@ -1,4 +1,4 @@
-<img width="100" src="https://user-images.githubusercontent.com/10108377/174444191-5c3a70bc-7389-49a0-b3a4-87aff646bc9e.png" alt="Logo" />
+<img width="100" src="https://github.com/kutsan/dotfiles/raw/master/.github/assets/logo.png" alt="Logo" />
 
 # kutsan's dotfiles
 
