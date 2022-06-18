@@ -1,4 +1,8 @@
-# `kutsan's dotfiles` [![luacheck](https://github.com/kutsan/dotfiles/actions/workflows/luacheck.yml/badge.svg)](https://github.com/kutsan/dotfiles/actions/workflows/luacheck.yml)
+<img width="100" src="https://user-images.githubusercontent.com/10108377/174444191-5c3a70bc-7389-49a0-b3a4-87aff646bc9e.png" alt="Logo" />
+
+# kutsan's dotfiles
+
+[![luacheck](https://github.com/kutsan/dotfiles/actions/workflows/luacheck.yml/badge.svg)](https://github.com/kutsan/dotfiles/actions/workflows/luacheck.yml)
 
 ![neovim screenshot](https://user-images.githubusercontent.com/10108377/140420895-a3ed425b-e19f-4970-b0b5-9d25eec3fbe7.png)
 
