@@ -56,7 +56,6 @@ material.setup({
 
     -- NvimTree
     NvimTreeIndentMarker = { fg = colors.selection },
-    NvimTreeNormal = { bg = colors.contrast },
     NvimTreeFolderIcon = { fg = colors.fg },
     NvimTreeFolderName = { fg = colors.blue },
     NvimTreeOpenedFolderName = { fg = colors.blue, style = 'italic' },
