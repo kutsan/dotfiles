@@ -67,9 +67,6 @@ export FZF_DEFAULT_OPTS="\
   --bind='ctrl-f:half-page-down' \
   --bind='ctrl-b:half-page-up'"
 
-# transmission
-export TR_AUTH='kutsan:EkYBoNSd6oIUznucRTfQTFCcxC5WeeDaBImPt6I9CncuY9g8mH'
-
 # gcal
 export GCAL="\
   --highlighting=\e[41m:\e[0m:\e[33m:\e[0m \
