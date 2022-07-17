@@ -62,7 +62,7 @@ fzf_lua.setup({
     prompt = 'Grep> ',
     input_prompt = 'Grep> ',
     git_icons = false,
-    cmd = 'git grep --line-number --column -I --ignore-case'
+    cmd = 'git grep --line-number --column -I --ignore-case',
   },
   args = {
     prompt = 'Args> ',

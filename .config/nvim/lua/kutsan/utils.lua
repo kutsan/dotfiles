@@ -10,4 +10,4 @@ local function set_undo_ftplugin(cmd)
   b.undo_ftplugin = undo_cmd
 end
 
-return { set_undo_ftplugin = set_undo_ftplugin, }
+return { set_undo_ftplugin = set_undo_ftplugin }

@@ -3,31 +3,31 @@ local luasnip = require('luasnip')
 local fn = vim.fn
 
 local kind_icons = {
-  Text = "",
-  Method = "",
-  Function = "",
-  Constructor = "",
-  Field = "ﰠ",
-  Variable = "",
-  Class = "ﴯ",
-  Interface = "",
-  Module = "",
-  Property = "ﰠ",
-  Unit = "塞",
-  Value = "",
-  Enum = "",
-  Keyword = "",
-  Snippet = "",
-  Color = "",
-  File = "",
-  Reference = "",
-  Folder = "",
-  EnumMember = "",
-  Constant = "",
-  Struct = "פּ",
-  Event = "",
-  Operator = "",
-  TypeParameter = "",
+  Text = '',
+  Method = '',
+  Function = '',
+  Constructor = '',
+  Field = 'ﰠ',
+  Variable = '',
+  Class = 'ﴯ',
+  Interface = '',
+  Module = '',
+  Property = 'ﰠ',
+  Unit = '塞',
+  Value = '',
+  Enum = '',
+  Keyword = '',
+  Snippet = '',
+  Color = '',
+  File = '',
+  Reference = '',
+  Folder = '',
+  EnumMember = '',
+  Constant = '',
+  Struct = 'פּ',
+  Event = '',
+  Operator = '',
+  TypeParameter = '',
 }
 
 cmp.setup({
@@ -46,7 +46,7 @@ cmp.setup({
     },
   },
   formatting = {
-    fields = { 'kind', 'abbr', 'menu', },
+    fields = { 'kind', 'abbr', 'menu' },
     format = function(_, item)
       local label_width = 20
       local label = item.abbr
@@ -80,7 +80,8 @@ cmp.setup({
         local line, col = unpack(vim.api.nvim_win_get_cursor(0))
 
         return col ~= 0
-          and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]
+          and vim.api
+              .nvim_buf_get_lines(0, line - 1, line, true)[1]
               :sub(col, col)
               :match('%s')
             == nil

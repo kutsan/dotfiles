@@ -9,7 +9,7 @@ api.nvim_create_autocmd('TermOpen', {
     opt_local.number = false
     opt_local.relativenumber = false
     cmd('startinsert')
-  end
+  end,
 })
 
 -- Briefly highlight yanked region.
@@ -21,7 +21,7 @@ api.nvim_create_autocmd('TextYankPost', {
       timeout = 100,
       on_visual = false,
     })
-  end
+  end,
 })
 
 -- Block changes to read-only buffers.
@@ -30,7 +30,7 @@ api.nvim_create_autocmd('BufReadPost', {
   callback = function()
     local readonly = api.nvim_buf_get_option(0, 'readonly')
     api.nvim_buf_set_option(0, 'modifiable', not readonly)
-  end
+  end,
 })
 
 -- Closes neovim automatically when nvim-tree is the last window in the view.
@@ -38,10 +38,13 @@ api.nvim_create_autocmd('BufEnter', {
   group = api.nvim_create_augroup('AutoCloseNvimTree', { clear = true }),
   nested = true,
   callback = function()
-    if #api.nvim_list_wins() == 1 and api.nvim_buf_get_name(0):match('NvimTree_') ~= nil then
+    if
+      #api.nvim_list_wins() == 1
+      and api.nvim_buf_get_name(0):match('NvimTree_') ~= nil
+    then
       cmd('quit')
     end
-  end
+  end,
 })
 
 -- -- Save the current buffer after changes.

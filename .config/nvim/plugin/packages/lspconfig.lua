@@ -34,13 +34,15 @@ fn.sign_define('DiagnosticSignHint', {
 
 local function handle_attach(client)
   if client.server_capabilities.documentHighlightProvider then
-    local document_highlight_group = api.nvim_create_augroup('DocumentHighlight', { clear = true })
+    local document_highlight_group =
+      api.nvim_create_augroup('DocumentHighlight', { clear = true })
+
     api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
       group = document_highlight_group,
       buffer = 0,
       callback = function()
         lsp.buf.document_highlight()
-      end
+      end,
     })
 
     api.nvim_create_autocmd('CursorMoved', {
@@ -48,7 +50,7 @@ local function handle_attach(client)
       buffer = 0,
       callback = function()
         lsp.buf.clear_references()
-      end
+      end,
     })
   end
 
@@ -59,64 +61,80 @@ local function handle_attach(client)
 
   local floating_windows_width = 55
 
-  keymap.set('n', 'gd', function() lsp.buf.definition() end, map_opts)
-  keymap.set('n', 'gD', function() lsp.buf.declaration() end, map_opts)
-  keymap.set('n', 'gt', function() lsp.buf.type_definition() end, map_opts)
-  keymap.set('n', 'gr', function() lsp.buf.references() end, map_opts)
-  keymap.set('n', 'gi', function() lsp.buf.implementation() end, map_opts)
-  keymap.set('n', '<Space>c*', function() lsp.buf.rename() end, map_opts)
-  keymap.set('n', 'K', function() lsp.buf.hover() end, map_opts)
-  keymap.set('n', 'gx', function() lsp.buf.code_action() end, map_opts)
+  keymap.set('n', 'gd', function()
+    lsp.buf.definition()
+  end, map_opts)
+
+  keymap.set('n', 'gD', function()
+    lsp.buf.declaration()
+  end, map_opts)
+
+  keymap.set('n', 'gt', function()
+    lsp.buf.type_definition()
+  end, map_opts)
+
+  keymap.set('n', 'gr', function()
+    lsp.buf.references()
+  end, map_opts)
+
+  keymap.set('n', 'gi', function()
+    lsp.buf.implementation()
+  end, map_opts)
+
+  keymap.set('n', '<Space>c*', function()
+    lsp.buf.rename()
+  end, map_opts)
+
+  keymap.set('n', 'K', function()
+    lsp.buf.hover()
+  end, map_opts)
+
+  keymap.set('n', 'gx', function()
+    lsp.buf.code_action()
+  end, map_opts)
+
   keymap.set('n', '\\f', function()
     vim.lsp.buf.format({
-      filter = function(server) return server.name ~= "tsserver" end
+      filter = function(server)
+        return server.name ~= 'tsserver'
+      end,
     })
   end, map_opts)
-  keymap.set('i', '<C-k>', function() lsp.buf.signature_help() end, map_opts)
-  keymap.set(
-    'n',
-    'J',
-    function()
-      diagnostic.open_float(0, {
-        source = "always",
-        scope = "line",
-        header = false,
+
+  keymap.set('i', '<C-k>', function()
+    lsp.buf.signature_help()
+  end, map_opts)
+
+  keymap.set('n', 'J', function()
+    diagnostic.open_float(0, {
+      source = 'always',
+      scope = 'line',
+      header = false,
+      width = floating_windows_width,
+    })
+  end, map_opts)
+
+  keymap.set('n', '[g', function()
+    diagnostic.goto_prev({
+      float = {
+        source = 'always',
         width = floating_windows_width,
-      })
-    end,
-    map_opts
-  )
-  keymap.set(
-    'n',
-    '[g',
-    function()
-      diagnostic.goto_prev({
-        float = {
-          source = "always",
-          width = floating_windows_width,
-        }
-      })
-    end,
-    map_opts
-  )
-  keymap.set(
-    'n',
-    ']g',
-    function()
-      diagnostic.goto_next({
-        float = {
-          source = "always",
-          width = floating_windows_width,
-        }
-      })
-    end,
-    map_opts
-  )
+      },
+    })
+  end, map_opts)
+
+  keymap.set('n', ']g', function()
+    diagnostic.goto_next({
+      float = {
+        source = 'always',
+        width = floating_windows_width,
+      },
+    })
+  end, map_opts)
 end
 
-local capabilities = cmp_capabilities.update_capabilities(
-  lsp.protocol.make_client_capabilities()
-)
+local capabilities =
+  cmp_capabilities.update_capabilities(lsp.protocol.make_client_capabilities())
 
 lspconfig.tsserver.setup({
   on_attach = handle_attach,

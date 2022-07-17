@@ -26,19 +26,24 @@ keymap.set('n', 'c*', "/\\<<C-r>=expand('<cword>')<CR>\\>\\C<CR>``cgn")
 keymap.set('n', 'c#', "?\\<<C-r>=expand('<cword>')<CR>\\>\\C<CR>``cgN")
 
 -- Remap `j` and `k` for dealing with word wrap.
-keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
-
--- Reveal syntax group under cursor.
 keymap.set(
   'n',
-  '<F10>',
-  function()
-    local syntax = require('kutsan/mappings/normal/syntax')
-    syntax.reveal_syntax_group()
-  end,
-  { silent = true }
+  'k',
+  "v:count == 0 ? 'gk' : 'k'",
+  { expr = true, silent = true }
 )
+keymap.set(
+  'n',
+  'j',
+  "v:count == 0 ? 'gj' : 'j'",
+  { expr = true, silent = true }
+)
+
+-- Reveal syntax group under cursor.
+keymap.set('n', '<F10>', function()
+  local syntax = require('kutsan/mappings/normal/syntax')
+  syntax.reveal_syntax_group()
+end, { silent = true })
 
 -- Scroll viewport faster.
 keymap.set('n', '<C-e>', '3<C-e>')
@@ -51,24 +56,14 @@ keymap.set('n', '<S-Right>', '2<C-w>>')
 keymap.set('n', '<S-Left>', '2<C-w><')
 
 -- Remove current buffer without losing window layout.
-keymap.set(
-  'n',
-  '\\q',
-  function()
-    local buffer = require('kutsan/mappings/normal/buffer')
-    buffer.remove({ force = false })
-  end,
-  { silent = true }
-)
-keymap.set(
-  'n',
-  '\\Q',
-  function()
-    local buffer = require('kutsan/mappings/normal/buffer')
-    buffer.remove({ force = true })
-  end,
-  { silent = true }
-)
+keymap.set('n', '\\q', function()
+  local buffer = require('kutsan/mappings/normal/buffer')
+  buffer.remove({ force = false })
+end, { silent = true })
+keymap.set('n', '\\Q', function()
+  local buffer = require('kutsan/mappings/normal/buffer')
+  buffer.remove({ force = true })
+end, { silent = true })
 
 -- Add [count] blank lines above or below the cursor.
 keymap.set(
@@ -85,17 +80,12 @@ keymap.set(
 )
 
 -- Open URL under cursor in browser or open path in GUI explorer.
-keymap.set(
-  'n',
-  'gb',
-  function()
-    local url = fn.expand('<cfile>')
-    local escaped_url = fn.escape(url, '#%!')
+keymap.set('n', 'gb', function()
+  local url = fn.expand('<cfile>')
+  local escaped_url = fn.escape(url, '#%!')
 
-    cmd(('silent !open \"%s\"'):format(escaped_url))
-  end,
-  { silent = true }
-)
+  cmd(('silent !open "%s"'):format(escaped_url))
+end, { silent = true })
 
 -- Toggle common options.
 keymap.set('n', 'cos', '<Cmd>set spell!<CR>', { silent = true })
@@ -121,4 +111,9 @@ keymap.set('n', '<Left>', '<Cmd>cpfile<CR>zz', { silent = true })
 keymap.set('n', '<Right>', '<Cmd>cnfile<CR>zz', { silent = true })
 
 -- Select last changed or yanked area.
-keymap.set('n', 'gV', "'`[' .. strpart(getregtype(), 0, 1) .. '`]'", { expr = true })
+keymap.set(
+  'n',
+  'gV',
+  "'`[' .. strpart(getregtype(), 0, 1) .. '`]'",
+  { expr = true }
+)

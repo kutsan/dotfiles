@@ -44,7 +44,6 @@ g.undotree_TreeReturnShape = '\\'
 g.undotree_TreeNodeShape = '*'
 g.undotree_TreeVertShape = '|'
 
-
 -- Default highlight groups for syntax items.
 g.undotree_HighlightSyntaxAdd = 'DiffAdd'
 g.undotree_HighlightSyntaxChange = 'DiffChange'

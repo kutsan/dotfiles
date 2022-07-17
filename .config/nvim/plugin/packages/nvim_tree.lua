@@ -9,7 +9,7 @@ nvim_tree.setup({
   },
   actions = {
     open_file = {
-      resize_window = true
+      resize_window = true,
     },
   },
   view = {

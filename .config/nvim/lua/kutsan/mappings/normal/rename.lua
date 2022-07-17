@@ -23,15 +23,19 @@ local function open_rename_window()
 
   cmd('startinsert!')
 
-  keymap.set('i', '<Esc>', '<Cmd>stopinsert <Bar> quit!<CR>', { buffer = true, silent = true })
+  keymap.set(
+    'i',
+    '<Esc>',
+    '<Cmd>stopinsert <Bar> quit!<CR>',
+    { buffer = true, silent = true }
+  )
   keymap.set('n', '<Esc>', '<Cmd>quit!<CR>', { buffer = true, silent = true })
   keymap.set(
     'i',
     '<CR>',
-    ('<Cmd>stopinsert | lua require("kutsan/mappings/normal/rename").rename_symbol_from_window(%d, "%s")<CR>'):format(
-      window,
-      current_name
-    ),
+    (
+      '<Cmd>stopinsert | lua require("kutsan/mappings/normal/rename").rename_symbol_from_window(%d, "%s")<CR>'
+    ):format(window, current_name),
     {
       buffer = true,
       silent = true,
@@ -40,10 +44,9 @@ local function open_rename_window()
   keymap.set(
     'n',
     '<CR>',
-    ('<Cmd>stopinsert | lua require("kutsan/mappings/normal/rename").rename_symbol_from_window(%d, "%s")<CR>'):format(
-      window,
-      current_name
-    ),
+    (
+      '<Cmd>stopinsert | lua require("kutsan/mappings/normal/rename").rename_symbol_from_window(%d, "%s")<CR>'
+    ):format(window, current_name),
     {
       buffer = true,
       silent = true,
