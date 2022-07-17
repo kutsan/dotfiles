@@ -95,6 +95,9 @@
 [submodule "schema-store"]
   path = .config/nvim/pack/bundle/start/schema-store
   url = https://github.com/b0o/SchemaStore.nvim
+[submodule "surround"]
+  path = .config/nvim/pack/bundle/start/surround
+  url = https://github.com/kylechui/nvim-surround
 [submodule "undotree"]
   path = .config/nvim/pack/bundle/opt/undotree
   url = https://github.com/mbbill/undotree
