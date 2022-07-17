@@ -1,8 +1,5 @@
 local g = vim.g
 
--- Enable Lua filetype detection.
-g.do_filetype_lua = 1
-
 -- Disable unused built-in plugins.
 g.loaded_gzip = true
 g.loaded_rrhelper = true
