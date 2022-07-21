@@ -28,7 +28,7 @@ nvim_tree.setup({
         { key = 'c', action = 'create' },
         { key = 'D', action = 'trash' },
         { key = 'r', action = 'rename' },
-        { key = 'R', action = 'full_rename' },
+        { key = '<C-r>', action = 'full_rename' },
         { key = 'd', action = 'cut' },
         { key = 'y', action = 'copy' },
         { key = 'p', action = 'paste' },
