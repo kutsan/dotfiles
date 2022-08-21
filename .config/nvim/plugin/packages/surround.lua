@@ -2,10 +2,10 @@ local surround = require('nvim-surround')
 
 surround.setup({
   keymaps = {
-    insert = 'sa',
     visual = 'sa',
     delete = 'sd',
     change = 'sr',
+    insert = false,
     insert_line = false,
   },
 })
