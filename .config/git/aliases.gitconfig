@@ -3,7 +3,6 @@
   b = branch
   bl = !git --no-pager branch --verbose --all
   c = commit
-  co = checkout
   d = diff --stat=100,100 --patch
   ds = diff --stat=100,100 --patch --staged
   dt = difftool
@@ -15,12 +14,4 @@
   rd = reflog --date=iso8601 --pretty=reflog-full
   s = status
   sm = submodule
-  w = whatchanged
-  pr = "! \
-    function f() { \
-      git fetch --force --update-head-ok ${2:-origin} refs/pull/$1/head:pr/$1 && git checkout pr/$1; \
-    }; f"
-  pr-clean = "! \
-    git for-each-ref refs/heads/pr/* --format='%(refname)' \
-    | sed s#refs/heads/## \
-    | xargs -I '{}' git branch --delete --force {}"
+  sw = switch
