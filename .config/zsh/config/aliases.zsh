@@ -13,9 +13,6 @@ alias la='ls -l --almost-all --si' # List nodes with their details.
 # Custom Shortcuts
 alias v='nvim'
 alias g='git'
-alias l='ledger'
-alias lb="ledger balance '^assets' '^liabilities' --empty"
-alias le='cd ~/Projects/finance && git pull --ff-only; nvim +"normal! Gzz" ~/Projects/finance/$(date +%Y)/$(date +%m).ledger'
 alias gen-packagejson='cp "$HOME/.config/npm/package.json" "package.json"'
 alias gen-editorconfig='cp "$HOME/.config/editorconfig/.editorconfig" ".editorconfig"'
 

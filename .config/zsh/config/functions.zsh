@@ -30,13 +30,3 @@ function gen-ssh-keygen-ed25519() {
 function gen-ssh-keygen-rsa() {
   ssh-keygen -t rsa -o -a 100 -b 4096 -f ~/.ssh/keys/$1 -C "$2"
 }
-
-##
-# Commit and push ledger journal updates.
-##
-function lpush() {
-  cd ~/Projects/finance && \
-    git add . && \
-    git commit --message='update journal file' && \
-    git push origin master
-}
