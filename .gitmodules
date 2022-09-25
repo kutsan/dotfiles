@@ -47,6 +47,9 @@
 [submodule "diffview"]
   path = .config/nvim/pack/bundle/start/diffview
   url = https://github.com/sindrets/diffview.nvim
+[submodule "dressing"]
+  path = .config/nvim/pack/bundle/start/dressing
+  url = https://github.com/stevearc/dressing.nvim
 [submodule "editorconfig"]
   path = .config/nvim/pack/bundle/start/editorconfig
   url = https://github.com/gpanders/editorconfig.nvim
