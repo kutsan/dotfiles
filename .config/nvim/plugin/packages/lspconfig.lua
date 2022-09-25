@@ -190,6 +190,7 @@ lspconfig.sumneko_lua.setup({
 })
 
 local null_ls = require('null-ls')
+local command_resolver = require('null-ls.helpers.command_resolver')
 
 null_ls.setup({
   on_attach = handle_attach,
@@ -199,13 +200,13 @@ null_ls.setup({
     null_ls.builtins.formatting.prettierd,
     null_ls.builtins.formatting.stylua,
     null_ls.builtins.formatting.stylelint.with({
-      command = 'node_modules/.bin/stylelint',
+      command = command_resolver.from_node_modules(),
     }),
 
     null_ls.builtins.diagnostics.eslint_d,
     null_ls.builtins.diagnostics.luacheck,
     null_ls.builtins.diagnostics.stylelint.with({
-      command = 'node_modules/.bin/stylelint',
+      command = command_resolver.from_node_modules(),
     }),
 
     null_ls.builtins.code_actions.eslint_d,
