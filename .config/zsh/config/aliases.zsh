@@ -13,8 +13,6 @@ alias la='ls -l --almost-all --si' # List nodes with their details.
 # Custom Shortcuts
 alias v='nvim'
 alias g='git'
-alias gen-packagejson='cp "$HOME/.config/npm/package.json" "package.json"'
-alias gen-editorconfig='cp "$HOME/.config/editorconfig/.editorconfig" ".editorconfig"'
 
 # git
 foreach key (a b bl c d ds dt dts f l ld r rd s sm sw) {
