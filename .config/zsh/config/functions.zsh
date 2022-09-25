@@ -40,39 +40,3 @@ function lpush() {
     git commit --message='update journal file' && \
     git push origin master
 }
-
-function clear_clipboard() {
-  unset should_clear
-  vared -p '🧹 Clear clipboard? (Y/n): ' -c should_clear
-
-  if (
-    [[ "$should_clear" == 'y' ]] \
-    || [[ "$should_clear" == 'Y' ]] \
-    || [[ "$should_clear" == '' ]]
-  ) {
-    printf '' | pbcopy
-    echo '✅ Clipboard cleared.'
-  }
-
-  unset should_clear
-}
-
-##
-# Utility functions for bitwarden-cli.
-##
-function bwlogin() {
-  bw login --code "$(auth bitwarden)" \
-    "$(gpg --no-tty --for-your-eyes-only --quiet --decrypt ~/.config/auth/email.gpg 2>/dev/null)" \
-    "$(gpg --no-tty --for-your-eyes-only --quiet --decrypt ~/.config/auth/bitwarden.gpg 2>/dev/null)"
-}
-function bwunlock() {
-  export BW_SESSION="$(bw unlock --raw $(gpg --no-tty --for-your-eyes-only --quiet --decrypt ~/.config/auth/bitwarden.gpg 2>/dev/null))"
-}
-function bwget() {
-  bwunlock && bw get password "$*" | pbcopy
-  clear_clipboard
-}
-function bwcard() {
-  bwunlock && bw get item "$*" | fx .card.number | pbcopy
-  clear_clipboard
-}
