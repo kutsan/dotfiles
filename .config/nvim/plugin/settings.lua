@@ -6,7 +6,7 @@ local g = vim.g
 -- Color scheme
 opt.termguicolors = true -- Enables 24-bit RGB color support.
 g.material_style = 'deep ocean'
-cmd('colorscheme material')
+cmd.colorscheme('material')
 
 -- Global Options
 opt.mouse = table.concat({ -- Enable mouse support for normal and visual modes.

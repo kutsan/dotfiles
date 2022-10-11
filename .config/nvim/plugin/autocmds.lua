@@ -8,7 +8,7 @@ api.nvim_create_autocmd('TermOpen', {
   callback = function()
     opt_local.number = false
     opt_local.relativenumber = false
-    cmd('startinsert')
+    cmd.startinsert()
   end,
 })
 
@@ -42,7 +42,7 @@ api.nvim_create_autocmd('BufEnter', {
       #api.nvim_list_wins() == 1
       and api.nvim_buf_get_name(0):match('NvimTree_') ~= nil
     then
-      cmd('quit')
+      cmd.quit()
     end
   end,
 })

@@ -1,4 +1,4 @@
-local cmd = vim.api.nvim_command
+local cmd = vim.cmd
 
 --
 -- Select an entire buffer.
@@ -7,7 +7,7 @@ local cmd = vim.api.nvim_command
 -- xnoremap <silent> ae <Cmd>lua require('kutsan/mappings/motion/entire').select_entire_buffer()<CR>
 --
 local function select_entire_buffer()
-  cmd("normal! m'")
+  cmd.normal({ "m'", bang = true })
   cmd('keepjumps normal! gg0VoG')
 end
 

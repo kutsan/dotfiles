@@ -25,7 +25,7 @@ local function remove(opts)
       end
 
       -- Try using previous buffer
-      cmd('bprevious')
+      cmd.bprevious()
       if current_buf_id ~= api.nvim_win_get_buf(win_id) then
         return
       end
@@ -38,7 +38,7 @@ local function remove(opts)
     return true
   end, fn.win_findbuf(target_buf_id))
 
-  cmd(string.format('bdelete%s %d', opts.force and '!' or '', target_buf_id))
+  cmd.bdelete({ target_buf_id, bang = opts.force })
 end
 
 return { remove = remove }
