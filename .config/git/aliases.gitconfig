@@ -15,4 +15,4 @@
   s = status --short
   sm = submodule
   sw = switch
-  prune-merged = !git branch --merged | grep --invert-match --extended-regexp '\\*|main|master' | xargs -n 1 git branch -d
+  prune-merged = !git branch --merged | grep --invert-match --extended-regexp '\\*|main|master' | xargs -n 1 git branch --delete
