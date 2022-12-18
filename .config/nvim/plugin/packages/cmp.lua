@@ -28,6 +28,7 @@ local kind_icons = {
   Event = '',
   Operator = '',
   TypeParameter = '',
+  Copilot = '',
 }
 
 cmp.setup({
@@ -108,6 +109,7 @@ cmp.setup({
     { name = 'nvim_lsp_signature_help' },
     { name = 'luasnip' },
     { name = 'calc' },
+    { name = 'copilot' },
   }, {
     { name = 'buffer' },
   }),
