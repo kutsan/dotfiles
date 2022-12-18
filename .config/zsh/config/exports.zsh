@@ -61,6 +61,7 @@ export FZF_DEFAULT_OPTS="\
   --margin='1,3' \
   --layout='reverse' \
   --info='inline' \
+  --no-separator \
   --no-bold \
   --bind='ctrl-f:half-page-down' \
   --bind='ctrl-b:half-page-up'"
