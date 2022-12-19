@@ -133,8 +133,7 @@ local function handle_attach(client)
   end, map_opts)
 end
 
-local capabilities =
-  cmp_capabilities.update_capabilities(lsp.protocol.make_client_capabilities())
+local capabilities = cmp_capabilities.default_capabilities()
 
 lspconfig.tsserver.setup({
   on_attach = handle_attach,
