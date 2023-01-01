@@ -104,7 +104,6 @@ material.setup({
     CmpItemKindStruct = { fg = colors.main.purple },
     CmpItemKindEvent = { fg = colors.main.yellow },
     CmpItemKindOperator = { fg = colors.main.blue },
-    CmpItemKindCopilot = { fg = colors.main.red },
 
     -- GitSigns
     GitSignsAdd = { fg = colors.main.green },
