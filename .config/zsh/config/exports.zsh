@@ -1,6 +1,7 @@
 path=(
-  ~/.local/bin
-  ~/.local/share/cargo/bin
+  "$HOME/.local/bin"
+  "$HOME/.local/share/cargo/bin"
+  "$HOME/.docker/bin"
   $path
 )
 
