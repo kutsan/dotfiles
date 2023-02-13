@@ -18,6 +18,9 @@
   default = nothing
   followtags = true
 
+[pull]
+  ff = only
+
 [diff]
   algorithm = histogram
   tool = nvimdiff
