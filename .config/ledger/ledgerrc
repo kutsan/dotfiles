@@ -1,4 +1,4 @@
 --pedantic
 --date-format %Y-%m-%d
 --start-of-week=1
---file ~/Projects/finance/main.ledger
+--file ~/Documents/Projects/finance/main.ledger

@@ -91,5 +91,5 @@
   insteadOf = "g:"
   pushInsteadOf = "g:"
 
-[includeIf "gitdir:~/Work/"]
+[includeIf "gitdir:~/Documents/Work/"]
   path = work.gitconfig
