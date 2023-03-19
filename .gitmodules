@@ -95,6 +95,12 @@
 [submodule "surround"]
   path = .config/nvim/pack/bundle/start/surround
   url = https://github.com/kylechui/nvim-surround
+[submodule "treesitter"]
+  path = .config/nvim/pack/bundle/start/treesitter
+  url = https://github.com/nvim-treesitter/nvim-treesitter
+[submodule "treesitter-context"]
+  path = .config/nvim/pack/bundle/start/treesitter-context
+  url = https://github.com/nvim-treesitter/nvim-treesitter-context
 [submodule "undotree"]
   path = .config/nvim/pack/bundle/opt/undotree
   url = https://github.com/mbbill/undotree

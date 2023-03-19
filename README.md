@@ -50,6 +50,8 @@
   - [`plenary`](https://github.com/nvim-lua/plenary.nvim) - Asynchronous modules using coroutines
   - [`schema-store`](https://github.com/b0o/SchemaStore.nvim) - Access to the SchemaStore catalog for JSON langauge server
   - [`surround`](https://github.com/kylechui/nvim-surround) - Add, change and delete surrounding delimiter pairs
+  - [`treesitter`](https://github.com/nvim-treesitter/nvim-treesitter) - Neovim plugin of an incremental parsing system for programming tools
+  - [`treesitter-context`](https://github.com/nvim-treesitter/nvim-treesitter-context) - Show code context using treesitter
   - [`undotree`](https://github.com/mbbill/undotree) - Visualize undo tree
 - [`git`](https://git-scm.com) - Version control system for tracking changes in files and coordinating the work
 - [`node`](https://nodejs.org) - JavaScript runtime environment for developing a diverse variety of applications
