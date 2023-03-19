@@ -86,9 +86,6 @@
 [submodule "plenary"]
   path = .config/nvim/pack/bundle/start/plenary
   url = https://github.com/nvim-lua/plenary.nvim
-[submodule "polyglot"]
-  path = .config/nvim/pack/bundle/start/polyglot
-  url = https://github.com/sheerun/vim-polyglot
 [submodule "pounce"]
   path = .config/nvim/pack/bundle/start/pounce
   url = https://github.com/rlane/pounce.nvim

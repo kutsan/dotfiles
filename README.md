@@ -48,7 +48,6 @@
   - [`nvim-tree`](https://github.com/kyazdani42/nvim-tree.lua) - File explorer
   - [`nvim-web-devicons`](https://github.com/kyazdani42/nvim-web-devicons) - Nerd Font icon API support
   - [`plenary`](https://github.com/nvim-lua/plenary.nvim) - Asynchronous modules using coroutines
-  - [`polyglot`](https://github.com/sheerun/vim-polyglot) - Big collection of language packs as scripts are loaded only on demand
   - [`schema-store`](https://github.com/b0o/SchemaStore.nvim) - Access to the SchemaStore catalog for JSON langauge server
   - [`surround`](https://github.com/kylechui/nvim-surround) - Add, change and delete surrounding delimiter pairs
   - [`undotree`](https://github.com/mbbill/undotree) - Visualize undo tree
