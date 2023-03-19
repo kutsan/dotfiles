@@ -57,7 +57,7 @@ local function handle_attach(client)
     silent = true,
   }
 
-  local floating_windows_width = 55
+  local floating_windows_width = 80
 
   keymap.set('n', 'gd', function()
     lsp.buf.definition()
