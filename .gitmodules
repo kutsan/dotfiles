@@ -20,6 +20,9 @@
 [submodule "bufferline"]
   path = .config/nvim/pack/bundle/start/bufferline
   url = https://github.com/akinsho/nvim-bufferline.lua
+[submodule "catppuccin"]
+  path = .config/nvim/pack/bundle/start/catppuccin
+  url = https://github.com/catppuccin/nvim
 [submodule "cmp"]
   path = .config/nvim/pack/bundle/start/cmp
   url = https://github.com/hrsh7th/nvim-cmp

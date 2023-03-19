@@ -1,12 +1,10 @@
 local opt = vim.opt
 local cmd = vim.cmd
 local env = vim.env
-local g = vim.g
 
 -- Color scheme
 opt.termguicolors = true -- Enables 24-bit RGB color support.
-g.material_style = 'deep ocean'
-cmd.colorscheme('material')
+cmd.colorscheme('catppuccin')
 
 -- Global Options
 opt.mouse = table.concat({ -- Enable mouse support for normal and visual modes.
@@ -54,7 +52,8 @@ opt.completeopt = { -- Options for insert mode completion.
   'menuone', -- Use the pop-up menu also when there is only one match.
   'noselect', -- Do not select a match in the menu.
 }
-opt.fillchars = { -- Characters to be used in various user-interface elements.
+opt.fillchars = {
+  -- Characters to be used in various user-interface elements.
   stl = ' ', -- Status-line of the current window.
   stlnc = ' ', -- Status-line of the non-current windows.
   vert = ' ', -- Vertical separator to be used with :vsplit.
@@ -65,7 +64,8 @@ opt.fillchars = { -- Characters to be used in various user-interface elements.
 }
 opt.ruler = false -- Disable showing line and column numbers in command line.
 opt.list = true -- Show characters in 'listchars' in place of certain special characters.
-opt.listchars = { -- Strings to use when 'list' option set.
+opt.listchars = {
+  -- Strings to use when 'list' option set.
   tab = '│ ', -- Characters to be used to show a tab.
   nbsp = '␣', -- Character to show for a non-breakable space character.
   extends = '·', -- Character to show in the last column, when 'wrap' is off.
