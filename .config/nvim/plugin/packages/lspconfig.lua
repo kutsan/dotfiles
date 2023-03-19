@@ -2,8 +2,6 @@ local lspconfig = require('lspconfig')
 local cmp_capabilities = require('cmp_nvim_lsp')
 
 local fn = vim.fn
-local env = vim.env
-local split = vim.split
 local diagnostic = vim.diagnostic
 local lsp = vim.lsp
 local keymap = vim.keymap
@@ -156,34 +154,21 @@ lspconfig.jsonls.setup({
     },
   },
 })
-lspconfig.sumneko_lua.setup({
-  on_attach = handle_attach,
-  capabilities = capabilities,
-  cmd = {
-    string.format(
-      '%s/.local/lib/lua-language-server/bin/%s/lua-language-server',
-      env.HOME,
-      fn.has('mac') == 1 and 'macOS' or 'Linux'
-    ),
-    '-E',
-    string.format('%s/.local/lib/lua-language-server/main.lua', env.HOME),
-  },
+lspconfig.lua_ls.setup({
   settings = {
     Lua = {
       runtime = {
         version = 'LuaJIT',
-        path = split(package.path, ';'),
       },
       diagnostics = {
         globals = { 'vim' },
       },
       workspace = {
-        library = {
-          [fn.expand('$VIMRUNTIME/lua')] = true,
-          [fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
-        },
+        library = vim.api.nvim_get_runtime_file('', true),
       },
-      telemetry = { enable = false },
+      telemetry = {
+        enable = false,
+      },
     },
   },
 })
