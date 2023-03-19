@@ -71,9 +71,6 @@
 [submodule "luasnip"]
   path = .config/nvim/pack/bundle/start/luasnip
   url = https://github.com/L3MON4D3/LuaSnip
-[submodule "material"]
-  path = .config/nvim/pack/bundle/start/material
-  url = https://github.com/marko-cerovac/material.nvim
 [submodule "null-ls"]
   path = .config/nvim/pack/bundle/start/null-ls
   url = https://github.com/jose-elias-alvarez/null-ls.nvim
