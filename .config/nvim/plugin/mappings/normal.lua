@@ -11,10 +11,6 @@ keymap.set('n', '<C-k>', '<C-w>k')
 keymap.set('n', '<C-h>', '<C-w>h')
 keymap.set('n', '<C-l>', '<C-w>l')
 
--- Always search with 'very magic' mode.
-keymap.set('n', '/', '/\\v')
-keymap.set('n', '?', '?\\v')
-
 -- Always send contents of a `x` command to the black hole register.
 keymap.set('n', 'x', '"_x')
 
