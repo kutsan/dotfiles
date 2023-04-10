@@ -92,6 +92,7 @@
 - [`oath-toolkit`](https://www.nongnu.org/oath-toolkit) - Provides components for building one-time password authentication systems
 - [`gptfdisk`](https://www.rodsbooks.com/gdisk) - Interactive GUID partition table (GPT) manipulator
 - [`trash-cli`](https://github.com/andreafrancia/trash-cli) - Move files and folders to the trash
+- [`colima`](https://github.com/abiosoft/colima) - Container runtime support for macOS
 
 ## License
 
