@@ -2,6 +2,7 @@ local treesitter = require('nvim-treesitter.configs')
 local treesitter_context = require('treesitter-context')
 
 treesitter.setup({
+  ensure_installed = 'all',
   sync_install = false,
   auto_install = true,
   indent = {
@@ -19,10 +20,9 @@ treesitter.setup({
   highlight = {
     enable = true,
     additional_vim_regex_highlighting = false,
-    use_languagetree = true,
   },
 })
 
 treesitter_context.setup({
-  max_lines = 1,
+  max_lines = 3,
 })
