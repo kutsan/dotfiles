@@ -28,6 +28,7 @@ local kind_icons = {
   Event = '',
   Operator = '',
   TypeParameter = '',
+  Copilot = '',
 }
 
 cmp.setup({
@@ -44,6 +45,9 @@ cmp.setup({
       max_width = 60,
       max_height = 15,
     },
+  },
+  experimental = {
+    ghost_text = true,
   },
   formatting = {
     fields = { 'kind', 'abbr', 'menu' },
@@ -104,6 +108,7 @@ cmp.setup({
     end),
   },
   sources = cmp.config.sources({
+    { name = 'copilot' },
     { name = 'nvim_lsp' },
     { name = 'nvim_lsp_signature_help' },
     { name = 'luasnip' },
