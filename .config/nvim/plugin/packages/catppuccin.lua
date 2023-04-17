@@ -12,6 +12,11 @@ catppuccin.setup({
   highlight_overrides = {
     all = function(colors)
       return {
+        ['NvimTreeIndentMarker'] = { fg = '#232637' },
+        -- indent-blankline
+        ['IndentBlanklineChar'] = { fg = '#232637' },
+        ['IndentBlanklineContextChar'] = { fg = '#464B5D' },
+        -- treesitter
         ['@constructor.tsx'] = { fg = colors.yellow },
         ['@tag.tsx'] = { fg = colors.red },
         ['@string.scss'] = { fg = colors.orange },
@@ -24,6 +29,11 @@ catppuccin.setup({
         ['@type.tag.scss'] = { fg = colors.mauve },
         ['@string.plain.scss'] = { fg = colors.peach },
         ['@number.scss'] = { fg = colors.peach },
+        -- treesitter-context
+        ['TreesitterContext'] = {
+          bg = '#1d2030',
+        },
+        ['TreesitterContextLineNumber'] = { fg = colors.overlay0 },
       }
     end,
   },
@@ -33,6 +43,9 @@ catppuccin.setup({
     cmp = true,
     gitsigns = true,
     nvimtree = true,
+    indent_blankline = {
+      enabled = true,
+    },
     native_lsp = {
       enabled = true,
       virtual_text = {
