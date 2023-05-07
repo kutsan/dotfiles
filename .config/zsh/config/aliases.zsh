@@ -11,7 +11,7 @@ alias ls='ls --almost-all --classify --color=always --group-directories-first --
 alias la='ls -l --almost-all --si' # List nodes with their details.
 
 # Custom Shortcuts
-alias v='nvim'
+alias v="$EDITOR"
 alias g='git'
 
 # git
