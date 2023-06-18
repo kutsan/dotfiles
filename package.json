@@ -14,7 +14,7 @@
   ],
   "repository": "github:kutsan/dotfiles",
   "license": "GPL-3.0",
-  "author": "Kutsan Kaplan <me@kutsankaplan.com> (https://kutsankaplan.com)",
+  "author": "Kutsan Kaplan <me@kutsan.dev> (https://kutsan.dev)",
   "scripts": {
     "prepare": "husky install"
   },
