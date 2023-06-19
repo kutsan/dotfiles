@@ -7,7 +7,7 @@
 [user]
   name = Kutsan Kaplan
   email = me@kutsan.dev
-  signingkey = 439AC30C
+  signingkey = 24D78A1B
 
 [core]
   editor = $EDITOR
