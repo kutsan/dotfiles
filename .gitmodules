@@ -10,9 +10,6 @@
 [submodule "system-clipboard"]
   path = .config/zsh/plugins/system-clipboard
   url = https://github.com/kutsan/zsh-system-clipboard
-[submodule "fast-syntax-highlighting"]
-  path = .config/zsh/plugins/fast-syntax-highlighting
-  url = https://github.com/kutsan/fast-syntax-highlighting
 
 [submodule "autopairs"]
   path = .config/nvim/pack/bundle/start/autopairs
