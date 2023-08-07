@@ -31,7 +31,6 @@
   - [`colorizer`](https://github.com/norcalli/nvim-colorizer.lua) - High-performance color highlighter
   - [`diffview`](https://github.com/sindrets/diffview.nvim) - Single tabpage interface for all modified files in git
   - [`dressing`](https://github.com/stevearc/dressing.nvim) - Improve default vim.ui interfaces
-  - [`editorconfig`](https://github.com/gpanders/editorconfig.nvim) - EditorConfig support
   - [`fugitive`](https://github.com/tpope/vim-fugitive) - Git client
   - [`fzf-lua`](https://github.com/ibhagwan/fzf-lua) - Lua implementation of fuzzy finder fzf plugin
   - [`gitsigns`](https://github.com/lewis6991/gitsigns.nvim) - Asynchronous git diff in sign column
