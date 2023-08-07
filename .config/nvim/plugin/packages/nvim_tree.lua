@@ -127,9 +127,17 @@ nvim_tree.setup({
     root_folder_modifier = ':t',
     icons = {
       glyphs = {
-        default = '',
-        symlink = '',
+        default = '󰈔',
+        symlink = '󱅷',
         bookmark = '◉',
+        folder = {
+          default = '',
+          open = '',
+          empty = "󰉖",
+          empty_open = '',
+          symlink = '',
+          symlink_open = "",
+        },
         git = {
           unstaged = '',
           staged = '',
@@ -138,11 +146,6 @@ nvim_tree.setup({
           deleted = '',
           untracked = '',
           ignored = '',
-        },
-        folder = {
-          default = '',
-          open = '',
-          symlink = '',
         },
       },
       show = {
