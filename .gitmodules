@@ -32,6 +32,9 @@
 [submodule "cmp-calc"]
   path = .config/nvim/pack/bundle/start/cmp-calc
   url = https://github.com/hrsh7th/cmp-calc
+[submodule "cmp-copilot"]
+  path = .config/nvim/pack/bundle/start/cmp-copilot
+  url = https://github.com/zbirenbaum/copilot-cmp
 [submodule "cmp-lsp"]
   path = .config/nvim/pack/bundle/start/cmp-lsp
   url = https://github.com/hrsh7th/cmp-nvim-lsp
@@ -47,6 +50,9 @@
 [submodule "colorizer"]
   path = .config/nvim/pack/bundle/start/colorizer
   url = https://github.com/norcalli/nvim-colorizer.lua
+[submodule "copilot"]
+  path = .config/nvim/pack/bundle/start/copilot
+  url = https://github.com/zbirenbaum/copilot.lua
 [submodule "diffview"]
   path = .config/nvim/pack/bundle/start/diffview
   url = https://github.com/sindrets/diffview.nvim
