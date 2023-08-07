@@ -117,3 +117,28 @@ cmp.setup({
     { name = 'buffer' },
   }),
 })
+
+cmp.setup.cmdline(':', {
+  completion = {
+    completeopt = 'menu,menuone,noinsert,noselect',
+  },
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = cmp.config.sources({
+    { name = 'path' },
+  }, {
+    { name = 'cmdline' },
+  }),
+})
+
+cmp.setup.cmdline({ '/', '?' }, {
+  completion = {
+    completeopt = 'menu,menuone,noinsert,noselect',
+  },
+  view = {
+    entries = { name = 'wildmenu' },
+  },
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = {
+    { name = 'buffer' },
+  },
+})

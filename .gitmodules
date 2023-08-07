@@ -32,6 +32,9 @@
 [submodule "cmp-calc"]
   path = .config/nvim/pack/bundle/start/cmp-calc
   url = https://github.com/hrsh7th/cmp-calc
+[submodule "cmp-cmdline"]
+  path = .config/nvim/pack/bundle/start/cmp-cmdline
+  url = https://github.com/hrsh7th/cmp-cmdline
 [submodule "cmp-copilot"]
   path = .config/nvim/pack/bundle/start/cmp-copilot
   url = https://github.com/zbirenbaum/copilot-cmp
