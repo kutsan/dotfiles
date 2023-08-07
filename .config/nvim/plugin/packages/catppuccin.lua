@@ -3,6 +3,7 @@ local catppuccin = require('catppuccin')
 catppuccin.setup({
   flavour = 'mocha',
   no_bold = true,
+  term_colors = true,
   color_overrides = {
     mocha = {
       base = '#0f1119',
