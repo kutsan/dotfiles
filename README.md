@@ -25,7 +25,6 @@
     - [`cmp-buffer`](https://github.com/hrsh7th/cmp-buffer) - cmp source for buffer words
     - [`cmp-calc`](https://github.com/hrsh7th/cmp-calc) - cmp source for math calculation
     - [`cmp-cmdline`](https://github.com/hrsh7th/cmp-cmdline) - cmp source for cmdline
-    - [`cmp-copilot`](https://github.com/zbirenbaum/copilot-cmp) - cmp source for GitHub Copilot
     - [`cmp-lsp`](https://github.com/hrsh7th/cmp-nvim-lsp) - cmp source for LSP client
     - [`cmp-lsp-signature-help`](https://github.com/hrsh7th/cmp-nvim-lsp-signature-help) - cmp source for LSP signatures
     - [`cmp-luasnip`](https://github.com/saadparwaiz1/cmp_luasnip) - cmp source for luasnip snippets
