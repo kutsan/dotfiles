@@ -1,3 +1,5 @@
+vim.loader.enable()
+
 local g = vim.g
 
 -- Disable unused built-in plugins.
