@@ -34,6 +34,9 @@ catppuccin.setup({
         ['TreesitterContext'] = {
           bg = '#1d2030',
         },
+        ['TreesitterContextBottom'] = {
+          style = {},
+        },
         ['TreesitterContextLineNumber'] = { fg = colors.overlay0 },
       }
     end,
@@ -46,6 +49,7 @@ catppuccin.setup({
     nvimtree = true,
     indent_blankline = {
       enabled = true,
+      scope_color = 'surface2',
     },
     native_lsp = {
       enabled = true,
