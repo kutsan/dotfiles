@@ -88,7 +88,7 @@ opt.grepprg = 'grep ' -- Program to use for the :grep command.
   .. '--no-messages '
   .. '--recursive '
   .. '--exclude-dir={.git,node_modules} '
-  .. '--perl-regexp'
+  .. '--extended-regexp'
 opt.grepformat = '%f:%l:%c:%m,%f:%l:%m' -- Format to recognize for the :grep command output.
 opt.ignorecase = true -- Ignore case in search patterns.
 opt.smartcase = true -- Set 'noignorecase' if search pattern contains an uppercase letter.

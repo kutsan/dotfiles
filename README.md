@@ -70,8 +70,6 @@
 - [`coreutils`](https://www.gnu.org/software/coreutils/coreutils.html) - GNU core utilities for basic file, shell and text manipulation
 - [`findutils`](https://www.gnu.org/software/findutils) - GNU basic directory searching utilities that provides find, locate and xargs
 - [`less`](http://www.greenwoodsoftware.com/less) - Standard file pager for Unix-like systems
-- [`curl`](https://github.com/curl/curl) - Tool for transferring data using various protocols
-- [`grep`](https://www.gnu.org/software/grep) - Search plain-text data sets for lines that match a regular expression
 - [`tar`](https://www.gnu.org/software/tar) - File archiver
 - [`gzip`](https://www.gnu.org/software/gzip) - Data compression utility
 - [`sed`](https://www.gnu.org/software/sed) - Non-interactive command-line text editor
