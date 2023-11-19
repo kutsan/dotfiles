@@ -66,10 +66,12 @@ opt.ruler = false -- Disable showing line and column numbers in command line.
 opt.list = true -- Show characters in 'listchars' in place of certain special characters.
 opt.listchars = {
   -- Strings to use when 'list' option set.
-  tab = '│ ', -- Characters to be used to show a tab.
+  tab = '▏ ', -- Characters to be used to show a tab.
   nbsp = '␣', -- Character to show for a non-breakable space character.
   extends = '·', -- Character to show in the last column, when 'wrap' is off.
   precedes = '·', -- Character to show in the first visible column.
+  multispace = '▏ ', -- Characters to be used to show spaces.
+  leadmultispace = '▏ ', -- Characters to be used to show leading spaces.
 }
 opt.pumheight = 10 -- Maximum number of items to show in the popup menu.
 opt.shiftround = true -- Round indent to multiple of 'shiftwidth'.
