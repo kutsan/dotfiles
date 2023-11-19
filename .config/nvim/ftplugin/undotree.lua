@@ -1,4 +1,5 @@
 local opt_local = vim.opt_local
 
--- Disable 'list' option.
-opt_local.list = false
+-- Remove space chars from 'list' option.
+opt_local.listchars:remove('multispace')
+opt_local.listchars:remove('leadmultispace')
