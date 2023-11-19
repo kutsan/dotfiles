@@ -71,9 +71,6 @@
 [submodule "gitsigns"]
   path = .config/nvim/pack/bundle/start/gitsigns
   url = https://github.com/lewis6991/gitsigns.nvim
-[submodule "indent-blankline"]
-  path = .config/nvim/pack/bundle/start/indent-blankline
-  url = https://github.com/lukas-reineke/indent-blankline.nvim
 [submodule "lspconfig"]
   path = .config/nvim/pack/bundle/start/lspconfig
   url = https://github.com/neovim/nvim-lspconfig
