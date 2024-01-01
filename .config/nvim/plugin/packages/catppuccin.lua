@@ -15,6 +15,7 @@ catppuccin.setup({
       return {
         ['NvimTreeIndentMarker'] = { fg = '#232637' },
         ['DiffDelete'] = { fg = "#573d51" },
+        ['Folded'] = { fg = colors.overlay0, bg = 'NONE' },
         -- treesitter
         ['@constructor.tsx'] = { fg = colors.yellow },
         ['@tag.tsx'] = { fg = colors.red },
