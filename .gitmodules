@@ -44,6 +44,9 @@
 [submodule "cmp-path"]
   path = .config/nvim/pack/bundle/start/cmp-path
   url = https://github.com/hrsh7th/cmp-path
+[submodule "cokeline"]
+  path = .config/nvim/pack/bundle/start/cokeline
+  url = https://github.com/willothy/nvim-cokeline
 [submodule "colorizer"]
   path = .config/nvim/pack/bundle/start/colorizer
   url = https://github.com/norcalli/nvim-colorizer.lua
