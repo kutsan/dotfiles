@@ -49,6 +49,7 @@
   - [`plenary`](https://github.com/nvim-lua/plenary.nvim) - Asynchronous modules using coroutines
   - [`schema-store`](https://github.com/b0o/SchemaStore.nvim) - Access to the SchemaStore catalog for JSON langauge server
   - [`surround`](https://github.com/kylechui/nvim-surround) - Add, change and delete surrounding delimiter pairs
+  - [`telescope`](https://github.com/nvim-telescope/telescope.nvim) - Extendable fuzzy finder
   - [`treesitter`](https://github.com/nvim-treesitter/nvim-treesitter) - Neovim plugin of an incremental parsing system for programming tools
   - [`treesitter-autotag`](https://github.com/windwp/nvim-ts-autotag) - Treesitter plugin to auto-close and auto-rename HTML tags
   - [`treesitter-context`](https://github.com/nvim-treesitter/nvim-treesitter-context) - Show code context using treesitter

@@ -95,6 +95,9 @@
 [submodule "surround"]
   path = .config/nvim/pack/bundle/start/surround
   url = https://github.com/kylechui/nvim-surround
+[submodule "telescope"]
+  path = .config/nvim/pack/bundle/start/telescope
+  url = https://github.com/nvim-telescope/telescope.nvim
 [submodule "treesitter"]
   path = .config/nvim/pack/bundle/start/treesitter
   url = https://github.com/nvim-treesitter/nvim-treesitter

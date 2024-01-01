@@ -14,8 +14,12 @@ catppuccin.setup({
     all = function(colors)
       return {
         ['NvimTreeIndentMarker'] = { fg = '#232637' },
-        ['DiffDelete'] = { fg = "#573d51" },
+        ['DiffDelete'] = { fg = '#573d51' },
         ['Folded'] = { fg = colors.overlay0, bg = 'NONE' },
+        ['FloatBorder'] = { fg = '#2f3451', bg = '#161927' },
+        ['NormalFloat'] = { bg = '#161927' },
+        ['TelescopeNormal'] = { bg = '#161927' },
+        ['TelescopeBorder'] = { fg = '#2f3451', bg = '#161927' },
         -- treesitter
         ['@constructor.tsx'] = { fg = colors.yellow },
         ['@tag.tsx'] = { fg = colors.red },
