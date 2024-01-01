@@ -17,9 +17,6 @@
 [submodule "autopairs"]
   path = .config/nvim/pack/bundle/start/autopairs
   url = https://github.com/windwp/nvim-autopairs
-[submodule "bufferline"]
-  path = .config/nvim/pack/bundle/start/bufferline
-  url = https://github.com/akinsho/nvim-bufferline.lua
 [submodule "catppuccin"]
   path = .config/nvim/pack/bundle/start/catppuccin
   url = https://github.com/catppuccin/nvim

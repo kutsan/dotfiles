@@ -19,7 +19,6 @@
   - [`autosuggestions`](https://github.com/zsh-users/zsh-autosuggestions) - Fish-like auto-suggestions for interactive terminal based on command history
 - [`neovim`](https://github.com/neovim/neovim) - The fork of ubiquitous text editor focused on extensibility and usability
   - [`autopairs`](https://github.com/windwp/nvim-autopairs) - Auto pair plugin
-  - [`bufferline`](https://github.com/akinsho/nvim-bufferline.lua) - Bufferline
   - [`catppuccin`](https://github.com/catppuccin/nvim) - Color scheme
   - [`cmp`](https://github.com/hrsh7th/nvim-cmp) - Auto completion support
     - [`cmp-buffer`](https://github.com/hrsh7th/cmp-buffer) - cmp source for buffer words
