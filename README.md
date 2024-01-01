@@ -53,6 +53,7 @@
   - [`treesitter`](https://github.com/nvim-treesitter/nvim-treesitter) - Neovim plugin of an incremental parsing system for programming tools
   - [`treesitter-autotag`](https://github.com/windwp/nvim-ts-autotag) - Treesitter plugin to auto-close and auto-rename HTML tags
   - [`treesitter-context`](https://github.com/nvim-treesitter/nvim-treesitter-context) - Show code context using treesitter
+  - [`treesitter-text-objects`](https://github.com/nvim-treesitter/nvim-treesitter-textobjects) - Syntax aware text-objects, select, move, swap, and peek support
   - [`undotree`](https://github.com/mbbill/undotree) - Visualize undo tree
 - [`git`](https://git-scm.com) - Version control system for tracking changes in files and coordinating the work
 - [`node`](https://nodejs.org) - JavaScript runtime environment for developing a diverse variety of applications
