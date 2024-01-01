@@ -1,8 +1,9 @@
 local treesitter = require('nvim-treesitter.configs')
 local treesitter_context = require('treesitter-context')
 
+---@diagnostic disable-next-line: missing-fields
 treesitter.setup({
-  ensure_installed = 'all',
+  ensure_installed = { 'lua' },
   sync_install = false,
   auto_install = true,
   indent = {
