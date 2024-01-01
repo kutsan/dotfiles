@@ -14,6 +14,7 @@ catppuccin.setup({
     all = function(colors)
       return {
         ['NvimTreeIndentMarker'] = { fg = '#232637' },
+        ['DiffDelete'] = { fg = "#573d51" },
         -- treesitter
         ['@constructor.tsx'] = { fg = colors.yellow },
         ['@tag.tsx'] = { fg = colors.red },
