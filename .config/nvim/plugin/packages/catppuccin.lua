@@ -14,9 +14,6 @@ catppuccin.setup({
     all = function(colors)
       return {
         ['NvimTreeIndentMarker'] = { fg = '#232637' },
-        -- indent-blankline
-        ['IndentBlanklineChar'] = { fg = '#232637' },
-        ['IndentBlanklineContextChar'] = { fg = '#464B5D' },
         -- treesitter
         ['@constructor.tsx'] = { fg = colors.yellow },
         ['@tag.tsx'] = { fg = colors.red },
@@ -34,10 +31,13 @@ catppuccin.setup({
         ['TreesitterContext'] = {
           bg = '#1d2030',
         },
+        ['TreesitterContextLineNumber'] = {
+          bg = '#1d2030',
+          fg = colors.overlay0,
+        },
         ['TreesitterContextBottom'] = {
           style = {},
         },
-        ['TreesitterContextLineNumber'] = { fg = colors.overlay0 },
       }
     end,
   },
