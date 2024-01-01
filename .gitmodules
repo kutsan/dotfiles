@@ -101,6 +101,9 @@
 [submodule "treesitter"]
   path = .config/nvim/pack/bundle/start/treesitter
   url = https://github.com/nvim-treesitter/nvim-treesitter
+[submodule "treesitter-autotag"]
+  path = .config/nvim/pack/bundle/start/treesitter-autotag
+  url = https://github.com/windwp/nvim-ts-autotag
 [submodule "treesitter-context"]
   path = .config/nvim/pack/bundle/start/treesitter-context
   url = https://github.com/nvim-treesitter/nvim-treesitter-context
