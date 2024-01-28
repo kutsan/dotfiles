@@ -39,7 +39,7 @@ map zV :set ratios 1:1:1; set preview; set info size
 map bw cd ~/Downloads
 map bd cd ~/Documents
 map bp cd ~/Documents/Projects
-map bo cd ~/Documents/Work
+map bo cd ~/Documents/Projects/HubX
 map bc cd ~/.config
 map bl cd ~/.local/share
 map ud clear
