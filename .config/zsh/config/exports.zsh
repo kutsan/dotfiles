@@ -32,8 +32,8 @@ export MANPAGER='nvim +Man!'
 
 # npm
 export NPM_CONFIG_INIT_AUTHOR_NAME='Kutsan Kaplan'
-export NPM_CONFIG_INIT_AUTHOR_EMAIL='me@kutsankaplan.com'
-export NPM_CONFIG_INIT_AUTHOR_URL='https://kutsankaplan.com'
+export NPM_CONFIG_INIT_AUTHOR_EMAIL='me@kutsan.dev'
+export NPM_CONFIG_INIT_AUTHOR_URL='https://kutsan.dev'
 export NPM_CONFIG_INIT_LICENSE='GPL-3.0'
 export NPM_CONFIG_INIT_VERSION='0.0.0'
 export NPM_CONFIG_SIGN_GIT_TAG='true'
