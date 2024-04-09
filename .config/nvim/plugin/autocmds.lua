@@ -28,8 +28,8 @@ api.nvim_create_autocmd('TextYankPost', {
 api.nvim_create_autocmd('BufReadPost', {
   group = api.nvim_create_augroup('BlockReadOnly', { clear = true }),
   callback = function()
-    local readonly = api.nvim_buf_get_option(0, 'readonly')
-    api.nvim_buf_set_option(0, 'modifiable', not readonly)
+    local readonly = api.nvim_get_option_value('readonly', { scope = 'local' })
+    api.nvim_set_option_value('modifiable', not readonly, { scope = 'local' })
   end,
 })
 
