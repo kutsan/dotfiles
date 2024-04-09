@@ -100,6 +100,7 @@ opt.splitbelow = true -- Splitting a window will put the new window below of the
 opt.splitright = true -- Splitting a window will put the new window right of the current one.
 opt.showcmd = false -- Disable displaying key presses at the right bottom.
 opt.showmode = false -- Disable native mode indicator.
+opt.cmdheight = 0 -- Disable command-line area.
 
 -- Window Options
 opt.breakindent = true -- Wrapped lines will be visually indented with same amount of space.
