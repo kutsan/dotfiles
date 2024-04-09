@@ -101,6 +101,7 @@ opt.splitright = true -- Splitting a window will put the new window right of the
 opt.showcmd = false -- Disable displaying key presses at the right bottom.
 opt.showmode = false -- Disable native mode indicator.
 opt.cmdheight = 0 -- Disable command-line area.
+opt.confirm = true -- Ask for confirmation when closing a modified buffer.
 
 -- Window Options
 opt.breakindent = true -- Wrapped lines will be visually indented with same amount of space.
