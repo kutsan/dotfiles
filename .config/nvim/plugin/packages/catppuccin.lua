@@ -15,7 +15,7 @@ catppuccin.setup({
       return {
         ['NvimTreeIndentMarker'] = { fg = '#232637' },
         ['DiffDelete'] = { fg = '#573d51' },
-        ['Folded'] = { fg = colors.overlay0, bg = 'NONE' },
+        ['Folded'] = { bg = '#1d2030' },
         ['FloatBorder'] = { fg = '#2f3451', bg = '#161927' },
         ['NormalFloat'] = { bg = '#161927' },
         ['TelescopeNormal'] = { bg = '#161927' },
