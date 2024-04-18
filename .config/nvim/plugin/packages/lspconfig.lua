@@ -1,11 +1,12 @@
-local lspconfig = require('lspconfig')
-local cmp_capabilities = require('cmp_nvim_lsp')
-
 local fn = vim.fn
 local diagnostic = vim.diagnostic
 local lsp = vim.lsp
 local keymap = vim.keymap
 local api = vim.api
+
+local mason = require('mason')
+local mason_lsp_config = require('mason-lspconfig')
+local cmp_lsp = require('cmp_nvim_lsp')
 
 diagnostic.config({
   virtual_text = false,
@@ -30,10 +31,27 @@ fn.sign_define('DiagnosticSignHint', {
   texthl = 'DiagnosticSignHint',
 })
 
+local capabilities = cmp_lsp.default_capabilities()
+
+mason.setup()
+mason_lsp_config.setup({
+  ensure_installed = {
+    'tsserver',
+    'eslint',
+    'html',
+    'cssls',
+    'cssmodules_ls',
+    'stylelint_lsp',
+    'jsonls',
+    'lua_ls',
+    'typos_lsp',
+  },
+})
+
 local function handle_attach(client)
   if client.server_capabilities.documentHighlightProvider then
     local document_highlight_group =
-      api.nvim_create_augroup('DocumentHighlight', { clear = true })
+        api.nvim_create_augroup('DocumentHighlight', { clear = true })
 
     api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
       group = document_highlight_group,
@@ -115,7 +133,7 @@ local function handle_attach(client)
   keymap.set('n', '[g', function()
     diagnostic.goto_prev({
       float = {
-        source = 'always',
+        source = true,
         width = floating_windows_width,
       },
     })
@@ -124,76 +142,73 @@ local function handle_attach(client)
   keymap.set('n', ']g', function()
     diagnostic.goto_next({
       float = {
-        source = 'always',
+        source = true,
         width = floating_windows_width,
       },
     })
   end, map_opts)
 end
 
-local capabilities = cmp_capabilities.default_capabilities()
+mason_lsp_config.setup_handlers({
+  function(server_name)
+    local lsp_config = require('lspconfig')
 
-lspconfig.tsserver.setup({
-  on_attach = handle_attach,
-  capabilities = capabilities,
-})
-lspconfig.cssls.setup({
-  on_attach = handle_attach,
-  capabilities = capabilities,
-})
-lspconfig.html.setup({
-  on_attach = handle_attach,
-  capabilities = capabilities,
-})
-lspconfig.jsonls.setup({
-  capabilities = capabilities,
-  on_attach = handle_attach,
-  settings = {
-    json = {
-      schemas = require('schemastore').json.schemas(),
-    },
-  },
-})
-lspconfig.lua_ls.setup({
-  settings = {
-    Lua = {
-      runtime = {
-        version = 'LuaJIT',
+    lsp_config[server_name].setup({
+      on_attach = handle_attach,
+      capabilities = capabilities,
+    })
+  end,
+
+  ['lua_ls'] = function()
+    local lsp_config = require('lspconfig')
+
+    lsp_config.lua_ls.setup({
+      capabilities = capabilities,
+      on_attach = handle_attach,
+      settings = {
+        Lua = {
+          runtime = {
+            version = 'LuaJIT',
+          },
+          diagnostics = {
+            globals = { 'vim' },
+          },
+          workspace = {
+            library = vim.api.nvim_get_runtime_file('', true),
+          },
+          telemetry = {
+            enable = false,
+          },
+        },
       },
-      diagnostics = {
-        globals = { 'vim' },
+    })
+  end,
+
+  ['jsonls'] = function()
+    local lsp_config = require('lspconfig')
+
+    lsp_config.jsonls.setup({
+      capabilities = capabilities,
+      on_attach = handle_attach,
+      settings = {
+        json = {
+          schemas = require('schemastore').json.schemas(),
+        },
       },
-      workspace = {
-        library = vim.api.nvim_get_runtime_file('', true),
+    })
+  end,
+
+  ['stylelint_lsp'] = function()
+    local lsp_config = require('lspconfig')
+
+    lsp_config.stylelint_lsp.setup({
+      capabilities = capabilities,
+      on_attach = handle_attach,
+      settings = {
+        stylelintplus = {
+          autoFixOnFormat = true,
+        }
       },
-      telemetry = {
-        enable = false,
-      },
-    },
-  },
-})
-
-local null_ls = require('null-ls')
-local command_resolver = require('null-ls.helpers.command_resolver')
-
-null_ls.setup({
-  on_attach = handle_attach,
-  capabilities = capabilities,
-  diagnostics_format = '#{m} [#{c}]',
-  sources = {
-    null_ls.builtins.formatting.prettierd,
-    null_ls.builtins.formatting.stylua,
-    null_ls.builtins.formatting.stylelint.with({
-      dynamic_command = command_resolver.from_node_modules(),
-    }),
-
-    null_ls.builtins.diagnostics.eslint_d,
-    null_ls.builtins.diagnostics.luacheck,
-    null_ls.builtins.diagnostics.stylelint.with({
-      dynamic_command = command_resolver.from_node_modules(),
-    }),
-
-    null_ls.builtins.code_actions.eslint_d,
-    null_ls.builtins.code_actions.gitsigns,
-  },
+    })
+  end,
 })
