@@ -3,31 +3,31 @@ local luasnip = require('luasnip')
 local fn = vim.fn
 
 local kind_icons = {
-  Text = "",
-  Method = "󰆧",
-  Function = "󰊕",
-  Constructor = "",
-  Field = "󰇽",
-  Variable = "󰀫",
-  Class = "󰠱",
-  Interface = "",
-  Module = "",
-  Property = "󰜢",
-  Unit = "",
-  Value = "󰎠",
-  Enum = "",
-  Keyword = "󰌋",
-  Snippet = "",
-  Color = "󰏘",
-  File = "󰈙",
-  Reference = "",
-  Folder = "󰉋",
-  EnumMember = "",
-  Constant = "󰏿",
-  Struct = "",
-  Event = "",
-  Operator = "󰆕",
-  TypeParameter = "󰅲",
+  Text = '',
+  Method = '󰆧',
+  Function = '󰊕',
+  Constructor = '',
+  Field = '󰇽',
+  Variable = '󰀫',
+  Class = '󰠱',
+  Interface = '',
+  Module = '',
+  Property = '󰜢',
+  Unit = '',
+  Value = '󰎠',
+  Enum = '',
+  Keyword = '󰌋',
+  Snippet = '',
+  Color = '󰏘',
+  File = '󰈙',
+  Reference = '',
+  Folder = '󰉋',
+  EnumMember = '',
+  Constant = '󰏿',
+  Struct = '',
+  Event = '',
+  Operator = '󰆕',
+  TypeParameter = '󰅲',
 }
 
 cmp.setup({
@@ -80,14 +80,23 @@ cmp.setup({
     }),
     ['<Tab>'] = cmp.mapping(function(fallback)
       local function has_words_before()
-        local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+        local row_position, column_position =
+            unpack(vim.api.nvim_win_get_cursor(0))
 
-        return col ~= 0
-          and vim.api
-              .nvim_buf_get_lines(0, line - 1, line, true)[1]
-              :sub(col, col)
-              :match('%s')
-            == nil
+        if column_position == 0 then
+          return false
+        end
+
+        local current_line = vim.api.nvim_buf_get_lines(
+          0,
+          row_position - 1,
+          row_position,
+          false
+        )[1]
+        local character_at_cursor =
+            current_line:sub(column_position + 1, column_position + 1)
+
+        return character_at_cursor:match('%s') == nil
       end
 
       if cmp.visible() then
