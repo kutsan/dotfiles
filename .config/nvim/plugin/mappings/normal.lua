@@ -35,12 +35,6 @@ keymap.set(
   { expr = true, silent = true }
 )
 
--- Reveal syntax group under cursor.
-keymap.set('n', '<F10>', function()
-  local syntax = require('kutsan/mappings/normal/syntax')
-  syntax.reveal_syntax_group()
-end, { silent = true })
-
 -- Scroll viewport faster.
 keymap.set('n', '<C-e>', '3<C-e>')
 keymap.set('n', '<C-y>', '3<C-y>')
