@@ -34,23 +34,23 @@ api.nvim_create_autocmd('BufReadPost', {
 })
 
 -- Closes neovim automatically when nvim-tree is the last window in the view.
-api.nvim_create_autocmd('BufEnter', {
-  group = api.nvim_create_augroup('AutoCloseNvimTree', { clear = true }),
-  nested = true,
-  callback = function()
-    if
-        #api.nvim_list_wins() == 1
-        and require('nvim-tree.utils').is_nvim_tree_buf()
-    then
-      cmd.quit()
-    end
-  end,
-})
+-- api.nvim_create_autocmd('BufEnter', {
+--   group = api.nvim_create_augroup('AutoCloseNvimTree', { clear = true }),
+--   nested = true,
+--   callback = function()
+--     if
+--         #api.nvim_list_wins() == 1
+--         and require('nvim-tree.utils').is_nvim_tree_buf()
+--     then
+--       cmd.quit()
+--     end
+--   end,
+-- })
 
 -- -- Save the current buffer after changes.
 -- api.nvim_create_autocmd({ 'InsertLeave', 'TextChanged', }, {
 --   callback = function()
---     local buffer = require('kutsan/autocmds/buffer')
+--     local buffer = require('user/autocmds/buffer')
 --     buffer.save()
 --   end
 -- })
@@ -59,7 +59,7 @@ api.nvim_create_autocmd('BufEnter', {
 -- api.nvim_create_autocmd('BufWinEnter', {
 --   pattern = '?*',
 --   callback = function()
---     local buffer = require('kutsan/autocmds/buffer')
+--     local buffer = require('user/autocmds/buffer')
 --     buffer.jump_last_position()
 --   end
 -- })
@@ -67,7 +67,7 @@ api.nvim_create_autocmd('BufEnter', {
 -- -- Remove trailing whitespace characters.
 -- api.nvim_create_autocmd('BufWritePre', {
 --   callback = function()
---     local buffer = require('kutsan/autocmds/buffer')
+--     local buffer = require('user/autocmds/buffer')
 --     buffer.trim_trailing_spaces()
 --   end
 -- })

@@ -1,12 +1,8 @@
 local opt = vim.opt
-local cmd = vim.cmd
 local env = vim.env
 
--- Color scheme
-opt.termguicolors = true -- Enables 24-bit RGB color support.
-cmd.colorscheme('catppuccin')
-
 -- Global Options
+opt.termguicolors = true -- Enables 24-bit RGB color support.
 opt.mouse = table.concat({ -- Enable mouse support for normal and visual modes.
   'n', -- Normal mode
   'v', -- Visual mode
