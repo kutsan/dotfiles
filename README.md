@@ -43,11 +43,11 @@
     - [`json-language-server`](https://github.com/vscode-langservers/vscode-json-languageserver) - JSON Language Server
     - [`lua-language-server`](https://github.com/sumneko/lua-language-server) - Lua Language Server
   - [`luasnip`](https://github.com/L3MON4D3/LuaSnip) - High-performance snippet engine
-  - [`null-ls`](https://github.com/jose-elias-alvarez/null-ls.nvim) - Use langauge server to inject diagnostics, formatter etc.
+  - [`null-ls`](https://github.com/jose-elias-alvarez/null-ls.nvim) - Use language server to inject diagnostics, formatter etc.
   - [`nvim-tree`](https://github.com/kyazdani42/nvim-tree.lua) - File explorer
   - [`nvim-web-devicons`](https://github.com/kyazdani42/nvim-web-devicons) - Nerd Font icon API support
   - [`plenary`](https://github.com/nvim-lua/plenary.nvim) - Asynchronous modules using coroutines
-  - [`schema-store`](https://github.com/b0o/SchemaStore.nvim) - Access to the SchemaStore catalog for JSON langauge server
+  - [`schema-store`](https://github.com/b0o/SchemaStore.nvim) - Access to the SchemaStore catalog for JSON language server
   - [`surround`](https://github.com/kylechui/nvim-surround) - Add, change and delete surrounding delimiter pairs
   - [`telescope`](https://github.com/nvim-telescope/telescope.nvim) - Extendable fuzzy finder
   - [`treesitter`](https://github.com/nvim-treesitter/nvim-treesitter) - Neovim plugin of an incremental parsing system for programming tools
