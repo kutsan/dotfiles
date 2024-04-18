@@ -53,10 +53,6 @@ catppuccin.setup({
     cmp = true,
     gitsigns = true,
     nvimtree = true,
-    indent_blankline = {
-      enabled = true,
-      scope_color = 'surface2',
-    },
     native_lsp = {
       enabled = true,
       virtual_text = {
