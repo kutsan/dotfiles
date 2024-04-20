@@ -10,9 +10,7 @@ Plugin.dependencies = {
   { 'hrsh7th/cmp-cmdline', name = 'cmp-cmdline' },
   { 'hrsh7th/cmp-nvim-lsp', name = 'cmp-lsp' },
   { 'hrsh7th/cmp-nvim-lsp-signature-help', name = 'cmp-lsp-signature-help' },
-  { 'saadparwaiz1/cmp_luasnip', name = 'cmp-luasnip' },
   { 'hrsh7th/cmp-path', name = 'cmp-path' },
-  'luasnip',
   'autopairs',
 }
 
@@ -50,8 +48,7 @@ Plugin.opts = function()
   return {
     snippet = {
       expand = function(args)
-        local luasnip = require('luasnip')
-        luasnip.lsp_expand(args.body)
+        vim.snippet.expand(args.body)
       end,
     },
     completion = {
@@ -136,7 +133,6 @@ Plugin.opts = function()
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
       { name = 'nvim_lsp_signature_help' },
-      { name = 'luasnip' },
       { name = 'calc' },
     }, {
       { name = 'buffer' },

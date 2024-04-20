@@ -26,7 +26,6 @@
     - [`cmp-cmdline`](https://github.com/hrsh7th/cmp-cmdline) - cmp source for cmdline
     - [`cmp-lsp`](https://github.com/hrsh7th/cmp-nvim-lsp) - cmp source for LSP client
     - [`cmp-lsp-signature-help`](https://github.com/hrsh7th/cmp-nvim-lsp-signature-help) - cmp source for LSP signatures
-    - [`cmp-luasnip`](https://github.com/saadparwaiz1/cmp_luasnip) - cmp source for luasnip snippets
     - [`cmp-path`](https://github.com/hrsh7th/cmp-path) - cmp source for filesystem paths
   - [`cokeline`](https://github.com/willothy/nvim-cokeline) - Bufferline
   - [`colorizer`](https://github.com/norcalli/nvim-colorizer.lua) - High-performance color highlighter
@@ -42,7 +41,6 @@
     - [`html-language-server`](https://github.com/vscode-langservers/vscode-html-languageserver-bin) - HTML Language Server
     - [`json-language-server`](https://github.com/vscode-langservers/vscode-json-languageserver) - JSON Language Server
     - [`lua-language-server`](https://github.com/sumneko/lua-language-server) - Lua Language Server
-  - [`luasnip`](https://github.com/L3MON4D3/LuaSnip) - High-performance snippet engine
   - [`null-ls`](https://github.com/jose-elias-alvarez/null-ls.nvim) - Use language server to inject diagnostics, formatter etc.
   - [`nvim-tree`](https://github.com/kyazdani42/nvim-tree.lua) - File explorer
   - [`nvim-web-devicons`](https://github.com/kyazdani42/nvim-web-devicons) - Nerd Font icon API support
