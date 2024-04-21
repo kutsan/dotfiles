@@ -13,7 +13,6 @@
   "copilot": { "branch": "master", "commit": "f7612f5af4a7d7615babf43ab1e67a2d790c13a6" },
   "devicons": { "branch": "master", "commit": "b3468391470034353f0e5110c70babb5c62967d3" },
   "diffview": { "branch": "main", "commit": "3dc498c9777fe79156f3d32dddd483b8b3dbd95f" },
-  "dressing": { "branch": "master", "commit": "18e5beb3845f085b6a33c24112b37988f3f93c06" },
   "fugitive": { "branch": "master", "commit": "dac8e5c2d85926df92672bf2afb4fc48656d96c7" },
   "gitsigns": { "branch": "main", "commit": "7e38f07cab0e5387f9f41e92474db174a63a4725" },
   "lazy.nvim": { "branch": "main", "commit": "bef521ac89c8d423f9d092e37b58e8af0c099309" },
