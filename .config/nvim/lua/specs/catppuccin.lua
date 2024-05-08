@@ -19,6 +19,7 @@ Plugin.opts = {
     all = function(colors)
       return {
         ['NvimTreeIndentMarker'] = { fg = '#232637' },
+        ['Whitespace'] = { fg = '#232637' },
         ['DiffDelete'] = { fg = '#573d51' },
         ['Folded'] = { bg = '#1d2030' },
         ['FloatBorder'] = { fg = '#2f3451', bg = '#161927' },
