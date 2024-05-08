@@ -3,7 +3,15 @@ local Plugin = { 'nvim-telescope/telescope.nvim' }
 Plugin.name = 'telescope'
 Plugin.version = '*'
 
-Plugin.dependencies = { 'nvim-lua/plenary.nvim', name = 'plenary' }
+Plugin.dependencies = {
+  { 'nvim-lua/plenary.nvim', name = 'plenary' },
+  {
+    'nvim-telescope/telescope-fzf-native.nvim',
+    name = 'telescope-fzf-native',
+    build = 'make',
+  },
+  { 'ThePrimeagen/git-worktree.nvim', name = 'git-worktree' },
+}
 
 Plugin.opts = function()
   local actions = require('telescope.actions')
@@ -36,6 +44,8 @@ Plugin.config = function(_, opts)
   local builtin = require('telescope.builtin')
 
   telescope.setup(opts)
+  telescope.load_extension('fzf')
+  telescope.load_extension('git_worktree')
 
   local keymap = vim.keymap
   local map_opts = { silent = true }
@@ -48,9 +58,19 @@ Plugin.config = function(_, opts)
   keymap.set('n', '<Space>/', builtin.search_history, map_opts)
   keymap.set('n', '<Space>`', builtin.marks, map_opts)
   keymap.set('n', 'gs', builtin.live_grep, map_opts)
+  keymap.set('x', 'gs', builtin.grep_string, map_opts)
   keymap.set('n', '<C-p>', builtin.git_files, map_opts)
   keymap.set('n', '<Space>gs', builtin.git_status, map_opts)
   keymap.set('n', '<C-f>', builtin.lsp_document_symbols, map_opts)
+  keymap.set('n', '<Space>t', builtin.resume, map_opts)
+  keymap.set('n', '<Space><C-o>', builtin.jumplist, map_opts)
+  keymap.set('n', 'z=', builtin.spell_suggest, map_opts)
+  keymap.set('n', '<Space>gwp', function()
+    telescope.extensions.git_worktree.git_worktrees()
+  end, map_opts)
+  keymap.set('n', '<Space>gwa', function()
+    telescope.extensions.git_worktree.create_git_worktree()
+  end, map_opts)
 end
 
 return Plugin
