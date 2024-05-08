@@ -5,7 +5,7 @@ local fn = vim.fn
 -- Quickly close current window.
 keymap.set('n', '<Space>q', '<Cmd>quit<CR>', { silent = true })
 
--- Pane nagivation.
+-- Pane navigation.
 keymap.set('n', '<C-j>', '<C-w>j')
 keymap.set('n', '<C-k>', '<C-w>k')
 keymap.set('n', '<C-h>', '<C-w>h')
