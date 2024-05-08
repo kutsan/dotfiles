@@ -162,9 +162,6 @@ Plugin.config = function(_, opts)
     completion = {
       completeopt = 'menu,menuone,noinsert,noselect',
     },
-    view = {
-      entries = { name = 'wildmenu' },
-    },
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
       { name = 'buffer' },
