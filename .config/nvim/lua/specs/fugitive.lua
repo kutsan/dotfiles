@@ -3,7 +3,7 @@ local Plugin = { 'tpope/vim-fugitive' }
 Plugin.name = 'fugitive'
 
 Plugin.keys = { '<Space>gb', '<Space>gd' }
-Plugin.cmd = { 'Git', 'Gdiffsplit' }
+Plugin.cmd = { 'Git', 'Gdiffsplit', 'Gread' }
 
 Plugin.config = function()
   local keymap = vim.keymap
