@@ -79,12 +79,7 @@ Plugin.config = function()
     )
     keymap.set('n', 'H', nvim_tree_api.tree.change_root_to_parent, opts('Up'))
     keymap.set('n', 's', nvim_tree_api.node.run.system, opts('Run System'))
-    keymap.set(
-      'n',
-      '<Space>',
-      nvim_tree_api.marks.toggle,
-      opts('Toggle Bookmark')
-    )
+    keymap.set('n', 't', nvim_tree_api.marks.toggle, opts('Toggle Bookmark'))
     keymap.set('n', 'K', nvim_tree_api.node.show_info_popup, opts('Info'))
     keymap.set(
       'n',
@@ -112,8 +107,16 @@ Plugin.config = function()
         resize_window = true,
       },
     },
+    sync_root_with_cwd = true,
     view = {
-      width = 32,
+      preserve_window_proportions = true,
+      width = {
+        min = 32,
+        max = 56
+      },
+    },
+    update_focused_file = {
+      enable = true,
     },
     renderer = {
       highlight_git = true,
