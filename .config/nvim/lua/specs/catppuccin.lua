@@ -20,7 +20,7 @@ Plugin.opts = {
       return {
         ['NvimTreeIndentMarker'] = { fg = '#232637' },
         ['Whitespace'] = { fg = '#232637' },
-        ['LspInlayHint'] = { fg = colors.overlay0, bg = 'NONE' },
+        ['LspInlayHint'] = { fg = colors.overlay0, bg = 'NONE', style = { 'italic' } },
         ['DiffDelete'] = { fg = '#573d51' },
         ['Folded'] = { bg = '#1d2030' },
         ['FloatBorder'] = { fg = '#2f3451', bg = '#161927' },
