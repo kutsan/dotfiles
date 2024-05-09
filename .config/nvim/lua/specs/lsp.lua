@@ -58,24 +58,28 @@ Plugin.config = function()
     },
   })
 
-  local function handle_attach(client)
+  local function on_attach(client)
     if client.server_capabilities.documentHighlightProvider then
-      local document_highlight_group =
+      local document_highlight_autocmd_group =
         api.nvim_create_augroup('DocumentHighlight', { clear = true })
 
       api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
-        group = document_highlight_group,
+        group = document_highlight_autocmd_group,
         buffer = 0,
         callback = function()
-          lsp.buf.document_highlight()
+          if client.server_capabilities.documentHighlightProvider then
+            lsp.buf.document_highlight()
+          end
         end,
       })
 
       api.nvim_create_autocmd('CursorMoved', {
-        group = document_highlight_group,
+        group = document_highlight_autocmd_group,
         buffer = 0,
         callback = function()
-          lsp.buf.clear_references()
+          if client.server_capabilities.documentHighlightProvider then
+            lsp.buf.clear_references()
+          end
         end,
       })
     end
@@ -86,6 +90,12 @@ Plugin.config = function()
     }
 
     local floating_windows_width = 80
+
+    if vim.lsp.inlay_hint then
+      keymap.set('n', 'coi', function()
+        lsp.inlay_hint.enable(0, not lsp.inlay_hint.is_enabled())
+      end, map_opts)
+    end
 
     keymap.set('n', 'gd', function()
       lsp.buf.definition()
@@ -120,19 +130,19 @@ Plugin.config = function()
     end, map_opts)
 
     keymap.set('n', '\\f', function()
-      vim.lsp.buf.format({
-        filter = function(server)
-          return server.name ~= 'tsserver'
-        end,
-      })
+      vim.lsp.buf.format()
+      require('conform').format()
     end, map_opts)
 
-    keymap.set('i', '<C-k>', function()
-      lsp.buf.signature_help()
-    end, map_opts)
+    if client.server_capabilities.signatureHelpProvider then
+      keymap.set('i', '<C-k>', function()
+        lsp.buf.signature_help()
+      end, map_opts)
+    end
 
     keymap.set('n', 'J', function()
-      diagnostic.open_float(0, {
+      diagnostic.open_float({
+        bufnr = 0,
         source = 'always',
         scope = 'line',
         header = false,
@@ -166,8 +176,36 @@ Plugin.config = function()
       local lsp_config = require('lspconfig')
 
       lsp_config[server_name].setup({
-        on_attach = handle_attach,
+        on_attach = on_attach,
         capabilities = capabilities,
+      })
+    end,
+
+    ['tsserver'] = function()
+      local lsp_config = require('lspconfig')
+
+      lsp_config.tsserver.setup({
+        on_attach = function(client)
+          client.server_capabilities.documentFormattingProvider = false
+          client.server_capabilities.documentRangeFormattingProvider = false
+
+          on_attach(client)
+        end,
+        capabilities = capabilities,
+        settings = {
+          typescript = {
+            inlayHints = {
+              includeInlayParameterNameHints = 'all',
+              includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+              includeInlayFunctionParameterTypeHints = true,
+              includeInlayVariableTypeHints = true,
+              includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+              includeInlayPropertyDeclarationTypeHints = true,
+              includeInlayFunctionLikeReturnTypeHints = true,
+              includeInlayEnumMemberValueHints = true,
+            },
+          },
+        },
       })
     end,
 
@@ -176,22 +214,33 @@ Plugin.config = function()
 
       lsp_config.lua_ls.setup({
         capabilities = capabilities,
-        on_attach = handle_attach,
+        on_attach = on_attach,
+        on_init = function(client)
+          local path = client.workspace_folders[1].name
+
+          -- Skip if .luarc.json or .luarc.jsonc exists.
+          if
+            vim.loop.fs_stat(path .. '/.luarc.json')
+            or vim.loop.fs_stat(path .. '/.luarc.jsonc')
+          then
+            return
+          end
+
+          client.config.settings.Lua =
+            vim.tbl_deep_extend('force', client.config.settings.Lua, {
+              runtime = {
+                version = 'LuaJIT',
+              },
+              workspace = {
+                checkThirdParty = false,
+                library = {
+                  vim.env.VIMRUNTIME,
+                },
+              },
+            })
+        end,
         settings = {
-          Lua = {
-            runtime = {
-              version = 'LuaJIT',
-            },
-            diagnostics = {
-              globals = { 'vim' },
-            },
-            workspace = {
-              library = vim.api.nvim_get_runtime_file('', true),
-            },
-            telemetry = {
-              enable = false,
-            },
-          },
+          Lua = {},
         },
       })
     end,
@@ -201,7 +250,7 @@ Plugin.config = function()
 
       lsp_config.jsonls.setup({
         capabilities = capabilities,
-        on_attach = handle_attach,
+        on_attach = on_attach,
         settings = {
           json = {
             schemas = require('schemastore').json.schemas(),
@@ -215,11 +264,23 @@ Plugin.config = function()
 
       lsp_config.stylelint_lsp.setup({
         capabilities = capabilities,
-        on_attach = handle_attach,
+        on_attach = on_attach,
         settings = {
           stylelintplus = {
             autoFixOnFormat = true,
           },
+        },
+      })
+    end,
+
+    ['typos_lsp'] = function()
+      local lsp_config = require('lspconfig')
+
+      lsp_config.typos_lsp.setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
+        init_options = {
+          diagnosticSeverity = 'Hint',
         },
       })
     end,
