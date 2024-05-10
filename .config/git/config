@@ -86,7 +86,3 @@
   added = green
   changed = yellow
   untracked = red
-
-[url "git@github.com:"]
-  insteadOf = "g:"
-  pushInsteadOf = "g:"
