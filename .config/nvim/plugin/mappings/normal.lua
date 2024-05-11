@@ -47,11 +47,11 @@ keymap.set('n', '<S-Left>', '2<C-w><')
 
 -- Remove current buffer without losing window layout.
 keymap.set('n', '\\q', function()
-  local buffer = require('user/mappings/normal/buffer')
+  local buffer = require('user/buffer')
   buffer.remove({ force = false })
 end, { silent = true })
 keymap.set('n', '\\Q', function()
-  local buffer = require('user/mappings/normal/buffer')
+  local buffer = require('user/buffer')
   buffer.remove({ force = true })
 end, { silent = true })
 

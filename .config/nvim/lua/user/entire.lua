@@ -3,8 +3,10 @@ local cmd = vim.cmd
 --
 -- Select an entire buffer.
 --
--- onoremap <silent> ae <Cmd>lua require('user/mappings/motion/entire').select_entire_buffer()<CR>
--- xnoremap <silent> ae <Cmd>lua require('user/mappings/motion/entire').select_entire_buffer()<CR>
+-- keymap.set({ 'o', 'x' }, 'ae', function()
+--   local entire = require('user/entire')
+--   entire.select_entire_buffer()
+-- end, { silent = true })
 --
 local function select_entire_buffer()
   cmd.normal({ "m'", bang = true })

@@ -41,4 +41,39 @@ local function remove(opts)
   cmd.bdelete({ target_buf_id, bang = opts.force })
 end
 
-return { remove = remove }
+local function save()
+  if
+    vim.bo.buftype == ''
+    and vim.fn.bufname('') ~= ''
+    and vim.bo.filetype ~= 'gitcommit'
+  then
+    local save_marks = {
+      ["'["] = vim.fn.getpos("'["),
+      ["']"] = vim.fn.getpos("']"),
+    }
+
+    vim.cmd('update')
+
+    for key, value in pairs(save_marks) do
+      vim.fn.setpos(key, value)
+    end
+  end
+end
+
+local function trim_trailing_spaces()
+  if vim.bo.modifiable and not vim.bo.binary then
+    local view = vim.fn.winsaveview()
+
+    local success, _ = pcall(function()
+      vim.cmd([[keeppatterns silent! %substitute/\s\+$//e]])
+    end)
+
+    vim.fn.winrestview(view)
+  end
+end
+
+return {
+  remove = remove,
+  save = save,
+  trim_trailing_spaces = trim_trailing_spaces,
+}
