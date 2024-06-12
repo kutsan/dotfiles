@@ -7,21 +7,6 @@ function lf() {
 }
 
 ##
-# `oathtool` 2FA utility function.
-##
-function auth() {
-  oathtool \
-    --base32 \
-    --totp \
-    "$(gpg \
-      --no-tty \
-      --for-your-eyes-only \
-      --quiet \
-      --decrypt \
-      ~/.config/auth/totp-$1.gpg)"
-}
-
-##
 # Generate authentication keys for SSH.
 ##
 function gen-ssh-keygen-ed25519() {
