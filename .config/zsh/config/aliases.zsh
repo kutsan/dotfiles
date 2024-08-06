@@ -12,6 +12,9 @@ alias la='ls -lAh' # List nodes with their details.
 # Custom Shortcuts
 alias v="$EDITOR"
 alias g='git'
-alias gs='git s'
-alias gd='git d'
-alias gds='git ds'
+
+# git
+foreach key (c d ds l s) {
+  alias g$key="git $key"
+}
+unset key
