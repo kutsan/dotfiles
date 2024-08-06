@@ -21,7 +21,6 @@ Plugin.config = function()
   local api = vim.api
 
   diagnostic.config({
-    virtual_text = false,
     severity_sort = true,
   })
 
@@ -67,9 +66,11 @@ Plugin.config = function()
         group = document_highlight_autocmd_group,
         buffer = 0,
         callback = function()
-          if client.server_capabilities.documentHighlightProvider then
-            lsp.buf.document_highlight()
+          if not client.server_capabilities.documentHighlightProvider then
+            return true
           end
+
+          lsp.buf.document_highlight()
         end,
       })
 
@@ -77,9 +78,11 @@ Plugin.config = function()
         group = document_highlight_autocmd_group,
         buffer = 0,
         callback = function()
-          if client.server_capabilities.documentHighlightProvider then
-            lsp.buf.clear_references()
+          if not client.server_capabilities.documentHighlightProvider then
+            return true
           end
+
+          lsp.buf.clear_references()
         end,
       })
     end
@@ -93,7 +96,7 @@ Plugin.config = function()
 
     if vim.lsp.inlay_hint then
       keymap.set('n', 'coi', function()
-        lsp.inlay_hint.enable(0, not lsp.inlay_hint.is_enabled())
+        lsp.inlay_hint.enable(not lsp.inlay_hint.is_enabled())
       end, map_opts)
     end
 
@@ -121,50 +124,23 @@ Plugin.config = function()
       lsp.buf.rename()
     end, map_opts)
 
-    keymap.set('n', 'K', function()
-      lsp.buf.hover()
-    end, map_opts)
-
     keymap.set('n', 'gx', function()
       lsp.buf.code_action()
     end, map_opts)
 
-    keymap.set('n', '\\f', function()
-      vim.lsp.buf.format()
+    keymap.set({ 'n', 'x' }, '\\f', function()
+      if client.server_capabilities.documentFormattingProvider then
+        vim.lsp.buf.format()
+      end
+
       require('conform').format()
     end, map_opts)
 
-    if client.server_capabilities.signatureHelpProvider then
-      keymap.set('i', '<C-k>', function()
-        lsp.buf.signature_help()
-      end, map_opts)
-    end
-
     keymap.set('n', 'J', function()
       diagnostic.open_float({
-        bufnr = 0,
-        source = 'always',
+        source = true,
         scope = 'line',
-        header = false,
         width = floating_windows_width,
-      })
-    end, map_opts)
-
-    keymap.set('n', '[g', function()
-      diagnostic.goto_prev({
-        float = {
-          source = true,
-          width = floating_windows_width,
-        },
-      })
-    end, map_opts)
-
-    keymap.set('n', ']g', function()
-      diagnostic.goto_next({
-        float = {
-          source = true,
-          width = floating_windows_width,
-        },
       })
     end, map_opts)
   end
@@ -220,8 +196,8 @@ Plugin.config = function()
 
           -- Skip if .luarc.json or .luarc.jsonc exists.
           if
-            vim.loop.fs_stat(path .. '/.luarc.json')
-            or vim.loop.fs_stat(path .. '/.luarc.jsonc')
+            vim.uv.fs_stat(path .. '/.luarc.json')
+            or vim.uv.fs_stat(path .. '/.luarc.jsonc')
           then
             return
           end
@@ -231,6 +207,7 @@ Plugin.config = function()
               runtime = {
                 version = 'LuaJIT',
               },
+              telemetry = { enable = false },
               workspace = {
                 checkThirdParty = false,
                 library = {
@@ -265,6 +242,10 @@ Plugin.config = function()
       lsp_config.stylelint_lsp.setup({
         capabilities = capabilities,
         on_attach = on_attach,
+        filetypes = {
+          'css',
+          'scss',
+        },
         settings = {
           stylelintplus = {
             autoFixOnFormat = true,
