@@ -14,8 +14,6 @@ if ([[ $OSTYPE =~ 'darwin*' ]]) {
     '/opt/homebrew/bin'
     "$ANDROID_HOME/emulator"
     "$ANDROID_HOME/platform-tools"
-    '/opt/homebrew/opt/findutils/libexec/gnubin'
-    '/opt/homebrew/opt/gnu-sed/libexec/gnubin'
     $path
   )
 }
