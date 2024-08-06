@@ -37,4 +37,9 @@ lazy.setup('specs', {
   change_detection = {
     enabled = false,
   },
+  rocks = {
+    hererocks = {
+      enabled = true,
+    },
+  },
 })
