@@ -7,9 +7,13 @@ path=(
 
 # macOS specific exports.
 if ([[ $OSTYPE =~ 'darwin*' ]]) {
+  export ANDROID_HOME="$HOME/Library/Android/sdk"
+  export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
+
   path=(
     '/opt/homebrew/bin'
-    '/opt/homebrew/opt/coreutils/libexec/gnubin'
+    "$ANDROID_HOME/emulator"
+    "$ANDROID_HOME/platform-tools"
     '/opt/homebrew/opt/findutils/libexec/gnubin'
     '/opt/homebrew/opt/gnu-sed/libexec/gnubin'
     $path
@@ -23,7 +27,6 @@ export LANG='en_US.UTF-8'
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
-export JOURNAL_HOME="$HOME/Library/Mobile Documents/com~apple~CloudDocs/Journal"
 
 # man
 export MANWIDTH='100'
@@ -36,6 +39,13 @@ export NPM_CONFIG_INIT_AUTHOR_URL='https://kutsan.dev'
 export NPM_CONFIG_INIT_LICENSE='GPL-3.0'
 export NPM_CONFIG_INIT_VERSION='0.0.0'
 export NPM_CONFIG_SIGN_GIT_TAG='true'
+
+# Volta
+export VOLTA_HOME="$HOME/.local/share/volta"
+path=(
+  "$VOLTA_HOME/bin"
+  $path
+)
 
 # Rust
 export CARGO_HOME="$HOME/.local/share/cargo"
