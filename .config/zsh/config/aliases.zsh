@@ -13,3 +13,5 @@ alias la='ls -lAh' # List nodes with their details.
 alias v="$EDITOR"
 alias g='git'
 alias gs='git s'
+alias gd='git d'
+alias gds='git ds'
