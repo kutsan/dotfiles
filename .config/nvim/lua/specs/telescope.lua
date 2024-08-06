@@ -18,6 +18,8 @@ Plugin.opts = function()
 
   return {
     defaults = {
+      prompt_prefix = ' ',
+      selection_caret = '󱞩 ',
       layout_strategy = 'vertical',
       layout_config = {
         vertical = {
