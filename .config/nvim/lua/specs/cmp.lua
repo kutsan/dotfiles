@@ -148,7 +148,7 @@ Plugin.config = function(_, opts)
 
   cmp.setup.cmdline(':', {
     completion = {
-      completeopt = 'menu,menuone,noinsert,noselect',
+      completeopt = 'menu,menuone,noinsert',
     },
     mapping = cmp.mapping.preset.cmdline(),
     sources = cmp.config.sources({
