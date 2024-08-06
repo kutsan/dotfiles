@@ -52,7 +52,7 @@ local function save()
       ["']"] = vim.fn.getpos("']"),
     }
 
-    vim.cmd('update')
+    vim.cmd('silent update')
 
     for key, value in pairs(save_marks) do
       vim.fn.setpos(key, value)
