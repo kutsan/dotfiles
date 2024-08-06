@@ -112,7 +112,7 @@ Plugin.config = function()
       preserve_window_proportions = true,
       width = {
         min = 32,
-        max = 56
+        max = 56,
       },
     },
     update_focused_file = {
