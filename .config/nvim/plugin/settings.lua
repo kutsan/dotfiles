@@ -2,7 +2,6 @@ local opt = vim.opt
 local env = vim.env
 
 -- Global Options
-opt.termguicolors = true -- Enables 24-bit RGB color support.
 opt.mouse = table.concat({ -- Enable mouse support for normal and visual modes.
   'n', -- Normal mode
   'v', -- Visual mode
@@ -46,7 +45,7 @@ opt.diffopt = { -- Option settings for diff mode.
 opt.completeopt = { -- Options for insert mode completion.
   'menu', -- Use the pop-up menu.
   'menuone', -- Use the pop-up menu also when there is only one match.
-  'noselect', -- Do not select a match in the menu.
+  'noinsert', -- Do not insert any text until the user selects a match from the menu.
 }
 opt.fillchars = {
   -- Characters to be used in various user-interface elements.
@@ -99,6 +98,7 @@ opt.showcmd = false -- Disable displaying key presses at the right bottom.
 opt.showmode = false -- Disable native mode indicator.
 opt.cmdheight = 0 -- Disable command-line area.
 opt.confirm = true -- Ask for confirmation when closing a modified buffer.
+opt.jumpoptions = { 'stack', 'view' } -- Jump options for the jumplist.
 
 -- Window Options
 opt.breakindent = true -- Wrapped lines will be visually indented with same amount of space.
@@ -107,7 +107,8 @@ opt.linebreak = true -- Wrap long lines at a character in 'breakat'.
 opt.number = true -- Print the line number in front of each line.
 opt.cursorline = true -- Highlight the screen line of the cursor with CursorLine.
 opt.signcolumn = 'yes' -- Always draw the sign column even there is no sign in it.
-opt.foldmethod = 'indent' -- Use indent folding method to fold lines.
+opt.foldmethod = 'expr' -- Use custom fold expression.
+opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()' -- Custom fold expression for treesitter.
 
 -- Buffer Options
 opt.modeline = false -- Disable modeline feature altogether.
