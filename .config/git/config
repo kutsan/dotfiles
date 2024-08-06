@@ -86,3 +86,6 @@
   added = green
   changed = yellow
   untracked = red
+
+[includeIf "gitdir:~/Documents/Projects/Wavera/"]
+  path = work.gitconfig
