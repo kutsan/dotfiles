@@ -12,9 +12,31 @@ alias la='ls -lAh' # List nodes with their details.
 # Custom Shortcuts
 alias v="$EDITOR"
 alias g='git'
+compdef g='git'
 
-# git
-foreach key (c d ds l s) {
+typeset -A git_aliases=(
+  a   add
+  b   branch
+  bl  branch
+  c   commit
+  d   diff
+  ds  diff
+  dt  difftool
+  dts difftool
+  f   fetch
+  l   log
+  ld  log
+  r   reflog
+  rd  reflog
+  s   status
+  sm  submodule
+  sw  switch
+)
+
+# Loop through each alias, create the alias, and set the compdef
+for key in ${(k)git_aliases}; do
   alias g$key="git $key"
-}
+  compdef _git "g$key=git-${git_aliases[$key]}"
+done
+unset git_aliases
 unset key
