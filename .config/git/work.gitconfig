@@ -1,5 +1,3 @@
 [user]
   email = kutsan@wavera.org
-
-[commit]
-  gpgsign = false
+  signingkey = CAD2C10F
