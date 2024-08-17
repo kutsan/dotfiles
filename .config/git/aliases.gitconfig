@@ -10,9 +10,9 @@
   f = fetch
   l = log --graph --branches --remotes --tags --date=iso8601 --pretty=log-default
   ld = log --graph --branches --remotes --tags --date=iso8601 --pretty=log-full
+  prune-merged = !git branch --merged | grep --invert-match --extended-regexp '\\*|main|master' | xargs -n 1 git branch --delete
   r = reflog --date=iso8601 --pretty=reflog-default
   rd = reflog --date=iso8601 --pretty=reflog-full
   s = status --short
   sm = submodule
   sw = switch
-  prune-merged = !git branch --merged | grep --invert-match --extended-regexp '\\*|main|master' | xargs -n 1 git branch --delete
