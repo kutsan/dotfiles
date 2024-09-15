@@ -14,6 +14,14 @@ Plugin.opts = {
       folder_statuses = 'only_folded',
     },
   },
+  hooks = {
+    view_opened = function()
+      vim.opt.showtabline = 0
+    end,
+    diff_buf_win_enter = function()
+      vim.opt_local.signcolumn = 'no'
+    end,
+  },
 }
 
 Plugin.config = function(_, opts)
@@ -23,7 +31,17 @@ Plugin.config = function(_, opts)
 
   local keymap = vim.keymap
 
-  keymap.set('n', '<Space>gvo', '<Cmd>DiffviewOpen<CR>', { silent = true })
+  keymap.set('n', '<Space>gd', function()
+    local diffview_lib = require('diffview.lib')
+    local current_diffview_view = diffview_lib.get_current_view()
+
+    if current_diffview_view then
+      vim.cmd.DiffviewClose()
+    else
+      vim.cmd.DiffviewOpen()
+    end
+  end, { silent = true })
+
   keymap.set(
     'n',
     '<Space>gl',
@@ -36,9 +54,6 @@ Plugin.config = function(_, opts)
     '<Cmd>DiffviewFileHistory<CR>',
     { silent = true }
   )
-
-  -- TODO: Add generic tab mappings and replace this with :tabclose.
-  keymap.set('n', '<Space>gvq', '<Cmd>DiffviewClose<CR>', { silent = true })
 end
 
 return Plugin
