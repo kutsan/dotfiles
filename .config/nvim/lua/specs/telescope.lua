@@ -11,6 +11,7 @@ Plugin.dependencies = {
     build = 'make',
   },
   { 'ThePrimeagen/git-worktree.nvim', name = 'git-worktree' },
+  { 'debugloop/telescope-undo.nvim', name = 'telescope-undo' },
 }
 
 Plugin.opts = function()
@@ -48,6 +49,7 @@ Plugin.config = function(_, opts)
   telescope.setup(opts)
   telescope.load_extension('fzf')
   telescope.load_extension('git_worktree')
+  telescope.load_extension('undo')
 
   local keymap = vim.keymap
   local map_opts = { silent = true }
@@ -73,6 +75,7 @@ Plugin.config = function(_, opts)
   keymap.set('n', '<Space>gwa', function()
     telescope.extensions.git_worktree.create_git_worktree()
   end, map_opts)
+  keymap.set('n', '<Space>u', telescope.extensions.undo.undo, map_opts)
 end
 
 return Plugin
