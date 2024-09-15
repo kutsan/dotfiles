@@ -45,7 +45,7 @@ Plugin.config = function()
   mason.setup()
   mason_lsp_config.setup({
     ensure_installed = {
-      'tsserver',
+      'ts_ls',
       'eslint',
       'html',
       'cssls',
@@ -66,11 +66,9 @@ Plugin.config = function()
         group = document_highlight_autocmd_group,
         buffer = 0,
         callback = function()
-          if not client.server_capabilities.documentHighlightProvider then
-            return true
+          if client.server_capabilities.documentHighlightProvider then
+            lsp.buf.document_highlight()
           end
-
-          lsp.buf.document_highlight()
         end,
       })
 
@@ -78,11 +76,9 @@ Plugin.config = function()
         group = document_highlight_autocmd_group,
         buffer = 0,
         callback = function()
-          if not client.server_capabilities.documentHighlightProvider then
-            return true
+          if client.server_capabilities.documentHighlightProvider then
+            lsp.buf.clear_references()
           end
-
-          lsp.buf.clear_references()
         end,
       })
     end
@@ -157,10 +153,10 @@ Plugin.config = function()
       })
     end,
 
-    ['tsserver'] = function()
+    ['ts_ls'] = function()
       local lsp_config = require('lspconfig')
 
-      lsp_config.tsserver.setup({
+      lsp_config.ts_ls.setup({
         on_attach = function(client)
           client.server_capabilities.documentFormattingProvider = false
           client.server_capabilities.documentRangeFormattingProvider = false
