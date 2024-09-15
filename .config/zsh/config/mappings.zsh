@@ -1,3 +1,15 @@
+# Register widgets.
+foreach widget (
+  'add-surround surround'
+  'delete-surround surround'
+  'change-surround surround'
+  select-bracketed
+  select-quoted
+) {
+  eval zle -N $widget
+}
+unset widget
+
 # Insert Mode
 bindkey -M viins '^K' up-history
 bindkey -M viins '^J' down-history
@@ -5,8 +17,6 @@ bindkey -M viins '^F' vi-forward-char
 bindkey -M viins '^U' backward-kill-line
 bindkey -M viins '^?' backward-delete-char
 bindkey -M viins '^[[3~' delete-char
-bindkey -M viins '^R' user-fuzzy-history
-bindkey -M viins '^P' user-fuzzy-select
 
 # Normal Mode
 bindkey -M vicmd 'j' down-line # Override `down-line-or-history`.

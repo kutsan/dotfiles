@@ -5,7 +5,6 @@ foreach file (
   settings.zsh
   functions.zsh
   aliases.zsh
-  widgets.zsh
   mappings.zsh
   plugins.zsh
 ) {
