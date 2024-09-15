@@ -60,9 +60,6 @@ Plugin.opts = function()
         max_height = 15,
       },
     },
-    experimental = {
-      ghost_text = true,
-    },
     formatting = {
       fields = { 'kind', 'abbr', 'menu' },
       format = function(_, item)
@@ -88,30 +85,21 @@ Plugin.opts = function()
       ['<C-n>'] = cmp.mapping(cmp.mapping.select_next_item()),
       ['<C-p>'] = cmp.mapping(cmp.mapping.select_prev_item()),
       ['<C-Space>'] = cmp.mapping(cmp.mapping.complete()),
-      ['<C-e>'] = cmp.mapping.abort(),
+      ['<C-e>'] = cmp.mapping.close(),
       ['<CR>'] = cmp.mapping.confirm({
         behavior = cmp.ConfirmBehavior.Insert,
         select = true,
       }),
       ['<Tab>'] = cmp.mapping(function(fallback)
-        local function has_words_before()
-          local row_position, column_position =
-            unpack(vim.api.nvim_win_get_cursor(0))
-
-          if column_position == 0 then
-            return false
-          end
-
-          local current_line = vim.api.nvim_buf_get_lines(
-            0,
-            row_position - 1,
-            row_position,
-            false
-          )[1]
-          local character_at_cursor =
-            current_line:sub(column_position + 1, column_position + 1)
-
-          return character_at_cursor:match('%s') == nil
+        local has_words_before = function()
+          unpack = unpack or table.unpack
+          local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+          return col ~= 0
+            and vim.api
+                .nvim_buf_get_lines(0, line - 1, line, true)[1]
+                :sub(col, col)
+                :match('%s')
+              == nil
         end
 
         if cmp.visible() then
@@ -148,7 +136,7 @@ Plugin.config = function(_, opts)
 
   cmp.setup.cmdline(':', {
     completion = {
-      completeopt = 'menu,menuone,noinsert',
+      completeopt = 'menu,menuone,noinsert,noselect',
     },
     mapping = cmp.mapping.preset.cmdline(),
     sources = cmp.config.sources({
