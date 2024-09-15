@@ -25,6 +25,29 @@ Plugin.config = function()
     },
     rendering = { max_buffer_width = 25 },
 
+    tabs = {
+      placement = 'right',
+      components = {
+        {
+          text = function(tab)
+            if tab.is_first and tab.is_last then
+              return ''
+            end
+
+            return (' %s '):format(tab.number)
+          end,
+          bold = function(tab)
+            return tab.is_active
+          end,
+          fg = get_hex('Comment', 'fg'),
+          bg = function(tab)
+            return tab.is_active and get_hex('ColorColumn', 'bg')
+              or get_hex('Normal', 'bg')
+          end,
+        },
+      },
+    },
+
     sidebar = {
       filetype = { 'NvimTree' },
       components = {
