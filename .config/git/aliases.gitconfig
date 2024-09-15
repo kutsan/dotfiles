@@ -16,3 +16,10 @@
   s = status --short
   sm = submodule
   sw = switch
+  standup = "!f() { \
+      git l \
+        --no-merges \
+        --author=\"$(git config user.email)\" \
+        --since=\"$( [[ $(date +%u) == 7 ]] && echo 'last.friday.midnight' || echo 'yesterday.midnight' )\"; \
+    }; f"
+  fixup = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup"
