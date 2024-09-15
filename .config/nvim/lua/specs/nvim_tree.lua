@@ -16,6 +16,7 @@ Plugin.config = function()
         desc = ('nvim-tree: %s'):format(desc),
         buffer = bufnr,
         silent = true,
+        nowait = true,
       }
     end
 
