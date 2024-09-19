@@ -1,45 +1,170 @@
 {
-  "autopairs": { "branch": "master", "commit": "ffc139f2a96640ca6c4d3dff9b95b7b9eace87ae" },
-  "catppuccin": { "branch": "main", "commit": "63685e1562ef53873c9764b483d7ac5c7a608922" },
-  "cmp": { "branch": "main", "commit": "ae644feb7b67bf1ce4260c231d1d4300b19c6f30" },
-  "cmp-buffer": { "branch": "main", "commit": "3022dbc9166796b644a841a02de8dd1cc1d311fa" },
-  "cmp-calc": { "branch": "main", "commit": "5947b412da67306c5b68698a02a846760059be2e" },
-  "cmp-cmdline": { "branch": "main", "commit": "d250c63aa13ead745e3a40f61fdd3470efde3923" },
-  "cmp-lsp": { "branch": "main", "commit": "39e2eda76828d88b773cc27a3f61d2ad782c922d" },
-  "cmp-lsp-signature-help": { "branch": "main", "commit": "031e6ba70b0ad5eee49fd2120ff7a2e325b17fa7" },
-  "cmp-path": { "branch": "main", "commit": "91ff86cd9c29299a64f968ebb45846c485725f23" },
-  "cokeline": { "branch": "main", "commit": "8b877a972337623f3f28f85a71611b2a08911b3a" },
-  "colorizer": { "branch": "master", "commit": "a065833f35a3a7cc3ef137ac88b5381da2ba302e" },
-  "conform": { "branch": "master", "commit": "1a99fdc1d3aa9ccdf3021e67982a679a8c5c740c" },
-  "copilot": { "branch": "master", "commit": "1a237cf50372830a61d92b0adf00d3b23882e0e1" },
-  "copilot-chat": { "branch": "canary", "commit": "d43fab67c328946fbf8e24fdcadfdb5410517e1f" },
-  "devicons": { "branch": "master", "commit": "9154484705968658e9aab2b894d1b2a64bf9f83d" },
-  "diffview": { "branch": "main", "commit": "4516612fe98ff56ae0415a259ff6361a89419b0a" },
-  "dressing": { "branch": "master", "commit": "c5775a888adbc50652cb370073fcfec963eca93e" },
-  "git-worktree": { "branch": "master", "commit": "f247308e68dab9f1133759b05d944569ad054546" },
-  "gitsigns": { "branch": "main", "commit": "1ef74b546732f185d0f806860fa5404df7614f28" },
-  "hererocks": { "branch": "master", "commit": "8bd2fcfdd65cfa7535ce39ea372a63b0bdb8e528" },
-  "lazy.nvim": { "branch": "main", "commit": "48b52b5cfcf8f88ed0aff8fde573a5cc20b1306d" },
-  "lspconfig": { "branch": "master", "commit": "46ce5fd8c081f179a509da423077f8372e63ffc4" },
-  "mason": { "branch": "main", "commit": "e2f7f9044ec30067bc11800a9e266664b88cda22" },
-  "mason-lspconfig": { "branch": "main", "commit": "25c11854aa25558ee6c03432edfa0df0217324be" },
-  "mini-files": { "branch": "main", "commit": "05c861ff4066a9d20233ec776e9ec894ab9f19fe" },
-  "noice": { "branch": "main", "commit": "d9328ef903168b6f52385a751eb384ae7e906c6f" },
-  "noice.nvim": { "branch": "main", "commit": "448bb9c524a7601035449210838e374a30153172" },
-  "nui": { "branch": "main", "commit": "b58e2bfda5cea347c9d58b7f11cf3012c7b3953f" },
-  "nvim-tree": { "branch": "master", "commit": "45a93d99794fff3064141d5b3a50db98ce352697" },
-  "plenary": { "branch": "master", "commit": "ec289423a1693aeae6cd0d503bac2856af74edaa" },
-  "plenary.nvim": { "branch": "master", "commit": "ec289423a1693aeae6cd0d503bac2856af74edaa" },
-  "schema-store": { "branch": "main", "commit": "bfe74baf72ca8964a211286fed864f30c672f19b" },
-  "scope": { "branch": "main", "commit": "5e3f5ead970317b2f276d38dc031cb4bc5742cd4" },
-  "surround": { "branch": "main", "commit": "ec2dc7671067e0086cdf29c2f5df2dd909d5f71f" },
-  "telescope": { "branch": "master", "commit": "a0bbec21143c7bc5f8bb02e0005fa0b982edc026" },
-  "telescope-fzf-native": { "branch": "main", "commit": "cf48d4dfce44e0b9a2e19a008d6ec6ea6f01a83b" },
-  "telescope-undo": { "branch": "main", "commit": "51be9ae7c42fc27c0b05505e3a0162e0f05fbb6a" },
-  "treesitter": { "branch": "master", "commit": "b7160e87aadbb3f5f6ee87ce139406fe3433044e" },
-  "treesitter-autotag": { "branch": "main", "commit": "e239a560f338be31337e7abc3ee42515daf23f5e" },
-  "treesitter-context": { "branch": "master", "commit": "7f7eeaa99e5a9beab518f502292871ae5f20de6f" },
-  "treesitter-text-objects": { "branch": "master", "commit": "bf8d2ad35d1d1a687eae6c065c3d524f7ab61b23" },
-  "ts-comments": { "branch": "main", "commit": "98d7d4dec0af1312d38e288f800bbf6ff562b6ab" },
-  "windovigation": { "branch": "main", "commit": "4a01ccaf6494230a1f0f1bf78a05ebb29003e326" }
+  "autopairs": {
+    "branch": "master",
+    "commit": "f158dcb865c36f72c92358f87787dab2c272eaf3"
+  },
+  "catppuccin": {
+    "branch": "main",
+    "commit": "63685e1562ef53873c9764b483d7ac5c7a608922"
+  },
+  "cmp": {
+    "branch": "main",
+    "commit": "ae644feb7b67bf1ce4260c231d1d4300b19c6f30"
+  },
+  "cmp-buffer": {
+    "branch": "main",
+    "commit": "3022dbc9166796b644a841a02de8dd1cc1d311fa"
+  },
+  "cmp-calc": {
+    "branch": "main",
+    "commit": "5947b412da67306c5b68698a02a846760059be2e"
+  },
+  "cmp-cmdline": {
+    "branch": "main",
+    "commit": "d250c63aa13ead745e3a40f61fdd3470efde3923"
+  },
+  "cmp-lsp": {
+    "branch": "main",
+    "commit": "39e2eda76828d88b773cc27a3f61d2ad782c922d"
+  },
+  "cmp-lsp-signature-help": {
+    "branch": "main",
+    "commit": "031e6ba70b0ad5eee49fd2120ff7a2e325b17fa7"
+  },
+  "cmp-path": {
+    "branch": "main",
+    "commit": "91ff86cd9c29299a64f968ebb45846c485725f23"
+  },
+  "cokeline": {
+    "branch": "main",
+    "commit": "8b877a972337623f3f28f85a71611b2a08911b3a"
+  },
+  "colorizer": {
+    "branch": "master",
+    "commit": "a065833f35a3a7cc3ef137ac88b5381da2ba302e"
+  },
+  "conform": {
+    "branch": "master",
+    "commit": "1a99fdc1d3aa9ccdf3021e67982a679a8c5c740c"
+  },
+  "copilot": {
+    "branch": "master",
+    "commit": "1a237cf50372830a61d92b0adf00d3b23882e0e1"
+  },
+  "copilot-chat": {
+    "branch": "canary",
+    "commit": "2352cd3e7e980cd73594be05f96b2dc4c0dd4a74"
+  },
+  "devicons": {
+    "branch": "master",
+    "commit": "9154484705968658e9aab2b894d1b2a64bf9f83d"
+  },
+  "diffview": {
+    "branch": "main",
+    "commit": "4516612fe98ff56ae0415a259ff6361a89419b0a"
+  },
+  "dressing": {
+    "branch": "master",
+    "commit": "1b7921eecc65af1baf8ac1dc06f0794934cbcfb2"
+  },
+  "git-worktree": {
+    "branch": "master",
+    "commit": "f247308e68dab9f1133759b05d944569ad054546"
+  },
+  "gitsigns": {
+    "branch": "main",
+    "commit": "1ef74b546732f185d0f806860fa5404df7614f28"
+  },
+  "hererocks": {
+    "branch": "master",
+    "commit": "8bd2fcfdd65cfa7535ce39ea372a63b0bdb8e528"
+  },
+  "lazy.nvim": {
+    "branch": "main",
+    "commit": "460e1cd8f24e364d54543a4b0e83f6f4ec1f65fb"
+  },
+  "lspconfig": {
+    "branch": "master",
+    "commit": "aaec5d049af99e7b975bdf68aca582f1aa91b338"
+  },
+  "mason": {
+    "branch": "main",
+    "commit": "e2f7f9044ec30067bc11800a9e266664b88cda22"
+  },
+  "mason-lspconfig": {
+    "branch": "main",
+    "commit": "25c11854aa25558ee6c03432edfa0df0217324be"
+  },
+  "noice": {
+    "branch": "main",
+    "commit": "d9328ef903168b6f52385a751eb384ae7e906c6f"
+  },
+  "noice.nvim": {
+    "branch": "main",
+    "commit": "c1ba80ccf6b3bd8c7fc88fe2e61085131d44ad65"
+  },
+  "nui": {
+    "branch": "main",
+    "commit": "b58e2bfda5cea347c9d58b7f11cf3012c7b3953f"
+  },
+  "nvim-tree": {
+    "branch": "master",
+    "commit": "45a93d99794fff3064141d5b3a50db98ce352697"
+  },
+  "plenary": {
+    "branch": "master",
+    "commit": "2d9b06177a975543726ce5c73fca176cedbffe9d"
+  },
+  "plenary.nvim": {
+    "branch": "master",
+    "commit": "2d9b06177a975543726ce5c73fca176cedbffe9d"
+  },
+  "schema-store": {
+    "branch": "main",
+    "commit": "6e2af7e093a4b92e3dce014aa1cbb5449ad1ebf9"
+  },
+  "scope": {
+    "branch": "main",
+    "commit": "932102696ead2b7ab9ff65017767b57e2722fdde"
+  },
+  "surround": {
+    "branch": "main",
+    "commit": "ec2dc7671067e0086cdf29c2f5df2dd909d5f71f"
+  },
+  "telescope": {
+    "branch": "master",
+    "commit": "a0bbec21143c7bc5f8bb02e0005fa0b982edc026"
+  },
+  "telescope-fzf-native": {
+    "branch": "main",
+    "commit": "cf48d4dfce44e0b9a2e19a008d6ec6ea6f01a83b"
+  },
+  "telescope-undo": {
+    "branch": "main",
+    "commit": "51be9ae7c42fc27c0b05505e3a0162e0f05fbb6a"
+  },
+  "treesitter": {
+    "branch": "master",
+    "commit": "2b2ac302324f4cd2194c5dcaa59332b65e1c6403"
+  },
+  "treesitter-autotag": {
+    "branch": "main",
+    "commit": "e239a560f338be31337e7abc3ee42515daf23f5e"
+  },
+  "treesitter-context": {
+    "branch": "master",
+    "commit": "7f7eeaa99e5a9beab518f502292871ae5f20de6f"
+  },
+  "treesitter-text-objects": {
+    "branch": "master",
+    "commit": "bf8d2ad35d1d1a687eae6c065c3d524f7ab61b23"
+  },
+  "ts-comments": {
+    "branch": "main",
+    "commit": "98d7d4dec0af1312d38e288f800bbf6ff562b6ab"
+  },
+  "windovigation": {
+    "branch": "main",
+    "commit": "4a01ccaf6494230a1f0f1bf78a05ebb29003e326"
+  }
 }
