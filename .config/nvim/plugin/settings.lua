@@ -53,7 +53,7 @@ opt.fillchars = {
   stlnc = ' ', -- Status-line of the non-current windows.
   vert = ' ', -- Vertical separator to be used with :vsplit.
   fold = ' ', -- Character to be used with 'foldtext'.
-  diff = '╱', -- Deleted lines of the 'diff' option.
+  diff = ' ', -- Deleted lines of the 'diff' option.
   msgsep = '─', -- Message separator for 'display' option.
   eob = ' ', -- Empty lines at the end of a buffer.
 }
