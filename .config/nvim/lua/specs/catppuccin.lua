@@ -7,6 +7,7 @@ Plugin.priority = 1000
 
 Plugin.opts = {
   flavour = 'mocha',
+  no_bold = true,
   term_colors = true,
   color_overrides = {
     mocha = {
