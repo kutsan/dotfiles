@@ -22,6 +22,11 @@ Plugin.config = function()
 
   diagnostic.config({
     severity_sort = true,
+    float = {
+      source = true,
+      width = 80,
+      border = 'single',
+    },
   })
 
   local sign_char = '•' -- U+2022 BULLET
@@ -88,8 +93,6 @@ Plugin.config = function()
       silent = true,
     }
 
-    local floating_windows_width = 80
-
     if vim.lsp.inlay_hint then
       keymap.set('n', 'coi', function()
         lsp.inlay_hint.enable(not lsp.inlay_hint.is_enabled())
@@ -133,11 +136,7 @@ Plugin.config = function()
     end, map_opts)
 
     keymap.set('n', 'J', function()
-      diagnostic.open_float({
-        source = true,
-        scope = 'line',
-        width = floating_windows_width,
-      })
+      diagnostic.open_float()
     end, map_opts)
   end
 
