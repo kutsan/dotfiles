@@ -3,10 +3,8 @@
   b = branch
   bl = !git --no-pager branch --verbose --all
   c = commit
-  d = diff --stat=100,100 --patch
-  ds = diff --stat=100,100 --patch --staged
-  dt = difftool
-  dts = difftool --staged
+  d = "! args=$@; shift $#; nvim +\"DiffviewOpen $args\""
+  ds = d --staged
   f = fetch
   l = log --graph --branches --remotes --tags --date=iso8601 --pretty=log-default
   ld = log --graph --branches --remotes --tags --date=iso8601 --pretty=log-full
