@@ -90,4 +90,4 @@
   untracked = red
 
 [includeIf "gitdir:~/Documents/Projects/Wavera/"]
-  path = work.gitconfig
+  path = wavera.gitconfig
