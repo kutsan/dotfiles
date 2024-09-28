@@ -19,8 +19,13 @@ Plugin.opts = function()
 
   return {
     defaults = {
-      prompt_prefix = ' ',
-      selection_caret = '󱞩 ',
+      prompt_title = '',
+      results_title = '',
+      preview_title = '',
+      prompt_prefix = '   ',
+      selection_caret = ' ',
+      entry_prefix = ' ',
+      sorting_strategy = 'ascending',
       layout_strategy = 'vertical',
       layout_config = {
         vertical = {
@@ -30,7 +35,6 @@ Plugin.opts = function()
           mirror = true,
         },
       },
-      sorting_strategy = 'ascending',
       mappings = {
         i = {
           ['<C-j>'] = actions.move_selection_next,
