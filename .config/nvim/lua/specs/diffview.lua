@@ -3,6 +3,7 @@ local Plugin = { 'sindrets/diffview.nvim' }
 Plugin.name = 'diffview'
 
 Plugin.opts = {
+  enhanced_diff_hl = true,
   file_panel = {
     listing_style = 'list',
     win_config = {
