@@ -33,9 +33,6 @@ Plugin.opts = {
     enable = true,
     additional_vim_regex_highlighting = false,
   },
-  autotag = {
-    enable = true,
-  },
   textobjects = {
     select = {
       enable = true,
@@ -138,9 +135,11 @@ Plugin.opts = {
 Plugin.config = function(_, opts)
   local treesitter = require('nvim-treesitter.configs')
   local treesitter_context = require('treesitter-context')
+  local treesitter_autotag = require('nvim-ts-autotag')
 
   treesitter.setup(opts)
 
+  treesitter_autotag.setup()
   treesitter_context.setup({
     max_lines = 3,
   })
