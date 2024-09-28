@@ -3,6 +3,10 @@
     "branch": "master",
     "commit": "f158dcb865c36f72c92358f87787dab2c272eaf3"
   },
+  "avente": {
+    "branch": "main",
+    "commit": "8dbfe85dd4272998c13dc18627b6232484845001"
+  },
   "catppuccin": {
     "branch": "main",
     "commit": "63685e1562ef53873c9764b483d7ac5c7a608922"
@@ -53,11 +57,11 @@
   },
   "copilot-chat": {
     "branch": "canary",
-    "commit": "2352cd3e7e980cd73594be05f96b2dc4c0dd4a74"
+    "commit": "9333944fde3c65868818e245c73aa29eef826e9b"
   },
   "devicons": {
     "branch": "master",
-    "commit": "9154484705968658e9aab2b894d1b2a64bf9f83d"
+    "commit": "26220156aafb198b2de6a4cf80c1b120a3768da0"
   },
   "diffview": {
     "branch": "main",
@@ -73,7 +77,7 @@
   },
   "gitsigns": {
     "branch": "main",
-    "commit": "1ef74b546732f185d0f806860fa5404df7614f28"
+    "commit": "863903631e676b33e8be2acb17512fdc1b80b4fb"
   },
   "hererocks": {
     "branch": "master",
@@ -85,7 +89,7 @@
   },
   "lspconfig": {
     "branch": "master",
-    "commit": "aaec5d049af99e7b975bdf68aca582f1aa91b338"
+    "commit": "a9bc587e9ae0cbcb3e90a2e9342f86b3b78c4408"
   },
   "mason": {
     "branch": "main",
@@ -97,7 +101,7 @@
   },
   "noice": {
     "branch": "main",
-    "commit": "d9328ef903168b6f52385a751eb384ae7e906c6f"
+    "commit": "c1ba80ccf6b3bd8c7fc88fe2e61085131d44ad65"
   },
   "noice.nvim": {
     "branch": "main",
@@ -109,7 +113,11 @@
   },
   "nvim-tree": {
     "branch": "master",
-    "commit": "45a93d99794fff3064141d5b3a50db98ce352697"
+    "commit": "59a8a6ae5e9d3eae99d08ab655d12fd51d5d17f3"
+  },
+  "octo": {
+    "branch": "master",
+    "commit": "d192850101d2d87bb570cea1b04eec22d784846d"
   },
   "plenary": {
     "branch": "master",
@@ -119,9 +127,13 @@
     "branch": "master",
     "commit": "2d9b06177a975543726ce5c73fca176cedbffe9d"
   },
+  "render-markdown": {
+    "branch": "main",
+    "commit": "d3a565eb4c46005a390d4b19f80f9ad719607df6"
+  },
   "schema-store": {
     "branch": "main",
-    "commit": "6e2af7e093a4b92e3dce014aa1cbb5449ad1ebf9"
+    "commit": "274fe3391cd4bdea17df72abfbbc84404b7f7b8d"
   },
   "scope": {
     "branch": "main",
@@ -143,9 +155,13 @@
     "branch": "main",
     "commit": "51be9ae7c42fc27c0b05505e3a0162e0f05fbb6a"
   },
+  "todo-comments": {
+    "branch": "main",
+    "commit": "ae0a2afb47cf7395dc400e5dc4e05274bf4fb9e0"
+  },
   "treesitter": {
     "branch": "master",
-    "commit": "2b2ac302324f4cd2194c5dcaa59332b65e1c6403"
+    "commit": "36b78d112bddd69a05e24679241962e29e494d9e"
   },
   "treesitter-autotag": {
     "branch": "main",
@@ -153,11 +169,11 @@
   },
   "treesitter-context": {
     "branch": "master",
-    "commit": "7f7eeaa99e5a9beab518f502292871ae5f20de6f"
+    "commit": "3d5390c49e3f8fe457b376df2a49aa39d75b7911"
   },
   "treesitter-text-objects": {
     "branch": "master",
-    "commit": "bf8d2ad35d1d1a687eae6c065c3d524f7ab61b23"
+    "commit": "4a2d05ec24eaa6b655c7d19092a3b6c0219d46b9"
   },
   "ts-comments": {
     "branch": "main",
@@ -166,5 +182,9 @@
   "windovigation": {
     "branch": "main",
     "commit": "4a01ccaf6494230a1f0f1bf78a05ebb29003e326"
+  },
+  "zen-mode": {
+    "branch": "main",
+    "commit": "29b292bdc58b76a6c8f294c961a8bf92c5a6ebd6"
   }
 }
