@@ -7,7 +7,6 @@ Plugin.priority = 1000
 
 Plugin.opts = {
   flavour = 'mocha',
-  no_bold = true,
   term_colors = true,
   color_overrides = {
     mocha = {
@@ -17,26 +16,34 @@ Plugin.opts = {
   },
   highlight_overrides = {
     all = function(colors)
+      local utils = require('catppuccin/utils/colors')
+
       return {
-        ['NvimTreeIndentMarker'] = { fg = '#232637' },
-        ['Whitespace'] = { fg = '#232637' },
-        ['LspInlayHint'] = {
+        -- Built-in highlights
+        Whitespace = { fg = utils.darken(colors.surface0, 0.5, colors.base) },
+        LspInlayHint = {
           fg = colors.overlay0,
           bg = 'NONE',
           style = { 'italic' },
         },
-        ['DiffDelete'] = { fg = '#573d51' },
-        ['Folded'] = { bg = '#1d2030' },
-        ['FloatBorder'] = { fg = '#2f3451', bg = '#161927' },
-        ['NormalFloat'] = { bg = '#161927' },
-        ['TelescopeNormal'] = { bg = '#161927' },
-        ['TelescopeBorder'] = { fg = '#2f3451', bg = '#161927' },
-        -- treesitter
+        Folded = { bg = utils.darken(colors.surface0, 0.8, colors.base) },
+        DiffAdd = { bg = utils.darken(colors.green, 0.1, colors.base) },
+        DiffChange = { bg = utils.darken(colors.blue, 0.1, colors.base) },
+        DiffText = { bg = utils.darken(colors.blue, 0.3, colors.base) },
+        DiffDelete = { bg = utils.darken(colors.red, 0.1, colors.base) },
+        FloatBorder = {
+          fg = utils.darken(colors.surface0, 0.3, colors.base),
+          bg = utils.darken(colors.surface0, 0.3, colors.base),
+        },
+        NormalFloat = { bg = utils.darken(colors.surface0, 0.3, colors.base) },
+
+        -- treesitter: TypeScript with JSX
         ['@constructor.tsx'] = { fg = colors.yellow },
         ['@tag.tsx'] = { fg = colors.red },
+
+        -- treesitter: SCSS
         ['@string.scss'] = { fg = colors.orange },
         ['@type.definition.scss'] = { fg = colors.blue },
-        -- SCSS
         ['@property.scss'] = { fg = colors.text },
         ['@property.id.scss'] = { fg = colors.blue },
         ['@property.class.scss'] = { fg = colors.red },
@@ -44,21 +51,34 @@ Plugin.opts = {
         ['@type.tag.scss'] = { fg = colors.mauve },
         ['@string.plain.scss'] = { fg = colors.peach },
         ['@number.scss'] = { fg = colors.peach },
+
         -- treesitter-context
-        ['TreesitterContext'] = {
-          bg = '#1d2030',
+        TreesitterContext = {
+          bg = utils.darken(colors.surface0, 0.2, colors.base),
         },
-        ['TreesitterContextLineNumber'] = {
-          bg = '#1d2030',
+        TreesitterContextLineNumber = {
+          bg = utils.darken(colors.surface0, 0.2, colors.base),
           fg = colors.overlay0,
         },
-        ['TreesitterContextBottom'] = {
-          style = {},
+
+        -- nvim-tree
+        NvimTreeIndentMarker = {
+          fg = utils.darken(colors.surface0, 0.3, colors.base),
+        },
+
+        -- telescope
+        TelescopeNormal = {
+          bg = utils.darken(colors.surface0, 0.15, colors.base),
+        },
+        TelescopeBorder = {
+          fg = utils.darken(colors.surface0, 0.15, colors.base),
+          bg = utils.darken(colors.surface0, 0.15, colors.base),
         },
       }
     end,
   },
   integrations = {
+    diffview = true,
     treesitter = true,
     treesitter_context = true,
     cmp = true,
