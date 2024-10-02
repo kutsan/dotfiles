@@ -39,13 +39,6 @@ export NPM_CONFIG_INIT_LICENSE='GPL-3.0'
 export NPM_CONFIG_INIT_VERSION='0.0.0'
 export NPM_CONFIG_SIGN_GIT_TAG='true'
 
-# Volta
-export VOLTA_HOME="$HOME/.local/share/volta"
-path=(
-  "$VOLTA_HOME/bin"
-  $path
-)
-
 # Rust
 export CARGO_HOME="$HOME/.local/share/cargo"
 export RUSTUP_HOME="$HOME/.local/share/rustup"
