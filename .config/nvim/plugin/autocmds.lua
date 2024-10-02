@@ -88,11 +88,3 @@ api.nvim_create_autocmd('BufWritePre', {
     buffer.trim_trailing_spaces()
   end,
 })
-
-vim.api.nvim_create_autocmd('BufEnter', {
-  callback = function()
-    if vim.list_contains({ 'NvimTree' }, vim.bo.filetype) then
-      vim.opt_local.winfixbuf = true
-    end
-  end,
-})

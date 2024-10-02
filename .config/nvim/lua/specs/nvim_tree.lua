@@ -20,6 +20,18 @@ Plugin.config = function()
       }
     end
 
+    vim.api.nvim_create_autocmd('BufEnter', {
+      group = vim.api.nvim_create_augroup(
+        'NvimTreeWinFixBuf',
+        { clear = true }
+      ),
+      callback = function()
+        if vim.list_contains({ 'NvimTree' }, vim.bo.filetype) then
+          vim.opt_local.winfixbuf = true
+        end
+      end,
+    })
+
     keymap.set('n', 'l', nvim_tree_api.node.open.edit, opts('Open'))
     keymap.set('n', '<CR>', nvim_tree_api.node.open.edit, opts('Open'))
     keymap.set('n', '<2-LeftMouse>', nvim_tree_api.node.open.edit, opts('Open'))
