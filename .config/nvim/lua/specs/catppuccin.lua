@@ -85,6 +85,7 @@ Plugin.opts = {
     cmp = true,
     gitsigns = true,
     nvimtree = true,
+    noice = true,
     native_lsp = {
       enabled = true,
       virtual_text = {
