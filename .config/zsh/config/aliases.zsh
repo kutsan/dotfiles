@@ -13,7 +13,7 @@ alias la='ls -lAh' # List nodes with their details.
 alias v="$EDITOR"
 alias g='git'
 compdef g='git'
-alias p='pnpm'
+alias pn='pnpm'
 alias px='pnpx'
 
 typeset -A git_aliases=(
