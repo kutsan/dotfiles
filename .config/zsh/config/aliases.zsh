@@ -23,8 +23,6 @@ typeset -A git_aliases=(
   c   commit
   d   diff
   ds  diff
-  dt  difftool
-  dts difftool
   f   fetch
   l   log
   ld  log
@@ -42,3 +40,19 @@ for key in ${(k)git_aliases}; do
 done
 unset git_aliases
 unset key
+
+# Remove the Homebrew version of `git` completions, as they are incompatible with Zsh aliases.
+function remove_conflicting_git_completions() {
+  local git_completion_bash="$HOMEBREW_PREFIX/share/zsh/site-functions/git-completion.bash"
+  local git_completion_zsh="$HOMEBREW_PREFIX/share/zsh/site-functions/_git"
+
+  if ([[ -e "$git_completion_bash" ]]) {
+    command rm "$git_completion_bash"
+  }
+
+  if ([[ -e "$git_completion_zsh" ]]) {
+    command rm "$git_completion_zsh"
+  }
+}
+
+remove_conflicting_git_completions
