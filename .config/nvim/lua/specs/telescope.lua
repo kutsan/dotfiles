@@ -14,8 +14,16 @@ Plugin.dependencies = {
   { 'debugloop/telescope-undo.nvim', name = 'telescope-undo' },
 }
 
+local function get_telescope_width()
+  local term_width = vim.o.columns
+  return term_width <= 100 and 0.9 or 0.65
+end
+
 Plugin.opts = function()
   local actions = require('telescope.actions')
+
+  local term_width = vim.o.columns
+  local width = term_width <= 100 and 0.9 or 0.65
 
   return {
     defaults = {
@@ -31,7 +39,7 @@ Plugin.opts = function()
         vertical = {
           prompt_position = 'top',
           preview_cutoff = 10,
-          width = 0.65,
+          width = get_telescope_width(),
           mirror = true,
         },
       },
@@ -54,6 +62,25 @@ Plugin.config = function(_, opts)
   telescope.load_extension('fzf')
   telescope.load_extension('git_worktree')
   telescope.load_extension('undo')
+
+  -- Resize telescope window when the terminal is resized.
+  vim.api.nvim_create_autocmd('VimResized', {
+    group = vim.api.nvim_create_augroup(
+      'TelescopeAdjustWidth',
+      { clear = true }
+    ),
+    callback = function()
+      telescope.setup({
+        defaults = {
+          layout_config = {
+            vertical = {
+              width = get_telescope_width(),
+            },
+          },
+        },
+      })
+    end,
+  })
 
   local keymap = vim.keymap
   local map_opts = { silent = true }
