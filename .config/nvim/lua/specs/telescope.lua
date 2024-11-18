@@ -22,9 +22,6 @@ end
 Plugin.opts = function()
   local actions = require('telescope.actions')
 
-  local term_width = vim.o.columns
-  local width = term_width <= 100 and 0.9 or 0.65
-
   return {
     defaults = {
       prompt_title = '',
