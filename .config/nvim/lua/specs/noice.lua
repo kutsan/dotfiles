@@ -22,6 +22,14 @@ Plugin.opts = {
       enabled = false,
     },
   },
+  popupmenu = {
+    win_options = {
+      winhighlight = {
+        Normal = 'NormalFloat',
+        FloatBorder = 'FloatBorder',
+      },
+    },
+  },
   presets = {
     command_palette = true,
     long_message_to_split = true,
