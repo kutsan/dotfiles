@@ -14,24 +14,16 @@ Plugin.dependencies = {
 }
 
 Plugin.opts = {
-  ensure_installed = { 'lua' },
+  ensure_installed = 'all',
   sync_install = false,
   auto_install = true,
   indent = {
     enable = true,
   },
-  incremental_selection = {
-    enable = true,
-    keymaps = {
-      init_selection = 'gnn',
-      node_incremental = 'grn',
-      scope_incremental = 'grc',
-      node_decremental = 'grm',
-    },
-  },
   highlight = {
     enable = true,
     additional_vim_regex_highlighting = false,
+    disable = { 'dockerfile' },
   },
   textobjects = {
     select = {
@@ -69,8 +61,8 @@ Plugin.opts = {
         ['af'] = '@function.outer',
         ['if'] = '@function.inner',
 
-        ['ax'] = '@parameter.outer',
-        ['ix'] = '@parameter.inner',
+        ['aa'] = '@parameter.outer',
+        ['ia'] = '@parameter.inner',
 
         ['at'] = '@tag.outer',
         ['it'] = '@tag.inner',
