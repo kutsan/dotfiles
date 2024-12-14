@@ -10,7 +10,6 @@ Plugin.dependencies = {
     name = 'telescope-fzf-native',
     build = 'make',
   },
-  { 'ThePrimeagen/git-worktree.nvim', name = 'git-worktree' },
   { 'debugloop/telescope-undo.nvim', name = 'telescope-undo' },
 }
 
@@ -57,7 +56,6 @@ Plugin.config = function(_, opts)
 
   telescope.setup(opts)
   telescope.load_extension('fzf')
-  telescope.load_extension('git_worktree')
   telescope.load_extension('undo')
 
   -- Resize telescope window when the terminal is resized.
@@ -97,12 +95,6 @@ Plugin.config = function(_, opts)
   keymap.set('n', '<Space>t', builtin.resume, map_opts)
   keymap.set('n', '<Space><C-o>', builtin.jumplist, map_opts)
   keymap.set('n', 'z=', builtin.spell_suggest, map_opts)
-  keymap.set('n', '<Space>gwp', function()
-    telescope.extensions.git_worktree.git_worktrees()
-  end, map_opts)
-  keymap.set('n', '<Space>gwa', function()
-    telescope.extensions.git_worktree.create_git_worktree()
-  end, map_opts)
   keymap.set('n', '<Space>u', telescope.extensions.undo.undo, map_opts)
 end
 
