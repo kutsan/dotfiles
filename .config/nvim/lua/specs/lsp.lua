@@ -4,7 +4,13 @@ Plugin.name = 'lspconfig'
 
 Plugin.dependencies = {
   'cmp',
-  { 'williamboman/mason.nvim', name = 'mason' },
+  {
+    'williamboman/mason.nvim',
+    name = 'mason',
+    dependencies = {
+      { 'Zeioth/mason-extra-cmds', name = 'mason-extra-cmds', opts = {} },
+    },
+  },
   { 'williamboman/mason-lspconfig.nvim', name = 'mason-lspconfig' },
   { 'b0o/SchemaStore.nvim', name = 'schema-store' },
 }
@@ -19,6 +25,13 @@ Plugin.config = function()
   local lsp = vim.lsp
   local keymap = vim.keymap
   local api = vim.api
+
+  api.nvim_create_autocmd('User', {
+    pattern = 'LazyInstall',
+    callback = function()
+      vim.cmd.MasonUpdateAll()
+    end,
+  })
 
   diagnostic.config({
     severity_sort = true,
