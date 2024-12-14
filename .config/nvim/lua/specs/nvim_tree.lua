@@ -134,6 +134,7 @@ Plugin.config = function()
     renderer = {
       highlight_git = true,
       root_folder_modifier = ':t',
+      indent_width = 1,
       icons = {
         glyphs = {
           default = '󰈔',
