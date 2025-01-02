@@ -2,6 +2,9 @@ local keymap = vim.keymap
 local cmd = vim.cmd
 local fn = vim.fn
 
+-- Set <C-i> to itself to support separate mappings for <Tab> and <C-i>.
+keymap.set('n', '<C-i>', '<C-i>')
+
 -- Quickly close current window.
 keymap.set('n', '<Space>q', '<C-w>q')
 
@@ -10,6 +13,9 @@ keymap.set('n', '<C-j>', '<C-w>j')
 keymap.set('n', '<C-k>', '<C-w>k')
 keymap.set('n', '<C-h>', '<C-w>h')
 keymap.set('n', '<C-l>', '<C-w>l')
+
+-- Toggle folds.
+keymap.set('n', '<Tab>', 'za')
 
 -- Always send contents of a `x` command to the black hole register.
 keymap.set('n', 'x', '"_x')
