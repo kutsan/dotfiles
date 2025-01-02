@@ -79,7 +79,7 @@ opt.foldopen = { -- Specifies for which type of commands folds will be opened.
   'tag', -- Jumping to a tag: ":ta", CTRL-T, etc.
   'undo', -- Undo or redo: "u" and CTRL-R.
 }
-opt.foldtext = '' -- Disable fold text.
+opt.foldtext = "v:lua.require('user/foldtext').foldtext()" -- Custom fold text expression.
 opt.grepprg = 'grep ' -- Program to use for the :grep command.
   .. '--line-number '
   .. '--binary-file="without-match" '

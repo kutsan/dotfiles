@@ -27,7 +27,11 @@ Plugin.opts = {
           bg = 'NONE',
           style = { 'italic' },
         },
-        Folded = { bg = utils.darken(colors.surface0, 0.8, colors.base) },
+        Folded = {
+          fg = colors.overlay0,
+          bg = 'NONE',
+          style = { 'italic' },
+        },
         DiffAdd = { bg = utils.darken(colors.green, 0.1, colors.base) },
         DiffChange = { bg = utils.darken(colors.blue, 0.1, colors.base) },
         DiffText = { bg = utils.darken(colors.blue, 0.3, colors.base) },
