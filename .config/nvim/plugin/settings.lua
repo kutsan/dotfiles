@@ -109,6 +109,7 @@ opt.cursorline = true -- Highlight the screen line of the cursor with CursorLine
 opt.signcolumn = 'yes' -- Always draw the sign column even there is no sign in it.
 opt.foldmethod = 'expr' -- Use custom fold expression.
 opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()' -- Custom fold expression for treesitter.
+opt.foldnestmax = 4 -- Maximum nesting of folds.
 
 -- Buffer Options
 opt.modeline = false -- Disable modeline feature altogether.
