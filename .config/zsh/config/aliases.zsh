@@ -8,6 +8,7 @@ alias du='du -d 1 --si' # Display size of files and folders under current direct
 alias df='df -a --si' # Display all disk usage statistics with SI units and FS types.
 alias ls='ls -AFG' # List name of nodes.
 alias la='ls -lAh' # List nodes with their details.
+alias clear='echo "Use \`^L\`." && false' # Prevent accidental clearing of the scrollback buffer.
 
 # Custom Shortcuts
 alias v="$EDITOR"
