@@ -1,0 +1,45 @@
+# Font families
+font-family = "MonoLisa Variable"
+font-family-bold = "MonoLisa Variable"
+font-family-italic = "MonoLisa Variable"
+font-family-bold-italic = "MonoLisa Variable"
+window-title-font-family = "MonoLisa Variable"
+
+# Font size in points
+font-size = 17
+
+# Font features
+font-feature = "zero"
+font-feature = "ss04"
+font-feature = "ss08"
+font-feature = "ss11"
+font-feature = "ss17"
+
+# Modify font characteristics
+adjust-underline-position = 6
+adjust-cell-height = "20%"
+adjust-cursor-thickness = 5
+cursor-style-blink = false
+window-padding-x = 0
+window-padding-y = 0
+window-padding-balance = true
+
+# TODO: Group options by category.
+theme = catppuccin
+shell-integration-features = no-cursor,sudo,no-title
+keybind = super+shift+r=reload_config
+mouse-hide-while-typing = true
+macos-option-as-alt = true
+window-colorspace = display-p3
+window-padding-color = extend-always
+keybind = cmd+z=toggle_split_zoom
+keybind = cmd+enter=new_split:down
+keybind = cmd+n=next_tab
+keybind = cmd+p=previous_tab
+keybind = super+h=goto_split:left
+keybind = super+j=goto_split:bottom
+keybind = super+k=goto_split:top
+keybind = super+l=goto_split:right
+window-width = 120
+window-height = 30
+fullscreen = true
