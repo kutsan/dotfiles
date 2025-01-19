@@ -60,20 +60,7 @@ local function save()
   end
 end
 
-local function trim_trailing_spaces()
-  if vim.bo.modifiable and not vim.bo.binary then
-    local view = vim.fn.winsaveview()
-
-    pcall(function()
-      vim.cmd([[keeppatterns silent! %substitute/\s\+$//e]])
-    end)
-
-    vim.fn.winrestview(view)
-  end
-end
-
 return {
   remove = remove,
   save = save,
-  trim_trailing_spaces = trim_trailing_spaces,
 }
