@@ -62,7 +62,7 @@ jobs:
 
       - name: Install Luacheck
         run: |
-          luarocks install luacheck
+          sudo luarocks install luacheck
 
       - name: Lint Lua files
         run: |
