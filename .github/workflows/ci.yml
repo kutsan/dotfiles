@@ -18,7 +18,7 @@ concurrency:
 
 jobs:
   commitlint:
-    name: commitlint
+    name: Commitlint
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
