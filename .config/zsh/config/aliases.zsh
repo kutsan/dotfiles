@@ -9,6 +9,7 @@ alias df='df -a --si' # Display all disk usage statistics with SI units and FS t
 alias ls='ls -AFG' # List name of nodes.
 alias la='ls -lAh' # List nodes with their details.
 alias clear='echo "Use \`^L\`." && false' # Prevent accidental clearing of the scrollback buffer.
+alias uuidgen='uuidgen | tr -d "\n" | pbcopy'
 
 # Custom Shortcuts
 alias v="$EDITOR"
