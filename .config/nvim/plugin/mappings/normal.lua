@@ -29,13 +29,13 @@ keymap.set('n', 'c#', "?\\<<C-r>=expand('<cword>')<CR>\\>\\C<CR>``cgN")
 
 -- Remap `j` and `k` for dealing with word wrap.
 keymap.set(
-  'n',
+  { 'n', 'x' },
   'k',
   "v:count == 0 ? 'gk' : 'k'",
   { expr = true, silent = true }
 )
 keymap.set(
-  'n',
+  { 'n', 'x' },
   'j',
   "v:count == 0 ? 'gj' : 'j'",
   { expr = true, silent = true }
@@ -61,20 +61,6 @@ keymap.set('n', '\\Q', function()
   buffer.remove({ force = true })
 end, { silent = true })
 
--- Add [count] blank lines above or below the cursor.
-keymap.set(
-  'n',
-  '[<Space>',
-  "<Cmd>put! =repeat(nr2char(10), v:count1) <Bar> ']+1<CR>",
-  { silent = true }
-)
-keymap.set(
-  'n',
-  ']<Space>',
-  "<Cmd>put =repeat(nr2char(10), v:count1) <Bar> '[-1<CR>",
-  { silent = true }
-)
-
 -- Open URL under cursor in browser or open path in GUI explorer.
 keymap.set('n', 'gb', function()
   local url = fn.expand('<cfile>')
@@ -89,22 +75,9 @@ keymap.set('n', 'cow', '<Cmd>set wrap!<CR>', { silent = true })
 keymap.set('n', 'coh', '<Cmd>nohlsearch<CR>', { silent = true })
 keymap.set('n', 'coH', '<Cmd>set hlsearch!<CR>', { silent = true })
 
--- Jump to a tag directly when there is only one match.
-keymap.set('n', '<C-]>', 'g<C-]>zt')
-
--- Go previous and next location list entry.
-keymap.set('n', '[l', '<Cmd>labove<CR>', { silent = true })
-keymap.set('n', ']l', '<Cmd>lbelow<CR>', { silent = true })
-
 -- Go previous and next buffers in buffer list.
 keymap.set('n', '<M-p>', '<Cmd>bprevious<CR>', { silent = true })
 keymap.set('n', '<M-n>', '<Cmd>bnext<CR>', { silent = true })
-
--- Quickfix navigation mappings.
-keymap.set('n', '<Up>', '<Cmd>cprevious<CR>zz', { silent = true })
-keymap.set('n', '<Down>', '<Cmd>cnext<CR>zz', { silent = true })
-keymap.set('n', '<Left>', '<Cmd>cpfile<CR>zz', { silent = true })
-keymap.set('n', '<Right>', '<Cmd>cnfile<CR>zz', { silent = true })
 
 -- Select last changed or yanked area.
 keymap.set(
