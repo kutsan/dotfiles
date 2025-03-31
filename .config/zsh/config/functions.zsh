@@ -1,9 +1,17 @@
 ##
-# `cd` into the last directory upon exit.
+# `cd` into the last directory upon exit using `yazi`.
 ##
-function lf() {
-  command lf -last-dir-path="$HOME/.local/share/lf/lastdir" "$@" \
-    && cd "$(<$HOME/.local/share/lf/lastdir)" 2>/dev/null
+function y() {
+  local temp_file="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+
+  command yazi "$@" --cwd-file="$temp_file"
+  local cwd="$(command cat -- "$temp_file")"
+
+  if ([[ -n "$cwd" ]] && [[ "$cwd" != "$PWD" ]]) {
+    builtin cd -- "$cwd"
+  }
+
+  command rm -f -- "$temp_file"
 }
 
 ##
