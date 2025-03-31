@@ -24,8 +24,13 @@ vim.api.nvim_create_autocmd('BufReadPost', {
   desc = 'Block changes to read-only buffers.',
   group = vim.api.nvim_create_augroup('BlockReadOnly', { clear = true }),
   callback = function()
-    local readonly = vim.api.nvim_get_option_value('readonly', { scope = 'local' })
-    vim.api.nvim_set_option_value('modifiable', not readonly, { scope = 'local' })
+    local readonly =
+      vim.api.nvim_get_option_value('readonly', { scope = 'local' })
+    vim.api.nvim_set_option_value(
+      'modifiable',
+      not readonly,
+      { scope = 'local' }
+    )
   end,
 })
 
@@ -122,6 +127,16 @@ vim.api.nvim_create_autocmd('WinLeave', {
     if vim.wo.cursorline then
       vim.w.auto_cursorline = true
       vim.wo.cursorline = false
+    end
+  end,
+})
+
+vim.api.nvim_create_autocmd('BufEnter', {
+  desc = 'Set winfixbuf for quickfix buffers.',
+  group = vim.api.nvim_create_augroup('QuickfixWinFixBuf', { clear = true }),
+  callback = function()
+    if vim.list_contains({ 'qf' }, vim.bo.filetype) then
+      vim.opt_local.winfixbuf = true
     end
   end,
 })
