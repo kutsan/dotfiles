@@ -29,6 +29,10 @@
   submodule = log
   wsErrorHighlight = all
 
+[fetch]
+  prune = true
+  all = true
+
 [difftool "nvimdiff"]
   cmd = nvim -d $LOCAL $REMOTE
   trustexitcode = true
