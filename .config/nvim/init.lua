@@ -1,21 +1,19 @@
 vim.loader.enable()
 
-local g = vim.g
-
 -- Disable unused built-in plugins.
-g.loaded_gzip = true
-g.loaded_rrhelper = true
-g.loaded_tarPlugin = true
-g.loaded_zipPlugin = true
-g.loaded_netrwPlugin = true
-g.loaded_netrwFileHandlers = true
-g.loaded_netrwSettings = true
-g.loaded_2html_plugin = true
-g.loaded_vimballPlugin = true
-g.loaded_getscriptPlugin = true
-g.loaded_logipat = true
-g.loaded_tutor_mode_plugin = true
-g.loaded_matchit = true
+vim.g.loaded_gzip = true
+vim.g.loaded_rrhelper = true
+vim.g.loaded_tarPlugin = true
+vim.g.loaded_zipPlugin = true
+vim.g.loaded_netrwPlugin = true
+vim.g.loaded_netrwFileHandlers = true
+vim.g.loaded_netrwSettings = true
+vim.g.loaded_2html_plugin = true
+vim.g.loaded_vimballPlugin = true
+vim.g.loaded_getscriptPlugin = true
+vim.g.loaded_logipat = true
+vim.g.loaded_tutor_mode_plugin = true
+vim.g.loaded_matchit = true
 
 -- Load lazy.nvim.
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
@@ -43,3 +41,7 @@ lazy.setup('specs', {
     },
   },
 })
+
+-- Add filetype detection for help files.
+vim.filetype.add({ pattern = { ['.*/doc/.-%.txt'] = 'help' } })
+vim.filetype.add({ pattern = { ['.*/doc/.-%.txt'] = 'help' } })
