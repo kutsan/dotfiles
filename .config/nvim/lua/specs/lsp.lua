@@ -139,21 +139,41 @@ Plugin.config = function()
       lsp.buf.type_definition()
     end, map_opts)
 
-    keymap.set('n', 'gr', function()
-      lsp.buf.references()
-    end, map_opts)
+    local function jump_with_virtual_line_diagnostics(jump_count)
+      pcall(vim.api.nvim_del_augroup_by_name, 'JumpWithVirtualLineDiagnostic')
 
-    keymap.set('n', 'gi', function()
-      lsp.buf.implementation()
-    end, map_opts)
+      vim.diagnostic.jump({ count = jump_count })
 
-    keymap.set('n', '<Space>c*', function()
-      lsp.buf.rename()
-    end, map_opts)
+      local initial_virtual_text_config = vim.diagnostic.config().virtual_text
+      vim.diagnostic.config({
+        virtual_text = false,
+        virtual_lines = { current_line = true },
+      })
 
-    keymap.set('n', 'gx', function()
-      lsp.buf.code_action()
-    end, map_opts)
+      vim.defer_fn(function()
+        vim.api.nvim_create_autocmd('CursorMoved', {
+          once = true,
+          group = vim.api.nvim_create_augroup(
+            'JumpWithVirtualLineDiagnostic',
+            {}
+          ),
+          callback = function()
+            vim.diagnostic.config({
+              virtual_lines = false,
+              virtual_text = initial_virtual_text_config,
+            })
+          end,
+        })
+      end, 1)
+    end
+
+    vim.keymap.set('n', ']d', function()
+      jump_with_virtual_line_diagnostics(1)
+    end)
+
+    vim.keymap.set('n', '[d', function()
+      jump_with_virtual_line_diagnostics(-1)
+    end)
 
     keymap.set({ 'n', 'x' }, '\\f', function()
       if client.server_capabilities.documentFormattingProvider then
