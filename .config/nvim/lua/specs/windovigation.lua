@@ -5,7 +5,7 @@ Plugin.name = 'windovigation'
 Plugin.lazy = false
 
 Plugin.opts = {
-  keymaps = nil,
+  keymaps = false,
 }
 
 Plugin.config = function(_, opts)
