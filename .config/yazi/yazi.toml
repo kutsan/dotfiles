@@ -1,0 +1,7 @@
+"$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
+
+[manager]
+show_hidden = true
+ratio = [1, 1, 1]
+title_format = "yazi: {cwd}"
+linemode = "size"
