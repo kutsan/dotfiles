@@ -40,11 +40,12 @@ keymap = [
   { on = "V", run = "visual_mode --unset" },
 
   # Spotting
-  { on = "<Tab>", run = "spot" }, # TODO
+  { on = "i", run = "spot" },
 
   # Operations
   { on = "o", run = "open --interactive" },
   { on = "<Enter>", run = "open" },
+  { on = "<S-Enter>", run = "shell --block '$EDITOR .'" },
   { on = "y", run = "yank" },
   { on = "p", run = "paste" },
   { on = "P", run = "paste --force" },
