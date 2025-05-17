@@ -1,13 +1,5 @@
 "$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
 
-# TODO:
-# - quicklook preview
-# - preview file
-# ??
-# { on = [
-#   "<C-p>",
-# ], run = 'shell -- qlmanage -p "$@"' },
-
 [manager]
 keymap = [
   # Quit
