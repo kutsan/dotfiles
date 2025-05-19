@@ -51,6 +51,9 @@ keymap.set('n', '<S-Down>', '2<C-w>-')
 keymap.set('n', '<S-Right>', '2<C-w>>')
 keymap.set('n', '<S-Left>', '2<C-w><')
 
+-- TODO
+keymap.set('n', 'J', '<Nop>')
+
 -- Remove current buffer without losing window layout.
 keymap.set('n', '\\q', function()
   local buffer = require('user/buffer')
@@ -74,10 +77,6 @@ keymap.set('n', 'cos', '<Cmd>set spell!<CR>', { silent = true })
 keymap.set('n', 'cow', '<Cmd>set wrap!<CR>', { silent = true })
 keymap.set('n', 'coh', '<Cmd>nohlsearch<CR>', { silent = true })
 keymap.set('n', 'coH', '<Cmd>set hlsearch!<CR>', { silent = true })
-
--- Go previous and next buffers in buffer list.
-keymap.set('n', '<M-p>', '<Cmd>bprevious<CR>', { silent = true })
-keymap.set('n', '<M-n>', '<Cmd>bnext<CR>', { silent = true })
 
 -- Select last changed or yanked area.
 keymap.set(
