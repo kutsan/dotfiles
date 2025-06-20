@@ -1,6 +1,6 @@
 "$schema" = "https://yazi-rs.github.io/schemas/theme.json"
 
-[manager]
+[mgr]
 cwd = { fg = "#94e2d5" }
 
 # Hovered
