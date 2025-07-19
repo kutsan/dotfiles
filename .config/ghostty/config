@@ -24,22 +24,39 @@ window-padding-x = 0
 window-padding-y = 0
 window-padding-balance = true
 
-# TODO: Group options by category.
+# Colors
 theme = catppuccin
-shell-integration-features = no-cursor,sudo,no-title
-keybind = super+shift+r=reload_config
-mouse-hide-while-typing = true
-macos-option-as-alt = true
 window-colorspace = display-p3
 window-padding-color = extend-always
-keybind = cmd+z=toggle_split_zoom
-keybind = cmd+enter=new_split:down
-keybind = cmd+n=next_tab
-keybind = cmd+p=previous_tab
+
+# Integration
+shell-integration-features = no-cursor,sudo,no-title
+mouse-hide-while-typing = true
+macos-option-as-alt = left
+window-width = 120
+window-height = 30
+fullscreen = true
+
+# Keybindings
+keybind = super+z=toggle_split_zoom
+keybind = super+enter=new_split:down
+keybind = super+shift+enter=new_split:right
+keybind = super+n=next_tab
+keybind = super+p=previous_tab
 keybind = super+h=goto_split:left
 keybind = super+j=goto_split:bottom
 keybind = super+k=goto_split:top
 keybind = super+l=goto_split:right
-window-width = 120
-window-height = 30
-fullscreen = true
+keybind = super+shift+k=jump_to_prompt:-1
+keybind = super+shift+j=jump_to_prompt:1
+
+# Disable default keybindings
+keybind = super+d=ignore
+keybind = super+shift+d=ignore
+keybind = super+shift+down=ignore
+keybind = super+down=ignore
+keybind = super+alt+shift+j=ignore
+
+# Quick terminal
+quick-terminal-animation-duration = 0
+keybind = global:super+shift+\=toggle_quick_terminal
