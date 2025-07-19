@@ -1,4 +1,4 @@
-<img width="100" height="114" alt="Project logo" src="https://github.com/user-attachments/assets/c0b1bc45-de86-4564-819f-d78fb488c038" />
+<img width="100" height="114" alt="Project logo" src="https://github.com/kutsan/dotfiles/raw/master/.github/assets/logo.png" />
 
 # kutsan's dotfiles
 
@@ -10,7 +10,7 @@
           width="1840"
           height="1191"
           alt="neovim screenshot"
-          src="https://github.com/user-attachments/assets/6f080622-fba4-4cbf-9c3e-4f34dba99823"
+          src="https://github.com/kutsan/dotfiles/raw/master/.github/assets/neovim-screenshot.png"
         />
       </td>
     </tr>
@@ -20,7 +20,7 @@
           width="1840"
           height="1191"
           alt="yazi screenshot"
-          src="https://github.com/user-attachments/assets/e643591a-6e47-4433-8d10-5d69c3a85576"
+          src="https://github.com/kutsan/dotfiles/raw/master/.github/assets/yazi-screenshot.png"
         />
       </td>
       <td>
@@ -28,7 +28,7 @@
           width="1840"
           height="1191"
           alt="zsh screenshot"
-          src="https://github.com/user-attachments/assets/0b54ca81-2181-4fa0-a5bc-e106509773a2"
+          src="https://github.com/kutsan/dotfiles/raw/master/.github/assets/shell-screenshot.png"
         />
       </td>
     </tr>
@@ -38,7 +38,7 @@
           width="1840"
           height="1191"
           alt="neovim search screenshot"
-          src="https://github.com/user-attachments/assets/57acde0a-2b5a-40c8-b9bb-9e04bcc968f3"
+          src="https://github.com/kutsan/dotfiles/raw/master/.github/assets/neovim-search-screenshot.png"
         />
       </td>
       <td>
@@ -46,7 +46,7 @@
           width="1840"
           height="1191"
           alt="lazydocker screenshot"
-          src="https://github.com/user-attachments/assets/82d31b3a-1bee-4348-a392-bcffd320e1d8"
+          src="https://github.com/kutsan/dotfiles/raw/master/.github/assets/lazydocker-screenshot.png"
         />
       </td>
     </tr>
