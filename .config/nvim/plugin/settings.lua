@@ -1,11 +1,16 @@
 local opt = vim.opt
-local env = vim.env
+
+local shada = require('user.shada')
+
+-- Set shada file path for the current project.
+shada.set_shada_file()
 
 -- Global Options
 opt.mouse = table.concat({ -- Enable mouse support for normal and visual modes.
   'n', -- Normal mode
   'v', -- Visual mode
 })
+opt.statuscolumn = '%l%s' -- Custom status column format.
 opt.startofline = true -- Move cursor to the start of each line when jumping with certain commands.
 opt.report = 1000 -- Threshold for reporting number of lines changed.
 opt.scrolloff = 5 -- Minimum number of screen lines to keep above and below the cursor.
@@ -41,6 +46,10 @@ opt.diffopt = { -- Option settings for diff mode.
   'hiddenoff', -- Do not use diff mode for a buffer when it becomes hidden.
   'foldcolumn:0', -- Set the 'foldcolumn' option to 0.
   'algorithm:histogram', -- Use the specified diff algorithm.
+  'internal', -- Use the internal diff algorithm.
+  'closeoff', -- Do not use diff mode for a buffer when it becomes closed.
+  'indent-heuristic', -- Use the indent heuristic for the internal diff library.
+  'linematch:60', -- Align and mark changes between the most similar lines.
 }
 opt.completeopt = { -- Options for insert mode completion.
   'menu', -- Use the pop-up menu.
@@ -51,7 +60,6 @@ opt.fillchars = {
   -- Characters to be used in various user-interface elements.
   stl = ' ', -- Status-line of the current window.
   stlnc = ' ', -- Status-line of the non-current windows.
-  vert = ' ', -- Vertical separator to be used with :vsplit.
   fold = ' ', -- Character to be used with 'foldtext'.
   diff = ' ', -- Deleted lines of the 'diff' option.
   msgsep = '─', -- Message separator for 'display' option.
@@ -99,6 +107,7 @@ opt.showmode = false -- Disable native mode indicator.
 opt.cmdheight = 0 -- Disable command-line area.
 opt.confirm = true -- Ask for confirmation when closing a modified buffer.
 opt.jumpoptions = { 'stack', 'view' } -- Jump options for the jumplist.
+opt.winborder = 'none' -- Border style for floating windows.
 
 -- Window Options
 opt.breakindent = true -- Wrapped lines will be visually indented with same amount of space.
@@ -106,10 +115,11 @@ opt.wrap = false -- Prevent wrapping for long lines.
 opt.linebreak = true -- Wrap long lines at a character in 'breakat'.
 opt.number = true -- Print the line number in front of each line.
 opt.cursorline = true -- Highlight the screen line of the cursor with CursorLine.
-opt.signcolumn = 'yes' -- Always draw the sign column even there is no sign in it.
+opt.signcolumn = 'yes:1' -- Always draw the sign column including sign space even there is no sign in it.
 opt.foldmethod = 'expr' -- Use custom fold expression.
 opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()' -- Custom fold expression for treesitter.
 opt.foldnestmax = 4 -- Maximum nesting of folds.
+opt.numberwidth = 4 -- Minimum number column width.
 
 -- Buffer Options
 opt.modeline = false -- Disable modeline feature altogether.
@@ -120,8 +130,8 @@ opt.expandtab = true -- Use spaces instead of tab characters.
 opt.undofile = true -- Persist undo history to an undo file.
 opt.keymap = 'diacritic' -- Enable diacritic key mappings in keymap folder.
 
--- Root
-if env.SUDO_USER ~= nil then
+-- Root User Options
+if vim.env.SUDO_USER ~= nil then
   opt.swapfile = false
   opt.backup = false
   opt.writebackup = false
