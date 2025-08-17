@@ -87,6 +87,8 @@ Plugin.opts = {
         confirm = function(picker, item)
           picker:close()
 
+          local snacks = require('snacks')
+
           if item and item.file then
             -- Check if the project is already open by checking the cwd of each tab
             local tabpages = vim.api.nvim_list_tabpages()
@@ -112,7 +114,7 @@ Plugin.opts = {
 
             -- Change cwd to the selected project, only for this tab
             vim.cmd('tcd ' .. vim.fn.fnameescape(item.file))
-            Snacks.picker.smart()
+            snacks.picker.smart()
           end
         end,
       },
@@ -260,7 +262,8 @@ Plugin.init = function()
   vim.api.nvim_create_autocmd('User', {
     pattern = 'VeryLazy',
     callback = function()
-      Snacks.toggle.option('spell', { name = 'Spelling' }):map('<Space>us')
+      local snacks = require('snacks')
+      snacks.toggle.option('spell', { name = 'Spelling' }):map('<Space>us')
     end,
   })
 end
