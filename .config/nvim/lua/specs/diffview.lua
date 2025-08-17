@@ -16,14 +16,8 @@ Plugin.opts = {
     },
   },
   hooks = {
-    view_opened = function()
-      vim.opt.showtabline = 0
-    end,
-    view_closed = function()
-      vim.opt.showtabline = 1
-    end,
     diff_buf_win_enter = function()
-      vim.opt_local.signcolumn = 'no'
+      vim.opt_local.cursorline = false
     end,
   },
 }

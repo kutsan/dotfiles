@@ -64,12 +64,3 @@ vim.api.nvim_create_autocmd('BufEnter', {
     end
   end,
 })
-
-vim.api.nvim_create_autocmd('OptionSet', {
-  desc = 'Disable cursorline in diff mode.',
-  group = vim.api.nvim_create_augroup('DisableCursorline', { clear = true }),
-  pattern = 'diff',
-  callback = function()
-    vim.wo.cursorline = not vim.opt.diff:get()
-  end,
-})
