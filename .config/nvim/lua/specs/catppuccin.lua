@@ -22,6 +22,9 @@ Plugin.opts = {
       return {
         -- Built-in highlights
         Whitespace = { fg = utils.darken(colors.surface0, 0.5, colors.base) },
+        WinSeparator = {
+          fg = utils.darken(colors.surface0, 0.3, colors.base),
+        },
         LspInlayHint = {
           fg = colors.overlay0,
           bg = 'NONE',
@@ -41,6 +44,10 @@ Plugin.opts = {
           bg = utils.darken(colors.surface0, 0.3, colors.base),
         },
         NormalFloat = { bg = utils.darken(colors.surface0, 0.3, colors.base) },
+        Pmenu = {
+          bg = utils.darken(colors.surface0, 0.5, colors.crust),
+          fg = colors.text,
+        },
 
         -- treesitter: TypeScript with JSX
         ['@constructor.tsx'] = { fg = colors.yellow },
@@ -66,18 +73,8 @@ Plugin.opts = {
           fg = colors.overlay0,
         },
 
-        -- nvim-tree
-        NvimTreeIndentMarker = {
-          fg = utils.darken(colors.surface0, 0.3, colors.base),
-        },
-
-        -- telescope
-        TelescopeNormal = {
-          bg = utils.darken(colors.surface0, 0.15, colors.base),
-        },
-        TelescopeBorder = {
-          fg = utils.darken(colors.surface0, 0.15, colors.base),
-          bg = utils.darken(colors.surface0, 0.15, colors.base),
+        SnacksPickerTree = {
+          fg = utils.darken(colors.surface0, 0.7, colors.base),
         },
       }
     end,
@@ -88,8 +85,10 @@ Plugin.opts = {
     treesitter_context = true,
     cmp = true,
     gitsigns = true,
-    nvimtree = true,
     noice = true,
+    snacks = {
+      enabled = false,
+    },
     native_lsp = {
       enabled = true,
       virtual_text = {
