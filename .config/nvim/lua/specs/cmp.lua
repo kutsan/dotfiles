@@ -130,10 +130,8 @@ end
 Plugin.config = function(_, opts)
   local cmp = require('cmp')
   local autopairs_cmp_completion = require('nvim-autopairs.completion.cmp')
-  local copilot_chat = require('CopilotChat.integrations.cmp')
 
   cmp.setup(opts)
-  copilot_chat.setup()
 
   cmp.setup.cmdline(':', {
     completion = {
