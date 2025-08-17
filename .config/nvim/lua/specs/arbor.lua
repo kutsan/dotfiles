@@ -14,7 +14,7 @@ end
 Plugin.opts = {
   settings = {
     add = {
-      --- Naming resolution
+      -- Naming resolution
       path_style = function(git_info)
         local target_branch_name = git_info.branch_info.display_name
         local project_folder_name = vim.fs.basename(git_info.toplevel)
