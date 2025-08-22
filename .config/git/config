@@ -1,13 +1,9 @@
-[init]
-  defaultBranch = master
-
 [include]
+  path = ./local.gitconfig
   path = ./aliases.gitconfig
 
-[user]
-  name = Kutsan Kaplan
-  email = me@kutsan.dev
-  signingkey = 24D78A1B
+[init]
+  defaultBranch = master
 
 [core]
   editor = $EDITOR
@@ -92,6 +88,3 @@
   added = green
   changed = yellow
   untracked = red
-
-[includeIf "gitdir:~/Documents/Projects/Wavera/"]
-  path = wavera.gitconfig
