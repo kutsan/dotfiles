@@ -2,10 +2,7 @@ local Plugin = { 'folke/noice.nvim' }
 
 Plugin.name = 'noice'
 
-Plugin.dependencies = {
-  { 'MunifTanjim/nui.nvim', name = 'nui' },
-}
-
+Plugin.dependencies = { 'nui' }
 Plugin.event = 'VeryLazy'
 
 Plugin.opts = {
