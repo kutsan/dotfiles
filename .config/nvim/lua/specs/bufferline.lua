@@ -9,6 +9,36 @@ Plugin.dependencies = {
 
 Plugin.event = 'VeryLazy'
 Plugin.keys = {
+  -- {
+  --   '<leader>bp',
+  --   '<Cmd>BufferLineTogglePin<CR>',
+  --   desc = 'Toggle Pin',
+  -- },
+  -- {
+  --   '<leader>bP',
+  --   '<Cmd>BufferLineGroupClose ungrouped<CR>',
+  --   desc = 'Delete Non-Pinned Buffers',
+  -- },
+  -- {
+  --   '<leader>br',
+  --   '<Cmd>BufferLineCloseRight<CR>',
+  --   desc = 'Delete Buffers to the Right',
+  -- },
+  -- {
+  --   '<leader>bl',
+  --   '<Cmd>BufferLineCloseLeft<CR>',
+  --   desc = 'Delete Buffers to the Left',
+  -- },
+  -- {
+  --   '<S-h>',
+  --   '<cmd>BufferLineCyclePrev<cr>',
+  --   desc = 'Prev Buffer',
+  -- },
+  -- {
+  --   '<S-l>',
+  --   '<cmd>BufferLineCycleNext<cr>',
+  --   desc = 'Next Buffer',
+  -- },
   {
     '<M-p>',
     '<cmd>BufferLineCyclePrev<cr>',
@@ -19,6 +49,16 @@ Plugin.keys = {
     '<cmd>BufferLineCycleNext<cr>',
     desc = 'Next Buffer',
   },
+  -- {
+  --   '[B',
+  --   '<cmd>BufferLineMovePrev<cr>',
+  --   desc = 'Move buffer prev',
+  -- },
+  -- {
+  --   ']B',
+  --   '<cmd>BufferLineMoveNext<cr>',
+  --   desc = 'Move buffer next',
+  -- },
 }
 
 Plugin.opts = {
@@ -34,6 +74,12 @@ Plugin.opts = {
         filetype = 'NvimTree',
       },
     },
+    name_formatter = function(buf)
+      local mark = require('grapple').exists({ buffer = buf.bufnr })
+          and ' <U+F02E>'
+        or ''
+      return buf.name .. mark
+    end,
     custom_areas = {
       right = function()
         local result = {}

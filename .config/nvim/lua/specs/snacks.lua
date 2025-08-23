@@ -8,6 +8,7 @@ Plugin.lazy = false
 local function get_projects()
   local home = vim.fn.expand('~')
 
+  -- TODO
   local base_projects_path = home .. '/Documents/Projects'
 
   local potential_project_dirs =
@@ -27,7 +28,15 @@ end
 Plugin.opts = {
   zen = { enabled = true, toggles = { dim = false } },
   input = { enabled = true },
+  -- statuscolumn = { enabled = true },
   toggle = { enabled = true },
+  -- scroll = {
+  --   enabled = true,
+  --   animate = {
+  --     duration = { step = 5, total = 50 },
+  --     easing = 'linear',
+  --   },
+  -- },
   explorer = {
     enabled = true,
     replace_netrw = true,
@@ -72,6 +81,15 @@ Plugin.opts = {
             box = 'vertical',
             position = 'left',
             width = 40,
+            -- {
+            --   win = 'input',
+            --   max_height = 1,
+            --   height = 1,
+            --   border = { '', '', '', '', '', '', '', ' ' },
+            --   wo = {
+            --     winhighlight = 'FloatBorder:CursorColumn,NormalFloat:CursorColumn,SnacksPickerPrompt:SnacksPickerPromptTransparent',
+            --   },
+            -- },
             {
               win = 'list',
               border = 'none',
@@ -81,6 +99,24 @@ Plugin.opts = {
             },
           },
         },
+        -- layout = {
+        --   layout = {
+        --     backdrop = false,
+        --     width = 40,
+        --     min_width = 40,
+        --     height = 0,
+        --     position = 'left',
+        --     border = 'none',
+        --     box = 'vertical',
+        --     { win = 'list', border = 'none' },
+        --     {
+        --       win = 'preview',
+        --       title = '{preview}',
+        --       height = 0.4,
+        --       border = 'top',
+        --     },
+        -- },
+        -- },
       },
       projects = {
         dev = get_projects(),
@@ -122,6 +158,14 @@ Plugin.opts = {
   },
 }
 
+-- keymap.set('n', '<Space>gs', builtin.git_status, map_opts)
+-- keymap.set('n', '<C-f>', builtin.lsp_document_symbols, map_opts)
+-- keymap.set('n', '<Space>t', builtin.resume, map_opts)
+-- keymap.set('n', '<Space><C-o>', builtin.jumplist, map_opts)
+-- keymap.set('n', 'z=', builtin.spell_suggest, map_opts)
+-- keymap.set('n', '<Space>o', function()
+--   builtin.oldfiles({ only_cwd = true })
+-- end, map_opts)
 Plugin.keys = {
   {
     '<C-b>',
@@ -256,16 +300,74 @@ Plugin.keys = {
       snacks.picker.resume()
     end,
   },
+  {
+    '<Space>td',
+    function()
+      local snacks = require('snacks')
+      snacks.picker.todo_comments()
+    end,
+  }
+  -- {
+  --   'gd',
+  --   function()
+  --     Snacks.picker.lsp_definitions()
+  --   end,
+  --   desc = 'Goto Definition',
+  -- },
+  -- {
+  --   'gD',
+  --   function()
+  --     Snacks.picker.lsp_declarations()
+  --   end,
+  --   desc = 'Goto Declaration',
+  -- },
+  -- {
+  --   'gr',
+  --   function()
+  --     Snacks.picker.lsp_references()
+  --   end,
+  --   nowait = true,
+  --   desc = 'References',
+  -- },
+  -- {
+  --   'gI',
+  --   function()
+  --     Snacks.picker.lsp_implementations()
+  --   end,
+  --   desc = 'Goto Implementation',
+  -- },
+  -- {
+  --   'gy',
+  --   function()
+  --     Snacks.picker.lsp_type_definitions()
+  --   end,
+  --   desc = 'Goto T[y]pe Definition',
+  -- },
+  -- {
+  --   '<leader>ss',
+  --   function()
+  --     Snacks.picker.lsp_symbols()
+  --   end,
+  --   desc = 'LSP Symbols',
+  -- },
+  -- {
+  --   '<leader>sS',
+  --   function()
+  --     Snacks.picker.lsp_workspace_symbols()
+  --   end,
+  --   desc = 'LSP Workspace Symbols',
+  -- },
 }
 
-Plugin.init = function()
-  vim.api.nvim_create_autocmd('User', {
-    pattern = 'VeryLazy',
-    callback = function()
-      local snacks = require('snacks')
-      snacks.toggle.option('spell', { name = 'Spelling' }):map('<Space>us')
-    end,
-  })
-end
+-- Plugin.init = function()
+--   vim.api.nvim_create_autocmd('User', {
+--     pattern = 'VeryLazy',
+--     callback = function()
+--       local snacks = require('snacks')
+--       snacks.toggle.option('spell', { name = 'Spelling' }):map('<Space>us')
+--     end,
+--   })
+-- end
 
 return Plugin
+
