@@ -38,6 +38,7 @@ window-height = 30
 fullscreen = true
 
 # Keybindings
+keybind = performable:super+c=copy_to_clipboard
 keybind = super+z=toggle_split_zoom
 keybind = super+enter=new_split:down
 keybind = super+shift+enter=new_split:right
