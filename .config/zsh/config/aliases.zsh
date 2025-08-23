@@ -19,20 +19,22 @@ alias pn='pnpm'
 alias px='pnpx'
 
 typeset -A git_aliases=(
-  a   add
-  b   branch
-  bl  branch
-  c   commit
-  d   diff
-  ds  diff
-  f   fetch
-  l   log
-  ld  log
-  r   reflog
-  rd  reflog
-  s   status
-  sm  submodule
-  sw  switch
+  a    add
+  b    branch
+  bl   branch
+  c    commit
+  d    diff
+  ds   diff
+  f    fetch
+  l    log
+  ld   log
+  la   log
+  lda  log
+  r    reflog
+  rd   reflog
+  s    status
+  sm   submodule
+  sw   switch
 )
 
 # Loop through each alias, create the alias, and set the compdef

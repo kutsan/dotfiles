@@ -3,10 +3,13 @@
   b = branch
   bl = !git --no-pager branch --verbose --all
   c = commit
-  d = "! args=$@; shift $#; nvim +\"DiffviewOpen $args\""
+  d = "!args=$@; shift $#; nvim +\"DiffviewOpen $args\""
   ds = d --staged
   f = fetch
-  ld = log --graph --branches --remotes --tags --date=iso8601 --pretty=log-full
+  l = "log --graph --date=iso8601 --pretty=log-default"
+  ld = log --graph --date=iso8601 --pretty=log-full
+  la = log --graph --branches --remotes --tags --date=iso8601 --pretty=log-default
+  lda = log --graph --branches --remotes --tags --date=iso8601 --pretty=log-full
   prune-merged = !git branch --merged | grep --invert-match --extended-regexp '\\*' | xargs -n 1 git branch --delete
   r = reflog --date=iso8601 --pretty=reflog-default
   rd = reflog --date=iso8601 --pretty=reflog-full
@@ -14,14 +17,6 @@
   sm = submodule
   sw = switch
   fixup = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup"
-  l = "! \
-    f() { \
-      if (( $# == 0 )); then \
-        git log --graph --branches --remotes --tags --date=iso8601 --pretty=log-default; \
-      else \
-        git log --graph --date=iso8601 --pretty=log-default \"$@\"; \
-      fi; \
-    }; f"
   standup = "! \
     f() { \
       git l \
