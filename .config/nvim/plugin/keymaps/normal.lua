@@ -41,6 +41,9 @@ keymap.set(
   { expr = true, silent = true }
 )
 
+-- Copy to system clipboard.
+keymap.set({ 'n', 'x' }, '<D-c>', '"*y')
+
 -- Scroll viewport faster.
 keymap.set('n', '<C-e>', '3<C-e>')
 keymap.set('n', '<C-y>', '3<C-y>')
