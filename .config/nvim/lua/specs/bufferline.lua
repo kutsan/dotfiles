@@ -34,10 +34,6 @@ Plugin.opts = {
         filetype = 'NvimTree',
       },
     },
-    name_formatter = function(buf)
-      local mark = require('grapple').exists({ buffer = buf.bufnr }) and ' ' or ''
-      return buf.name .. mark
-    end,
     custom_areas = {
       right = function()
         local result = {}
