@@ -37,7 +37,7 @@ setopt GLOB_DOTS # Don't require a leading '.' in a filename to be matched expli
 setopt MAGIC_EQUAL_SUBST # Unquoted arguments of the form `key=value` have filename expansion performed.
 setopt MARK_DIRS # Append a trailing `/` to all directory names resulting from globbing.
 setopt NO_NOMATCH # If a pattern has no matches, don't print an error, leave it unchanged.
-setopt WARN_CREATE_GLOBAL # Warn when a global variables is created in a function.
+# setopt WARN_CREATE_GLOBAL # Warn when a global variables is created in a function.
 # setopt WARN_NESTED_VAR # Warn when an existing variables from an outer scope is set in a function.
 
 # History

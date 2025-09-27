@@ -62,7 +62,11 @@ export FZF_DEFAULT_OPTS="\
   --no-bold \
   --bind='ctrl-f:half-page-down' \
   --bind='ctrl-b:half-page-up'"
-source <(fzf --zsh)
+
+# Load fzf key bindings and completion.
+if (command -v fzf &> /dev/null) {
+  source <(fzf --zsh)
+}
 
 # less
 export LESS="\
