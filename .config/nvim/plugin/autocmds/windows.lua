@@ -52,5 +52,14 @@ vim.api.nvim_create_autocmd('WinLeave', {
   desc = 'Show cursor line only in the active window (disable).',
   group = 'AutoActiveCursorline',
   callback = function()
+    vim.opt_local.cursorline = false
+  end,
+})
+
+vim.api.nvim_create_autocmd('FileType', {
+  desc = 'Disable automatic comment insertion on new lines.',
+  group = vim.api.nvim_create_augroup('AutoNoAutoComment', { clear = true }),
+  callback = function()
+    vim.opt_local.formatoptions:remove({ 'c', 'r', 'o' })
   end,
 })
