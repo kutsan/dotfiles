@@ -42,28 +42,15 @@ vim.api.nvim_create_autocmd('VimResized', {
 })
 
 vim.api.nvim_create_autocmd('WinEnter', {
-  desc = 'Show cursor line only in active window.',
-  group = vim.api.nvim_create_augroup(
-    'AutoCursorlineShowCursorline',
-    { clear = true }
-  ),
+  desc = 'Show cursor line only in the active window (enable).',
+  group = vim.api.nvim_create_augroup('AutoActiveCursorline', { clear = true }),
   callback = function()
-    if vim.w.auto_cursorline then
-      vim.wo.cursorline = true
-      vim.w.auto_cursorline = nil
-    end
+    vim.opt_local.cursorline = true
   end,
 })
 vim.api.nvim_create_autocmd('WinLeave', {
-  desc = 'Show cursor line only in active window.',
-  group = vim.api.nvim_create_augroup(
-    'AutoCursorlineHideCursorline',
-    { clear = true }
-  ),
+  desc = 'Show cursor line only in the active window (disable).',
+  group = 'AutoActiveCursorline',
   callback = function()
-    if vim.wo.cursorline then
-      vim.w.auto_cursorline = true
-      vim.wo.cursorline = false
-    end
   end,
 })
