@@ -18,8 +18,9 @@ Plugin.opts = {
     'vimls',
     'typos_lsp',
     'taplo',
-    'dockerls',
+    'docker_language_server',
     'docker_compose_language_service',
+    'gh_actions_ls',
   },
 }
 
