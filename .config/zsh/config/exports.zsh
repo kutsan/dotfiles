@@ -7,8 +7,6 @@ path=(
 
 # macOS specific exports.
 if ([[ $OSTYPE =~ 'darwin*' ]]) {
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-
   export ANDROID_HOME="$HOME/Library/Android/sdk"
   export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
 
