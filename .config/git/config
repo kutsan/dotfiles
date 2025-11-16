@@ -1,6 +1,7 @@
 [include]
   path = ./local.gitconfig
   path = ./aliases.gitconfig
+  path = ./delta.gitconfig
 
 [init]
   defaultBranch = master
@@ -25,21 +26,22 @@
   submodule = log
   wsErrorHighlight = all
 
-[fetch]
-  prune = true
-  all = true
-
 [difftool "nvimdiff"]
   cmd = nvim -d $LOCAL $REMOTE
   trustexitcode = true
 
+[fetch]
+  prune = true
+  all = true
+
 [merge]
   tool = nvimmerge
-  keepBackup = false
   log = true
+  conflictStyle = zdiff3
 
 [mergetool "nvimmerge"]
   cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+  keepBackup = false
   trustexitcode = true
 
 [commit]
