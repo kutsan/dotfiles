@@ -13,7 +13,7 @@ keymap.set('c', ';g', 'global/\\v/<Left>')
 -- Construct search and replace.
 keymap.set('c', ';r', 'substitute/<C-r>=@/<CR>//gce<Left><Left><Left><Left>')
 keymap.set(
-  'c',
-  ';R',
-  'cdo substitute/<C-r>=@/<CR>//gce<Left><Left><Left><Left>'
+	'c',
+	';R',
+	'cdo substitute/<C-r>=@/<CR>//gce<Left><Left><Left><Left>'
 )

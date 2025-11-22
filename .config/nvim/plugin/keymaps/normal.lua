@@ -29,16 +29,16 @@ keymap.set('n', 'c#', "?\\<<C-r>=expand('<cword>')<CR>\\>\\C<CR>``cgN")
 
 -- Remap `j` and `k` for dealing with word wrap.
 keymap.set(
-  { 'n', 'x' },
-  'k',
-  "v:count == 0 ? 'gk' : 'k'",
-  { expr = true, silent = true }
+	{ 'n', 'x' },
+	'k',
+	"v:count == 0 ? 'gk' : 'k'",
+	{ expr = true, silent = true }
 )
 keymap.set(
-  { 'n', 'x' },
-  'j',
-  "v:count == 0 ? 'gj' : 'j'",
-  { expr = true, silent = true }
+	{ 'n', 'x' },
+	'j',
+	"v:count == 0 ? 'gj' : 'j'",
+	{ expr = true, silent = true }
 )
 
 -- Copy to system clipboard.
@@ -59,20 +59,20 @@ keymap.set('n', 'J', '<Nop>')
 
 -- Remove current buffer without losing window layout.
 keymap.set('n', '\\q', function()
-  local buffer = require('user/buffer')
-  buffer.remove({ force = false })
+	local buffer = require('user/buffer')
+	buffer.remove({ force = false })
 end, { silent = true })
 keymap.set('n', '\\Q', function()
-  local buffer = require('user/buffer')
-  buffer.remove({ force = true })
+	local buffer = require('user/buffer')
+	buffer.remove({ force = true })
 end, { silent = true })
 
 -- Open URL under cursor in browser or open path in GUI explorer.
 keymap.set('n', 'gb', function()
-  local url = fn.expand('<cfile>')
-  local escaped_url = fn.escape(url, '#%!')
+	local url = fn.expand('<cfile>')
+	local escaped_url = fn.escape(url, '#%!')
 
-  cmd(('silent !open "%s"'):format(escaped_url))
+	cmd(('silent !open "%s"'):format(escaped_url))
 end, { silent = true })
 
 -- Toggle common options.
@@ -83,8 +83,8 @@ keymap.set('n', 'coH', '<Cmd>set hlsearch!<CR>', { silent = true })
 
 -- Select last changed or yanked area.
 keymap.set(
-  'n',
-  'gV',
-  "'`[' .. strpart(getregtype(), 0, 1) .. '`]'",
-  { expr = true }
+	'n',
+	'gV',
+	"'`[' .. strpart(getregtype(), 0, 1) .. '`]'",
+	{ expr = true }
 )

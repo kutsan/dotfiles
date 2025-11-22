@@ -5,9 +5,9 @@ Plugin.name = 'orphans'
 Plugin.cmd = 'Orphans'
 
 Plugin.config = function()
-  local orphans = require('orphans')
+	local orphans = require('orphans')
 
-  orphans.setup()
+	orphans.setup()
 end
 
 return Plugin
