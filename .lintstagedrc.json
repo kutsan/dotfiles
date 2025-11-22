@@ -1,4 +1,4 @@
 {
-  "*.lua": ["luacheck", "stylua"],
-  "*.{json,md}": ["prettier --write"]
+	"*.lua": ["luacheck", "stylua"],
+	"*.{json,md}": ["prettier --write"]
 }

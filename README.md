@@ -3,73 +3,73 @@
 # kutsan's dotfiles
 
 <table>
-  <tbody>
-    <tr>
-      <td colspan="2">
-        <img
-          width="1840"
-          height="1191"
-          alt="neovim screenshot"
-          src="https://github.com/kutsan/dotfiles/raw/master/.github/assets/neovim-screenshot.png"
-        />
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <img
-          width="1840"
-          height="1191"
-          alt="yazi screenshot"
-          src="https://github.com/kutsan/dotfiles/raw/master/.github/assets/yazi-screenshot.png"
-        />
-      </td>
-      <td>
-        <img
-          width="1840"
-          height="1191"
-          alt="zsh screenshot"
-          src="https://github.com/kutsan/dotfiles/raw/master/.github/assets/shell-screenshot.png"
-        />
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <img
-          width="1840"
-          height="1191"
-          alt="neovim search screenshot"
-          src="https://github.com/kutsan/dotfiles/raw/master/.github/assets/neovim-search-screenshot.png"
-        />
-      </td>
-      <td>
-        <img
-          width="1840"
-          height="1191"
-          alt="lazydocker screenshot"
-          src="https://github.com/kutsan/dotfiles/raw/master/.github/assets/lazydocker-screenshot.png"
-        />
-      </td>
-    </tr>
-  </tbody>
+	<tbody>
+		<tr>
+			<td colspan="2">
+				<img
+					width="1840"
+					height="1191"
+					alt="neovim screenshot"
+					src="https://github.com/kutsan/dotfiles/raw/master/.github/assets/neovim-screenshot.png"
+				/>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<img
+					width="1840"
+					height="1191"
+					alt="yazi screenshot"
+					src="https://github.com/kutsan/dotfiles/raw/master/.github/assets/yazi-screenshot.png"
+				/>
+			</td>
+			<td>
+				<img
+					width="1840"
+					height="1191"
+					alt="zsh screenshot"
+					src="https://github.com/kutsan/dotfiles/raw/master/.github/assets/shell-screenshot.png"
+				/>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<img
+					width="1840"
+					height="1191"
+					alt="neovim search screenshot"
+					src="https://github.com/kutsan/dotfiles/raw/master/.github/assets/neovim-search-screenshot.png"
+				/>
+			</td>
+			<td>
+				<img
+					width="1840"
+					height="1191"
+					alt="lazydocker screenshot"
+					src="https://github.com/kutsan/dotfiles/raw/master/.github/assets/lazydocker-screenshot.png"
+				/>
+			</td>
+		</tr>
+	</tbody>
 </table>
 
 ## Overview
 
 - [`zsh`](https://github.com/zsh-users/zsh) - Highly customizable interactive login shell and command interpreter for shell scripting
-  - [`pure`](https://github.com/kutsan/pure) - Minimal and fast Zsh prompt with asynchronous git fetch
-  - [`autopair`](https://github.com/hlissner/zsh-autopair) - Auto-close and delete matching delimiters
-  - [`system-clipboard`](https://github.com/kutsan/zsh-system-clipboard) - Synchronize ZLE clipboard buffer with system clipboard
-  - [`fast-syntax-highlighting`](https://github.com/kutsan/fast-syntax-highlighting) - Fish-like syntax highlighting support for interactive terminal
-  - [`autosuggestions`](https://github.com/zsh-users/zsh-autosuggestions) - Fish-like auto-suggestions for interactive terminal based on command history
+	- [`pure`](https://github.com/kutsan/pure) - Minimal and fast Zsh prompt with asynchronous git fetch
+	- [`autopair`](https://github.com/hlissner/zsh-autopair) - Auto-close and delete matching delimiters
+	- [`system-clipboard`](https://github.com/kutsan/zsh-system-clipboard) - Synchronize ZLE clipboard buffer with system clipboard
+	- [`fast-syntax-highlighting`](https://github.com/kutsan/fast-syntax-highlighting) - Fish-like syntax highlighting support for interactive terminal
+	- [`autosuggestions`](https://github.com/zsh-users/zsh-autosuggestions) - Fish-like auto-suggestions for interactive terminal based on command history
 - [`neovim`](https://github.com/neovim/neovim) - The fork of ubiquitous text editor focused on extensibility and usability
-  - See [`.config/nvim/lua/specs`](https://github.com/kutsan/dotfiles/tree/master/.config/nvim/lua/specs) folder for the list of plugins.
+	- See [`.config/nvim/lua/specs`](https://github.com/kutsan/dotfiles/tree/master/.config/nvim/lua/specs) folder for the list of plugins.
 - [`git`](https://git-scm.com) - Version control system for tracking changes in files and coordinating the work
 - [`node`](https://nodejs.org) - JavaScript runtime environment for developing a diverse variety of applications
 - [`lua@5.1`](https://www.lua.org) - Lightweight, embeddable scripting language
-  - [`luacheck`](https://github.com/mpeterv/luacheck) - Linting and static analysis of Lua code
+	- [`luacheck`](https://github.com/mpeterv/luacheck) - Linting and static analysis of Lua code
 - [`rust`](https://www.rust-lang.org) - Multi-paradigm programming language designed for performance and safety
-  - [`cargo`](https://crates.io) - Package manager for Rust crates
-    - [`stylua`](https://github.com/johnnymorganz/stylua) - Lua formatter
+	- [`cargo`](https://crates.io) - Package manager for Rust crates
+		- [`stylua`](https://github.com/johnnymorganz/stylua) - Lua formatter
 - [`coreutils`](https://www.gnu.org/software/coreutils/coreutils.html) - GNU core utilities for basic file, shell and text manipulation
 - [`findutils`](https://www.gnu.org/software/findutils) - GNU basic directory searching utilities that provides find, locate and xargs
 - [`less`](http://www.greenwoodsoftware.com/less) - Standard file pager for Unix-like systems

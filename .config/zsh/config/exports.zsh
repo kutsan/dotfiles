@@ -1,20 +1,20 @@
 path=(
-  "$HOME/.local/bin"
-  "$HOME/.local/share/cargo/bin"
-  "$HOME/.docker/bin"
-  $path
+	"$HOME/.local/bin"
+	"$HOME/.local/share/cargo/bin"
+	"$HOME/.docker/bin"
+	$path
 )
 
 # macOS specific exports.
 if ([[ $OSTYPE =~ 'darwin*' ]]) {
-  export ANDROID_HOME="$HOME/Library/Android/sdk"
-  export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
+	export ANDROID_HOME="$HOME/Library/Android/sdk"
+	export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
 
-  path=(
-    "$ANDROID_HOME/emulator"
-    "$ANDROID_HOME/platform-tools"
-    $path
-  )
+	path=(
+		"$ANDROID_HOME/emulator"
+		"$ANDROID_HOME/platform-tools"
+		$path
+	)
 }
 
 # Basics
@@ -49,35 +49,35 @@ export GNUPGHOME="$HOME/.config/gnupg"
 export FZF_DEFAULT_COMMAND='fd --no-ignore'
 export FZF_DEFAULT_COLORS='--color=dark,fg:-1,bg:-1,hl:4,fg+:7,bg+:8,gutter:-1,hl+:4,info:8,border:8,prompt:4,pointer:3,marker:3,spinner:8,header:6'
 export FZF_DEFAULT_OPTS="\
-  $FZF_DEFAULT_COLORS \
-  --no-multi \
-  --no-mouse \
-  --height='40%' \
-  --margin='1,3' \
-  --layout='reverse' \
-  --info='inline' \
-  --no-separator \
-  --no-bold \
-  --bind='ctrl-f:half-page-down' \
-  --bind='ctrl-b:half-page-up'"
+	$FZF_DEFAULT_COLORS \
+	--no-multi \
+	--no-mouse \
+	--height='40%' \
+	--margin='1,3' \
+	--layout='reverse' \
+	--info='inline' \
+	--no-separator \
+	--no-bold \
+	--bind='ctrl-f:half-page-down' \
+	--bind='ctrl-b:half-page-up'"
 
 # Load fzf key bindings and completion.
 if (command -v fzf &> /dev/null) {
-  source <(fzf --zsh)
+	source <(fzf --zsh)
 }
 
 # less
 export LESS="\
-  --ignore-case \
-  --tilde \
-  --chop-long-lines \
-  --status-column \
-  --LONG-PROMPT \
-  --jump-target=10 \
-  --RAW-CONTROL-CHARS \
-  --clear-screen \
-  --tabs=4 \
-  --shift=5"
+	--ignore-case \
+	--tilde \
+	--chop-long-lines \
+	--status-column \
+	--LONG-PROMPT \
+	--jump-target=10 \
+	--RAW-CONTROL-CHARS \
+	--clear-screen \
+	--tabs=4 \
+	--shift=5"
 export LESSHISTFILE='-' # Disable history.
 export LESSKEYRC="$HOME/.config/less/lesskey" # Path of the uncompiled lesskey file.
 export LESSKEY="$LESSKEYRC.lwc" # Path of the compiled lesskey file.

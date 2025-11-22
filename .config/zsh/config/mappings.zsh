@@ -1,12 +1,12 @@
 # Register widgets.
 foreach widget (
-  'add-surround surround'
-  'delete-surround surround'
-  'change-surround surround'
-  select-bracketed
-  select-quoted
+	'add-surround surround'
+	'delete-surround surround'
+	'change-surround surround'
+	select-bracketed
+	select-quoted
 ) {
-  eval zle -N $widget
+	eval zle -N $widget
 }
 unset widget
 

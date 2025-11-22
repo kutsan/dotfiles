@@ -13,7 +13,7 @@ setopt NO_CHASE_DOTS # Don't resolve symbolic links upon path segments.
 setopt NO_CHASE_LINKS # Don't resolve symbolic links upon changing directories.
 setopt NO_POSIX_CD # Make cd command POSIX incompatible.
 setopt PUSHD_IGNORE_DUPS # Don't push multiple copies of the same directory onto the stack.
-setopt PUSHD_MINUS # Exchanges  the  meanings of `+` and `-` for pushd.
+setopt PUSHD_MINUS # Exchanges the meanings of `+` and `-` for pushd.
 setopt PUSHD_SILENT # Do not print the directory stack after pushd or popd.
 setopt PUSHD_TO_HOME # Have pushd with no arguments act like `pushd $HOME`.
 

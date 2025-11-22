@@ -1,6 +1,6 @@
 # Check prompt installation.
 if (! [[ -d "$ZDOTDIR/plugins/pure" ]]) {
-  return 1
+	return 1
 }
 
 # Add prompt to fpath.
@@ -23,13 +23,13 @@ zstyle :prompt:pure:prompt:success color 15
 # newline by manually clearing the screen and placing the cursor on
 # line 4 so that the prompt is redisplayed on lines 2 and 3.
 custom_prompt_pure_clear_screen() {
-  # Enable output to terminal.
-  zle -I
+	# Enable output to terminal.
+	zle -I
 
-  # Clear screen and move cursor to (4, 0).
-  print -n '\e[2J\e[4;0H'
+	# Clear screen and move cursor to (4, 0).
+	print -n '\e[2J\e[4;0H'
 
-  # Redraw prompt.
-  zle .redisplay
+	# Redraw prompt.
+	zle .redisplay
 }
 zle -N clear-screen custom_prompt_pure_clear_screen

@@ -2,6 +2,7 @@
 
 [mgr]
 cwd = { fg = "#94e2d5" }
+border_symbol = " "
 
 # Hovered
 hovered = { reversed = true }
@@ -18,18 +19,14 @@ marker_marked = { fg = "#94e2d5", bg = "#94e2d5" }
 marker_selected = { fg = "#f9e2af", bg = "#f9e2af" }
 
 # Tab
-tab_active = { reversed = true }
-tab_inactive = {}
-tab_width = 1
+[tabs]
+active = { reversed = true }
+inactive = {}
 
 # Count
 count_copied = { fg = "#1e1e2e", bg = "#a6e3a1" }
 count_cut = { fg = "#1e1e2e", bg = "#f38ba8" }
 count_selected = { fg = "#1e1e2e", bg = "#f9e2af" }
-
-# Border
-border_symbol = " "
-border_style = { fg = "#7f849c" }
 
 [mode]
 normal_main = { fg = "#1e1e2e", bg = "#89b4fa", bold = true }
@@ -89,19 +86,19 @@ title_error = { fg = "#f38ba8" }
 
 [filetype]
 rules = [
-  # Images
-  { mime = "image/*", fg = "#94e2d5" },
+	# Images
+	{ mime = "image/*", fg = "#94e2d5" },
 
-  # Media
-  { mime = "{audio,video}/*", fg = "#f9e2af" },
+	# Media
+	{ mime = "{audio,video}/*", fg = "#f9e2af" },
 
-  # Archives
-  { mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", fg = "#f5c2e7" },
+	# Archives
+	{ mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", fg = "#f5c2e7" },
 
-  # Documents
-  { mime = "application/{pdf,doc,rtf}", fg = "#a6e3a1" },
+	# Documents
+	{ mime = "application/{pdf,doc,rtf}", fg = "#a6e3a1" },
 
-  # Fallback
-  { name = "*", fg = "#cdd6f4" },
-  { name = "*/", fg = "#89b4fa" },
+	# Fallback
+	{ name = "*", fg = "#cdd6f4" },
+	{ name = "*/", fg = "#89b4fa" },
 ]
