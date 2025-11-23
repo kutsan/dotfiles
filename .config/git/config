@@ -4,7 +4,7 @@
 	path = ./delta.gitconfig
 
 [init]
-	defaultBranch = master
+	defaultBranch = main
 
 [core]
 	editor = $EDITOR
