@@ -99,6 +99,9 @@ Plugin.opts = {
 				['i,'] = '@assignment.lhs',
 				['i.'] = '@assignment.rhs',
 
+				['ar'] = '@attribute.outer',
+				['ir'] = '@attribute.inner',
+
 				['a;'] = '@block.outer',
 				['i;'] = '@block.inner',
 
@@ -116,62 +119,39 @@ Plugin.opts = {
 
 				['aa'] = '@parameter.outer',
 				['ia'] = '@parameter.inner',
-
-				['at'] = '@tag.outer',
-				['it'] = '@tag.inner',
 			},
 		},
 		swap = {
 			enable = true,
 			swap_next = {
-				['g>'] = '@parameter.inner',
+				['g>a'] = '@parameter.inner',
+				['g>r'] = '@attribute.outer',
+				['g>f'] = '@function.outer',
 			},
 			swap_previous = {
-				['g<'] = '@parameter.inner',
+				['g<a'] = '@parameter.inner',
+				['g<r'] = '@attribute.outer',
+				['g<f'] = '@function.outer',
 			},
 		},
 		move = {
 			enable = true,
 			set_jumps = true,
 			goto_next_start = {
-				[']x'] = '@parameter.outer',
-				[']i'] = '@import.outer',
 				[']f'] = '@function.outer',
 				[']c'] = '@class.outer',
-				[']s'] = '@assignment.outer',
-				[']z'] = '@comment.outer',
 			},
 			goto_next_end = {
-				[']X'] = '@parameter.outer',
-				[']I'] = '@import.outer',
 				[']F'] = '@function.outer',
 				[']C'] = '@class.outer',
-				[']S'] = '@assignment.outer',
-				[']Z'] = '@comment.outer',
 			},
 			goto_previous_start = {
-				['[x'] = '@parameter.outer',
-				['[i'] = '@import.outer',
 				['[f'] = '@function.outer',
 				['[c'] = '@class.outer',
-				['[s'] = '@assignment.outer',
-				['[z'] = '@comment.outer',
 			},
 			goto_previous_end = {
-				['[X'] = '@parameter.outer',
-				['[I'] = '@import.outer',
 				['[F'] = '@function.outer',
 				['[C'] = '@class.outer',
-				['[S'] = '@assignment.outer',
-				['[Z'] = '@comment.outer',
-			},
-		},
-		lsp_interop = {
-			enable = true,
-			border = 'none',
-			floating_preview_opts = {},
-			peek_definition_code = {
-				['gK'] = '@function.outer',
 			},
 		},
 	},
