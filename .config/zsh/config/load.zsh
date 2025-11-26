@@ -32,6 +32,12 @@ if ([[ $OSTYPE =~ 'darwin*' ]]) {
 	eval "$(/opt/homebrew/bin/brew shellenv)"
 }
 
+# Add Docker CLI completions.
+fpath=(
+	"$HOME/.docker/completions"
+	$fpath
+)
+
 # Initialize the completion system with a cache time of 24 hours.
 typeset -g zcompdump="$HOME/.local/share/zsh/zcompdump"
 typeset -g comp_files=($zcompdump(Nm-24))
