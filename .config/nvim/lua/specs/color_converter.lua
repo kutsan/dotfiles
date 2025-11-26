@@ -5,13 +5,10 @@ Plugin.opts = {}
 
 Plugin.keys = {
 	{
-		'<Space>cc',
+		'\\cc',
 		function()
 			local color_converter = require('color-converter')
 			color_converter.cycle()
-
-			-- Go back to the original position after conversion.
-			vim.api.nvim_feedkeys('``', 'n', true)
 		end,
 		desc = 'Color Converter',
 	},
