@@ -27,8 +27,32 @@ keymap.set('n', 'x', '"_x')
 keymap.set('n', '<C-n>', '<C-^>')
 
 -- Refactor word under cursor.
-keymap.set('n', 'c*', "/\\<<C-r>=expand('<cword>')<CR>\\>\\C<CR>``cgn")
-keymap.set('n', 'c#', "?\\<<C-r>=expand('<cword>')<CR>\\>\\C<CR>``cgN")
+keymap.set('n', 'c*', function()
+	local word_under_cursor = fn.expand('<cword>')
+	local escaped_word = fn.escape(word_under_cursor, '/\\')
+
+	local pattern = '\\<' .. escaped_word .. '\\>\\C'
+	fn.setreg('/', pattern)
+
+	vim.api.nvim_feedkeys(
+		vim.api.nvim_replace_termcodes('cgn', true, false, true),
+		'n',
+		false
+	)
+end)
+keymap.set('n', 'c#', function()
+	local word_under_cursor = fn.expand('<cword>')
+	local escaped_word = fn.escape(word_under_cursor, '/\\')
+
+	local pattern = '\\<' .. escaped_word .. '\\>\\C'
+	fn.setreg('/', pattern)
+
+	vim.api.nvim_feedkeys(
+		vim.api.nvim_replace_termcodes('cgN', true, false, true),
+		'n',
+		false
+	)
+end)
 
 -- Remap `j` and `k` for dealing with word wrap.
 keymap.set(
