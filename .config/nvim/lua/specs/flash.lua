@@ -12,6 +12,9 @@ Plugin.opts = {
 		search = {
 			enabled = true,
 		},
+		char = {
+			enabled = false,
+		},
 	},
 	highlight = {
 		backdrop = false,
