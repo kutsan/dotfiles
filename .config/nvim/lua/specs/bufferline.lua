@@ -4,7 +4,8 @@ Plugin.name = 'bufferline'
 Plugin.version = '*'
 
 Plugin.dependencies = {
-	{ 'nvim-tree/nvim-web-devicons', name = 'devicons' },
+	'devicons',
+	'grapple',
 }
 
 Plugin.event = 'VeryLazy'
@@ -34,6 +35,11 @@ Plugin.opts = {
 				filetype = 'NvimTree',
 			},
 		},
+		name_formatter = function(buf)
+			local mark = require('grapple').exists({ buffer = buf.bufnr }) and ' '
+				or ''
+			return mark .. buf.name
+		end,
 		custom_areas = {
 			right = function()
 				local result = {}
