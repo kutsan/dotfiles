@@ -41,26 +41,6 @@ local function remove(opts)
 	cmd.bdelete({ target_buf_id, bang = opts.force })
 end
 
-local function save()
-	if
-		vim.bo.buftype == ''
-		and vim.fn.bufname('') ~= ''
-		and vim.bo.filetype ~= 'gitcommit'
-	then
-		local save_marks = {
-			["'["] = vim.fn.getpos("'["),
-			["']"] = vim.fn.getpos("']"),
-		}
-
-		vim.cmd('silent update')
-
-		for key, value in pairs(save_marks) do
-			vim.fn.setpos(key, value)
-		end
-	end
-end
-
 return {
 	remove = remove,
-	save = save,
 }

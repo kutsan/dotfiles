@@ -17,6 +17,10 @@ Plugin.opts = {
 		yaml = prettier_formatters,
 		json = prettier_formatters,
 	},
+	format_on_save = {
+		timeout_ms = 500,
+		lsp_format = 'fallback',
+	},
 }
 
 return Plugin

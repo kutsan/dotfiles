@@ -24,15 +24,6 @@ vim.api.nvim_create_autocmd('BufReadPost', {
 	end,
 })
 
-vim.api.nvim_create_autocmd({ 'InsertLeave', 'TextChanged' }, {
-	desc = 'Save the current buffer after changes.',
-	group = vim.api.nvim_create_augroup('AutoSaveBuffer', { clear = true }),
-	callback = function()
-		local buffer = require('user/buffer')
-		buffer.save()
-	end,
-})
-
 vim.api.nvim_create_autocmd('BufReadPost', {
 	desc = 'Restore cursor to file position in previous editing session.',
 	pattern = '?*',
