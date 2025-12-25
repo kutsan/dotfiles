@@ -7,7 +7,7 @@ Plugin.dependencies = { 'mason-lspconfig' }
 Plugin.opts = {
 	ensure_installed = {
 		-- LSP Servers
-		'ts_ls',
+		'tsgo',
 		'eslint',
 		'html',
 		'cssls',
@@ -23,6 +23,7 @@ Plugin.opts = {
 		'docker_compose_language_service',
 		'gh_actions_ls',
 		'copilot',
+		'bashls',
 
 		-- Formatters
 		'prettierd',
