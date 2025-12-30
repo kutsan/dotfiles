@@ -66,6 +66,9 @@ if (command -v fzf &> /dev/null) {
 	source <(fzf --zsh)
 }
 
+# OpenCode
+export OPENCODE_DISABLE_TERMINAL_TITLE='true'
+
 # less
 export LESS="\
 	--ignore-case \
