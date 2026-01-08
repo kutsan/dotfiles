@@ -132,15 +132,22 @@ Plugin.keys = {
 		desc = 'Buffers',
 	},
 	{
-		'<Space><C-p>',
+		'<C-p>',
 		function()
 			local snacks = require('snacks')
-			snacks.picker.files()
+
+			if vim.fn.getcwd() == vim.uv.os_homedir() then
+				snacks.picker.git_files()
+			else
+				snacks.picker.files({
+					ignored = vim.fn.getcwd() == vim.uv.os_homedir(),
+				})
+			end
 		end,
 		desc = 'Find Files',
 	},
 	{
-		'<C-p>',
+		'<Space><C-p>',
 		function()
 			local snacks = require('snacks')
 			snacks.picker.git_files()
