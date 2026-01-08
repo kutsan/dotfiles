@@ -55,3 +55,44 @@ vim.api.nvim_create_autocmd('BufEnter', {
 		end
 	end,
 })
+
+-- Disable persistent undo for sensitive files
+local sensitive_patterns = {
+	-- Temp directories
+	'/tmp/*',
+	'/private/tmp/*', -- macOS
+	'$TMPDIR/*',
+	'/var/tmp/*',
+
+	-- Environment files
+	'.env',
+	'.env.*',
+	'*.env',
+	'*/.env',
+	'*/.env.*',
+
+	-- SSH and GPG
+	'*/.ssh/*',
+	'*/.gnupg/*',
+
+	-- Credentials and keys
+	'*_rsa',
+	'*_ed25519',
+	'*_ecdsa',
+	'*_dsa',
+	'*.pem',
+	'*.key',
+	'*.p12',
+	'*.pfx',
+	'*.crt',
+	'*.cer',
+}
+
+vim.api.nvim_create_autocmd({ 'BufReadPost', 'BufNewFile' }, {
+	group = vim.api.nvim_create_augroup('NoUndoSensitive', { clear = true }),
+	pattern = sensitive_patterns,
+	desc = 'Disable undofile for sensitive paths.',
+	callback = function()
+		vim.bo.undofile = false
+	end,
+})
