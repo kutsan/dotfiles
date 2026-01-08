@@ -28,6 +28,9 @@ Plugin.opts = {
 		-- Formatters
 		'prettierd',
 		'stylua',
+
+		-- Debug Adapters
+		'js-debug-adapter',
 	},
 }
 
@@ -41,6 +44,33 @@ Plugin.config = function(_, opts)
 		pattern = 'LazyInstall',
 		callback = function()
 			vim.cmd.MasonToolsUpdate()
+		end,
+	})
+
+	-- Patch `js-debug-adapter` to work with ECMAScript modules.
+	vim.api.nvim_create_autocmd('User', {
+		pattern = 'MasonToolsUpdateCompleted',
+		callback = function(event)
+			local installed_tools = event.data
+
+			if not vim.list_contains(installed_tools, 'js-debug-adapter') then
+				return
+			end
+
+			vim.schedule(function()
+				local dir_path = vim.fn.stdpath('data')
+					.. '/mason/packages/js-debug-adapter/js-debug/src'
+				local file_path = dir_path .. '/package.json'
+
+				if vim.fn.isdirectory(dir_path) == 1 then
+					local file = io.open(file_path, 'w')
+
+					if file then
+						file:write('{ "type": "commonjs" }')
+						file:close()
+					end
+				end
+			end)
 		end,
 	})
 end
