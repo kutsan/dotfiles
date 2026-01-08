@@ -81,7 +81,7 @@ keymap.set('n', '<S-Down>', '2<C-w>-')
 keymap.set('n', '<S-Right>', '2<C-w>>')
 keymap.set('n', '<S-Left>', '2<C-w><')
 
--- TODO
+-- Disable `J` to prevent accidental line joining.
 keymap.set('n', 'J', '<Nop>')
 
 -- Remove current buffer without losing window layout.
