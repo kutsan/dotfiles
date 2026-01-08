@@ -35,6 +35,11 @@ opt.shortmess =
 		'c', -- Don't give ins-completion-menu messages.
 		'F', -- Don't give the file info when editing a file.
 	})
+opt.guicursor = {
+	'n-v-sm-t:block',
+	'i-c-ci-ve:ver25',
+	'r-cr-o:hor20',
+}
 opt.sidescroll = 5 -- Columns to scroll horizontally when cursor is moved off the screen.
 opt.sidescrolloff = 5 -- Minimum number of screen columns to keep to cursor right.
 opt.timeoutlen = 500 -- Time in milliseconds to wait for a mapped sequence to complete.
