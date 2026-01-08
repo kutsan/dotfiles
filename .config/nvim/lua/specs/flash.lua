@@ -10,7 +10,7 @@ Plugin.opts = {
 	},
 	modes = {
 		search = {
-			enabled = true,
+			enabled = false,
 		},
 		char = {
 			enabled = false,
@@ -32,6 +32,14 @@ Plugin.keys = {
 			require('flash').treesitter()
 		end,
 		desc = 'Active flash in tree-sitter selection mode.',
+	},
+	{
+		'<C-/>',
+		mode = { 'n', 'x', 'o' },
+		function()
+			require('flash').jump()
+		end,
+		desc = 'Flash',
 	},
 }
 
