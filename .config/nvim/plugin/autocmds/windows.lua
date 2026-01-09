@@ -41,16 +41,19 @@ vim.api.nvim_create_autocmd('VimResized', {
 	end,
 })
 
-vim.api.nvim_create_autocmd('WinEnter', {
+local cursorline_group =
+	vim.api.nvim_create_augroup('AutoActiveCursorline', { clear = true })
+
+vim.api.nvim_create_autocmd({ 'WinEnter', 'BufEnter', 'FocusGained' }, {
 	desc = 'Show cursor line only in the active window (enable).',
-	group = vim.api.nvim_create_augroup('AutoActiveCursorline', { clear = true }),
+	group = cursorline_group,
 	callback = function()
 		vim.opt_local.cursorline = true
 	end,
 })
-vim.api.nvim_create_autocmd('WinLeave', {
+vim.api.nvim_create_autocmd({ 'WinLeave', 'FocusLost' }, {
 	desc = 'Show cursor line only in the active window (disable).',
-	group = 'AutoActiveCursorline',
+	group = cursorline_group,
 	callback = function()
 		vim.opt_local.cursorline = false
 	end,
