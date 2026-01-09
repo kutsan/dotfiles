@@ -10,7 +10,6 @@ Plugin.dependencies = {
 	{ 'hrsh7th/cmp-nvim-lsp', name = 'cmp-lsp' },
 	{ 'hrsh7th/cmp-nvim-lsp-signature-help', name = 'cmp-lsp-signature-help' },
 	{ 'hrsh7th/cmp-path', name = 'cmp-path' },
-	'autopairs',
 }
 
 Plugin.opts = function()
@@ -129,15 +128,12 @@ end
 Plugin.config = function(_, opts)
 	local cmp = require('cmp')
 	local cmp_lsp = require('cmp_nvim_lsp')
-	local autopairs_cmp_completion = require('nvim-autopairs.completion.cmp')
 
 	cmp.setup(opts)
 
 	vim.lsp.config('*', {
 		capabilities = cmp_lsp.default_capabilities(),
 	})
-
-	cmp.event:on('confirm_done', autopairs_cmp_completion.on_confirm_done())
 end
 
 return Plugin
