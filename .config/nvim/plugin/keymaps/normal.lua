@@ -1,9 +1,7 @@
 local keymap = vim.keymap
-local cmd = vim.cmd
-local fn = vim.fn
 
 -- Save file.
-vim.keymap.set('n', '\\w', function()
+keymap.set('n', '\\w', function()
 	vim.cmd.write({
 		mods = { silent = true },
 	})
@@ -32,11 +30,11 @@ keymap.set('n', '<C-n>', '<C-^>')
 
 -- Refactor word under cursor.
 keymap.set('n', 'c*', function()
-	local word_under_cursor = fn.expand('<cword>')
-	local escaped_word = fn.escape(word_under_cursor, '/\\')
+	local word_under_cursor = vim.fn.expand('<cword>')
+	local escaped_word = vim.fn.escape(word_under_cursor, '/\\')
 
 	local pattern = '\\<' .. escaped_word .. '\\>\\C'
-	fn.setreg('/', pattern)
+	vim.fn.setreg('/', pattern)
 
 	vim.api.nvim_feedkeys(
 		vim.api.nvim_replace_termcodes('cgn', true, false, true),
@@ -45,11 +43,11 @@ keymap.set('n', 'c*', function()
 	)
 end)
 keymap.set('n', 'c#', function()
-	local word_under_cursor = fn.expand('<cword>')
-	local escaped_word = fn.escape(word_under_cursor, '/\\')
+	local word_under_cursor = vim.fn.expand('<cword>')
+	local escaped_word = vim.fn.escape(word_under_cursor, '/\\')
 
 	local pattern = '\\<' .. escaped_word .. '\\>\\C'
-	fn.setreg('/', pattern)
+	vim.fn.setreg('/', pattern)
 
 	vim.api.nvim_feedkeys(
 		vim.api.nvim_replace_termcodes('cgN', true, false, true),
@@ -100,10 +98,10 @@ end, { silent = true })
 
 -- Open URL under cursor in browser or open path in GUI explorer.
 keymap.set('n', 'gb', function()
-	local url = fn.expand('<cfile>')
-	local escaped_url = fn.escape(url, '#%!')
+	local url = vim.fn.expand('<cfile>')
+	local escaped_url = vim.fn.escape(url, '#%!')
 
-	cmd(('silent !open "%s"'):format(escaped_url))
+	vim.cmd(('silent !open "%s"'):format(escaped_url))
 end, { silent = true })
 
 -- Toggle common options.
