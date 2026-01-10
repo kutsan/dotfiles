@@ -3,7 +3,11 @@ local cmd = vim.cmd
 local fn = vim.fn
 
 -- Save file.
-keymap.set('n', '\\w', '<Cmd>write<CR>', { silent = true })
+vim.keymap.set('n', '\\w', function()
+	vim.cmd.write({
+		mods = { silent = true },
+	})
+end, { silent = true })
 
 -- Set <C-i> to itself to support separate mappings for <Tab> and <C-i>.
 keymap.set('n', '<C-i>', '<C-i>')
