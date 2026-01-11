@@ -57,7 +57,6 @@ Plugin.opts = {
 		'regex',
 		'robots',
 		'rust',
-		'scss',
 		'sql',
 		'ssh_config',
 		'toml',
