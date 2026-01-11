@@ -34,6 +34,7 @@ opt.shortmess =
 		'I', -- Don't give the :intro message when starting.
 		'c', -- Don't give ins-completion-menu messages.
 		'F', -- Don't give the file info when editing a file.
+		'W', -- Don't give "written" or "[w]" when writing a file.
 	})
 opt.guicursor = {
 	'n-v-sm-t:block',
