@@ -66,4 +66,4 @@ jobs:
 
       - name: Lint Lua files
         run: |
-          luacheck .
+          luacheck --config ./home/dot_config/exact_nvim/dot_luacheckrc ./home/dot_config/exact_nvim
