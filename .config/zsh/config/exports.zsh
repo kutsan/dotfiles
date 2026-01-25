@@ -69,6 +69,9 @@ if (command -v fzf &> /dev/null) {
 # OpenCode
 export OPENCODE_DISABLE_TERMINAL_TITLE='true'
 
+# QMK
+export QMK_HOME="$XDG_DATA_HOME/qmk-firmware"
+
 # less
 export LESS="\
 	--ignore-case \
