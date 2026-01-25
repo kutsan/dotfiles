@@ -1,0 +1,4 @@
+# User settings and hosts
+Include ./conf/settings.ssh
+Include ./conf/hosts-common.ssh
+Include ./conf/hosts-local.ssh

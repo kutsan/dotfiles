@@ -1,0 +1,135 @@
+"$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
+
+[mgr]
+keymap = [
+	# Quit
+	{ on = "<Esc>", run = "escape" },
+	{ on = "<C-[>", run = "escape" },
+	{ on = "q", run = "quit" },
+	{ on = "Q", run = "quit --no-cwd-file" },
+	{ on = "<C-c>", run = "close" },
+	{ on = "<C-z>", run = "suspend" },
+
+	# Hopping
+	{ on = "k", run = "arrow prev" },
+	{ on = "j", run = "arrow next" },
+	{ on = "<Up>", run = "arrow prev" },
+	{ on = "<Down>", run = "arrow next" },
+	{ on = "<C-u>", run = "arrow -50%" },
+	{ on = "<C-d>", run = "arrow 50%" },
+	{ on = "<S-PageUp>", run = "arrow -50%" },
+	{ on = "<S-PageDown>", run = "arrow 50%" },
+	{ on = ["g", "g"], run = "arrow top" },
+	{ on = "G", run = "arrow bot" },
+
+	# Navigation
+	{ on = "h", run = "leave" },
+	{ on = "l", run = "enter" },
+	{ on = "<Left>", run = "leave" },
+	{ on = "<Right>", run = "enter" },
+	{ on = "<C-o>", run = "back" },
+	{ on = "<C-i>", run = "forward" },
+
+	# Toggle
+	{ on = "<Space>", run = ["toggle", "arrow next"] },
+	{ on = "<C-a>", run = "toggle_all --state=on" },
+	{ on = "<C-r>", run = "toggle_all" },
+
+	# Visual mode
+	{ on = "v", run = "visual_mode" },
+	{ on = "V", run = "visual_mode --unset" },
+
+	# Spotting
+	{ on = "i", run = "spot" },
+
+	# Operations
+	{ on = "o", run = "open --interactive" },
+	{ on = "<Enter>", run = "open" },
+	{ on = "<S-Enter>", run = "shell --block '$EDITOR .'" },
+	{ on = "y", run = "yank" },
+	{ on = "p", run = "paste" },
+	{ on = "P", run = "paste --force" },
+	{ on = "u", run = "unyank" },
+	{ on = "d", run = "yank --cut" },
+	{ on = "D", run = "remove" },
+	{ on = "c", run = "create" },
+	{ on = "r", run = "rename --cursor=before_ext" },
+	{ on = "$", run = "shell --block --interactive" },
+	{ on = "<C-f>", run = "search --via=fd" },
+	{ on = "<C-p>", run = "plugin fzf" },
+	{ on = ["g", "s"], run = "search --via=rg" },
+
+	# Linemode
+	{ on = ["m", "s"], run = "linemode size" },
+	{ on = ["m", "p"], run = "linemode permissions" },
+	{ on = ["m", "b"], run = "linemode btime" },
+	{ on = ["m", "m"], run = "linemode mtime" },
+	{ on = ["m", "o"], run = "linemode owner" },
+	{ on = ["m", "n"], run = "linemode none" },
+
+	# Copy
+	{ on = ["g", "y", "p"], run = "copy path" },
+	{ on = ["g", "y", "d"], run = "copy dirname" },
+	{ on = ["g", "y", "n"], run = "copy filename" },
+	{ on = ["g", "y", "N"], run = "copy name_without_ext" },
+
+	# Filter
+	{ on = "f", run = "filter --smart" },
+
+	# Find
+	{ on = "/", run = "find --smart" },
+	{ on = "?", run = "find --previous --smart" },
+	{ on = "n", run = "find_arrow" },
+	{ on = "N", run = "find_arrow --previous" },
+
+	# Sorting
+	{ on = ["s", "m"], run = ["sort mtime --reverse=no", "linemode mtime"] },
+	{ on = ["s", "M"], run = ["sort mtime --reverse", "linemode mtime"] },
+	{ on = ["s", "b"], run = ["sort btime --reverse=no", "linemode btime"] },
+	{ on = ["s", "B"], run = ["sort btime --reverse", "linemode btime"] },
+	{ on = ["s", "e"], run = "sort extension --reverse=no" },
+	{ on = ["s", "E"], run = "sort extension --reverse" },
+	{ on = ["s", "a"], run = "sort alphabetical --reverse=no" },
+	{ on = ["s", "A"], run = "sort alphabetical --reverse" },
+	{ on = ["s", "n"], run = "sort natural --reverse=no" },
+	{ on = ["s", "N"], run = "sort natural --reverse" },
+	{ on = ["s", "s"], run = ["sort size --reverse=no", "linemode size"] },
+	{ on = ["s", "S"], run = ["sort size --reverse", "linemode size"] },
+	{ on = ["s", "r"], run = "sort random --reverse=no" },
+
+	# Goto
+	{ on = ["g", "<Space>"], run = "cd --interactive" },
+	{ on = ["g", "f"], run = "follow" },
+
+	# Bookmarks
+	{ on = ["b", "h"], run = "cd ~" },
+	{ on = ["b", "w"], run = "cd ~/Downloads" },
+	{ on = ["b", "d"], run = "cd ~/Documents" },
+	{ on = ["b", "p"], run = "cd ~/Documents/Projects" },
+	{ on = ["b", "l"], run = "cd $XDG_DATA_HOME" },
+	{ on = ["b", "c"], run = "cd $XDG_CONFIG_HOME" },
+	{ on = ["b", "a"], run = "cd $XDG_CACHE_HOME" },
+
+	# Tabs
+	{ on = "t", run = "tab_create --current" },
+	{ on = "1", run = "tab_switch 0" },
+	{ on = "2", run = "tab_switch 1" },
+	{ on = "3", run = "tab_switch 2" },
+	{ on = "4", run = "tab_switch 3" },
+	{ on = "5", run = "tab_switch 4" },
+	{ on = "6", run = "tab_switch 5" },
+	{ on = "7", run = "tab_switch 6" },
+	{ on = "8", run = "tab_switch 7" },
+	{ on = "9", run = "tab_switch 8" },
+	{ on = "[", run = "tab_switch -1 --relative" },
+	{ on = "]", run = "tab_switch 1 --relative" },
+	{ on = "{", run = "tab_swap -1" },
+	{ on = "}", run = "tab_swap 1" },
+
+	# Tasks
+	{ on = "w", run = "tasks:show" },
+
+	# Help
+	{ on = "~", run = "help" },
+	{ on = "<F1>", run = "help" },
+]

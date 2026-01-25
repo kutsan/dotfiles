@@ -1,0 +1,69 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - '*'
+  pull_request:
+    branches:
+      - '*'
+
+env:
+  # Disable running Husky.
+  HUSKY: 0
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  commitlint:
+    name: Commitlint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Lint commit messages
+        run: |
+          if [[ "${{ github.event_name }}" == "push" ]]; then
+            echo "Linting commit range for push: ${{ github.event.before }}..${{ github.sha }}"
+            pnpm dlx commitlint --from ${{ github.event.before }} --to ${{ github.sha }} --verbose
+
+          elif [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            pnpm dlx commitlint --from ${{ github.event.pull_request.base.sha }} --to ${{ github.event.pull_request.head.sha }} --verbose
+          fi
+
+  luacheck:
+    name: Luacheck
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install LuaRocks
+        run: |
+          sudo apt update
+          sudo apt install lua5.1 luarocks
+
+      - name: Install Luacheck
+        run: |
+          sudo luarocks install luacheck
+
+      - name: Lint Lua files
+        run: |
+          luacheck .

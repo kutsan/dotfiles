@@ -1,0 +1,26 @@
+[alias]
+	a = add
+	b = branch
+	bl = !git --no-pager branch --verbose --all
+	c = commit
+	d = "!args=$@; shift $#; nvim +\"DiffviewOpen $args\""
+	ds = d --staged
+	f = fetch
+	l = "log --graph --date=iso8601 --pretty=log-default"
+	ld = log --graph --date=iso8601 --pretty=log-full
+	la = log --graph --branches --remotes --tags --date=iso8601 --pretty=log-default
+	lda = log --graph --branches --remotes --tags --date=iso8601 --pretty=log-full
+	prune-merged = !git branch --merged | grep --invert-match --extended-regexp '\\*' | xargs -n 1 git branch --delete
+	r = reflog --date=iso8601 --pretty=reflog-default
+	rd = reflog --date=iso8601 --pretty=reflog-full
+	s = status --short
+	sm = submodule
+	sw = switch
+	fixup = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup"
+	standup = "! \
+		f() { \
+			git l \
+				--no-merges \
+				--author=\"$(git config user.email)\" \
+				--since=\"$( [[ $(date +%u) == 1 ]] && echo 'last.friday.midnight' || echo 'yesterday.midnight' )\"; \
+		}; f"
