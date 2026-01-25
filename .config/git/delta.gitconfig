@@ -1,9 +1,0 @@
-[delta]
-	side-by-side = true
-	syntax-theme = ansi
-	navigate = true
-	hunk-header-style = omit
-	file-decoration-style = omit
-	line-numbers-left-format =  {np:>4} 
-	line-numbers-right-format =  {np:>4} 
-	wrap-max-lines = 0

@@ -1,8 +1,0 @@
-[
-	{
-		"context": "vim_mode == normal || ProjectPanel || EmptyPane",
-		"bindings": {
-			"space f": "project_panel::ToggleFocus"
-		}
-	}
-]
