@@ -1,0 +1,107 @@
+{
+  "use_system_prompts": false,
+  "audio": {
+    "experimental.auto_microphone_volume": true,
+    "experimental.rodio_audio": true,
+  },
+  "git_panel": {},
+  "active_pane_modifiers": {},
+  "centered_layout": {
+    "left_padding": null,
+  },
+  "tabs": {
+    "show_close_button": "hidden",
+    "show_diagnostics": "all",
+    "file_icons": true,
+  },
+  "tab_bar": {},
+  "file_finder": {},
+  "indent_guides": {},
+  "gutter": {},
+  "buffer_font_weight": 400.0,
+  "restore_on_startup": "launchpad",
+  "calls": {
+    "mute_on_join": true,
+  },
+  "cursor_blink": false,
+  "minimap": {
+    "show": "never",
+  },
+  "terminal": {
+    "font_fallbacks": ["Symbols Nerd Font Mono"],
+    "line_height": "comfortable",
+    "toolbar": {
+      "breadcrumbs": false,
+    },
+  },
+  "git": {
+    "git_gutter": "tracked_files",
+  },
+  "scrollbar": {
+    "git_diff": true,
+  },
+  "show_signature_help_after_edits": true,
+  "agent": {
+    "default_profile": "write",
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "claude-opus-4.5",
+    },
+    "favorite_models": [],
+    "model_parameters": [],
+    "enable_feedback": true,
+  },
+  "title_bar": {
+    "show_user_picture": false,
+    "show_branch_icon": true,
+  },
+  "buffer_line_height": {
+    "custom": 1.7,
+  },
+  "status_bar": {
+    "active_language_button": true,
+  },
+  "project_panel": {
+    "hide_hidden": false,
+    "hide_root": false,
+    "indent_guides": {
+      "show": "always",
+    },
+    "indent_size": 20.0,
+    "git_status": true,
+    "folder_icons": true,
+    "file_icons": true,
+    "default_width": 300,
+    "dock": "left",
+  },
+  "vim": {
+    "use_system_clipboard": "on_yank",
+    "use_smartcase_find": false,
+    "toggle_relative_line_numbers": false,
+  },
+  "ui_font_family": "MonoLisa Variable",
+  "buffer_font_family": "MonoLisa Variable",
+  "buffer_font_features": {
+    "zero": true,
+    "ss04": true,
+    "ss08": true,
+    "ss11": true,
+    "ss17": true,
+  },
+  "telemetry": {
+    "metrics": false,
+    "diagnostics": false,
+  },
+  "vim_mode": true,
+  "icon_theme": "Symbols Icon Theme",
+  "ui_font_size": 16.0,
+  "buffer_font_size": 16.0,
+  "theme": {
+    "mode": "system",
+    "light": "Catppuccin Latte (blue)",
+    "dark": "Catppuccin Mocha (blue)",
+  },
+  "features": {
+    "edit_prediction_provider": "copilot",
+  },
+}
