@@ -1,21 +1,9 @@
-# Check prompt installation.
-if (! [[ -d "$XDG_DATA_HOME/zsh/plugins/pure" ]]) {
-	return 1
-}
+# Load `pure` prompt.
+zinit ice pick"async.zsh" src"pure.zsh"
+zinit light sindresorhus/pure
 
-# Add prompt to fpath.
-fpath=($fpath "$XDG_DATA_HOME/zsh/plugins/pure")
-
-# Prompt settings.
+# Prompt settings
 zstyle :prompt:pure:git:stash show yes
-
-# Initialize the prompt system.
-promptinit
-
-# Prompt theme.
-prompt pure
-
-# Prompt styles.
 zstyle :prompt:pure:prompt:error color 1
 zstyle :prompt:pure:prompt:success color 15
 

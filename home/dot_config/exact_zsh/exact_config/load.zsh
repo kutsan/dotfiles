@@ -37,6 +37,14 @@ if ([[ $OSTYPE =~ 'darwin*' ]]) {
 	eval "$(/opt/homebrew/bin/brew shellenv)"
 }
 
+# Bootstrap `zinit` plugin manager.
+ZINIT_HOME="$XDG_DATA_HOME/zinit/zinit.git"
+if ([[ ! -d "$ZINIT_HOME" ]]) {
+	command mkdir -p "$(dirname $ZINIT_HOME)"
+	command git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+}
+source "${ZINIT_HOME}/zinit.zsh"
+
 # Add Docker CLI completions.
 fpath=(
 	"$HOME/.docker/completions"
