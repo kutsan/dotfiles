@@ -4,6 +4,7 @@ tap "osx-cross/arm" # For QMK dependencies
 
 # Formulae
 brew "act"
+brew "chezmoi"
 brew "cloud-sql-proxy"
 brew "cocoapods"
 brew "devcontainer"
@@ -32,14 +33,14 @@ brew "massren"
 brew "neovim", args: ["HEAD"]
 brew "nmap"
 brew "node"
+brew "opencode"
 brew "ripgrep"
 brew "rust"
 brew "scc"
+brew "terraform"
 brew "tree"
 brew "trippy"
 brew "yazi"
-brew "terraform"
-brew "opencode"
 brew "arm-gcc-bin" # QMK dependency
 brew "avr-gcc" # QMK dependency
 brew "dos2unix" # QMK dependency
