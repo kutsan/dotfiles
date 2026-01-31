@@ -5,7 +5,7 @@ path=(
 	$path
 )
 
-# macOS specific exports.
+# macOS-only Exports
 if ([[ $OSTYPE =~ 'darwin*' ]]) {
 	export ANDROID_HOME="$HOME/Library/Android/sdk"
 	export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
@@ -17,7 +17,7 @@ if ([[ $OSTYPE =~ 'darwin*' ]]) {
 	)
 }
 
-# Basics
+# Common
 export EDITOR='nvim'
 export PAGER='less'
 export LANG='en_US.UTF-8'
@@ -35,8 +35,8 @@ export NPM_CONFIG_INIT_VERSION='0.0.0'
 export NPM_CONFIG_SIGN_GIT_TAG='true'
 
 # Rust
-export CARGO_HOME="$HOME/.local/share/cargo"
-export RUSTUP_HOME="$HOME/.local/share/rustup"
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
+export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 
 # GnuPG
 export GPG_TTY=$(tty)
