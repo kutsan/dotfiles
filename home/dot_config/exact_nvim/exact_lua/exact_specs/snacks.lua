@@ -5,25 +5,6 @@ Plugin.name = 'snacks'
 Plugin.priority = 1000
 Plugin.lazy = false
 
-local function get_projects()
-	local home = vim.fn.expand('~')
-
-	local base_projects_path = home .. '/Documents/Projects'
-
-	local potential_project_dirs =
-		vim.fn.globpath(base_projects_path, '*/*', true, true)
-
-	local projects = {}
-
-	for _, path in ipairs(potential_project_dirs) do
-		if vim.fn.isdirectory(path) == 1 then
-			table.insert(projects, path)
-		end
-	end
-
-	return projects
-end
-
 Plugin.opts = {
 	zen = { enabled = true, toggles = { dim = false } },
 	input = { enabled = true },
@@ -82,42 +63,6 @@ Plugin.opts = {
 					},
 				},
 			},
-			projects = {
-				dev = get_projects(),
-				confirm = function(picker, item)
-					picker:close()
-
-					local snacks = require('snacks')
-
-					if item and item.file then
-						-- Check if the project is already open by checking the cwd of each tab
-						local tabpages = vim.api.nvim_list_tabpages()
-						for _, tabpage in ipairs(tabpages) do
-							local tab_cwd = vim.fn.getcwd(-1, tabpage)
-							if tab_cwd == item.file then
-								-- Change to the tab
-								vim.api.nvim_set_current_tabpage(tabpage)
-								return
-							end
-						end
-
-						-- If there are already opened buffers, open a new tab
-						for _, bufnr in ipairs(vim.api.nvim_list_bufs()) do
-							if
-								vim.api.nvim_buf_is_loaded(bufnr)
-								and vim.api.nvim_buf_get_name(bufnr) ~= ''
-							then
-								vim.cmd('tabnew')
-								break
-							end
-						end
-
-						-- Change cwd to the selected project, only for this tab
-						vim.cmd('tcd ' .. vim.fn.fnameescape(item.file))
-						snacks.picker.smart()
-					end
-				end,
-			},
 		},
 	},
 }
@@ -135,14 +80,7 @@ Plugin.keys = {
 		'<C-p>',
 		function()
 			local snacks = require('snacks')
-
-			if vim.fn.getcwd() == vim.uv.os_homedir() then
-				snacks.picker.git_files()
-			else
-				snacks.picker.files({
-					ignored = vim.fn.getcwd() == vim.uv.os_homedir(),
-				})
-			end
+			snacks.picker.files()
 		end,
 		desc = 'Find Files',
 	},
