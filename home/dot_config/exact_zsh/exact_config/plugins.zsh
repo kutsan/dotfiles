@@ -1,11 +1,11 @@
+# zsh-autosuggestions: Fish-like auto-suggestions.
+zinit light zsh-users/zsh-autosuggestions
+
 # zsh-autopair: Insert or delete brackets, parens, quotes in pair.
 zinit wait lucid for light-mode hlissner/zsh-autopair
 
 # zsh-system-clipboard: Synchronize system clipboard with ZLE registers.
 zinit wait lucid for light-mode kutsan/zsh-system-clipboard
-
-# zsh-autosuggestions: Fish-like auto-suggestions.
-zinit wait lucid for light-mode zsh-users/zsh-autosuggestions
 
 # fast-syntax-highlighting: Syntax highlighting support.
 zinit wait lucid \
