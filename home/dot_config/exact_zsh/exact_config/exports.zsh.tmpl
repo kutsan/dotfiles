@@ -27,10 +27,16 @@ export MANWIDTH='100'
 export MANPAGER='nvim +Man!'
 
 # npm
+{{- if eq .user "kutsan" }}
 export NPM_CONFIG_INIT_AUTHOR_NAME='Kutsan Kaplan'
 export NPM_CONFIG_INIT_AUTHOR_EMAIL='me@kutsan.dev'
 export NPM_CONFIG_INIT_AUTHOR_URL='https://kutsan.dev'
-export NPM_CONFIG_INIT_LICENSE='GPL-3.0'
+{{- else if eq .user "reyhan" }}
+export NPM_CONFIG_INIT_AUTHOR_NAME='Reyhan Kaplan'
+export NPM_CONFIG_INIT_AUTHOR_EMAIL='me@reyhan.dev'
+export NPM_CONFIG_INIT_AUTHOR_URL='https://reyhan.dev'
+{{- end }}
+export NPM_CONFIG_INIT_LICENSE='MIT'
 export NPM_CONFIG_INIT_VERSION='0.0.0'
 export NPM_CONFIG_SIGN_GIT_TAG='true'
 
