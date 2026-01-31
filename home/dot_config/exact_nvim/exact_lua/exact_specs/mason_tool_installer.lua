@@ -43,7 +43,12 @@ Plugin.config = function(_, opts)
 	vim.api.nvim_create_autocmd('User', {
 		pattern = 'LazyInstall',
 		callback = function()
-			vim.cmd.MasonToolsUpdate()
+			-- Use sync update if neovim is running in headless mode.
+			if #vim.api.nvim_list_uis() == 0 then
+				vim.cmd.MasonToolsUpdateSync()
+			else
+				vim.cmd.MasonToolsUpdate()
+			end
 		end,
 	})
 
