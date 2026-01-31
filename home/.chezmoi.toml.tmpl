@@ -1,5 +1,9 @@
-{{- $choices := list "personal" "work" -}}
-{{- $profile := promptChoiceOnce . "profile" "Select environment profile" $choices -}}
+{{- $users := list "kutsan" "reyhan" -}}
+{{- $user := promptChoiceOnce . "user" "Select main user" $users -}}
+
+{{- $profiles := list "personal" "work" -}}
+{{- $profile := promptChoiceOnce . "profile" "Select environment profile" $profiles -}}
 
 [data]
   profile = {{ $profile | quote }}
+  user = {{ $user | quote }}
