@@ -1,8 +1,3 @@
-[include]
-	path = ./local.gitconfig
-	path = ./aliases.gitconfig
-	path = ./delta.gitconfig
-
 [init]
 	defaultBranch = main
 
