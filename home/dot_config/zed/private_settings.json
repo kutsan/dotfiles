@@ -28,6 +28,7 @@
     "show": "never",
   },
   "terminal": {
+    "option_as_meta": true,
     "font_fallbacks": ["Symbols Nerd Font Mono"],
     "line_height": "comfortable",
     "toolbar": {
@@ -42,7 +43,11 @@
   },
   "show_signature_help_after_edits": true,
   "agent": {
-    "default_profile": "write",
+    "inline_assistant_model": {
+      "provider": "copilot_chat",
+      "model": "claude-opus-4.5",
+    },
+    "default_profile": "ask",
     "default_model": {
       "provider": "copilot_chat",
       "model": "claude-opus-4.5",
@@ -103,5 +108,11 @@
   },
   "features": {
     "edit_prediction_provider": "copilot",
+  },
+  "auto_install_extensions": {
+    "html": true,
+    "git-firefly": true,
+    "github-actions": true,
+    "docker-compose": true,
   },
 }
