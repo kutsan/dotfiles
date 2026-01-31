@@ -2,6 +2,7 @@ local Plugin = { 'nvim-treesitter/nvim-treesitter' }
 
 Plugin.name = 'treesitter'
 
+Plugin.branch = 'master'
 Plugin.build = ':TSUpdate'
 
 Plugin.dependencies = {
@@ -154,7 +155,7 @@ Plugin.opts = {
 }
 
 Plugin.config = function(_, opts)
-	local treesitter = require('nvim-treesitter')
+	local treesitter = require('nvim-treesitter.configs')
 	local treesitter_context = require('treesitter-context')
 	local treesitter_autotag = require('nvim-ts-autotag')
 
