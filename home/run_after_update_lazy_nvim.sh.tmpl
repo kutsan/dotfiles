@@ -1,0 +1,20 @@
+#!/usr/bin/env zsh
+
+autoload -Uz colors && colors
+
+local script_name="run_onchange_after_update_lazy_nvim.sh"
+
+if (! type "nvim" &> /dev/null) {
+  echo
+  print "${fg_bold[yellow]}==>${reset_color} ${bold_color}[${script_name}]${reset_color} Neovim is not installed. Skipping syncing Neovim plugins."
+
+  exit 0
+}
+
+echo
+print "${fg_bold[blue]}==>${reset_color} ${bold_color}[${script_name}]${reset_color} Syncing Neovim plugins..."
+
+# Run nvim in headless mode to sync lazy.nvim plugins with lock file.
+zsh -c "nvim --headless '+Lazy! sync' +qall" > /dev/null
+
+print "${fg_bold[green]}==>${reset_color} ${bold_color}[${script_name}]${reset_color} Neovim plugins synced."
