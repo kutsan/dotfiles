@@ -11,6 +11,7 @@
   "cmp-path": { "branch": "main", "commit": "c642487086dbd9a93160e1679a1327be111cbc25" },
   "color-converter": { "branch": "main", "commit": "5888e92cbccf0de202d2b617f6a8f3011a43bd52" },
   "conform": { "branch": "master", "commit": "c2526f1cde528a66e086ab1668e996d162c75f4f" },
+  "copilot": { "branch": "master", "commit": "9b8d77c6c847c83c784c05f5f86b4821ed90d3a1" },
   "devicons": { "branch": "master", "commit": "803353450c374192393f5387b6a0176d0972b848" },
   "diffview": { "branch": "main", "commit": "4516612fe98ff56ae0415a259ff6361a89419b0a" },
   "early-retirement": { "branch": "main", "commit": "f017b93c96565a3dede63f93924f1fed2dba9c1f" },
