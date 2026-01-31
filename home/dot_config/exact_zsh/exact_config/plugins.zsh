@@ -1,3 +1,7 @@
+# Load `pure` prompt..
+zinit ice pick"async.zsh" src"pure.zsh"
+zinit light sindresorhus/pure
+
 # zsh-autosuggestions: Fish-like auto-suggestions.
 zinit light zsh-users/zsh-autosuggestions
 

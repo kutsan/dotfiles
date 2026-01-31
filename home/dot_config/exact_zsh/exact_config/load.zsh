@@ -37,29 +37,6 @@ if ([[ $OSTYPE =~ 'darwin*' ]]) {
 	eval "$(/opt/homebrew/bin/brew shellenv)"
 }
 
-# Bootstrap `zinit` plugin manager.
+# Load `zinit` plugin manager.
 ZINIT_HOME="$XDG_DATA_HOME/zinit/zinit.git"
-if ([[ ! -d "$ZINIT_HOME" ]]) {
-	command mkdir -p "$(dirname $ZINIT_HOME)"
-	command git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
-}
 source "${ZINIT_HOME}/zinit.zsh"
-
-# Add Docker CLI completions.
-fpath=(
-	"$HOME/.docker/completions"
-	$fpath
-)
-
-# Initialize the completion system with a cache time of 24 hours.
-typeset -g zcompdump="$XDG_DATA_HOME/zsh/zcompdump"
-typeset -g comp_files=($zcompdump(Nm-24))
-
-if (( $#comp_files )) {
-	compinit -i -C -d $zcompdump
-} else {
-	compinit -i -d $zcompdump
-}
-
-unset zcompdump
-unset comp_files

@@ -1,7 +1,3 @@
-# Load `pure` prompt.
-zinit ice pick"async.zsh" src"pure.zsh"
-zinit light sindresorhus/pure
-
 # Prompt settings
 zstyle :prompt:pure:git:stash show yes
 zstyle :prompt:pure:prompt:error color 1

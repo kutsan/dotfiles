@@ -1,0 +1,13 @@
+#!/usr/bin/env zsh
+
+autoload -Uz colors && colors
+
+local script_name="run_onchange_after_update_zinit.sh"
+
+echo
+print "${fg_bold[blue]}==>${reset_color} ${bold_color}[${script_name}]${reset_color} Updating Zsh plugins..."
+
+# Run interactive zsh to load zinit.
+zsh -ic "zinit update --all --no-pager"
+
+print "${fg_bold[green]}==>${reset_color} ${bold_color}[${script_name}]${reset_color} Zsh plugins updated."
