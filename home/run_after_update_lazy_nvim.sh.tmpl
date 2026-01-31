@@ -17,4 +17,5 @@ print "${fg_bold[blue]}==>${reset_color} ${bold_color}[${script_name}]${reset_co
 # Run nvim in headless mode to sync lazy.nvim plugins with lock file.
 zsh -c "nvim --headless '+Lazy! sync' +qall" > /dev/null
 
+echo
 print "${fg_bold[green]}==>${reset_color} ${bold_color}[${script_name}]${reset_color} Neovim plugins synced."

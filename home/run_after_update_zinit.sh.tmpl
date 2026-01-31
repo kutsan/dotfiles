@@ -8,6 +8,8 @@ echo
 print "${fg_bold[blue]}==>${reset_color} ${bold_color}[${script_name}]${reset_color} Updating Zsh plugins..."
 
 # Run interactive zsh to load zinit.
+echo
 zsh -ic "zinit update --all --no-pager"
 
+echo
 print "${fg_bold[green]}==>${reset_color} ${bold_color}[${script_name}]${reset_color} Zsh plugins updated."
