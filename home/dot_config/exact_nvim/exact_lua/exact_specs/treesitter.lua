@@ -154,7 +154,7 @@ Plugin.opts = {
 }
 
 Plugin.config = function(_, opts)
-	local treesitter = require('nvim-treesitter.configs')
+	local treesitter = require('nvim-treesitter')
 	local treesitter_context = require('treesitter-context')
 	local treesitter_autotag = require('nvim-ts-autotag')
 

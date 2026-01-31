@@ -92,32 +92,3 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		end
 	end,
 })
-
--- Keymaps for inlay completion.
-vim.api.nvim_create_autocmd('LspAttach', {
-	group = lsp_group,
-	callback = function(args)
-		local client = vim.lsp.get_client_by_id(args.data.client_id)
-		if not client then
-			return
-		end
-
-		if
-			client:supports_method(
-				vim.lsp.protocol.Methods.textDocument_inlineCompletion,
-				args.buf
-			)
-		then
-			vim.lsp.inline_completion.enable(true, { bufnr = args.buf })
-
-			vim.keymap.set('i', '<M-l>', vim.lsp.inline_completion.get, {
-				desc = 'LSP: accept inline completion',
-				buffer = args.buf,
-			})
-			vim.keymap.set('i', '<M-]>', vim.lsp.inline_completion.select, {
-				desc = 'LSP: switch inline completion',
-				buffer = args.buf,
-			})
-		end
-	end,
-})
