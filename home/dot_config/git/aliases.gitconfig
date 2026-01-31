@@ -17,10 +17,4 @@
 	sm = submodule
 	sw = switch
 	fixup = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup"
-	standup = "! \
-		f() { \
-			git l \
-				--no-merges \
-				--author=\"$(git config user.email)\" \
-				--since=\"$( [[ $(date +%u) == 1 ]] && echo 'last.friday.midnight' || echo 'yesterday.midnight' )\"; \
-		}; f"
+	recent = "!git standup -d 3 -sgc"
