@@ -2,8 +2,8 @@ vim.diagnostic.config({
 	severity_sort = true,
 	float = {
 		source = true,
+		header = '',
 		width = 80,
-		border = 'single',
 	},
 	signs = {
 		text = {
