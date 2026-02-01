@@ -6,7 +6,6 @@ Plugin.priority = 1000
 Plugin.lazy = false
 
 Plugin.opts = {
-	zen = { enabled = true, toggles = { dim = false } },
 	input = { enabled = true },
 	toggle = { enabled = true },
 	explorer = {
@@ -14,25 +13,39 @@ Plugin.opts = {
 		replace_netrw = true,
 	},
 	picker = {
+		enabled = true,
 		icons = {
 			tree = {
 				vertical = '│ ',
 				middle = '│ ',
 				last = '│ ',
 			},
+			git = {
+				added = '●',
+				modified = '●',
+				deleted = '✖',
+				renamed = '➜',
+				untracked = '?',
+				ignored = '◌',
+				staged = '✓',
+				conflicted = '!',
+			},
+			diagnostics = {
+				Error = '✘ ',
+				Warn = '⚠ ',
+				Hint = '⚑ ',
+				Info = 'ℹ ',
+			},
 		},
 		layout = {
-			preset = 'vertical',
+			preset = 'vscode',
 		},
-		enabled = true,
 		sources = {
 			files = {
 				hidden = true,
-				ignored = vim.fn.getcwd() == vim.uv.os_homedir(),
 			},
 			grep = {
 				hidden = true,
-				ignored = vim.fn.getcwd() == vim.uv.os_homedir(),
 			},
 			explorer = {
 				focus = 'list',

@@ -13,18 +13,16 @@ Plugin.opts = {
 		mocha = {
 			base = '#0f1119',
 			mantle = '#090b10',
+			crust = '#171b26',
 		},
 	},
 	highlight_overrides = {
-		all = function(colors)
+		mocha = function(colors)
 			local utils = require('catppuccin/utils/colors')
 
 			return {
 				-- Built-in highlights
-				Whitespace = { fg = utils.darken(colors.surface0, 0.5, colors.base) },
-				WinSeparator = {
-					fg = utils.darken(colors.surface0, 0.3, colors.base),
-				},
+				Whitespace = { fg = utils.darken(colors.surface0, 0.4, colors.base) },
 				LspInlayHint = {
 					fg = colors.overlay0,
 					bg = 'NONE',
@@ -39,40 +37,12 @@ Plugin.opts = {
 				DiffChange = { bg = utils.darken(colors.blue, 0.1, colors.base) },
 				DiffText = { bg = utils.darken(colors.blue, 0.3, colors.base) },
 				DiffDelete = { bg = utils.darken(colors.red, 0.1, colors.base) },
-				FloatBorder = {
-					fg = utils.darken(colors.surface0, 0.3, colors.base),
-					bg = utils.darken(colors.surface0, 0.3, colors.base),
-				},
-				NormalFloat = { bg = utils.darken(colors.surface0, 0.3, colors.base) },
-				Pmenu = {
-					bg = utils.darken(colors.surface0, 0.5, colors.crust),
-					fg = colors.text,
-				},
 
 				-- treesitter: TypeScript with JSX
 				['@constructor.tsx'] = { fg = colors.yellow },
 				['@tag.tsx'] = { fg = colors.red },
 
-				-- treesitter: SCSS
-				['@string.scss'] = { fg = colors.orange },
-				['@type.definition.scss'] = { fg = colors.blue },
-				['@property.scss'] = { fg = colors.text },
-				['@property.id.scss'] = { fg = colors.blue },
-				['@property.class.scss'] = { fg = colors.red },
-				['@type.scss'] = { fg = colors.orange },
-				['@type.tag.scss'] = { fg = colors.mauve },
-				['@string.plain.scss'] = { fg = colors.peach },
-				['@number.scss'] = { fg = colors.peach },
-
-				-- treesitter-context
-				TreesitterContext = {
-					bg = utils.darken(colors.surface0, 0.2, colors.base),
-				},
-				TreesitterContextLineNumber = {
-					bg = utils.darken(colors.surface0, 0.2, colors.base),
-					fg = colors.overlay0,
-				},
-
+				-- snacks
 				SnacksPickerTree = {
 					fg = utils.darken(colors.surface0, 0.7, colors.base),
 				},
@@ -83,11 +53,13 @@ Plugin.opts = {
 		diffview = true,
 		treesitter = true,
 		treesitter_context = true,
-		cmp = true,
+		blink_cmp = {
+			enabled = true,
+		},
 		gitsigns = true,
 		noice = true,
 		snacks = {
-			enabled = false,
+			enabled = true,
 		},
 		native_lsp = {
 			enabled = true,

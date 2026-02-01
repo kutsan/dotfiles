@@ -108,7 +108,7 @@ opt.showmode = false -- Disable native mode indicator.
 opt.cmdheight = 0 -- Disable command-line area.
 opt.confirm = true -- Ask for confirmation when closing a modified buffer.
 opt.jumpoptions = { 'stack', 'view' } -- Jump options for the jumplist.
-opt.winborder = 'none' -- Border style for floating windows.
+opt.winborder = 'rounded' -- Border style for floating windows.
 
 -- Window Options
 opt.breakindent = true -- Wrapped lines will be visually indented with same amount of space.
