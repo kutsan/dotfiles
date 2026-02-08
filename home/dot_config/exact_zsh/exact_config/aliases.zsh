@@ -12,7 +12,7 @@ alias clear='echo "Use \`^L\`." && false' # Prevent accidental clearing of the s
 alias uuidgen='print -n ${$(command uuidgen):l} | pbcopy' # Generate a UUID and copy it to the clipboard.
 
 # Custom Shortcuts
-alias v="$EDITOR"
+alias e="$EDITOR"
 alias g='git'
 compdef g='git'
 alias pn='pnpm'
