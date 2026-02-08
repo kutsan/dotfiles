@@ -1,8 +1,11 @@
 {{- if eq .profile "personal" -}}
 # Personal-only Taps
+
+{{- if eq .user "kutsan" }}
 tap "osx-cross/arm"
 tap "osx-cross/avr"
 tap "qmk/qmk"
+{{- end }}
 {{- end }}
 
 # General Packages
@@ -43,15 +46,18 @@ brew "terraform"
 brew "tree"
 brew "trippy"
 brew "yazi"
+{{- if eq .profile "personal" }}
 
-{{- if eq .profile "personal" -}}
 # Personal-only Packages
 brew "ledger"
+
+{{- if eq .user "kutsan" }}
 brew "arm-gcc-bin" # QMK dependency
 brew "avr-gcc" # QMK dependency
 brew "dos2unix" # QMK dependency
 brew "qmk/qmk/qmk" # QMK
-{{- end -}}
+{{- end }}
+{{- end }}
 
 # General Casks
 cask "android-studio"
@@ -83,6 +89,11 @@ cask "insta360-link-controller"
 cask "obs"
 cask "orcaslicer"
 cask "transmission"
+
+{{- if eq .user "reyhan" }}
+cask "clip-studio-paint"
+cask "affinity"
+{{- end }}
 {{- end }}
 
 # General App Store Apps
@@ -110,5 +121,9 @@ mas "WhatsApp", id: 310633997
 
 {{- if eq .user "kutsan" }}
 mas "GoodLinks", id: 1474335294
+{{- end }}
+
+{{- if eq .user "reyhan" }}
+mas "Sketch", id: 1667260533
 {{- end }}
 {{- end }}
