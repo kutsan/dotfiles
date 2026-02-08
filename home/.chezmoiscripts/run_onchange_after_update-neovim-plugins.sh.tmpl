@@ -4,13 +4,13 @@
 
 autoload -Uz colors && colors
 
-local script_name="run_onchange_after_update_lazy_nvim.sh"
+local script_name="run_onchange_after_update-neovim-plugins.sh"
 
 if (! type "nvim" &> /dev/null) {
-  echo
-  print "${fg_bold[yellow]}==>${reset_color} ${bold_color}[${script_name}]${reset_color} Neovim is not installed. Skipping syncing Neovim plugins."
+	echo
+	print "${fg_bold[yellow]}==>${reset_color} ${bold_color}[${script_name}]${reset_color} Neovim is not installed. Skipping syncing Neovim plugins."
 
-  exit 0
+	exit 0
 }
 
 echo
