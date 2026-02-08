@@ -25,7 +25,7 @@ window-padding-y = 0
 window-padding-balance = true
 
 # Colors
-theme = catppuccin
+theme = dark:catppuccin-mocha.conf,light:catppuccin-latte.conf
 window-colorspace = display-p3
 window-padding-color = extend-always
 
