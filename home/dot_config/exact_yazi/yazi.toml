@@ -5,3 +5,13 @@ show_hidden = true
 ratio = [1, 1, 1]
 title_format = "yazi: {cwd}"
 linemode = "size"
+
+[[plugin.prepend_fetchers]]
+id = "git"
+url = "*"
+run = "git"
+
+[[plugin.prepend_fetchers]]
+id = "git"
+url = "*/"
+run = "git"

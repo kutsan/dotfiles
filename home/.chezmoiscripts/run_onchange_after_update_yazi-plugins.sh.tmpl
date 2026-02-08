@@ -1,0 +1,22 @@
+#!/usr/bin/env zsh
+
+# package.toml hash: {{ include "dot_config/exact_yazi/package.toml" | sha256sum }}
+
+autoload -Uz colors && colors
+
+local script_name="run_onchange_after_update_yazi-plugins.sh"
+
+if (! type "ya" &> /dev/null) {
+	echo
+	print "${fg_bold[yellow]}==>${reset_color} ${bold_color}[${script_name}]${reset_color} Yazi CLI is not installed. Skipping installing Yazi plugins and flavors."
+
+	exit 0
+}
+
+echo
+print "${fg_bold[blue]}==>${reset_color} ${bold_color}[${script_name}]${reset_color} Installing Yazi plugins..."
+
+ya pkg install
+
+echo
+print "${fg_bold[green]}==>${reset_color} ${bold_color}[${script_name}]${reset_color} Yazi plugins installed."
