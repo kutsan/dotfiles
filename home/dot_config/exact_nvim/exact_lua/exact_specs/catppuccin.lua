@@ -6,7 +6,11 @@ Plugin.lazy = false
 Plugin.priority = 1000
 
 Plugin.opts = {
-	flavour = 'mocha',
+	flavour = 'auto',
+	background = {
+		dark = 'mocha',
+		light = 'latte',
+	},
 	no_bold = true,
 	term_colors = true,
 	color_overrides = {
@@ -17,7 +21,7 @@ Plugin.opts = {
 		},
 	},
 	highlight_overrides = {
-		mocha = function(colors)
+		all = function(colors)
 			local utils = require('catppuccin/utils/colors')
 
 			return {
