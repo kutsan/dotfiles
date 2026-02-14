@@ -61,7 +61,6 @@ brew "qmk/qmk/qmk" # QMK
 
 # General Casks
 cask "android-studio"
-cask "cap"
 cask "datagrip"
 cask "docker-desktop"
 cask "figma"
@@ -90,6 +89,11 @@ cask "obs"
 cask "orcaslicer"
 cask "transmission"
 
+{{- if eq .user "kutsan" }}
+cask "skim"
+cask "mactex-no-gui"
+{{- end }}
+
 {{- if eq .user "reyhan" }}
 cask "clip-studio-paint"
 cask "affinity"
@@ -97,9 +101,9 @@ cask "affinity"
 {{- end }}
 
 # General App Store Apps
-mas "Keynote", id: 409183694
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
+mas "Keynote", id: 361285480
+mas "Numbers", id: 361304891
+mas "Pages", id: 361309726
 mas "Xcode", id: 497799835
 mas "Hand Mirror", id: 1502839586
 mas "Mic Drop", id: 1489816366
