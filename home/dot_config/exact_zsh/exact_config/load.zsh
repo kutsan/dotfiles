@@ -6,6 +6,9 @@ export XDG_CACHE_HOME="$HOME/.cache"
 # Make special variables duplicate-free.
 typeset -gU path fpath cdpath
 
+# Add custom local bin path.
+path=("$HOME/.local/bin" $path)
+
 # Define functions to load them on execution.
 foreach function (
 	compinit
