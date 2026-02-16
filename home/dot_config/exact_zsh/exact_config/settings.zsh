@@ -35,10 +35,11 @@ setopt NO_NOMATCH # If a pattern has no matches, don't print an error, leave it 
 # setopt WARN_CREATE_GLOBAL # Warn when a global variables is created in a function.
 # setopt WARN_NESTED_VAR # Warn when an existing variables from an outer scope is set in a function.
 
-# History
-typeset -g HISTFILE="$HOME/.local/share/zsh/zshhistory" # Where history logs are stored.
-typeset -g HISTSIZE=10000000 # The maximum number of events stored in the internal history list.
-typeset -g SAVEHIST=$HISTSIZE # The maximum number of history events to save in the history file.
+# Disable History (History is managed by `atuin`)
+typeset -g SAVEHIST=0 # Disable saving history.
+unset HISTFILE # Don't use a history file.
+
+# History Settings
 setopt BANG_HIST # Treat the '!' character specially during expansion.
 setopt EXTENDED_HISTORY # Save each command's epoch timestamps and the duration in seconds.
 setopt HIST_EXPIRE_DUPS_FIRST # Expire duplicate entries first when trimming history.

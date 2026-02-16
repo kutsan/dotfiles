@@ -6,9 +6,15 @@
 # ```
 ##
 
-# Load `pure` prompt..
+# pure: A minimal prompt asy Git and async support.
 zinit ice ver'54bd501c802283dee0940457da6eb3e642bd1453' pick'async.zsh' src'pure.zsh'
 zinit light sindresorhus/pure
+
+# atuin: Shell history integration.
+zinit ice as"command" from"gh-r" bpick"atuin-*.tar.gz" mv"atuin*/atuin -> atuin" \
+	atclone"./atuin init zsh > init.zsh; ./atuin gen-completions --shell zsh > _atuin" \
+	atpull"%atclone" src"init.zsh"
+zinit light atuinsh/atuin
 
 # zsh-autosuggestions: Fish-like auto-suggestions.
 zinit ice ver'85919cd1ffa7d2d5412f6d3fe437ebdbeeec4fc5'
