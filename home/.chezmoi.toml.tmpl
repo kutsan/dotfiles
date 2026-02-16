@@ -17,3 +17,11 @@
 [data]
   profile = {{ $profile | quote }}
   user = {{ $user | quote }}
+
+[merge]
+	command = "nvim"
+	args = [
+		"-d",
+		{{ printf "%q" "{{ .Destination }}" }},
+		{{ printf "%q" "{{ .Source }}" }},
+	]
