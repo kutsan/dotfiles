@@ -1,8 +1,18 @@
-{{- $users := list "kutsan" "reyhan" -}}
-{{- $user := promptChoiceOnce . "user" "Select main user" $users -}}
+{{- $interactive := stdinIsATTY -}}
 
-{{- $profiles := list "personal" "work" -}}
-{{- $profile := promptChoiceOnce . "profile" "Select environment profile" $profiles -}}
+{{- $user := "kutsan" -}}
+{{- if hasKey . "user" -}}
+{{-   $user = .user -}}
+{{- else if $interactive -}}
+{{-   $user = promptChoice "Select main user" (list "kutsan" "reyhan") -}}
+{{- end -}}
+
+{{- $profile := "personal" -}}
+{{- if hasKey . "profile" -}}
+{{-   $profile = .profile -}}
+{{- else if $interactive -}}
+{{-   $profile = promptChoice "Select environment profile" (list "personal" "work") -}}
+{{- end -}}
 
 [data]
   profile = {{ $profile | quote }}
