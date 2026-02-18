@@ -1,3 +1,7 @@
 inline_height = 15
 style = "compact"
 enter_accept = false
+show_help = false
+workspaces = true
+show_numeric_shortcuts = false
+show_tabs = false
