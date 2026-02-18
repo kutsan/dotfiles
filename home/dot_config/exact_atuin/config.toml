@@ -1,7 +1,9 @@
-inline_height = 15
+inline_height = 10
 style = "compact"
 enter_accept = false
 show_help = false
 workspaces = true
 show_numeric_shortcuts = false
 show_tabs = false
+show_preview = false
+filter_mode_shell_up_key_binding = "session"
