@@ -44,10 +44,10 @@ typeset -A git_aliases=(
 )
 
 # Loop through each alias, create the alias, and set the compdef.
-for key in ${(k)git_aliases}; do
+for key (${(k)git_aliases}) {
 	alias g$key="git $key"
 	compdef _git "g$key=git-${git_aliases[$key]}"
-done
+}
 unset git_aliases
 unset key
 
