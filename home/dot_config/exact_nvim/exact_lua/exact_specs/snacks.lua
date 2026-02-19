@@ -62,15 +62,53 @@ Plugin.opts = {
 				hidden = true,
 			},
 			explorer = {
-				focus = 'list',
 				ignored = true,
 				hidden = true,
 				git_untracked = true,
+				follow_file = false,
 				win = {
 					list = {
 						keys = {
+							-- Navigation
+							['h'] = 'explorer_close',
+							['l'] = 'confirm',
+							['<CR>'] = 'confirm',
+							['<BS>'] = 'explorer_up',
+
+							-- Selection
+							['<Space>'] = 'select_and_next',
+
+							-- File Operations
+							['c'] = 'explorer_add',
+							['r'] = 'explorer_rename',
+							['y'] = { 'explorer_yank', mode = { 'n', 'x' } },
+							['d'] = 'explorer_move',
+							['D'] = 'explorer_del',
+							['p'] = 'explorer_paste',
+							['o'] = 'explorer_open',
+
+							-- Disabled defaults
+							['a'] = false,
+							['m'] = false,
+							['u'] = false,
+							['P'] = false,
+							['H'] = false,
+							['I'] = false,
+							['Z'] = false,
+							['.'] = false,
+							['<C-c>'] = false,
+							['<C-t>'] = false,
+							['<leader>/'] = false,
 							['/'] = false,
 							['?'] = false,
+							[']g'] = false,
+							['[g'] = false,
+							[']d'] = false,
+							['[d'] = false,
+							[']w'] = false,
+							['[w'] = false,
+							[']e'] = false,
+							['[e'] = false,
 						},
 					},
 				},
