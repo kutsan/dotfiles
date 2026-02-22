@@ -106,9 +106,10 @@ keymap = [
 	{ on = ["b", "w"], run = "cd ~/Downloads" },
 	{ on = ["b", "d"], run = "cd ~/Documents" },
 	{ on = ["b", "p"], run = "cd ~/Documents/Projects" },
-	{ on = ["b", "l"], run = "cd $XDG_DATA_HOME" },
-	{ on = ["b", "c"], run = "cd $XDG_CONFIG_HOME" },
-	{ on = ["b", "a"], run = "cd $XDG_CACHE_HOME" },
+	{ on = ["b", "x", "c"], run = "cd $XDG_CONFIG_HOME" },
+	{ on = ["b", "x", "a"], run = "cd $XDG_CACHE_HOME" },
+	{ on = ["b", "x", "d"], run = "cd $XDG_DATA_HOME" },
+	{ on = ["b", "x", "s"], run = "cd $XDG_STATE_HOME" },
 
 	# Tabs
 	{ on = "t", run = "tab_create --current" },
