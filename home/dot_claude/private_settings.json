@@ -10,7 +10,6 @@
 		"autoAllowBashIfSandboxed": true,
 		"allowUnsandboxedCommands": false
 	},
-	"terminalProgressBarEnabled": false,
 	"attribution": {
 		"commit": "",
 		"pr": ""
