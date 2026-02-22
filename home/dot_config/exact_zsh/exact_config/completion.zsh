@@ -5,17 +5,17 @@ fpath=(
 )
 
 # Initialize the completion system with a cache time of 24 hours.
-typeset -g zcompdump="$XDG_DATA_HOME/zsh/zcompdump"
-typeset -g comp_files=($zcompdump(Nm-24))
+typeset -g zcompdump_path="$XDG_CACHE_HOME/zsh/zcompdump"
+typeset -g zcompdump_match=($zcompdump_path(Nm-24))
 
-if (( $#comp_files )) {
-	compinit -i -C -d $zcompdump
+if (( $#zcompdump_match )) {
+	compinit -i -C -d $zcompdump_path
 } else {
-	compinit -i -d $zcompdump
+	compinit -i -d $zcompdump_path
 }
 
-unset zcompdump
-unset comp_files
+unset zcompdump_path
+unset zcompdump_match
 
 # Replay compdefs from zinit plugins.
 zinit cdreplay -q
