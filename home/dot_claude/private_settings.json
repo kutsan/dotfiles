@@ -1,0 +1,18 @@
+{
+	"enabledPlugins": {
+		"typescript-lsp@claude-plugins-official": true,
+		"security-guidance@claude-plugins-official": true,
+		"claude-md-management@claude-plugins-official": true,
+		"lua-lsp@claude-plugins-official": true
+	},
+	"sandbox": {
+		"enabled": true,
+		"autoAllowBashIfSandboxed": true,
+		"allowUnsandboxedCommands": false
+	},
+	"terminalProgressBarEnabled": false,
+	"attribution": {
+		"commit": "",
+		"pr": ""
+	}
+}
