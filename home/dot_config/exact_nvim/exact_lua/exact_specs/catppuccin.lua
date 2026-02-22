@@ -14,6 +14,9 @@ Plugin.opts = {
 	no_bold = true,
 	term_colors = true,
 	color_overrides = {
+		latte = {
+			text = '#404359',
+		},
 		mocha = {
 			base = '#0f1119',
 			mantle = '#090b10',
