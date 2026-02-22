@@ -14,6 +14,7 @@ Plugin.opts = {
 		},
 	},
 	filetypes = {
+		gitcommit = true,
 		markdown = true,
 	},
 }
