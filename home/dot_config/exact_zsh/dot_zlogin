@@ -1,9 +1,8 @@
-# Cache directory should be created manually since zsh doesn't create
-# XDG Base Directory paths automatically.
 typeset -g zsh_cache_dir="$XDG_CACHE_HOME/zsh"
 
 if (! [[ -d "$zsh_cache_dir" ]]) {
-	command mkdir -p "$zsh_cache_dir"
+	print -u2 "Cache directory does not exist: $zsh_cache_dir"
+	return 1
 }
 
 # Asynchronously zcompile .zcompdump file.

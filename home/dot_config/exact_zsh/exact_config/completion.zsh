@@ -4,8 +4,16 @@ fpath=(
 	$fpath
 )
 
+# Cache directory should be created manually since zsh doesn't create
+# XDG Base Directory paths automatically.
+typeset -g zsh_cache_dir="$XDG_CACHE_HOME/zsh"
+
+if (! [[ -d "$zsh_cache_dir" ]]) {
+	command mkdir -p "$zsh_cache_dir"
+}
+
 # Initialize the completion system with a cache time of 24 hours.
-typeset -g zcompdump_path="$XDG_CACHE_HOME/zsh/zcompdump"
+typeset -g zcompdump_path="${zsh_cache_dir}/zcompdump"
 typeset -g zcompdump_match=($zcompdump_path(Nm-24))
 
 if (( $#zcompdump_match )) {
@@ -14,6 +22,7 @@ if (( $#zcompdump_match )) {
 	compinit -i -d $zcompdump_path
 }
 
+unset zsh_cache_dir
 unset zcompdump_path
 unset zcompdump_match
 
