@@ -1,9 +1,14 @@
-inline_height = 10
+# Interface
 style = "compact"
-enter_accept = false
+inline_height = 10
 show_help = false
-workspaces = true
-show_numeric_shortcuts = false
 show_tabs = false
 show_preview = false
+
+# Search & Filter
+workspaces = true
 filter_mode_shell_up_key_binding = "session"
+
+# Behavior
+enter_accept = false
+keymap_mode = "vim-insert"
