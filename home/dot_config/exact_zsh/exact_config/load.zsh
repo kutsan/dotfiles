@@ -1,7 +1,8 @@
 # Set XDG base directories.
 export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
 
 # Make special variables duplicate-free.
 typeset -gU path fpath cdpath
@@ -42,4 +43,4 @@ if ([[ $OSTYPE =~ 'darwin*' ]]) {
 
 # Load `zinit` plugin manager.
 ZINIT_HOME="$XDG_DATA_HOME/zinit/zinit.git"
-source "${ZINIT_HOME}/zinit.zsh"
+source "$ZINIT_HOME/zinit.zsh"
