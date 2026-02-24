@@ -1,21 +1,24 @@
 {
-	"enabledPlugins": {
-		"typescript-lsp@claude-plugins-official": true,
-		"security-guidance@claude-plugins-official": true,
-		"claude-md-management@claude-plugins-official": true,
-		"lua-lsp@claude-plugins-official": true
-	},
-	"sandbox": {
-		"enabled": true,
-		"autoAllowBashIfSandboxed": true,
-		"allowUnsandboxedCommands": false
-	},
-	"attribution": {
-		"commit": "",
-		"pr": ""
-	},
-	"spinnerVerbs": {
-		"mode": "replace",
-		"verbs": ["Working"]
-	}
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
+  "enabledPlugins": {
+    "typescript-lsp@claude-plugins-official": true,
+    "security-guidance@claude-plugins-official": true,
+    "claude-md-management@claude-plugins-official": true,
+    "lua-lsp@claude-plugins-official": true
+  },
+  "sandbox": {
+    "enabled": true,
+    "autoAllowBashIfSandboxed": true,
+    "allowUnsandboxedCommands": false
+  },
+  "spinnerVerbs": {
+    "mode": "replace",
+    "verbs": [
+      "Working"
+    ]
+  },
+  "model": "opus"
 }
