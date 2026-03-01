@@ -3,6 +3,7 @@
     "commit": "",
     "pr": ""
   },
+  "model": "opus",
   "enabledPlugins": {
     "typescript-lsp@claude-plugins-official": true,
     "security-guidance@claude-plugins-official": true,
@@ -16,9 +17,6 @@
   },
   "spinnerVerbs": {
     "mode": "replace",
-    "verbs": [
-      "Working"
-    ]
-  },
-  "model": "opus"
+    "verbs": ["Working"]
+  }
 }
