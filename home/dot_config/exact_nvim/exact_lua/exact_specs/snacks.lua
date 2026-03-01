@@ -12,6 +12,17 @@ Plugin.opts = {
 		enabled = true,
 		replace_netrw = true,
 	},
+	zen = {
+		enabled = true,
+		win = {
+			backdrop = {
+				transparent = false,
+			},
+		},
+		toggles = {
+			dim = false,
+		},
+	},
 	picker = {
 		enabled = true,
 		icons = {
