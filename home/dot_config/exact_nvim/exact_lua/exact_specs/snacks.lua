@@ -12,6 +12,13 @@ Plugin.opts = {
 		enabled = true,
 		replace_netrw = true,
 	},
+	scroll = {
+		enabled = true,
+		animate = {
+			duration = { step = 5, total = 50 },
+			easing = 'linear',
+		},
+	},
 	zen = {
 		enabled = true,
 		win = {
