@@ -51,20 +51,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
 			local height = math.floor(vim.o.lines * 0.3)
 			vim.lsp.buf.hover({ max_height = height, max_width = width })
 		end, map_opts)
-
-		vim.keymap.set({ 'n', 'x' }, '\\f', function()
-			if
-				client
-				and client:supports_method(
-					vim.lsp.protocol.Methods.textDocument_formatting,
-					args.buf
-				)
-			then
-				vim.lsp.buf.format()
-			end
-
-			require('conform').format()
-		end, map_opts)
 	end,
 })
 
