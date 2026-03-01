@@ -40,7 +40,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
 vim.api.nvim_create_autocmd('LspAttach', {
 	group = lsp_group,
 	callback = function(args)
-		local client = vim.lsp.get_client_by_id(args.data.client_id)
 		local map_opts = { buffer = args.buf, silent = true }
 
 		vim.keymap.set('n', 'gd', vim.lsp.buf.definition, map_opts)
