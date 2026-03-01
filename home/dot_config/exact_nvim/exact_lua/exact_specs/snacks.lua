@@ -65,7 +65,8 @@ Plugin.opts = {
 				ignored = true,
 				hidden = true,
 				git_untracked = true,
-				follow_file = false,
+				follow_file = true,
+				exclude = { 'node_modules' },
 				win = {
 					list = {
 						keys = {
@@ -194,15 +195,14 @@ Plugin.keys = {
 		'<Space>f',
 		function()
 			local snacks = require('snacks')
-			snacks.explorer.open()
-		end,
-		desc = 'File Explorer',
-	},
-	{
-		'<Space>F',
-		function()
-			local snacks = require('snacks')
-			snacks.explorer.reveal()
+
+			local explorer = snacks.picker.get({ source = 'explorer' })[1]
+
+			if explorer then
+				explorer:focus()
+			else
+				snacks.explorer.reveal()
+			end
 		end,
 		desc = 'Reveal in Explorer',
 	},
