@@ -11,7 +11,7 @@ foreach widget (
 unset widget
 
 # Insert Mode
-bindkey -M viins '^K' up-history
+bindkey -M viins '^K' atuin-up-search-viins # Override `up-history` to use Atuin search.
 bindkey -M viins '^J' down-history
 bindkey -M viins '^F' vi-forward-char
 bindkey -M viins '^U' backward-kill-line
