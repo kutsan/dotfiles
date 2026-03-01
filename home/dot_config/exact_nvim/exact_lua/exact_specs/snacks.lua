@@ -271,7 +271,7 @@ Plugin.keys = {
 		end,
 	},
 	{
-		'<Space>gR',
+		'<Space>r',
 		function()
 			local snacks = require('snacks')
 			snacks.picker.resume()
