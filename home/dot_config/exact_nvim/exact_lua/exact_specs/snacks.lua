@@ -88,7 +88,7 @@ Plugin.opts = {
 							['<BS>'] = 'explorer_up',
 
 							-- Selection
-							['<Space>'] = 'select_and_next',
+							['<Tab>'] = 'select_and_next',
 
 							-- File Operations
 							['c'] = 'explorer_add',
