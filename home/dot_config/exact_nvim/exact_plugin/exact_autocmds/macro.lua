@@ -1,12 +1,18 @@
 local api = vim.api
+
+---@type integer?
 local win_id = nil
+
+---@type integer?
 local buf_id = nil
 
+---@type { row: integer, col_offset: integer }
 local config = {
 	row = 2,
 	col_offset = 4,
 }
 
+---@return nil
 local function close_banner()
 	if win_id and api.nvim_win_is_valid(win_id) then
 		api.nvim_win_close(win_id, true)
@@ -20,6 +26,7 @@ local function close_banner()
 	buf_id = nil
 end
 
+---@return nil
 local function open_banner()
 	local reg = vim.fn.reg_recording()
 

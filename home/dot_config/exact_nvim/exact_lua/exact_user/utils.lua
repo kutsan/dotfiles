@@ -1,5 +1,6 @@
 local b = vim.b
 
+---@param cmd string
 local function set_undo_ftplugin(cmd)
 	local undo_cmd = cmd
 

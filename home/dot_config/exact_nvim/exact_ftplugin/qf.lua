@@ -4,6 +4,7 @@ local g = vim.g
 -- Disable built-in statusline.
 g.qf_disable_statusline = true
 
+---@type string[]
 local qf_statusline = {
 	'%{repeat(nr2char(32),4)}', -- Generate space characters given number of times.
 	'', -- Show a custom list icon.

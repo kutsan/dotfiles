@@ -1,3 +1,4 @@
+---@return string
 local function foldtext()
 	local start_line = vim.fn.getline(vim.v.foldstart)
 	local end_line = vim.fn.getline(vim.v.foldend)

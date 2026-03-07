@@ -5,7 +5,9 @@ local LspConfig = {
 	},
 	on_init = function(client)
 		if client.workspace_folders then
+			---@type string
 			local path = client.workspace_folders[1].name
+
 			if
 				path ~= vim.fn.stdpath('config')
 				and (

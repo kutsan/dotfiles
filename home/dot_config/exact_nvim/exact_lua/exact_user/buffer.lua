@@ -2,7 +2,10 @@ local api = vim.api
 local fn = vim.fn
 local cmd = vim.cmd
 
+---@param opts { force: boolean? }
+---@return false?
 local function remove(opts)
+	---@type integer
 	local target_buf_id = api.nvim_get_current_buf()
 
 	-- Do nothing if buffer is in modified state.
@@ -11,13 +14,16 @@ local function remove(opts)
 	end
 
 	-- Hide target buffer from all windows.
-	vim.tbl_map(function(win_id)
-		win_id = win_id or 0
+	---@type integer[]
+	local win_ids = fn.win_findbuf(target_buf_id)
 
+	for _, win_id in ipairs(win_ids) do
+		---@type integer
 		local current_buf_id = api.nvim_win_get_buf(win_id)
 
 		api.nvim_win_call(win_id, function()
 			-- Try using alternate buffer
+			---@type integer
 			local alt_buf_id = fn.bufnr('#')
 			if alt_buf_id ~= current_buf_id and fn.buflisted(alt_buf_id) == 1 then
 				api.nvim_win_set_buf(win_id, alt_buf_id)
@@ -31,12 +37,11 @@ local function remove(opts)
 			end
 
 			-- Create new listed scratch buffer
+			---@type integer
 			local new_buf = api.nvim_create_buf(true, true)
 			api.nvim_win_set_buf(win_id, new_buf)
 		end)
-
-		return true
-	end, fn.win_findbuf(target_buf_id))
+	end
 
 	cmd.bdelete({ target_buf_id, bang = opts.force })
 end

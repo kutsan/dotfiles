@@ -1,8 +1,10 @@
+---@type integer
 local lsp_group = vim.api.nvim_create_augroup('UserLspConfig', { clear = true })
 
 -- Highlight references to the symbol under the cursor.
 vim.api.nvim_create_autocmd('LspAttach', {
 	group = lsp_group,
+	---@param args { buf: integer, data: { client_id: integer } }
 	callback = function(args)
 		local client = vim.lsp.get_client_by_id(args.data.client_id)
 		if not client then
@@ -15,6 +17,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 				args.buf
 			)
 		then
+			---@type integer
 			local highlight_group =
 				vim.api.nvim_create_augroup('LspDocumentHighlight', { clear = false })
 
@@ -39,14 +42,18 @@ vim.api.nvim_create_autocmd('LspAttach', {
 -- General keymaps for LSP functions.
 vim.api.nvim_create_autocmd('LspAttach', {
 	group = lsp_group,
+	---@param args { buf: integer }
 	callback = function(args)
+		---@type { buffer: integer, silent: boolean }
 		local map_opts = { buffer = args.buf, silent = true }
 
 		vim.keymap.set('n', 'gd', vim.lsp.buf.definition, map_opts)
 		vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, map_opts)
 		vim.keymap.set('n', 'J', vim.diagnostic.open_float, map_opts)
 		vim.keymap.set('n', 'K', function()
+			---@type integer
 			local width = math.floor(vim.o.columns * 0.8)
+			---@type integer
 			local height = math.floor(vim.o.lines * 0.3)
 			vim.lsp.buf.hover({ max_height = height, max_width = width })
 		end, map_opts)
@@ -56,6 +63,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 -- Keymaps for inlay hints.
 vim.api.nvim_create_autocmd('LspAttach', {
 	group = lsp_group,
+	---@param args { buf: integer, data: { client_id: integer } }
 	callback = function(args)
 		local client = vim.lsp.get_client_by_id(args.data.client_id)
 		if not client then
