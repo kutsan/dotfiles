@@ -133,4 +133,7 @@ keymap = [
 	# Help
 	{ on = "~", run = "help" },
 	{ on = "<F1>", run = "help" },
+
+	# Zoxide
+	{ on = "Z", run = "plugin zoxide" },
 ]
