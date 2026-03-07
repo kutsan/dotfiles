@@ -41,6 +41,6 @@ if ([[ $OSTYPE =~ 'darwin*' ]]) {
 	eval "$(/opt/homebrew/bin/brew shellenv)"
 }
 
-# Load `zinit` plugin manager.
+# Load `zinit` plugin manager. Installation is managed by `chezmoi` external sources.
 ZINIT_HOME="$XDG_DATA_HOME/zinit/zinit.git"
 source "$ZINIT_HOME/zinit.zsh"

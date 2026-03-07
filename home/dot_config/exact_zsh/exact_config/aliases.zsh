@@ -65,6 +65,7 @@ if ([[ $OSTYPE =~ 'darwin*' ]]) {
 			command rm "$git_completion_zsh"
 		}
 	}
+
 	remove_conflicting_git_completions
 	unfunction remove_conflicting_git_completions
 }

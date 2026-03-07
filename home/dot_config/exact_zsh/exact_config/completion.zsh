@@ -1,8 +1,17 @@
 # Add Docker CLI completions.
-fpath=(
-	"$HOME/.docker/completions"
-	$fpath
-)
+if (command -v docker &> /dev/null) {
+	fpath=(
+		"$HOME/.docker/completions"
+		$fpath
+	)
+}
+
+# Completion settings
+zstyle ':completion:*' menu no # Disable the completion menu in favor of `fzf-tab` plugin.
+zstyle ':completion:*:descriptions' format '[%d]' # Show descriptions in brackets.
+zstyle ':completion:*' rehash true # When new programs is installed, auto update without reloading.
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' list-colors ${(s#:#)LS_COLORS} # Match dircolors with completion schema.
 
 # Cache directory should be created manually since zsh doesn't create
 # XDG Base Directory paths automatically.
@@ -25,12 +34,3 @@ if (( $#zcompdump_match )) {
 unset zsh_cache_dir
 unset zcompdump_path
 unset zcompdump_match
-
-# Replay compdefs from zinit plugins.
-zinit cdreplay -q
-
-# Completion settings.
-zstyle ':completion:*' menu select # Use completion menu for completion when available.
-zstyle ':completion:*' rehash true # When new programs is installed, auto update without reloading.
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-zstyle ':completion:*' list-colors ${(s#:#)LS_COLORS} # Match dircolors with completion schema.

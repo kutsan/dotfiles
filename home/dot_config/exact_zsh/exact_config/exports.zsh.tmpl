@@ -21,6 +21,7 @@ if ([[ $OSTYPE =~ 'darwin*' ]]) {
 	export HOMEBREW_CLEANUP_PERIODIC_FULL_DAYS='7'
 	export HOMEBREW_DISPLAY_INSTALL_TIMES='1'
 	export HOMEBREW_NO_ENV_HINTS='1'
+	export HOMEBREW_NO_EMOJI='1'
 }
 
 # man
@@ -47,12 +48,12 @@ export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 path=("$HOME/.local/share/cargo/bin" $path)
 
 # GnuPG
-export GPG_TTY=$(tty)
+export GPG_TTY="$(tty)"
 export GNUPGHOME="$HOME/.config/gnupg"
 
 # fzf
 export FZF_DEFAULT_COMMAND='fd --no-ignore'
-export FZF_DEFAULT_COLORS='--color=dark,fg:-1,bg:-1,hl:4,fg+:7,bg+:8,gutter:-1,hl+:4,info:8,border:8,prompt:4,pointer:3,marker:3,spinner:8,header:6'
+export FZF_DEFAULT_COLORS='--color=dark,fg:-1,bg:-1,hl:4,fg+:7,bg+:0,gutter:0,hl+:4,info:8,border:8,prompt:4,pointer:3,marker:3,spinner:8,header:6'
 export FZF_DEFAULT_OPTS="\
 	$FZF_DEFAULT_COLORS \
 	--no-multi \

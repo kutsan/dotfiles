@@ -1,13 +1,12 @@
 foreach file (
 	load.zsh
 	exports.zsh
-	plugins.zsh
 	completion.zsh
-	prompt.zsh
+	plugins.zsh
 	settings.zsh
 	functions.zsh
 	aliases.zsh
-	mappings.zsh
+	line-editor.zsh
 ) {
 	source $ZDOTDIR/config/$file
 }

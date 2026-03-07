@@ -35,7 +35,7 @@ setopt NO_NOMATCH # If a pattern has no matches, don't print an error, leave it 
 # setopt WARN_CREATE_GLOBAL # Warn when a global variables is created in a function.
 # setopt WARN_NESTED_VAR # Warn when an existing variables from an outer scope is set in a function.
 
-# Disable History (History is managed by `atuin`)
+# Disable History (History is managed by `atuin`.)
 typeset -g SAVEHIST=0 # Disable saving history.
 unset HISTFILE # Don't use a history file.
 

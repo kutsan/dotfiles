@@ -38,3 +38,19 @@ foreach char ({a,i}${(s..)^:-'()[]{}<>bB'}) { bindkey -M viopp $char select-brac
 bindkey -M menuselect '^?' undo
 bindkey -M menuselect '^I' menu-complete
 bindkey -M menuselect '^[[Z' reverse-menu-complete
+
+# Clear screen widget that allows Pure prompt to re-render with
+# its initial newline by manually clearing the screen and placing
+# the cursor on line 4 so that the prompt is redisplayed on lines
+# 2 and 3.
+custom_prompt_pure_clear_screen() {
+	# Enable output to terminal.
+	zle -I
+
+	# Clear screen and move cursor to (4, 0).
+	print -n '\e[2J\e[4;0H'
+
+	# Redraw prompt.
+	zle .redisplay
+}
+zle -N clear-screen custom_prompt_pure_clear_screen
