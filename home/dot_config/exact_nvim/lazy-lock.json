@@ -22,6 +22,7 @@
   "mason": { "branch": "main", "commit": "44d1e90e1f66e077268191e3ee9d2ac97cc18e65" },
   "mason-lspconfig": { "branch": "main", "commit": "a324581a3c83fdacdb9804b79de1cbe00ce18550" },
   "mason-tool-installer": { "branch": "main", "commit": "443f1ef8b5e6bf47045cb2217b6f748a223cf7dc" },
+  "mini-indentscope": { "branch": "main", "commit": "0308f949f31769e509696af5d5f91cebb2159c69" },
   "mini-pairs": { "branch": "main", "commit": "d5a29b6254dad07757832db505ea5aeab9aad43a" },
   "orphans": { "branch": "main", "commit": "35f995fbb04b679b7d829072d7209a2117c15adf" },
   "qmk": { "branch": "main", "commit": "3c804c1480991e4837514900b22b9358cfd64fa1" },
