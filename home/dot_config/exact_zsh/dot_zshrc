@@ -1,9 +1,9 @@
 foreach file (
-	load.zsh
-	exports.zsh
+	modules.zsh
+	options.zsh
+	environment.zsh
 	completion.zsh
 	plugins.zsh
-	settings.zsh
 	functions.zsh
 	aliases.zsh
 	line-editor.zsh

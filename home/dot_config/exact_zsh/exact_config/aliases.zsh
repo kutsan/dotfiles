@@ -20,7 +20,7 @@ alias px='pnpx'
 alias cz='chezmoi'
 
 # macOS-only Aliases
-if ([[ $OSTYPE =~ 'darwin*' ]]) {
+if [[ $OSTYPE =~ 'darwin*' ]] {
 	alias bb='brew bundle --global --verbose'
 }
 
@@ -44,28 +44,9 @@ typeset -A git_aliases=(
 )
 
 # Loop through each alias, create the alias, and set the compdef.
-for key in ${(k)git_aliases}; do
+for key (${(k)git_aliases}) {
 	alias g$key="git $key"
 	compdef _git "g$key=git-${git_aliases[$key]}"
-done
+}
 unset git_aliases
 unset key
-
-# Remove the Homebrew version of `git` completions, as they are incompatible with Zsh aliases.
-if ([[ $OSTYPE =~ 'darwin*' ]]) {
-	function remove_conflicting_git_completions() {
-		local git_completion_bash="$HOMEBREW_PREFIX/share/zsh/site-functions/git-completion.bash"
-		local git_completion_zsh="$HOMEBREW_PREFIX/share/zsh/site-functions/_git"
-
-		if ([[ -e "$git_completion_bash" ]]) {
-			command rm "$git_completion_bash"
-		}
-
-		if ([[ -e "$git_completion_zsh" ]]) {
-			command rm "$git_completion_zsh"
-		}
-	}
-
-	remove_conflicting_git_completions
-	unfunction remove_conflicting_git_completions
-}

@@ -17,7 +17,7 @@ zstyle ':completion:*' list-colors ${(s#:#)LS_COLORS} # Match dircolors with com
 # XDG Base Directory paths automatically.
 typeset -g zsh_cache_dir="$XDG_CACHE_HOME/zsh"
 
-if (! [[ -d "$zsh_cache_dir" ]]) {
+if ! [[ -d "$zsh_cache_dir" ]] {
 	command mkdir -p "$zsh_cache_dir"
 }
 
@@ -34,3 +34,22 @@ if (( $#zcompdump_match )) {
 unset zsh_cache_dir
 unset zcompdump_path
 unset zcompdump_match
+
+# Remove the Homebrew version of `git` completions, as they are incompatible with Zsh aliases.
+if [[ $OSTYPE =~ 'darwin*' ]] {
+	function remove_conflicting_git_completions() {
+		local git_completion_bash="$HOMEBREW_PREFIX/share/zsh/site-functions/git-completion.bash"
+		local git_completion_zsh="$HOMEBREW_PREFIX/share/zsh/site-functions/_git"
+
+		if [[ -e "$git_completion_bash" ]] {
+			command rm "$git_completion_bash"
+		}
+
+		if [[ -e "$git_completion_zsh" ]] {
+			command rm "$git_completion_zsh"
+		}
+	}
+
+	remove_conflicting_git_completions
+	unfunction remove_conflicting_git_completions
+}

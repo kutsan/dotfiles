@@ -1,17 +1,9 @@
-typeset -g zsh_cache_dir="$XDG_CACHE_HOME/zsh"
-
-if (! [[ -d "$zsh_cache_dir" ]]) {
-	print -u2 "Cache directory does not exist: $zsh_cache_dir"
-	return 1
-}
-
-# Asynchronously zcompile .zcompdump file.
+# Asynchronously zcompile `.zcompdump` file.
 {
-	local zcompdump_path="$zsh_cache_dir/zcompdump"
+	# This file is created in `completion.zsh`.
+	local zcompdump_path="$XDG_CACHE_HOME/zsh/zcompdump"
 
-	if ([[ -s "$zcompdump_path" && (! -s "${zcompdump_path}.zwc" || "$zcompdump_path" -nt "${zcompdump_path}.zwc") ]]) {
+	if [[ -s "$zcompdump_path" && (! -s "${zcompdump_path}.zwc" || "$zcompdump_path" -nt "${zcompdump_path}.zwc") ]] {
 		zcompile "$zcompdump_path"
 	}
 } &!
-
-unset zsh_cache_dir

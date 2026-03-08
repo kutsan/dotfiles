@@ -1,55 +1,9 @@
-# Common
-export LANG='en_US.UTF-8'
-export EDITOR='nvim'
-export GUI_EDITOR='zed'
-export PAGER='less'
-
-# Disable telemetry and tracking.
-export DISABLE_TELEMETRY='1'
-export DO_NOT_TRACK='1'
-
-# macOS-only Exports
-if ([[ $OSTYPE =~ 'darwin*' ]]) {
-	# Android SDK and Java
-	export ANDROID_HOME="$HOME/Library/Android/sdk"
-	export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
-	path=("$ANDROID_HOME/emulator" "$ANDROID_HOME/platform-tools" $path)
-
-	# Homebrew
-	export HOMEBREW_NO_ANALYTICS='1'
-	export HOMEBREW_CLEANUP_MAX_AGE_DAYS='7'
-	export HOMEBREW_CLEANUP_PERIODIC_FULL_DAYS='7'
-	export HOMEBREW_DISPLAY_INSTALL_TIMES='1'
-	export HOMEBREW_NO_ENV_HINTS='1'
-	export HOMEBREW_NO_EMOJI='1'
-}
-
 # man
 export MANWIDTH='100'
 export MANPAGER='nvim +Man!'
 
-# npm
-{{- if eq .user "kutsan" }}
-export NPM_CONFIG_INIT_AUTHOR_NAME='Kutsan Kaplan'
-export NPM_CONFIG_INIT_AUTHOR_EMAIL='me@kutsan.dev'
-export NPM_CONFIG_INIT_AUTHOR_URL='https://kutsan.dev'
-{{- else if eq .user "reyhan" }}
-export NPM_CONFIG_INIT_AUTHOR_NAME='Reyhan Kaplan'
-export NPM_CONFIG_INIT_AUTHOR_EMAIL='me@reyhan.dev'
-export NPM_CONFIG_INIT_AUTHOR_URL='https://reyhan.dev'
-{{- end }}
-export NPM_CONFIG_INIT_LICENSE='MIT'
-export NPM_CONFIG_INIT_VERSION='0.0.0'
-export NPM_CONFIG_SIGN_GIT_TAG='true'
-
-# Rust
-export CARGO_HOME="$XDG_DATA_HOME/cargo"
-export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
-path=("$HOME/.local/share/cargo/bin" $path)
-
 # GnuPG
 export GPG_TTY="$(tty)"
-export GNUPGHOME="$HOME/.config/gnupg"
 
 # fzf
 export FZF_DEFAULT_COMMAND='fd --no-ignore'
@@ -71,9 +25,6 @@ export FZF_DEFAULT_OPTS="\
 if (command -v fzf &> /dev/null) {
 	source <(fzf --zsh)
 }
-
-# QMK
-export QMK_HOME="$XDG_DATA_HOME/qmk-firmware"
 
 # OpenCode
 export OPENCODE_DISABLE_TERMINAL_TITLE='true'

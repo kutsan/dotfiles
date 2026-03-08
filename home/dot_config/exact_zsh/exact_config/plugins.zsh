@@ -1,3 +1,7 @@
+# zinit: Plugin manager. Installation is managed by chezmoi external sources.
+ZINIT_HOME="$XDG_DATA_HOME/zinit/zinit.git"
+source "$ZINIT_HOME/zinit.zsh"
+
 # pure: A minimal prompt with Git and async support.
 zinit ice ver'dbefd0d' pick'async.zsh' src'pure.zsh'
 zinit light sindresorhus/pure
