@@ -39,20 +39,6 @@ setopt NO_NOMATCH # If a pattern has no matches, don't print an error, leave it 
 typeset -g SAVEHIST=0 # Disable saving history.
 unset HISTFILE # Don't use a history file.
 
-# History Settings
-setopt BANG_HIST # Treat the '!' character specially during expansion.
-setopt EXTENDED_HISTORY # Save each command's epoch timestamps and the duration in seconds.
-setopt HIST_EXPIRE_DUPS_FIRST # Expire duplicate entries first when trimming history.
-setopt HIST_FIND_NO_DUPS # Don't display a line previously found.
-setopt HIST_IGNORE_ALL_DUPS # Delete old recorded entry if new entry is a duplicate.
-setopt HIST_IGNORE_DUPS # Don't record an entry that was just recorded again.
-setopt HIST_IGNORE_SPACE # Don't record an entry starting with a space.
-setopt HIST_REDUCE_BLANKS # Remove superfluous blanks before recording an entry.
-setopt HIST_SAVE_NO_DUPS # Don't write duplicate entries in the history file.
-setopt HIST_VERIFY # Don't execute the line directly instead perform history expansion.
-setopt INC_APPEND_HISTORY # Write to the history file immediately, not when the shell exits.
-setopt SHARE_HISTORY # Share history between all sessions.
-
 # Input/Output
 typeset -g KEYTIMEOUT=10 # The time the shell waits, for another key to be pressed in milliseconds.
 setopt NO_CLOBBER # Don't allow `>` redirection to override existing files. Use `>!` instead.

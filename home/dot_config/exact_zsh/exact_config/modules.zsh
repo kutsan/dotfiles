@@ -1,12 +1,12 @@
 # Define functions to load them on execution.
-foreach function (
+foreach fn (
 	compinit
 	promptinit
 	surround
 	select-bracketed
 	select-quoted
 ) {
-	autoload -U $function
+	autoload -U $fn
 }
 
 # Load binary modules.

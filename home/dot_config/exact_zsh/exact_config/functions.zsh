@@ -1,6 +1,6 @@
 # `cd` into the last directory upon exit using `yazi`.
 function y() {
-	local temp_file="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	local temp_file="$(mktemp -t "yazi-cwd.XXXXXX")"
 
 	command yazi "$@" --cwd-file="$temp_file"
 	local cwd="$(command cat -- "$temp_file")"

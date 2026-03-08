@@ -1,6 +1,8 @@
 # man
 export MANWIDTH='100'
-export MANPAGER='nvim +Man!'
+if (command -v nvim &> /dev/null) {
+	export MANPAGER='nvim +Man!'
+}
 
 # GnuPG
 export GPG_TTY="$(tty)"
