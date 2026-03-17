@@ -10,8 +10,9 @@ export XDG_STATE_HOME="$HOME/.local/state"
 # Local Executables
 path=("$HOME/.local/bin" $path)
 
-# Zsh Config Directory
+# Zsh Config
 export ZDOTDIR="$HOME/.config/zsh"
+export SHELL_SESSIONS_DISABLE='1'
 
 # Defaults
 export LANG='en_US.UTF-8'
@@ -56,10 +57,10 @@ export NPM_CONFIG_SIGN_GIT_TAG='true'
 # Rust
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
-path=("$HOME/.local/share/cargo/bin" $path)
+path=("$CARGO_HOME/bin" $path)
 
 # GnuPG
-export GNUPGHOME="$HOME/.config/gnupg"
+export GNUPGHOME="$XDG_CONFIG_HOME/gnupg"
 
 # QMK
 export QMK_HOME="$XDG_DATA_HOME/qmk-firmware"
