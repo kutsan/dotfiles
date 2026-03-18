@@ -9,7 +9,8 @@
     "security-guidance@claude-plugins-official": true,
     "claude-md-management@claude-plugins-official": true,
     "lua-lsp@claude-plugins-official": true,
-    "expo@expo-plugins": true
+    "expo@expo-plugins": true,
+    "claude-code-setup@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "expo-plugins": {
@@ -26,6 +27,8 @@
   },
   "spinnerVerbs": {
     "mode": "replace",
-    "verbs": ["Working"]
+    "verbs": [
+      "Working"
+    ]
   }
 }
