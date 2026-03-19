@@ -130,10 +130,15 @@ keymap = [
 	# Tasks
 	{ on = "w", run = "tasks:show" },
 
+	# Layout
+	{ on = ["z", "z"], run = "plugin change-ratio -- 1 1 1" }, # Default columns
+	{ on = ["z", "s"], run = "plugin change-ratio -- 0 1 0" }, # Single column
+	{ on = ["z", "f"], run = "plugin change-ratio -- 1 3 1" }, # Focused column
+
 	# Help
 	{ on = "~", run = "help" },
 	{ on = "<F1>", run = "help" },
 
 	# Zoxide
-	{ on = "Z", run = "plugin zoxide" },
+	{ on = "<C-k>", run = "plugin zoxide" },
 ]
