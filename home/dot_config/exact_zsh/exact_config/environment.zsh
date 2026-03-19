@@ -28,12 +28,6 @@ if (command -v fzf &> /dev/null) {
 	source <(fzf --zsh)
 }
 
-# OpenCode
-export OPENCODE_DISABLE_TERMINAL_TITLE='true'
-
-# Claude Code
-export CLAUDE_CODE_DISABLE_TERMINAL_TITLE='1'
-
 # less
 export LESS="\
 	--ignore-case \
