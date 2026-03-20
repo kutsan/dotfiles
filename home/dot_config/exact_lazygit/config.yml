@@ -30,8 +30,9 @@ gui:
     defaultFgColor:
       - default
   showFileTree: false
+  showCommandLog: false
+  showBottomLine: false
   nerdFontsVersion: '3'
-  commandLogSize: 2
   spinner:
     frames:
       - '⠦'
