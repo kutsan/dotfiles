@@ -1,4 +1,71 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/jesseduffield/lazygit/master/schema/config.json
+
+gui:
+  expandFocusedSidePanel: true
+  enlargedSideViewLocation: 'top'
+  theme:
+    activeBorderColor:
+      - blue
+    inactiveBorderColor:
+      - black
+    searchingActiveBorderColor:
+      - cyan
+    optionsTextColor:
+      - black
+    selectedLineBgColor:
+      - black
+    inactiveViewSelectedLineBgColor:
+      - bold
+    cherryPickedCommitFgColor:
+      - blue
+    cherryPickedCommitBgColor:
+      - cyan
+    markedBaseCommitFgColor:
+      - blue
+    markedBaseCommitBgColor:
+      - yellow
+    unstagedChangesColor:
+      - red
+    defaultFgColor:
+      - default
+  showFileTree: false
+  nerdFontsVersion: '3'
+  commandLogSize: 2
+  spinner:
+    frames:
+      - '⣷ '
+      - '⣯ '
+      - '⣟ '
+      - '⡿ '
+      - '⢿ '
+      - '⣻ '
+      - '⣽ '
+      - '⣾ '
+    rate: 100
+  statusPanelView: allBranchesLog
+
 git:
   pagers:
     - colorArg: always
       pager: delta --dark --paging=never
+  branchLogCmd: 'git log --color=always --graph --date=iso8601 --pretty=log-default'
+  allBranchesLogCmds:
+    - 'git log --color=always --graph --all --date=iso8601 --pretty=log-default'
+
+os:
+  editPreset: 'nvim'
+
+customCommands:
+  - key: 'R'
+    command: 'gh repo view --web'
+    description: 'View repository on GitHub'
+    context: 'global'
+    loadingText: 'Opening GitHub...'
+
+  - key: 'o'
+    command: 'gh pr view --web {{ .SelectedLocalBranch.Name }}'
+    description: 'View PR on GitHub'
+    context: 'localBranches, remoteBranches'
+    loadingText: 'Opening GitHub...'
+
+promptToReturnFromSubprocess: false
