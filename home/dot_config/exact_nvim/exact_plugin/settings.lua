@@ -1,6 +1,6 @@
 local opt = vim.opt
 
-local shada = require('user.shada')
+local shada = require('user/shada')
 
 -- Set shada file path for the current project.
 shada.set_shada_file()
