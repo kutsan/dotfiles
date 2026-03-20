@@ -34,16 +34,10 @@ gui:
   commandLogSize: 2
   spinner:
     frames:
-      - '⠋'
-      - '⠙'
-      - '⠹'
-      - '⠸'
-      - '⠼'
-      - '⠴'
       - '⠦'
-      - '⠧'
-      - '⠇'
-      - '⠏'
+      - '⠖'
+      - '⠲'
+      - '⠴'
     rate: 100
   statusPanelView: allBranchesLog
 
