@@ -1,6 +1,7 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/jesseduffield/lazygit/master/schema/config.json
 
 gui:
+  scrollHeight: 10
   expandFocusedSidePanel: true
   enlargedSideViewLocation: 'top'
   theme:
@@ -33,24 +34,26 @@ gui:
   commandLogSize: 2
   spinner:
     frames:
-      - '⣷ '
-      - '⣯ '
-      - '⣟ '
-      - '⡿ '
-      - '⢿ '
-      - '⣻ '
-      - '⣽ '
-      - '⣾ '
+      - '⠋'
+      - '⠙'
+      - '⠹'
+      - '⠸'
+      - '⠼'
+      - '⠴'
+      - '⠦'
+      - '⠧'
+      - '⠇'
+      - '⠏'
     rate: 100
   statusPanelView: allBranchesLog
 
 git:
   pagers:
     - colorArg: always
-      pager: delta --dark --paging=never
-  branchLogCmd: 'git log --color=always --graph --date=iso8601 --pretty=log-default'
+      pager: delta --paging=never
+  branchLogCmd: 'git l --color=always'
   allBranchesLogCmds:
-    - 'git log --color=always --graph --all --date=iso8601 --pretty=log-default'
+    - 'git la --color=always'
 
 os:
   editPreset: 'nvim'
