@@ -15,6 +15,7 @@ alias uuidgen='print -n ${$(command uuidgen):l} | pbcopy' # Generate a UUID and 
 alias e="$EDITOR"; compdef e="$EDITOR"
 alias ge="$GUI_EDITOR"; compdef ge="$GUI_EDITOR"
 alias g='git'; compdef g='git'
+alias gs='lazygit'
 alias pn='pnpm'
 alias px='pnpx'
 alias cz='chezmoi'
@@ -40,7 +41,6 @@ typeset -A git_aliases=(
 	lda log
 	r reflog
 	rd reflog
-	s status
 	sm submodule
 	sw switch
 )
