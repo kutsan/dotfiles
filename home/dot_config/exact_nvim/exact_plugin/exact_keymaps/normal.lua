@@ -25,9 +25,6 @@ keymap.set('n', '<Tab>', 'za')
 -- Always send contents of a `x` command to the black hole register.
 keymap.set('n', 'x', '"_x')
 
--- Go to the alternate buffer.
-keymap.set('n', '<C-n>', '<C-^>')
-
 -- Refactor word under cursor.
 keymap.set('n', 'c*', function()
 	local word_under_cursor = vim.fn.expand('<cword>')
