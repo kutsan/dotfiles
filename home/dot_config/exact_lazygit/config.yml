@@ -66,4 +66,6 @@ customCommands:
     context: 'localBranches, remoteBranches'
     loadingText: 'Opening GitHub...'
 
+notARepository: 'quit'
+
 promptToReturnFromSubprocess: false
