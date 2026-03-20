@@ -3,7 +3,7 @@
 
 [core]
 	editor = $EDITOR
-	pager = less
+	pager = delta
 	whitespace = space-before-tab,-indent-with-non-tab,trailing-space
 
 [push]
@@ -11,8 +11,14 @@
 	autoSetupRemote = true
 	followtags = true
 
+[branch]
+	sort = -committerdate
+
 [pull]
 	ff = only
+
+[interactive]
+	diffFilter = delta --color-only
 
 [diff]
 	algorithm = histogram
