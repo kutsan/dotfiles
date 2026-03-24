@@ -19,7 +19,6 @@ alias du='du -d 1 --si' # Display sizes of entries one level deep with SI units.
 alias df='df -a --si' # Display all filesystem usage with SI units.
 
 # Utilities
-alias clear='echo "Use \`^L\`." && false' # Disable `clear` command in favor of `^L` which preserves scrollback buffer.
 alias uuidgen='echo ${$(command uuidgen):l}' # Generate a lowercase UUID.
 [[ $OSTYPE =~ 'darwin*' ]] && alias uuidgen='print -n ${$(command uuidgen):l} | pbcopy' # Generate a lowercase UUID and copy to clipboard.
 
@@ -34,3 +33,7 @@ alias g='lazygit'
 alias gs='lazygit status'
 alias gl='lazygit log'
 alias gb='lazygit branch'
+
+# Disabled Commands
+alias clear='print "Use \`^L\`." && false'
+alias caffeinate='print "Use equivalent GUI utility app." && false'
