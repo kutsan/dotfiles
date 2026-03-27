@@ -29,7 +29,6 @@ gui:
       - red
     defaultFgColor:
       - default
-  showFileTree: false
   showCommandLog: false
   showBottomLine: false
   nerdFontsVersion: '3'
