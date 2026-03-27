@@ -1,5 +1,5 @@
 {{- if eq .profile "personal" -}}
-# Personal-only Taps
+# Personal Taps
 
 {{- if eq .user "kutsan" }}
 tap "osx-cross/arm"
@@ -8,7 +8,7 @@ tap "qmk/qmk"
 {{- end }}
 {{- end }}
 
-# General Packages
+# Common Packages
 brew "act"
 brew "chezmoi"
 brew "cloud-sql-proxy"
@@ -49,7 +49,7 @@ brew "yazi"
 brew "zoxide"
 {{- if eq .profile "personal" }}
 
-# Personal-only Packages
+# Personal Packages
 brew "ledger"
 
 {{- if eq .user "kutsan" }}
@@ -57,16 +57,15 @@ brew "arm-gcc-bin" # QMK dependency
 brew "avr-gcc" # QMK dependency
 brew "dos2unix" # QMK dependency
 brew "qmk/qmk/qmk" # QMK
+brew "typst"
 {{- end }}
 {{- end }}
 
-# General Casks
+# Common Casks
 cask "android-studio"
 cask "datagrip"
 cask "docker-desktop"
 cask "figma"
-cask "font-symbols-only-nerd-font"
-cask "font-ia-writer-quattro"
 cask "gcloud-cli"
 cask "ghostty"
 cask "google-chrome"
@@ -80,9 +79,16 @@ cask "handbrake-app"
 cask "iina"
 cask "claude-code"
 cask "claude"
+cask "keepingyouawake"
+
+# Font Casks
+cask "font-symbols-only-nerd-font"
+cask "font-ia-writer-mono"
+cask "font-ia-writer-duo"
+cask "font-ia-writer-quattro"
 {{- if eq .profile "personal" }}
 
-# Home-only Casks
+# Personal Casks
 cask "blender"
 cask "discord"
 cask "insta360-link-controller"
@@ -92,7 +98,7 @@ cask "transmission"
 
 {{- if eq .user "kutsan" }}
 cask "skim"
-cask "mactex-no-gui"
+cask "ledger-wallet"
 {{- end }}
 
 {{- if eq .user "reyhan" }}
@@ -101,7 +107,7 @@ cask "affinity"
 {{- end }}
 {{- end }}
 
-# General App Store Apps
+# Common App Store Apps
 mas "Keynote", id: 361285480
 mas "Numbers", id: 361304891
 mas "Pages", id: 361309726
@@ -113,7 +119,7 @@ mas "WireGuard", id: 1451685025
 mas "uBlock Origin Lite", id: 6745342698
 {{- if eq .profile "personal" }}
 
-# Personal-only App Store Apps
+# Personal App Store Apps
 mas "iMovie", id: 408981434
 mas "GarageBand", id: 682658836
 mas "Photomator", id: 1444636541
