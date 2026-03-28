@@ -23,6 +23,8 @@ Plugin.opts = {
 		'docker_compose_language_service',
 		'gh_actions_ls',
 		'bashls',
+		'tinymist',
+		'markdown-oxide',
 
 		-- Formatters
 		'prettierd',
