@@ -33,8 +33,6 @@ window-padding-color = extend-always
 shell-integration-features = no-cursor,sudo,no-title
 mouse-hide-while-typing = true
 macos-option-as-alt = left
-window-width = 140
-window-height = 38
 
 # Keybindings
 keybind = performable:super+c=copy_to_clipboard
