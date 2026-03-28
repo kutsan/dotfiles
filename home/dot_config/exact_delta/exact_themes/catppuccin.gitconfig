@@ -4,10 +4,7 @@
 	light = true
 	file-decoration-style = "#9ca0b0"
 	file-style = "#4c4f69"
-	hunk-header-decoration-style = "#9ca0b0" box ul
-	hunk-header-file-style = bold
-	hunk-header-line-number-style = bold "#6c6f85"
-	hunk-header-style = file line-number syntax
+	hunk-header-style = omit
 	line-numbers-left-style = "#9ca0b0"
 	line-numbers-minus-style = bold "#d20f39"
 	line-numbers-plus-style = bold "#40a02b"
@@ -30,10 +27,7 @@
 	dark = true
 	file-decoration-style = "#6c7086"
 	file-style = "#cdd6f4"
-	hunk-header-decoration-style = "#6c7086" box ul
-	hunk-header-file-style = bold
-	hunk-header-line-number-style = bold "#a6adc8"
-	hunk-header-style = file line-number syntax
+	hunk-header-style = omit
 	line-numbers-left-style = "#6c7086"
 	line-numbers-minus-style = bold "#f38ba8"
 	line-numbers-plus-style = bold "#a6e3a1"
