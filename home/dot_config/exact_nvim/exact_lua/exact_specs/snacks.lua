@@ -12,6 +12,12 @@ Plugin.opts = {
 		enabled = true,
 		replace_netrw = true,
 	},
+	bigfile = {
+		enabled = true,
+	},
+	image = {
+		enabled = true,
+	},
 	zen = {
 		enabled = true,
 		win = {
@@ -85,7 +91,8 @@ Plugin.opts = {
 							['h'] = 'explorer_close',
 							['l'] = 'confirm',
 							['<CR>'] = 'confirm',
-							['<BS>'] = 'explorer_up',
+							['-'] = 'explorer_up',
+							['.'] = 'tcd',
 
 							-- Selection
 							['<Tab>'] = 'select_and_next',
@@ -107,7 +114,6 @@ Plugin.opts = {
 							['H'] = false,
 							['I'] = false,
 							['Z'] = false,
-							['.'] = false,
 							['<C-c>'] = false,
 							['<C-t>'] = false,
 							['<leader>/'] = false,
