@@ -7,7 +7,7 @@ local function entry(_, job)
 		tonumber(job.args[3]),
 	}
 
-	ya.emit("app:resize", {})
+	ya.emit('app:resize', {})
 end
 
 return { entry = entry }
