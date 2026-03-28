@@ -21,8 +21,10 @@ Plugin.opts = {
 	zen = {
 		enabled = true,
 		win = {
+			width = 100,
 			backdrop = {
 				transparent = false,
+				blend = 99,
 			},
 		},
 		toggles = {
