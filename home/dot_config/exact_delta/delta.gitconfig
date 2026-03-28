@@ -1,0 +1,8 @@
+[include]
+	path = ./themes/catppuccin.gitconfig
+
+[delta]
+	features = catppuccin-mocha
+	side-by-side = true
+	line-numbers-left-format = │{np:>4} 
+	line-numbers-right-format = │{np:>4} 
