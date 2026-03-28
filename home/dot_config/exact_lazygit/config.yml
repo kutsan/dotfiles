@@ -43,8 +43,8 @@ gui:
 
 git:
   pagers:
-    - colorArg: always
-      pager: delta --paging=never
+    - pager: delta --paging=never
+      colorArg: always
   branchLogCmd: 'git l --color=always {{branchName}} --'
   allBranchesLogCmds:
     - 'git la --color=always'
