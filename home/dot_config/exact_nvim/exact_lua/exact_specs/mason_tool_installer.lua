@@ -24,6 +24,7 @@ Plugin.opts = {
 		'gh_actions_ls',
 		'bashls',
 		'tinymist',
+		'typstyle',
 		'markdown-oxide',
 
 		-- Formatters
