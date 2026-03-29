@@ -16,6 +16,7 @@ Plugin.opts = {
 		typescriptreact = prettier_formatters,
 		yaml = prettier_formatters,
 		json = prettier_formatters,
+		typst = { 'typstyle' },
 	},
 	format_on_save = {
 		timeout_ms = 500,
