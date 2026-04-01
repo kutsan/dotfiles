@@ -1,60 +1,60 @@
 {
-	"$schema": "https://json.schemastore.org/claude-code-settings.json",
-	"attribution": {
-		"commit": "",
-		"pr": ""
-	},
-	"model": "opus[1m]",
-	"hooks": {
-		"Notification": [
-			{
-				"hooks": [
-					{
-						"type": "command",
-						"command": "command -v afplay &>/dev/null && afplay /System/Library/Sounds/Funk.aiff"
-					}
-				]
-			}
-		],
-		"Stop": [
-			{
-				"hooks": [
-					{
-						"type": "command",
-						"command": "command -v afplay &>/dev/null && afplay /System/Library/Sounds/Funk.aiff"
-					}
-				]
-			}
-		]
-	},
-	"statusLine": {
-		"type": "command",
-		"command": "command -v npm &>/dev/null && npm exec --yes ccstatusline@latest",
-		"padding": 0
-	},
-	"enabledPlugins": {
-		"typescript-lsp@claude-plugins-official": true,
-		"security-guidance@claude-plugins-official": true,
-		"claude-md-management@claude-plugins-official": true,
-		"lua-lsp@claude-plugins-official": true,
-		"expo@expo-plugins": true,
-		"claude-code-setup@claude-plugins-official": true
-	},
-	"extraKnownMarketplaces": {
-		"expo-plugins": {
-			"source": {
-				"source": "github",
-				"repo": "expo/skills"
-			}
-		}
-	},
-	"sandbox": {
-		"enabled": true,
-		"autoAllowBashIfSandboxed": true,
-		"allowUnsandboxedCommands": false
-	},
-	"spinnerVerbs": {
-		"mode": "replace",
-		"verbs": ["Working"]
-	}
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
+  "model": "opus[1m]",
+  "hooks": {
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "command -v afplay &>/dev/null && afplay /System/Library/Sounds/Funk.aiff"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "command -v afplay &>/dev/null && afplay /System/Library/Sounds/Funk.aiff"
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "command -v npm &>/dev/null && npm exec --yes ccstatusline@latest",
+    "padding": 0
+  },
+  "enabledPlugins": {
+    "typescript-lsp@claude-plugins-official": true,
+    "security-guidance@claude-plugins-official": true,
+    "claude-md-management@claude-plugins-official": true,
+    "lua-lsp@claude-plugins-official": true,
+    "expo@expo-plugins": true,
+    "claude-code-setup@claude-plugins-official": true
+  },
+  "extraKnownMarketplaces": {
+    "expo-plugins": {
+      "source": {
+        "source": "github",
+        "repo": "expo/skills"
+      }
+    }
+  },
+  "sandbox": {
+    "enabled": true,
+    "autoAllowBashIfSandboxed": true,
+    "allowUnsandboxedCommands": false
+  },
+  "spinnerVerbs": {
+    "mode": "replace",
+    "verbs": ["Working"]
+  }
 }
