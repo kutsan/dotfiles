@@ -48,8 +48,6 @@ git:
   branchLogCmd: 'git l --color=always {{branchName}} --'
   allBranchesLogCmds:
     - 'git la --color=always'
-  log:
-    showWholeGraph: true
 
 os:
   editPreset: 'nvim'
