@@ -20,6 +20,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
 			---@type integer
 			local highlight_group =
 				vim.api.nvim_create_augroup('LspDocumentHighlight', { clear = false })
+			local highlight_detach_group = vim.api.nvim_create_augroup(
+				'LspDocumentHighlightDetach',
+				{ clear = true }
+			)
 
 			-- Clear existing highlights for this buffer.
 			vim.api.nvim_clear_autocmds({ buffer = args.buf, group = highlight_group })
@@ -34,6 +38,17 @@ vim.api.nvim_create_autocmd('LspAttach', {
 				group = highlight_group,
 				buffer = args.buf,
 				callback = vim.lsp.buf.clear_references,
+			})
+
+			vim.api.nvim_create_autocmd('LspDetach', {
+				group = highlight_detach_group,
+				callback = function(event)
+					vim.lsp.buf.clear_references()
+					vim.api.nvim_clear_autocmds({
+						group = highlight_group,
+						buffer = event.buf,
+					})
+				end,
 			})
 		end
 	end,
