@@ -190,7 +190,6 @@ vim.keymap.set('n', '<Space>f', function()
 	end
 end, { desc = 'Reveal in explorer' })
 
-vim.keymap.set('n', '<Space>u', snacks.picker.undo, { desc = 'Undo history' })
 vim.keymap.set('n', '<M-x>', snacks.picker.commands, { desc = 'Commands' })
 vim.keymap.set(
 	'n',

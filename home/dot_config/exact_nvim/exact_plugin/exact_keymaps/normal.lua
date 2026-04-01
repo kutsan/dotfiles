@@ -114,3 +114,12 @@ keymap.set(
 	"'`[' .. strpart(getregtype(), 0, 1) .. '`]'",
 	{ expr = true }
 )
+
+-- Open undo history.
+vim.keymap.set('n', '<Space>u', function()
+	vim.cmd.packadd('nvim.undotree')
+
+	local undotree = require('undotree')
+
+	undotree.open()
+end, { desc = 'Undo history' })
