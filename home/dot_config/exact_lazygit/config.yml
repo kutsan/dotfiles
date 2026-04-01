@@ -45,7 +45,7 @@ git:
   pagers:
     - pager: delta --paging=never
       colorArg: always
-  branchLogCmd: 'git l --color=always {{branchName}} --'
+  branchLogCmd: 'git l --color=always --remotes {{branchName}} --'
   allBranchesLogCmds:
     - 'git la --color=always'
 
