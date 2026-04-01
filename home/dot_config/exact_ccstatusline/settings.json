@@ -29,16 +29,18 @@
 				"merge": "no-padding"
 			},
 			{
-				"id": "776132ae-1430-40a6-bb30-83e88ac4dc27",
+				"id": "6923b6ef-4d46-4fd4-965e-244878053613",
 				"type": "custom-text",
 				"customText": " ",
-				"merge": "no-padding"
+				"merge": "no-padding",
+				"color": "white"
 			},
 			{
-				"id": "31737cf1-4f1f-4e02-a7d6-6bd8e312f089",
-				"type": "context-bar",
-				"color": "blue",
-				"rawValue": true
+				"id": "776132ae-1430-40a6-bb30-83e88ac4dc27",
+				"type": "context-length",
+				"customText": " ",
+				"rawValue": true,
+				"color": "blue"
 			},
 			{
 				"id": "cedb2a8b-8030-4868-a8b7-dbc1830e2d2f",
