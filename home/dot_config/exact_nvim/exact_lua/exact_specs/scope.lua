@@ -1,7 +1,10 @@
-local Plugin = { 'tiagovla/scope.nvim' }
+vim.pack.add({
+	{
+		name = 'scope',
+		src = 'github:tiagovla/scope.nvim',
+	},
+})
 
-Plugin.name = 'scope'
+local scope = require('scope')
 
-Plugin.opts = {}
-
-return Plugin
+scope.setup()

@@ -1,16 +1,21 @@
-local Plugin = { 'lewis6991/gitsigns.nvim' }
+vim.pack.add({
+	{
+		name = 'gitsigns',
+		src = 'github:lewis6991/gitsigns.nvim',
+	},
+})
 
-Plugin.name = 'gitsigns'
+local gitsigns = require('gitsigns')
 
-Plugin.opts = {
+local opts = {
 	on_attach = function()
-		local gitsigns = require('gitsigns')
-		local keymap = vim.keymap
-
-		keymap.set('n', '<Space>gb', gitsigns.blame, { silent = true })
+		vim.keymap.set(
+			'n',
+			'<Space>gb',
+			gitsigns.blame,
+			{ silent = true, desc = 'Git blame' }
+		)
 	end,
 }
 
-Plugin.config = true
-
-return Plugin
+gitsigns.setup(opts)

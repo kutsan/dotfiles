@@ -1,7 +1,10 @@
-local Plugin = { 'j-hui/fidget.nvim' }
+vim.pack.add({
+	{
+		name = 'fidget',
+		src = 'github:j-hui/fidget.nvim',
+	},
+})
 
-Plugin.name = 'fidget'
+local fidget = require('fidget')
 
-Plugin.opts = {}
-
-return Plugin
+fidget.setup()

@@ -23,32 +23,64 @@ vim.g.loaded_perl_provider = 0
 vim.g.loaded_python3_provider = 0
 vim.g.loaded_ruby_provider = 0
 
--- Load lazy.nvim.
-local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
-if not vim.uv.fs_stat(lazypath) then
-	vim.fn.system({
-		'git',
-		'clone',
-		'--filter=blob:none',
-		'https://github.com/folke/lazy.nvim.git',
-		'--branch=stable',
-		lazypath,
-	})
-end
-vim.opt.rtp:prepend(lazypath)
+local specs = {
+	-- Colorscheme
+	{ 'catppuccin' },
 
-local lazy = require('lazy')
+	-- Completion & Snippets
+	{ 'blink_cmp', requires = { 'lazydev' } },
 
-lazy.setup({
-	spec = {
-		{ import = 'specs' },
+	-- LSP & Tooling
+	{ 'lsp_config' },
+	{ 'mason', requires = { 'lsp_config' } },
+	{ 'mason_lsp_config', requires = { 'lsp_config', 'mason' } },
+	{
+		'mason_tool_installer',
+		requires = { 'lsp_config', 'mason', 'mason_lsp_config' },
 	},
-	change_detection = {
-		enabled = false,
-	},
-	rocks = {
-		hererocks = {
-			enabled = true,
-		},
-	},
-})
+	{ 'lazydev' },
+	{ 'schema_store' },
+	{ 'conform' },
+	{ 'ts_error_translator' },
+
+	-- AI
+	{ 'copilot' },
+
+	-- Git
+	{ 'gitsigns' },
+	{ 'diffview' },
+
+	-- Navigation & Buffers
+	{ 'bufferline', requires = { 'devicons', 'grapple' } },
+	{ 'grapple' },
+	{ 'flash' },
+	{ 'eyeliner' },
+	{ 'windovigation' },
+	{ 'scope' },
+
+	-- Search & Replace
+	{ 'grug_far' },
+
+	-- Editing & Text Objects
+	{ 'surround' },
+	{ 'mini_pairs' },
+
+	-- Visual
+	{ 'devicons' },
+	{ 'fidget' },
+	{ 'highlight_colors' },
+	{ 'color_converter' },
+	{ 'mini_indentscope' },
+	{ 'snacks' },
+
+	-- Comments
+	{ 'todo_comments' },
+	{ 'ts_comments' },
+
+	-- Utilities
+	{ 'chezmoi' },
+	{ 'early_retirement' },
+	{ 'qmk' },
+}
+
+require('user.specs').load_specs(specs)

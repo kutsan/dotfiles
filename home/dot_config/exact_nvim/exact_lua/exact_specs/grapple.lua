@@ -1,38 +1,40 @@
-local Plugin = { 'cbochs/grapple.nvim' }
+vim.pack.add({
+	{
+		name = 'grapple',
+		src = 'github:cbochs/grapple.nvim',
+	},
+})
 
-Plugin.name = 'grapple'
+local grapple = require('grapple')
 
-Plugin.cmd = 'Grapple'
-Plugin.event = { 'BufReadPost', 'BufNewFile' }
-
-Plugin.opts = {
+local opts = {
 	scope = 'git_branch',
 }
 
-Plugin.keys = {
-	{
-		'\\bb',
-		function()
-			require('grapple').toggle()
-			vim.cmd.redrawtabline()
-		end,
-		desc = 'Grapple toggle tag.',
-	},
-	{
-		'\\bl',
-		'<cmd>Grapple toggle_tags<cr>',
-		desc = 'Grapple open tags window.',
-	},
-	{
-		'\\bn',
-		'<cmd>Grapple cycle_tags next<cr>',
-		desc = 'Grapple cycle next tag.',
-	},
-	{
-		'\\bp',
-		'<cmd>Grapple cycle_tags prev<cr>',
-		desc = 'Grapple cycle previous tag.',
-	},
-}
+grapple.setup(opts)
 
-return Plugin
+vim.keymap.set('n', '\\bb', function()
+	grapple.toggle()
+	vim.cmd.redrawtabline()
+end, { desc = 'Toggle grapple tag' })
+
+vim.keymap.set(
+	'n',
+	'\\bl',
+	'<cmd>Grapple toggle_tags<cr>',
+	{ desc = 'Open grapple tags window' }
+)
+
+vim.keymap.set(
+	'n',
+	'\\bn',
+	'<cmd>Grapple cycle_tags next<cr>',
+	{ desc = 'Cycle to next grapple tag' }
+)
+
+vim.keymap.set(
+	'n',
+	'\\bp',
+	'<cmd>Grapple cycle_tags prev<cr>',
+	{ desc = 'Cycle to previous grapple tag' }
+)

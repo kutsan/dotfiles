@@ -1,8 +1,10 @@
-local Plugin = { 'folke/ts-comments.nvim' }
+vim.pack.add({
+	{
+		name = 'ts-comments',
+		src = 'github:folke/ts-comments.nvim',
+	},
+})
 
-Plugin.name = 'ts-comments'
+local ts_comments = require('ts-comments')
 
-Plugin.opts = {}
-Plugin.event = 'VeryLazy'
-
-return Plugin
+ts_comments.setup()

@@ -1,8 +1,10 @@
-local Plugin = { 'mason-org/mason.nvim' }
+vim.pack.add({
+	{
+		name = 'mason',
+		src = 'github:mason-org/mason.nvim',
+	},
+})
 
-Plugin.name = 'mason'
+local mason = require('mason')
 
-Plugin.optional = true
-Plugin.opts = {}
-
-return Plugin
+mason.setup()

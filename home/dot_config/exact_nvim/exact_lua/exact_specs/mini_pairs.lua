@@ -1,16 +1,18 @@
-local Plugin = { 'nvim-mini/mini.pairs' }
+vim.pack.add({
+	{
+		name = 'mini-pairs',
+		src = 'github:nvim-mini/mini.pairs',
+		version = vim.version.range('*'),
+	},
+})
 
-Plugin.name = 'mini-pairs'
-Plugin.version = '*'
+local mini_pairs = require('mini.pairs')
 
-Plugin.event = { 'InsertEnter', 'CmdlineEnter' }
+local opts = {
+	modes = {
+		insert = true,
+		command = true,
+	},
+}
 
-Plugin.config = function()
-	local mini_pairs = require('mini.pairs')
-
-	mini_pairs.setup({
-		modes = { insert = true, command = true },
-	})
-end
-
-return Plugin
+mini_pairs.setup(opts)

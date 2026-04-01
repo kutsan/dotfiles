@@ -1,17 +1,17 @@
-local Plugin = { 'NTBBloodbath/color-converter.nvim' }
-
-Plugin.name = 'color-converter'
-Plugin.opts = {}
-
-Plugin.keys = {
+vim.pack.add({
 	{
-		'\\cc',
-		function()
-			local color_converter = require('color-converter')
-			color_converter.cycle()
-		end,
-		desc = 'Color Converter',
+		name = 'color-converter',
+		src = 'github:NTBBloodbath/color-converter.nvim',
 	},
-}
+})
 
-return Plugin
+local color_converter = require('color-converter')
+
+color_converter.setup()
+
+vim.keymap.set(
+	'n',
+	'\\cc',
+	color_converter.cycle,
+	{ desc = 'Cycle color format' }
+)

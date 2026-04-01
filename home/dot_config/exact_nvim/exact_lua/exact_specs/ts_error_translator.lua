@@ -1,7 +1,10 @@
-local Plugin = { 'dmmulroy/ts-error-translator.nvim' }
+vim.pack.add({
+	{
+		name = 'ts-error-translator',
+		src = 'github:dmmulroy/ts-error-translator.nvim',
+	},
+})
 
-Plugin.name = 'ts-error-translator'
+local ts_error_translator = require('ts-error-translator')
 
-Plugin.opts = {}
-
-return Plugin
+ts_error_translator.setup()

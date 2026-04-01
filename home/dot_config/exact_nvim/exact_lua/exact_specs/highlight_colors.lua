@@ -1,8 +1,13 @@
-local Plugin = { 'brenoprata10/nvim-highlight-colors' }
+vim.pack.add({
+	{
+		name = 'highlight-colors',
+		src = 'github:brenoprata10/nvim-highlight-colors',
+	},
+})
 
-Plugin.name = 'highlight-colors'
+local highlight_colors = require('nvim-highlight-colors')
 
-Plugin.opts = {
+local opts = {
 	render = 'virtual',
 	virtual_symbol = '',
 	names = false,
@@ -10,4 +15,4 @@ Plugin.opts = {
 	hsl_fn = true,
 }
 
-return Plugin
+highlight_colors.setup(opts)

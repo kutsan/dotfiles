@@ -1,7 +1,10 @@
-local Plugin = { 'folke/todo-comments.nvim' }
+vim.pack.add({
+	{
+		name = 'todo-comments',
+		src = 'github:folke/todo-comments.nvim',
+	},
+})
 
-Plugin.name = 'todo-comments'
+local todo_comments = require('todo-comments')
 
-Plugin.opts = {}
-
-return Plugin
+todo_comments.setup()

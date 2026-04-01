@@ -1,11 +1,15 @@
-local Plugin = { 'sindrets/diffview.nvim' }
+vim.pack.add({
+	{
+		name = 'diffview',
+		src = 'github:sindrets/diffview.nvim',
+	},
+})
 
-Plugin.name = 'diffview'
+local diffview = require('diffview')
 
-Plugin.opts = {
+local opts = {
 	enhanced_diff_hl = true,
 	file_panel = {
-		listing_style = 'list',
 		win_config = {
 			position = 'bottom',
 			height = 10,
@@ -22,36 +26,29 @@ Plugin.opts = {
 	},
 }
 
-Plugin.config = function(_, opts)
-	local diffview = require('diffview')
+diffview.setup(opts)
 
-	diffview.setup(opts)
+vim.keymap.set('n', '<Space>gd', function()
+	local diffview_lib = require('diffview.lib')
+	local current_diffview_view = diffview_lib.get_current_view()
 
-	local keymap = vim.keymap
+	if current_diffview_view then
+		vim.cmd.DiffviewClose()
+	else
+		vim.cmd.DiffviewOpen()
+	end
+end, { silent = true, desc = 'Toggle diffview' })
 
-	keymap.set('n', '<Space>gd', function()
-		local diffview_lib = require('diffview.lib')
-		local current_diffview_view = diffview_lib.get_current_view()
+vim.keymap.set(
+	'n',
+	'<Space>gl',
+	'<Cmd>DiffviewFileHistory %<CR>',
+	{ silent = true, desc = 'File history (current file)' }
+)
 
-		if current_diffview_view then
-			vim.cmd.DiffviewClose()
-		else
-			vim.cmd.DiffviewOpen()
-		end
-	end, { silent = true })
-
-	keymap.set(
-		'n',
-		'<Space>gl',
-		'<Cmd>DiffviewFileHistory %<CR>',
-		{ silent = true }
-	)
-	keymap.set(
-		'n',
-		'<Space>gL',
-		'<Cmd>DiffviewFileHistory<CR>',
-		{ silent = true }
-	)
-end
-
-return Plugin
+vim.keymap.set(
+	'n',
+	'<Space>gL',
+	'<Cmd>DiffviewFileHistory<CR>',
+	{ silent = true, desc = 'File history (all files)' }
+)

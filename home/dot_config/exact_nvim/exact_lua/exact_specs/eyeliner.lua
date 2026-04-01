@@ -1,13 +1,14 @@
-local Plugin = { 'jinh0/eyeliner.nvim' }
+vim.pack.add({
+	{
+		name = 'eyeliner',
+		src = 'github:jinh0/eyeliner.nvim',
+	},
+})
 
-Plugin.name = 'eyeliner'
+local eyeliner = require('eyeliner')
 
-Plugin.config = function()
-	local eyeliner = require('eyeliner')
+local opts = {
+	highlight_on_key = true,
+}
 
-	eyeliner.setup({
-		highlight_on_key = true,
-	})
-end
-
-return Plugin
+eyeliner.setup(opts)

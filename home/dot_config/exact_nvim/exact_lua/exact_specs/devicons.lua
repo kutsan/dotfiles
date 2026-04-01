@@ -1,8 +1,13 @@
-local Plugin = { 'nvim-tree/nvim-web-devicons' }
+vim.pack.add({
+	{
+		name = 'devicons',
+		src = 'github:nvim-tree/nvim-web-devicons',
+	},
+})
 
-Plugin.name = 'devicons'
+local devicons = require('nvim-web-devicons')
 
-Plugin.opts = {
+local opts = {
 	override = {
 		js = { icon = '󰌞', color = '#f5c06f', name = 'Js' },
 		jsx = { icon = '', color = '#689fb6', name = 'Jsx' },
@@ -15,4 +20,4 @@ Plugin.opts = {
 	},
 }
 
-return Plugin
+devicons.setup(opts)

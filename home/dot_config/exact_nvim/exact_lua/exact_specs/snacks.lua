@@ -1,11 +1,13 @@
-local Plugin = { 'folke/snacks.nvim' }
+vim.pack.add({
+	{
+		name = 'snacks',
+		src = 'github:folke/snacks.nvim',
+	},
+})
 
-Plugin.name = 'snacks'
+local snacks = require('snacks')
 
-Plugin.priority = 1000
-Plugin.lazy = false
-
-Plugin.opts = {
+local opts = {
 	input = { enabled = true },
 	toggle = { enabled = true },
 	explorer = {
@@ -152,149 +154,67 @@ Plugin.opts = {
 	},
 }
 
-Plugin.keys = {
-	{
-		'<C-b>',
-		function()
-			local snacks = require('snacks')
-			snacks.picker.buffers()
-		end,
-		desc = 'Buffers',
-	},
-	{
-		'<C-p>',
-		function()
-			local snacks = require('snacks')
-			snacks.picker.files()
-		end,
-		desc = 'Find Files',
-	},
-	{
-		'<Space><C-p>',
-		function()
-			local snacks = require('snacks')
-			snacks.picker.git_files()
-		end,
-		desc = 'Find Files',
-	},
-	{
-		'<Space>s"',
-		function()
-			local snacks = require('snacks')
-			snacks.picker.registers()
-		end,
-		desc = 'Registers',
-	},
-	{
-		'<Space>h',
-		function()
-			local snacks = require('snacks')
-			snacks.picker.help()
-		end,
-		desc = 'Help Pages',
-	},
-	{
-		'gs',
-		function()
-			local snacks = require('snacks')
-			snacks.picker.grep()
-		end,
-		desc = 'Grep',
-	},
-	{
-		'gs',
-		function()
-			local snacks = require('snacks')
-			snacks.picker.grep_word()
-		end,
-		desc = 'Visual selection or word',
-		mode = { 'x' },
-	},
-	{
-		'<Space>f',
-		function()
-			local snacks = require('snacks')
+snacks.setup(opts)
 
-			local explorer = snacks.picker.get({ source = 'explorer' })[1]
+snacks.toggle.option('spell', { name = 'Spelling' }):map('<Space>us')
 
-			if explorer then
-				explorer:focus()
-			else
-				snacks.explorer.reveal()
-			end
-		end,
-		desc = 'Reveal in Explorer',
-	},
-	{
-		'<Space>u',
-		function()
-			local snacks = require('snacks')
-			snacks.picker.undo()
-		end,
-		desc = 'Undo history',
-	},
-	{
-		'<M-x>',
-		function()
-			local snacks = require('snacks')
-			snacks.picker.commands()
-		end,
-		desc = 'Commands',
-	},
-	{
-		'<Space>sH',
-		function()
-			local snacks = require('snacks')
-			snacks.picker.highlights()
-		end,
-		desc = 'Highlights',
-	},
-	{
-		'<Space>z',
-		function()
-			local snacks = require('snacks')
-			snacks.zen()
-		end,
-		desc = 'Zen Mode',
-	},
-	{
-		'<Space>:',
-		function()
-			local snacks = require('snacks')
-			snacks.picker.command_history()
-		end,
-	},
-	{
-		'<Space>/',
-		function()
-			local snacks = require('snacks')
-			snacks.picker.search_history()
-		end,
-	},
-	{
-		'<Space>`',
-		function()
-			local snacks = require('snacks')
-			snacks.picker.marks()
-		end,
-	},
-	{
-		'<Space>r',
-		function()
-			local snacks = require('snacks')
-			snacks.picker.resume()
-		end,
-	},
-}
+vim.keymap.set('n', '<C-b>', snacks.picker.buffers, { desc = 'Buffers' })
+vim.keymap.set('n', '<C-p>', snacks.picker.files, { desc = 'Find files' })
+vim.keymap.set(
+	'n',
+	'<Space><C-p>',
+	snacks.picker.git_files,
+	{ desc = 'Find git files' }
+)
+vim.keymap.set(
+	'n',
+	'<Space>s"',
+	snacks.picker.registers,
+	{ desc = 'Registers' }
+)
+vim.keymap.set('n', '<Space>h', snacks.picker.help, { desc = 'Help pages' })
+vim.keymap.set('n', 'gs', snacks.picker.grep, { desc = 'Grep' })
+vim.keymap.set(
+	'x',
+	'gs',
+	snacks.picker.grep_word,
+	{ desc = 'Grep visual selection' }
+)
 
-Plugin.init = function()
-	vim.api.nvim_create_autocmd('User', {
-		pattern = 'VeryLazy',
-		callback = function()
-			local snacks = require('snacks')
-			snacks.toggle.option('spell', { name = 'Spelling' }):map('<Space>us')
-		end,
-	})
-end
+vim.keymap.set('n', '<Space>f', function()
+	local explorer = snacks.picker.get({ source = 'explorer' })[1]
+	if explorer then
+		explorer:focus()
+	else
+		snacks.explorer.reveal()
+	end
+end, { desc = 'Reveal in explorer' })
 
-return Plugin
+vim.keymap.set('n', '<Space>u', snacks.picker.undo, { desc = 'Undo history' })
+vim.keymap.set('n', '<M-x>', snacks.picker.commands, { desc = 'Commands' })
+vim.keymap.set(
+	'n',
+	'<Space>sH',
+	snacks.picker.highlights,
+	{ desc = 'Highlights' }
+)
+vim.keymap.set('n', '<Space>z', snacks.zen.zen, { desc = 'Toggle zen mode' })
+vim.keymap.set(
+	'n',
+	'<Space>:',
+	snacks.picker.command_history,
+	{ desc = 'Command history' }
+)
+vim.keymap.set(
+	'n',
+	'<Space>/',
+	snacks.picker.search_history,
+	{ desc = 'Search history' }
+)
+vim.keymap.set('n', '<Space>`', snacks.picker.marks, { desc = 'Pick marks' })
+vim.keymap.set(
+	'n',
+	'<Space>r',
+	snacks.picker.resume,
+	{ desc = 'Resume last picker' }
+)

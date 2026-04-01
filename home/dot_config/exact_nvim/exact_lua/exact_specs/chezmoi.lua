@@ -1,11 +1,8 @@
-local Plugin = { 'alker0/chezmoi.vim' }
+vim.pack.add({
+	{
+		name = 'chezmoi',
+		src = 'github:alker0/chezmoi.vim',
+	},
+})
 
-Plugin.name = 'chezmoi'
-
-Plugin.lazy = false
-
-Plugin.init = function()
-	vim.g['chezmoi#use_tmp_buffer'] = true
-end
-
-return Plugin
+vim.g['chezmoi#use_tmp_buffer'] = true

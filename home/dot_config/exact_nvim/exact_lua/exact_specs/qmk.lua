@@ -1,8 +1,13 @@
-local Plugin = { 'codethread/qmk.nvim' }
+vim.pack.add({
+	{
+		name = 'qmk',
+		src = 'github:codethread/qmk.nvim',
+	},
+})
 
-Plugin.name = 'qmk'
+local qmk = require('qmk')
 
-Plugin.opts = {
+local opts = {
 	name = 'LAYOUT_60_ansi',
 	comment_preview = {
 		position = 'none',
@@ -16,4 +21,4 @@ Plugin.opts = {
 	},
 }
 
-return Plugin
+qmk.setup(opts)

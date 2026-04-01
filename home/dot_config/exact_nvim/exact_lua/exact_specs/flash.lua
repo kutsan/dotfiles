@@ -1,10 +1,13 @@
-local Plugin = { 'folke/flash.nvim' }
+vim.pack.add({
+	{
+		name = 'flash',
+		src = 'github:folke/flash.nvim',
+	},
+})
 
-Plugin.name = 'flash'
+local flash = require('flash')
 
-Plugin.event = 'VeryLazy'
-
-Plugin.opts = {
+local opts = {
 	search = {
 		multi_window = false,
 	},
@@ -24,23 +27,18 @@ Plugin.opts = {
 	},
 }
 
-Plugin.keys = {
-	{
-		'grv',
-		mode = { 'n', 'x', 'o' },
-		function()
-			require('flash').treesitter()
-		end,
-		desc = 'Active flash in tree-sitter selection mode.',
-	},
-	{
-		'<C-/>',
-		mode = { 'n', 'x', 'o' },
-		function()
-			require('flash').jump()
-		end,
-		desc = 'Flash',
-	},
-}
+flash.setup(opts)
 
-return Plugin
+vim.keymap.set(
+	{ 'n', 'x', 'o' },
+	'grv',
+	flash.treesitter,
+	{ desc = 'Flash treesitter selection' }
+)
+
+vim.keymap.set(
+	{ 'n', 'x', 'o' },
+	'<C-/>',
+	flash.jump,
+	{ desc = 'Flash jump' }
+)

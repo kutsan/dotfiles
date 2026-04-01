@@ -1,92 +1,79 @@
-local Plugin = { 'akinsho/bufferline.nvim' }
-
-Plugin.name = 'bufferline'
-Plugin.version = '*'
-
-Plugin.dependencies = {
-	'devicons',
-	'grapple',
-}
-
-Plugin.event = 'VeryLazy'
-Plugin.keys = {
+vim.pack.add({
 	{
-		'<M-p>',
-		'<cmd>BufferLineCyclePrev<cr>',
-		desc = 'Prev Buffer',
+		name = 'bufferline',
+		src = 'github:akinsho/bufferline.nvim',
 	},
-	{
-		'<M-n>',
-		'<cmd>BufferLineCycleNext<cr>',
-		desc = 'Next Buffer',
-	},
-}
+})
 
-Plugin.config = function()
-	local bufferline = require('bufferline')
+local bufferline = require('bufferline')
 
-	bufferline.setup({
-		options = {
-			show_buffer_close_icons = false,
-			show_close_icon = false,
-			style_preset = {
-				bufferline.style_preset.no_italic,
-				bufferline.style_preset.no_bold,
-			},
-			offsets = {
-				{
-					filetype = 'snacks_layout_box',
-					highlight = 'Directory',
-				},
-			},
-			name_formatter = function(buf)
-				local mark = require('grapple').exists({ buffer = buf.bufnr })
-						and ' '
-					or ''
-				return mark .. buf.name
-			end,
-			custom_areas = {
-				right = function()
-					local result = {}
-					local severity = vim.diagnostic.severity
-					local error = #vim.diagnostic.get(0, { severity = severity.ERROR })
-					local warning = #vim.diagnostic.get(0, { severity = severity.WARN })
-					local info = #vim.diagnostic.get(0, { severity = severity.INFO })
-					local hint = #vim.diagnostic.get(0, { severity = severity.HINT })
-
-					if error ~= 0 then
-						table.insert(
-							result,
-							{ text = '  ' .. error, link = 'DiagnosticError' }
-						)
-					end
-
-					if warning ~= 0 then
-						table.insert(
-							result,
-							{ text = '  ' .. warning, link = 'DiagnosticWarn' }
-						)
-					end
-
-					if hint ~= 0 then
-						table.insert(
-							result,
-							{ text = '  ' .. hint, link = 'DiagnosticHint' }
-						)
-					end
-
-					if info ~= 0 then
-						table.insert(
-							result,
-							{ text = '  ' .. info, link = 'DiagnosticInfo' }
-						)
-					end
-
-					return result
-				end,
+local opts = {
+	options = {
+		show_buffer_close_icons = false,
+		show_close_icon = false,
+		style_preset = {
+			bufferline.style_preset.no_italic,
+			bufferline.style_preset.no_bold,
+		},
+		offsets = {
+			{
+				filetype = 'snacks_layout_box',
+				highlight = 'Directory',
 			},
 		},
-	})
-end
+		name_formatter = function(buf)
+			local mark = require('grapple').exists({ buffer = buf.bufnr }) and ' '
+				or ''
+			return mark .. buf.name
+		end,
+		custom_areas = {
+			right = function()
+				local result = {}
+				local severity = vim.diagnostic.severity
+				local error = #vim.diagnostic.get(0, { severity = severity.ERROR })
+				local warning = #vim.diagnostic.get(0, { severity = severity.WARN })
+				local info = #vim.diagnostic.get(0, { severity = severity.INFO })
+				local hint = #vim.diagnostic.get(0, { severity = severity.HINT })
 
-return Plugin
+				if error ~= 0 then
+					table.insert(
+						result,
+						{ text = '  ' .. error, link = 'DiagnosticError' }
+					)
+				end
+
+				if warning ~= 0 then
+					table.insert(
+						result,
+						{ text = '  ' .. warning, link = 'DiagnosticWarn' }
+					)
+				end
+
+				if hint ~= 0 then
+					table.insert(result, { text = '  ' .. hint, link = 'DiagnosticHint' })
+				end
+
+				if info ~= 0 then
+					table.insert(result, { text = '  ' .. info, link = 'DiagnosticInfo' })
+				end
+
+				return result
+			end,
+		},
+	},
+}
+
+bufferline.setup(opts)
+
+vim.keymap.set(
+	'n',
+	'<S-M-[>',
+	'<cmd>BufferLineCyclePrev<cr>',
+	{ desc = 'Previous buffer' }
+)
+vim.keymap.set(
+	'n',
+	'<S-M-]>',
+	'<cmd>BufferLineCycleNext<cr>',
+	{ desc = 'Next buffer' }
+)

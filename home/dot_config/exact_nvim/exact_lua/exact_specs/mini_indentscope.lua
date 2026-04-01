@@ -1,20 +1,22 @@
-local Plugin = { 'nvim-mini/mini.indentscope' }
+vim.pack.add({
+	{
+		name = 'mini-indentscope',
+		src = 'github:nvim-mini/mini.indentscope',
+		version = vim.version.range('*'),
+	},
+})
 
-Plugin.name = 'mini-indentscope'
-Plugin.version = '*'
+local mini_indentscope = require('mini.indentscope')
 
-Plugin.event = { 'BufReadPost', 'BufNewFile' }
+local opts = {
+	options = {
+		indent_at_cursor = false,
+	},
+	draw = {
+		predicate = function()
+			return false
+		end,
+	},
+}
 
-Plugin.config = function()
-	local mini_indentscope = require('mini.indentscope')
-
-	mini_indentscope.setup({
-		draw = {
-			predicate = function()
-				return false
-			end,
-		},
-	})
-end
-
-return Plugin
+mini_indentscope.setup(opts)

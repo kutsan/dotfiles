@@ -1,14 +1,13 @@
-local Plugin = { 'folke/lazydev.nvim' }
+vim.pack.add({
+	{
+		name = 'lazydev',
+		src = 'github:folke/lazydev.nvim',
+	},
+})
 
-Plugin.name = 'lazydev'
+local lazydev = require('lazydev')
 
-Plugin.ft = 'lua'
-
-Plugin.dependencies = {
-	'blink.cmp',
-}
-
-Plugin.opts = {
+local opts = {
 	library = {
 		{
 			path = '${3rd}/luv/library',
@@ -17,4 +16,4 @@ Plugin.opts = {
 	},
 }
 
-return Plugin
+lazydev.setup(opts)

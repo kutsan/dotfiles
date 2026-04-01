@@ -1,10 +1,14 @@
-local Plugin = { 'saghen/blink.cmp' }
+vim.pack.add({
+	{
+		name = 'blink-cmp',
+		src = 'github:saghen/blink.cmp',
+		version = vim.version.range('1'),
+	},
+})
 
-Plugin.version = '1.*'
+local blink_cmp = require('blink.cmp')
 
-Plugin.event = 'InsertEnter'
-
-Plugin.opts = {
+local opts = {
 	keymap = {
 		preset = 'none',
 		['<C-f>'] = { 'scroll_documentation_down', 'fallback' },
@@ -58,6 +62,4 @@ Plugin.opts = {
 	},
 }
 
-Plugin.opts_extend = { 'sources.default' }
-
-return Plugin
+blink_cmp.setup(opts)

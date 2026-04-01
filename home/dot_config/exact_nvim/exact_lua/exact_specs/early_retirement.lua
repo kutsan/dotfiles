@@ -1,8 +1,10 @@
-local Plugin = { 'chrisgrieser/nvim-early-retirement' }
+vim.pack.add({
+	{
+		name = 'early-retirement',
+		src = 'github:chrisgrieser/nvim-early-retirement',
+	},
+})
 
-Plugin.name = 'early-retirement'
+local early_retirement = require('early-retirement')
 
-Plugin.config = true
-Plugin.event = 'VeryLazy'
-
-return Plugin
+early_retirement.setup({})

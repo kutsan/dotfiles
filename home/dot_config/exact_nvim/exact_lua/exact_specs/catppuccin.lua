@@ -1,11 +1,13 @@
-local Plugin = { 'catppuccin/nvim' }
+vim.pack.add({
+	{
+		name = 'catppuccin',
+		src = 'github:catppuccin/nvim',
+	},
+})
 
-Plugin.name = 'catppuccin'
+local catppuccin = require('catppuccin')
 
-Plugin.lazy = false
-Plugin.priority = 1000
-
-Plugin.opts = {
+local opts = {
 	flavour = 'auto',
 	background = {
 		dark = 'mocha',
@@ -86,11 +88,6 @@ Plugin.opts = {
 	},
 }
 
-Plugin.config = function(_, opts)
-	local catppuccin = require('catppuccin')
-	catppuccin.setup(opts)
+catppuccin.setup(opts)
 
-	vim.cmd.colorscheme('catppuccin')
-end
-
-return Plugin
+vim.cmd.colorscheme('catppuccin')

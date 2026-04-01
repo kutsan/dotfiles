@@ -1,6 +1,11 @@
-local Plugin = { 'stevearc/conform.nvim' }
+vim.pack.add({
+	{
+		name = 'conform',
+		src = 'github:stevearc/conform.nvim',
+	},
+})
 
-Plugin.name = 'conform'
+local conform = require('conform')
 
 local prettier_formatters = {
 	'prettierd',
@@ -8,7 +13,7 @@ local prettier_formatters = {
 	stop_after_first = true,
 }
 
-Plugin.opts = {
+local opts = {
 	formatters_by_ft = {
 		lua = { 'stylua' },
 		javascript = prettier_formatters,
@@ -24,38 +29,32 @@ Plugin.opts = {
 	},
 }
 
-Plugin.config = function(_, opts)
-	local conform = require('conform')
+conform.setup(opts)
 
-	conform.setup(opts)
+vim.keymap.set('n', '\\f', function()
+	conform.format({
+		async = true,
+		lsp_format = 'fallback',
+	})
+end, { desc = 'Format buffer' })
 
-	vim.keymap.set('n', '\\f', function()
-		conform.format({
-			async = true,
-			lsp_format = 'fallback',
-		})
-	end)
+vim.keymap.set('x', '\\f', function()
+	local start_line = vim.fn.line('v')
+	local end_line = vim.fn.line('.')
 
-	vim.keymap.set('x', '\\f', function()
-		local start_line = vim.fn.line('v')
-		local end_line = vim.fn.line('.')
+	if start_line > end_line then
+		start_line, end_line = end_line, start_line
+	end
 
-		if start_line > end_line then
-			start_line, end_line = end_line, start_line
-		end
+	local last_line =
+		vim.api.nvim_buf_get_lines(0, end_line - 1, end_line, true)[1]
 
-		local last_line =
-			vim.api.nvim_buf_get_lines(0, end_line - 1, end_line, true)[1]
-
-		conform.format({
-			async = true,
-			lsp_format = 'fallback',
-			range = {
-				start = { start_line, 0 },
-				['end'] = { end_line, last_line:len() },
-			},
-		})
-	end)
-end
-
-return Plugin
+	conform.format({
+		async = true,
+		lsp_format = 'fallback',
+		range = {
+			start = { start_line, 0 },
+			['end'] = { end_line, last_line:len() },
+		},
+	})
+end, { desc = 'Format selection' })
