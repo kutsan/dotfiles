@@ -22,14 +22,13 @@
 
 [diff]
 	algorithm = histogram
-	tool = nvimdiff
+	tool = nvim_difftool
 	renames = copies
 	submodule = log
 	wsErrorHighlight = all
 
-[difftool "nvimdiff"]
-	cmd = nvim -d $LOCAL $REMOTE
-	trustexitcode = true
+[difftool "nvim_difftool"]
+	cmd = nvim -c \"lua vim.cmd.packadd('nvim.difftool')\" -d \"$LOCAL\" \"$REMOTE\"
 
 [fetch]
 	prune = true
