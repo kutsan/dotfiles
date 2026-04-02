@@ -34,27 +34,6 @@ shell-integration-features = no-cursor,sudo,no-title
 mouse-hide-while-typing = true
 macos-option-as-alt = left
 
-# Keybindings
-keybind = performable:super+c=copy_to_clipboard
-keybind = super+z=toggle_split_zoom
-keybind = super+enter=new_split:down
-keybind = super+shift+enter=new_split:right
-keybind = super+n=next_tab
-keybind = super+p=previous_tab
-keybind = super+h=goto_split:left
-keybind = super+j=goto_split:bottom
-keybind = super+k=goto_split:top
-keybind = super+l=goto_split:right
-keybind = super+[=jump_to_prompt:-1
-keybind = super+]=jump_to_prompt:1
-
-# Disable default keybindings
-keybind = super+d=ignore
-keybind = super+shift+d=ignore
-keybind = super+shift+down=ignore
-keybind = super+down=ignore
-keybind = super+alt+shift+j=ignore
-
 # Quick terminal
 quick-terminal-position = center
 quick-terminal-size = 70%,90%
@@ -65,3 +44,46 @@ keybind = global:super+shift+\=toggle_quick_terminal
 notify-on-command-finish = unfocused
 notify-on-command-finish-action = no-bell,notify
 notify-on-command-finish-after = 10s
+
+# Common keybindings
+keybind = performable:super+c=copy_to_clipboard
+
+# Prompt navigation keybindings
+keybind = super+[=jump_to_prompt:-1
+keybind = super+]=jump_to_prompt:1
+
+# Split navigation keybindings
+keybind = super+z=toggle_split_zoom
+keybind = super+h=goto_split:left
+keybind = super+j=goto_split:bottom
+keybind = super+k=goto_split:top
+keybind = super+l=goto_split:right
+
+# Split management keybindings
+keybind = super+d>j=new_split:down
+keybind = super+d>k=new_split:up
+keybind = super+d>h=new_split:left
+keybind = super+d>l=new_split:right
+
+# Resize splits keybindings
+keybind = resize/k=resize_split:up,30
+keybind = resize/j=resize_split:down,30
+keybind = resize/h=resize_split:left,30
+keybind = resize/l=resize_split:right,30
+keybind = resize/arrow_up=resize_split:up,10
+keybind = resize/arrow_down=resize_split:down,10
+keybind = resize/arrow_left=resize_split:left,10
+keybind = resize/arrow_right=resize_split:right,10
+keybind = resize/escape=deactivate_key_table
+keybind = resize/catch_all=ignore
+keybind = super+r=activate_key_table:resize
+
+# Disable default keybindings
+keybind = super+d=ignore
+keybind = super+shift+d=ignore
+keybind = super+shift+arrow_up=ignore
+keybind = super+shift+arrow_down=ignore
+keybind = super+arrow_up=ignore
+keybind = super+arrow_down=ignore
+keybind = super+alt+shift+w=ignore
+keybind = super+alt+shift+j=ignore
