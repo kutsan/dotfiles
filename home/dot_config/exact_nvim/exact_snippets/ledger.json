@@ -1,0 +1,11 @@
+{
+	"Add new ledger entry": {
+		"prefix": "add",
+		"body": [
+			"$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE ${1:payee}",
+			"  ${2:account}  ${3:amount}",
+			"  ${4:account}"
+		],
+		"description": "Add new ledger entry"
+	}
+}
