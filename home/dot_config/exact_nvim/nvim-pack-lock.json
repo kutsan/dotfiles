@@ -25,10 +25,6 @@
       "rev": "086a40dc7ed8242c03be9f47fbcee68699cc2395",
       "src": "github:stevearc/conform.nvim"
     },
-    "copilot": {
-      "rev": "faa347cef2a9429eec14dada549e000a3b8d0fc9",
-      "src": "github:zbirenbaum/copilot.lua"
-    },
     "devicons": {
       "rev": "d7462543c9e366c0d196c7f67a945eaaf5d99414",
       "src": "github:nvim-tree/nvim-web-devicons"

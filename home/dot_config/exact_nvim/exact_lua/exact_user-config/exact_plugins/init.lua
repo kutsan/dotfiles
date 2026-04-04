@@ -42,9 +42,6 @@ local plugins = {
 	{ 'ts_error_translator' },
 	{ 'ts_comments' },
 
-	-- AI
-	{ 'copilot' },
-
 	-- Git
 	{ 'gitsigns' },
 	{ 'diffview' },

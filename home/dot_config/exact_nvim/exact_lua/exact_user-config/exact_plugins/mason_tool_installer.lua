@@ -15,7 +15,7 @@ local opts = {
 		'html',
 		'cssls',
 		'cssmodules_ls',
-		'stylelint_lsp',
+		'stylelint-language-server',
 		'jsonls',
 		'yamlls',
 		'lua_ls',
@@ -25,6 +25,7 @@ local opts = {
 		'docker_language_server',
 		'docker_compose_language_service',
 		'gh_actions_ls',
+		'copilot',
 		'bashls',
 		'tinymist',
 		'typstyle',
@@ -48,7 +49,8 @@ vim.api.nvim_create_autocmd('PackChanged', {
 			return
 		end
 
-		vim.cmd.MasonToolsUpdate()
+		mason_tool_installer.check_install(true, true)
+		mason_tool_installer.clean()
 
 		-- Remove this autocmd after first trigger.
 		return true
