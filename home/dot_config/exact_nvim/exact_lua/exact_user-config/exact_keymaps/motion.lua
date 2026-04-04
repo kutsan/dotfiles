@@ -3,7 +3,7 @@ local keymap = vim.keymap
 -- [a]n [e]ntire buffer motions.
 keymap.set({ 'o', 'x' }, 'ae', function()
 	local select_entire_buffer =
-		require('user-config.keymaps.select_entire_buffer').select_entire_buffer
+		require('user-api.keymaps.select_entire_buffer').select_entire_buffer
 
 	select_entire_buffer()
 end, { silent = true })
