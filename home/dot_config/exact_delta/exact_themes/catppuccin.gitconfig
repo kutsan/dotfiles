@@ -1,18 +1,18 @@
 [delta "catppuccin-latte"]
 	blame-palette = "#eff1f5 #e6e9ef #dce0e8 #ccd0da #bcc0cc"
-	commit-decoration-style = "#9ca0b0" bold box ul
+	commit-decoration-style = "#9ca0b0" box ul
 	light = true
 	file-decoration-style = "#9ca0b0"
 	file-style = "#4c4f69"
 	hunk-header-style = omit
 	line-numbers-left-style = "#9ca0b0"
-	line-numbers-minus-style = bold "#d20f39"
-	line-numbers-plus-style = bold "#40a02b"
+	line-numbers-minus-style = "#d20f39"
+	line-numbers-plus-style = "#40a02b"
 	line-numbers-right-style = "#9ca0b0"
 	line-numbers-zero-style = "#9ca0b0"
-	minus-emph-style = bold syntax "#e5a2b3"
+	minus-emph-style = syntax "#e5a2b3"
 	minus-style = syntax "#e9c4cf"
-	plus-emph-style = bold syntax "#b2d5ae"
+	plus-emph-style = syntax "#b2d5ae"
 	plus-style = syntax "#cce1cd"
 	map-styles = \
 		bold purple => syntax "#cbb1f2", \
@@ -23,21 +23,21 @@
 
 [delta "catppuccin-mocha"]
 	blame-palette = "#1e1e2e #181825 #11111b #313244 #45475a"
-	commit-decoration-style = "#6c7086" bold box ul
+	commit-decoration-style = "#6c7086" box ul
 	dark = true
 	file-decoration-style = "#6c7086"
 	file-style = "#cdd6f4"
 	hunk-header-style = omit
 	line-numbers-left-style = "#6c7086"
-	line-numbers-minus-style = bold "#f38ba8"
-	line-numbers-plus-style = bold "#a6e3a1"
+	line-numbers-minus-style = "#f38ba8"
+	line-numbers-plus-style = "#a6e3a1"
 	line-numbers-right-style = "#6c7086"
 	line-numbers-zero-style = "#6c7086"
 	minus-style = syntax "#261d27"
 	minus-non-emph-style = syntax "#261d27"
-	minus-emph-style = bold syntax "#48364a"
+	minus-emph-style = syntax "#48364a"
 	minus-empty-line-marker-style = normal "#261d27"
-	plus-emph-style = bold syntax "#374648"
+	plus-emph-style = syntax "#374648"
 	plus-style = syntax "#1e2627"
 	plus-non-emph-style = syntax "#1e2627"
 	plus-empty-line-marker-style = normal "#1e2627"
