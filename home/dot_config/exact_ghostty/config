@@ -64,6 +64,7 @@ keybind = super+k=goto_split:top
 keybind = super+l=goto_split:right
 
 # Split management keybindings
+keybind = super+d=ignore
 keybind = super+d>j=new_split:down
 keybind = super+d>k=new_split:up
 keybind = super+d>h=new_split:left
@@ -83,7 +84,6 @@ keybind = resize/catch_all=ignore
 keybind = super+r=activate_key_table:resize
 
 # Disable default keybindings
-keybind = super+d=ignore
 keybind = super+shift+d=ignore
 keybind = super+shift+arrow_up=ignore
 keybind = super+shift+arrow_down=ignore
