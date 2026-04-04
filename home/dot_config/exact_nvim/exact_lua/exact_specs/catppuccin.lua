@@ -46,6 +46,12 @@ local opts = {
 				DiffChange = { bg = utils.darken(colors.blue, 0.1, colors.base) },
 				DiffText = { bg = utils.darken(colors.blue, 0.3, colors.base) },
 				DiffDelete = { bg = utils.darken(colors.red, 0.1, colors.base) },
+				CurSearch = {
+					bg = utils.darken(colors.sky, 0.4, colors.base),
+					fg = colors.text,
+				},
+				MsgArea = { bg = utils.darken(colors.surface0, 0.1, colors.base) },
+				MsgSeparator = { bg = utils.darken(colors.surface0, 0.1, colors.base) },
 
 				-- treesitter: TypeScript with JSX
 				['@constructor.tsx'] = { fg = colors.yellow },
