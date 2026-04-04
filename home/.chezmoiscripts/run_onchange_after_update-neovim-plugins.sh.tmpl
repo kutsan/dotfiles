@@ -19,7 +19,8 @@ print "${fg_bold[blue]}==>${reset_color} ${bold_color}[${script_name}]${reset_co
 # Run nvim in headless mode to sync vim.pack plugins with lock file and mason tools.
 zsh -c "nvim --headless \
 	-c 'lua vim.pack.update(nil, { target = \"lockfile\", force = true })' \
-	-c 'MasonToolsUpdateSync' \
+	-c 'lua require(\"mason-tool-installer\").check_install(true, true)' \
+	-c 'lua require(\"mason-tool-installer\").clean()' \
 	-c 'quitall'" > /dev/null
 
 echo
