@@ -81,6 +81,7 @@ local opts = {
 			},
 			grep = {
 				hidden = true,
+				layout = 'ivy',
 			},
 			explorer = {
 				ignored = true,
