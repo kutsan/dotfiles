@@ -85,11 +85,11 @@ keymap.set('n', 'J', '<Nop>')
 
 -- Remove current buffer without losing window layout.
 keymap.set('n', '\\q', function()
-	local buffer = require('user/buffer')
+	local buffer = require('user-config.keymaps.buffer')
 	buffer.remove({ force = false })
 end, { silent = true })
 keymap.set('n', '\\Q', function()
-	local buffer = require('user/buffer')
+	local buffer = require('user-config.keymaps.buffer')
 	buffer.remove({ force = true })
 end, { silent = true })
 
@@ -120,6 +120,5 @@ vim.keymap.set('n', '<Space>u', function()
 	vim.cmd.packadd('nvim.undotree')
 
 	local undotree = require('undotree')
-
 	undotree.open()
 end, { desc = 'Undo history' })

@@ -1,8 +1,5 @@
-local opt_local = vim.opt_local
-local g = vim.g
-
 -- Disable built-in statusline.
-g.qf_disable_statusline = true
+vim.g.qf_disable_statusline = true
 
 ---@type string[]
 local qf_statusline = {
@@ -17,4 +14,4 @@ local qf_statusline = {
 }
 
 -- Set statusline.
-opt_local.statusline = table.concat(qf_statusline)
+vim.opt_local.statusline = table.concat(qf_statusline)

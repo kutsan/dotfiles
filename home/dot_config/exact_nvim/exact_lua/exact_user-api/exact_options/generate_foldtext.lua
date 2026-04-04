@@ -1,5 +1,5 @@
 ---@return string
-local function foldtext()
+local function generate_foldtext()
 	local start_line = vim.fn.getline(vim.v.foldstart)
 	local end_line = vim.fn.getline(vim.v.foldend)
 
@@ -9,4 +9,4 @@ local function foldtext()
 	return start_line .. ' ... ' .. end_line
 end
 
-return { foldtext = foldtext }
+return { generate_foldtext = generate_foldtext }

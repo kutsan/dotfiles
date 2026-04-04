@@ -2,8 +2,10 @@ local keymap = vim.keymap
 
 -- [a]n [e]ntire buffer motions.
 keymap.set({ 'o', 'x' }, 'ae', function()
-	local entire = require('user/entire')
-	entire.select_entire_buffer()
+	local select_entire_buffer =
+		require('user-config.keymaps.select_entire_buffer').select_entire_buffer
+
+	select_entire_buffer()
 end, { silent = true })
 
 -- [i]nner line motion.

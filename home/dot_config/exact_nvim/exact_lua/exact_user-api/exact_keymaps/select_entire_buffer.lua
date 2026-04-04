@@ -1,5 +1,3 @@
-local cmd = vim.cmd
-
 --
 -- Select an entire buffer.
 --
@@ -9,8 +7,8 @@ local cmd = vim.cmd
 -- end, { silent = true })
 --
 local function select_entire_buffer()
-	cmd.normal({ "m'", bang = true })
-	cmd('keepjumps normal! gg0VoG')
+	vim.cmd.normal({ "m'", bang = true })
+	vim.cmd('keepjumps normal! gg0VoG')
 end
 
 return { select_entire_buffer = select_entire_buffer }

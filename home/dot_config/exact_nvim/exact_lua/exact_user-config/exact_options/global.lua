@@ -1,10 +1,5 @@
 local opt = vim.opt
 
-local shada = require('user/shada')
-
--- Set shada file path for the current project.
-shada.set_shada_file()
-
 -- Global Options
 opt.mouse = table.concat({ -- Enable mouse support for normal and visual modes.
 	'n', -- Normal mode
@@ -87,7 +82,8 @@ opt.foldopen = { -- Specifies for which type of commands folds will be opened.
 	'tag', -- Jumping to a tag: ":ta", CTRL-T, etc.
 	'undo', -- Undo or redo: "u" and CTRL-R.
 }
-opt.foldtext = "v:lua.require('user/foldtext').foldtext()" -- Custom fold text expression.
+opt.foldtext =
+	"v:lua.require('user-api/options/generate_foldtext').generate_foldtext()" -- Custom fold text expression.
 opt.grepprg = 'grep ' -- Program to use for the :grep command.
 	.. '--line-number '
 	.. '--binary-file="without-match" '
@@ -108,32 +104,3 @@ opt.cmdheight = 0 -- Disable command-line area.
 opt.confirm = true -- Ask for confirmation when closing a modified buffer.
 opt.jumpoptions = { 'stack', 'view' } -- Jump options for the jumplist.
 opt.winborder = 'rounded' -- Border style for floating windows.
-
--- Window Options
-opt.breakindent = true -- Wrapped lines will be visually indented with same amount of space.
-opt.wrap = false -- Prevent wrapping for long lines.
-opt.linebreak = true -- Wrap long lines at a character in 'breakat'.
-opt.number = true -- Print the line number in front of each line.
-opt.cursorline = true -- Highlight the screen line of the cursor with CursorLine.
-opt.signcolumn = 'yes:1' -- Always draw the sign column including sign space even there is no sign in it.
-opt.foldmethod = 'indent' -- Use indentation levels for folding.
-opt.foldnestmax = 4 -- Maximum nesting of folds.
-opt.numberwidth = 4 -- Minimum number column width.
-
--- Buffer Options
-opt.modeline = false -- Disable modeline feature altogether.
-opt.tabstop = 2 -- Number of spaces that a <Tab> in the file counts for.
-opt.shiftwidth = 0 -- Number of spaces to use for each step of auto indent.
-opt.softtabstop = -1 -- Number of spaces that a <Tab> counts.
-opt.expandtab = true -- Use spaces instead of tab characters.
-opt.undofile = true -- Persist undo history to an undo file.
-opt.keymap = 'diacritic' -- Enable diacritic key mappings in keymap folder.
-
--- Root User Options
-if vim.env.SUDO_USER ~= nil then
-	opt.swapfile = false
-	opt.backup = false
-	opt.writebackup = false
-	opt.undofile = false
-	opt.shada = ''
-end

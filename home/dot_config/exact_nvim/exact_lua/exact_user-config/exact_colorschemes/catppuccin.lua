@@ -95,5 +95,3 @@ local opts = {
 }
 
 catppuccin.setup(opts)
-
-vim.cmd.colorscheme('catppuccin')
