@@ -4,9 +4,9 @@ local user_modules = {
 	'colorschemes',
 	'options',
 	'plugins',
+	'lsp',
 	'autocmds',
 	'keymaps',
-	'lsp',
 }
 
 -- Load user modules in order.
