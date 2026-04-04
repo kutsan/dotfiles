@@ -28,6 +28,10 @@ window-padding-balance = true
 theme = dark:catppuccin-mocha.conf,light:catppuccin-latte.conf
 window-colorspace = display-p3
 window-padding-color = extend-always
+macos-icon=custom-style
+macos-icon-frame=aluminum
+macos-icon-screen-color=#090b10
+macos-icon-ghost-color = #0074D9
 
 # Integration
 shell-integration-features = no-cursor,sudo,no-title
