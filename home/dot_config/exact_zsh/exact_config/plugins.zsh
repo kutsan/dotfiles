@@ -3,6 +3,8 @@ ZINIT_HOME="$XDG_DATA_HOME/zinit/zinit.git"
 source "$ZINIT_HOME/zinit.zsh"
 
 # pure: A minimal prompt with Git and async support.
+PURE_PROMPT_SYMBOL='❯'
+PURE_PROMPT_VICMD_SYMBOL='❯'
 zinit ice ver'dbefd0d' pick'async.zsh' src'pure.zsh'
 zinit light sindresorhus/pure
 zstyle ':prompt:pure:git:stash' show yes
