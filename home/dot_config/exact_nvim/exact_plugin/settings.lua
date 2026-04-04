@@ -63,7 +63,6 @@ opt.fillchars = {
 	stlnc = ' ', -- Status-line of the non-current windows.
 	fold = ' ', -- Character to be used with 'foldtext'.
 	diff = ' ', -- Deleted lines of the 'diff' option.
-	msgsep = '─', -- Message separator for 'display' option.
 	eob = ' ', -- Empty lines at the end of a buffer.
 }
 opt.ruler = false -- Disable showing line and column numbers in command line.
