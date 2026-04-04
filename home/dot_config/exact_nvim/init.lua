@@ -6,6 +6,7 @@ local user_modules = {
 	'plugins',
 	'autocmds',
 	'keymaps',
+	'lsp',
 }
 
 -- Load user modules in order.
