@@ -1,5 +1,6 @@
 ---@param cmds string[]
 local function set_undo_ftplugin(cmds)
+	---@type string
 	local undo_cmd = table.concat(cmds, ' | ')
 
 	if vim.b.undo_ftplugin ~= nil then
