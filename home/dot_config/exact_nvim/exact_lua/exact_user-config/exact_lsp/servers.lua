@@ -1,11 +1,28 @@
 vim.pack.add({
 	{
+		name = 'lsp-config',
+		src = 'github:neovim/nvim-lspconfig',
+	},
+	{
+		name = 'mason',
+		src = 'github:mason-org/mason.nvim',
+	},
+	{
+		name = 'mason-lsp-config',
+		src = 'github:mason-org/mason-lspconfig.nvim',
+	},
+	{
 		name = 'mason-tool-installer',
 		src = 'github:WhoIsSethDaniel/mason-tool-installer.nvim',
 	},
 })
 
+local mason = require('mason')
+local mason_lsp_config = require('mason-lspconfig')
 local mason_tool_installer = require('mason-tool-installer')
+
+mason.setup()
+mason_lsp_config.setup()
 
 local opts = {
 	ensure_installed = {

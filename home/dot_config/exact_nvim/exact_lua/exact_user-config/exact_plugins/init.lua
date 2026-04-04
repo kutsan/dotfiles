@@ -25,17 +25,8 @@ vim.g.loaded_ruby_provider = 0
 vim.loader.enable()
 
 local plugins = {
-	-- Completion & Snippets
+	-- Completion & Tooling
 	{ 'blink_cmp', requires = { 'lazydev' } },
-
-	-- LSP & Tooling
-	{ 'lsp_config' },
-	{ 'mason', requires = { 'lsp_config' } },
-	{ 'mason_lsp_config', requires = { 'lsp_config', 'mason' } },
-	{
-		'mason_tool_installer',
-		requires = { 'lsp_config', 'mason', 'mason_lsp_config' },
-	},
 	{ 'lazydev' },
 	{ 'schema_store' },
 	{ 'conform' },
