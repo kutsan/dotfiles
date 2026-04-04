@@ -1,5 +1,19 @@
 local keymap = vim.keymap
 
+-- Disable built-in snippet navigation keymaps.
+keymap.set({ 'i', 's' }, '<Tab>', function()
+	return '<Tab>'
+end, { expr = true, silent = true })
+keymap.set({ 'i', 's' }, '<S-Tab>', function()
+	return '<S-Tab>'
+end, { expr = true, silent = true })
+
+-- Disable built-in begin new line keymap.
+keymap.set('n', '<C-k>', '<Nop>', { expr = true })
+
+-- Disable built-in digraph keymap.
+keymap.set('n', '<C-k>', '<Nop>', { expr = true })
+
 -- Save file.
 keymap.set('n', '\\w', function()
 	vim.cmd.write({
@@ -53,6 +67,18 @@ keymap.set('n', 'c#', function()
 	)
 end)
 
+-- Snippet navigation.
+vim.keymap.set({ 'i', 's' }, '<C-j>', function()
+	if vim.snippet.active({ direction = 1 }) then
+		vim.snippet.jump(1)
+	end
+end, { silent = true })
+vim.keymap.set({ 'i', 's' }, '<C-k>', function()
+	if vim.snippet.active({ direction = -1 }) then
+		vim.snippet.jump(-1)
+	end
+end, { silent = true })
+
 -- Remap `j` and `k` for dealing with word wrap.
 keymap.set(
 	{ 'n', 'x' },
@@ -85,11 +111,11 @@ keymap.set('n', 'J', '<Nop>')
 
 -- Remove current buffer without losing window layout.
 keymap.set('n', '\\q', function()
-	local buffer = require('user-config.keymaps.buffer')
+	local buffer = require('user-api.keymaps.buffer')
 	buffer.remove({ force = false })
 end, { silent = true })
 keymap.set('n', '\\Q', function()
-	local buffer = require('user-config.keymaps.buffer')
+	local buffer = require('user-api.keymaps.buffer')
 	buffer.remove({ force = true })
 end, { silent = true })
 
