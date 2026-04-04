@@ -17,10 +17,6 @@
       "rev": "73b30df35c6b645ebd2e6a440eea8463ef3c3f47",
       "src": "github:alker0/chezmoi.vim"
     },
-    "chezmoi.vim": {
-      "rev": "73b30df35c6b645ebd2e6a440eea8463ef3c3f47",
-      "src": "github:alker0/chezmoi.vim"
-    },
     "color-converter": {
       "rev": "5888e92cbccf0de202d2b617f6a8f3011a43bd52",
       "src": "github:NTBBloodbath/color-converter.nvim"
@@ -131,10 +127,6 @@
       "rev": "61319d4bd1c5e336e197defa15bd104c51f0fb29",
       "src": "github:kylechui/nvim-surround",
       "version": ">=0.0.0"
-    },
-    "todo-comments": {
-      "rev": "31e3c38ce9b29781e4422fc0322eb0a21f4e8668",
-      "src": "github:folke/todo-comments.nvim"
     },
     "ts-comments": {
       "rev": "123a9fb12e7229342f807ec9e6de478b1102b041",

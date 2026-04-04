@@ -40,6 +40,7 @@ local plugins = {
 	{ 'schema_store' },
 	{ 'conform' },
 	{ 'ts_error_translator' },
+	{ 'ts_comments' },
 
 	-- AI
 	{ 'copilot' },
@@ -70,10 +71,6 @@ local plugins = {
 	{ 'color_converter' },
 	{ 'mini_indentscope' },
 	{ 'snacks' },
-
-	-- Comments
-	{ 'todo_comments' },
-	{ 'ts_comments' },
 
 	-- Utilities
 	{ 'chezmoi' },
