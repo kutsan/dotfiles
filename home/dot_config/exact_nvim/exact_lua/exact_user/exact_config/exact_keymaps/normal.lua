@@ -111,11 +111,11 @@ keymap.set('n', 'J', '<Nop>')
 
 -- Remove current buffer without losing window layout.
 keymap.set('n', '\\q', function()
-	local buffer = require('user-api.keymaps.buffer')
+	local buffer = require('user.api.keymaps.buffer')
 	buffer.remove({ force = false })
 end, { silent = true })
 keymap.set('n', '\\Q', function()
-	local buffer = require('user-api.keymaps.buffer')
+	local buffer = require('user.api.keymaps.buffer')
 	buffer.remove({ force = true })
 end, { silent = true })
 

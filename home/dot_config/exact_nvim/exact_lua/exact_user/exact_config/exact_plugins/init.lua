@@ -63,12 +63,12 @@ local plugins = {
 	{ 'qmk' },
 }
 
-local plugin_loader = require('user-api.plugins.loader')
+local plugin_loader = require('user.api.plugins.loader')
 
 -- Load plugins in order, respecting dependencies.
 plugin_loader.load(plugins, function(plugin_file_name)
 	local plugin_module =
-		string.format('user-config.plugins.%s', plugin_file_name)
+		string.format('user.config.plugins.%s', plugin_file_name)
 
 	require(plugin_module)
 end)

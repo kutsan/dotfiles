@@ -1,0 +1,7 @@
+require('user.config.options.shada')
+require('user.config.options.global')
+require('user.config.options.window')
+require('user.config.options.buffer')
+require('user.config.options.diagnostic')
+require('user.config.options.root-user')
+require('user.config.options.gui')

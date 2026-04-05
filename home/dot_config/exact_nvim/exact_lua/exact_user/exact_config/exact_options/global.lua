@@ -83,7 +83,7 @@ opt.foldopen = { -- Specifies for which type of commands folds will be opened.
 	'undo', -- Undo or redo: "u" and CTRL-R.
 }
 opt.foldtext =
-	"v:lua.require('user-api/options/generate_foldtext').generate_foldtext()" -- Custom fold text expression.
+	"v:lua.require('user.api/options/generate_foldtext').generate_foldtext()" -- Custom fold text expression.
 opt.grepprg = 'grep ' -- Program to use for the :grep command.
 	.. '--line-number '
 	.. '--binary-file="without-match" '

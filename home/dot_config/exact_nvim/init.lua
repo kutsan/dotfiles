@@ -14,6 +14,6 @@ local user_modules = {
 
 -- Load user modules in order.
 vim.iter(user_modules):each(function(module_name)
-	local module_path = string.format('user-config.%s', module_name)
+	local module_path = string.format('user.config.%s', module_name)
 	require(module_path)
 end)
