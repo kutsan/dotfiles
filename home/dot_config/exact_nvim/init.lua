@@ -4,6 +4,7 @@ vim.loader.enable()
 -- Main entry points for the configuration.
 ---@type string[]
 local user_modules = {
+	'plugin_hooks',
 	'colorschemes',
 	'options',
 	'plugins',

@@ -59,20 +59,6 @@ local opts = {
 
 mason_tool_installer.setup(opts)
 
--- Update tools after `vim.pack` has installed plugins.
-vim.api.nvim_create_autocmd('PackChanged', {
-	callback = function(event)
-		if event.data.kind ~= 'install' then
-			return
-		end
-
-		mason_tool_installer.check_install(true, true)
-		mason_tool_installer.clean()
-
-		-- Remove this autocmd after first trigger.
-		return true
-	end,
-})
 
 -- Patch `js-debug-adapter` to work with ECMAScript modules.
 vim.api.nvim_create_autocmd('User', {
