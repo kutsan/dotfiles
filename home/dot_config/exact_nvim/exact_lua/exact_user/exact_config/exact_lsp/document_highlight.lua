@@ -73,7 +73,7 @@ local function apply_highlights(bufnr, results)
 					'utf-16'
 				),
 				hl_group = kind_to_hl[item.kind] or 'LspReferenceText',
-				priority = vim.highlight.priorities.user,
+				priority = vim.hl.priorities.user,
 			}
 		)
 	end
