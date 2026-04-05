@@ -21,11 +21,6 @@ local opts = {
 				highlight = 'Directory',
 			},
 		},
-		name_formatter = function(buf)
-			local mark = require('grapple').exists({ buffer = buf.bufnr }) and ' '
-				or ''
-			return mark .. buf.name
-		end,
 		custom_areas = {
 			right = function()
 				local result = {}

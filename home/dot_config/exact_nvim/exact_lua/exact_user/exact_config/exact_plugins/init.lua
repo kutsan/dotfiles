@@ -35,8 +35,7 @@ local plugins = {
 	{ 'diffview' },
 
 	-- Navigation & Buffers
-	{ 'bufferline', requires = { 'devicons', 'grapple' } },
-	{ 'grapple' },
+	{ 'bufferline', requires = { 'devicons' } },
 	{ 'flash' },
 	{ 'eyeliner' },
 	{ 'windovigation' },
