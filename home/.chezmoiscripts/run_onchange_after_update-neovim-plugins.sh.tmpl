@@ -16,9 +16,13 @@ if (! type "nvim" &> /dev/null) {
 echo
 print "${fg_bold[blue]}==>${reset_color} ${bold_color}[${script_name}]${reset_color} Syncing Neovim plugins..."
 
-# Run nvim in headless mode to sync vim.pack plugins with lock file and mason tools.
+# Run `nvim` in headless mode to sync `vim.pack` plugins with lock file.
 zsh -c "nvim --headless \
 	-c 'lua vim.pack.update(nil, { target = \"lockfile\", force = true })' \
+	-c 'quitall'" > /dev/null
+
+# Run `nvim` again to sync mason tools.
+zsh -c "nvim --headless \
 	-c 'lua require(\"mason-tool-installer\").check_install(true, true)' \
 	-c 'lua require(\"mason-tool-installer\").clean()' \
 	-c 'quitall'" > /dev/null
