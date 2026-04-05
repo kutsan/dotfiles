@@ -7,6 +7,7 @@ local user_modules = {
 	'plugin_hooks',
 	'colorschemes',
 	'options',
+	'treesitter',
 	'plugins',
 	'lsp',
 	'autocmds',
