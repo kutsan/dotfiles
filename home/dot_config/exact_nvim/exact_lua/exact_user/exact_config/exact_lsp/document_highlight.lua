@@ -3,6 +3,16 @@ local document_highlight_namespace =
 local document_highlight_autocmd_group =
 	vim.api.nvim_create_augroup('LspDocumentHighlight', { clear = true })
 
+---@type string[]
+local visual_modes = {
+	'v',
+	'V',
+	vim.keycode('<C-v>'),
+	's',
+	'S',
+	vim.keycode('<C-s>'),
+}
+
 local kind_to_hl = {
 	[vim.lsp.protocol.DocumentHighlightKind.Text] = 'LspReferenceText',
 	[vim.lsp.protocol.DocumentHighlightKind.Read] = 'LspReferenceRead',
@@ -155,6 +165,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
 			group = document_highlight_autocmd_group,
 			buffer = bufnr,
 			callback = function()
+				local mode = vim.api.nvim_get_mode().mode
+
+				if vim.tbl_contains(visual_modes, mode) then
+					return
+				end
+
 				if check_cursor_on_highlight(bufnr) then
 					return
 				end
@@ -173,11 +189,18 @@ vim.api.nvim_create_autocmd('LspAttach', {
 			end,
 		})
 
-		vim.api.nvim_create_autocmd('InsertLeave', {
+		vim.api.nvim_create_autocmd('ModeChanged', {
 			group = document_highlight_autocmd_group,
 			buffer = bufnr,
-			callback = function()
-				request_highlight()
+			callback = function(event)
+				local new_mode = event.match:match(':(.+)$')
+
+				if vim.tbl_contains(visual_modes, new_mode) then
+					clear_highlight(bufnr)
+					cancel_pending()
+				elseif new_mode == 'n' then
+					request_highlight()
+				end
 			end,
 		})
 
