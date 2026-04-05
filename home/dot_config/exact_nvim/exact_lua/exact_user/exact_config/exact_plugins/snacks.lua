@@ -17,6 +17,13 @@ local opts = {
 	bigfile = {
 		enabled = true,
 	},
+	statuscolumn = {
+		enabled = true,
+		folds = {
+			open = true,
+			git_hl = true,
+		},
+	},
 	image = {
 		enabled = true,
 	},
