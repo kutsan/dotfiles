@@ -22,6 +22,9 @@ vim.g.loaded_python3_provider = 0
 vim.g.loaded_ruby_provider = 0
 
 local plugins = {
+	-- Treesitter
+	{ 'treesitter' },
+
 	-- Completion & Tooling
 	{ 'blink_cmp', requires = { 'lazydev' } },
 	{ 'lazydev' },

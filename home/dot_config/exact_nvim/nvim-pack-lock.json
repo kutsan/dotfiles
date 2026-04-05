@@ -120,6 +120,22 @@
       "src": "github:kylechui/nvim-surround",
       "version": ">=0.0.0"
     },
+    "treesitter": {
+      "rev": "4916d6592ede8c07973490d9322f187e07dfefac",
+      "src": "github:nvim-treesitter/nvim-treesitter"
+    },
+    "treesitter-autotag": {
+      "rev": "8e1c0a389f20bf7f5b0dd0e00306c1247bda2595",
+      "src": "github:windwp/nvim-ts-autotag"
+    },
+    "treesitter-context": {
+      "rev": "b0c45cefe2c8f7b55fc46f34e563bc428ef99636",
+      "src": "github:nvim-treesitter/nvim-treesitter-context"
+    },
+    "treesitter-textobjects": {
+      "rev": "93d60a475f0b08a8eceb99255863977d3a25f310",
+      "src": "github:nvim-treesitter/nvim-treesitter-textobjects"
+    },
     "ts-comments": {
       "rev": "123a9fb12e7229342f807ec9e6de478b1102b041",
       "src": "github:folke/ts-comments.nvim"
