@@ -106,14 +106,17 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 		local bufnr = args.buf
 
-		---@type function?
-		local cancel_fn = nil
+		---@type vim.lsp.Client?
+		local request_client = nil
+		---@type integer?
+		local request_id = nil
 		local generation = 0
 
 		local function cancel_pending()
-			if cancel_fn then
-				pcall(cancel_fn)
-				cancel_fn = nil
+			if request_client and request_id then
+				request_client:cancel_request(request_id)
+				request_client = nil
+				request_id = nil
 			end
 		end
 
@@ -127,31 +130,39 @@ vim.api.nvim_create_autocmd('LspAttach', {
 			local expected = generation
 			local winid = vim.api.nvim_get_current_win()
 
-			cancel_fn = vim.lsp.buf_request_all(
-				bufnr,
+			local clients = vim.lsp.get_clients({
+				bufnr = bufnr,
+				method = vim.lsp.protocol.Methods.textDocument_documentHighlight,
+			})
+
+			if #clients == 0 then
+				return
+			end
+
+			local target = clients[1]
+
+			local ok, id = target:request(
 				vim.lsp.protocol.Methods.textDocument_documentHighlight,
-				function(lsp_client)
-					return vim.lsp.util.make_position_params(
-						winid,
-						lsp_client.offset_encoding
-					)
-				end,
-				function(results)
-					cancel_fn = nil
+				vim.lsp.util.make_position_params(winid, target.offset_encoding),
+				function(err, result)
+					request_client = nil
+					request_id = nil
 
 					if expected ~= generation or not vim.api.nvim_buf_is_valid(bufnr) then
 						return
 					end
 
-					-- Use the first client that returns results.
-					for _, resp in pairs(results) do
-						if resp.result then
-							apply_highlights(bufnr, resp.result)
-							break
-						end
+					if result then
+						apply_highlights(bufnr, result)
 					end
-				end
+				end,
+				bufnr
 			)
+
+			if ok and id then
+				request_client = target
+				request_id = id
+			end
 		end
 
 		-- Clear existing autocmds for this buffer in case another client
