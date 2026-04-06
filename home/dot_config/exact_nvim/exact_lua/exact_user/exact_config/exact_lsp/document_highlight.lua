@@ -144,7 +144,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 			local ok, id = target:request(
 				vim.lsp.protocol.Methods.textDocument_documentHighlight,
 				vim.lsp.util.make_position_params(winid, target.offset_encoding),
-				function(err, result)
+				function(_, result)
 					request_client = nil
 					request_id = nil
 
