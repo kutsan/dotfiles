@@ -71,6 +71,10 @@ keybind = resize/k=resize_split:up,30
 keybind = resize/j=resize_split:down,30
 keybind = resize/h=resize_split:left,30
 keybind = resize/l=resize_split:right,30
+keybind = resize/shift+k=resize_split:up,100
+keybind = resize/shift+j=resize_split:down,100
+keybind = resize/shift+h=resize_split:left,100
+keybind = resize/shift+l=resize_split:right,100
 keybind = resize/arrow_up=resize_split:up,10
 keybind = resize/arrow_down=resize_split:down,10
 keybind = resize/arrow_left=resize_split:left,10
