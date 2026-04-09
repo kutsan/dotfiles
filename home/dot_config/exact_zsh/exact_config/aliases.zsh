@@ -29,10 +29,39 @@ alias cz='chezmoi'
 alias bb='brew bundle --global --verbose'
 
 # Git
-alias g='lazygit'
-alias gs='lazygit status'
-alias gl='lazygit log'
-alias gb='lazygit branch'
+alias g='git'; compdef g='git'
+alias lg='lazygit'
+alias lgs='lazygit status'
+alias lgl='lazygit log'
+alias lgb='lazygit branch'
+alias lgt='lazygit stash'
+
+typeset -A git_aliases=(
+	a add
+	b branch
+	bl branch
+	c commit
+	d diff
+	ds diff
+	f fetch
+	l log
+	ld log
+	la log
+	lda log
+	r reflog
+	rd reflog
+	s status
+	sm submodule
+	sw switch
+)
+
+for key (${(k)git_aliases}) {
+	alias g$key="git $key"
+	compdef _git "g$key=git-${git_aliases[$key]}"
+}
+
+unset git_aliases
+unset key
 
 # Disabled Commands
 alias clear='print "Use \`^L\`." && false'
