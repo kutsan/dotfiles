@@ -52,6 +52,8 @@ typeset -A git_aliases=(
 	s status
 	sm submodule
 	sw switch
+	t stash
+	tl stash
 )
 
 for key (${(k)git_aliases}) {

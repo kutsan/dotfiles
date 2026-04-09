@@ -6,6 +6,8 @@
 	d = "!args=$@; shift $#; nvim +\"DiffviewOpen $args\""
 	ds = d --staged
 	f = fetch
+	t = stash
+	tl = !git --no-pager stash list
 	l = "log --graph --date=iso8601 --pretty=log-default"
 	ld = log --graph --date=iso8601 --pretty=log-full
 	la = log --graph --branches --remotes --tags --date=iso8601 --pretty=log-default
