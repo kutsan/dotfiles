@@ -5,7 +5,6 @@ alias ge="$GUI_EDITOR"; compdef ge="$GUI_EDITOR"
 # File & Directory Operations
 alias rm='trash' # Use `trash` program instead of built-in irrecoverable way to delete nodes.
 alias mv='mv -iv' # Move nodes with interactive mode and extra verbosity.
-alias ln='ln -iv' # Link nodes with interactive mode and extra verbosity.
 alias mkdir='mkdir -p' # Make missing parent directories when creating folders.
 
 # Listing & Search
