@@ -4,6 +4,9 @@
     "commit": "",
     "pr": ""
   },
+  "permissions": {
+    "allow": ["WebFetch(domain:registry.npmjs.org)"]
+  },
   "model": "opus[1m]",
   "hooks": {
     "Notification": [
