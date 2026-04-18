@@ -44,7 +44,7 @@ vim.api.nvim_create_autocmd('BufReadPost', {
 		local line_count = vim.api.nvim_buf_line_count(args.buf)
 
 		if mark[1] > 0 and mark[1] <= line_count then
-			vim.cmd('normal! g`"zz')
+			vim.cmd.normal({ 'g`"zz', bang = true })
 		end
 	end,
 })

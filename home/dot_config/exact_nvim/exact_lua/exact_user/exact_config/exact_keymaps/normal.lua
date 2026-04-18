@@ -122,9 +122,8 @@ end, { silent = true })
 -- Open URL under cursor in browser or open path in GUI explorer.
 keymap.set('n', 'gb', function()
 	local url = vim.fn.expand('<cfile>')
-	local escaped_url = vim.fn.escape(url, '#%!')
 
-	vim.cmd(('silent !open "%s"'):format(escaped_url))
+	vim.ui.open(url)
 end, { silent = true })
 
 -- Toggle common options.

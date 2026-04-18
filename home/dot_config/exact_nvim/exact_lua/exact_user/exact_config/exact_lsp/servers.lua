@@ -75,7 +75,8 @@ vim.api.nvim_create_autocmd('User', {
 				.. '/mason/packages/js-debug-adapter/js-debug/src'
 			local file_path = dir_path .. '/package.json'
 
-			if vim.fn.isdirectory(dir_path) == 1 then
+			local stat = vim.uv.fs_stat(dir_path)
+			if stat and stat.type == 'directory' then
 				local file = io.open(file_path, 'w')
 
 				if file then

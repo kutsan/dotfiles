@@ -37,14 +37,14 @@ local function set_shada_file()
 	---@type string?
 	local git_root = get_git_root()
 
-	---@type string
-	local dir = git_root ~= nil and git_root or vim.fn.getcwd()
+	---@type string?
+	local directory = git_root ~= nil and git_root or vim.uv.cwd()
 
 	---@type string
 	local shada_file = vim.fs.joinpath(
 		vim.fn.stdpath('state'),
 		'shada',
-		vim.fn.fnamemodify(dir, ':t') .. '.shada'
+		vim.fs.basename(directory) .. '.shada'
 	)
 
 	vim.o.shadafile = shada_file

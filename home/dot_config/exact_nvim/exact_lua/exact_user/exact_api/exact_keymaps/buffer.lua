@@ -23,7 +23,11 @@ local function remove(opts)
 			-- Try using alternate buffer
 			---@type integer
 			local alt_buf_id = vim.fn.bufnr('#')
-			if alt_buf_id ~= current_buf_id and vim.fn.buflisted(alt_buf_id) == 1 then
+			if
+				alt_buf_id ~= current_buf_id
+				and vim.api.nvim_buf_is_valid(alt_buf_id)
+				and vim.bo[alt_buf_id].buflisted
+			then
 				vim.api.nvim_win_set_buf(win_id, alt_buf_id)
 				return
 			end
@@ -41,7 +45,7 @@ local function remove(opts)
 		end)
 	end
 
-	vim.cmd.bdelete({ target_buf_id, bang = opts.force })
+	vim.api.nvim_buf_delete(target_buf_id, { force = opts.force })
 end
 
 return {

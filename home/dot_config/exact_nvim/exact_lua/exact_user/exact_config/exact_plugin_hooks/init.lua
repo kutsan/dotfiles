@@ -16,7 +16,7 @@ vim.api.nvim_create_autocmd('PackChanged', {
 			vim.cmd.packadd('treesitter')
 		end
 
-		vim.cmd('TSUpdate')
+		vim.cmd.TSUpdate()
 	end,
 })
 
