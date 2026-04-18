@@ -37,7 +37,6 @@ local opts = {
 		'yamlls',
 		'lua_ls',
 		'vimls',
-		'typos_lsp',
 		'taplo',
 		'docker_language_server',
 		'docker_compose_language_service',
@@ -48,6 +47,8 @@ local opts = {
 		'typstyle',
 		'markdown-oxide',
 		'rumdl',
+		'typos',
+		'harper-ls',
 
 		-- Formatters
 		'prettierd',
