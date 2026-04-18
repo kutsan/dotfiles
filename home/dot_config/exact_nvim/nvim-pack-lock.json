@@ -7,7 +7,8 @@
     },
     "bufferline": {
       "rev": "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3",
-      "src": "github:akinsho/bufferline.nvim"
+      "src": "github:akinsho/bufferline.nvim",
+      "version": "4.0.0 - 5.0.0"
     },
     "catppuccin": {
       "rev": "426dbebe06b5c69fd846ceb17b42e12f890aedf1",
@@ -40,10 +41,6 @@
     "eyeliner": {
       "rev": "8f197eb30cecdf4c2cc9988a5eecc6bc34c0c7d6",
       "src": "github:jinh0/eyeliner.nvim"
-    },
-    "fidget": {
-      "rev": "889e2e96edef4e144965571d46f7a77bcc4d0ddf",
-      "src": "github:j-hui/fidget.nvim"
     },
     "flash": {
       "rev": "fcea7ff883235d9024dc41e638f164a450c14ca2",
@@ -135,10 +132,6 @@
     "treesitter-text-objects": {
       "rev": "851e865342e5a4cb1ae23d31caf6e991e1c99f1e",
       "src": "github:nvim-treesitter/nvim-treesitter-textobjects"
-    },
-    "ts-comments": {
-      "rev": "123a9fb12e7229342f807ec9e6de478b1102b041",
-      "src": "github:folke/ts-comments.nvim"
     },
     "ts-error-translator": {
       "rev": "558abff11b9e8f4cefc0de09df780c56841c7a4b",

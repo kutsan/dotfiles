@@ -28,7 +28,6 @@ local plugins = {
 	{ 'schema_store' },
 	{ 'conform' },
 	{ 'ts_error_translator' },
-	{ 'ts_comments' },
 
 	-- Git
 	{ 'gitsigns' },
@@ -50,7 +49,6 @@ local plugins = {
 
 	-- Visual
 	{ 'devicons' },
-	{ 'fidget' },
 	{ 'highlight_colors' },
 	{ 'color_converter' },
 	{ 'mini_indentscope' },
