@@ -225,3 +225,26 @@ vim.keymap.set(
 	snacks.picker.resume,
 	{ desc = 'Resume last picker' }
 )
+
+vim.api.nvim_create_autocmd('LspAttach', {
+	desc = 'Set up LSP keymaps when an LSP client attaches to a buffer.',
+	group = vim.api.nvim_create_augroup('LspKeymaps', { clear = true }),
+	---@param args { buf: integer }
+	callback = function(args)
+		---@type { buffer: integer, silent: boolean }
+		local map_opts = { buffer = args.buf, silent = true }
+
+		vim.keymap.set(
+			'n',
+			'gd',
+			Snacks.picker.lsp_definitions,
+			vim.tbl_extend('force', map_opts, { desc = 'LSP definitions' })
+		)
+		vim.keymap.set(
+			'n',
+			'gD',
+			Snacks.picker.lsp_declarations,
+			vim.tbl_extend('force', map_opts, { desc = 'LSP declarations' })
+		)
+	end,
+})
