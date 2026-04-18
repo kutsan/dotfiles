@@ -47,6 +47,7 @@ local opts = {
 		'tinymist',
 		'typstyle',
 		'markdown-oxide',
+		'rumdl',
 
 		-- Formatters
 		'prettierd',
@@ -58,7 +59,6 @@ local opts = {
 }
 
 mason_tool_installer.setup(opts)
-
 
 -- Patch `js-debug-adapter` to work with ECMAScript modules.
 vim.api.nvim_create_autocmd('User', {
