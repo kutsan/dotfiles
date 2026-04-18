@@ -2,6 +2,7 @@ vim.pack.add({
 	{
 		name = 'bufferline',
 		src = 'github:akinsho/bufferline.nvim',
+		version = vim.version.range('4'),
 	},
 })
 
