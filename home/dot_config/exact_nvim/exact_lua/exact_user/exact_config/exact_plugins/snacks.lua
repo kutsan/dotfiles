@@ -237,13 +237,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		vim.keymap.set(
 			'n',
 			'gd',
-			Snacks.picker.lsp_definitions,
+			snacks.picker.lsp_definitions,
 			vim.tbl_extend('force', map_opts, { desc = 'LSP definitions' })
 		)
 		vim.keymap.set(
 			'n',
 			'gD',
-			Snacks.picker.lsp_declarations,
+			snacks.picker.lsp_declarations,
 			vim.tbl_extend('force', map_opts, { desc = 'LSP declarations' })
 		)
 	end,
