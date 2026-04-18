@@ -83,11 +83,8 @@ cask "claude-code"
 cask "claude"
 cask "keepingyouawake"
 
-# Font Casks
+# Common Font Casks
 cask "font-symbols-only-nerd-font"
-cask "font-ia-writer-mono"
-cask "font-ia-writer-duo"
-cask "font-ia-writer-quattro"
 {{- if eq .profile "personal" }}
 
 # Personal Casks
@@ -97,6 +94,11 @@ cask "insta360-link-controller"
 cask "obs"
 cask "orcaslicer"
 cask "transmission"
+
+# Personal Font Casks
+cask "font-ia-writer-mono"
+cask "font-ia-writer-duo"
+cask "font-ia-writer-quattro"
 
 {{- if eq .user "kutsan" }}
 cask "skim"
@@ -118,7 +120,6 @@ mas "Numbers", id: 361304891
 mas "Pages", id: 361309726
 mas "Slack", id: 803453959
 mas "uBlock Origin Lite", id: 6745342698
-mas "WhatsApp", id: 310633997
 mas "WireGuard", id: 1451685025
 mas "Xcode", id: 497799835
 {{- if eq .profile "personal" }}
@@ -134,6 +135,7 @@ mas "Logic Pro", id: 1615087040
 mas "Photomator", id: 1444636541
 mas "Pixelmator Pro", id: 6746662575
 mas "Swift Playground", id: 1496833156
+mas "WhatsApp", id: 310633997
 
 {{- if eq .user "kutsan" }}
 mas "GoodLinks", id: 1474335294
