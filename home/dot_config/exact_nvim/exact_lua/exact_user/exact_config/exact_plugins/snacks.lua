@@ -249,13 +249,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		vim.keymap.set(
 			'n',
 			'gri',
-			Snacks.picker.lsp_implementations,
+			snacks.picker.lsp_implementations,
 			vim.tbl_extend('force', map_opts, { desc = 'LSP implementations' })
 		)
 		vim.keymap.set(
 			'n',
 			'grr',
-			Snacks.picker.lsp_references,
+			snacks.picker.lsp_references,
 			vim.tbl_extend(
 				'force',
 				map_opts,
@@ -265,19 +265,19 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		vim.keymap.set(
 			'n',
 			'grt',
-			Snacks.picker.lsp_type_definitions,
+			snacks.picker.lsp_type_definitions,
 			vim.tbl_extend('force', map_opts, { desc = 'LSP type definitions' })
 		)
 		vim.keymap.set(
 			'n',
 			'gO',
-			Snacks.picker.lsp_symbols,
+			snacks.picker.lsp_symbols,
 			vim.tbl_extend('force', map_opts, { desc = 'LSP document symbols' })
 		)
 		vim.keymap.set(
 			'n',
 			'<Space>gO',
-			Snacks.picker.lsp_workspace_symbols,
+			snacks.picker.lsp_workspace_symbols,
 			vim.tbl_extend('force', map_opts, { desc = 'LSP workspace symbols' })
 		)
 	end,
