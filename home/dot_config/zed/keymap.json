@@ -1,42 +1,83 @@
 [
-  {
-    "bindings": {
-      "shift-tab": "menu::SelectPrevious",
-      "tab": "menu::SelectNext",
-    },
-  },
-  {
-    "context": "vim_mode == normal || ProjectPanel || EmptyPane",
-    "bindings": {
-      "space f": "project_panel::ToggleFocus",
-    },
-  },
-  {
-    "context": "Editor && (edit_prediction || edit_prediction_conflict)",
-    "bindings": {
-      "tab": null,
-      "alt-l": "editor::AcceptEditPrediction",
-    },
-  },
-  {
-    "context": "VimControl && !menu || !Editor && !Terminal",
-    "bindings": {
-      "ctrl-h": "workspace::ActivatePaneLeft",
-      "ctrl-l": "workspace::ActivatePaneRight",
-      "ctrl-k": "workspace::ActivatePaneUp",
-      "ctrl-j": "workspace::ActivatePaneDown",
-    },
-  },
-  {
-    "context": "Workspace",
-    "bindings": {
-      "\\ w": "workspace::Save",
-    },
-  },
-  {
-    "context": "Editor",
-    "bindings": {
-      "\\ f": "editor::Format",
-    },
-  },
+	// Project Panel
+	{
+		"context": "vim_mode == normal || ProjectPanel || EmptyPane",
+		"bindings": {
+			"space f": "project_panel::ToggleFocus"
+		}
+	},
+	// Completions
+	{
+		"context": "Editor && showing_completions",
+		"bindings": {
+			"tab": "editor::ContextMenuNext",
+			"shift-tab": "editor::ContextMenuPrevious",
+			"ctrl-e": "editor::Cancel"
+		}
+	},
+	// Code Actions
+	{
+		"context": "Editor && showing_code_actions",
+		"bindings": {
+			"tab": "editor::ContextMenuNext",
+			"shift-tab": "editor::ContextMenuPrevious"
+		}
+	},
+	// Edit Predictions
+	{
+		"context": "Editor && (edit_prediction && (showing_completions || in_leading_whitespace)) && showing_completions",
+		"bindings": {
+			"tab": "editor::ContextMenuNext",
+			"shift-tab": "editor::ContextMenuPrevious"
+		}
+	},
+	{
+		"context": "Editor && edit_prediction",
+		"bindings": {
+			"alt-l": "editor::AcceptEditPrediction",
+			"alt-tab": null
+		}
+	},
+	{
+		"context": "Editor && (edit_prediction && (showing_completions || in_leading_whitespace)) && !showing_completions",
+		"bindings": {
+			"tab": "editor::Tab"
+		}
+	},
+	// Pane Navigation
+	{
+		"context": "VimControl && !menu || !Editor && !Terminal",
+		"bindings": {
+			"ctrl-h": "workspace::ActivatePaneLeft",
+			"ctrl-l": "workspace::ActivatePaneRight",
+			"ctrl-k": "workspace::ActivatePaneUp",
+			"ctrl-j": "workspace::ActivatePaneDown"
+		}
+	},
+	// Save
+	{
+		"context": "Workspace",
+		"bindings": {
+			"\\ w": "workspace::Save"
+		}
+	},
+	// Format
+	{
+		"context": "Editor",
+		"bindings": {
+			"\\ f": "editor::Format"
+		}
+	},
+	// Vim Surrounds
+	{
+		"context": "vim_mode == normal && !menu",
+		"bindings": {
+			"s a": "vim::PushAddSurrounds",
+			"s d": "vim::PushDeleteSurrounds",
+			"s r": "vim::PushChangeSurrounds",
+			"y s": null,
+			"c s": null,
+			"d s": null
+		}
+	}
 ]

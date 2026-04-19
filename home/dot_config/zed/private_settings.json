@@ -1,11 +1,12 @@
 {
+	"soft_wrap": "none",
+	"show_wrap_guides": true,
 	"edit_predictions": {
 		"provider": "copilot"
 	},
 	"use_system_prompts": false,
 	"audio": {
-		"experimental.auto_microphone_volume": true,
-		"experimental.rodio_audio": true
+		"experimental.auto_microphone_volume": true
 	},
 	"git_panel": {},
 	"active_pane_modifiers": {},
@@ -32,7 +33,9 @@
 	},
 	"terminal": {
 		"option_as_meta": true,
-		"font_fallbacks": ["Symbols Nerd Font Mono"],
+		"font_fallbacks": [
+			"Symbols Nerd Font Mono"
+		],
 		"line_height": "comfortable",
 		"toolbar": {
 			"breadcrumbs": false
@@ -119,5 +122,41 @@
 		"favorite_models": [],
 		"model_parameters": [],
 		"enable_feedback": false
+	},
+	"profiles": {
+		"Focus": {
+			"settings": {
+				"ui_font_size": 16,
+				"buffer_font_size": 18,
+				"buffer_line_height": {
+					"custom": 1.8
+				},
+				"tab_bar": {
+					"show": false,
+					"show_nav_history_buttons": false
+				},
+				"toolbar": {
+					"breadcrumbs": false,
+					"quick_actions": false
+				},
+				"gutter": {
+					"line_numbers": false,
+					"folds": false,
+					"breakpoints": false,
+					"runnables": false,
+					"min_line_number_digits": 0
+				},
+				"indent_guides": {
+					"enabled": false
+				},
+				"scrollbar": {
+					"show": "never",
+					"cursors": false,
+					"diagnostics": "none",
+					"search_results": false,
+					"selected_symbol": false
+				}
+			}
+		}
 	}
 }
