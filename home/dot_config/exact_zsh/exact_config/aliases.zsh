@@ -19,6 +19,7 @@ alias df='df -a --si' # Display all filesystem usage with SI units.
 
 # Utilities
 alias uuidgen='echo ${$(command uuidgen):l}' # Generate a lowercase UUID.
+alias uuidv7="npm exec --yes uuidv7 | tr -d '\n' | pbcopy" # Generate a lowercase UUIDv7 and copy to clipboard.
 [[ $OSTYPE =~ 'darwin*' ]] && alias uuidgen='print -n ${$(command uuidgen):l} | pbcopy' # Generate a lowercase UUID and copy to clipboard.
 
 # Package Managers & Tooling
