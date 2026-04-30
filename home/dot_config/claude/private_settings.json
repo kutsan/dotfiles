@@ -70,5 +70,6 @@
     "mode": "replace",
     "verbs": ["Working"]
   },
-  "tui": "fullscreen"
+  "tui": "fullscreen",
+  "editorMode": "vim"
 }
