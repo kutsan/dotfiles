@@ -1,0 +1,16 @@
+{{- if eq .chezmoi.os "darwin" -}}
+#!/usr/bin/env zsh
+
+autoload -Uz colors && colors
+
+local script_name="run_once_after_setup-macos-defaults.sh"
+
+echo
+print "${fg_bold[blue]}==>${reset_color} ${bold_color}[${script_name}]${reset_color} Setting macOS defaults..."
+
+defaults write com.apple.finder AppleShowAllFiles -bool true
+killall Finder
+
+echo
+print "${fg_bold[green]}==>${reset_color} ${bold_color}[${script_name}]${reset_color} macOS defaults set."
+{{- end -}}
