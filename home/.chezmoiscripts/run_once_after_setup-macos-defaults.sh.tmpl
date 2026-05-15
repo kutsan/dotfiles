@@ -8,7 +8,13 @@ local script_name="run_once_after_setup-macos-defaults.sh"
 echo
 print "${fg_bold[blue]}==>${reset_color} ${bold_color}[${script_name}]${reset_color} Setting macOS defaults..."
 
+# Show hidden files
 defaults write com.apple.finder AppleShowAllFiles -bool true
+
+# Enable tiled window margins
+defaults write com.apple.WindowManager EnableTiledWindowMargins -bool true
+
+# Restart system services to apply changes
 killall Finder
 
 echo
