@@ -181,10 +181,10 @@ vim.keymap.set(
 	{ desc = 'Registers' }
 )
 vim.keymap.set('n', '<Space>h', snacks.picker.help, { desc = 'Help pages' })
-vim.keymap.set('n', 'gs', snacks.picker.grep, { desc = 'Grep' })
+vim.keymap.set('n', 'g/', snacks.picker.grep, { desc = 'Grep' })
 vim.keymap.set(
 	'x',
-	'gs',
+	'g/',
 	snacks.picker.grep_word,
 	{ desc = 'Grep visual selection' }
 )
@@ -267,6 +267,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
 			'grt',
 			snacks.picker.lsp_type_definitions,
 			vim.tbl_extend('force', map_opts, { desc = 'LSP type definitions' })
+		)
+		vim.keymap.set(
+			'n',
+			'gs',
+			snacks.picker.lsp_symbols,
+			vim.tbl_extend('force', map_opts, { desc = 'LSP document symbols' })
 		)
 		vim.keymap.set(
 			'n',
