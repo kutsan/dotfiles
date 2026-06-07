@@ -1,0 +1,9 @@
+{
+  "trustedformulae": [
+    "qmk/qmk/qmk"
+  ],
+  "trustedtaps": [
+    "osx-cross/arm",
+    "osx-cross/avr"
+  ]
+}
