@@ -13,6 +13,9 @@
 [branch]
 	sort = -committerdate
 
+[tag]
+	sort = version:refname
+
 [pull]
 	ff = only
 
