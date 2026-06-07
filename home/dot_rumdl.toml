@@ -1,0 +1,7 @@
+#:schema https://raw.githubusercontent.com/rvben/rumdl/refs/heads/main/rumdl.schema.json
+
+[global]
+disable = [
+  "MD013", # line-length
+  "MD033", # no-inline-html
+]
