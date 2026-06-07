@@ -29,7 +29,7 @@ brew "git-standup"
 brew "bat"
 brew "gnupg"
 brew "gptfdisk"
-brew "htop"
+brew "btop"
 brew "imagemagick"
 brew "jq"
 brew "lazydocker"
@@ -51,10 +51,12 @@ brew "zoxide"
 brew "tree-sitter-cli"
 brew "just"
 brew "mise"
+brew "age"
 {{- if eq .profile "personal" }}
 
 # Personal Packages
 brew "ledger"
+brew "hledger"
 
 {{- if eq .user "kutsan" }}
 brew "arm-gcc-bin" # QMK dependency
@@ -81,8 +83,8 @@ cask "opencode-desktop"
 cask "zed"
 cask "handbrake-app"
 cask "iina"
-cask "claude-code"
 cask "claude"
+cask "claude-code"
 cask "keepingyouawake"
 
 # Common Font Casks
@@ -96,6 +98,7 @@ cask "insta360-link-controller"
 cask "obs"
 cask "orcaslicer"
 cask "transmission"
+cask "backblaze"
 
 # Personal Font Casks
 cask "font-ia-writer-mono"
@@ -103,6 +106,7 @@ cask "font-ia-writer-duo"
 cask "font-ia-writer-quattro"
 
 {{- if eq .user "kutsan" }}
+cask "netnewswire"
 cask "skim"
 cask "ledger-wallet"
 {{- end }}
@@ -141,6 +145,10 @@ mas "WhatsApp", id: 310633997
 
 {{- if eq .user "kutsan" }}
 mas "GoodLinks", id: 1474335294
+mas "Parachute Backup", id: 6748614170
+mas "Pure Paste", id: 1611378436
+mas "Spaced", id: 1666327168
+mas "Blackmagic Disk Speed Test", id: 425264550
 {{- end }}
 
 {{- if eq .user "reyhan" }}
