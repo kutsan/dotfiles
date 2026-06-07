@@ -1,11 +1,11 @@
 # man
 export MANWIDTH='100'
-if (command -v nvim &> /dev/null) {
+if (( $+commands[nvim] )) {
 	export MANPAGER='nvim +Man!'
 }
 
 # GnuPG
-export GPG_TTY="$(tty)"
+export GPG_TTY="$TTY"
 
 # fzf
 export FZF_DEFAULT_COMMAND='fd --no-ignore'
@@ -24,7 +24,7 @@ export FZF_DEFAULT_OPTS="\
 	--bind='ctrl-b:half-page-up'"
 
 # Load fzf key bindings and completion.
-if (command -v fzf &> /dev/null) {
+if (( $+commands[fzf] )) {
 	source <(fzf --zsh)
 }
 

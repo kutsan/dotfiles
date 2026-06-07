@@ -4,7 +4,6 @@ foreach file (
 	environment.zsh
 	completion.zsh
 	plugins.zsh
-	functions.zsh
 	aliases.zsh
 	line-editor.zsh
 ) {

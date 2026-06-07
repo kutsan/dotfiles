@@ -6,7 +6,7 @@ foreach fn (
 	select-bracketed
 	select-quoted
 ) {
-	autoload -U $fn
+	autoload -Uz $fn
 }
 
 # Load binary modules.

@@ -1,5 +1,5 @@
 # Add Docker CLI completions.
-if (command -v docker &> /dev/null) {
+if (( $+commands[docker] )) {
 	fpath=(
 		"$HOME/.docker/completions"
 		$fpath
@@ -18,26 +18,24 @@ zstyle ':completion:*' list-colors ${(s#:#)LS_COLORS} # Match dircolors with com
 typeset -g zsh_cache_dir="$XDG_CACHE_HOME/zsh"
 
 if ! [[ -d "$zsh_cache_dir" ]] {
-	command mkdir -p "$zsh_cache_dir"
+	command mkdir -p -- "$zsh_cache_dir"
 }
 
 # Initialize the completion system with a cache time of 24 hours.
+# `-C` skips security check & cache validation when zcompdump is < 24h old.
 typeset -g zcompdump_path="${zsh_cache_dir}/zcompdump"
-typeset -g zcompdump_match=($zcompdump_path(Nm-24))
 
-if (( $#zcompdump_match )) {
+if [[ -n $zcompdump_path(#qNm-24) ]] {
 	compinit -i -C -d $zcompdump_path
 } else {
 	compinit -i -d $zcompdump_path
 }
 
-unset zsh_cache_dir
-unset zcompdump_path
-unset zcompdump_match
+unset zsh_cache_dir zcompdump_path
 
 # Remove the Homebrew version of `git` completions, as they are incompatible with Zsh aliases.
-if [[ $OSTYPE =~ 'darwin*' ]] {
-	function remove_conflicting_git_completions() {
+if [[ $OSTYPE == darwin* ]] {
+	remove_conflicting_git_completions() {
 		local git_completion_bash="$HOMEBREW_PREFIX/share/zsh/site-functions/git-completion.bash"
 		local git_completion_zsh="$HOMEBREW_PREFIX/share/zsh/site-functions/_git"
 

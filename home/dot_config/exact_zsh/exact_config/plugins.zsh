@@ -45,7 +45,7 @@ zinit wait lucid \
 	for light-mode zdharma-continuum/fast-syntax-highlighting
 
 # zoxide: A smarter cd command.
-if (command -v zoxide &> /dev/null) {
+if (( $+commands[zoxide] )) {
 	export _ZO_DATA_DIR="$XDG_DATA_HOME/zoxide"
 	export _ZO_EXCLUDE_DIRS="**/node_modules"
 	eval "$(zoxide init zsh)"
