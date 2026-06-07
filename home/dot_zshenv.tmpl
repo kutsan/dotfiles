@@ -25,7 +25,7 @@ export DISABLE_TELEMETRY='1'
 export DO_NOT_TRACK='1'
 
 # macOS
-if [[ $OSTYPE =~ 'darwin*' ]] {
+if [[ $OSTYPE == darwin* ]] {
 	# Android SDK and Java
 	export ANDROID_HOME="$HOME/Library/Android/sdk"
 	export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
