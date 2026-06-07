@@ -3,7 +3,6 @@
 
 [core]
 	editor = $EDITOR
-	pager = delta
 	whitespace = space-before-tab,-indent-with-non-tab,trailing-space
 
 [push]
@@ -16,9 +15,6 @@
 
 [pull]
 	ff = only
-
-[interactive]
-	diffFilter = delta --color-only
 
 [diff]
 	algorithm = histogram
