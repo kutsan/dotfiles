@@ -1,6 +1,9 @@
 {{- if eq .chezmoi.os "darwin" -}}
 #!/usr/bin/env zsh
 
+# Interactively discover which defaults domain and key control a setting.
+#   before=$(defaults read) && read "?Change the setting, then press Enter... " && diff -U50 <(<<<"$before") <(defaults read) | delta; unset before
+
 autoload -Uz colors && colors
 
 local script_name="run_once_after_setup-macos-defaults.sh"
