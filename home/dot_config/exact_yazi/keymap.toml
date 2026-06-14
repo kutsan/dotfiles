@@ -111,6 +111,7 @@ keymap = [
 	{ on = ["b", "x", "d"], run = "cd $XDG_DATA_HOME" },
 	{ on = ["b", "x", "s"], run = "cd $XDG_STATE_HOME" },
 	{ on = ["b", "i"], run = "cd ~/Library/Mobile\\ Documents/com~apple~CloudDocs" },
+	{ on = ["b", "c"], run = "cd $XDG_DATA_HOME/chezmoi" },
 
 	# Tabs
 	{ on = "t", run = "tab_create --current" },
