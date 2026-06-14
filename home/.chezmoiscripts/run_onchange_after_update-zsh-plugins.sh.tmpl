@@ -1,17 +1,12 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 # plugins-lock.csv hash: {{ include "dot_config/exact_zsh/plugins-lock.csv" | sha256sum }}
 
-autoload -Uz colors && colors
+{{ template "logger.sh" . }}
 
-typeset script_name='run_onchange_after_update-zsh-plugins.sh'
-
-print
-print "${fg_bold[blue]}==>${reset_color} ${bold_color}[${script_name}]${reset_color} Updating Zsh plugins..."
+log.info "Updating Zsh plugins..."
 
 # Run interactive zsh to load zinit.
-print
 zsh -ic 'zinit update --all --no-pager'
 
-print
-print "${fg_bold[green]}==>${reset_color} ${bold_color}[${script_name}]${reset_color} Zsh plugins updated."
+log.success "Zsh plugins updated."

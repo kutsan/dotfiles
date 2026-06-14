@@ -4,12 +4,9 @@
 # Interactively discover which defaults domain and key control a setting.
 #   before=$(defaults read) && read "?Change the setting, then press Enter... " && diff -U50 <(<<<"$before") <(defaults read) | delta; unset before
 
-autoload -Uz colors && colors
+{{ template "logger.sh" . }}
 
-local script_name="run_once_after_setup-macos-defaults.sh"
-
-echo
-print "${fg_bold[blue]}==>${reset_color} ${bold_color}[${script_name}]${reset_color} Setting macOS defaults..."
+log.info "Setting macOS defaults..."
 
 # Show hidden files
 defaults write com.apple.finder AppleShowAllFiles -bool true
@@ -20,6 +17,5 @@ defaults write com.apple.WindowManager EnableTiledWindowMargins -bool true
 # Restart system services to apply changes
 killall Finder
 
-echo
-print "${fg_bold[green]}==>${reset_color} ${bold_color}[${script_name}]${reset_color} macOS defaults set."
+log.success "macOS defaults set."
 {{- end -}}

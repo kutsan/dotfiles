@@ -1,31 +1,27 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 # nvim-pack-lock.json hash: {{ include "dot_config/exact_nvim/nvim-pack-lock.json" | sha256sum }}
 
-autoload -Uz colors && colors
+{{ template "logger.sh" . }}
 
-local script_name="run_onchange_after_update-neovim-plugins.sh"
-
-if (! type "nvim" &> /dev/null) {
-	echo
-	print "${fg_bold[yellow]}==>${reset_color} ${bold_color}[${script_name}]${reset_color} Neovim is not installed. Skipping syncing Neovim plugins."
-
+if ! command -v nvim >/dev/null 2>&1; then
+	log.warn "Neovim is not installed. Skipping syncing Neovim plugins."
 	exit 0
-}
+fi
 
-echo
-print "${fg_bold[blue]}==>${reset_color} ${bold_color}[${script_name}]${reset_color} Syncing Neovim plugins..."
+log.info "Syncing Neovim plugins..."
 
 # Run `nvim` in headless mode to sync `vim.pack` plugins with lock file.
-zsh -c "nvim --headless \
-	-c 'lua vim.pack.update(nil, { target = \"lockfile\", force = true })' \
-	-c 'quitall'" > /dev/null
-
-# Run `nvim` again to sync mason tools.
-zsh -c "nvim --headless \
-	-c 'lua require(\"mason-tool-installer\").check_install(true, true)' \
-	-c 'lua require(\"mason-tool-installer\").clean()' \
-	-c 'quitall'" > /dev/null
+nvim --headless \
+	-c 'lua vim.pack.update(nil, { target = "lockfile", force = true })' \
+	-c 'quitall' >/dev/null
 
 echo
-print "${fg_bold[green]}==>${reset_color} ${bold_color}[${script_name}]${reset_color} Neovim plugins synced."
+
+# Run `nvim` again to sync mason tools.
+nvim --headless \
+	-c 'lua require("mason-tool-installer").check_install(true, true)' \
+	-c 'lua require("mason-tool-installer").clean()' \
+	-c 'quitall' >/dev/null
+
+log.success "Neovim plugins synced."
