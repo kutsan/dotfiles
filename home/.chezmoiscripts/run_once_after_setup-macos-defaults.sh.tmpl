@@ -1,5 +1,5 @@
 {{- if eq .chezmoi.os "darwin" -}}
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 # Interactively discover which defaults domain and key control a setting.
 #   before=$(defaults read) && read "?Change the setting, then press Enter... " && diff -U50 <(<<<"$before") <(defaults read) | delta; unset before
