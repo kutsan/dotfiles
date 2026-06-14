@@ -1,4 +1,5 @@
-zinit ice \
+zinit \
+	light-mode \
 	as"command" \
 	from"github-rel" \
 	ver"${PLUGIN_LOCK[atuin]}" \
@@ -6,5 +7,5 @@ zinit ice \
 	mv"atuin*/atuin -> atuin" \
 	atclone"./atuin init zsh > init.zsh; ./atuin gen-completions --shell zsh > _atuin" \
 	atpull"%atclone" \
-	src"init.zsh"
-zinit light atuinsh/atuin
+	src"init.zsh" \
+	for atuinsh/atuin

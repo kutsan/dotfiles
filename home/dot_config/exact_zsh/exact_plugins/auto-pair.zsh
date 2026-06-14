@@ -1,6 +1,7 @@
-zinit ice \
+zinit \
 	wait \
 	lucid \
+	light-mode \
 	atclone"git switch --detach ${PLUGIN_LOCK[auto-pair]}" \
-	atpull'%atclone'
-zinit light hlissner/zsh-autopair
+	atpull'%atclone' \
+	for hlissner/zsh-autopair

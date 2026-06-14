@@ -7,11 +7,12 @@ pure_init() {
 	zstyle ':prompt:pure:prompt:success' color 15
 }
 
-zinit ice \
+zinit \
+	light-mode \
 	atclone"git switch --detach ${PLUGIN_LOCK[pure]}" \
 	atpull'%atclone' \
 	atinit'pure_init' \
 	atload'unfunction pure_init' \
 	pick'async.zsh' \
-	src'pure.zsh'
-zinit light sindresorhus/pure
+	src'pure.zsh' \
+	for sindresorhus/pure

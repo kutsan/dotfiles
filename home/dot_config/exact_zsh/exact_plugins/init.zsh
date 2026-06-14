@@ -3,10 +3,11 @@ typeset -g ZINIT_HOME="$XDG_DATA_HOME/zinit/zinit.git"
 source "$ZINIT_HOME/zinit.zsh"
 
 typeset -gA PLUGIN_LOCK
-while IFS=, read -r key value; do
-	[[ -z $key ]] && continue
-	PLUGIN_LOCK[$key]=$value
-done < $ZDOTDIR/plugins-lock.csv
+typeset -a lines=("${(f)$(<$ZDOTDIR/plugins-lock.csv)}")
+
+for line in $lines[2,-1]; do
+	PLUGIN_LOCK[${line%%,*}]=${line#*,}
+done
 
 typeset -ga plugins=(
 	pure
@@ -25,4 +26,4 @@ done
 # Replay compdefs from plugins
 zinit cdreplay -q
 
-unset plugins PLUGIN_LOCK name key value
+unset plugins PLUGIN_LOCK name lines line

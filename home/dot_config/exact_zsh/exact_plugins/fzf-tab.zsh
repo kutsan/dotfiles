@@ -4,9 +4,10 @@ fzf_tab_init() {
 	zstyle ':fzf-tab:*' fzf-flags $FZF_DEFAULT_COLORS --height='20%' --margin='0,2'
 }
 
-zinit ice \
+zinit \
+	light-mode \
 	atclone"git switch --detach ${PLUGIN_LOCK[fzf-tab]}" \
 	atpull'%atclone' \
 	atinit'fzf_tab_init' \
-	atload'unfunction fzf_tab_init'
-zinit light Aloxaf/fzf-tab
+	atload'unfunction fzf_tab_init' \
+	for Aloxaf/fzf-tab
