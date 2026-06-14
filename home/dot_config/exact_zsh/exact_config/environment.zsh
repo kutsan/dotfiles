@@ -28,6 +28,13 @@ if (( $+commands[fzf] )) {
 	source <(fzf --zsh)
 }
 
+# zoxide: A smarter cd command
+if (( $+commands[zoxide] )) {
+	export _ZO_DATA_DIR="$XDG_DATA_HOME/zoxide"
+	export _ZO_EXCLUDE_DIRS="**/node_modules"
+	eval "$(zoxide init zsh)"
+}
+
 # less
 export LESS="\
 	--ignore-case \

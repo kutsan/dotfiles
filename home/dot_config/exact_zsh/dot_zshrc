@@ -1,13 +1,2 @@
-foreach file (
-	modules.zsh
-	options.zsh
-	environment.zsh
-	completion.zsh
-	plugins.zsh
-	aliases.zsh
-	line-editor.zsh
-) {
-	source $ZDOTDIR/config/$file
-}
-
-unset file
+source $ZDOTDIR/config/init.zsh
+source $ZDOTDIR/plugins/init.zsh
