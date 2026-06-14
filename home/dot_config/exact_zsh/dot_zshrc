@@ -1,2 +1,4 @@
-source $ZDOTDIR/config/init.zsh
-source $ZDOTDIR/plugins/init.zsh
+# shellcheck disable=SC1091
+
+source "$ZDOTDIR/config/init.zsh"
+source "$ZDOTDIR/plugins/init.zsh"

@@ -1,38 +1,46 @@
+# shellcheck disable=SC2139
+
 # Editors
-alias e="$EDITOR"; compdef e="$EDITOR"
-alias ge="$GUI_EDITOR"; compdef ge="$GUI_EDITOR"
+alias e="$EDITOR"
+compdef e="$EDITOR"
+alias ge="$GUI_EDITOR"
+compdef ge="$GUI_EDITOR"
 
 # File & Directory Operations
-alias rm='trash' # Use `trash` program instead of built-in irrecoverable way to delete nodes.
-alias mv='mv -iv' # Move nodes with interactive mode and extra verbosity.
-alias mkdir='mkdir -p' # Make missing parent directories when creating folders.
+alias rm='trash'
+alias mv='mv -iv'
+alias mkdir='mkdir -p'
 
 # `cd` into the last directory upon exit using `yazi`.
 y() {
 	emulate -L zsh
+	# shellcheck disable=SC2155
 	local temp_file="$(mktemp -t "yazi-cwd.XXXXXX")"
+	# shellcheck disable=SC2064,SC2296
 	trap "command rm -f -- ${(q)temp_file}" EXIT INT TERM
 
 	command yazi "$@" --cwd-file="$temp_file"
-	local cwd="$(<$temp_file)"
+	# shellcheck disable=SC2155
+	local cwd="$(<"$temp_file")"
 
+	# shellcheck disable=SC2164
 	[[ -n "$cwd" && "$cwd" != "$PWD" ]] && builtin cd -- "$cwd"
 }
 
 # Listing & Search
-alias ls='ls -AF --color=auto' # List all nodes with type indicators and colors.
+alias ls='ls -AF --color=auto'
 [[ $OSTYPE == darwin* ]] && alias ls='ls -AFG'
-alias la='ls -lAh' # List all nodes in long format with human-readable sizes.
-alias grep="grep --color='auto'" # Grep with colors.
+alias la='ls -lAh'
+alias grep="grep --color='auto'"
 
 # Disk Usage
-alias du='du -d 1 --si' # Display sizes of entries one level deep with SI units.
-alias df='df -a --si' # Display all filesystem usage with SI units.
+alias du='du -d 1 --si'
+alias df='df -a --si'
 
 # Utilities
-alias uuidgen='print -r -- ${$(command uuidgen):l}' # Generate a lowercase UUID.
-alias uuidv7="npm exec --yes uuidv7 | tr -d '\n' | pbcopy" # Generate a lowercase UUIDv7 and copy to clipboard.
-[[ $OSTYPE == darwin* ]] && alias uuidgen='print -n ${$(command uuidgen):l} | pbcopy' # Generate a lowercase UUID and copy to clipboard.
+alias uuidgen='command uuidgen | tr "[:upper:]" "[:lower:]"'
+alias uuidv7="npm exec --yes uuidv7 | tr -d '\n' | pbcopy"
+[[ $OSTYPE == darwin* ]] && alias uuidgen='command uuidgen | tr -d "\n" | tr "[:upper:]" "[:lower:]" | pbcopy'
 
 # Encryption
 alias age-encrypt='age --encrypt --recipients-file "$XDG_CONFIG_HOME/age/recipients.txt"'
@@ -45,13 +53,15 @@ alias cz='chezmoi'
 alias bb='brew bundle --global --verbose'
 
 # Git
-alias g='git'; compdef g='git'
+alias g='git'
+compdef g='git'
 alias lg='lazygit'
 alias lgs='lazygit status'
 alias lgl='lazygit log'
 alias lgb='lazygit branch'
 alias lgt='lazygit stash'
 
+# shellcheck disable=SC2190
 typeset -A git_aliases=(
 	a add
 	b branch
@@ -73,13 +83,14 @@ typeset -A git_aliases=(
 	tl stash
 )
 
-for key (${(k)git_aliases}) {
-	alias g$key="git $key"
+# shellcheck disable=SC2066,SC2296
+for key in "${(@k)git_aliases}"; do
+	alias "g$key=git $key"
 	compdef _git "g$key=git-${git_aliases[$key]}"
-}
+done
 
 unset git_aliases key
 
 # Disabled Commands
-alias clear='print -u2 "Use \`^L\`."; false'
-alias caffeinate='print -u2 "Use equivalent GUI utility app."; false'
+alias clear='echo "Use \`^L\`." >&2; false'
+alias caffeinate='echo "Use equivalent GUI utility app." >&2; false'

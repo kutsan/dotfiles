@@ -1,14 +1,9 @@
 # Register widgets.
-foreach widget (
-	'add-surround surround'
-	'delete-surround surround'
-	'change-surround surround'
-	select-bracketed
-	select-quoted
-) {
-	zle -N ${=widget}
-}
-unset widget
+zle -N add-surround surround
+zle -N delete-surround surround
+zle -N change-surround surround
+zle -N select-bracketed
+zle -N select-quoted
 
 # Insert Mode
 bindkey -M viins '^K' atuin-up-search-viins # Override `up-history` to use Atuin search.
@@ -20,7 +15,7 @@ bindkey -M viins '^[[3~' delete-char
 
 # Normal Mode
 bindkey -M vicmd 'j' down-line # Override `down-line-or-history`.
-bindkey -M vicmd 'k' up-line # Override `up-line-or-history`.
+bindkey -M vicmd 'k' up-line   # Override `up-line-or-history`.
 bindkey -M vicmd 'sr' change-surround
 bindkey -M vicmd 'sd' delete-surround
 bindkey -M vicmd 'sa' add-surround
@@ -29,15 +24,19 @@ bindkey -M vicmd 'sa' add-surround
 bindkey -M visual 'sa' add-surround
 
 # Visual & Operator Mode
-foreach char ({a,i}{\',\",\`}) {
-	bindkey -M visual $char select-quoted
-	bindkey -M viopp  $char select-quoted
-}
-foreach char ({a,i}${(s..)^:-'()[]{}<>bB'}) {
-	bindkey -M visual $char select-bracketed
-	bindkey -M viopp  $char select-bracketed
-}
-unset char
+for prefix in a i; do
+	for ch in "'" '"' '`'; do
+		bindkey -M visual "${prefix}${ch}" select-quoted
+		bindkey -M viopp "${prefix}${ch}" select-quoted
+	done
+done
+for prefix in a i; do
+	for ch in '(' ')' '[' ']' '{' '}' '<' '>' b B; do
+		bindkey -M visual "${prefix}${ch}" select-bracketed
+		bindkey -M viopp "${prefix}${ch}" select-bracketed
+	done
+done
+unset prefix ch
 
 # Completion Mode
 bindkey -M menuselect '^?' undo
@@ -53,7 +52,7 @@ custom_prompt_pure_clear_screen() {
 	zle -I
 
 	# Clear screen and move cursor to (4, 0).
-	print -n '\e[2J\e[4;0H'
+	printf '\e[2J\e[4;0H'
 
 	# Redraw prompt.
 	zle .redisplay

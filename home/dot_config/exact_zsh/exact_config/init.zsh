@@ -7,8 +7,9 @@ typeset -ga configs=(
 	line-editor
 )
 
-for name in $configs; do
-	source "${0:h}/$name.zsh"
+for name in "${configs[@]}"; do
+	# shellcheck disable=SC1090
+	source "${0%/*}/$name.zsh"
 done
 
 unset configs name

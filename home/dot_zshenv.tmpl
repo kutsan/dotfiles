@@ -25,7 +25,7 @@ export DISABLE_TELEMETRY='1'
 export DO_NOT_TRACK='1'
 
 # macOS
-if [[ $OSTYPE == darwin* ]] {
+if [[ $OSTYPE == darwin* ]]; then
 	# Android SDK and Java
 	export ANDROID_HOME="$HOME/Library/Android/sdk"
 	export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
@@ -38,7 +38,7 @@ if [[ $OSTYPE == darwin* ]] {
 	export HOMEBREW_DISPLAY_INSTALL_TIMES='1'
 	export HOMEBREW_NO_ENV_HINTS='1'
 	export HOMEBREW_NO_EMOJI='1'
-}
+fi
 
 # npm
 {{- if eq .user "kutsan" }}

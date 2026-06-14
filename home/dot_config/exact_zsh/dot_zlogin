@@ -1,9 +1,11 @@
+# shellcheck disable=SC1035,SC1072
+
 # Asynchronously zcompile `.zcompdump` file.
 {
 	# This file is created in `completion.zsh`.
 	local zcompdump_path="$XDG_CACHE_HOME/zsh/zcompdump"
 
-	if [[ -s "$zcompdump_path" && (! -s "${zcompdump_path}.zwc" || "$zcompdump_path" -nt "${zcompdump_path}.zwc") ]] {
+	if [[ -s "$zcompdump_path" && (! -s "${zcompdump_path}.zwc" || "$zcompdump_path" -nt "${zcompdump_path}.zwc") ]]; then
 		zcompile "$zcompdump_path"
-	}
+	fi
 } &!

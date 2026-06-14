@@ -1,8 +1,8 @@
 # man
 export MANWIDTH='100'
-if (( $+commands[nvim] )) {
+if command -v nvim &>/dev/null; then
 	export MANPAGER='nvim +Man!'
-}
+fi
 
 # GnuPG
 export GPG_TTY="$TTY"
@@ -24,16 +24,17 @@ export FZF_DEFAULT_OPTS="\
 	--bind='ctrl-b:half-page-up'"
 
 # Load fzf key bindings and completion.
-if (( $+commands[fzf] )) {
+if command -v fzf &>/dev/null; then
+	# shellcheck disable=SC1090
 	source <(fzf --zsh)
-}
+fi
 
 # zoxide: A smarter cd command
-if (( $+commands[zoxide] )) {
+if command -v zoxide &>/dev/null; then
 	export _ZO_DATA_DIR="$XDG_DATA_HOME/zoxide"
 	export _ZO_EXCLUDE_DIRS="**/node_modules"
 	eval "$(zoxide init zsh)"
-}
+fi
 
 # less
 export LESS="\
@@ -47,16 +48,16 @@ export LESS="\
 	--clear-screen \
 	--tabs=4 \
 	--shift=5"
-export LESSHISTFILE='-' # Disable history.
+export LESSHISTFILE='-'                          # Disable history.
 export LESSKEYIN="$XDG_CONFIG_HOME/less/lesskey" # Path of lesskey file.
-export LESS_TERMCAP_md=$'\e[01;34m' # Turn on bold mode.
-export LESS_TERMCAP_me=$'\e[0m' # Turn off all attributes.
-export LESS_TERMCAP_mh=$'\e[2m' # Turn on dim mode.
-export LESS_TERMCAP_mr=$'\e[7m' # Turn on reverse mode.
-export LESS_TERMCAP_se=$'\e[27;0m' # Exit standout mode.
-export LESS_TERMCAP_so=$'\e[1;33m' # Begin standout mode.
-export LESS_TERMCAP_ue=$'\e[24;0m' # Exit underline mode.
-export LESS_TERMCAP_us=$'\e[4;1;38;5;250m' # Begin underline mode.
+export LESS_TERMCAP_md=$'\e[01;34m'              # Turn on bold mode.
+export LESS_TERMCAP_me=$'\e[0m'                  # Turn off all attributes.
+export LESS_TERMCAP_mh=$'\e[2m'                  # Turn on dim mode.
+export LESS_TERMCAP_mr=$'\e[7m'                  # Turn on reverse mode.
+export LESS_TERMCAP_se=$'\e[27;0m'               # Exit standout mode.
+export LESS_TERMCAP_so=$'\e[1;33m'               # Begin standout mode.
+export LESS_TERMCAP_ue=$'\e[24;0m'               # Exit underline mode.
+export LESS_TERMCAP_us=$'\e[4;1;38;5;250m'       # Begin underline mode.
 
 # ls
 export LS_COLORS="no=0:fi=0:di=38;5;110:ex=38;5;78;1:ca=38;5;17:ln=target:mh=38;\

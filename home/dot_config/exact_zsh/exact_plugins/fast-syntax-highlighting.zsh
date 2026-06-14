@@ -1,12 +1,15 @@
 fast_syntax_highlighting_init() {
-	FAST_HIGHLIGHT_STYLES[${FAST_THEME_NAME}unknown-token]='fg=red'
+	# shellcheck disable=SC2154
+	local key="${FAST_THEME_NAME}unknown-token"
+	# shellcheck disable=SC2034
+	FAST_HIGHLIGHT_STYLES[$key]='fg=red'
 }
 
 zinit \
 	wait \
 	lucid \
 	light-mode \
-	atclone"git switch --detach ${PLUGIN_LOCK[fast-syntax-highlighting]}" \
+	atclone"git switch --detach ${PLUGIN_LOCK['fast-syntax-highlighting']}" \
 	atpull'%atclone' \
-	atload'fast_syntax_highlighting_init; unfunction fast_syntax_highlighting_init' \
+	atload'fast_syntax_highlighting_init; unset -f fast_syntax_highlighting_init' \
 	for zdharma-continuum/fast-syntax-highlighting

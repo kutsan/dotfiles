@@ -1,3 +1,4 @@
+# shellcheck disable=SC2034
 pure_init() {
 	typeset -g PURE_PROMPT_SYMBOL='❯'
 	typeset -g PURE_PROMPT_VICMD_SYMBOL='❯'
@@ -12,7 +13,7 @@ zinit \
 	atclone"git switch --detach ${PLUGIN_LOCK[pure]}" \
 	atpull'%atclone' \
 	atinit'pure_init' \
-	atload'unfunction pure_init' \
+	atload'unset -f pure_init' \
 	pick'async.zsh' \
 	src'pure.zsh' \
 	for sindresorhus/pure
