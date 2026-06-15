@@ -1,0 +1,6 @@
+[task_config]
+includes = ["tasks"]
+
+[tools]
+chezmoi = "2.70.5"
+shellcheck = "0.11.0"
