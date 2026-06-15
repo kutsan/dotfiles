@@ -26,36 +26,59 @@ mason_lsp_config.setup()
 
 local opts = {
 	ensure_installed = {
-		-- LSP Servers
+		-- JavaScript, TypeScript, CSS, HTML
 		'tsgo',
 		'eslint',
 		'html',
 		'cssls',
 		'cssmodules_ls',
 		'stylelint-language-server',
-		'jsonls',
-		'yamlls',
-		'lua_ls',
-		'vimls',
-		'taplo',
-		'docker_language_server',
-		'docker_compose_language_service',
-		'gh_actions_ls',
-		'copilot',
+		'prettierd',
+		'js-debug-adapter',
+
+		-- Shell
 		'bashls',
-		'tinymist',
-		'typstyle',
+		'shellcheck',
+		'shfmt',
+
+		-- Lua
+		'lua_ls',
+		'selene',
+		'stylua',
+
+		-- JSON
+		'jsonls',
+
+		-- YAML
+		'yamlls',
+
+		-- TOML
+		'taplo',
+
+		-- Markdown
 		'markdown-oxide',
 		'rumdl',
+
+		-- Typst
+		'tinymist',
+		'typstyle',
+
+		-- Docker
+		'docker_language_server',
+		'docker_compose_language_service',
+
+		-- GitHub Actions
+		'gh_actions_ls',
+
+		-- Vim Script
+		'vimls',
+
+		-- Prose
 		'typos',
 		'harper-ls',
 
-		-- Formatters
-		'prettierd',
-		'stylua',
-
-		-- Debug Adapters
-		'js-debug-adapter',
+		-- AI
+		'copilot',
 	},
 }
 
