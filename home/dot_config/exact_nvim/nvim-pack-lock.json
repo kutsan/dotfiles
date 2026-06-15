@@ -100,6 +100,10 @@
       "rev": "3c804c1480991e4837514900b22b9358cfd64fa1",
       "src": "github:codethread/qmk.nvim"
     },
+    "render-markdown": {
+      "rev": "5adf0895310c1904e5abfaad40a2baad7fe44a07",
+      "src": "github:meanderingprogrammer/render-markdown.nvim"
+    },
     "schema-store": {
       "rev": "b2e84d00db4d5432f471d58898e796b478f075a7",
       "src": "github:b0o/SchemaStore.nvim"

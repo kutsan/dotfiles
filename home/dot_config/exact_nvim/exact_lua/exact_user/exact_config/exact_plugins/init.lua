@@ -53,6 +53,7 @@ local plugins = {
 	{ 'color_converter' },
 	{ 'mini_indentscope' },
 	{ 'snacks' },
+	{ 'render_markdown' },
 
 	-- Utilities
 	{ 'chezmoi' },
