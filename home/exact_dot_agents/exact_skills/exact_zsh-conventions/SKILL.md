@@ -59,12 +59,12 @@ Default to forms that also parse as bash / POSIX. Reach for zsh-only features on
 
 ## Background jobs
 
-- For silent atomic background+disown, `cmd &!` is the only option (zsh-only). `cmd & disown` is POSIX but causes zsh to print `[jobnum] pid` to stderr before disown fires — use `&!` only when that notification is unacceptable.
+- For silent atomic background+disown, `&!` is the only zsh option. `& disown` is POSIX but causes zsh to print `[jobnum] pid` to stderr before disown fires — use `&!` only when that notification is unacceptable.
 
 ## Error handling
 
-- Chain `|| return` after critical single commands instead of an `if !` block.
-- Errors to stderr: `echo "msg" >&2; return 1`.
+- After critical single commands, chain `|| return` rather than wrapping in a negated if block.
+- Errors to stderr: write to `&2` with `echo` or `print`, then `return 1`.
 
 ## Quoting & arguments
 
