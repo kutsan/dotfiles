@@ -14,14 +14,12 @@ log.info "Syncing Neovim plugins..."
 # Run `nvim` in headless mode to sync `vim.pack` plugins with lock file.
 nvim --headless \
 	-c 'lua vim.pack.update(nil, { target = "lockfile", force = true })' \
-	-c 'quitall' >/dev/null
-
-echo
+	-c 'quitall'
 
 # Run `nvim` again to sync mason tools.
 nvim --headless \
 	-c 'lua require("mason-tool-installer").check_install(true, true)' \
 	-c 'lua require("mason-tool-installer").clean()' \
-	-c 'quitall' >/dev/null
+	-c 'quitall'
 
 log.success "Neovim plugins synced."
