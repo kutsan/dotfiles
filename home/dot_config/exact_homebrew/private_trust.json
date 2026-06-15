@@ -1,3 +1,10 @@
 {
-	"trustedtaps": ["osx-cross/arm", "osx-cross/avr", "qmk/qmk"]
+  "trustedtaps": [
+    "osx-cross/arm",
+    "osx-cross/avr",
+    "qmk/qmk"
+  ],
+  "trustedformulae": [
+    "django23/tap/asimov"
+  ]
 }
