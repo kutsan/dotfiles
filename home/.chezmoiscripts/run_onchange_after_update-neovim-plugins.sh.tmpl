@@ -16,6 +16,8 @@ nvim --headless \
 	-c 'lua vim.pack.update(nil, { target = "lockfile", force = true })' \
 	-c 'quitall'
 
+printf '\n'
+
 # Run `nvim` again to sync mason tools.
 nvim --headless \
 	-c 'lua require("mason-tool-installer").check_install(true, true)' \
