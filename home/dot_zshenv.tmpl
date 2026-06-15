@@ -1,4 +1,7 @@
+# shellcheck disable=SC2148
+
 # Shell
+# shellcheck disable=SC2034
 typeset -gU path fpath cdpath
 
 # XDG Base Directories
@@ -8,7 +11,7 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 
 # Local Executables
-path=("$HOME/.local/bin" $path)
+path=("$HOME/.local/bin" "${path[@]}")
 
 # Zsh Config
 export ZDOTDIR="$HOME/.config/zsh"
@@ -29,7 +32,7 @@ if [[ $OSTYPE == darwin* ]]; then
 	# Android SDK and Java
 	export ANDROID_HOME="$HOME/Library/Android/sdk"
 	export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
-	path=("$ANDROID_HOME/emulator" "$ANDROID_HOME/platform-tools" $path)
+	path=("$ANDROID_HOME/emulator" "$ANDROID_HOME/platform-tools" "${path[@]}")
 
 	# Homebrew
 	export HOMEBREW_NO_ANALYTICS='1'
@@ -57,7 +60,7 @@ export NPM_CONFIG_SIGN_GIT_TAG='true'
 # Rust
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
-path=("$CARGO_HOME/bin" $path)
+path=("$CARGO_HOME/bin" "${path[@]}")
 
 # GnuPG
 export GNUPGHOME="$XDG_CONFIG_HOME/gnupg"
