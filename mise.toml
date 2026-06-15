@@ -1,6 +1,19 @@
+[settings]
+lockfile = true
+
 [task_config]
 includes = ["tasks"]
 
 [tools]
 chezmoi = "2.70.5"
 shellcheck = "0.11.0"
+"cargo:selene" = "0.31.0"
+
+[tasks.check]
+depends = ["check:shellcheck", "check:selene", "check:prettier"]
+
+[tasks."check:prettier"]
+run = "pnpm exec prettier --check ."
+
+[tasks."format:prettier"]
+run = "pnpm exec prettier --write --list-different ."
