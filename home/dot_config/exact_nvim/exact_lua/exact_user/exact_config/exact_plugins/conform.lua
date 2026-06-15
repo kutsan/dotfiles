@@ -13,6 +13,10 @@ local prettier_formatters = {
 	stop_after_first = true,
 }
 
+local shell_formatter = {
+	'shfmt',
+}
+
 local opts = {
 	formatters_by_ft = {
 		lua = { 'stylua' },
@@ -22,6 +26,9 @@ local opts = {
 		yaml = prettier_formatters,
 		json = prettier_formatters,
 		typst = { 'typstyle' },
+		sh = shell_formatter,
+		bash = shell_formatter,
+		zsh = shell_formatter,
 	},
 	format_on_save = {
 		timeout_ms = 500,
