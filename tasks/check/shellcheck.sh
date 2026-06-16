@@ -41,7 +41,7 @@ render_templates() {
 	while IFS= read -r -d '' file; do
 		dest="$tmpdir/$file"
 		mkdir -p -- "$(dirname -- "$dest")"
-		chezmoi --source "$MISE_PROJECT_ROOT" execute-template --init --stdinisatty=false <"$file" >"$dest"
+		chezmoi --source "$MISE_PROJECT_ROOT/home" execute-template --init --stdinisatty=false <"$file" >"$dest"
 	done
 }
 
