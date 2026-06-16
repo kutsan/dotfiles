@@ -49,7 +49,7 @@ render_templates() {
 	local tmpdir=$1 tmpconfig=$2 file dest
 
 	while IFS= read -r -d '' file; do
-		dest="$tmpdir/$file"
+		dest="$tmpdir/${file%.tmpl}"
 		mkdir -p -- "$(dirname -- "$dest")"
 		chezmoi --source "$MISE_PROJECT_ROOT" --config "$tmpconfig" execute-template <"$file" >"$dest"
 	done
