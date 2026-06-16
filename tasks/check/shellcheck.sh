@@ -35,13 +35,23 @@ find_all_files() {
 	find_rendered_files "$tmpdir"
 }
 
+create_chezmoi_config() {
+	local tmpconfig=$1
+
+	chezmoi execute-template \
+		--init \
+		--stdinisatty=false \
+		<"$MISE_PROJECT_ROOT/home/.chezmoi.toml.tmpl" \
+		>"$tmpconfig"
+}
+
 render_templates() {
-	local tmpdir=$1 file dest
+	local tmpdir=$1 tmpconfig=$2 file dest
 
 	while IFS= read -r -d '' file; do
 		dest="$tmpdir/$file"
 		mkdir -p -- "$(dirname -- "$dest")"
-		chezmoi --source "$MISE_PROJECT_ROOT/home" execute-template --init --stdinisatty=false <"$file" >"$dest"
+		chezmoi --source "$MISE_PROJECT_ROOT" --config "$tmpconfig" execute-template <"$file" >"$dest"
 	done
 }
 
@@ -51,9 +61,9 @@ normalize_paths() {
 }
 
 main() {
-	local tmpdir=$1
+	local tmpdir=$1 tmpconfig=$2
 
-	find_template_files | render_templates "$tmpdir"
+	find_template_files | render_templates "$tmpdir" "$tmpconfig"
 
 	find_all_files "$tmpdir" |
 		xargs -0 shellcheck --color=always -- |
@@ -61,5 +71,8 @@ main() {
 }
 
 tmpdir=$(mktemp -d)
-trap 'rm -rf -- "$tmpdir"' EXIT INT TERM
-main "$tmpdir"
+tmpconfig=$(mktemp "${TMPDIR:-/tmp}/chezmoi.XXXXXX.toml")
+trap 'rm -rf -- "$tmpdir"; rm -f -- "$tmpconfig"' EXIT INT TERM
+
+create_chezmoi_config "$tmpconfig"
+main "$tmpdir" "$tmpconfig"
