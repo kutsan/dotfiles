@@ -51,7 +51,10 @@ render_templates() {
 	while IFS= read -r -d '' file; do
 		dest="$tmpdir/${file%.tmpl}"
 		mkdir -p -- "$(dirname -- "$dest")"
-		chezmoi --source "$MISE_PROJECT_ROOT" --config "$tmpconfig" execute-template <"$file" >"$dest"
+
+		# TODO: Find a better way to lint OS-specific templates without overriding `.chezmoi.os`.
+		sed 's/\.chezmoi\.os/"darwin"/g' "$file" |
+			chezmoi --source "$MISE_PROJECT_ROOT" --config "$tmpconfig" execute-template >"$dest"
 	done
 }
 
