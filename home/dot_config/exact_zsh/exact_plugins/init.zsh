@@ -6,10 +6,12 @@ source "$ZINIT_HOME/zinit.zsh"
 typeset -gA PLUGIN_LOCK
 {
 	read -r # discard header row (stored in REPLY, ignored)
-	while IFS=, read -r name version || [[ -n $name ]]; do
+	while IFS=, read -r name revision || [[ -n $name ]]; do
 		# shellcheck disable=SC2034
-		PLUGIN_LOCK[$name]=$version
+		PLUGIN_LOCK[$name]=$revision
 	done
+
+	unset name revision
 } <"$ZDOTDIR/plugins-lock.csv"
 
 typeset -ga plugins=(
@@ -30,4 +32,4 @@ done
 # Replay compdefs from plugins
 zinit cdreplay -q
 
-unset plugins PLUGIN_LOCK name version
+unset plugins PLUGIN_LOCK name
