@@ -27,21 +27,50 @@ export PAGER='less'
 export DISABLE_TELEMETRY='1'
 export DO_NOT_TRACK='1'
 
-# macOS
-if [[ $OSTYPE == darwin* ]]; then
-	# Android SDK and Java
-	export ANDROID_HOME="$HOME/Library/Android/sdk"
-	export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
-	path=("$ANDROID_HOME/emulator" "$ANDROID_HOME/platform-tools" "${path[@]}")
+# Homebrew
+export HOMEBREW_NO_ANALYTICS='1'
+export HOMEBREW_CLEANUP_MAX_AGE_DAYS='7'
+export HOMEBREW_CLEANUP_PERIODIC_FULL_DAYS='7'
+export HOMEBREW_DISPLAY_INSTALL_TIMES='1'
+export HOMEBREW_NO_ENV_HINTS='1'
+export HOMEBREW_NO_EMOJI='1'
 
-	# Homebrew
-	export HOMEBREW_NO_ANALYTICS='1'
-	export HOMEBREW_CLEANUP_MAX_AGE_DAYS='7'
-	export HOMEBREW_CLEANUP_PERIODIC_FULL_DAYS='7'
-	export HOMEBREW_DISPLAY_INSTALL_TIMES='1'
-	export HOMEBREW_NO_ENV_HINTS='1'
-	export HOMEBREW_NO_EMOJI='1'
+# Android SDK
+typeset android_sdk_path
+
+for candidate in \
+	"$HOME/Library/Android/sdk" \
+	"$HOME/Android/Sdk" \
+	/opt/android-sdk; do
+	if [[ -d $candidate ]]; then
+		android_sdk_path=$candidate
+		break
+	fi
+done
+
+if [[ -n $android_sdk_path ]]; then
+	export ANDROID_HOME="$android_sdk_path"
+	path=("$ANDROID_HOME/emulator" "$ANDROID_HOME/platform-tools" "${path[@]}")
 fi
+
+unset android_sdk_path candidate
+
+# Java
+typeset java_home_path java_bin
+
+if [[ -x /usr/libexec/java_home ]]; then
+	java_home_path=$(/usr/libexec/java_home 2>/dev/null)
+else
+	java_bin=$(command -v java)
+	java_home_path=$(readlink -f "$java_bin" 2>/dev/null)
+	java_home_path=${java_home_path%/bin/java}
+fi
+
+if [[ -n $java_home_path && -d $java_home_path ]]; then
+	export JAVA_HOME="$java_home_path"
+fi
+
+unset java_home_path java_bin
 
 # npm
 {{- if eq .user "kutsan" }}
