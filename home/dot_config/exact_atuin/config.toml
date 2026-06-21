@@ -12,3 +12,7 @@ filter_mode_shell_up_key_binding = "session"
 # Behavior
 enter_accept = false
 keymap_mode = "vim-insert"
+
+# AI
+[ai]
+enabled = true
