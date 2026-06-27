@@ -39,6 +39,7 @@ fetch_release_revision() {
 
 fetch_commit_revision() {
 	local repo=$1
+
 	git ls-remote "https://github.com/$repo" HEAD | awk '{print $1}'
 }
 
@@ -67,8 +68,8 @@ generate_lockfile() {
 
 	printf '%s\n' 'name,revision'
 
-	while IFS= read -r -d '' file; do
-		process_plugin "$file"
+	while IFS= read -r -d '' plugin; do
+		process_plugin "$plugin"
 	done < <(find_plugin_files "$plugins_dir")
 }
 
