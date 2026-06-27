@@ -8,6 +8,7 @@ includes = ["tasks"]
 chezmoi = "2.70.5"
 shellcheck = "0.11.0"
 "cargo:selene" = "0.31.0"
+pinact = "4.1.0"
 
 [tasks.check]
 depends = ["check:shellcheck", "check:selene", "check:prettier"]
