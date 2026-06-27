@@ -9,12 +9,39 @@ chezmoi = "2.70.5"
 shellcheck = "0.11.0"
 "cargo:selene" = "0.31.0"
 pinact = "4.1.0"
+zizmor = "1.26.1"
+shfmt = "3.13.1"
 
 [tasks.check]
-depends = ["check:shellcheck", "check:selene", "check:prettier"]
+depends = [
+  "check:shellcheck",
+  "check:selene",
+  "check:zizmor",
+  "check:pinact",
+  "check:prettier",
+  "check:shfmt",
+]
 
 [tasks."check:prettier"]
 run = "pnpm exec prettier --check ."
 
+[tasks."check:zizmor"]
+run = "zizmor --strict-collection .github/workflows/"
+
+[tasks."check:pinact"]
+run = "pinact run --check --verify"
+
+[tasks."check:shfmt"]
+run = "git ls-files -z '*.sh' '*.zsh' | xargs -0 shfmt --diff"
+
+[tasks."update:pinact"]
+run = "pinact run --update"
+
+[tasks.format]
+depends = ["format:prettier", "format:shfmt"]
+
 [tasks."format:prettier"]
 run = "pnpm exec prettier --write --list-different ."
+
+[tasks."format:shfmt"]
+run = "git ls-files -z '*.sh' '*.zsh' | xargs -0 shfmt --write"
