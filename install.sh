@@ -1,31 +1,36 @@
 #!/bin/sh
 
-# -e: exit on error.
-# -u: exit on unset variables.
 set -eu
 
-if ! chezmoi="$(command -v chezmoi)"; then
+ensure_chezmoi() {
+	if chezmoi="$(command -v chezmoi)"; then
+		return 0
+	fi
+
 	bin_dir="${HOME}/.local/bin"
 	chezmoi="${bin_dir}/chezmoi"
 
-	echo "Installing chezmoi to '${chezmoi}'" >&2
+	printf 'Installing chezmoi to %s\n' "${chezmoi}" >&2
 
-	if command -v curl >/dev/null; then
-		chezmoi_install_script="$(curl -fsSL get.chezmoi.io)"
-	else
-		echo "To install chezmoi, you must have curl installed." >&2
+	if ! command -v curl >/dev/null; then
+		printf 'To install chezmoi, you must have curl installed.\n' >&2
 		exit 1
 	fi
 
+	chezmoi_install_script="$(curl -fsSL get.chezmoi.io)"
 	sh -c "${chezmoi_install_script}" -- -b "${bin_dir}"
-	unset chezmoi_install_script bin_dir
-fi
+}
 
-# POSIX way to get script's dir: https://stackoverflow.com/a/29834779/12156188
-script_dir="$(cd -P -- "$(dirname -- "$(command -v -- "$0")")" && pwd -P)"
+main() {
+	ensure_chezmoi
 
-set -- init --apply --source="${script_dir}"
+	# POSIX way to get script's dir: https://stackoverflow.com/a/29834779/12156188
+	script_dir="$(cd -P -- "$(dirname -- "$(command -v -- "$0")")" && pwd -P)"
 
-echo "Running 'chezmoi $*'" >&2
-# exec: replace current process with chezmoi
-exec "$chezmoi" "$@"
+	set -- init --apply --source="${script_dir}"
+
+	printf "Running 'chezmoi %s'\n" "$*" >&2
+	exec "${chezmoi}" "$@"
+}
+
+main "$@"

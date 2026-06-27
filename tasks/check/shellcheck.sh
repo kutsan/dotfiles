@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 set -euo pipefail
-shopt -s inherit_errexit nullglob
 IFS=$'\n\t'
 
 find_static_files() {
@@ -27,53 +26,53 @@ find_template_files() {
 }
 
 find_rendered_files() {
-	local -r tmpdir=$1
-	find "$tmpdir" -type f -print0
+	local -r dir=$1
+	find "$dir" -type f -print0
 }
 
 find_all_files() {
-	local -r tmpdir=$1
+	local -r dir=$1
 	find_static_files
-	find_rendered_files "$tmpdir"
+	find_rendered_files "$dir"
 }
 
 create_chezmoi_config() {
-	local -r tmpconfig=$1 source_root=$2
+	local -r config=$1 source_root=$2
 
 	chezmoi execute-template \
 		--init \
 		--stdinisatty=false \
 		<"$source_root/home/.chezmoi.toml.tmpl" \
-		>"$tmpconfig"
+		>"$config"
 }
 
 render_templates() {
-	local -r tmpdir=$1 tmpconfig=$2 source_root=$3
+	local -r dir=$1 config=$2 source_root=$3
 	local file dest
 
 	while IFS= read -r -d '' file; do
-		dest="$tmpdir/${file%.tmpl}"
+		dest="$dir/${file%.tmpl}"
 		mkdir -p -- "$(dirname -- "$dest")"
 
 		# TODO: Find a better way to lint OS-specific templates without overriding `.chezmoi.os`.
 		sed 's/\.chezmoi\.os/"darwin"/g' "$file" |
-			chezmoi --source "$source_root" --config "$tmpconfig" execute-template >"$dest"
+			chezmoi --source "$source_root" --config "$config" execute-template >"$dest"
 	done
 }
 
 normalize_paths() {
-	local -r tmpdir=$1
-	sed "s|$tmpdir/||g"
+	local -r dir=$1
+	sed "s|$dir/||g"
 }
 
 main() {
-	local -r tmpdir=$1 tmpconfig=$2 source_root=$3
+	local -r dir=$1 config=$2 source_root=$3
 
-	render_templates "$tmpdir" "$tmpconfig" "$source_root" < <(find_template_files)
+	render_templates "$dir" "$config" "$source_root" < <(find_template_files)
 
-	find_all_files "$tmpdir" |
+	find_all_files "$dir" |
 		xargs -0 shellcheck --color=always -- |
-		normalize_paths "$tmpdir"
+		normalize_paths "$dir"
 }
 
 tmpdir=$(mktemp -d)

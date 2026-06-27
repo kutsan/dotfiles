@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
 set -euo pipefail
+IFS=$'\n\t'
 
 find_plugin_files() {
-	local plugins_dir=$1
+	local -r plugins_dir=$1
 
 	find "$plugins_dir" \
 		-maxdepth 1 \
@@ -14,23 +15,23 @@ find_plugin_files() {
 }
 
 get_plugin_name() {
-	local file=$1
-	local base="${file##*/}"
+	local -r file=$1
+	local -r base="${file##*/}"
 	printf '%s' "${base%.*}"
 }
 
 get_plugin_repo() {
-	local file=$1
+	local -r file=$1
 	grep -m1 $'^\tfor ' "$file" | awk '{print $2}' || true
 }
 
 is_github_release() {
-	local file=$1
+	local -r file=$1
 	grep -q 'from"github-rel"' "$file"
 }
 
 fetch_release_revision() {
-	local repo=$1
+	local -r repo=$1
 
 	curl --silent "https://api.github.com/repos/$repo/releases/latest" |
 		grep -o '"tag_name": *"[^"]*"' |
@@ -38,13 +39,13 @@ fetch_release_revision() {
 }
 
 fetch_commit_revision() {
-	local repo=$1
+	local -r repo=$1
 
 	git ls-remote "https://github.com/$repo" HEAD | awk '{print $1}'
 }
 
 process_plugin() {
-	local plugin=$1
+	local -r plugin=$1
 	local name repo fetcher revision
 
 	name=$(get_plugin_name "$plugin")
@@ -64,7 +65,7 @@ process_plugin() {
 }
 
 generate_lockfile() {
-	local plugins_dir=$1
+	local -r plugins_dir=$1
 
 	printf '%s\n' 'name,revision'
 
@@ -74,15 +75,16 @@ generate_lockfile() {
 }
 
 main() {
-	local tmpfile=$1
-	local plugins_dir="$MISE_PROJECT_ROOT/home/dot_config/exact_zsh/exact_plugins"
-	local lockfile="$MISE_PROJECT_ROOT/home/dot_config/exact_zsh/plugins-lock.csv"
+	local -r dest=$1 source_root=$2
+	local -r plugins_dir="$source_root/home/dot_config/exact_zsh/exact_plugins"
+	local -r lockfile="$source_root/home/dot_config/exact_zsh/plugins-lock.csv"
 
-	generate_lockfile "$plugins_dir" >"$tmpfile"
+	generate_lockfile "$plugins_dir" >"$dest"
 
-	mv -- "$tmpfile" "$lockfile"
+	mv -- "$dest" "$lockfile"
 }
 
 tmpfile=$(mktemp)
+readonly tmpfile
 trap 'rm -f -- "$tmpfile"' EXIT INT TERM
-main "$tmpfile"
+main "$tmpfile" "$MISE_PROJECT_ROOT"
