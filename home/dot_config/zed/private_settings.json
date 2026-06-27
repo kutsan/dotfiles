@@ -33,9 +33,7 @@
 	},
 	"terminal": {
 		"option_as_meta": true,
-		"font_fallbacks": [
-			"Symbols Nerd Font Mono"
-		],
+		"font_fallbacks": ["Symbols Nerd Font Mono"],
 		"line_height": "comfortable",
 		"toolbar": {
 			"breadcrumbs": false
