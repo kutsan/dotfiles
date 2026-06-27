@@ -25,6 +25,7 @@ jobs:
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
           fetch-depth: 0
+          persist-credentials: false
 
       - name: Install pnpm
         uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6.0.9
@@ -40,22 +41,28 @@ jobs:
 
       - name: Resolve commit range
         id: range
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          PR_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          PR_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          PUSH_BEFORE_SHA: ${{ github.event.before }}
+          PUSH_HEAD_SHA: ${{ github.sha }}
         run: |
-          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
-            echo "from=${{ github.event.pull_request.base.sha }}" >> "$GITHUB_OUTPUT"
-            echo "to=${{ github.event.pull_request.head.sha }}" >> "$GITHUB_OUTPUT"
+          if [[ "$EVENT_NAME" == "pull_request" ]]; then
+            echo "from=$PR_BASE_SHA" >> "$GITHUB_OUTPUT"
+            echo "to=$PR_HEAD_SHA" >> "$GITHUB_OUTPUT"
           else
-            echo "from=${{ github.event.before }}" >> "$GITHUB_OUTPUT"
-            echo "to=${{ github.sha }}" >> "$GITHUB_OUTPUT"
+            echo "from=$PUSH_BEFORE_SHA" >> "$GITHUB_OUTPUT"
+            echo "to=$PUSH_HEAD_SHA" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Lint commit messages
+        env:
+          FROM: ${{ steps.range.outputs.from }}
+          TO: ${{ steps.range.outputs.to }}
         run: |
           pnpm exec \
-            commitlint \
-              --from ${{ steps.range.outputs.from }} \
-              --to ${{ steps.range.outputs.to }} \
-              --verbose
+            commitlint --from "$FROM" --to "$TO" --verbose
 
   checks:
     name: ${{ matrix.name }}
@@ -69,12 +76,23 @@ jobs:
             command: check:shellcheck
           - name: Selene
             command: check:selene
+          - name: Zizmor
+            command: check:zizmor
+          - name: Pinact
+            command: check:pinact
+          - name: Shfmt
+            command: check:shfmt
     steps:
       - name: Checkout code
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
 
       - name: Set up mise
         uses: jdx/mise-action@e6a8b3978addb5a52f2b4cd9d91eafa7f0ab959d # v4.2.0
 
       - name: ${{ matrix.name }}
-        run: mise run ${{ matrix.command }}
+        env:
+          COMMAND: ${{ matrix.command }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: mise run "$COMMAND"
