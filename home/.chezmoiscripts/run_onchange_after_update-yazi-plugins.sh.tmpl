@@ -1,16 +1,23 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+IFS=$'\n\t'
+
 # package.toml hash: {{ include "dot_config/exact_yazi/package.toml" | sha256sum }}
 
 {{ template "logger.sh" . }}
 
-if ! command -v ya >/dev/null 2>&1; then
-	log.warn "Yazi CLI is not installed. Skipping installing Yazi plugins and flavors."
-	exit 0
-fi
+main() {
+	if ! command -v ya >/dev/null 2>&1; then
+		log.warn "Yazi CLI is not installed. Skipping installing Yazi plugins and flavors."
+		return 0
+	fi
 
-log.info "Installing Yazi plugins..."
+	log.info "Installing Yazi plugins..."
 
-ya pkg install
+	ya pkg install
 
-log.success "Yazi plugins installed."
+	log.success "Yazi plugins installed."
+}
+
+main "$@"

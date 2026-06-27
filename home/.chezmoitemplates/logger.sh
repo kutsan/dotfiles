@@ -1,9 +1,9 @@
 # shellcheck shell=bash
 
-script_name='{{ .chezmoi.sourceFile | base | trimSuffix ".tmpl" }}'
+readonly script_name='{{ .chezmoi.sourceFile | base | trimSuffix ".tmpl" }}'
 
 _cursor_col() {
-	local col
+	local col=
 
 	# -icanon delivers bytes immediately without buffering until newline
 	# -echo suppresses the terminal from printing the response to the screen
@@ -21,7 +21,7 @@ _cursor_col() {
 }
 
 _log() {
-	local color=$1 stream=$2
+	local -r color=$1 stream=$2
 	shift 2
 
 	if [[ -t $stream ]]; then

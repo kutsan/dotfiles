@@ -1,12 +1,19 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+IFS=$'\n\t'
+
 # plugins-lock.csv hash: {{ include "dot_config/exact_zsh/plugins-lock.csv" | sha256sum }}
 
 {{ template "logger.sh" . }}
 
-log.info "Updating Zsh plugins..."
+main() {
+	log.info "Updating Zsh plugins..."
 
-# Run interactive zsh to load zinit.
-zsh -ic 'zinit update --all --no-pager'
+	# Run interactive zsh to load zinit.
+	zsh -ic 'zinit update --all --no-pager'
 
-log.success "Zsh plugins updated."
+	log.success "Zsh plugins updated."
+}
+
+main "$@"

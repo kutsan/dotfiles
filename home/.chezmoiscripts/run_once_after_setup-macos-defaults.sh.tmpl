@@ -1,21 +1,28 @@
 {{- if eq .chezmoi.os "darwin" -}}
 #!/usr/bin/env bash
 
+set -euo pipefail
+IFS=$'\n\t'
+
 # Interactively discover which defaults domain and key control a setting.
 #   before=$(defaults read) && read "?Change the setting, then press Enter... " && diff -U50 <(<<<"$before") <(defaults read) | delta; unset before
 
 {{ template "logger.sh" . }}
 
-log.info "Setting macOS defaults..."
+main() {
+	log.info "Setting macOS defaults..."
 
-# Show hidden files
-defaults write com.apple.finder AppleShowAllFiles -bool true
+	# Show hidden files
+	defaults write com.apple.finder AppleShowAllFiles -bool true
 
-# Enable tiled window margins
-defaults write com.apple.WindowManager EnableTiledWindowMargins -bool true
+	# Enable tiled window margins
+	defaults write com.apple.WindowManager EnableTiledWindowMargins -bool true
 
-# Restart system services to apply changes
-killall Finder
+	# Restart system services to apply changes
+	killall Finder
 
-log.success "macOS defaults set."
+	log.success "macOS defaults set."
+}
+
+main "$@"
 {{- end -}}
