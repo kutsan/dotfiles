@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+{{ if eq .user "kutsan" -}}
+options=(
+	width=3.0
+	active_color=0xffe1e3e4
+	inactive_color=0xff494d64
+)
+{{- end }}
+{{- if eq .user "reyhan" -}}
+options=(
+	width=3.0
+	active_color=0xfffefd99
+	inactive_color=0xff494d64
+)
+{{- end }}
+
+borders "${options[@]}"
