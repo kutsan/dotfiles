@@ -1,0 +1,159 @@
+config-version = 2
+
+start-at-login = false
+
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+
+automatically-unhide-macos-hidden-apps = true
+
+after-startup-command = [
+  'exec-and-forget borders active_color=0xffFEFD99 inactive_color=0xff494d64 width=3.0',
+]
+
+persistent-workspaces = [
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "Browsing",
+  "Communication",
+  "Development",
+  "Mail",
+  "Music",
+]
+
+accordion-padding = 48
+
+[gaps]
+inner.horizontal = 8
+inner.vertical = 8
+outer.left = 10
+outer.bottom = 10
+outer.top = 10
+outer.right = 10
+
+[mode.main.binding]
+# Modes
+alt-shift-semicolon = 'mode layout'
+alt-shift-m = 'mode move'
+alt-shift-r = 'mode resize'
+alt-shift-t = 'mode move-workspace'
+alt-h = 'focus left'
+alt-j = 'focus down'
+alt-k = 'focus up'
+alt-l = 'focus right'
+
+# Workspace
+alt-6 = 'workspace-back-and-forth'
+alt-1 = 'workspace 1'
+alt-2 = 'workspace 2'
+alt-3 = 'workspace 3'
+alt-4 = 'workspace 4'
+alt-5 = 'workspace 5'
+alt-a = 'workspace Art'
+alt-b = 'workspace Browsing'
+alt-c = 'workspace Communication'
+alt-d = 'workspace Development'
+alt-m = 'workspace Mail'
+alt-f8 = 'workspace Music'
+
+# Window
+alt-z = 'fullscreen'
+
+# System
+alt-shift-comma = 'reload-config'
+
+[workspace-to-monitor-force-assignment]
+1 = 1
+2 = 1
+3 = 1
+4 = 1
+5 = 1
+Art = ['MD240UH', 1]
+Browsing = 1
+Communication = 1
+Development = 1
+Mail = 1
+Music = 1
+
+
+[mode.resize.binding]
+h = 'resize width -30'
+j = 'resize height +30'
+k = 'resize height -30'
+l = 'resize width +30'
+shift-h = 'resize width -100'
+shift-j = 'resize height +100'
+shift-k = 'resize height -100'
+shift-l = 'resize width +100'
+left = 'resize width -10'
+down = 'resize height +10'
+up = 'resize height -10'
+right = 'resize width +10'
+esc = 'mode main'
+
+[mode.layout.binding]
+t = 'layout tiles'
+a = 'layout accordion'
+o = 'layout horizontal vertical'
+f = 'layout floating tiling'
+r = 'flatten-workspace-tree'
+esc = 'mode main'
+
+[mode.move.binding]
+h = 'move left'
+j = 'move down'
+k = 'move up'
+l = 'move right'
+shift-h = 'join-with left'
+shift-j = 'join-with down'
+shift-k = 'join-with up'
+shift-l = 'join-with right'
+esc = 'mode main'
+
+[mode.move-workspace.binding]
+1 = ['move-node-to-workspace 1 --focus-follows-window', 'mode main']
+2 = ['move-node-to-workspace 2 --focus-follows-window', 'mode main']
+3 = ['move-node-to-workspace 3 --focus-follows-window', 'mode main']
+4 = ['move-node-to-workspace 4 --focus-follows-window', 'mode main']
+5 = ['move-node-to-workspace 5 --focus-follows-window', 'mode main']
+a = ['move-node-to-workspace Art --focus-follows-window', 'mode main']
+b = ['move-node-to-workspace Browsing --focus-follows-window', 'mode main']
+c = ['move-node-to-workspace Communication --focus-follows-window', 'mode main']
+d = ['move-node-to-workspace Development --focus-follows-window', 'mode main']
+m = ['move-node-to-workspace Mail --focus-follows-window', 'mode main']
+f8 = ['move-node-to-workspace Music --focus-follows-window', 'mode main']
+esc = 'mode main'
+
+[[on-window-detected]]
+if.app-id = 'jp.co.celsys.CLIPSTUDIOPAINT'
+run = 'move-node-to-workspace Art'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Mail'
+run = 'move-node-to-workspace Mail'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Music'
+run = 'move-node-to-workspace Music'
+
+[[on-window-detected]]
+if.app-id = "com.mitchellh.ghostty"
+run = ["move-node-to-workspace Development"]
+
+[[on-window-detected]]
+if.app-id = "com.google.Chrome"
+run = ["move-node-to-workspace Browsing"]
+
+[[on-window-detected]]
+if.app-id = "com.apple.MobileSMS"
+run = ["move-node-to-workspace Communication", "layout accordion"]
+
+[[on-window-detected]]
+if.app-id = "com.tinyspeck.slackmacgap"
+run = ["move-node-to-workspace Communication", "layout accordion"]
+
+[[on-window-detected]]
+if.app-id = "net.whatsapp.WhatsApp"
+run = ["move-node-to-workspace Communication", "layout accordion"]
