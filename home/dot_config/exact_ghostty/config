@@ -40,6 +40,9 @@ quick-terminal-size = 70%,90%
 quick-terminal-animation-duration = 0
 keybind = global:super+shift+\=toggle_quick_terminal
 
+# macOS settings
+macos-titlebar-style = "hidden"
+
 # Notifications
 notify-on-command-finish = unfocused
 notify-on-command-finish-action = no-bell,notify
