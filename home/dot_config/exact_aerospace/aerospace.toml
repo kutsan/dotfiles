@@ -1,6 +1,6 @@
 config-version = 2
 
-start-at-login = false
+start-at-login = true
 
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
