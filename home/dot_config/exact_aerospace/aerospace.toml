@@ -129,7 +129,7 @@ if.app-id = 'jp.co.celsys.CLIPSTUDIOPAINT'
 run = 'move-node-to-workspace Art'
 
 [[on-window-detected]]
-if.app-id = 'com.apple.Mail'
+if.app-id = 'com.apple.mail'
 run = 'move-node-to-workspace Mail'
 
 [[on-window-detected]]
