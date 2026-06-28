@@ -5,6 +5,10 @@
     "qmk/qmk"
   ],
   "trustedformulae": [
-    "django23/tap/asimov"
+    "django23/tap/asimov",
+    "felixkratz/formulae/borders"
+  ],
+  "trustedcasks": [
+    "nikitabobko/tap/aerospace"
   ]
 }
