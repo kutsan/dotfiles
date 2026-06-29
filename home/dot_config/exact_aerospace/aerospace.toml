@@ -6,8 +6,6 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
 automatically-unhide-macos-hidden-apps = true
 
-after-startup-command = ['exec-and-forget borders']
-
 persistent-workspaces = [
   "1",
   "2",
