@@ -8,7 +8,7 @@ unmanaged_apps=(
 	'Disk Utility'
 	'QuickTime Player'
 	'FaceTime'
-	'iD Mixer'
+	'iD'
 )
 
 unmanaged_windows=(
