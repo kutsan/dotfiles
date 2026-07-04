@@ -47,8 +47,8 @@
 	},
 	"show_signature_help_after_edits": true,
 	"title_bar": {
-		"show_user_picture": false,
-		"show_branch_icon": true
+		"show_branch_status_icon": true,
+		"show_user_picture": false
 	},
 	"buffer_line_height": {
 		"custom": 1.7
