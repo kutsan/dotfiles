@@ -25,23 +25,14 @@
 	},
 	// Edit Predictions
 	{
-		"context": "Editor && (edit_prediction && (showing_completions || in_leading_whitespace)) && showing_completions",
-		"bindings": {
-			"tab": "editor::ContextMenuNext",
-			"shift-tab": "editor::ContextMenuPrevious"
-		}
-	},
-	{
 		"context": "Editor && edit_prediction",
+		"unbind": {
+			"tab": "editor::AcceptEditPrediction",
+			"alt-tab": "editor::AcceptEditPrediction",
+			"alt-l": "editor::AcceptEditPrediction"
+		},
 		"bindings": {
-			"ctrl-l": "editor::AcceptEditPrediction",
-			"alt-tab": null
-		}
-	},
-	{
-		"context": "Editor && (edit_prediction && (showing_completions || in_leading_whitespace)) && !showing_completions",
-		"bindings": {
-			"tab": "editor::Tab"
+			"ctrl-l": "editor::AcceptEditPrediction"
 		}
 	},
 	// Pane Navigation
