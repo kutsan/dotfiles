@@ -34,7 +34,7 @@
 	{
 		"context": "Editor && edit_prediction",
 		"bindings": {
-			"alt-l": "editor::AcceptEditPrediction",
+			"ctrl-l": "editor::AcceptEditPrediction",
 			"alt-tab": null
 		}
 	},
