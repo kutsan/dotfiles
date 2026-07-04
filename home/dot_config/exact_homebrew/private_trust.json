@@ -5,10 +5,11 @@
     "qmk/qmk"
   ],
   "trustedformulae": [
+    "asmvik/formulae/yabai",
     "django23/tap/asimov",
-    "felixkratz/formulae/borders"
+    "felixkratz/formulae/sketchybar"
   ],
   "trustedcasks": [
-    "nikitabobko/tap/aerospace"
+    "jackielii/tap/skhd-zig"
   ]
 }
