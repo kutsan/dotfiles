@@ -60,5 +60,6 @@
     "verbs": ["Working"]
   },
   "tui": "fullscreen",
-  "editorMode": "vim"
+  "editorMode": "vim",
+  "model": "opus[1m]"
 }
