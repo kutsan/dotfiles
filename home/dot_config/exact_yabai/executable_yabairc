@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
+
+for name in config rules signals; do
+	# shellcheck source=/dev/null
+	source "${0%/*}/$name.sh"
+done
