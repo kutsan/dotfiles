@@ -16,13 +16,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 			vim.keymap.set(
 				'i',
-				'<M-l>',
+				'<C-l>',
 				vim.lsp.inline_completion.get,
 				{ desc = 'LSP: accept inline completion', buffer = bufnr }
 			)
 			vim.keymap.set(
 				'i',
-				'<M-]>',
+				'<C-j>',
 				vim.lsp.inline_completion.select,
 				{ desc = 'LSP: switch inline completion', buffer = bufnr }
 			)
