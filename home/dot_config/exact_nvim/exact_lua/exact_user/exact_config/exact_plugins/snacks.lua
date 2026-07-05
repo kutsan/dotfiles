@@ -166,11 +166,18 @@ snacks.setup(opts)
 
 snacks.toggle.option('spell', { name = 'Spelling' }):map('<Space>us')
 
+local is_mac = vim.fn.has('mac') == 1
+
 vim.keymap.set('n', '<C-b>', snacks.picker.buffers, { desc = 'Buffers' })
-vim.keymap.set('n', '<C-p>', snacks.picker.files, { desc = 'Find files' })
 vim.keymap.set(
 	'n',
-	'<Space><C-p>',
+	is_mac and '<D-p>' or '<C-p>',
+	snacks.picker.files,
+	{ desc = 'Find files' }
+)
+vim.keymap.set(
+	'n',
+	is_mac and '<Space><D-p>' or '<Space><C-p>',
 	snacks.picker.git_files,
 	{ desc = 'Find git files' }
 )
@@ -198,7 +205,12 @@ vim.keymap.set('n', '<Space>f', function()
 	end
 end, { desc = 'Reveal in explorer' })
 
-vim.keymap.set('n', '<M-x>', snacks.picker.commands, { desc = 'Commands' })
+vim.keymap.set(
+	'n',
+	is_mac and '<D-S-p>' or '<C-S-p>',
+	snacks.picker.commands,
+	{ desc = 'Commands' }
+)
 vim.keymap.set(
 	'n',
 	'<Space>sH',
@@ -224,6 +236,12 @@ vim.keymap.set(
 	'<Space>r',
 	snacks.picker.resume,
 	{ desc = 'Resume last picker' }
+)
+vim.keymap.set(
+	'n',
+	'<Space>o',
+	snacks.picker.recent,
+	{ desc = 'Open recent files' }
 )
 
 vim.api.nvim_create_autocmd('LspAttach', {

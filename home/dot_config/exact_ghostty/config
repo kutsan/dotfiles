@@ -50,6 +50,7 @@ notify-on-command-finish-after = 10s
 
 # Common keybindings
 keybind = performable:super+c=copy_to_clipboard
+keybind = super+shift+;=toggle_command_palette
 
 # Prompt navigation keybindings
 keybind = super+[=jump_to_prompt:-1
@@ -94,3 +95,4 @@ keybind = super+arrow_up=ignore
 keybind = super+arrow_down=ignore
 keybind = super+alt+shift+w=ignore
 keybind = super+alt+shift+j=ignore
+keybind = super+shift+p=unbind
