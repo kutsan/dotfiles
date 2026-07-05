@@ -32,7 +32,8 @@
 			"alt-l": "editor::AcceptEditPrediction"
 		},
 		"bindings": {
-			"ctrl-l": "editor::AcceptEditPrediction"
+			"ctrl-l": "editor::AcceptEditPrediction",
+			"ctrl-j": "editor::AcceptNextWordEditPrediction"
 		}
 	},
 	// Pane Navigation
