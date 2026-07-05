@@ -1,0 +1,23 @@
+{{- $stateDir := env "XDG_STATE_HOME" | default (printf "%s/.local/state" .chezmoi.homeDir) -}}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>local.asimov</string>
+
+	<key>ProgramArguments</key>
+	<array>
+		<string>{{ .chezmoi.homeDir }}/.local/libexec/asimov</string>
+	</array>
+
+	<key>StartInterval</key>
+	<integer>259200</integer>
+
+	<key>StandardOutPath</key>
+	<string>{{ $stateDir }}/asimov/asimov.log</string>
+
+	<key>StandardErrorPath</key>
+	<string>{{ $stateDir }}/asimov/asimov.log</string>
+</dict>
+</plist>

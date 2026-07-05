@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+IFS=$'\n\t'
+
+readonly asimov_bin='/opt/homebrew/bin/asimov'
+
+main() {
+	if [[ ! -x $asimov_bin ]]; then
+		printf '%s not found; skipping asimov run.\n' "$asimov_bin" >&2
+		exit 0
+	fi
+
+	exec "$asimov_bin"
+}
+
+main "$@"

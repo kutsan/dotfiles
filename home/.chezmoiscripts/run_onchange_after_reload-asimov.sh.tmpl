@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+IFS=$'\n\t'
+
+# local.asimov.plist hash: {{ include "Library/LaunchAgents/local.asimov.plist.tmpl" | sha256sum }}
+
+# To remove this job entirely:
+#   launchctl bootout gui/$(id -u)/local.asimov
+#   rm ~/Library/LaunchAgents/local.asimov.plist ~/.local/libexec/asimov
+#   rm -rf ~/.local/state/asimov
+
+{{ template "logger.sh" . }}
+
+main() {
+	local -r domain="gui/$(id -u)"
+	local -r label="local.asimov"
+	local -r plist="${HOME}/Library/LaunchAgents/${label}.plist"
+
+	log.info "Reloading ${label} launchd agent..."
+
+	mkdir -p "${XDG_STATE_HOME:-${HOME}/.local/state}/asimov"
+
+	launchctl bootout "${domain}/${label}" 2>/dev/null || true
+	launchctl bootstrap "${domain}" "${plist}"
+
+	log.success "${label} loaded."
+}
+
+main "$@"
