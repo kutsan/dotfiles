@@ -1,3 +1,41 @@
+---@param item table
+---@return table
+local function accept_word(item)
+	local insert_text = item.insert_text
+	local range = item.range
+
+	if type(insert_text) ~= 'string' or not range then
+		return item
+	end
+
+	local current = table.concat(
+		vim.api.nvim_buf_get_text(
+			range.buf,
+			range.start_row,
+			range.start_col,
+			range.end_row,
+			range.end_col,
+			{}
+		),
+		'\n'
+	)
+
+	local i = 1
+
+	while
+		i <= #insert_text
+		and i <= #current
+		and insert_text:sub(i, i) == current:sub(i, i)
+	do
+		i = i + 1
+	end
+
+	local word = insert_text:sub(i):match('%s*[^%s]%w*') or ''
+	item.insert_text = insert_text:sub(1, i - 1) .. word
+
+	return item
+end
+
 vim.api.nvim_create_autocmd('LspAttach', {
 	desc = 'Enable inline completion and its keymaps for LSP clients that support it.',
 	group = vim.api.nvim_create_augroup('LspInlineCompletion', { clear = true }),
@@ -22,10 +60,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
 			)
 			vim.keymap.set(
 				'i',
-				'<C-j>',
+				'<C-]>',
 				vim.lsp.inline_completion.select,
-				{ desc = 'LSP: switch inline completion', buffer = bufnr }
+				{ desc = 'LSP: next inline completion', buffer = bufnr }
 			)
+			vim.keymap.set('i', '<C-j>', function()
+				vim.lsp.inline_completion.get({ on_accept = accept_word })
+			end, { desc = 'LSP: accept inline completion word', buffer = bufnr })
 		end
 	end,
 })
