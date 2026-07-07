@@ -1,37 +1,27 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "model": "opus[1m]",
+  "tui": "fullscreen",
+  "editorMode": "vim",
   "attribution": {
     "commit": "",
     "pr": ""
   },
-  "permissions": {
-    "allow": ["WebFetch(domain:registry.npmjs.org)"]
+  "sandbox": {
+    "enabled": true,
+    "autoAllowBashIfSandboxed": true,
+    "allowUnsandboxedCommands": false
   },
-  "hooks": {
-    "Notification": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "command -v afplay &>/dev/null && afplay /System/Library/Sounds/Funk.aiff"
-          }
-        ]
-      }
-    ],
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "command -v afplay &>/dev/null && afplay /System/Library/Sounds/Funk.aiff"
-          }
-        ]
-      }
-    ]
+  "env": {
+    "CLAUDE_CODE_ENABLE_TELEMETRY": "0"
+  },
+  "spinnerVerbs": {
+    "mode": "replace",
+    "verbs": ["Working"]
   },
   "statusLine": {
     "type": "command",
-    "command": "command -v npm &>/dev/null && npm exec --yes ccstatusline@latest",
+    "command": "command -v npm >/dev/null 2>&1 && npm exec --yes ccstatusline@latest || true",
     "padding": 0
   },
   "enabledPlugins": {
@@ -39,27 +29,6 @@
     "security-guidance@claude-plugins-official": true,
     "claude-md-management@claude-plugins-official": true,
     "lua-lsp@claude-plugins-official": true,
-    "expo@expo-plugins": true,
     "claude-code-setup@claude-plugins-official": true
-  },
-  "extraKnownMarketplaces": {
-    "expo-plugins": {
-      "source": {
-        "source": "github",
-        "repo": "expo/skills"
-      }
-    }
-  },
-  "sandbox": {
-    "enabled": true,
-    "autoAllowBashIfSandboxed": true,
-    "allowUnsandboxedCommands": false
-  },
-  "spinnerVerbs": {
-    "mode": "replace",
-    "verbs": ["Working"]
-  },
-  "tui": "fullscreen",
-  "editorMode": "vim",
-  "model": "opus[1m]"
+  }
 }
