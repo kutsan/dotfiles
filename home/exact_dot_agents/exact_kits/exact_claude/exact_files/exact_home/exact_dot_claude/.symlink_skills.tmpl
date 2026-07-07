@@ -1,0 +1,5 @@
+# Documentation only. Disabled because `sbx kit pack` rejects symlinks that
+# escape the kit directory, so `run_onchange_after_sync-sbx-kit-skills.sh`
+# copies skills in instead of linking `skills/` to the target below. The leading
+# dot stops `chezmoi` from rendering this file.
+{{ .chezmoi.homeDir }}/.agents/skills

@@ -1,0 +1,14 @@
+schemaVersion: "1"
+kind: mixin
+name: local-claude-code
+displayName: Local Claude Code
+
+commands:
+  startup:
+    - command:
+        - sh
+        - -c
+        - |
+          mkdir -p /home/agent/.claude
+          printf '%s' '{{ include "dot_config/claude/private_settings.json" | b64enc }}' \
+            | base64 -d > /home/agent/.claude/settings.json
