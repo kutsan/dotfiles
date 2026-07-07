@@ -15,9 +15,18 @@ commands:
           mkdir -p /home/agent/.claude
           [ -f "$settings" ] || printf '{}' > "$settings"
 
-          local_settings=$(printf '%s' '{{ include "dot_config/claude/private_settings.json" | b64enc }}' \
-            | base64 -d)
-          jq --argjson local_settings "$local_settings" '. * $local_settings' "$settings" \
-            > "${settings}.tmp"
+          local_settings=$(
+            printf '%s' '{{ include "dot_config/claude/private_settings.json" | b64enc }}' \
+            | base64 -d
+          )
 
+          jq \
+            --argjson local_settings "$local_settings" \
+            '. * $local_settings' "$settings" \
+            > "${settings}.tmp"
+          mv -- "${settings}.tmp" "$settings"
+
+          jq \
+            'del(.sandbox)' "$settings" \
+            > "${settings}.tmp"
           mv -- "${settings}.tmp" "$settings"
