@@ -40,6 +40,7 @@ alias df='df -a --si'
 # Utilities
 alias uuidgen='command uuidgen | tr "[:upper:]" "[:lower:]"'
 alias uuidv7="npm exec --yes uuidv7 | tr -d '\n' | pbcopy"
+[[ $OSTYPE == darwin* ]] && alias clean-clipboard='pbpaste | pbcopy'
 [[ $OSTYPE == darwin* ]] && alias uuidgen='command uuidgen | tr -d "\n" | tr "[:upper:]" "[:lower:]" | pbcopy'
 
 # Encryption
