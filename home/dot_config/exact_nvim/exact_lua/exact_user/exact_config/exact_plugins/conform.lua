@@ -29,6 +29,7 @@ local opts = {
 		sh = shell_formatter,
 		bash = shell_formatter,
 		zsh = shell_formatter,
+		python = { 'ruff format' },
 	},
 	format_on_save = {
 		timeout_ms = 500,
