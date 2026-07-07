@@ -46,6 +46,10 @@ local opts = {
 		'selene',
 		'stylua',
 
+		-- Python
+		'ty',
+		'ruff',
+
 		-- JSON
 		'jsonls',
 
