@@ -53,9 +53,6 @@ alias px='pnpx'
 alias cz='chezmoi'
 alias bb='brew bundle --global --verbose'
 
-# AI Agents
-alias claude='sbx run claude --kit $XDG_CONFIG_HOME/sbx/kits/claude'
-
 # Git
 alias g='git'
 compdef g='git'
