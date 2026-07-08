@@ -37,4 +37,5 @@ _log() {
 
 log.info() { _log 34 1 "$@"; }
 log.warn() { _log 33 2 "$@"; }
+log.error() { _log 31 2 "$@"; }
 log.success() { _log 32 1 "$@"; }

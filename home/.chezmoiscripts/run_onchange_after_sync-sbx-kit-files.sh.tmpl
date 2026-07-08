@@ -3,13 +3,19 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-# sync hash: {{ output "sh" "-c" (printf "cd %q && find exact_dot_agents -type f -exec cat {} +" .chezmoi.sourceDir) | sha256sum }}
+# sync hash: {{ output "sh" "-c" (printf "cd %q && find exact_dot_agents -type f -print0 | sort -z | xargs -0 shasum -a 256" .chezmoi.sourceDir) | sha256sum }}
 
 {{ template "logger.sh" . }}
 
 mirror_dir_contents() {
 	local -r src=$1 dest=$2
 
+	if [[ ! -d "${src}" ]]; then
+		log.error "Source directory missing: ${src}"
+		return 1
+	fi
+
+	mkdir -p -- "${dest}"
 	find "${dest}" -mindepth 1 -delete
 	cp -RL -- "${src}/." "${dest}/"
 }
