@@ -33,7 +33,7 @@ is_github_release() {
 fetch_release_revision() {
 	local -r repo=$1
 
-	curl --silent "https://api.github.com/repos/$repo/releases/latest" |
+	curl --fail --silent --show-error "https://api.github.com/repos/$repo/releases/latest" |
 		grep -o '"tag_name": *"[^"]*"' |
 		cut -d'"' -f4
 }
