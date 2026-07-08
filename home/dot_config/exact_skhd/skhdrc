@@ -1,3 +1,5 @@
+.shell "/bin/dash"
+
 # Command definitions
 .define focus_space : yabai --message space --focus {{1}}
 .define focus_window : yabai --message window --focus {{1}}
