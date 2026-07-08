@@ -20,11 +20,6 @@
     "mode": "replace",
     "verbs": ["Working"]
   },
-  "statusLine": {
-    "type": "command",
-    "command": "command -v npm >/dev/null 2>&1 && npm exec --yes ccstatusline@latest || true",
-    "padding": 0
-  },
   "enabledPlugins": {
     "typescript-lsp@claude-plugins-official": true,
     "security-guidance@claude-plugins-official": true,
