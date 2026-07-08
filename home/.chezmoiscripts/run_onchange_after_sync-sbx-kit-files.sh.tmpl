@@ -3,7 +3,7 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-# sync hash: {{ output "sh" "-c" (printf "cd %q && find exact_dot_agents dot_config/exact_ccstatusline -type f -exec cat {} +" .chezmoi.sourceDir) | sha256sum }}
+# sync hash: {{ output "sh" "-c" (printf "cd %q && find exact_dot_agents -type f -exec cat {} +" .chezmoi.sourceDir) | sha256sum }}
 
 {{ template "logger.sh" . }}
 
@@ -20,10 +20,6 @@ main() {
 	mirror_dir_contents \
 		"${HOME}/.agents/skills" \
 		"${HOME}/.config/sbx/kits/claude/files/home/.claude/skills"
-
-	mirror_dir_contents \
-		"${HOME}/.config/ccstatusline" \
-		"${HOME}/.config/sbx/kits/claude/files/home/.config/ccstatusline"
 
 	log.success "Kit config synced."
 }
