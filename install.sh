@@ -1,13 +1,17 @@
-#!/bin/sh
+#!/usr/bin/env sh
+# shellcheck disable=SC3043 # `local` is supported by every real /bin/sh.
 
 set -eu
 
 ensure_chezmoi() {
+	local chezmoi
+
 	if chezmoi="$(command -v chezmoi)"; then
+		printf '%s\n' "${chezmoi}"
 		return 0
 	fi
 
-	bin_dir="${HOME}/.local/bin"
+	local bin_dir="${HOME}/.local/bin"
 	chezmoi="${bin_dir}/chezmoi"
 
 	printf 'Installing chezmoi to %s\n' "${chezmoi}" >&2
@@ -17,14 +21,27 @@ ensure_chezmoi() {
 		exit 1
 	fi
 
-	chezmoi_install_script="$(curl -fsSL get.chezmoi.io)"
-	sh -c "${chezmoi_install_script}" -- -b "${bin_dir}"
+	local chezmoi_install_script
+	chezmoi_install_script="$(
+		curl \
+			--fail \
+			--silent \
+			--show-error \
+			--location \
+			--proto '=https' \
+			https://get.chezmoi.io
+	)"
+	sh -c "${chezmoi_install_script}" -- -b "${bin_dir}" >&2
+
+	printf '%s\n' "${chezmoi}"
 }
 
 main() {
-	ensure_chezmoi
+	local chezmoi
+	chezmoi="$(ensure_chezmoi)"
 
 	# POSIX way to get script's dir: https://stackoverflow.com/a/29834779/12156188
+	local script_dir
 	script_dir="$(cd -P -- "$(dirname -- "$(command -v -- "$0")")" && pwd -P)"
 
 	set -- init --apply --source="${script_dir}"
