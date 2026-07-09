@@ -34,6 +34,8 @@ local opts = {
 		'cssmodules_ls',
 		'stylelint-language-server',
 		'prettierd',
+		'oxlint',
+		'oxfmt',
 		'js-debug-adapter',
 
 		-- Shell
