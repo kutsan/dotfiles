@@ -24,13 +24,13 @@ Pass external dependencies in rather than creating them internally:
 ```typescript
 // Easy to mock
 function processPayment(order, paymentClient) {
-  return paymentClient.charge(order.total);
+  return paymentClient.charge(order.total)
 }
 
 // Hard to mock
 function processPayment(order) {
-  const client = new StripeClient(process.env.STRIPE_KEY);
-  return client.charge(order.total);
+  const client = new StripeClient(process.env.STRIPE_KEY)
+  return client.charge(order.total)
 }
 ```
 
@@ -53,6 +53,7 @@ const api = {
 ```
 
 The SDK approach means:
+
 - Each mock returns one specific shape
 - No conditional logic in test setup
 - Easier to see which endpoints a test exercises

@@ -7,6 +7,6 @@ Interview me relentlessly about every aspect of this plan until we reach a share
 
 Ask the questions one at a time, waiting for feedback on each question before continuing. Asking multiple questions at once is bewildering.
 
-If a *fact* can be found by exploring the codebase, look it up rather than asking me. The *decisions*, though, are mine — put each one to me and wait for my answer.
+If a _fact_ can be found by exploring the codebase, look it up rather than asking me. The _decisions_, though, are mine — put each one to me and wait for my answer.
 
 Do not enact the plan until I confirm we have reached a shared understanding.
