@@ -2,3 +2,42 @@
 if [[ $OSTYPE =~ darwin* ]] && [[ -x /opt/homebrew/bin/brew ]]; then
 	eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
+
+# Android SDK
+typeset android_sdk_path
+
+for candidate in \
+	"$HOME/Library/Android/sdk" \
+	"$HOME/Android/Sdk" \
+	/opt/android-sdk; do
+	if [[ -d $candidate ]]; then
+		android_sdk_path=$candidate
+		break
+	fi
+done
+
+if [[ -n $android_sdk_path ]]; then
+	export ANDROID_HOME="$android_sdk_path"
+	path=("$ANDROID_HOME/emulator" "$ANDROID_HOME/platform-tools" "${path[@]}")
+fi
+
+unset android_sdk_path candidate
+
+# Java
+# Probed here (login shell) rather than in `.zshenv` so the `java_home` fork is
+# not paid on every non-interactive `zsh -c`; child shells inherit `JAVA_HOME`.
+typeset java_home_path java_bin
+
+if [[ -x /usr/libexec/java_home ]]; then
+	java_home_path=$(/usr/libexec/java_home 2>/dev/null)
+else
+	java_bin=$(command -v java)
+	java_home_path=$(readlink -f "$java_bin" 2>/dev/null)
+	java_home_path=${java_home_path%/bin/java}
+fi
+
+if [[ -n $java_home_path && -d $java_home_path ]]; then
+	export JAVA_HOME="$java_home_path"
+fi
+
+unset java_home_path java_bin

@@ -1,4 +1,8 @@
 local function sync_multispace_listchars()
+	if vim.b.disable_multispace_listchars then
+		return
+	end
+
 	local shiftwidth = vim.bo.shiftwidth
 
 	if shiftwidth < 2 then

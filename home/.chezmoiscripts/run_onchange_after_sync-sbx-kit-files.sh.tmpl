@@ -3,7 +3,13 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-# sync hash: {{ output "sh" "-c" (printf "cd %q && find exact_dot_agents -type f -print0 | sort -z | xargs -0 shasum -a 256" .chezmoi.sourceDir) | sha256sum }}
+{{ $fileHashes := "" -}}
+{{- range (glob (joinPath .chezmoi.sourceDir "exact_dot_agents" "**")) -}}
+{{-   if not (stat .).isDir -}}
+{{-     $fileHashes = printf "%s\n%s:%s" $fileHashes . (include . | sha256sum) -}}
+{{-   end -}}
+{{- end -}}
+# sync hash: {{ $fileHashes | sha256sum }}
 
 {{ template "logger.sh" . }}
 

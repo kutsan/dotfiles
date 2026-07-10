@@ -7,9 +7,12 @@ alias ge="$GUI_EDITOR"
 compdef ge="$GUI_EDITOR"
 
 # File & Directory Operations
-alias rm='trash'
 alias mv='mv -iv'
 alias mkdir='mkdir -p'
+
+if command -v trash &>/dev/null; then
+	alias rm='trash'
+fi
 
 # `cd` into the last directory upon exit using `yazi`.
 y() {
@@ -39,9 +42,15 @@ alias df='df -a --si'
 
 # Utilities
 alias uuidgen='command uuidgen | tr "[:upper:]" "[:lower:]"'
-alias uuidv7="npm exec --yes uuidv7 | tr -d '\n' | pbcopy"
-[[ $OSTYPE == darwin* ]] && alias clean-clipboard='pbpaste | pbcopy'
-[[ $OSTYPE == darwin* ]] && alias uuidgen='command uuidgen | tr -d "\n" | tr "[:upper:]" "[:lower:]" | pbcopy'
+alias uuidv7='npm exec --yes uuidv7'
+
+if command -v pbcopy &>/dev/null; then
+	# shellcheck disable=SC2154
+	alias uuidgen="${aliases[uuidgen]} | tee >(pbcopy)"
+	# shellcheck disable=SC2154
+	alias uuidv7="${aliases[uuidv7]} | tee >(pbcopy)"
+	alias clean-clipboard='pbpaste | pbcopy'
+fi
 
 # Encryption
 alias age-encrypt='age --encrypt --recipients-file "$XDG_CONFIG_HOME/age/recipients.txt"'

@@ -12,7 +12,7 @@
 	ld = log --graph --date=iso8601 --pretty=log-full
 	la = log --graph --branches --remotes --tags --date=iso8601 --pretty=log-default
 	lda = log --graph --branches --remotes --tags --date=iso8601 --pretty=log-full
-	prune-merged = !git branch --merged | grep --invert-match --extended-regexp '\\*' | xargs -n 1 git branch --delete
+	prune-merged = !git branch --merged | grep --invert-match --extended-regexp '^[*+]| (main|master)$' | xargs --no-run-if-empty --max-args=1 git branch --delete
 	r = reflog --date=iso8601 --pretty=reflog-default
 	rd = reflog --date=iso8601 --pretty=reflog-full
 	s = status --short

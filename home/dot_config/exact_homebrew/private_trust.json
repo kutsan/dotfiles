@@ -1,17 +1,9 @@
 {
-  "trustedtaps": [
-    "docker/tap",
-    "osx-cross/arm",
-    "osx-cross/avr",
-    "qmk/qmk"
-  ],
+  "trustedtaps": ["docker/tap", "osx-cross/arm", "osx-cross/avr", "qmk/qmk"],
   "trustedformulae": [
     "asmvik/formulae/yabai",
     "django23/tap/asimov",
     "felixkratz/formulae/sketchybar"
   ],
-  "trustedcasks": [
-    "docker/tap/sbx",
-    "jackielii/tap/skhd-zig"
-  ]
+  "trustedcasks": ["docker/tap/sbx", "jackielii/tap/skhd-zig"]
 }

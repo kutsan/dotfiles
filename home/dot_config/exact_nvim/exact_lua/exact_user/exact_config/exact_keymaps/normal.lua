@@ -8,12 +8,6 @@ keymap.set({ 'i', 's' }, '<S-Tab>', function()
 	return '<S-Tab>'
 end, { expr = true, silent = true })
 
--- Disable built-in begin new line keymap.
-keymap.set('n', '<C-k>', '<Nop>', { expr = true })
-
--- Disable built-in digraph keymap.
-keymap.set('n', '<C-k>', '<Nop>', { expr = true })
-
 -- Save file.
 keymap.set('n', '\\w', function()
 	vim.cmd.write({

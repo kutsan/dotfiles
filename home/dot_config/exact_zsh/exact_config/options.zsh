@@ -31,7 +31,7 @@ typeset -g SAVEHIST=0 # Disable saving history.
 unset HISTFILE        # Don't use a history file.
 
 # Input/Output
-typeset -g KEYTIMEOUT=20    # The time the shell waits, for another key to be pressed in milliseconds.
+typeset -g KEYTIMEOUT=20    # The time the shell waits, for another key to be pressed in hundredths of a second (200ms).
 setopt NO_CLOBBER           # Don't allow `>` redirection to override existing files. Use `>!` instead.
 setopt NO_FLOW_CONTROL      # Disable flow control characters `^S` and `^Q`.
 setopt INTERACTIVE_COMMENTS # Allow comments even in interactive shells.

@@ -1,4 +1,6 @@
 {{ if ne .chezmoi.os "darwin" -}}
 Library
 .local/libexec/asimov
+.config/yabai
+.config/skhd
 {{- end }}

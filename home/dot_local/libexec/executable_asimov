@@ -11,7 +11,7 @@ main() {
 		exit 0
 	fi
 
-	exec "$asimov_bin"
+	exec -- "$asimov_bin"
 }
 
 main "$@"

@@ -10,11 +10,16 @@ tap "qmk/qmk"
 
 # Common Packages
 brew "act"
+brew "age"
+brew "asmvik/formulae/yabai"
+brew "bat"
+brew "btop"
 brew "chezmoi"
 brew "cloud-sql-proxy"
 brew "cocoapods"
 brew "devcontainer"
 brew "dive"
+brew "django23/tap/asimov"
 brew "exiftool"
 brew "fastlane"
 brew "fd"
@@ -26,39 +31,35 @@ brew "gh"
 brew "git"
 brew "git-delta"
 brew "git-standup"
-brew "bat"
 brew "gnupg"
 brew "gptfdisk"
-brew "btop"
 brew "imagemagick"
+brew "jackielii/tap/skhd-zig"
 brew "jq"
+brew "just"
 brew "lazydocker"
 brew "lazygit"
 brew "mas"
 brew "massren"
+brew "mise"
 brew "neovim"
 brew "nmap"
 brew "node"
 brew "opencode"
 brew "ripgrep"
 brew "rust"
-brew "tokei"
 brew "terraform"
+brew "tokei"
 brew "tree"
+brew "tree-sitter-cli"
 brew "trippy"
 brew "yazi"
 brew "zoxide"
-brew "tree-sitter-cli"
-brew "just"
-brew "mise"
-brew "age"
-brew "asmvik/formulae/yabai"
-brew "jackielii/tap/skhd-zig"
 {{- if eq .profile "personal" }}
 
 # Personal Packages
-brew "ledger"
 brew "hledger"
+brew "ledger"
 
 {{- if eq .user "kutsan" }}
 brew "arm-gcc-bin" # QMK dependency
@@ -71,51 +72,51 @@ brew "typst"
 
 # Common Casks
 cask "android-studio"
+cask "claude"
+cask "claude-code"
 cask "datagrip"
 cask "docker-desktop"
 cask "figma"
 cask "gcloud-cli"
 cask "ghostty"
 cask "google-chrome"
-cask "meetingbar"
-cask "pearcleaner"
-cask "proxyman"
-cask "zulu@17"
-cask "opencode-desktop"
-cask "zed"
 cask "handbrake-app"
 cask "iina"
-cask "claude"
-cask "claude-code"
 cask "keepingyouawake"
+cask "meetingbar"
+cask "opencode-desktop"
+cask "pearcleaner"
+cask "proxyman"
+cask "zed"
+cask "zulu@17"
 
 # Common Font Casks
 cask "font-symbols-only-nerd-font"
 {{- if eq .profile "personal" }}
 
 # Personal Casks
+cask "backblaze"
 cask "blender"
 cask "discord"
 cask "insta360-link-controller"
 cask "obs"
 cask "orcaslicer"
 cask "transmission"
-cask "backblaze"
 
 # Personal Font Casks
-cask "font-ia-writer-mono"
 cask "font-ia-writer-duo"
+cask "font-ia-writer-mono"
 cask "font-ia-writer-quattro"
 
 {{- if eq .user "kutsan" }}
+cask "ledger-wallet"
 cask "netnewswire"
 cask "skim"
-cask "ledger-wallet"
 {{- end }}
 
 {{- if eq .user "reyhan" }}
-cask "clip-studio-paint"
 cask "affinity"
+cask "clip-studio-paint"
 {{- end }}
 {{- end }}
 
@@ -126,29 +127,29 @@ mas "Mic Drop", id: 1489816366
 mas "Numbers", id: 361304891
 mas "Pages", id: 361309726
 mas "Slack", id: 803453959
-mas "uBlock Origin Lite", id: 6745342698
 mas "WireGuard", id: 1451685025
 mas "Xcode", id: 497799835
+mas "uBlock Origin Lite", id: 6745342698
 {{- if eq .profile "personal" }}
 
 # Personal App Store Apps
-mas "Hyperduck", id: 6444667067
 mas "Codepoint", id: 6444068649
 mas "Compressor", id: 6746516157
 mas "GarageBand", id: 682658836
 mas "HomePass", id: 1330266650
-mas "iA Writer", id: 775737590
-mas "iMovie", id: 408981434
+mas "Hyperduck", id: 6444667067
 mas "Logic Pro", id: 1615087040
 mas "Photomator", id: 1444636541
 mas "Pixelmator Pro", id: 6746662575
 mas "Swift Playground", id: 1496833156
 mas "WhatsApp", id: 310633997
+mas "iA Writer", id: 775737590
+mas "iMovie", id: 408981434
 
 {{- if eq .user "kutsan" }}
+mas "Blackmagic Disk Speed Test", id: 425264550
 mas "GoodLinks", id: 1474335294
 mas "Parachute Backup", id: 6748614170
-mas "Blackmagic Disk Speed Test", id: 425264550
 {{- end }}
 
 {{- if eq .user "reyhan" }}

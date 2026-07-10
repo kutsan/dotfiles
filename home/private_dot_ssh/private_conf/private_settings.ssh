@@ -3,8 +3,9 @@
 # request a response from the server.
 ServerAliveInterval 15
 
-# Use compressed connection.
-Compression yes
+# Only use the identities explicitly configured for each host (or the default
+# identity files), never other keys offered by the agent.
+IdentitiesOnly yes
 
 # Hash host names and addresses when they are added to known_hosts file.
 HashKnownHosts yes
