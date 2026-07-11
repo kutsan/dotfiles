@@ -1,11 +1,11 @@
 {{- if eq .chezmoi.os "darwin" -}}
 #!/usr/bin/env bash
 
-set -euo pipefail
-IFS=$'\n\t'
-
 # Interactively discover which defaults domain and key control a setting.
 #   before=$(defaults read) && read "?Change the setting, then press Enter... " && diff -U50 <(<<<"$before") <(defaults read) | delta; unset before
+
+set -euo pipefail
+IFS=$'\n\t'
 
 {{ template "logger.sh" . }}
 
@@ -15,11 +15,23 @@ main() {
 	# Show hidden files
 	defaults write com.apple.finder AppleShowAllFiles -bool true
 
-	# Enable tiled window margins
-	defaults write com.apple.WindowManager EnableTiledWindowMargins -bool true
+	# Automatically hide and show the Dock
+	defaults write com.apple.dock autohide -bool true
+
+	# Automatically hide and show the menu bar (always, including in full screen)
+	defaults write NSGlobalDomain _HIHideMenuBar -bool true
+	defaults write NSGlobalDomain AppleMenuBarVisibleInFullscreen -bool false
+
+	# Do not automatically rearrange Spaces based on most recent use
+	defaults write com.apple.dock mru-spaces -bool false
+
+	# Click wallpaper to reveal desktop only in Stage Manager (not always)
+	defaults write com.apple.WindowManager EnableStandardClickToShowDesktop -bool false
 
 	# Restart system services to apply changes
+	killall Dock
 	killall Finder
+	killall SystemUIServer
 	killall WindowManager
 
 	log.success "macOS defaults set."
