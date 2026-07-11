@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+IFS=$'\n\t'
+
 yabai --message config \
 	layout bsp \
 	window_placement second_child
