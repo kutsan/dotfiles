@@ -2,8 +2,7 @@
   "trustedtaps": ["docker/tap", "osx-cross/arm", "osx-cross/avr", "qmk/qmk"],
   "trustedformulae": [
     "asmvik/formulae/yabai",
-    "django23/tap/asimov",
-    "felixkratz/formulae/sketchybar"
+    "django23/tap/asimov"
   ],
   "trustedcasks": ["docker/tap/sbx", "jackielii/tap/skhd-zig"]
 }
