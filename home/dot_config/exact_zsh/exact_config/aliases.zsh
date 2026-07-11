@@ -41,16 +41,21 @@ alias du='du -d 1 --si'
 alias df='df -a --si'
 
 # Utilities
-alias uuidgen='command uuidgen | tr "[:upper:]" "[:lower:]"'
-alias uuidv7='npm exec --yes uuidv7'
-
-if command -v pbcopy &>/dev/null; then
-	# shellcheck disable=SC2154
-	alias uuidgen="${aliases[uuidgen]} | tee >(pbcopy)"
-	# shellcheck disable=SC2154
-	alias uuidv7="${aliases[uuidv7]} | tee >(pbcopy)"
-	alias clean-clipboard='pbpaste | pbcopy'
+if [[ $OSTYPE == darwin* ]]; then
+	uuidgen() {
+		case ${1-} in
+		-7 | --time-v7)
+			python3 -c 'import uuid; print(uuid.uuid7())'
+			;;
+		*)
+			command uuidgen "$@" | tr '[:upper:]' '[:lower:]'
+			;;
+		esac
+	}
 fi
+
+alias uuidv4='printf %s "$(uuidgen)"'
+alias uuidv7='printf %s "$(uuidgen --time-v7)"'
 
 # Encryption
 alias age-encrypt='age --encrypt --recipients-file "$XDG_CONFIG_HOME/age/recipients.txt"'
