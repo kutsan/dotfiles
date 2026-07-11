@@ -1,1 +1,1 @@
-vim.filetype.add({ pattern = { ['.*%.gitconfig'] = 'gitconfig' } })
+vim.filetype.add({ extension = { gitconfig = 'gitconfig' } })
