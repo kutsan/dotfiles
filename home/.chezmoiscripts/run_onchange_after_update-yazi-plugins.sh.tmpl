@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
+# package.toml hash: {{ include "dot_config/exact_yazi/package.toml" | sha256sum }}
+
 set -euo pipefail
 IFS=$'\n\t'
-
-# package.toml hash: {{ include "dot_config/exact_yazi/package.toml" | sha256sum }}
 
 {{ template "logger.sh" . }}
 

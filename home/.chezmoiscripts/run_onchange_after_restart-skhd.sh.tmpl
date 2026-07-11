@@ -1,0 +1,36 @@
+{{- if eq .chezmoi.os "darwin" -}}
+#!/usr/bin/env bash
+
+{{ $fileHashes := "" -}}
+{{- range (glob (joinPath .chezmoi.sourceDir "dot_config" "exact_skhd" "**")) -}}
+{{-   if not (stat .).isDir -}}
+{{-     $fileHashes = printf "%s\n%s:%s" $fileHashes . (include . | sha256sum) -}}
+{{-   end -}}
+{{- end -}}
+# skhd config hash: {{ $fileHashes | sha256sum }}
+
+set -euo pipefail
+IFS=$'\n\t'
+
+{{ template "logger.sh" . }}
+
+main() {
+	if ! command -v skhd >/dev/null 2>&1; then
+		log.warn "skhd not installed; skipping restart."
+		return 0
+	fi
+
+	if ! pgrep -qx skhd; then
+		log.info "skhd not running; skipping restart."
+		return 0
+	fi
+
+	log.info "Restarting skhd service..."
+
+	skhd --restart-service
+
+	log.success "skhd restarted."
+}
+
+main "$@"
+{{- end -}}

@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
-IFS=$'\n\t'
-
 {{ $fileHashes := "" -}}
 {{- range (glob (joinPath .chezmoi.sourceDir "exact_dot_agents" "**")) -}}
 {{-   if not (stat .).isDir -}}
@@ -10,6 +7,9 @@ IFS=$'\n\t'
 {{-   end -}}
 {{- end -}}
 # sync hash: {{ $fileHashes | sha256sum }}
+
+set -euo pipefail
+IFS=$'\n\t'
 
 {{ template "logger.sh" . }}
 

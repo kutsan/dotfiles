@@ -1,10 +1,10 @@
 {{- if eq .chezmoi.os "darwin" -}}
 #!/usr/bin/env bash
 
+# local.asimov.plist hash: {{ include "Library/LaunchAgents/local.asimov.plist.tmpl" | sha256sum }}
+
 set -euo pipefail
 IFS=$'\n\t'
-
-# local.asimov.plist hash: {{ include "Library/LaunchAgents/local.asimov.plist.tmpl" | sha256sum }}
 
 # To remove this job entirely:
 #   launchctl bootout gui/$(id -u)/local.asimov

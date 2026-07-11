@@ -1,0 +1,36 @@
+{{- if eq .chezmoi.os "darwin" -}}
+#!/usr/bin/env bash
+
+{{ $fileHashes := "" -}}
+{{- range (glob (joinPath .chezmoi.sourceDir "dot_config" "exact_yabai" "**")) -}}
+{{-   if not (stat .).isDir -}}
+{{-     $fileHashes = printf "%s\n%s:%s" $fileHashes . (include . | sha256sum) -}}
+{{-   end -}}
+{{- end -}}
+# yabai config hash: {{ $fileHashes | sha256sum }}
+
+set -euo pipefail
+IFS=$'\n\t'
+
+{{ template "logger.sh" . }}
+
+main() {
+	if ! command -v yabai >/dev/null 2>&1; then
+		log.warn "yabai not installed; skipping restart."
+		return 0
+	fi
+
+	if ! pgrep -qx yabai; then
+		log.info "yabai not running; skipping restart."
+		return 0
+	fi
+
+	log.info "Restarting yabai service..."
+
+	yabai --restart-service
+
+	log.success "yabai restarted."
+}
+
+main "$@"
+{{- end -}}

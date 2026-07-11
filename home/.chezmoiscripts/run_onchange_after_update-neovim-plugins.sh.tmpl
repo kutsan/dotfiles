@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
+# nvim-pack-lock.json hash: {{ include "dot_config/exact_nvim/nvim-pack-lock.json" | sha256sum }}
+
 set -euo pipefail
 IFS=$'\n\t'
-
-# nvim-pack-lock.json hash: {{ include "dot_config/exact_nvim/nvim-pack-lock.json" | sha256sum }}
 
 {{ template "logger.sh" . }}
 

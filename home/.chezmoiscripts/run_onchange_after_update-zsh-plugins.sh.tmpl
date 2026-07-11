@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
+# plugins-lock.csv hash: {{ include "dot_config/exact_zsh/plugins-lock.csv" | sha256sum }}
+
 set -euo pipefail
 IFS=$'\n\t'
-
-# plugins-lock.csv hash: {{ include "dot_config/exact_zsh/plugins-lock.csv" | sha256sum }}
 
 {{ template "logger.sh" . }}
 
