@@ -1,0 +1,35 @@
+# Arrow keys
+ralt - h | left
+ralt - j | down
+ralt - k | up
+ralt - l | right
+
+# Navigate by word (alt + arrow keys)
+ralt + lalt - h | alt - left
+ralt + lalt - j | alt - down
+ralt + lalt - k | alt - up
+ralt + lalt - l | alt - right
+
+# Select by character (shift + arrow keys)
+ralt + shift - h | shift - left
+ralt + shift - j | shift - down
+ralt + shift - k | shift - up
+ralt + shift - l | shift - right
+
+# Select by word (alt + shift + arrow keys)
+ralt + lalt + shift - h | alt + shift - left
+ralt + lalt + shift - j | alt + shift - down
+ralt + lalt + shift - k | alt + shift - up
+ralt + lalt + shift - l | alt + shift - right
+
+# Jump to line start/end, document top/bottom (cmd + arrow keys)
+ralt + cmd - h | cmd - left
+ralt + cmd - j | cmd - down
+ralt + cmd - k | cmd - up
+ralt + cmd - l | cmd - right
+
+# Select to line start/end, document top/bottom (cmd + shift + arrow keys)
+ralt + cmd + shift - h | cmd + shift - left
+ralt + cmd + shift - j | cmd + shift - down
+ralt + cmd + shift - k | cmd + shift - up
+ralt + cmd + shift - l | cmd + shift - right

@@ -1,0 +1,112 @@
+# Definitions
+.define focus_space : yabai --message space --focus {{1}}
+.define focus_window : yabai --message window --focus {{1}}
+.define swap_window : yabai --message window --swap {{1}}
+.define warp_window : yabai --message window --warp {{1}}
+.define resize_west : yabai --message window --resize left:-{{1}}:0 || yabai --message window --resize right:-{{1}}:0
+.define resize_south : yabai --message window --resize bottom:0:{{1}} || yabai --message window --resize top:0:{{1}}
+.define resize_north : yabai --message window --resize bottom:0:-{{1}} || yabai --message window --resize top:0:-{{1}}
+.define resize_east : yabai --message window --resize right:{{1}}:0 || yabai --message window --resize left:{{1}}:0
+.define toggle_window : yabai --message window --toggle {{1}}
+.define float_window : yabai --message window --toggle float && yabai --message window --grid 12:12:{{1}}
+.define float_grid : yabai --message window --grid 12:12:{{1}}
+.define balance_space : yabai --message space --balance
+.define reload_window_manager_service : yabai --restart-service
+
+# Aliases
+.alias $comma 0x2B # `,` key (0x2B = kVK_ANSI_Comma)
+
+# Focus space
+lalt - 1 : @focus_space("1")
+lalt - 2 : @focus_space("2")
+lalt - 3 : @focus_space("3")
+lalt - 4 : @focus_space("4")
+lalt - 5 : @focus_space("5")
+lalt - 6 : @focus_space("6")
+lalt - 7 : @focus_space("7")
+lalt - 8 : @focus_space("8")
+lalt - 9 : @focus_space("9")
+lalt - tab : @focus_space("recent")
+
+# Focus window
+lalt - h : @focus_window("west")
+lalt - j : @focus_window("south")
+lalt - k : @focus_window("north")
+lalt - l : @focus_window("east")
+
+# Swap window
+lalt + shift - h : @swap_window("west")
+lalt + shift - j : @swap_window("south")
+lalt + shift - k : @swap_window("north")
+lalt + shift - l : @swap_window("east")
+
+# Warp window
+lalt + cmd - h : @warp_window("west")
+lalt + cmd - j : @warp_window("south")
+lalt + cmd - k : @warp_window("north")
+lalt + cmd - l : @warp_window("east")
+
+# Balance
+lalt + ctrl - 0 : @balance_space
+
+# Zoom
+lalt - z : @toggle_window("zoom-fullscreen")
+
+# Resize mode
+:: resize @
+lalt - r ; resize
+resize < h : @resize_west("30")
+resize < j : @resize_south("30")
+resize < k : @resize_north("30")
+resize < l : @resize_east("30")
+resize < shift - h : @resize_west("100")
+resize < shift - j : @resize_south("100")
+resize < shift - k : @resize_north("100")
+resize < shift - l : @resize_east("100")
+resize < left : @resize_west("10")
+resize < down : @resize_south("10")
+resize < up : @resize_north("10")
+resize < right : @resize_east("10")
+resize < escape ; default
+
+# Toggle float
+lalt - f : @float_window("2:1:8:10")
+
+# Float snap mode
+:: float @
+lalt - g ; float
+float < h : @float_grid("1:1:5:10") # left half
+float < l : @float_grid("6:1:5:10") # right half
+float < k : @float_grid("1:1:10:5") # top half
+float < j : @float_grid("1:6:10:5") # bottom half
+float < shift - h : @float_grid("0:0:6:12") # left half (flush)
+float < shift - l : @float_grid("6:0:6:12") # right half (flush)
+float < shift - k : @float_grid("0:0:12:6") # top half (flush)
+float < shift - j : @float_grid("0:6:12:6") # bottom half (flush)
+float < u : @float_grid("1:1:5:5") # top-left
+float < i : @float_grid("6:1:5:5") # top-right
+float < n : @float_grid("1:6:5:5") # bottom-left
+float < m : @float_grid("6:6:5:5") # bottom-right
+float < shift - u : @float_grid("0:0:6:6") # top-left (flush)
+float < shift - i : @float_grid("6:0:6:6") # top-right (flush)
+float < shift - n : @float_grid("0:6:6:6") # bottom-left (flush)
+float < shift - m : @float_grid("6:6:6:6") # bottom-right (flush)
+float < f : @float_grid("1:1:10:10") # maximize
+float < shift - f : @float_grid("0:0:12:12") # maximize (flush)
+float < c : @float_grid("2:1:8:10") # center
+float < shift - c : @float_grid("2:0:8:12") # center (full height)
+float < y : @float_grid("1:1:4:8") # left column, upper
+float < o : @float_grid("7:1:4:8") # right column, upper
+float < b : @float_grid("1:3:4:8") # left column, lower
+float < $comma : @float_grid("7:3:4:8") # right column, lower
+float < shift - y : @float_grid("0:0:5:9") # left column, upper (flush)
+float < shift - o : @float_grid("7:0:5:9") # right column, upper (flush)
+float < shift - b : @float_grid("0:3:5:9") # left column, lower (flush)
+float < shift - $comma : @float_grid("7:3:5:9") # right column, lower (flush)
+float < escape ; default
+
+# Toggle split
+lalt - e : @toggle_window("split")
+
+# Reload window manager service
+hyper - w : @reload_window_manager_service

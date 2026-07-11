@@ -1,0 +1,24 @@
+# Process groups
+.define browsers ["safari", "google chrome"]
+
+# New terminal window
+.define new_terminal_window : osascript -e 'tell application "Ghostty" to make new window'
+alt - return : @new_terminal_window
+
+# Save current browser tab to GoodLinks
+alt + shift - g [
+	@browsers : ~/.config/skhd/scripts/save-to-goodlinks.sh
+]
+
+# AirDrop current browser tab URL
+alt + shift - a [
+	@browsers : ~/.config/skhd/scripts/share-to-airdrop.sh
+]
+
+# Clean formatting from clipboard
+.define clean_clipboard : pbpaste | pbcopy && osascript -e 'display notification "Formatting cleared" with title "Clipboard"'
+shift + alt + ctrl - c : @clean_clipboard
+
+# Reload hotkey daemon service
+.define reload_hotkey_daemon_service : skhd --restart-service
+hyper - k : @reload_hotkey_daemon_service
