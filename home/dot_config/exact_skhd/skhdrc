@@ -3,3 +3,4 @@
 .load "config/window-manager.skhd"
 .load "config/apps.skhd"
 .load "config/remappings.skhd"
+.load "config/mouse.skhd"

@@ -14,7 +14,7 @@
 .define reload_window_manager_service : yabai --restart-service
 
 # Aliases
-.alias $comma 0x2B # `,` key (0x2B = kVK_ANSI_Comma)
+.alias $comma 0x2B # `,` key (kVK_ANSI_Comma)
 
 # Focus space
 lalt - 1 : @focus_space("1")
