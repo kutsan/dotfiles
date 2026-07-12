@@ -1,9 +1,6 @@
 [settings]
 lockfile = true
 
-[task_config]
-includes = ["tasks"]
-
 [tools]
 chezmoi = "2.70.5"
 shellcheck = "0.11.0"
@@ -15,6 +12,8 @@ actionlint = "1.7.12"
 "pipx:keymap-drawer" = "0.23.0"
 taplo = "0.10.0"
 node = "26.5.0"
+lua-language-server = "3.18.2"
+neovim = "0.12.4"
 
 [tasks.check]
 depends = [
@@ -26,6 +25,7 @@ depends = [
   "check:shfmt",
   "check:taplo",
   "check:actionlint",
+  "check:neovim-types",
 ]
 
 [tasks."check:prettier"]
@@ -46,8 +46,20 @@ run = "git ls-files -z '*.sh' '*.zsh' | xargs -0 shfmt --diff"
 [tasks."check:taplo"]
 run = "taplo format --check"
 
+[tasks."check:selene"]
+run = "bash tasks/check/selene.sh"
+
+[tasks."check:shellcheck"]
+run = "bash tasks/check/shellcheck.sh"
+
+[tasks."check:neovim-types"]
+run = "bash tasks/check/neovim-types.sh"
+
 [tasks."update:pinact"]
 run = "pinact run --update"
+
+[tasks."update:zsh-plugins"]
+run = "bash tasks/update/zsh-plugins.sh"
 
 [tasks.format]
 depends = ["format:prettier", "format:shfmt", "format:taplo"]
@@ -62,4 +74,4 @@ run = "git ls-files -z '*.sh' '*.zsh' | xargs -0 shfmt --write"
 run = "taplo format"
 
 [tasks."docs:generate-keyboard-docs"]
-run = "node tasks/docs/generate-keyboard-docs/main.ts"
+run = "node tasks/docs/generate-keyboard-docs.ts"

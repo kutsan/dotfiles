@@ -17,7 +17,7 @@ interface BuildTarget {
 }
 
 const SCRIPT_DIR = import.meta.dirname
-const REPO_ROOT = join(SCRIPT_DIR, '..', '..', '..')
+const REPO_ROOT = join(SCRIPT_DIR, '..', '..')
 const USERSPACE_DIR = join(
 	REPO_ROOT,
 	'home',
@@ -156,6 +156,6 @@ if (
 const before = readme.slice(0, startIndex + MARKER_START.length)
 const after = readme.slice(endIndex)
 
-writeFileSync(README_PATH, `${before}\n${generatedSection}\n${after}`)
+writeFileSync(README_PATH, `${before}\n\n${generatedSection}\n\n${after}`)
 
 process.stdout.write('Updated: README.md\n')

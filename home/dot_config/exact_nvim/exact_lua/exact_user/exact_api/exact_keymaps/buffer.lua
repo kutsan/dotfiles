@@ -6,7 +6,8 @@ local function remove(opts)
 
 	-- Do nothing if buffer is in modified state.
 	if
-		not opts.force and vim.api.nvim_buf_get_option(target_buf_id, 'modified')
+		not opts.force
+		and vim.api.nvim_get_option_value('modified', { buf = target_buf_id })
 	then
 		return false
 	end

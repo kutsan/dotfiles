@@ -75,6 +75,63 @@ url = "https://github.com/twpayne/chezmoi/releases/download/v2.70.5/chezmoi_2.70
 checksum = "sha256:ebc29455dc9106e8d2d980708b45bd3120e44c7d5e6a06787ff307faaa0681a8"
 url = "https://github.com/twpayne/chezmoi/releases/download/v2.70.5/chezmoi_2.70.5_windows_amd64.zip"
 
+[[tools.lua-language-server]]
+version = "3.18.2"
+backend = "aqua:LuaLS/lua-language-server"
+
+[tools.lua-language-server."platforms.linux-arm64"]
+checksum = "sha256:273af33f26f4a1143f27c96d9f9e1188aba619c71e0807042134f66b4bd27f24"
+url = "https://github.com/LuaLS/lua-language-server/releases/download/3.18.2/lua-language-server-3.18.2-linux-arm64.tar.gz"
+
+[tools.lua-language-server."platforms.linux-arm64-musl"]
+checksum = "sha256:273af33f26f4a1143f27c96d9f9e1188aba619c71e0807042134f66b4bd27f24"
+url = "https://github.com/LuaLS/lua-language-server/releases/download/3.18.2/lua-language-server-3.18.2-linux-arm64.tar.gz"
+
+[tools.lua-language-server."platforms.linux-x64"]
+checksum = "sha256:ca71415dd19f19e30aaa35a4915aefca9fdb5fec31b98331cc3d77f778d539c5"
+url = "https://github.com/LuaLS/lua-language-server/releases/download/3.18.2/lua-language-server-3.18.2-linux-x64.tar.gz"
+
+[tools.lua-language-server."platforms.linux-x64-musl"]
+checksum = "sha256:ca71415dd19f19e30aaa35a4915aefca9fdb5fec31b98331cc3d77f778d539c5"
+url = "https://github.com/LuaLS/lua-language-server/releases/download/3.18.2/lua-language-server-3.18.2-linux-x64.tar.gz"
+
+[tools.lua-language-server."platforms.macos-arm64"]
+checksum = "sha256:cec99d70b1f612acec4a10a79a03664e3aa0c229d4d8a586cb3f928ec37d509e"
+url = "https://github.com/LuaLS/lua-language-server/releases/download/3.18.2/lua-language-server-3.18.2-darwin-arm64.tar.gz"
+
+[tools.lua-language-server."platforms.macos-x64"]
+checksum = "sha256:e26cfefe423dd7326fc7c649539e4d4aaa4f35f34d2fefd8af2ed7090b72c556"
+url = "https://github.com/LuaLS/lua-language-server/releases/download/3.18.2/lua-language-server-3.18.2-darwin-x64.tar.gz"
+
+[tools.lua-language-server."platforms.windows-x64"]
+checksum = "sha256:a4439a8f5e8e9e6505c11f045a7bf45db602124a1e246371c1dbe34924f3cf71"
+url = "https://github.com/LuaLS/lua-language-server/releases/download/3.18.2/lua-language-server-3.18.2-win32-x64.zip"
+
+[[tools.neovim]]
+version = "0.12.4"
+backend = "vfox:mise-plugins/vfox-neovim"
+
+[tools.neovim."platforms.linux-arm64"]
+url = "https://github.com/neovim/neovim/releases/download/v0.12.4/nvim-linux-arm64.tar.gz"
+
+[tools.neovim."platforms.linux-arm64-musl"]
+url = "https://github.com/neovim/neovim/releases/download/v0.12.4/nvim-linux-arm64.tar.gz"
+
+[tools.neovim."platforms.linux-x64"]
+url = "https://github.com/neovim/neovim/releases/download/v0.12.4/nvim-linux-x86_64.tar.gz"
+
+[tools.neovim."platforms.linux-x64-musl"]
+url = "https://github.com/neovim/neovim/releases/download/v0.12.4/nvim-linux-x86_64.tar.gz"
+
+[tools.neovim."platforms.macos-arm64"]
+url = "https://github.com/neovim/neovim/releases/download/v0.12.4/nvim-macos-arm64.tar.gz"
+
+[tools.neovim."platforms.macos-x64"]
+url = "https://github.com/neovim/neovim/releases/download/v0.12.4/nvim-macos-x86_64.tar.gz"
+
+[tools.neovim."platforms.windows-x64"]
+url = "https://github.com/neovim/neovim/releases/download/v0.12.4/nvim-win64.zip"
+
 [[tools.node]]
 version = "26.5.0"
 backend = "core:node"

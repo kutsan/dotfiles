@@ -76,6 +76,8 @@ jobs:
             command: check:shellcheck
           - name: Selene
             command: check:selene
+          - name: Neovim Types
+            command: check:neovim-types
           - name: Zizmor
             command: check:zizmor
           - name: Pinact

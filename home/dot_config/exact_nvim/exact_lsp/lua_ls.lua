@@ -20,7 +20,7 @@ local LspConfig = {
 		end
 
 		client.config.settings.Lua =
-			vim.tbl_deep_extend('force', client.config.settings.Lua, {
+			vim.tbl_deep_extend('force', client.config.settings.Lua --[[@as table]], {
 				runtime = {
 					version = 'LuaJIT',
 					path = {
