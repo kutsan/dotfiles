@@ -24,6 +24,7 @@ depends = [
   "check:pinact",
   "check:prettier",
   "check:shfmt",
+  "check:taplo",
   "check:actionlint",
 ]
 
@@ -42,17 +43,23 @@ run = "pinact run --check --verify"
 [tasks."check:shfmt"]
 run = "git ls-files -z '*.sh' '*.zsh' | xargs -0 shfmt --diff"
 
+[tasks."check:taplo"]
+run = "taplo format --check"
+
 [tasks."update:pinact"]
 run = "pinact run --update"
 
 [tasks.format]
-depends = ["format:prettier", "format:shfmt"]
+depends = ["format:prettier", "format:shfmt", "format:taplo"]
 
 [tasks."format:prettier"]
 run = "pnpm exec prettier --write --list-different ."
 
 [tasks."format:shfmt"]
 run = "git ls-files -z '*.sh' '*.zsh' | xargs -0 shfmt --write"
+
+[tasks."format:taplo"]
+run = "taplo format"
 
 [tasks."docs:generate-keyboard-docs"]
 run = "node tasks/docs/generate-keyboard-docs/main.ts"

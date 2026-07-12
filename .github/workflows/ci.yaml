@@ -82,6 +82,8 @@ jobs:
             command: check:pinact
           - name: Shfmt
             command: check:shfmt
+          - name: Taplo
+            command: check:taplo
           - name: Actionlint
             command: check:actionlint
     steps:
