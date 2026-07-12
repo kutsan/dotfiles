@@ -17,9 +17,19 @@ interface BuildTarget {
 }
 
 const SCRIPT_DIR = import.meta.dirname
-const USERSPACE_DIR = join(SCRIPT_DIR, '..')
-const ASSETS_DIR = join(USERSPACE_DIR, 'assets')
+const REPO_ROOT = join(SCRIPT_DIR, '..', '..', '..')
+const USERSPACE_DIR = join(
+	REPO_ROOT,
+	'home',
+	'dot_config',
+	'exact_qmk-userspace',
+)
+const ASSETS_DIR = join(REPO_ROOT, '.github', 'assets')
+const README_PATH = join(REPO_ROOT, 'README.md')
 const KEYMAP_CONFIG = join(SCRIPT_DIR, 'keymap-config.yaml')
+
+const MARKER_START = '<!-- KEYBOARD-DOCS:START -->'
+const MARKER_END = '<!-- KEYBOARD-DOCS:END -->'
 
 const getKeymapPath = ({ keyboard, keymap }: BuildTarget): string =>
 	join(
@@ -67,8 +77,8 @@ if (buildTargets.length === 0) {
 
 mkdirSync(ASSETS_DIR, { recursive: true })
 
-for (const file of readdirSync(ASSETS_DIR).filter((file) =>
-	file.endsWith('.svg'),
+for (const file of readdirSync(ASSETS_DIR).filter(
+	(file) => file.startsWith('keyboard-') && file.endsWith('.svg'),
 )) {
 	rmSync(join(ASSETS_DIR, file))
 }
@@ -80,7 +90,7 @@ const results = buildTargets.map(({ keyboard, keymap }: BuildTarget) => {
 		throw new Error(`keymap.c not found at ${keymapPath}`)
 	}
 
-	const svgName = `${keyboard.replaceAll('/', '-')}-${keymap}.svg`
+	const svgName = `keyboard-${keyboard.replaceAll('/', '-')}-${keymap}.svg`
 	process.stdout.write(`Generating SVG: ${keyboard} / ${keymap}\n`)
 
 	const qmkKeymapJsonOutput = execFileSync('qmk', [
@@ -108,30 +118,44 @@ const results = buildTargets.map(({ keyboard, keymap }: BuildTarget) => {
 	)
 
 	writeFileSync(join(ASSETS_DIR, svgName), svgContent)
-	process.stdout.write(`\tSaved: assets/${svgName}\n`)
+	process.stdout.write(`\tSaved: .github/assets/${svgName}\n`)
 
 	return { keyboard, keymap, svgName }
 })
 
-writeFileSync(
-	join(USERSPACE_DIR, 'README.md'),
-	`
-
-# Keymap
-
-${results
+const generatedSection = results
 	.map(({ keyboard, keymap, svgName }) =>
 		`
+### ${keyboard} (${keymap})
 
-## ${keyboard} (${keymap})
-
-![${keyboard}](./assets/${svgName})
-
+![${keyboard}](.github/assets/${svgName})
 `.trim(),
 	)
-	.join('\n')}
+	.join('\n\n')
 
-`.trim(),
-)
+const readme = readFileSync(README_PATH, 'utf-8')
 
-process.stdout.write('Generated: README.md\n')
+const startIndex = readme.indexOf(MARKER_START)
+const endIndex = readme.indexOf(MARKER_END)
+
+if (startIndex === -1 || endIndex === -1 || endIndex < startIndex) {
+	throw new Error(
+		`Could not find marker pair '${MARKER_START}' … '${MARKER_END}' (in order) in ${README_PATH}`,
+	)
+}
+
+if (
+	readme.indexOf(MARKER_START, startIndex + MARKER_START.length) !== -1 ||
+	readme.indexOf(MARKER_END, endIndex + MARKER_END.length) !== -1
+) {
+	throw new Error(
+		`Found duplicate markers in ${README_PATH}; expected exactly one '${MARKER_START}' / '${MARKER_END}' pair`,
+	)
+}
+
+const before = readme.slice(0, startIndex + MARKER_START.length)
+const after = readme.slice(endIndex)
+
+writeFileSync(README_PATH, `${before}\n${generatedSection}\n${after}`)
+
+process.stdout.write('Updated: README.md\n')

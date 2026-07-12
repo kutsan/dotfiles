@@ -12,6 +12,9 @@ pinact = "4.1.0"
 zizmor = "1.26.1"
 shfmt = "3.13.1"
 actionlint = "1.7.12"
+"pipx:keymap-drawer" = "0.23.0"
+taplo = "0.10.0"
+node = "26.5.0"
 
 [tasks.check]
 depends = [
@@ -50,3 +53,6 @@ run = "pnpm exec prettier --write --list-different ."
 
 [tasks."format:shfmt"]
 run = "git ls-files -z '*.sh' '*.zsh' | xargs -0 shfmt --write"
+
+[tasks."docs:generate-keyboard-docs"]
+run = "node tasks/docs/generate-keyboard-docs/main.ts"

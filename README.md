@@ -102,6 +102,16 @@
 - [`massren`](https://github.com/laurent22/massren) - Command-line tool for mass renaming files and directories
 - [`ripgrep`](https://github.com/BurntSushi/ripgrep) - Line-oriented search tool
 
+## Keyboard
+
+See [`.config/qmk-userspace`](https://github.com/kutsan/dotfiles/tree/main/home/dot_config/exact_qmk-userspace) folder for the QMK configuration.
+
+<!-- KEYBOARD-DOCS:START -->
+### keychron/v4/ansi (main)
+
+![keychron/v4/ansi](.github/assets/keyboard-keychron-v4-ansi-main.svg)
+<!-- KEYBOARD-DOCS:END -->
+
 ## License
 
 GPL-3.0
