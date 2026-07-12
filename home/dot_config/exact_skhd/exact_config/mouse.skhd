@@ -1,7 +1,7 @@
 # Aliases
-.alias $lbracket 0x21 # `[` key (kVK_ANSI_LeftBracket)
-.alias $rbracket 0x1E # `]` key (kVK_ANSI_RightBracket)
+.alias $left_bracket 0x21 # `[` key (kVK_ANSI_LeftBracket)
+.alias $right_bracket 0x1E # `]` key (kVK_ANSI_RightBracket)
 
 # History navigation via mouse side buttons
-mouse4 | cmd - $lbracket # back (cmd + [)
-mouse5 | cmd - $rbracket # forward (cmd + ])
+mouse4 | cmd - $left_bracket # back (cmd + [)
+mouse5 | cmd - $right_bracket # forward (cmd + ])
