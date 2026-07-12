@@ -21,10 +21,7 @@
     "verbs": ["Working"]
   },
   "enabledPlugins": {
-    "typescript-lsp@claude-plugins-official": true,
     "security-guidance@claude-plugins-official": true,
-    "claude-md-management@claude-plugins-official": true,
-    "lua-lsp@claude-plugins-official": true,
     "claude-code-setup@claude-plugins-official": true
   }
 }
