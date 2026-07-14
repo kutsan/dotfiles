@@ -3,15 +3,15 @@
 
 # New terminal window
 .define new_terminal_window : osascript -e 'tell application "Ghostty" to make new window'
-alt - return : @new_terminal_window
+lalt - return : @new_terminal_window
 
 # Save current browser tab to GoodLinks
-alt + shift - g [
+lalt + shift - g [
 	@browsers : ~/.config/skhd/scripts/save-to-goodlinks.sh
 ]
 
 # AirDrop current browser tab URL
-alt + shift - a [
+lalt + shift - a [
 	@browsers : ~/.config/skhd/scripts/share-to-airdrop.sh
 ]
 
