@@ -1,5 +1,6 @@
 .shell "/bin/dash"
 
+.load "config/aliases.skhd"
 .load "config/window-manager.skhd"
 .load "config/apps.skhd"
 .load "config/remappings.skhd"

@@ -3,6 +3,9 @@
 .define focus_window : yabai --message window --focus {{1}}
 .define swap_window : yabai --message window --swap {{1}}
 .define warp_window : yabai --message window --warp {{1}}
+.define stack_window : yabai --message window --stack {{1}}
+.define focus_stack_next : yabai --message window --focus stack.next || yabai --message window --focus stack.first
+.define focus_stack_prev : yabai --message window --focus stack.prev || yabai --message window --focus stack.last
 .define resize_west : yabai --message window --resize left:-{{1}}:0 || yabai --message window --resize right:-{{1}}:0
 .define resize_south : yabai --message window --resize bottom:0:{{1}} || yabai --message window --resize top:0:{{1}}
 .define resize_north : yabai --message window --resize bottom:0:-{{1}} || yabai --message window --resize top:0:-{{1}}
@@ -12,9 +15,6 @@
 .define float_grid : yabai --message window --grid 12:12:{{1}}
 .define balance_space : yabai --message space --balance
 .define reload_window_manager_service : yabai --restart-service
-
-# Aliases
-.alias $comma 0x2B # `,` key (kVK_ANSI_Comma)
 
 # Focus space
 lalt - 1 : @focus_space("1")
@@ -34,6 +34,10 @@ lalt - j : @focus_window("south")
 lalt - k : @focus_window("north")
 lalt - l : @focus_window("east")
 
+# Focus stack
+lalt - $left_bracket : @focus_stack_prev
+lalt - $right_bracket : @focus_stack_next
+
 # Swap window
 lalt + shift - h : @swap_window("west")
 lalt + shift - j : @swap_window("south")
@@ -46,11 +50,20 @@ lalt + cmd - j : @warp_window("south")
 lalt + cmd - k : @warp_window("north")
 lalt + cmd - l : @warp_window("east")
 
+# Stack window
+lalt + ctrl - h : @stack_window("west")
+lalt + ctrl - j : @stack_window("south")
+lalt + ctrl - k : @stack_window("north")
+lalt + ctrl - l : @stack_window("east")
+
 # Balance
 lalt + ctrl - 0 : @balance_space
 
-# Zoom
+# Zoom fullscreen
 lalt - z : @toggle_window("zoom-fullscreen")
+
+# Zoom parent
+lalt + shift - z : @toggle_window("zoom-parent")
 
 # Resize mode
 :: resize @
@@ -74,7 +87,7 @@ lalt - f : @float_window("2:1:8:10")
 
 # Float snap mode
 :: float @
-lalt - g ; float
+lalt - p ; float
 float < h : @float_grid("1:1:5:10") # left half
 float < l : @float_grid("6:1:5:10") # right half
 float < k : @float_grid("1:1:10:5") # top half
