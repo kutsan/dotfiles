@@ -6,7 +6,7 @@ The same paradigm with richer machinery: real arrays and namerefs let a function
 
 ```bash
 #!/usr/bin/env bash
-set -euo pipefail
+set -o errexit -o nounset -o pipefail
 shopt -s inherit_errexit nullglob
 IFS=$'\n\t'
 ```

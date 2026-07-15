@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
+set -o errexit -o nounset -o pipefail
 IFS=$'\n\t'
 
 recover_focus='yabai --message query --windows --window &> /dev/null || yabai --message window --focus mouse'

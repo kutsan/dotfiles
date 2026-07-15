@@ -12,7 +12,7 @@
 #
 # At the end, captured values are printed as KEY=VALUE for the agent to parse.
 
-set -euo pipefail
+set -o errexit -o nounset -o pipefail
 
 step() {
 	printf '\n>>> %s\n' "$1"

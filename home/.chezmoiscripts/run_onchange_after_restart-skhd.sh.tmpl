@@ -9,7 +9,7 @@
 {{- end -}}
 # skhd config hash: {{ $fileHashes | sha256sum }}
 
-set -euo pipefail
+set -o errexit -o nounset -o pipefail
 IFS=$'\n\t'
 
 {{ template "logger.sh" . }}
