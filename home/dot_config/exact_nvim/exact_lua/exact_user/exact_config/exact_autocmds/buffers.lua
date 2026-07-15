@@ -100,3 +100,33 @@ vim.api.nvim_create_autocmd({ 'BufReadPost', 'BufNewFile' }, {
 		vim.bo.undofile = false
 	end,
 })
+
+---@type string[]
+local shada_ignored_dirs = { '.git', 'node_modules' }
+
+vim.api.nvim_create_autocmd({ 'BufReadPost', 'BufNewFile' }, {
+	group = vim.api.nvim_create_augroup('NoShadaIgnoredDirs', { clear = true }),
+	pattern = vim.tbl_map(function(dir)
+		return '*/' .. dir .. '/*'
+	end, shada_ignored_dirs),
+	desc = 'Disable shada marks for ignored directory paths.',
+	---@param args { match: string }
+	callback = function(args)
+		---@type string
+		local path = vim.fs.normalize(args.match)
+
+		for _, dir in ipairs(shada_ignored_dirs) do
+			---@type string?
+			local prefix = path:match('(.-/' .. vim.pesc(dir) .. '/)')
+
+			if prefix and not prefix:find(',', 1, true) then
+				---@type string
+				local entry = 'r' .. prefix
+
+				if not vim.list_contains(vim.opt.shada:get(), entry) then
+					vim.opt.shada:append(entry)
+				end
+			end
+		end
+	end,
+})
