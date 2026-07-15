@@ -9,7 +9,7 @@ readonly center="$grid_base:2:1:8:10"
 readonly right_half="$grid_base:6:1:5:10"
 
 yabai --message rule --add manage=off grid="$center" \
-	app="^(System Settings|Activity Monitor|Disk Utility)$"
+	app="^(System Settings|Activity Monitor|Disk Utility|Archive Utility)$"
 yabai --message rule --add manage=off grid="$center" \
 	app="^(Calculator|Dictionary)$"
 yabai --message rule --add manage=off grid="$center" \
