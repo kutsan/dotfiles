@@ -102,5 +102,5 @@ opt.showcmd = false -- Disable displaying key presses at the right bottom.
 opt.showmode = false -- Disable native mode indicator.
 opt.cmdheight = 0 -- Disable command-line area.
 opt.confirm = true -- Ask for confirmation when closing a modified buffer.
-opt.jumpoptions = { 'stack', 'view' } -- Jump options for the jumplist.
+opt.jumpoptions = { 'stack', 'view', 'clean' } -- Jump options for the jumplist.
 opt.winborder = 'rounded' -- Border style for floating windows.
