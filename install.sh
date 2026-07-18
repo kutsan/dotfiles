@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 # shellcheck disable=SC3043 # `local` is supported by every real /bin/sh.
 
-set -eu
+set -o errexit -o nounset
 
 ensure_chezmoi() {
 	local chezmoi
