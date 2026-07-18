@@ -14,20 +14,22 @@ if command -v trash &>/dev/null; then
 	alias rm='trash'
 fi
 
-# `cd` into the last directory upon exit using `yazi`.
-y() {
+# `cd` into the last directory upon exit using the file manager.
+r() {
 	emulate -L zsh
 	# shellcheck disable=SC2155
-	local temp_file="$(mktemp -t "yazi-cwd.XXXXXX")"
+	local temp_cwd_file="$(mktemp -t "file-manager-cwd.XXXXXX")"
 	# shellcheck disable=SC2064,SC2296
-	trap "command rm -f -- ${(q)temp_file}" EXIT INT TERM
+	trap "command rm -f -- ${(q)temp_cwd_file}" EXIT INT TERM
 
-	command yazi "$@" --cwd-file="$temp_file"
+	command $FILE_MANAGER "$@" --cwd-file="$temp_cwd_file"
 	# shellcheck disable=SC2155
-	local cwd="$(<"$temp_file")"
+	local cwd="$(<"$temp_cwd_file")"
 
 	# shellcheck disable=SC2164
-	[[ -n "$cwd" && "$cwd" != "$PWD" ]] && builtin cd -- "$cwd"
+	if [[ -n "$cwd" && "$cwd" != "$PWD" ]]; then
+		builtin cd -- "$cwd"
+	fi
 }
 
 # Listing & Search
