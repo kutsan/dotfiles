@@ -14,6 +14,16 @@ mini_icons.setup({
 			hl = 'Directory',
 		},
 	},
+	file = {
+		['README.md'] = { glyph = '󰍔', hl = 'MiniIconsGrey' }, -- U+F0354
+		['init.lua'] = { glyph = '󰢱', hl = 'MiniIconsAzure' }, -- U+F08B1
+	},
+	filetype = {
+		yaml = { glyph = '󰒓', hl = 'MiniIconsPurple' }, -- U+F0493
+		sh = { glyph = '󰆍', hl = 'MiniIconsGrey' }, -- U+F018D
+		bash = { glyph = '󰆍', hl = 'MiniIconsGreen' }, -- U+F018D
+		zsh = { glyph = '󰆍', hl = 'MiniIconsGreen' }, -- U+F018D
+	},
 })
 
 mini_icons.mock_nvim_web_devicons()
