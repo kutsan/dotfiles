@@ -52,6 +52,7 @@ local opts = {
 				},
 				MsgArea = { bg = utils.darken(colors.surface0, 0.1, colors.base) },
 				MsgSeparator = { bg = utils.darken(colors.surface0, 0.1, colors.base) },
+				TabLineSel = { bg = colors.surface2 },
 
 				-- treesitter: TypeScript with JSX
 				['@constructor.tsx'] = { fg = colors.yellow },

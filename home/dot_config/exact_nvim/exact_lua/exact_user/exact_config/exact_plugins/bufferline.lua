@@ -12,6 +12,9 @@ local opts = {
 	options = {
 		show_buffer_close_icons = false,
 		show_close_icon = false,
+		indicator = { style = 'underline' },
+		separator_style = { '', '' },
+		diagnostics = 'nvim_lsp',
 		style_preset = {
 			bufferline.style_preset.no_italic,
 			bufferline.style_preset.no_bold,
@@ -21,40 +24,6 @@ local opts = {
 				filetype = 'snacks_layout_box',
 				highlight = 'Directory',
 			},
-		},
-		custom_areas = {
-			right = function()
-				local result = {}
-				local severity = vim.diagnostic.severity
-				local error = #vim.diagnostic.get(0, { severity = severity.ERROR })
-				local warning = #vim.diagnostic.get(0, { severity = severity.WARN })
-				local info = #vim.diagnostic.get(0, { severity = severity.INFO })
-				local hint = #vim.diagnostic.get(0, { severity = severity.HINT })
-
-				if error ~= 0 then
-					table.insert(
-						result,
-						{ text = '  ' .. error, link = 'DiagnosticError' }
-					)
-				end
-
-				if warning ~= 0 then
-					table.insert(
-						result,
-						{ text = '  ' .. warning, link = 'DiagnosticWarn' }
-					)
-				end
-
-				if hint ~= 0 then
-					table.insert(result, { text = '  ' .. hint, link = 'DiagnosticHint' })
-				end
-
-				if info ~= 0 then
-					table.insert(result, { text = '  ' .. info, link = 'DiagnosticInfo' })
-				end
-
-				return result
-			end,
 		},
 	},
 }
