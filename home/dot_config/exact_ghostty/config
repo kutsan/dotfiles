@@ -16,8 +16,8 @@ font-feature = "ss11"
 font-feature = "ss17"
 
 # Modify font characteristics
-adjust-underline-position = 6
-adjust-cell-height = "20%"
+adjust-underline-position = "25%"
+adjust-cell-height = "35%"
 adjust-cursor-thickness = 5
 cursor-style-blink = false
 window-padding-x = 0
