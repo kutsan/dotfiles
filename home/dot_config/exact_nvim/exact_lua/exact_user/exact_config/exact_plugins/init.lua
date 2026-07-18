@@ -34,7 +34,7 @@ local plugins = {
 	{ 'diffview' },
 
 	-- Navigation & Buffers
-	{ 'bufferline', requires = { 'devicons' } },
+	{ 'bufferline', requires = { 'mini_icons' } },
 	{ 'flash' },
 	{ 'eyeliner' },
 	{ 'windovigation' },
@@ -48,7 +48,7 @@ local plugins = {
 	{ 'mini_pairs' },
 
 	-- Visual
-	{ 'devicons' },
+	{ 'mini_icons' },
 	{ 'highlight_colors' },
 	{ 'color_converter' },
 	{ 'mini_indentscope' },

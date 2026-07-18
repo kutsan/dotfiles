@@ -26,10 +26,6 @@
       "rev": "619363c30309d29ffa631e67c8183f2a72caa373",
       "src": "github:stevearc/conform.nvim"
     },
-    "devicons": {
-      "rev": "dfbfaa967a6f7ec50789bead7ef87e336c1fa63c",
-      "src": "github:nvim-tree/nvim-web-devicons"
-    },
     "diffview": {
       "rev": "4516612fe98ff56ae0415a259ff6361a89419b0a",
       "src": "github:sindrets/diffview.nvim"
@@ -85,6 +81,11 @@
     "mason-tool-installer": {
       "rev": "443f1ef8b5e6bf47045cb2217b6f748a223cf7dc",
       "src": "github:WhoIsSethDaniel/mason-tool-installer.nvim"
+    },
+    "mini-icons": {
+      "rev": "e56797f90192d81f1fda02e662fc3e8e3d775027",
+      "src": "https://github.com/nvim-mini/mini.icons",
+      "version": ">=0.0.0"
     },
     "mini-indentscope": {
       "rev": "d3f955f09b1a05d25d5a7740338fba2baaee41a3",
