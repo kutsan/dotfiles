@@ -11,7 +11,7 @@
       "version": "4.0.0 - 5.0.0"
     },
     "catppuccin": {
-      "rev": "e068ab5f8261f23f6f71ffd8791ae40315b77b9c",
+      "rev": "05e8787020dcfdb937bf2ff23855ea2415b4e072",
       "src": "github:catppuccin/nvim"
     },
     "chezmoi": {
@@ -39,15 +39,15 @@
       "src": "github:jinh0/eyeliner.nvim"
     },
     "flash": {
-      "rev": "fcea7ff883235d9024dc41e638f164a450c14ca2",
+      "rev": "b6346946d10d07998efee029fb0f7a593806d0cd",
       "src": "github:folke/flash.nvim"
     },
     "gitsigns": {
-      "rev": "2038c666bd9d8a0b7349a0b6ee00dc83104b9ecf",
+      "rev": "31d6fb2d618bca1482b9f274751ead5f03461408",
       "src": "github:lewis6991/gitsigns.nvim"
     },
     "grug-far": {
-      "rev": "c69859c1d5427ab5fc7ed12380ab521b4e336691",
+      "rev": "1cc080f55706b38aabfa97d40acb6adf59ac4a5a",
       "src": "github:MagicDuck/grug-far.nvim"
     },
     "highlight-colors": {
@@ -59,11 +59,11 @@
       "src": "github:folke/lazydev.nvim"
     },
     "lsp-config": {
-      "rev": "3371bf298c1f56efc26771ee961f461176958fb5",
+      "rev": "e7ca2c95ba316a8b846d3f3546d407908c5c4ccb",
       "src": "github:neovim/nvim-lspconfig"
     },
     "lspconfig": {
-      "rev": "3371bf298c1f56efc26771ee961f461176958fb5",
+      "rev": "e7ca2c95ba316a8b846d3f3546d407908c5c4ccb",
       "src": "github:neovim/nvim-lspconfig"
     },
     "mason": {
@@ -71,11 +71,11 @@
       "src": "github:mason-org/mason.nvim"
     },
     "mason-lsp-config": {
-      "rev": "47059d71b42d74b0a1e9f61c1d99d301039c3b5b",
+      "rev": "916c29ee62699457a3ec57962781c67c6c6772f2",
       "src": "github:mason-org/mason-lspconfig.nvim"
     },
     "mason-lspconfig": {
-      "rev": "47059d71b42d74b0a1e9f61c1d99d301039c3b5b",
+      "rev": "916c29ee62699457a3ec57962781c67c6c6772f2",
       "src": "github:mason-org/mason-lspconfig.nvim"
     },
     "mason-tool-installer": {
@@ -106,7 +106,7 @@
       "src": "github:meanderingprogrammer/render-markdown.nvim"
     },
     "schema-store": {
-      "rev": "490afbd7fd3b316330550405ac74758a971104a4",
+      "rev": "0df41ab13b54151fcb6ab023cc2a761482070f76",
       "src": "github:b0o/SchemaStore.nvim"
     },
     "scope": {
