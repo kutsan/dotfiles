@@ -1,4 +1,4 @@
-"$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
+#:schema https://yazi-rs.github.io/schemas/yazi.json
 
 [mgr]
 show_hidden = true
@@ -6,12 +6,8 @@ ratio = [1, 1, 1]
 title_format = "{cwd}: yazi"
 linemode = "size"
 
-[[plugin.prepend_fetchers]]
-id = "git"
-url = "*"
-run = "git"
-
-[[plugin.prepend_fetchers]]
-id = "git"
-url = "*/"
-run = "git"
+[plugin]
+prepend_fetchers = [
+  { group = "git", url = "*", run = "git" },
+  { group = "git", url = "*/", run = "git" },
+]
