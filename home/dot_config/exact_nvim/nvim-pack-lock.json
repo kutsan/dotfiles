@@ -62,19 +62,11 @@
       "rev": "e7ca2c95ba316a8b846d3f3546d407908c5c4ccb",
       "src": "github:neovim/nvim-lspconfig"
     },
-    "lspconfig": {
-      "rev": "e7ca2c95ba316a8b846d3f3546d407908c5c4ccb",
-      "src": "github:neovim/nvim-lspconfig"
-    },
     "mason": {
       "rev": "2a6940af80375532e5e9e7c1f2fc6319a1b7a69d",
       "src": "github:mason-org/mason.nvim"
     },
     "mason-lsp-config": {
-      "rev": "916c29ee62699457a3ec57962781c67c6c6772f2",
-      "src": "github:mason-org/mason-lspconfig.nvim"
-    },
-    "mason-lspconfig": {
       "rev": "916c29ee62699457a3ec57962781c67c6c6772f2",
       "src": "github:mason-org/mason-lspconfig.nvim"
     },
