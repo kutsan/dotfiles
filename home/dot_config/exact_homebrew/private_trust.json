@@ -1,5 +1,5 @@
 {
-  "trustedtaps": ["docker/tap", "osx-cross/arm", "osx-cross/avr", "qmk/qmk"],
+  "trustedtaps": ["osx-cross/arm", "osx-cross/avr", "qmk/qmk"],
   "trustedformulae": ["asmvik/formulae/yabai"],
   "trustedcasks": ["docker/tap/sbx", "jackielii/tap/skhd-zig"]
 }
