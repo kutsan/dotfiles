@@ -73,6 +73,9 @@ local opts = {
 		'docker_language_server',
 		'docker_compose_language_service',
 
+		-- Terraform
+		'terraform',
+
 		-- GitHub Actions
 		'gh_actions_ls',
 
