@@ -20,7 +20,7 @@ vim.api.nvim_create_autocmd('PackChanged', {
 	end,
 })
 
--- Update mason tools after `mason-tool-installer` is installed or updated.
+-- Update mason tools after `mason-tool-installer` is updated.
 vim.api.nvim_create_autocmd('PackChanged', {
 	callback = function(event)
 		local name = event.data.spec.name
@@ -30,13 +30,8 @@ vim.api.nvim_create_autocmd('PackChanged', {
 			return
 		end
 
-		if kind ~= 'install' and kind ~= 'update' then
+		if kind ~= 'update' or not package.loaded['mason-tool-installer'] then
 			return
-		end
-
-		if not event.data.active then
-			vim.cmd.packadd('mason')
-			vim.cmd.packadd('mason-tool-installer')
 		end
 
 		local mason_tool_installer = require('mason-tool-installer')
