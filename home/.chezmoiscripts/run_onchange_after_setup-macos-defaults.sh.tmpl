@@ -28,6 +28,9 @@ main() {
 	# Click wallpaper to reveal desktop only in Stage Manager (not always)
 	defaults write com.apple.WindowManager EnableStandardClickToShowDesktop -bool false
 
+	# Enable keyboard navigation for all controls
+	defaults write NSGlobalDomain AppleKeyboardUIMode -int 2
+
 	# Restart system services to apply changes
 	killall Dock
 	killall Finder
