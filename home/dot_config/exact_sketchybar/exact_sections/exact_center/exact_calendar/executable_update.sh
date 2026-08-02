@@ -12,10 +12,6 @@ readonly lookahead_minutes=720 # 12 hours
 readonly imminent_minutes=15
 readonly next_event_script="$script_dir/next-event.swift"
 
-# SF Symbols `calendar`. Part of the label rather than the icon slot, so the
-# whole pill is one string and its glyph shares the label's color and highlight.
-readonly calendar_icon='􀉉'
-
 format_countdown() {
 	local -r minutes=$1
 	local -r minutes_per_day=1440
@@ -25,7 +21,7 @@ format_countdown() {
 	elif ((minutes < 60)); then
 		printf 'in %dm' "$minutes"
 	elif ((minutes < minutes_per_day)); then
-		printf 'in %dh %02dm' "$((minutes / 60))" "$((minutes % 60))"
+		printf 'in %dh%02dm' "$((minutes / 60))" "$((minutes % 60))"
 	else
 		printf 'in %dd%dh' \
 			"$((minutes / minutes_per_day))" \
@@ -56,5 +52,6 @@ sketchybar \
 	--set "$pill_name" drawing=on \
 	--set "$item_name" \
 	drawing=on \
-	label="$calendar_icon $countdown" \
+	label="$countdown" \
+	icon.highlight="$is_imminent" \
 	label.highlight="$is_imminent"

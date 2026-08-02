@@ -6,7 +6,7 @@ IFS=$'\n\t'
 
 source "$config_dir/styles/main.sh"
 
-target_position="${1:?}"
+target_position="right"
 script_dir="${BASH_SOURCE[0]%/*}"
 
 (source "$script_dir/datetime/item.sh" "$target_position")

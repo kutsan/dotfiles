@@ -6,8 +6,8 @@ IFS=$'\n\t'
 
 script_dir="${BASH_SOURCE[0]%/*}"
 
-for section in left q e right; do
-	(source "$script_dir/$section/main.sh" "$section")
-done
+(source "$script_dir/left/main.sh")
+(source "$script_dir/center/main.sh")
+(source "$script_dir/right/main.sh")
 
 sketchybar --update

@@ -6,7 +6,7 @@ IFS=$'\n\t'
 
 source "$config_dir/styles/main.sh"
 
-target_position="${1:?}"
+target_position="left"
 script_dir="${BASH_SOURCE[0]%/*}"
 
 readonly inset_width=$((style_pill_padding > style_spacing_2 ? style_pill_padding - style_spacing_2 : 0))
