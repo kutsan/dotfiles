@@ -5,12 +5,12 @@ IFS=$'\n\t'
 
 readonly space_padding=10
 readonly window_gap=8
-readonly external_bar_padding=40
+readonly external_bar_padding=30
 
 yabai --message config \
 	layout bsp \
 	window_placement second_child \
-	external_bar all:$((external_bar_padding - space_padding)):0
+	external_bar all:$((external_bar_padding - window_gap / 2)):0
 
 yabai --message config \
 	top_padding "$space_padding" \
