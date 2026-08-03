@@ -22,6 +22,9 @@ main() {
 	defaults write NSGlobalDomain _HIHideMenuBar -bool true
 	defaults write NSGlobalDomain AppleMenuBarVisibleInFullscreen -bool false
 
+	# Use a blurred menu bar background instead of a transparent one
+	defaults write NSGlobalDomain SLSMenuBarUseBlurredAppearance -bool true
+
 	# Do not automatically rearrange Spaces based on most recent use
 	defaults write com.apple.dock mru-spaces -bool false
 
