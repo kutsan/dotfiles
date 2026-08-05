@@ -30,17 +30,6 @@ vim.api.nvim_create_autocmd('QuitPre', {
 	end,
 })
 
-vim.api.nvim_create_autocmd('VimResized', {
-	desc = 'Resize splits when the terminal emulator window is resized.',
-	group = vim.api.nvim_create_augroup('EqualizeSplits', { clear = true }),
-	callback = function()
-		local current_tab = vim.api.nvim_get_current_tabpage()
-
-		vim.cmd.tabdo('wincmd =')
-		vim.api.nvim_set_current_tabpage(current_tab)
-	end,
-})
-
 vim.api.nvim_create_autocmd('FileType', {
 	desc = 'Disable automatic comment insertion on new lines.',
 	group = vim.api.nvim_create_augroup('AutoNoAutoComment', { clear = true }),
