@@ -14,6 +14,7 @@ vim.api.nvim_create_autocmd('QuitPre', {
 				'filetype',
 				{ buf = vim.api.nvim_win_get_buf(w) }
 			)
+
 			if filetype:match('snacks_') ~= nil then
 				table.insert(snacks_windows, w)
 			elseif vim.api.nvim_win_get_config(w).relative ~= '' then
@@ -21,10 +22,15 @@ vim.api.nvim_create_autocmd('QuitPre', {
 			end
 		end
 
-		if 1 == #windows - #floating_windows - #snacks_windows then
-			-- Should quit, so we close all Snacks windows.
+		if #windows - #floating_windows - #snacks_windows == 1 then
+			for _, picker in ipairs(require('snacks').picker.get()) do
+				picker:close()
+			end
+
 			for _, w in ipairs(snacks_windows) do
-				vim.api.nvim_win_close(w, true)
+				if vim.api.nvim_win_is_valid(w) then
+					vim.api.nvim_win_close(w, true)
+				end
 			end
 		end
 	end,
