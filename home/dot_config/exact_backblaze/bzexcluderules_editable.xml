@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<bzexclusions>
+	<!-- Exclude `node_modules` folders -->
+	<excludefname_rule
+		plat="mac"
+		osVers="*"
+		ruleIsOptional="t"
+		skipFirstCharThenStartsWith="Users/"
+		contains_1="/node_modules/"
+		contains_2="*"
+		doesNotContain="*"
+		endsWith="*"
+		hasFileExtension="*"
+	/>
+
+	<!-- Exclude `.git` folders -->
+	<excludefname_rule
+		plat="mac"
+		osVers="*"
+		ruleIsOptional="t"
+		skipFirstCharThenStartsWith="Users/"
+		contains_1="/.git/"
+		contains_2="*"
+		doesNotContain="*"
+		endsWith="*"
+		hasFileExtension="*"
+	/>
+
+	<!-- Exclude Docker sandboxes -->
+	<excludefname_rule
+		plat="mac"
+		osVers="*"
+		ruleIsOptional="t"
+		skipFirstCharThenStartsWith="Users/"
+		contains_1="/Library/Application Support/com.docker.sandboxes/"
+		contains_2="*"
+		doesNotContain="*"
+		endsWith="*"
+		hasFileExtension="*"
+	/>
+</bzexclusions>
+
