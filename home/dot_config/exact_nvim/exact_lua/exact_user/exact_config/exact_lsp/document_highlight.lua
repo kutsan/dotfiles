@@ -1,7 +1,7 @@
 local document_highlight_namespace =
-	vim.api.nvim_create_namespace('LspDocumentHighlight')
+	vim.api.nvim_create_namespace('user.lsp.document_highlight')
 local document_highlight_autocmd_group =
-	vim.api.nvim_create_augroup('LspDocumentHighlight', { clear = true })
+	vim.api.nvim_create_augroup('user.lsp.document_highlight', { clear = true })
 
 ---@type string[]
 local visual_modes = {

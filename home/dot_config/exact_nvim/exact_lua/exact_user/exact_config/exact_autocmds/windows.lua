@@ -1,7 +1,7 @@
 vim.api.nvim_create_autocmd('QuitPre', {
 	desc = 'Close Neovim automatically when Snacks Explorer is the last window in the view.',
 	group = vim.api.nvim_create_augroup(
-		'AutoCloseSnacksExplorer',
+		'user.window.auto_close_snacks_explorer',
 		{ clear = true }
 	),
 	callback = function()
@@ -38,7 +38,10 @@ vim.api.nvim_create_autocmd('QuitPre', {
 
 vim.api.nvim_create_autocmd('FileType', {
 	desc = 'Disable automatic comment insertion on new lines.',
-	group = vim.api.nvim_create_augroup('AutoNoAutoComment', { clear = true }),
+	group = vim.api.nvim_create_augroup(
+		'user.window.auto_comment',
+		{ clear = true }
+	),
 	callback = function()
 		vim.opt_local.formatoptions:remove({ 'c', 'r', 'o' })
 	end,

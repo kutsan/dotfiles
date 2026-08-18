@@ -1,6 +1,9 @@
 vim.api.nvim_create_autocmd('TextYankPost', {
 	desc = 'Briefly highlight yanked region.',
-	group = vim.api.nvim_create_augroup('HighlightYank', { clear = true }),
+	group = vim.api.nvim_create_augroup(
+		'user.buffer.highlight_yank',
+		{ clear = true }
+	),
 	callback = function()
 		vim.hl.on_yank({
 			higroup = 'Visual',
@@ -12,7 +15,10 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 vim.api.nvim_create_autocmd('BufReadPost', {
 	desc = 'Block changes to read-only buffers.',
-	group = vim.api.nvim_create_augroup('BlockReadOnly', { clear = true }),
+	group = vim.api.nvim_create_augroup(
+		'user.buffer.block_read_only',
+		{ clear = true }
+	),
 	callback = function()
 		local readonly =
 			vim.api.nvim_get_option_value('readonly', { scope = 'local' })
@@ -27,7 +33,10 @@ vim.api.nvim_create_autocmd('BufReadPost', {
 vim.api.nvim_create_autocmd('BufReadPost', {
 	desc = 'Restore cursor to file position in previous editing session.',
 	pattern = '?*',
-	group = vim.api.nvim_create_augroup('JumpLastPosition', { clear = true }),
+	group = vim.api.nvim_create_augroup(
+		'user.buffer.jump_last_position',
+		{ clear = true }
+	),
 	---@param args { buf: integer }
 	callback = function(args)
 		-- Skip if the buffer is not a normal file or a git commit.
@@ -51,7 +60,10 @@ vim.api.nvim_create_autocmd('BufReadPost', {
 
 vim.api.nvim_create_autocmd('BufEnter', {
 	desc = 'Set winfixbuf for quickfix buffers.',
-	group = vim.api.nvim_create_augroup('QuickfixWinFixBuf', { clear = true }),
+	group = vim.api.nvim_create_augroup(
+		'user.buffer.quickfix_win_fix_buf',
+		{ clear = true }
+	),
 	callback = function()
 		if vim.list_contains({ 'qf' }, vim.bo.filetype) then
 			vim.opt_local.winfixbuf = true
@@ -93,7 +105,10 @@ local sensitive_patterns = {
 }
 
 vim.api.nvim_create_autocmd({ 'BufReadPost', 'BufNewFile' }, {
-	group = vim.api.nvim_create_augroup('NoUndoSensitive', { clear = true }),
+	group = vim.api.nvim_create_augroup(
+		'user.buffer.sensitive_undofile',
+		{ clear = true }
+	),
 	pattern = sensitive_patterns,
 	desc = 'Disable undofile for sensitive paths.',
 	callback = function()
@@ -105,7 +120,10 @@ vim.api.nvim_create_autocmd({ 'BufReadPost', 'BufNewFile' }, {
 local shada_ignored_dirs = { '.git', 'node_modules' }
 
 vim.api.nvim_create_autocmd({ 'BufReadPost', 'BufNewFile' }, {
-	group = vim.api.nvim_create_augroup('NoShadaIgnoredDirs', { clear = true }),
+	group = vim.api.nvim_create_augroup(
+		'user.buffer.shada_ignored_dirs',
+		{ clear = true }
+	),
 	pattern = vim.tbl_map(function(dir)
 		return '*/' .. dir .. '/*'
 	end, shada_ignored_dirs),

@@ -21,7 +21,7 @@ vim.api.nvim_create_autocmd('OptionSet', {
 	desc = 'Sync listchars multispace/leadmultispace with shiftwidth (e.g. from .editorconfig).',
 	pattern = 'shiftwidth',
 	group = vim.api.nvim_create_augroup(
-		'SyncMultiSpaceListchars',
+		'user.listchars.multispace',
 		{ clear = true }
 	),
 	callback = function()
@@ -32,7 +32,7 @@ vim.api.nvim_create_autocmd('OptionSet', {
 vim.api.nvim_create_autocmd({ 'BufWinEnter', 'FileType' }, {
 	desc = 'Apply multispace/leadmultispace on buffer/window entry as a fallback for OptionSet.',
 	group = vim.api.nvim_create_augroup(
-		'SyncMultiSpaceListcharsFallback',
+		'user.listchars.multispace_fallback',
 		{ clear = true }
 	),
 	callback = function()

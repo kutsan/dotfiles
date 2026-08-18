@@ -1,6 +1,6 @@
 vim.api.nvim_create_autocmd('LspAttach', {
 	desc = 'Set up LSP keymaps when an LSP client attaches to a buffer.',
-	group = vim.api.nvim_create_augroup('LspKeymaps', { clear = true }),
+	group = vim.api.nvim_create_augroup('user.lsp.keymaps', { clear = true }),
 	---@param args { buf: integer }
 	callback = function(args)
 		---@type { buffer: integer, silent: boolean }

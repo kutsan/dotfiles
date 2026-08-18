@@ -62,7 +62,8 @@ local function open_banner()
 	)
 end
 
-local group = api.nvim_create_augroup('MacroRecordingBanner', { clear = true })
+local group =
+	api.nvim_create_augroup('user.macro.recording_banner', { clear = true })
 
 api.nvim_create_autocmd(
 	'RecordingEnter',

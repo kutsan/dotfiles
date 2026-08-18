@@ -38,7 +38,10 @@ end
 
 vim.api.nvim_create_autocmd('LspAttach', {
 	desc = 'Enable inline completion and its keymaps for LSP clients that support it.',
-	group = vim.api.nvim_create_augroup('LspInlineCompletion', { clear = true }),
+	group = vim.api.nvim_create_augroup(
+		'user.lsp.inline_completion',
+		{ clear = true }
+	),
 	---@param args { buf: integer, data: { client_id: integer } }
 	callback = function(args)
 		local bufnr = args.buf

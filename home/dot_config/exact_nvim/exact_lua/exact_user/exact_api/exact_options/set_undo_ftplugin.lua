@@ -2,7 +2,10 @@
 local callbacks = {}
 
 vim.api.nvim_create_autocmd('BufWipeout', {
-	group = vim.api.nvim_create_augroup('UndoFtplugin', { clear = true }),
+	group = vim.api.nvim_create_augroup(
+		'user.undo_ftplugin.buf_wipeout',
+		{ clear = true }
+	),
 	callback = function(args)
 		callbacks[args.buf] = nil
 	end,
