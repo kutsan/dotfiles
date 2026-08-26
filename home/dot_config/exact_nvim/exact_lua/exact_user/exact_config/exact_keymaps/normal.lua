@@ -18,9 +18,6 @@ end, { silent = true })
 -- Set <C-i> to itself to support separate mappings for <Tab> and <C-i>.
 keymap.set('n', '<C-i>', '<C-i>')
 
--- Quickly close current window.
-keymap.set('n', '<Space>q', '<C-w>q')
-
 -- Pane navigation.
 keymap.set('n', '<C-j>', '<C-w>j')
 keymap.set('n', '<C-k>', '<C-w>k')
