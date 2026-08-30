@@ -1,5 +1,10 @@
 -- Update mason tools after `mason-tool-installer` is updated.
 vim.api.nvim_create_autocmd('PackChanged', {
+	desc = 'Refresh mason tools after `mason-tool-installer` is updated.',
+	group = vim.api.nvim_create_augroup(
+		'user.plugin_hooks.mason_tools',
+		{ clear = true }
+	),
 	callback = function(event)
 		local name = event.data.spec.name
 		local kind = event.data.kind

@@ -283,7 +283,7 @@ vim.api.nvim_create_autocmd('QuitPre', {
 })
 
 vim.api.nvim_create_autocmd('LspAttach', {
-	desc = 'Set up LSP keymaps when an LSP client attaches to a buffer.',
+	desc = 'Set up picker-backed LSP keymaps when an LSP client attaches to a buffer.',
 	group = vim.api.nvim_create_augroup(
 		'user.plugin.snacks.lsp_keymaps',
 		{ clear = true }

@@ -70,6 +70,11 @@ end)
 -- Enable treesitter highlighting, folding, and indentation per filetype.
 -- Auto-install missing parsers asynchronously on first encounter.
 vim.api.nvim_create_autocmd('FileType', {
+	desc = 'Start treesitter and install the parser for the filetype.',
+	group = vim.api.nvim_create_augroup(
+		'user.treesitter.auto_start',
+		{ clear = true }
+	),
 	callback = function(args)
 		local lang = vim.treesitter.language.get_lang(args.match) or args.match
 		local buf = args.buf

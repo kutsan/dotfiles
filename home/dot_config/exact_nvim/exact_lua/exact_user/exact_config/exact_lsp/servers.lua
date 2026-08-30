@@ -95,7 +95,12 @@ mason_tool_installer.setup(opts)
 
 -- Patch `js-debug-adapter` to work with ECMAScript modules.
 vim.api.nvim_create_autocmd('User', {
+	desc = 'Patch js-debug-adapter after Mason finishes installing tools.',
 	pattern = 'MasonToolsUpdateCompleted',
+	group = vim.api.nvim_create_augroup(
+		'user.lsp.patch_js_debug_adapter',
+		{ clear = true }
+	),
 	callback = function(event)
 		local installed_tools = event.data
 
