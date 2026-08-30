@@ -71,6 +71,17 @@ vim.api.nvim_create_autocmd('BufEnter', {
 	end,
 })
 
+vim.api.nvim_create_autocmd('FileType', {
+	desc = 'Disable automatic comment insertion on new lines.',
+	group = vim.api.nvim_create_augroup(
+		'user.buffer.auto_comment',
+		{ clear = true }
+	),
+	callback = function()
+		vim.opt_local.formatoptions:remove({ 'c', 'r', 'o' })
+	end,
+})
+
 -- Disable persistent undo for sensitive files
 ---@type string[]
 local sensitive_patterns = {
