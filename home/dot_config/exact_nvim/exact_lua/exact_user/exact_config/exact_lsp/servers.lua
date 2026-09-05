@@ -27,7 +27,7 @@ mason_lsp_config.setup()
 local opts = {
 	ensure_installed = {
 		-- JavaScript, TypeScript, CSS, HTML
-		'tsgo',
+		'tsc',
 		'eslint',
 		'html',
 		'cssls',
