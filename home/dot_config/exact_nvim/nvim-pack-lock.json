@@ -114,6 +114,10 @@
       "src": "github:kylechui/nvim-surround",
       "version": ">=0.0.0"
     },
+    "tiny-cmdline": {
+      "rev": "e247d9ee4c980734f8f8bf616d31e0ab7c27485d",
+      "src": "github:rachartier/tiny-cmdline.nvim"
+    },
     "treesitter": {
       "rev": "4916d6592ede8c07973490d9322f187e07dfefac",
       "src": "github:nvim-treesitter/nvim-treesitter"

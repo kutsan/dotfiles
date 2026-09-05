@@ -54,6 +54,7 @@ local plugins = {
 	{ 'mini_indentscope' },
 	{ 'snacks' },
 	{ 'render_markdown' },
+	{ 'tiny_cmdline', requires = { 'blink_cmp' } },
 
 	-- Utilities
 	{ 'chezmoi' },
