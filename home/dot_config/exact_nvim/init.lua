@@ -1,5 +1,12 @@
--- Enable Lua module loader.
+-- Enable the experimental Lua module loader.
 vim.loader.enable()
+
+-- Enable the new experimental UI for Neovim.
+require('vim._core.ui2').enable({
+	msg = {
+		targets = 'msg',
+	},
+})
 
 -- Main entry points for the configuration.
 ---@type string[]
