@@ -1,0 +1,13 @@
+schemaVersion: "1"
+
+args:
+  agent:
+    default: claude
+    enum:
+      - claude
+      - codex
+
+agent: ${{ env.args.agent }}
+
+kits:
+  - ./.config/sbx/kits/claude
