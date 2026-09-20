@@ -31,7 +31,7 @@ local plugins = {
 
 	-- Git
 	{ 'gitsigns' },
-	{ 'diffview' },
+	{ 'codediff' },
 
 	-- Navigation & Buffers
 	{ 'bufferline', requires = { 'mini_icons' } },
