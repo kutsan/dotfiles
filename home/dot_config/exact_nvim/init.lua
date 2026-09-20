@@ -4,8 +4,8 @@ vim.loader.enable()
 -- Enable the new experimental UI for Neovim.
 require('vim._core.ui2').enable({
 	msg = {
+		target = 'msg',
 		targets = {
-			emsg = 'pager',
 			echoerr = 'pager',
 			lua_error = 'pager',
 			rpc_error = 'pager',
