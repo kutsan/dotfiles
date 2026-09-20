@@ -48,7 +48,7 @@ vim.keymap.set('n', '<Space>gL', function()
 	vim.cmd.CodeDiff({ 'history' })
 end, { silent = true, desc = 'File history (all files)' })
 
-vim.api.nvim_create_autocmd('BufWinEnter', {
+vim.api.nvim_create_autocmd({ 'FileType', 'BufWinEnter' }, {
 	desc = 'Set the background of the CodeDiff explorer panel.',
 	group = vim.api.nvim_create_augroup(
 		'user.plugin.codediff.explorer_background',
@@ -59,9 +59,11 @@ vim.api.nvim_create_autocmd('BufWinEnter', {
 			return
 		end
 
-		vim.iter(vim.fn.win_findbuf(event.buf)):each(function(window)
-			vim.wo[window].winhighlight =
-				'Normal:CursorColumn,NormalNC:CursorColumn'
+		vim.schedule(function()
+			for _, window in ipairs(vim.fn.win_findbuf(event.buf)) do
+				vim.wo[window].winhighlight =
+					'Normal:CursorColumn,NormalNC:CursorColumn'
+			end
 		end)
 	end,
 })
