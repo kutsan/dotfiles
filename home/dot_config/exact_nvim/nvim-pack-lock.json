@@ -90,10 +90,6 @@
       "src": "github:nvim-mini/mini.pairs",
       "version": ">=0.0.0"
     },
-    "mini-tabline": {
-      "rev": "525b27e98de7cd2a6012d99f45b4fc10676e00e5",
-      "src": "github:nvim-mini/mini.tabline"
-    },
     "qmk": {
       "rev": "3c804c1480991e4837514900b22b9358cfd64fa1",
       "src": "github:codethread/qmk.nvim"
