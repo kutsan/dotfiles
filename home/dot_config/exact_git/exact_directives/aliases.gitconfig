@@ -3,7 +3,7 @@
 	b = branch
 	bl = !git --no-pager branch --verbose --all
 	c = commit
-	d = "!args=$@; shift $#; nvim +\"DiffviewOpen $args\""
+	d = diff --stat=100,100 --patch
 	ds = d --staged
 	f = fetch
 	t = stash
