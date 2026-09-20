@@ -2,18 +2,19 @@
 lockfile = true
 
 [tools]
-chezmoi = "2.70.5"
+chezmoi = "2.72.2"
 shellcheck = "0.11.0"
 "cargo:selene" = "0.31.0"
-pinact = "4.1.0"
-zizmor = "1.26.1"
-shfmt = "3.13.1"
+pinact = "5.0.0"
+zizmor = "1.30.1"
+shfmt = "3.14.1"
 actionlint = "1.7.12"
-"pipx:keymap-drawer" = "0.23.0"
 taplo = "0.10.0"
-node = "26.5.0"
-lua-language-server = "3.18.2"
-neovim = "0.12.4"
+node = "26.9.0"
+lua-language-server = "3.19.1"
+neovim = "0.12.5"
+pipx = "1.17.4"
+"pipx:keymap-drawer" = "0.23.0"
 
 [tasks.check]
 depends = [
