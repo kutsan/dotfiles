@@ -24,6 +24,16 @@ keymap.set('n', '<C-k>', '<C-w>k')
 keymap.set('n', '<C-h>', '<C-w>h')
 keymap.set('n', '<C-l>', '<C-w>l')
 
+-- Close the current tab page.
+keymap.set('n', '<C-w>C', function()
+	vim.cmd.tabclose()
+end, { silent = true })
+
+-- Close every tab page but the current one.
+keymap.set('n', '<C-w>O', function()
+	vim.cmd.tabonly()
+end, { silent = true })
+
 -- Toggle folds.
 keymap.set('n', '<Tab>', 'za')
 
