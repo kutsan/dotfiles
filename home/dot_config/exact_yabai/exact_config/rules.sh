@@ -11,6 +11,8 @@ yabai --message rule --add manage=off grid="$center" \
 	app="^(System Settings|Activity Monitor|Disk Utility|Archive Utility)$"
 yabai --message rule --add manage=off grid="$center" \
 	app="^(Calculator|Dictionary)$"
+yabai --message rule --add manage=off \
+	app="^Finder$" title="^Trash$"
 yabai --message rule --add manage=off grid="$center" \
 	app="^(QuickTime Player|FaceTime)$"
 yabai --message rule --add manage=off grid="$center" \
