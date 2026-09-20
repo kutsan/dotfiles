@@ -27,6 +27,14 @@ local opts = {
 	image = {
 		enabled = true,
 	},
+	indent = {
+		animate = {
+			enabled = false,
+		},
+		scope = {
+			enabled = true,
+		},
+	},
 	zen = {
 		enabled = true,
 		win = {
