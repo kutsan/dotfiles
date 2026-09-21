@@ -1,8 +1,8 @@
 #:schema https://yazi-rs.github.io/schemas/theme.json
 
 [flavor]
-dark = "catppuccin-mocha"
-light = "catppuccin-latte"
+dark = "poisonbloom-dark"
+light = "poisonbloom-light"
 
 [mgr]
 border_symbol = " "

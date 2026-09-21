@@ -45,7 +45,7 @@
 		"show_user_picture": false
 	},
 	"buffer_line_height": {
-		"custom": 1.7
+		"custom": 1.8
 	},
 	"status_bar": {
 		"active_language_button": true
@@ -87,8 +87,8 @@
 	"buffer_font_size": 16.0,
 	"theme": {
 		"mode": "system",
-		"light": "Catppuccin Latte (blue)",
-		"dark": "Catppuccin Mocha (blue)"
+		"light": "Poisonbloom Light",
+		"dark": "Poisonbloom Dark"
 	},
 	"auto_install_extensions": {
 		"html": true,

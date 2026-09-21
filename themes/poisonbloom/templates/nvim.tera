@@ -1,0 +1,73 @@
+---
+whiskers:
+  version: "^2.9.0"
+  filename: "home/dot_config/exact_nvim/exact_lua/exact_user/exact_config/exact_colorschemes/poisonbloom_palette.lua"
+  hex_format: "#{{r}}{{g}}{{b}}"
+---
+{%- set dark = flavors.mocha.colors -%}
+{%- set light = flavors.latte.colors -%}
+local poisonbloom = {
+	dark = {
+		crust = '{{ dark.crust.hex }}',
+		mantle = '{{ dark.mantle.hex }}',
+		base = '{{ dark.base.hex }}',
+
+		surface0 = '{{ dark.surface0.hex }}',
+		surface1 = '{{ dark.surface1.hex }}',
+		surface2 = '{{ dark.surface2.hex }}',
+		overlay0 = '{{ dark.overlay0.hex }}',
+		overlay1 = '{{ dark.overlay1.hex }}',
+		overlay2 = '{{ dark.overlay2.hex }}',
+		subtext0 = '{{ dark.subtext0.hex }}',
+		subtext1 = '{{ dark.subtext1.hex }}',
+		text = '{{ dark.text.hex }}',
+
+		red = '{{ dark.red.hex }}',
+		maroon = '{{ dark.maroon.hex }}',
+		flamingo = '{{ dark.flamingo.hex }}',
+		rosewater = '{{ dark.rosewater.hex }}',
+		peach = '{{ dark.peach.hex }}',
+		yellow = '{{ dark.yellow.hex }}',
+		green = '{{ dark.green.hex }}',
+		teal = '{{ dark.teal.hex }}',
+		sky = '{{ dark.sky.hex }}',
+		sapphire = '{{ dark.sapphire.hex }}',
+		blue = '{{ dark.blue.hex }}',
+		lavender = '{{ dark.lavender.hex }}',
+		mauve = '{{ dark.mauve.hex }}',
+		pink = '{{ dark.pink.hex }}',
+	},
+
+	light = {
+		crust = '{{ light.crust.hex }}',
+		mantle = '{{ light.mantle.hex }}',
+		base = '{{ light.base.hex }}',
+
+		surface0 = '{{ light.surface0.hex }}',
+		surface1 = '{{ light.surface1.hex }}',
+		surface2 = '{{ light.surface2.hex }}',
+		overlay0 = '{{ light.overlay0.hex }}',
+		overlay1 = '{{ light.overlay1.hex }}',
+		overlay2 = '{{ light.overlay2.hex }}',
+		subtext0 = '{{ light.subtext0.hex }}',
+		subtext1 = '{{ light.subtext1.hex }}',
+		text = '{{ light.text.hex }}',
+
+		red = '{{ light.red.hex }}',
+		maroon = '{{ light.maroon.hex }}',
+		flamingo = '{{ light.flamingo.hex }}',
+		rosewater = '{{ light.rosewater.hex }}',
+		peach = '{{ light.peach.hex }}',
+		yellow = '{{ light.yellow.hex }}',
+		green = '{{ light.green.hex }}',
+		teal = '{{ light.teal.hex }}',
+		sky = '{{ light.sky.hex }}',
+		sapphire = '{{ light.sapphire.hex }}',
+		blue = '{{ light.blue.hex }}',
+		lavender = '{{ light.lavender.hex }}',
+		mauve = '{{ light.mauve.hex }}',
+		pink = '{{ light.pink.hex }}',
+	},
+}
+
+return poisonbloom

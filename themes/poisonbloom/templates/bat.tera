@@ -1,15 +1,23 @@
+---
+whiskers:
+  version: "^2.9.0"
+  matrix:
+    - flavor: ["latte", "mocha"]
+  filename: "home/dot_config/exact_bat/exact_themes/Poisonbloom {% if flavor.dark %}Dark{% else %}Light{% endif %}.tmTheme"
+  hex_format: "#{{r}}{{g}}{{b}}"
+---
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
   <dict>
     <key>name</key>
-    <string>Catppuccin Latte</string>
+    <string>Poisonbloom {% if flavor.dark %}Dark{% else %}Light{% endif %}</string>
     <key>semanticClass</key>
-    <string>theme.light.catppuccin-latte</string>
+    <string>theme.{% if flavor.dark %}dark.poisonbloom-dark{% else %}light.poisonbloom-light{% endif %}</string>
     <key>uuid</key>
-    <string>96a262cd-4b2f-49f5-9125-8dd0077cbfe1</string>
+    <string>627ce890-fabb-4d39-9819-7be71f4bdca7</string>
     <key>author</key>
-    <string>Catppuccin Org</string>
+    <string>Poisonbloom</string>
     <key>colorSpaceName</key>
     <string>sRGB</string>
     <key>settings</key>
@@ -18,25 +26,25 @@
         <key>settings</key>
         <dict>
           <key>background</key>
-          <string>#eff1f5</string>
+          <string>{{ base.hex }}</string>
           <key>foreground</key>
-          <string>#4c4f69</string>
+          <string>{{ text.hex }}</string>
           <key>caret</key>
-          <string>#dc8a78</string>
+          <string>{{ rosewater.hex }}</string>
           <key>lineHighlight</key>
-          <string>#ccd0da</string>
+          <string>{{ surface0.hex }}</string>
           <key>misspelling</key>
-          <string>#d20f39</string>
+          <string>{{ red.hex }}</string>
           <key>accent</key>
-          <string>#8839ef</string>
+          <string>{{ mauve.hex }}</string>
           <key>selection</key>
-          <string>#7c7f934d</string>
+          <string>{{ overlay2.hex }}40</string>
           <key>activeGuide</key>
-          <string>#bcc0cc</string>
+          <string>{{ surface1.hex }}</string>
           <key>findHighlight</key>
-          <string>#a9daf0</string>
+          <string>#3e5767</string>
           <key>gutterForeground</key>
-          <string>#8c8fa1</string>
+          <string>{{ overlay1.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -47,7 +55,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#4c4f69</string>
+          <string>{{ text.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -58,7 +66,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#7c7f93</string>
+          <string>{{ overlay2.hex }}</string>
           <key>fontStyle</key>
           <string/>
         </dict>
@@ -71,7 +79,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#7c7f93</string>
+          <string>{{ overlay2.hex }}</string>
           <key>fontStyle</key>
           <string>italic</string>
         </dict>
@@ -82,7 +90,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#40a02b</string>
+          <string>{{ green.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -91,7 +99,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#ea76cb</string>
+          <string>{{ pink.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -102,7 +110,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#fe640b</string>
+          <string>{{ peach.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -111,7 +119,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#8839ef</string>
+          <string>{{ mauve.hex }}</string>
           <key>fontStyle</key>
           <string/>
         </dict>
@@ -122,7 +130,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#8839ef</string>
+          <string>{{ mauve.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -133,7 +141,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#179299</string>
+          <string>{{ teal.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -142,7 +150,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#1e66f5</string>
+          <string>{{ blue.hex }}</string>
           <key>fontStyle</key>
           <string>italic</string>
         </dict>
@@ -155,7 +163,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#df8e1d</string>
+          <string>{{ yellow.hex }}</string>
           <key>fontStyle</key>
           <string>italic</string>
         </dict>
@@ -168,7 +176,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#df8e1d</string>
+          <string>{{ yellow.hex }}</string>
           <key>fontStyle</key>
           <string>italic</string>
         </dict>
@@ -181,7 +189,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#179299</string>
+          <string>{{ teal.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -192,7 +200,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#179299</string>
+          <string>{{ teal.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -203,7 +211,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#df8e1d</string>
+          <string>{{ yellow.hex }}</string>
           <key>fontStyle</key>
           <string>italic</string>
         </dict>
@@ -216,7 +224,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#fe640b</string>
+          <string>{{ peach.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -225,7 +233,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#e64553</string>
+          <string>{{ maroon.hex }}</string>
           <key>fontStyle</key>
           <string>italic</string>
         </dict>
@@ -238,7 +246,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#d20f39</string>
+          <string>{{ red.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -247,7 +255,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#d20f39</string>
+          <string>{{ red.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -258,7 +266,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#df8e1d</string>
+          <string>{{ yellow.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -269,7 +277,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#04a5e5</string>
+          <string>{{ sky.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -280,7 +288,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#df8e1d</string>
+          <string>{{ yellow.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -291,7 +299,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#1e66f5</string>
+          <string>{{ blue.hex }}</string>
           <key>fontStyle</key>
           <string/>
         </dict>
@@ -304,7 +312,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#d20f39</string>
+          <string>{{ red.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -315,7 +323,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#4c4f69</string>
+          <string>{{ text.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -326,7 +334,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#4c4f69</string>
+          <string>{{ text.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -348,7 +356,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#8839ef</string>
+          <string>{{ mauve.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -359,7 +367,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#df8e1d</string>
+          <string>{{ yellow.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -381,7 +389,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#179299</string>
+          <string>{{ teal.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -392,7 +400,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#4c4f69</string>
+          <string>{{ text.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -403,7 +411,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#4c4f69</string>
+          <string>{{ text.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -414,7 +422,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#df8e1d</string>
+          <string>{{ yellow.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -425,7 +433,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#179299</string>
+          <string>{{ teal.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -436,7 +444,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#179299</string>
+          <string>{{ teal.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -445,7 +453,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#fe640b</string>
+          <string>{{ peach.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -454,7 +462,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#40a02b</string>
+          <string>{{ green.hex }}</string>
           <key>fontStyle</key>
           <string/>
         </dict>
@@ -467,7 +475,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#04a5e5</string>
+          <string>{{ sky.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -478,7 +486,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#e64553</string>
+          <string>{{ maroon.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -489,7 +497,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#1e66f5</string>
+          <string>{{ blue.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -500,7 +508,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#fe640b</string>
+          <string>{{ peach.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -511,7 +519,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#40a02b</string>
+          <string>{{ green.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -522,7 +530,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#1e66f5</string>
+          <string>{{ blue.hex }}</string>
           <key>fontStyle</key>
           <string/>
         </dict>
@@ -535,7 +543,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#fe640b</string>
+          <string>{{ peach.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -546,7 +554,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#df8e1d</string>
+          <string>{{ yellow.hex }}</string>
           <key>fontStyle</key>
           <string/>
         </dict>
@@ -559,7 +567,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#df8e1d</string>
+          <string>{{ yellow.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -570,7 +578,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#ea76cb</string>
+          <string>{{ pink.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -581,7 +589,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#ea76cb</string>
+          <string>{{ pink.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -592,7 +600,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#ea76cb</string>
+          <string>{{ pink.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -603,7 +611,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#fe640b</string>
+          <string>{{ peach.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -614,7 +622,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#1e66f5</string>
+          <string>{{ blue.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -625,7 +633,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#40a02b</string>
+          <string>{{ green.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -636,7 +644,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#d20f39</string>
+          <string>{{ red.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -647,7 +655,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#1e66f5</string>
+          <string>{{ blue.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -658,7 +666,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#4c4f69</string>
+          <string>{{ text.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -669,7 +677,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#1e66f5</string>
+          <string>{{ blue.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -680,7 +688,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#fe640b</string>
+          <string>{{ peach.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -691,7 +699,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#e64553</string>
+          <string>{{ maroon.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -702,7 +710,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#fe640b</string>
+          <string>{{ peach.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -713,7 +721,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#fe640b</string>
+          <string>{{ peach.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -724,7 +732,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#4c4f69</string>
+          <string>{{ text.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -735,7 +743,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#dd7878</string>
+          <string>{{ flamingo.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -746,7 +754,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#179299</string>
+          <string>{{ teal.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -757,7 +765,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#dd7878</string>
+          <string>{{ flamingo.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -768,7 +776,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#8839ef</string>
+          <string>{{ mauve.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -779,7 +787,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#1e66f5</string>
+          <string>{{ blue.hex }}</string>
           <key>fontStyle</key>
           <string/>
         </dict>
@@ -792,7 +800,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#d20f39</string>
+          <string>{{ red.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -803,7 +811,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#df8e1d</string>
+          <string>{{ yellow.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -814,7 +822,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#ea76cb</string>
+          <string>{{ pink.hex }}</string>
           <key>fontStyle</key>
           <string/>
         </dict>
@@ -827,7 +835,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#fe640b</string>
+          <string>{{ peach.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -838,7 +846,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#179299</string>
+          <string>{{ teal.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -849,7 +857,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#4c4f69</string>
+          <string>{{ text.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -871,7 +879,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#e64553</string>
+          <string>{{ maroon.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -882,7 +890,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#4c4f69</string>
+          <string>{{ text.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -893,7 +901,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#e64553</string>
+          <string>{{ maroon.hex }}</string>
           <key>fontStyle</key>
           <string/>
         </dict>
@@ -915,7 +923,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#4c4f69</string>
+          <string>{{ text.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -926,7 +934,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#8839ef</string>
+          <string>{{ mauve.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -937,7 +945,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#8839ef</string>
+          <string>{{ mauve.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -948,7 +956,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#8839ef</string>
+          <string>{{ mauve.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -957,7 +965,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#df8e1d</string>
+          <string>{{ yellow.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -968,7 +976,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#179299</string>
+          <string>{{ teal.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -979,7 +987,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#1e66f5</string>
+          <string>{{ blue.hex }}</string>
           <key>fontStyle</key>
           <string>italic</string>
         </dict>
@@ -992,7 +1000,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#8839ef</string>
+          <string>{{ mauve.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1003,7 +1011,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#179299</string>
+          <string>{{ teal.hex }}</string>
           <key>fontStyle</key>
           <string>italic</string>
         </dict>
@@ -1016,7 +1024,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#fe640b</string>
+          <string>{{ peach.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1027,7 +1035,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#e64553</string>
+          <string>{{ maroon.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1038,7 +1046,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#179299</string>
+          <string>{{ teal.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1049,7 +1057,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#04a5e5</string>
+          <string>{{ sky.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1060,7 +1068,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#dd7878</string>
+          <string>{{ flamingo.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1071,7 +1079,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#ea76cb</string>
+          <string>{{ pink.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1082,7 +1090,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#8839ef</string>
+          <string>{{ mauve.hex }}</string>
           <key>fontStyle</key>
           <string/>
         </dict>
@@ -1095,7 +1103,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#4c4f69</string>
+          <string>{{ text.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1104,7 +1112,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#d20f39</string>
+          <string>{{ red.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1113,7 +1121,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#fe640b</string>
+          <string>{{ peach.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1122,7 +1130,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#df8e1d</string>
+          <string>{{ yellow.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1131,7 +1139,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#40a02b</string>
+          <string>{{ green.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1140,7 +1148,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#209fb5</string>
+          <string>{{ sapphire.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1149,7 +1157,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#7287fd</string>
+          <string>{{ lavender.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1158,7 +1166,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#d20f39</string>
+          <string>{{ red.hex }}</string>
           <key>fontStyle</key>
           <string>bold</string>
         </dict>
@@ -1169,7 +1177,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#d20f39</string>
+          <string>{{ red.hex }}</string>
           <key>fontStyle</key>
           <string>italic</string>
         </dict>
@@ -1180,7 +1188,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#6c6f85</string>
+          <string>{{ subtext0.hex }}</string>
           <key>fontStyle</key>
           <string>strikethrough</string>
         </dict>
@@ -1193,7 +1201,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#1e66f5</string>
+          <string>{{ blue.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1204,7 +1212,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#7287fd</string>
+          <string>{{ lavender.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1215,7 +1223,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#40a02b</string>
+          <string>{{ green.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1226,7 +1234,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#04a5e5</string>
+          <string>{{ sky.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1237,7 +1245,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#7c7f93</string>
+          <string>{{ overlay2.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1248,7 +1256,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#ea76cb</string>
+          <string>{{ pink.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1259,7 +1267,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#179299</string>
+          <string>{{ teal.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1270,7 +1278,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#179299</string>
+          <string>{{ teal.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1292,7 +1300,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#1e66f5</string>
+          <string>{{ blue.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1303,7 +1311,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#4c4f69</string>
+          <string>{{ text.hex }}</string>
           <key>fontStyle</key>
           <string/>
         </dict>
@@ -1316,7 +1324,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#7287fd</string>
+          <string>{{ lavender.hex }}</string>
           <key>fontStyle</key>
           <string/>
         </dict>
@@ -1329,7 +1337,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#ea76cb</string>
+          <string>{{ pink.hex }}</string>
           <key>fontStyle</key>
           <string/>
         </dict>
@@ -1342,7 +1350,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#df8e1d</string>
+          <string>{{ yellow.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1353,7 +1361,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#e64553</string>
+          <string>{{ maroon.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1364,7 +1372,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#8839ef</string>
+          <string>{{ mauve.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1375,7 +1383,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#04a5e5</string>
+          <string>{{ sky.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1397,7 +1405,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#4c4f69</string>
+          <string>{{ text.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1408,7 +1416,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#04a5e5</string>
+          <string>{{ sky.hex }}</string>
           <key>fontStyle</key>
           <string>italic</string>
         </dict>
@@ -1421,7 +1429,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#d20f39</string>
+          <string>{{ red.hex }}</string>
           <key>fontStyle</key>
           <string>italic</string>
         </dict>
@@ -1434,7 +1442,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#8839ef</string>
+          <string>{{ mauve.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1445,7 +1453,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#8839ef</string>
+          <string>{{ mauve.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1456,7 +1464,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#04a5e5</string>
+          <string>{{ sky.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1467,7 +1475,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#1e66f5</string>
+          <string>{{ blue.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1478,7 +1486,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#fe640b</string>
+          <string>{{ peach.hex }}</string>
           <key>fontStyle</key>
           <string>italic</string>
         </dict>
@@ -1491,7 +1499,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#ea76cb</string>
+          <string>{{ pink.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1502,7 +1510,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#fe640b</string>
+          <string>{{ peach.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1513,7 +1521,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#8839ef</string>
+          <string>{{ mauve.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1524,7 +1532,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#fe640b</string>
+          <string>{{ peach.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1535,7 +1543,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#e64553</string>
+          <string>{{ maroon.hex }}</string>
           <key>fontStyle</key>
           <string>italic</string>
         </dict>
@@ -1548,7 +1556,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#40a02b</string>
+          <string>{{ green.hex }}</string>
           <key>fontStyle</key>
           <string>italic</string>
         </dict>
@@ -1572,7 +1580,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#ea76cb</string>
+          <string>{{ pink.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1583,7 +1591,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#8839ef</string>
+          <string>{{ mauve.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1594,7 +1602,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#4c4f69</string>
+          <string>{{ text.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1605,7 +1613,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#40a02b</string>
+          <string>{{ green.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1616,7 +1624,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#df8e1d</string>
+          <string>{{ yellow.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1627,7 +1635,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#ea76cb</string>
+          <string>{{ pink.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1638,7 +1646,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#dc8a78</string>
+          <string>{{ rosewater.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1649,7 +1657,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#179299</string>
+          <string>{{ teal.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1660,7 +1668,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#fe640b</string>
+          <string>{{ peach.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1671,7 +1679,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#1e66f5</string>
+          <string>{{ blue.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1682,7 +1690,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#df8e1d</string>
+          <string>{{ yellow.hex }}</string>
           <key>fontStyle</key>
           <string>italic</string>
         </dict>
@@ -1706,7 +1714,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#8839ef</string>
+          <string>{{ mauve.hex }}</string>
           <key>fontStyle</key>
           <string/>
         </dict>
@@ -1719,7 +1727,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#8839ef</string>
+          <string>{{ mauve.hex }}</string>
           <key>fontStyle</key>
           <string/>
         </dict>
@@ -1732,7 +1740,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#fe640b</string>
+          <string>{{ peach.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1743,7 +1751,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#df8e1d</string>
+          <string>{{ yellow.hex }}</string>
           <key>fontStyle</key>
           <string>italic</string>
         </dict>
@@ -1756,7 +1764,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#fe640b</string>
+          <string>{{ peach.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1767,7 +1775,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#df8e1d</string>
+          <string>{{ yellow.hex }}</string>
           <key>fontStyle</key>
           <string>italic</string>
         </dict>
@@ -1780,7 +1788,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#df8e1d</string>
+          <string>{{ yellow.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1791,7 +1799,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#df8e1d</string>
+          <string>{{ yellow.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1802,7 +1810,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#179299</string>
+          <string>{{ teal.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1813,7 +1821,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#1e66f5</string>
+          <string>{{ blue.hex }}</string>
           <key>fontStyle</key>
           <string>italic</string>
         </dict>
@@ -1826,7 +1834,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#1e66f5</string>
+          <string>{{ blue.hex }}</string>
           <key>fontStyle</key>
           <string>italic</string>
         </dict>
@@ -1839,7 +1847,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#ea76cb</string>
+          <string>{{ pink.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1850,7 +1858,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#4c4f69</string>
+          <string>{{ text.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1861,7 +1869,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#1e66f5</string>
+          <string>{{ blue.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1872,7 +1880,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#04a5e5</string>
+          <string>{{ sky.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1883,7 +1891,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#fe640b</string>
+          <string>{{ peach.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1894,7 +1902,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#e64553</string>
+          <string>{{ maroon.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1905,7 +1913,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#4c4f69</string>
+          <string>{{ text.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1916,7 +1924,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#d20f39</string>
+          <string>{{ red.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1927,7 +1935,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#ea76cb</string>
+          <string>{{ pink.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1938,7 +1946,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#ea76cb</string>
+          <string>{{ pink.hex }}</string>
           <key>fontStyle</key>
           <string>italic</string>
         </dict>
@@ -1951,7 +1959,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#179299</string>
+          <string>{{ teal.hex }}</string>
           <key>fontStyle</key>
           <string>italic</string>
         </dict>
@@ -1964,7 +1972,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#d20f39</string>
+          <string>{{ red.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1975,7 +1983,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#fe640b</string>
+          <string>{{ peach.hex }}</string>
           <key>fontStyle</key>
           <string>italic</string>
         </dict>
@@ -1986,7 +1994,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#179299</string>
+          <string>{{ teal.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -1997,7 +2005,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#8839ef</string>
+          <string>{{ mauve.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -2008,7 +2016,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#4c4f69</string>
+          <string>{{ text.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -2017,7 +2025,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#d20f39</string>
+          <string>{{ red.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -2028,7 +2036,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#1e66f5</string>
+          <string>{{ blue.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -2039,7 +2047,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#7c7f93</string>
+          <string>{{ overlay2.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -2048,7 +2056,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#8839ef</string>
+          <string>{{ mauve.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -2057,7 +2065,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#1e66f5</string>
+          <string>{{ blue.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -2066,7 +2074,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#ea76cb</string>
+          <string>{{ pink.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -2077,7 +2085,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#179299</string>
+          <string>{{ teal.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -2086,7 +2094,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#d20f39</string>
+          <string>{{ red.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -2095,7 +2103,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#fe640b</string>
+          <string>{{ peach.hex }}</string>
         </dict>
       </dict>
       <dict>
@@ -2104,7 +2112,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#df8e1d</string>
+          <string>{{ yellow.hex }}</string>
         </dict>
       </dict>
     </array>

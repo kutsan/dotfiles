@@ -1,0 +1,44 @@
+---
+whiskers:
+  version: ^2.5.1
+  filename: "home/dot_config/exact_delta/exact_themes/poisonbloom.gitconfig"
+  hex_format: "#{{r}}{{g}}{{b}}"
+---
+
+{%- for identifier, flavor in flavors -%}
+{%- if flavor.dark and not loop.last %}{% continue %}{% endif -%}
+{%- set palette = flavor.colors -%}
+
+[delta "poisonbloom-{% if flavor.dark %}dark{% else %}light{% endif %}"]
+	blame-palette = "{{ palette.base.hex }} {{ palette.mantle.hex }} {{ palette.crust.hex }} {{ palette.surface0.hex }} {{ palette.surface1.hex }}"
+	commit-decoration-style = "{{ palette.overlay0.hex }}" bold box ul
+	{{ if(cond=flavor.dark, t="dark", f="light") }} = true
+	file-decoration-style = "{{ palette.overlay0.hex }}"
+	file-style = "{{ palette.text.hex }}"
+	hunk-header-decoration-style = "{{ palette.overlay0.hex }}" box ul
+	hunk-header-file-style = bold
+	hunk-header-line-number-style = bold "{{ palette.subtext0.hex }}"
+	hunk-header-style = file line-number syntax
+	line-numbers-left-style = "{{ palette.overlay0.hex }}"
+	line-numbers-minus-style = bold "{{ palette.red.hex }}"
+	line-numbers-plus-style = bold "{{ palette.green.hex }}"
+	line-numbers-right-style = "{{ palette.overlay0.hex }}"
+	line-numbers-zero-style = "{{ palette.overlay0.hex }}"
+	# 35% red 65% base
+	minus-emph-style = bold syntax "{{ palette.red | mix(color=palette.base, amount=0.35) | get(key="hex") }}"
+	# 20% red 80% base
+	minus-style = syntax "{{ palette.red | mix(color=palette.base, amount=0.2) | get(key="hex") }}"
+	# 35% green 65% base
+	plus-emph-style = bold syntax "{{ palette.green | mix(color=palette.base, amount=0.35) | get(key="hex") }}"
+	# 20% green 80% base
+	plus-style = syntax "{{ palette.green | mix(color=palette.base, amount=0.2) | get(key="hex") }}"
+	map-styles = \
+		bold purple => syntax "{{ palette.mauve | mix(color=palette.base, amount=0.35) | get(key="hex") }}", \
+		bold blue => syntax "{{ palette.blue | mix(color=palette.base, amount=0.35) | get(key="hex") }}", \
+		bold cyan => syntax "{{ palette.sky | mix(color=palette.base, amount=0.35) | get(key="hex") }}", \
+		bold yellow => syntax "{{ palette.yellow | mix(color=palette.base, amount=0.35) | get(key="hex") }}"
+	# Should match the name of the bat theme
+	syntax-theme = Poisonbloom {% if flavor.dark %}Dark{% else %}Light{% endif %}
+{% if not loop.last %}
+{% endif -%}
+{% endfor -%}

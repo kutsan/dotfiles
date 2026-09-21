@@ -15,6 +15,8 @@ lua-language-server = "3.19.1"
 neovim = "0.12.5"
 pipx = "1.17.4"
 "pipx:keymap-drawer" = "0.23.0"
+rust = "1.98.1"
+"cargo:catppuccin-whiskers" = "2.9.0"
 
 [tasks.check]
 depends = [
@@ -74,5 +76,9 @@ run = "git ls-files -z '*.sh' '*.zsh' | xargs -0 shfmt --write"
 [tasks."format:taplo"]
 run = "taplo format"
 
-[tasks."docs:generate-keyboard-docs"]
+[tasks."docs:generate:keyboard-docs"]
 run = "node tasks/docs/generate-keyboard-docs.ts"
+
+[tasks."themes:generate"]
+run = "bash tasks/themes/generate.sh"
+depends_post = ["format"]

@@ -1,8 +1,9 @@
 [include]
-	path = ./themes/catppuccin.gitconfig
+	path = ./themes/poisonbloom.gitconfig
 
 [delta]
-	features = catppuccin-mocha
+	features = poisonbloom-dark
+	hunk-header-style = omit
 	side-by-side = true
 	line-numbers-left-format = │{np:>4} 
 	line-numbers-right-format = │{np:>4} 

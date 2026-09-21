@@ -1,0 +1,184 @@
+---
+whiskers:
+  version: "^2.2.0"
+  matrix:
+    - flavor: ["latte", "mocha"]
+  filename: "home/dot_config/exact_yazi/exact_flavors/exact_poisonbloom-{% if flavor.dark %}dark{% else %}light{% endif %}.yazi/flavor.toml"
+  hex_format: "#{{r}}{{g}}{{b}}{{z}}"
+accent: "blue"
+---
+
+{%- set accent = flavor.colors[accent] -%}
+
+[app]
+overall = { bg = "{{ base.hex }}" }
+
+[mgr]
+cwd = { fg = "{{ teal.hex }}" }
+
+find_keyword  = { fg = "{{ yellow.hex }}", italic = true }
+find_position = { fg = "{{ pink.hex }}", bg = "reset", italic = true }
+
+marker_copied   = { fg = "{{ green.hex }}", bg = "{{ green.hex }}" }
+marker_cut      = { fg = "{{ red.hex }}", bg = "{{ red.hex }}" }
+marker_marked   = { fg = "{{ teal.hex }}", bg = "{{ teal.hex }}" }
+marker_selected = { fg = "{{ accent.hex }}", bg = "{{ accent.hex }}" }
+
+count_copied   = { fg = "{{ base.hex }}", bg = "{{ green.hex }}" }
+count_cut      = { fg = "{{ base.hex }}", bg = "{{ red.hex }}" }
+count_selected = { fg = "{{ base.hex }}", bg = "{{ accent.hex }}" }
+
+border_symbol = "│"
+border_style  = { fg = "{{ overlay1.hex }}" }
+
+syntect_theme = "~/.config/yazi/Poisonbloom-{% if flavor.dark %}Dark{% else %}Light{% endif %}.tmTheme"
+
+[tabs]
+active   = { fg = "{{ base.hex }}", bg = "{{ text.hex }}", bold = true }
+inactive = { fg = "{{ text.hex }}", bg = "{{ surface1.hex }}" }
+sep_inner = { open = "", close = "" }
+sep_outer = { open = "", close = "" }
+
+[mode]
+normal_main = { fg = "{{ base.hex }}", bg = "{{ accent.hex }}", bold = true }
+normal_alt  = { fg = "{{ accent.hex }}", bg = "{{ surface0.hex }}"}
+
+select_main = { fg = "{{ base.hex }}", bg = "{{ green.hex }}", bold = true }
+select_alt  = { fg = "{{ green.hex }}", bg = "{{ surface0.hex }}"}
+
+unset_main  = { fg = "{{ base.hex }}", bg = "{{ flamingo.hex }}", bold = true }
+unset_alt   = { fg = "{{ flamingo.hex }}", bg = "{{ surface0.hex }}"}
+
+[indicator]
+parent = { bg = "{{ surface1.hex }}" }
+current = { bg = "{{ surface1.hex }}" }
+preview = { bg = "{{ surface1.hex }}" }
+padding = { open = "█", close = "█" }
+
+[status]
+sep_left  = { open = "", close = "" }
+sep_right = { open = "", close = "" }
+
+progress_label  = { fg = "#ffffff", bold = true }
+progress_normal = { fg = "{{ green.hex }}", bg = "{{ surface1.hex }}" }
+progress_error  = { fg = "{{ yellow.hex }}", bg = "{{ red.hex }}" }
+
+perm_type  = { fg = "{{ blue.hex }}" }
+perm_read  = { fg = "{{ yellow.hex }}" }
+perm_write = { fg = "{{ red.hex }}" }
+perm_exec  = { fg = "{{ green.hex }}" }
+perm_sep   = { fg = "{{ overlay1.hex }}" }
+
+[input]
+border   = { fg = "{{ accent.hex }}" }
+title    = {}
+value    = {}
+selected = { reversed = true }
+
+[pick]
+border   = { fg = "{{ accent.hex }}" }
+active   = { fg = "{{ pink.hex }}" }
+inactive = {}
+
+[confirm]
+border     = { fg = "{{ accent.hex }}" }
+title      = { fg = "{{ accent.hex }}" }
+body       = {}
+list       = {}
+btn_yes    = { reversed = true }
+btn_no     = {}
+
+[cmp]
+border = { fg = "{{ accent.hex }}" }
+
+[tasks]
+border  = { fg = "{{ accent.hex }}" }
+title   = {}
+hovered = { fg = "{{ pink.hex }}", bold = true }
+
+[which]
+border          = { fg = "{{ accent.hex }}" }
+mask            = {}
+cand            = { fg = "{{ teal.hex }}" }
+rest            = { fg = "{{ overlay2.hex }}" }
+desc            = { fg = "{{ pink.hex }}" }
+separator       = "  "
+separator_style = { fg = "{{ surface2.hex }}" }
+
+[help]
+border  = { fg = "{{ accent.hex }}" }
+chord   = { fg = "{{ teal.hex }}" }
+action  = { fg = "{{ overlay2.hex }}" }
+hovered = { bg = "{{ surface2.hex }}", bold = true }
+
+[notify]
+title_info  = { fg = "{{ teal.hex }}" }
+title_warn  = { fg = "{{ yellow.hex }}" }
+title_error = { fg = "{{ red.hex }}" }
+
+[filetype]
+rules = [
+	# Media
+	{ mime = "**/image/*", fg = "{{ yellow.hex }}" },
+	{ mime = "**/{audio,video}/*", fg = "{{ pink.hex }}" },
+
+	# Archives
+	{ mime = "**/application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", fg = "{{ red.hex }}" },
+
+	# Documents
+	{ mime = "**/application/{pdf,doc,rtf}", fg = "{{ sky.hex }}" },
+
+	# Virtual file system
+	{ mime = "vfs/{absent,stale}", fg = "{{ surface1.hex }}" },
+
+	# Special file
+	{ url = "*", is = "orphan", bg = "{{ red.hex }}" },
+	{ url = "*", is = "exec"  , fg = "{{ green.hex }}" },
+
+	# Dummy file
+	{ url = "*", is = "dummy", bg = "{{ red.hex }}" },
+	{ url = "*/", is = "dummy", bg = "{{ red.hex }}" },
+
+	# Fallback
+	{ url = "*/", fg = "{{ accent.hex }}" },
+]
+
+[spot]
+border = { fg = "{{ accent.hex }}" }
+title  = { fg = "{{ accent.hex }}" }
+tbl_cell = { fg = "{{ accent.hex }}", reversed = true }
+tbl_col = { bold = true }
+
+[icon]
+dirs = [
+	{ name = ".config", text = "", fg = "{{ accent.hex }}" },
+	{ name = ".git", text = "", fg = "{{ accent.hex }}" },
+	{ name = ".github", text = "", fg = "{{ accent.hex }}" },
+	{ name = ".npm", text = "", fg = "{{ accent.hex }}" },
+	{ name = "Desktop", text = "", fg = "{{ accent.hex }}" },
+	{ name = "Development", text = "", fg = "{{ accent.hex }}" },
+	{ name = "Documents", text = "", fg = "{{ accent.hex }}" },
+	{ name = "Downloads", text = "", fg = "{{ accent.hex }}" },
+	{ name = "Library", text = "", fg = "{{ accent.hex }}" },
+	{ name = "Movies", text = "", fg = "{{ accent.hex }}" },
+	{ name = "Music", text = "", fg = "{{ accent.hex }}" },
+	{ name = "Pictures", text = "", fg = "{{ accent.hex }}" },
+	{ name = "Public", text = "", fg = "{{ accent.hex }}" },
+	{ name = "Videos", text = "", fg = "{{ accent.hex }}" },
+]
+conds = [
+	# Special files
+	{ if = "orphan", text = "", fg = "{{ text.hex }}" },
+	{ if = "link", text = "", fg = "{{ subtext0.hex }}" },
+	{ if = "block", text = "", fg = "{{ yellow.hex }}" },
+	{ if = "char", text = "", fg = "{{ yellow.hex }}" },
+	{ if = "fifo", text = "", fg = "{{ yellow.hex }}" },
+	{ if = "sock", text = "", fg = "{{ yellow.hex }}" },
+	{ if = "sticky", text = "", fg = "{{ yellow.hex }}" },
+	{ if = "dummy", text = "", fg = "{{ red.hex }}" },
+
+	# Fallback
+	{ if = "dir", text = "", fg = "{{ accent.hex }}" },
+	{ if = "exec", text = "", fg = "{{ green.hex }}" },
+	{ if = "!dir", text = "", fg = "{{ text.hex }}" },
+]

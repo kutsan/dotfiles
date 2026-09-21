@@ -1,0 +1,61 @@
+[delta "poisonbloom-light"]
+	blame-palette = "#f5f5f5 #ebedef #e3e5e8 #dddfe3 #cacdd3"
+	commit-decoration-style = "#848d9f" bold box ul
+	light = true
+	file-decoration-style = "#848d9f"
+	file-style = "#31363f"
+	hunk-header-decoration-style = "#848d9f" box ul
+	hunk-header-file-style = bold
+	hunk-header-line-number-style = bold "#484e5b"
+	hunk-header-style = file line-number syntax
+	line-numbers-left-style = "#848d9f"
+	line-numbers-minus-style = bold "#8d4c57"
+	line-numbers-plus-style = bold "#386955"
+	line-numbers-right-style = "#848d9f"
+	line-numbers-zero-style = "#848d9f"
+	# 35% red 65% base
+	minus-emph-style = bold syntax "#d0babd"
+	# 20% red 80% base
+	minus-style = syntax "#e0d3d5"
+	# 35% green 65% base
+	plus-emph-style = bold syntax "#b3c4bd"
+	# 20% green 80% base
+	plus-style = syntax "#cfd9d5"
+	map-styles = \
+		bold purple => syntax "#c9bad2", \
+		bold blue => syntax "#b8c1ce", \
+		bold cyan => syntax "#b4c3c5", \
+		bold yellow => syntax "#c4c0b3"
+	# Should match the name of the bat theme
+	syntax-theme = Poisonbloom Light
+
+[delta "poisonbloom-dark"]
+	blame-palette = "#080808 #0e0f12 #050505 #14161b #22262e"
+	commit-decoration-style = "#606876" bold box ul
+	dark = true
+	file-decoration-style = "#606876"
+	file-style = "#c9cdd4"
+	hunk-header-decoration-style = "#606876" box ul
+	hunk-header-file-style = bold
+	hunk-header-line-number-style = bold "#9ca3b0"
+	hunk-header-style = file line-number syntax
+	line-numbers-left-style = "#606876"
+	line-numbers-minus-style = bold "#c8939c"
+	line-numbers-plus-style = bold "#90c1ac"
+	line-numbers-right-style = "#606876"
+	line-numbers-zero-style = "#606876"
+	# 35% red 65% base
+	minus-emph-style = bold syntax "#4b383b"
+	# 20% red 80% base
+	minus-style = syntax "#2e2325"
+	# 35% green 65% base
+	plus-emph-style = bold syntax "#374841"
+	# 20% green 80% base
+	plus-style = syntax "#232d28"
+	map-styles = \
+		bold purple => syntax "#453c4b", \
+		bold blue => syntax "#383f4b", \
+		bold cyan => syntax "#39474a", \
+		bold yellow => syntax "#4a483c"
+	# Should match the name of the bat theme
+	syntax-theme = Poisonbloom Dark
