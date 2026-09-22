@@ -1,0 +1,5 @@
+[project]
+name = "mise-pypi-tool-environment"
+version = "0.0.0"
+requires-python = ">=3.12, <4.0"
+dependencies = ["keymap-drawer==0.23.0"]

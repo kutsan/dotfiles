@@ -13,10 +13,11 @@ taplo = "0.10.0"
 node = "26.9.0"
 lua-language-server = "3.19.1"
 neovim = "0.12.5"
-pipx = "1.17.4"
-"pipx:keymap-drawer" = "0.23.0"
 rust = "1.98.1"
 "cargo:catppuccin-whiskers" = "2.9.0"
+python = "3.14.7"
+uv = "0.12.17"
+"pypi:keymap-drawer" = "0.23.0"
 
 [tasks.check]
 depends = [
