@@ -17,16 +17,19 @@
 .define reload_window_manager_service : yabai --restart-service
 
 # Focus space
-lalt - 1 : @focus_space("1")
-lalt - 2 : @focus_space("2")
-lalt - 3 : @focus_space("3")
-lalt - 4 : @focus_space("4")
-lalt - 5 : @focus_space("5")
-lalt - 6 : @focus_space("6")
-lalt - 7 : @focus_space("7")
-lalt - 8 : @focus_space("8")
-lalt - 9 : @focus_space("9")
-lalt - tab : @focus_space("recent")
+# FIX: `yabai` space switching is not working properly with macOS 27. So,
+# built-in space switching is used instead with the same keybindings. See
+# https://github.com/asmvik/yabai/issues/2822
+# lalt - 1 : @focus_space("1")
+# lalt - 2 : @focus_space("2")
+# lalt - 3 : @focus_space("3")
+# lalt - 4 : @focus_space("4")
+# lalt - 5 : @focus_space("5")
+# lalt - 6 : @focus_space("6")
+# lalt - 7 : @focus_space("7")
+# lalt - 8 : @focus_space("8")
+# lalt - 9 : @focus_space("9")
+# lalt - tab : @focus_space("recent")
 
 # Focus window
 lalt - h : @focus_window("west")
