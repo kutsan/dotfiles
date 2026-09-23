@@ -1,4 +1,4 @@
-{{- if eq .chezmoi.os "darwin" -}}
+{{- if and (eq .chezmoi.os "darwin") (eq .profile "personal") -}}
 #!/usr/bin/env bash
 
 # local.asimov.plist hash: {{ include "Library/LaunchAgents/local.asimov.plist.tmpl" | sha256sum }}
