@@ -1,17 +1,13 @@
 {{- if eq .profile "personal" -}}
 # Personal Taps
-
-{{- if eq .user "kutsan" }}
 tap "osx-cross/arm"
 tap "osx-cross/avr"
 tap "qmk/qmk"
-{{- end }}
 {{- end }}
 
 # Common Packages
 brew "act"
 brew "age"
-brew "asimov"
 brew "asmvik/formulae/yabai"
 brew "bat"
 brew "btop"
@@ -36,7 +32,6 @@ brew "gnupg"
 brew "gptfdisk"
 brew "imagemagick"
 brew "jq"
-brew "just"
 brew "lazydocker"
 brew "lazygit"
 brew "mas"
@@ -57,16 +52,13 @@ brew "zoxide"
 {{- if eq .profile "personal" }}
 
 # Personal Packages
-brew "hledger"
-brew "ledger"
-
-{{- if eq .user "kutsan" }}
 brew "arm-gcc-bin" # QMK dependency
+brew "asimov"
 brew "avr-gcc" # QMK dependency
 brew "dos2unix" # QMK dependency
+brew "hledger"
+brew "ledger"
 brew "qmk/qmk/qmk" # QMK
-brew "typst"
-{{- end }}
 {{- end }}
 
 # Common Casks
