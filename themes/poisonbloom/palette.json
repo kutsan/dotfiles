@@ -54,5 +54,53 @@
 		"lavender": "384d71",
 		"mauve": "794e92",
 		"pink": "643c7a"
+	},
+	"ansi": {
+		"mocha": {
+			"black": "32363e",
+			"red": "c8939c",
+			"green": "90c1ac",
+			"yellow": "c6bf9f",
+			"blue": "93a6c8",
+			"magenta": "b89dc8",
+			"cyan": "95bec6",
+			"white": "babfc9",
+			"bright_black": "606876",
+			"bright_red": "dab4ba",
+			"bright_green": "afd4c5",
+			"bright_yellow": "dad5be",
+			"bright_blue": "b4c2da",
+			"bright_magenta": "ceb9d9",
+			"bright_cyan": "b5d3d9",
+			"bright_white": "dcdfe5"
+		},
+		"latte": {
+			"black": "31363f",
+			"red": "8d4c57",
+			"green": "386955",
+			"yellow": "695f39",
+			"blue": "496088",
+			"magenta": "794e92",
+			"cyan": "3b666e",
+			"white": "abb0ba",
+			"bright_black": "646a78",
+			"bright_red": "763a44",
+			"bright_green": "2a5443",
+			"bright_yellow": "554c2a",
+			"bright_blue": "384d71",
+			"bright_magenta": "643c7a",
+			"bright_cyan": "2c525a",
+			"bright_white": "d1d5db"
+		}
+	},
+	"selection": {
+		"mocha": {
+			"background": "363f4e",
+			"foreground": "dcdfe5"
+		},
+		"latte": {
+			"background": "d0d6e2",
+			"foreground": "1f2229"
+		}
 	}
 }

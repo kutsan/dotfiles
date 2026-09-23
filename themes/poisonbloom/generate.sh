@@ -11,7 +11,9 @@ main() {
 	cd -- "$theme_dir/../.."
 
 	for template in "$theme_dir"/templates/*.tera; do
-		whiskers "$template" --color-overrides "$theme_dir/palette.json"
+		whiskers "$template" \
+			--color-overrides "$theme_dir/palette.json" \
+			--overrides "$theme_dir/palette.json"
 	done
 }
 

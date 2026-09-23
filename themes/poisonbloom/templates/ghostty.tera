@@ -6,28 +6,29 @@ whiskers:
   filename: "home/dot_config/exact_ghostty/exact_themes/Poisonbloom {% if flavor.dark %}Dark{% else %}Light{% endif %}.conf"
   hex_format: "#{{r}}{{g}}{{b}}"
 ---
+{%- set term = ansi[flavor.identifier] -%}
 background = {{ base.hex }}
 foreground = {{ text.hex }}
 
 cursor-color = {{ rosewater.hex }}
-cursor-text = {{ if(cond=flavor.light, t=base.hex, f=crust.hex) }}
-selection-background = {{ overlay2 | mix(color=base, amount=0.2) | get(key="hex") }}
-selection-foreground = {{ text.hex }}
+cursor-text = {{ base.hex }}
+selection-background = #{{ selection[flavor.identifier].background }}
+selection-foreground = #{{ selection[flavor.identifier].foreground }}
 split-divider-color = {{ surface0.hex }}
 
-palette = 0={{ if(cond=flavor.dark, t=surface1.hex, f=subtext1.hex) }}
-palette = 1={{ red.hex }}
-palette = 2={{ green.hex }}
-palette = 3={{ yellow.hex }}
-palette = 4={{ blue.hex }}
-palette = 5={{ pink.hex }}
-palette = 6={{ teal.hex }}
-palette = 7={{ if(cond=flavor.dark, t=subtext0.hex, f=surface2.hex) }}
-palette = 8={{ if(cond=flavor.dark, t=surface2.hex, f=subtext0.hex) }}
-palette = 9={{ red.hex }}
-palette = 10={{ green.hex }}
-palette = 11={{ yellow.hex }}
-palette = 12={{ blue.hex }}
-palette = 13={{ pink.hex }}
-palette = 14={{ teal.hex }}
-palette = 15={{ if(cond=flavor.dark, t=subtext1.hex, f=surface1.hex) }}
+palette = 0=#{{ term.black }}
+palette = 1=#{{ term.red }}
+palette = 2=#{{ term.green }}
+palette = 3=#{{ term.yellow }}
+palette = 4=#{{ term.blue }}
+palette = 5=#{{ term.magenta }}
+palette = 6=#{{ term.cyan }}
+palette = 7=#{{ term.white }}
+palette = 8=#{{ term.bright_black }}
+palette = 9=#{{ term.bright_red }}
+palette = 10=#{{ term.bright_green }}
+palette = 11=#{{ term.bright_yellow }}
+palette = 12=#{{ term.bright_blue }}
+palette = 13=#{{ term.bright_magenta }}
+palette = 14=#{{ term.bright_cyan }}
+palette = 15=#{{ term.bright_white }}
