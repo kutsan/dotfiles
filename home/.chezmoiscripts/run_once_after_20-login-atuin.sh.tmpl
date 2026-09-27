@@ -8,10 +8,10 @@ IFS=$'\n\t'
 {{ template "script-environment.sh" . }}
 
 readonly ATUIN_USERNAME={{ .user | quote }}
+readonly ATUIN_EXECUTABLE_PATH={{ joinPath .chezmoi.homeDir ".local" "share" "zinit" "plugins" "atuinsh---atuin" "atuin" | quote }}
 
 main() {
-	# Run interactive zsh to reach atuin, which zinit installs.
-	if ! zsh -ic 'command -v atuin' >/dev/null 2>&1; then
+	if [[ ! -x $ATUIN_EXECUTABLE_PATH ]]; then
 		log.warn "atuin is not installed. Skipping logging in to atuin."
 		return 0
 	fi
@@ -19,8 +19,8 @@ main() {
 	log.info "Logging in to atuin as ${ATUIN_USERNAME}..."
 	log.info "When asked for the encryption key, leave it blank to use the key chezmoi deployed."
 
-	# shellcheck disable=SC2016 # `$1` is expanded by zsh, not here.
-	zsh -ic 'atuin login --username "$1" && atuin sync' zsh "$ATUIN_USERNAME"
+	"$ATUIN_EXECUTABLE_PATH" login --username "$ATUIN_USERNAME"
+	"$ATUIN_EXECUTABLE_PATH" sync
 
 	log.success "Logged in to atuin."
 }
