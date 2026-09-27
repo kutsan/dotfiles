@@ -56,7 +56,7 @@ render_templates() {
 
 		# TODO: Find a better way to lint OS-specific templates without overriding `.chezmoi.os`.
 		sed 's/\.chezmoi\.os/"darwin"/g' "$file" |
-			chezmoi --source "$source_root" --config "$config" execute-template >"$dest"
+			chezmoi --source "$source_root" --config "$config" --override-data '{"interactive":true}' execute-template >"$dest"
 	done
 }
 

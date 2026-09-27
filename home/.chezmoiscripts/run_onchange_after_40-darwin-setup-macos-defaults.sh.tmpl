@@ -1,0 +1,85 @@
+{{- if eq .chezmoi.os "darwin" -}}
+#!/usr/bin/env bash
+
+# Interactively discover which defaults domain and key control a setting.
+#   before=$(defaults read) && read "?Change the setting, then press Enter... " && diff -U50 <(<<<"$before") <(defaults read) | delta; unset before
+
+set -o errexit -o nounset -o pipefail
+IFS=$'\n\t'
+
+{{ template "logger.sh" . }}
+{{ template "script-environment.sh" . }}
+
+restart_processes() {
+	local process
+
+	for process in "$@"; do
+		if pgrep -qx -- "$process"; then
+			killall -- "$process"
+		fi
+	done
+}
+
+main() {
+	log.info "Setting macOS defaults..."
+
+	# Show hidden files
+	defaults write com.apple.finder AppleShowAllFiles -bool true
+
+	# Automatically hide and show the Dock
+	defaults write com.apple.dock autohide -bool true
+
+	# Automatically hide and show the menu bar (always, including in full screen)
+	defaults write NSGlobalDomain _HIHideMenuBar -bool true
+	defaults write NSGlobalDomain AppleMenuBarVisibleInFullscreen -bool false
+
+	# Use a blurred menu bar background instead of a transparent one
+	defaults write NSGlobalDomain SLSMenuBarUseBlurredAppearance -bool true
+
+	# Do not automatically rearrange Spaces based on most recent use
+	defaults write com.apple.dock mru-spaces -bool false
+
+	# Click wallpaper to reveal desktop only in Stage Manager (not always)
+	defaults write com.apple.WindowManager EnableStandardClickToShowDesktop -bool false
+
+	# Enable keyboard navigation for all controls
+	defaults write NSGlobalDomain AppleKeyboardUIMode -int 2
+
+	# Show scroll bars only when scrolling
+	defaults write NSGlobalDomain AppleShowScrollBars -string 'WhenScrolling'
+
+	# Use the scale effect when minimizing windows
+	defaults write com.apple.dock mineffect -string 'scale'
+
+	# Remove items from the Trash after 30 days
+	defaults write com.apple.finder FXRemoveOldTrashItems -bool true
+
+	# Do nothing when the Globe key is pressed
+	defaults write com.apple.HIToolbox AppleFnUsageType -int 0
+
+	# Show the battery percentage in the menu bar
+	defaults -currentHost write com.apple.controlcenter BatteryShowPercentage -bool true
+
+	# Set language & region
+	defaults write NSGlobalDomain AppleLanguages -array 'en-US'
+	defaults write NSGlobalDomain AppleLocale -string 'en_US'
+	defaults write NSGlobalDomain AppleMeasurementUnits -string 'Centimeters'
+	defaults write NSGlobalDomain AppleMetricUnits -bool true
+	defaults write NSGlobalDomain AppleTemperatureUnit -string 'Celsius'
+	defaults write NSGlobalDomain AppleFirstWeekday -dict gregorian -int 2    # Monday
+	defaults write NSGlobalDomain AppleICUDateFormatStrings -dict 1 'y-MM-dd' # ISO 8601
+	defaults write NSGlobalDomain AppleICUForce24HourTime -bool true
+
+	# Restart system services to apply changes
+	restart_processes \
+		ControlCenter \
+		Dock \
+		Finder \
+		SystemUIServer \
+		WindowManager
+
+	log.success "macOS defaults set."
+}
+
+main "$@"
+{{- end -}}

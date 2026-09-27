@@ -13,15 +13,16 @@ set -o errexit -o nounset -o pipefail
 IFS=$'\n\t'
 
 {{ template "logger.sh" . }}
+{{ template "script-environment.sh" . }}
 
 main() {
 	if ! command -v skhd >/dev/null 2>&1; then
-		log.warn "skhd not installed; skipping restart."
+		log.warn "skhd is not installed. Skipping restarting the skhd service."
 		return 0
 	fi
 
 	if ! pgrep -qx skhd; then
-		log.info "skhd not running; skipping restart."
+		log.info "skhd is not running. Skipping restarting the skhd service."
 		return 0
 	fi
 

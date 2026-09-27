@@ -1,0 +1,47 @@
+{{- if eq .chezmoi.os "darwin" -}}
+#!/usr/bin/env bash
+
+# Brewfile hash: {{ includeTemplate "dot_config/exact_homebrew/Brewfile.tmpl" . | sha256sum }}
+
+set -o errexit -o nounset -o pipefail
+IFS=$'\n\t'
+
+{{ template "logger.sh" . }}
+{{ template "script-environment.sh" . }}
+
+readonly BREWFILE_PATH={{ joinPath .chezmoi.homeDir ".config" "homebrew" "Brewfile" | quote }}
+
+keep_sudo_alive() {
+	while sudo --non-interactive --validate; do
+		sleep 60
+	done </dev/null >/dev/null 2>&1 &
+}
+
+main() {
+	if ! command -v brew >/dev/null 2>&1; then
+		log.warn "Homebrew is not installed. Skipping installing Brewfile packages."
+		return 0
+	fi
+
+	if brew bundle check --file="$BREWFILE_PATH" --no-upgrade >/dev/null 2>&1; then
+		log.info "Brewfile packages are already installed. Skipping installing Brewfile packages."
+		return 0
+	fi
+
+	# Casks with `.pkg` installers need sudo, ask once instead of mid-install.
+	log.info "Asking for the sudo password once for the Brewfile packages..."
+	sudo --validate
+	keep_sudo_alive
+	# shellcheck disable=SC2064 # Expand `$!` now, it is the keepalive job.
+	trap "kill $! 2>/dev/null" EXIT
+
+	log.info "Installing Brewfile packages..."
+
+	# Only add what is missing, upgrades and removals stay manual.
+	caffeinate -dims brew bundle install --file="$BREWFILE_PATH" --no-upgrade --verbose
+
+	log.success "Brewfile packages installed."
+}
+
+main "$@"
+{{- end -}}

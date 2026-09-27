@@ -1,0 +1,4 @@
+{{- $encrypted_key_path := printf "dot_local/share/atuin/key-%s.age" .user -}}
+{{- if and (stat (joinPath .chezmoi.sourceDir $encrypted_key_path)) (stat (joinPath .chezmoi.homeDir ".config" "chezmoi" "key.txt")) -}}
+{{ include $encrypted_key_path | decrypt -}}
+{{- end -}}

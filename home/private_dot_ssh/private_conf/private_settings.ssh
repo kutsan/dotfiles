@@ -1,11 +1,4 @@
-# Sets a timeout interval in seconds after which if no data has been received
-# from the server, ssh will send a message through the encrypted channel to
-# request a response from the server.
+UserKnownHostsFile ~/.ssh/known_hosts ~/.ssh/known_hosts-common
 ServerAliveInterval 15
-
-# Only use the identities explicitly configured for each host (or the default
-# identity files), never other keys offered by the agent.
 IdentitiesOnly yes
-
-# Hash host names and addresses when they are added to known_hosts file.
 HashKnownHosts yes

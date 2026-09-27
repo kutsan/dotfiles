@@ -1,0 +1,35 @@
+{{- if eq .chezmoi.os "darwin" -}}
+#!/usr/bin/env bash
+
+set -o errexit -o nounset -o pipefail
+IFS=$'\n\t'
+
+{{ template "logger.sh" . }}
+{{ template "script-environment.sh" . }}
+
+readonly BREW_EXECUTABLE_PATH='/opt/homebrew/bin/brew'
+readonly BREW_INSTALL_SCRIPT_URL='https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh'
+
+main() {
+	if [[ -x $BREW_EXECUTABLE_PATH ]]; then
+		log.info "Homebrew is already installed. Skipping installing Homebrew."
+		return 0
+	fi
+
+	log.info "Installing Homebrew..."
+
+	local brew_install_script
+	brew_install_script=$(curl --fail --silent --show-error --location --proto '=https' "$BREW_INSTALL_SCRIPT_URL")
+
+	# The installer never prompts with `NONINTERACTIVE`, so cache sudo first.
+	log.info "Asking for the sudo password to install Homebrew..."
+	sudo --validate
+
+	NONINTERACTIVE=1 /bin/bash -c "$brew_install_script"
+	"$BREW_EXECUTABLE_PATH" analytics off
+
+	log.success "Homebrew installed."
+}
+
+main "$@"
+{{- end -}}

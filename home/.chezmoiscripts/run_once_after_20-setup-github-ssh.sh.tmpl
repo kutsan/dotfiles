@@ -1,0 +1,138 @@
+{{- if .interactive -}}
+#!/usr/bin/env bash
+
+set -o errexit -o nounset -o pipefail
+IFS=$'\n\t'
+
+{{ template "logger.sh" . }}
+{{ template "script-environment.sh" . }}
+
+readonly SSH_PRIVATE_KEY_PATH={{ joinPath .chezmoi.homeDir ".ssh" "keys" "github" | quote }}
+readonly SSH_PUBLIC_KEY_PATH="${SSH_PRIVATE_KEY_PATH}.pub"
+readonly EMAIL={{ .email | quote }}
+
+readonly WORKING_TREE_PATH={{ .chezmoi.workingTree | quote }}
+readonly DOTFILES_HTTPS_REMOTE_URL='https://github.com/kutsan/dotfiles'
+readonly DOTFILES_SSH_REMOTE_URL='github:kutsan/dotfiles'
+
+ensure_github_cli() {
+	{{- if eq .chezmoi.os "darwin" }}
+	if ! command -v gh >/dev/null 2>&1; then
+		log.info "Installing gh ahead of the Homebrew bundle..."
+		brew install gh
+	fi
+	{{- end }}
+
+	command -v gh >/dev/null 2>&1
+}
+
+create_ssh_key() {
+	local -r private_key_path=$1 email=$2
+
+	if [[ -f $private_key_path ]]; then
+		log.info "${private_key_path} already exists. Skipping generating the SSH key."
+		return 0
+	fi
+
+	log.info "Generating the SSH key..."
+
+	mkdir -p -- "$(dirname -- "$private_key_path")"
+	ssh-keygen -C "$email" -f "$private_key_path" -N ''
+}
+
+is_github_cli_logged_in() {
+	gh auth status --hostname github.com >/dev/null 2>&1
+}
+
+can_github_cli_list_ssh_keys() {
+	gh api user/keys >/dev/null 2>&1
+}
+
+log_in_to_github_cli() {
+	local -r scope=$1
+
+	if ! is_github_cli_logged_in; then
+		log.info "Logging in to GitHub CLI..."
+
+		# The key is uploaded separately, so skip the SSH key prompt.
+		gh auth login \
+			--hostname github.com \
+			--git-protocol ssh \
+			--web \
+			--skip-ssh-key \
+			--scopes "$scope"
+
+		return 0
+	fi
+
+	if ! can_github_cli_list_ssh_keys; then
+		log.info "Granting GitHub CLI access to SSH keys..."
+
+		gh auth refresh --hostname github.com --scopes "$scope"
+	fi
+}
+
+# Drop the scope again, so a leaked token cannot add SSH keys later.
+remove_github_cli_scope() {
+	local -r scope=$1
+
+	log.info "Removing GitHub CLI access to SSH keys..."
+
+	gh auth refresh --hostname github.com --remove-scopes "$scope"
+}
+
+# Skips the upload when the key is already on GitHub.
+upload_ssh_key() {
+	local -r public_key_path=$1 title=$2
+
+	log.info "Uploading the SSH key to GitHub..."
+
+	gh ssh-key add "$public_key_path" --title "$title" --type authentication
+}
+
+is_dotfiles_https_remote() {
+	local -r url=$1 https_remote_url=$2
+
+	[[ $url == "$https_remote_url" || $url == "${https_remote_url}.git" ]]
+}
+
+switch_remote_to_ssh() {
+	local -r working_tree_path=$1 https_remote_url=$2 ssh_remote_url=$3
+	local url
+
+	if ! url=$(git -C "$working_tree_path" remote get-url origin 2>/dev/null); then
+		return 0
+	fi
+
+	if ! is_dotfiles_https_remote "$url" "$https_remote_url"; then
+		return 0
+	fi
+
+	log.info "Switching the dotfiles remote to ${ssh_remote_url}..."
+
+	git -C "$working_tree_path" remote set-url origin "$ssh_remote_url"
+}
+
+main() {
+	if ! ensure_github_cli; then
+		log.warn "gh is not installed. Skipping setting up the GitHub SSH key."
+		return 0
+	fi
+
+	local -r ssh_key_scope='write:public_key'
+
+	local key_title
+	key_title=$(hostname -s)
+
+	create_ssh_key "$SSH_PRIVATE_KEY_PATH" "$EMAIL"
+	log_in_to_github_cli "$ssh_key_scope"
+	upload_ssh_key "$SSH_PUBLIC_KEY_PATH" "$key_title"
+	remove_github_cli_scope "$ssh_key_scope"
+
+	switch_remote_to_ssh "$WORKING_TREE_PATH" "$DOTFILES_HTTPS_REMOTE_URL" "$DOTFILES_SSH_REMOTE_URL"
+
+	log.success "GitHub SSH key set up."
+}
+
+main "$@"
+{{- end -}}

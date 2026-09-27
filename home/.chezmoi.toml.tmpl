@@ -1,4 +1,7 @@
 {{- $interactive := stdinIsATTY -}}
+{{- if hasKey . "interactive" -}}
+{{-   $interactive = .interactive -}}
+{{- end -}}
 
 {{- $user := "kutsan" -}}
 {{- if hasKey . "user" -}}
@@ -14,9 +17,27 @@
 {{-   $profile = promptChoice "Select environment profile" (list "personal" "work") -}}
 {{- end -}}
 
+{{- $emails := dict
+	"kutsan" "me@kutsan.dev"
+	"reyhan" "me@reyhan.dev"
+-}}
+{{- $email := get $emails $user -}}
+
+sourceDir = {{ .chezmoi.workingTree | quote }}
+
+{{- if $interactive }}
+encryption = "age"
+
+[age]
+	identity = {{ joinPath .chezmoi.homeDir ".config" "chezmoi" "key.txt" | quote }}
+	recipient = "age1pfzafy7se2ta94tmhnu4n8kshdd7j7722sfzecd9s43xagpte4vscj5944"
+{{- end }}
+
 [data]
-  profile = {{ $profile | quote }}
-  user = {{ $user | quote }}
+	interactive = {{ $interactive }}
+	user = {{ $user | quote }}
+	email = {{ $email | quote }}
+	profile = {{ $profile | quote }}
 
 [merge]
 	command = "nvim"

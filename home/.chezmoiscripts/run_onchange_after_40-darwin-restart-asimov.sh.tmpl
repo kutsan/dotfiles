@@ -12,18 +12,20 @@ IFS=$'\n\t'
 #   rm -rf ~/.local/state/asimov
 
 {{ template "logger.sh" . }}
+{{ template "script-environment.sh" . }}
 
 main() {
 	local -r domain="gui/$(id -u)"
 	local -r label="local.asimov"
-	local -r plist="${HOME}/Library/LaunchAgents/${label}.plist"
+	local -r plist_path="${HOME}/Library/LaunchAgents/${label}.plist"
 
 	log.info "Reloading ${label} launchd agent..."
 
-	mkdir -p "${XDG_STATE_HOME:-${HOME}/.local/state}/asimov"
+	mkdir -p -- "${XDG_STATE_HOME:-${HOME}/.local/state}/asimov"
 
+	# Fails when the agent is not loaded yet, which is fine.
 	launchctl bootout "${domain}/${label}" 2>/dev/null || true
-	launchctl bootstrap "${domain}" "${plist}"
+	launchctl bootstrap "${domain}" "${plist_path}"
 
 	log.success "${label} loaded."
 }

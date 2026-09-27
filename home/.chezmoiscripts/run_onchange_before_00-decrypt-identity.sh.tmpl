@@ -1,0 +1,40 @@
+{{- if .interactive -}}
+{{- $encrypted_identity_file_path := joinPath .chezmoi.sourceDir ".chezmoi.key.txt.age" -}}
+#!/usr/bin/env bash
+
+# .chezmoi.key.txt.age hash: {{ if stat $encrypted_identity_file_path }}{{ include $encrypted_identity_file_path | sha256sum }}{{ end }}
+
+set -o errexit -o nounset -o pipefail
+IFS=$'\n\t'
+
+{{ template "logger.sh" . }}
+{{ template "script-environment.sh" . }}
+
+readonly CHEZMOI_EXECUTABLE_PATH={{ .chezmoi.executable | quote }}
+
+readonly ENCRYPTED_IDENTITY_FILE_PATH={{ $encrypted_identity_file_path | quote }}
+readonly DECRYPTED_IDENTITY_FILE_PATH={{ joinPath .chezmoi.homeDir ".config" "chezmoi" "key.txt" | quote }}
+
+main() {
+	if [[ -f $DECRYPTED_IDENTITY_FILE_PATH ]]; then
+		return 0
+	fi
+
+	if [[ ! -f $ENCRYPTED_IDENTITY_FILE_PATH ]]; then
+		log.warn "${ENCRYPTED_IDENTITY_FILE_PATH} is not found. Skipping decrypting the identity."
+		return 0
+	fi
+
+	log.info "Decrypting the identity, enter its passphrase..."
+
+	mkdir -p -- "$(dirname -- "$DECRYPTED_IDENTITY_FILE_PATH")"
+	(
+		umask 077
+		"$CHEZMOI_EXECUTABLE_PATH" age decrypt --passphrase --output "$DECRYPTED_IDENTITY_FILE_PATH" "$ENCRYPTED_IDENTITY_FILE_PATH"
+	)
+
+	log.success "Identity decrypted to ${DECRYPTED_IDENTITY_FILE_PATH}."
+}
+
+main "$@"
+{{- end -}}

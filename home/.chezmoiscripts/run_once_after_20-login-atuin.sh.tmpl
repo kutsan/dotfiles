@@ -1,0 +1,29 @@
+{{- if .interactive -}}
+#!/usr/bin/env bash
+
+set -o errexit -o nounset -o pipefail
+IFS=$'\n\t'
+
+{{ template "logger.sh" . }}
+{{ template "script-environment.sh" . }}
+
+readonly ATUIN_USERNAME={{ .user | quote }}
+
+main() {
+	# Run interactive zsh to reach atuin, which zinit installs.
+	if ! zsh -ic 'command -v atuin' >/dev/null 2>&1; then
+		log.warn "atuin is not installed. Skipping logging in to atuin."
+		return 0
+	fi
+
+	log.info "Logging in to atuin as ${ATUIN_USERNAME}..."
+	log.info "When asked for the encryption key, leave it blank to use the key chezmoi deployed."
+
+	# shellcheck disable=SC2016 # `$1` is expanded by zsh, not here.
+	zsh -ic 'atuin login --username "$1" && atuin sync' zsh "$ATUIN_USERNAME"
+
+	log.success "Logged in to atuin."
+}
+
+main "$@"
+{{- end -}}
