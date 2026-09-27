@@ -58,8 +58,13 @@
 > [!IMPORTANT]
 > This repository isn't meant to be installed by others. The documentation here describes how I set it up on my own machines. Feel free to browse through the files and take whatever parts you find useful.
 
+Clone the repository and run the installation script:
+
 ```sh
 git clone https://github.com/kutsan/dotfiles.git ~/.local/share/chezmoi
+```
+
+```sh
 ~/.local/share/chezmoi/install.sh
 ```
 
