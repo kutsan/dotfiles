@@ -65,11 +65,14 @@ log_in_to_github_cli() {
 		return 0
 	fi
 
-	if ! can_github_cli_list_ssh_keys; then
-		log.info "Granting GitHub CLI access to SSH keys..."
-
-		gh auth refresh --hostname github.com --scopes "$scope"
+	if can_github_cli_list_ssh_keys; then
+		log.info "GitHub CLI is already logged in with access to SSH keys. Skipping logging in."
+		return 0
 	fi
+
+	log.info "Granting GitHub CLI access to SSH keys..."
+
+	gh auth refresh --hostname github.com --scopes "$scope"
 }
 
 # Drop the scope again, so a leaked token cannot add SSH keys later.
@@ -101,10 +104,12 @@ switch_remote_to_ssh() {
 	local url
 
 	if ! url=$(git -C "$working_tree_path" remote get-url origin 2>/dev/null); then
+		log.info "The dotfiles repository has no origin remote. Skipping switching the remote to SSH."
 		return 0
 	fi
 
 	if ! is_dotfiles_https_remote "$url" "$https_remote_url"; then
+		log.info "The origin remote is ${url}. Skipping switching the remote to SSH."
 		return 0
 	fi
 

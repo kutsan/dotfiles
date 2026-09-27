@@ -17,6 +17,7 @@ readonly DECRYPTED_IDENTITY_FILE_PATH={{ joinPath .chezmoi.homeDir ".config" "ch
 
 main() {
 	if [[ -f $DECRYPTED_IDENTITY_FILE_PATH ]]; then
+		log.info "${DECRYPTED_IDENTITY_FILE_PATH} already exists. Skipping decrypting the identity."
 		return 0
 	fi
 
