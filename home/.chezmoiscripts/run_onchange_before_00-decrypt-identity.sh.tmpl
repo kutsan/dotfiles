@@ -10,7 +10,8 @@ IFS=$'\n\t'
 {{ template "logger.sh" . }}
 {{ template "script-environment.sh" . }}
 
-readonly CHEZMOI_EXECUTABLE_PATH={{ .chezmoi.executable | quote }}
+# Set by chezmoi at runtime.
+readonly CHEZMOI_EXECUTABLE_PATH="$CHEZMOI_EXECUTABLE"
 
 readonly ENCRYPTED_IDENTITY_FILE_PATH={{ $encrypted_identity_file_path | quote }}
 readonly DECRYPTED_IDENTITY_FILE_PATH={{ joinPath .chezmoi.homeDir ".config" "chezmoi" "key.txt" | quote }}
