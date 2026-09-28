@@ -1,0 +1,7 @@
+["Pictures/Wallpapers"]
+type = "archive"
+url = "https://github.com/kutsan/wallpapers/archive/HEAD.tar.gz"
+exact = true
+stripComponents = 2
+include = ["*/images/**"]
+refreshPeriod = "24h"
