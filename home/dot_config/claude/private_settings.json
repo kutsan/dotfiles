@@ -3,6 +3,7 @@
   "model": "opus[1m]",
   "tui": "fullscreen",
   "defaultMode": "manual",
+  "theme": "auto",
   "editorMode": "vim",
   "attribution": {
     "commit": "",
