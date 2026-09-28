@@ -17,12 +17,16 @@ IFS=$'\n\t'
 
 main() {
 	if ! command -v sketchybar >/dev/null 2>&1; then
-		log.warn "sketchybar is not installed. Skipping reloading the sketchybar config."
+		log.warn "sketchybar is not installed. Skipping starting the sketchybar service."
 		return 0
 	fi
 
 	if ! pgrep -qx sketchybar; then
-		log.info "sketchybar is not running. Skipping reloading the sketchybar config."
+		log.info "Starting sketchybar service..."
+
+		brew services start sketchybar
+
+		log.success "sketchybar started."
 		return 0
 	fi
 
