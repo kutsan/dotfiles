@@ -16,7 +16,16 @@ local opts = {
 			enabled = false,
 		},
 		char = {
-			enabled = false,
+			enabled = true,
+			char_actions = function()
+				return {
+					[';'] = 'next',
+					[','] = 'prev',
+				}
+			end,
+			highlight = {
+				backdrop = false,
+			},
 		},
 	},
 	highlight = {
@@ -36,9 +45,4 @@ vim.keymap.set(
 	{ desc = 'Flash treesitter selection' }
 )
 
-vim.keymap.set(
-	{ 'n', 'x', 'o' },
-	'<C-/>',
-	flash.jump,
-	{ desc = 'Flash jump' }
-)
+vim.keymap.set({ 'n', 'x', 'o' }, '<C-/>', flash.jump, { desc = 'Flash jump' })

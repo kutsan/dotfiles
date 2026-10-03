@@ -36,7 +36,6 @@ local plugins = {
 	-- Navigation & Buffers
 	{ 'bufferline', requires = { 'mini_icons' } },
 	{ 'flash' },
-	{ 'eyeliner' },
 	{ 'windovigation' },
 	{ 'scope' },
 
@@ -44,7 +43,7 @@ local plugins = {
 	{ 'grug_far' },
 
 	-- Editing & Text Objects
-	{ 'surround' },
+	{ 'mini_surround' },
 	{ 'mini_pairs' },
 
 	-- Visual

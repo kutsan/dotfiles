@@ -35,10 +35,6 @@
       "rev": "8ddd369731c3a123a062ccc75c5c9ed54ffec9c1",
       "src": "github:chrisgrieser/nvim-early-retirement"
     },
-    "eyeliner": {
-      "rev": "8f197eb30cecdf4c2cc9988a5eecc6bc34c0c7d6",
-      "src": "github:jinh0/eyeliner.nvim"
-    },
     "flash": {
       "rev": "5f0f270fdc7c5b0c21d903ee85b9cb06f2ac636a",
       "src": "github:folke/flash.nvim"
@@ -90,6 +86,11 @@
       "src": "github:nvim-mini/mini.pairs",
       "version": ">=0.0.0"
     },
+    "mini-surround": {
+      "rev": "580e4cb98c5900d9fe743865fb5a5b2178b4ab18",
+      "src": "github:nvim-mini/mini.surround",
+      "version": ">=0.0.0"
+    },
     "qmk": {
       "rev": "3c804c1480991e4837514900b22b9358cfd64fa1",
       "src": "github:codethread/qmk.nvim"
@@ -109,11 +110,6 @@
     "snacks": {
       "rev": "882c996cf28183f4d63640de0b4c02ec886d01f2",
       "src": "github:folke/snacks.nvim"
-    },
-    "surround": {
-      "rev": "2e93e154de9ff326def6480a4358bfc149d5da2c",
-      "src": "github:kylechui/nvim-surround",
-      "version": ">=0.0.0"
     },
     "tiny-cmdline": {
       "rev": "d83700b48d8ff5625dbef4029af071db559544e5",
