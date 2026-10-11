@@ -2,7 +2,7 @@
 lockfile = true
 
 [tools]
-chezmoi = "2.72.2"
+chezmoi = "2.73.0"
 shellcheck = "0.11.0"
 "cargo:selene" = "0.31.0"
 pinact = "5.0.0"
@@ -10,13 +10,13 @@ zizmor = "1.30.1"
 shfmt = "3.14.1"
 actionlint = "1.7.12"
 taplo = "0.10.0"
-node = "26.10.0"
+node = "26.11.1"
 lua-language-server = "3.19.1"
-neovim = "0.12.5"
-rust = "1.98.1"
+neovim = "0.12.6"
+rust = "1.99.0"
 "cargo:catppuccin-whiskers" = "2.9.0"
 python = "3.14.7"
-uv = "0.12.17"
+uv = "0.13.0"
 "pypi:keymap-drawer" = "0.23.0"
 
 [tasks.check]
