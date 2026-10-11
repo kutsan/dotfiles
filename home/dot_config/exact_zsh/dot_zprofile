@@ -22,22 +22,3 @@ if [[ -n $android_sdk_path ]]; then
 fi
 
 unset android_sdk_path candidate
-
-# Java
-# Probed here (login shell) rather than in `.zshenv` so the `java_home` fork is
-# not paid on every non-interactive `zsh -c`; child shells inherit `JAVA_HOME`.
-typeset java_home_path java_bin
-
-if [[ -x /usr/libexec/java_home ]]; then
-	java_home_path=$(/usr/libexec/java_home 2>/dev/null)
-else
-	java_bin=$(command -v java)
-	java_home_path=$(readlink -f "$java_bin" 2>/dev/null)
-	java_home_path=${java_home_path%/bin/java}
-fi
-
-if [[ -n $java_home_path && -d $java_home_path ]]; then
-	export JAVA_HOME="$java_home_path"
-fi
-
-unset java_home_path java_bin
