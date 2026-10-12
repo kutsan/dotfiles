@@ -12,7 +12,6 @@ local config_parts = {
 	'picker',
 	'explorer',
 	'zen',
-	'toggle',
 	'indent',
 	'statuscolumn',
 	'image',
