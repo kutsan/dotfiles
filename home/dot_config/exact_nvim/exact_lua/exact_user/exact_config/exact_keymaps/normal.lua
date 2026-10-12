@@ -128,10 +128,21 @@ keymap.set('n', 'gb', function()
 end, { silent = true })
 
 -- Toggle common options.
-keymap.set('n', 'cos', '<Cmd>set spell!<CR>', { silent = true })
-keymap.set('n', 'cow', '<Cmd>set wrap!<CR>', { silent = true })
-keymap.set('n', 'coh', '<Cmd>nohlsearch<CR>', { silent = true })
-keymap.set('n', 'coH', '<Cmd>set hlsearch!<CR>', { silent = true })
+keymap.set('n', 'cos', function()
+	vim.o.spell = not vim.o.spell
+end, { desc = 'Toggle spell' })
+keymap.set('n', 'cow', function()
+	vim.o.wrap = not vim.o.wrap
+end, { desc = 'Toggle wrap' })
+keymap.set('n', 'coh', function()
+	vim.cmd.nohlsearch()
+end, { desc = 'Clear search highlight' })
+keymap.set('n', 'coH', function()
+	vim.o.hlsearch = not vim.o.hlsearch
+end, { desc = 'Toggle hlsearch' })
+keymap.set('n', 'coD', function()
+	vim.diagnostic.enable(not vim.diagnostic.is_enabled())
+end, { desc = 'Toggle diagnostics' })
 
 -- Select last changed or yanked area.
 keymap.set(
