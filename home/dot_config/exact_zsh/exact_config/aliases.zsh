@@ -32,6 +32,13 @@ r() {
 	fi
 }
 
+# Create a temporary directory and `cd` into it.
+scratch() {
+	local dir
+	dir=$(mktemp -d "${TMPDIR:-/tmp}/scratch.${1:+$1.}XXXXXX") || return
+	builtin cd -- "$dir" && pwd
+}
+
 # Listing & Search
 alias ls='ls -AF --color=auto'
 [[ $OSTYPE == darwin* ]] && alias ls='ls -AFG'
@@ -63,11 +70,8 @@ alias uuidv7='printf %s "$(uuidgen --time-v7)"'
 alias age-encrypt='age --encrypt --recipients-file "$XDG_CONFIG_HOME/age/recipients.txt"'
 alias age-decrypt='age --decrypt --identity "$XDG_DATA_HOME/age/key.txt"'
 
-# Package Managers & Tooling
+# Package Managers
 alias pn='pnpm'
-alias px='pnpx'
-alias cz='chezmoi'
-alias bb='brew bundle --global --verbose'
 
 # Git
 alias g='git'
