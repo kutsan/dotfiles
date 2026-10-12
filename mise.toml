@@ -33,6 +33,9 @@ depends = [
   "check:neovim-types",
 ]
 
+[tasks."apply"]
+run = "chezmoi apply"
+
 [tasks."check:prettier"]
 run = "pnpm exec prettier --check ."
 
