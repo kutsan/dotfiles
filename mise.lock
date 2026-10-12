@@ -255,7 +255,10 @@ provenance = "github-attestations"
 [[tools.pnpm]]
 version = "12.11.2"
 backend = "aqua:pnpm/pnpm"
-specifiers = ["latest"]
+specifiers = [
+    "12.11.2",
+    "latest",
+]
 
 [tools.pnpm."platforms.linux-arm64"]
 checksum = "sha256:ad444fa06d7ff344d74ba1e4933f2ed71cc6357cc2d33707a5c60958b7d83085"
