@@ -11,11 +11,18 @@ local codediff = require('codediff')
 local opts = {
 	explorer = {
 		view_mode = 'tree',
+		line_stats = {
+			enabled = true,
+		},
 	},
 	keymaps = {
 		view = {
 			toggle_layout = '<leader>t',
 		},
+	},
+	diff = {
+		highlight_added_deleted_files = true,
+		gutter_signs = true,
 	},
 }
 
