@@ -8,6 +8,7 @@ args:
       - codex
 
 agent: ${{ env.args.agent }}
+workspace: ${{ env.projectDir }}
 
 kits:
   - ./.config/sbx/kits/claude
