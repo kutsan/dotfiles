@@ -11,22 +11,31 @@ setup:
         - |
           set -eu
 
+          # Ensure a settings file exists to merge into.
           settings=/home/agent/.claude/settings.json
           mkdir -p /home/agent/.claude
           [ -f "$settings" ] || printf '{}' > "$settings"
 
+          # Embed host settings at template time and decode them in the sandbox.
           local_settings=$(
             printf '%s' '{{ include "dot_config/claude/private_settings.json" | b64enc }}' \
             | base64 -d
           )
 
+          # Deep-merge host settings over the sandbox defaults.
           jq \
             --argjson local_settings "$local_settings" \
             '. * $local_settings' "$settings" \
             > "${settings}.tmp"
           mv -- "${settings}.tmp" "$settings"
 
+          # Drop agent's own sandbox config since sbx already isolates the agent.
           jq \
             'del(.sandbox)' "$settings" \
             > "${settings}.tmp"
           mv -- "${settings}.tmp" "$settings"
+
+          # Install the global agent instructions as agent's user memory.
+          printf '%s' '{{ include "exact_dot_agents/AGENTS.md" | b64enc }}' \
+            | base64 -d \
+            > /home/agent/.claude/CLAUDE.md
