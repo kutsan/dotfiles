@@ -23,6 +23,7 @@
   },
   "enabledPlugins": {
     "security-guidance@claude-plugins-official": true,
-    "claude-code-setup@claude-plugins-official": true
+    "claude-code-setup@claude-plugins-official": true,
+    "mattpocock-skills@claude-plugins-official": true
   }
 }
