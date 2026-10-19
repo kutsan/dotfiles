@@ -1,0 +1,16 @@
+{{- /* chezmoi:modify-template */ -}}
+{{- if ne .user "kutsan" -}}
+{{-   .chezmoi.stdin -}}
+{{- else -}}
+{{-   $config := .chezmoi.stdin | default "{}" | fromJson -}}
+{{-   $mcpServers := `{
+        "goodlinks": {
+          "command": "/Applications/GoodLinks.app/Contents/MacOS/CLI/goodlinks",
+          "args": ["mcp-server"]
+        }
+      }` | fromJson -}}
+{{-   range $name, $server := $mcpServers -}}
+{{-     $config = setValueAtPath (list "mcpServers" $name) $server $config -}}
+{{-   end -}}
+{{-   toPrettyJson $config -}}
+{{- end -}}
