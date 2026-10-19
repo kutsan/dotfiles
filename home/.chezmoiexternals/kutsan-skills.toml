@@ -1,0 +1,7 @@
+[".agents/skills"]
+type = "archive"
+url = "https://github.com/kutsan/skills/archive/HEAD.tar.gz"
+exact = true
+stripComponents = 2
+include = ["*/skills/**"]
+refreshPeriod = "24h"
