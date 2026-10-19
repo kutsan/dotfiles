@@ -35,6 +35,12 @@ setup:
             > "${settings}.tmp"
           mv -- "${settings}.tmp" "$settings"
 
+          # Disable the synced kutsan-skills plugin since sbx already shares the same skills.
+          jq \
+            '.enabledPlugins["kutsan-skills@synced"] = false' "$settings" \
+            > "${settings}.tmp"
+          mv -- "${settings}.tmp" "$settings"
+
           # Install the global agent instructions as agent's user memory.
           printf '%s' '{{ include "exact_dot_agents/AGENTS.md" | b64enc }}' \
             | base64 -d \
