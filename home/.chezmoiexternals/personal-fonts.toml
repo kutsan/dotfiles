@@ -1,0 +1,7 @@
+["Library/Fonts/Personal"]
+type = "archive"
+url = "https://github.com/kutsan/fonts/raw/HEAD/dist/fonts.tar.gz.age"
+encrypted = true
+format = "tar.gz"
+exact = true
+refreshPeriod = "168h"
