@@ -1,5 +1,7 @@
 local keymap = vim.keymap
 
+local is_mac = vim.fn.has('mac') == 1
+
 -- Disable built-in snippet navigation keymaps.
 keymap.set({ 'i', 's' }, '<Tab>', function()
 	return '<Tab>'
@@ -17,6 +19,10 @@ end, { silent = true })
 
 -- Set <C-i> to itself to support separate mappings for <Tab> and <C-i>.
 keymap.set('n', '<C-i>', '<C-i>')
+
+-- Jump back and forward.
+keymap.set('n', is_mac and '<D-[>' or '<A-Left>', '<C-o>')
+keymap.set('n', is_mac and '<D-]>' or '<A-Right>', '<C-i>')
 
 -- Pane navigation.
 keymap.set('n', '<C-j>', '<C-w>j')
