@@ -6,7 +6,7 @@ IFS=$'\n\t'
 
 source "$config_dir/styles/main.sh"
 
-readonly font_family='MonoLisa Variable'
+readonly font_family='MonoLisaCode'
 readonly font_style='Regular'
 readonly font_size=14.0
 

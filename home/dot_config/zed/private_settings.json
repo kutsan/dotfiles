@@ -68,14 +68,23 @@
 		"use_smartcase_find": false,
 		"toggle_relative_line_numbers": false
 	},
-	"ui_font_family": "MonoLisa Variable",
-	"buffer_font_family": "MonoLisa Variable",
+	"ui_font_family": "MonoLisaCode",
+	"buffer_font_family": "MonoLisaCode",
 	"buffer_font_features": {
-		"zero": true,
+		"cv01": true,
+		"cv02": true,
+		"cv03": true,
+		"cv04": true,
+		"cv05": true,
+		"cv08": true,
+		"cv09": true,
+		"cv10": true,
+		"cv11": true,
+		"cv12": true,
+		"dlig": true,
 		"ss04": true,
-		"ss08": true,
-		"ss11": true,
-		"ss17": true
+		"ss13": true,
+		"zero": true
 	},
 	"telemetry": {
 		"metrics": false,

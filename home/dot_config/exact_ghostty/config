@@ -1,19 +1,28 @@
 # Font families
-font-family = "MonoLisa Variable"
-font-family-bold = "MonoLisa Variable"
-font-family-italic = "MonoLisa Variable"
-font-family-bold-italic = "MonoLisa Variable"
-window-title-font-family = "MonoLisa Variable"
+font-family = "MonoLisaCode"
+font-family-bold = "MonoLisaCode"
+font-family-italic = "MonoLisaCode"
+font-family-bold-italic = "MonoLisaCode"
+window-title-font-family = "MonoLisaCode"
 
 # Font size in points
 font-size = 17
 
 # Font features
-font-feature = "zero"
+font-feature = "cv01"
+font-feature = "cv02"
+font-feature = "cv03"
+font-feature = "cv04"
+font-feature = "cv05"
+font-feature = "cv08"
+font-feature = "cv09"
+font-feature = "cv10"
+font-feature = "cv11"
+font-feature = "cv12"
+font-feature = "dlig"
 font-feature = "ss04"
-font-feature = "ss08"
-font-feature = "ss11"
-font-feature = "ss17"
+font-feature = "ss13"
+font-feature = "zero"
 
 # Modify font characteristics
 adjust-underline-position = "25%"
